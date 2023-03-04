@@ -1,0 +1,41 @@
+{
+  "packageManager": "yarn@1.22.19",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "node-os-walk": "^1.0.2",
+    "prettier": "^2.8.4",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "ts-for-gir": "^1.0.1",
+    "ts-morph": "^17.0.1",
+    "typescript": "^4.9.5"
+  },
+  "name": "gjs-esm-types",
+  "version": "1.0.0",
+  "main": "",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "fix:lint": "eslint --fix .",
+    "fix:prettier": "prettier -w ./src .",
+    "test:jest": "jest --coverage",
+    "test:lint": "eslint .",
+    "test:prettier": "prettier -c ./src && prettier -c ./__tests__",
+    "test:tsc": "tsc --noEmit",
+    "generate-tmp-types": "ts-for-gir generate --ignoreConflicts",
+    "parse-to-ems-types": "node ./scripts/parse-to-esm-types.mjs && yarn fix:prettier",
+    "build": "yarn generate-tmp-types && yarn parse-to-ems-types"
+  },
+  "keywords": [],
+  "repository": {
+    "url": ""
+  },
+  "description": "TypeScript definitions for GJS ESM modules.",
+  "license": "MIT",
+  "author": {
+    "name": "Szymon Bretner",
+    "email": "szymonb21@gmail.com"
+  }
+}

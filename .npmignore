@@ -1,0 +1,11 @@
+.husky
+.vscode
+scripts
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc.json
+.ts-for-girrc.js
+git-hook-tasks.config.json
+tsconfig.json
+yarn-error.log
