@@ -1,3 +1,4 @@
+import { readFile } from "fs/promises";
 import { walk } from "node-os-walk";
 import path from "path";
 import morph from "ts-morph";
@@ -6,7 +7,7 @@ import { fileURLToPath, URL } from "url";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 function morphFile(filepath, outFile) {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     const fileVersion = path
       .basename(filepath)
       .replace(".d.ts", "")
@@ -14,9 +15,28 @@ function morphFile(filepath, outFile) {
 
     const project = new morph.Project({
       tsConfigFilePath: path.resolve(__dirname, "../tsconfig.json"),
+      skipAddingFilesFromTsConfig: true,
     });
 
-    project.addSourceFileAtPath(filepath);
+    const content = await readFile(filepath, "utf-8");
+
+    const RefRegexp = /^\/\/\/ <reference path=.+? \/>$/gm;
+    const refMatches = content.match(RefRegexp);
+    const refs = refMatches
+      ? refMatches.map((match) => {
+          const path = match.replace(
+            /^\/\/\/ <reference path="(.+?)" \/>$/,
+            "$1"
+          );
+          return path;
+        })
+      : [];
+
+    const c = content.replace(RefRegexp, "");
+    project.createSourceFile(filepath, c, {
+      overwrite: true,
+      scriptKind: morph.ScriptKind.TS,
+    });
 
     // replace import paths
     project.getSourceFiles().forEach((sourceFile) => {
@@ -24,12 +44,9 @@ function morphFile(filepath, outFile) {
         project.removeSourceFile(sourceFile);
         return;
       }
-
       const newImports = [];
 
-      const refs = sourceFile.getPathReferenceDirectives();
-      refs.forEach((referencedFile) => {
-        const importPath = referencedFile.getFileName();
+      refs.forEach((importPath) => {
         const importFileName = path.basename(importPath);
         const nsName = importFileName.replace(".d.ts", "").replace(/-.+/, "");
         const nsVersion = importFileName
@@ -45,17 +62,18 @@ function morphFile(filepath, outFile) {
         }
       });
 
-      const firstReference = refs.shift();
-      const lastReference = refs.pop();
+      sourceFile.getImportDeclarations().forEach((importDeclaration) => {
+        importDeclaration.remove();
+      });
 
-      sourceFile.replaceText(
-        [
-          firstReference.getPos() - 21,
-          (lastReference ? lastReference.getEnd() : firstReference.getEnd()) +
-            4,
-        ],
-        []
-      );
+      sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
+        exportDeclaration.remove();
+      });
+
+      const defExportSym = sourceFile.getDefaultExportSymbol();
+      if (defExportSym) {
+        sourceFile.removeDefaultExport(defExportSym);
+      }
 
       newImports.forEach((newImport) => {
         sourceFile.addImportDeclaration(newImport);

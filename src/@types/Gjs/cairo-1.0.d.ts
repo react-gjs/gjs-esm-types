@@ -1,11 +1,13 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/gjsify/ts-for-gjs
+ */
 import type GObject from "gi://GObject?version=2.0";
 
-/**
- * cairo-1.0
- */
-
 declare namespace cairo {
-  export enum Status {
+  enum Status {
     SUCCESS,
     NO_MEMORY,
     INVALID_RESTORE,
@@ -46,12 +48,12 @@ declare namespace cairo {
     DEVICE_FINISHED,
     JBIG2_GLOBAL_MISSING,
   }
-  export enum Content {
+  enum Content {
     COLOR,
     ALPHA,
     COLOR_ALPHA,
   }
-  export enum Operator {
+  enum Operator {
     CLEAR,
     SOURCE,
     OVER,
@@ -82,7 +84,7 @@ declare namespace cairo {
     HSL_COLOR,
     HSL_LUMINOSITY,
   }
-  export enum Antialias {
+  enum Antialias {
     DEFAULT,
     NONE,
     GRAY,
@@ -91,65 +93,65 @@ declare namespace cairo {
     GOOD,
     BEST,
   }
-  export enum FillRule {
+  enum FillRule {
     WINDING,
     EVEN_ODD,
   }
-  export enum LineCap {
+  enum LineCap {
     BUTT,
     ROUND,
     SQUARE,
   }
-  export enum LineJoin {
+  enum LineJoin {
     MITER,
     ROUND,
     BEVEL,
   }
-  export enum TextClusterFlags {
+  enum TextClusterFlags {
     BACKWARD,
   }
-  export enum FontSlant {
+  enum FontSlant {
     NORMAL,
     ITALIC,
     OBLIQUE,
   }
-  export enum FontWeight {
+  enum FontWeight {
     NORMAL,
     BOLD,
   }
-  export enum SubpixelOrder {
+  enum SubpixelOrder {
     DEFAULT,
     RGB,
     BGR,
     VRGB,
     VBGR,
   }
-  export enum HintStyle {
+  enum HintStyle {
     DEFAULT,
     NONE,
     SLIGHT,
     MEDIUM,
     FULL,
   }
-  export enum HintMetrics {
+  enum HintMetrics {
     DEFAULT,
     OFF,
     ON,
   }
-  export enum FontType {
+  enum FontType {
     TOY,
     FT,
     WIN32,
     QUARTZ,
     USER,
   }
-  export enum PathDataType {
+  enum PathDataType {
     MOVE_TO,
     LINE_TO,
     CURVE_TO,
     CLOSE_PATH,
   }
-  export enum DeviceType {
+  enum DeviceType {
     DRM,
     GL,
     SCRIPT,
@@ -160,7 +162,7 @@ declare namespace cairo {
     WIN32,
     INVALID,
   }
-  export enum SurfaceType {
+  enum SurfaceType {
     IMAGE,
     PDF,
     PS,
@@ -187,7 +189,7 @@ declare namespace cairo {
     SUBSURFACE,
     COGL,
   }
-  export enum Format {
+  enum Format {
     INVALID,
     ARGB32,
     RGB24,
@@ -196,7 +198,7 @@ declare namespace cairo {
     RGB16_565,
     RGB30,
   }
-  export enum PatternType {
+  enum PatternType {
     SOLID,
     SURFACE,
     LINEAR,
@@ -204,13 +206,13 @@ declare namespace cairo {
     MESH,
     RASTER_SOURCE,
   }
-  export enum Extend {
+  enum Extend {
     NONE,
     REPEAT,
     REFLECT,
     PAD,
   }
-  export enum Filter {
+  enum Filter {
     FAST,
     GOOD,
     BEST,
@@ -218,58 +220,132 @@ declare namespace cairo {
     BILINEAR,
     GAUSSIAN,
   }
-  export enum RegionOverlap {
+  enum RegionOverlap {
     IN,
     OUT,
     PART,
   }
-  export function image_surface_create(): void;
-  export class Context {
+  function image_surface_create(): void;
+  interface Context {}
+
+  class Context {
+    // Own properties of cairo-1.0.cairo.Context
+
     static name: string;
   }
-  export class Device {
+
+  interface Device {}
+
+  class Device {
+    // Own properties of cairo-1.0.cairo.Device
+
     static name: string;
   }
-  export class Surface {
+
+  interface Surface {}
+
+  class Surface {
+    // Own properties of cairo-1.0.cairo.Surface
+
     static name: string;
   }
-  export class Matrix {
+
+  interface Matrix {}
+
+  class Matrix {
+    // Own properties of cairo-1.0.cairo.Matrix
+
     static name: string;
   }
-  export class Pattern {
+
+  interface Pattern {}
+
+  class Pattern {
+    // Own properties of cairo-1.0.cairo.Pattern
+
     static name: string;
   }
-  export class Region {
+
+  interface Region {}
+
+  class Region {
+    // Own properties of cairo-1.0.cairo.Region
+
     static name: string;
   }
-  export class FontOptions {
+
+  interface FontOptions {}
+
+  class FontOptions {
+    // Own properties of cairo-1.0.cairo.FontOptions
+
     static name: string;
   }
-  export class FontFace {
+
+  interface FontFace {}
+
+  class FontFace {
+    // Own properties of cairo-1.0.cairo.FontFace
+
     static name: string;
   }
-  export class ScaledFont {
+
+  interface ScaledFont {}
+
+  class ScaledFont {
+    // Own properties of cairo-1.0.cairo.ScaledFont
+
     static name: string;
   }
-  export class Path {
+
+  interface Path {}
+
+  class Path {
+    // Own properties of cairo-1.0.cairo.Path
+
     static name: string;
   }
-  export class Rectangle {
-    /* Fields of cairo.Rectangle */
+
+  interface Rectangle {
+    // Own fields of cairo-1.0.cairo.Rectangle
+
     x: number;
     y: number;
     width: number;
     height: number;
+  }
+
+  class Rectangle {
+    // Own properties of cairo-1.0.cairo.Rectangle
+
     static name: string;
   }
-  export class RectangleInt {
-    /* Fields of cairo.RectangleInt */
+
+  interface RectangleInt {
+    // Own fields of cairo-1.0.cairo.RectangleInt
+
     x: number;
     y: number;
     width: number;
     height: number;
+  }
+
+  class RectangleInt {
+    // Own properties of cairo-1.0.cairo.RectangleInt
+
     static name: string;
   }
+
+  /**
+   * Name of the imported GIR library
+   * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+   */
+  const __name__: string;
+  /**
+   * Version of the imported GIR library
+   * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+   */
+  const __version__: string;
 }
 
 declare module "gi://cairo?version=1.0" {

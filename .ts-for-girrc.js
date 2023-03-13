@@ -1,6 +1,9 @@
 module.exports = {
   buildType: "types",
+  moduleType: "esm",
   pretty: true,
+  ignoreVersionConflicts: true,
+  noDOMLib: false,
   environments: ["gjs"],
   outdir: "./src/@tmp_types",
   modules: [

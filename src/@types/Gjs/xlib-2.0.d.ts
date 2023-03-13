@@ -1,41 +1,93 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/gjsify/ts-for-gjs
+ */
 import type GObject from "gi://GObject?version=2.0";
 
-/**
- * xlib-2.0
- */
-
 declare namespace xlib {
-  export function open_display(): void;
-  export class Display {
+  function open_display(): void;
+  interface Display {}
+
+  class Display {
+    // Own properties of xlib-2.0.xlib.Display
+
     static name: string;
   }
-  export class Screen {
+
+  interface Screen {}
+
+  class Screen {
+    // Own properties of xlib-2.0.xlib.Screen
+
     static name: string;
   }
-  export class Visual {
+
+  interface Visual {}
+
+  class Visual {
+    // Own properties of xlib-2.0.xlib.Visual
+
     static name: string;
   }
-  export class XConfigureEvent {
+
+  interface XConfigureEvent {}
+
+  class XConfigureEvent {
+    // Own properties of xlib-2.0.xlib.XConfigureEvent
+
     static name: string;
   }
-  export class XImage {
+
+  interface XImage {}
+
+  class XImage {
+    // Own properties of xlib-2.0.xlib.XImage
+
     static name: string;
   }
-  export class XFontStruct {
+
+  interface XFontStruct {}
+
+  class XFontStruct {
+    // Own properties of xlib-2.0.xlib.XFontStruct
+
     static name: string;
   }
-  export class XTrapezoid {
+
+  interface XTrapezoid {}
+
+  class XTrapezoid {
+    // Own properties of xlib-2.0.xlib.XTrapezoid
+
     static name: string;
   }
-  export class XVisualInfo {
+
+  interface XVisualInfo {}
+
+  class XVisualInfo {
+    // Own properties of xlib-2.0.xlib.XVisualInfo
+
     static name: string;
   }
-  export class XWindowAttributes {
+
+  interface XWindowAttributes {}
+
+  class XWindowAttributes {
+    // Own properties of xlib-2.0.xlib.XWindowAttributes
+
     static name: string;
   }
-  export class XEvent {
+
+  interface XEvent {}
+
+  class XEvent {
+    // Own properties of xlib-2.0.xlib.XEvent
+
     static name: string;
   }
+
   type Atom = number;
   type Colormap = number;
   type Cursor = number;
@@ -49,6 +101,16 @@ declare namespace xlib {
   type Window = number;
   type XID = number;
   type Pixmap = number;
+  /**
+   * Name of the imported GIR library
+   * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L188
+   */
+  const __name__: string;
+  /**
+   * Version of the imported GIR library
+   * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
+   */
+  const __version__: string;
 }
 
 declare module "gi://xlib?version=2.0" {
