@@ -1,5 +1,49 @@
 {
   "packageManager": "yarn@1.22.19",
+  "name": "gjs-esm-types",
+  "version": "0.0.1",
+  "main": "",
+  "types": "src/index.d.ts",
+  "keywords": [
+    "gjs",
+    "gir",
+    "gtk",
+    "gdk",
+    "glib",
+    "gio",
+    "gobject",
+    "pango",
+    "gdkpixbuf",
+    "typescript",
+    "declaration",
+    "definitions",
+    "types",
+    "typeRoot",
+    "esm",
+    "import",
+    "export",
+    "gnome"
+  ],
+  "repository": {
+    "url": "https://github.com/ncpa0cpl/gjs-esm-types"
+  },
+  "description": "TypeScript module declarations for GJS ESM modules.",
+  "license": "MIT",
+  "author": {
+    "name": "Szymon Bretner",
+    "email": "szymonb21@gmail.com"
+  },
+  "scripts": {
+    "fix:lint": "eslint --fix ./src",
+    "fix:prettier": "prettier -w ./src .",
+    "test:jest": "jest --coverage",
+    "test:lint": "eslint ./src",
+    "test:prettier": "prettier -c ./src",
+    "test:tsc": "tsc --noEmit",
+    "generate-tmp-types": "ts-for-gir generate",
+    "parse-to-ems-types": "node ./scripts/parse-to-esm-types.mjs && yarn fix:prettier",
+    "build": "yarn generate-tmp-types && yarn parse-to-ems-types"
+  },
   "devDependencies": {
     "@ts-for-gir/cli": "^3.0.0-beta.11",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
@@ -12,30 +56,5 @@
     "prettier-plugin-jsdoc": "^0.4.2",
     "ts-morph": "^17.0.1",
     "typescript": "^4.9.5"
-  },
-  "name": "gjs-esm-types",
-  "version": "1.0.0",
-  "main": "",
-  "types": "src/index.d.ts",
-  "scripts": {
-    "fix:lint": "eslint --fix ./src",
-    "fix:prettier": "prettier -w ./src .",
-    "test:jest": "jest --coverage",
-    "test:lint": "eslint ./src",
-    "test:prettier": "prettier -c ./src && prettier -c ./__tests__",
-    "test:tsc": "tsc --noEmit",
-    "generate-tmp-types": "ts-for-gir generate",
-    "parse-to-ems-types": "node ./scripts/parse-to-esm-types.mjs && yarn fix:prettier",
-    "build": "yarn generate-tmp-types && yarn parse-to-ems-types"
-  },
-  "keywords": [],
-  "repository": {
-    "url": ""
-  },
-  "description": "TypeScript definitions for GJS ESM modules.",
-  "license": "MIT",
-  "author": {
-    "name": "Szymon Bretner",
-    "email": "szymonb21@gmail.com"
   }
 }
