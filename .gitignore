@@ -2,5 +2,4 @@ node_modules
 coverage
 dist
 yarn-error.log
-.npmrc
 /src/@tmp_types
