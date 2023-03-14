@@ -4606,14 +4606,14 @@ declare namespace Gdk {
    * not public API and must not be used by applications.
    * @param group An option group.
    */
-  function add_option_entries_libgtk_only(group: GLib.OptionGroup): void;
+  function add_option_entries_libgtk_only(group: GLib.OptionGroup | null): void;
   /**
    * Finds or creates an atom corresponding to a given string.
    * @param atom_name a string.
    * @param only_if_exists if %TRUE, GDK is allowed to not create a new atom, but   just return %GDK_NONE if the requested atom doesn’t already   exists. Currently, the flag is ignored, since checking the   existance of an atom is as expensive as creating it.
    * @returns the atom corresponding to @atom_name.
    */
-  function atom_intern(atom_name: string, only_if_exists: boolean): Atom;
+  function atom_intern(atom_name: string | null, only_if_exists: boolean): Atom;
   /**
    * Finds or creates an atom corresponding to a given string.
    *
@@ -4628,7 +4628,7 @@ declare namespace Gdk {
    * @param atom_name a static string
    * @returns the atom corresponding to @atom_name
    */
-  function atom_intern_static_string(atom_name: string): Atom;
+  function atom_intern_static_string(atom_name: string | null): Atom;
   /**
    * Emits a short beep on the default display.
    */
@@ -4649,7 +4649,7 @@ declare namespace Gdk {
    * @param window a #GdkWindow
    * @returns A newly created Cairo context. Free with  cairo_destroy() when you are done drawing.
    */
-  function cairo_create(window: Window): cairo.Context;
+  function cairo_create(window: Window | null): cairo.Context | null;
   /**
    * This is the main way to draw GL content in GTK+. It takes a render buffer ID
    * (`source_type` == #GL_RENDERBUFFER) or a texture id (`source_type` == #GL_TEXTURE)
@@ -4678,8 +4678,8 @@ declare namespace Gdk {
    * @param height The height of the region to draw
    */
   function cairo_draw_from_gl(
-    cr: cairo.Context,
-    window: Window,
+    cr: cairo.Context | null,
+    window: Window | null,
     source: number,
     source_type: number,
     buffer_scale: number,
@@ -4696,27 +4696,35 @@ declare namespace Gdk {
    * @returns %TRUE if a clip rectangle exists, %FALSE if all of @cr is     clipped and all drawing can be skipped
    */
   function cairo_get_clip_rectangle(
-    cr: cairo.Context
-  ): [/* returnType */ boolean, /* rect */ Rectangle];
+    cr: cairo.Context | null
+  ): [/* returnType */ boolean, /* rect */ Rectangle | null];
   /**
    * Retrieves the #GdkDrawingContext that created the Cairo
    * context `cr`.
    * @param cr a Cairo context
    * @returns a #GdkDrawingContext, if any is set
    */
-  function cairo_get_drawing_context(cr: cairo.Context): DrawingContext | null;
+  function cairo_get_drawing_context(
+    cr: cairo.Context | null
+  ): DrawingContext | null;
   /**
    * Adds the given rectangle to the current path of `cr`.
    * @param cr a cairo context
    * @param rectangle a #GdkRectangle
    */
-  function cairo_rectangle(cr: cairo.Context, rectangle: Rectangle): void;
+  function cairo_rectangle(
+    cr: cairo.Context | null,
+    rectangle: Rectangle | null
+  ): void;
   /**
    * Adds the given region to the current path of `cr`.
    * @param cr a cairo context
    * @param region a #cairo_region_t
    */
-  function cairo_region(cr: cairo.Context, region: cairo.Region): void;
+  function cairo_region(
+    cr: cairo.Context | null,
+    region: cairo.Region | null
+  ): void;
   /**
    * Creates region that describes covers the area where the given
    * `surface` is more than 50% opaque.
@@ -4727,14 +4735,17 @@ declare namespace Gdk {
    * @returns A #cairo_region_t; must be freed with cairo_region_destroy()
    */
   function cairo_region_create_from_surface(
-    surface: cairo.Surface
-  ): cairo.Region;
+    surface: cairo.Surface | null
+  ): cairo.Region | null;
   /**
    * Sets the specified #GdkColor as the source color of `cr`.
    * @param cr a cairo context
    * @param color a #GdkColor
    */
-  function cairo_set_source_color(cr: cairo.Context, color: Color): void;
+  function cairo_set_source_color(
+    cr: cairo.Context | null,
+    color: Color | null
+  ): void;
   /**
    * Sets the given pixbuf as the source pattern for `cr`.
    *
@@ -4746,8 +4757,8 @@ declare namespace Gdk {
    * @param pixbuf_y Y coordinate of location to place upper left corner of `pixbuf`
    */
   function cairo_set_source_pixbuf(
-    cr: cairo.Context,
-    pixbuf: GdkPixbuf.Pixbuf,
+    cr: cairo.Context | null,
+    pixbuf: GdkPixbuf.Pixbuf | null,
     pixbuf_x: number,
     pixbuf_y: number
   ): void;
@@ -4756,7 +4767,10 @@ declare namespace Gdk {
    * @param cr a cairo context
    * @param rgba a #GdkRGBA
    */
-  function cairo_set_source_rgba(cr: cairo.Context, rgba: RGBA): void;
+  function cairo_set_source_rgba(
+    cr: cairo.Context | null,
+    rgba: RGBA | null
+  ): void;
   /**
    * Sets the given window as the source pattern for `cr`.
    *
@@ -4772,8 +4786,8 @@ declare namespace Gdk {
    * @param y Y coordinate of location to place upper left corner of `window`
    */
   function cairo_set_source_window(
-    cr: cairo.Context,
-    window: Window,
+    cr: cairo.Context | null,
+    window: Window | null,
     x: number,
     y: number
   ): void;
@@ -4786,10 +4800,10 @@ declare namespace Gdk {
    * @returns a new cairo surface, must be freed with cairo_surface_destroy()
    */
   function cairo_surface_create_from_pixbuf(
-    pixbuf: GdkPixbuf.Pixbuf,
+    pixbuf: GdkPixbuf.Pixbuf | null,
     scale: number,
     for_window: Window | null
-  ): cairo.Surface;
+  ): cairo.Surface | null;
   /**
    * Parses a textual specification of a color and fill in the
    * `red,` `green,` and `blue` fields of a #GdkColor.
@@ -4805,8 +4819,8 @@ declare namespace Gdk {
    * @returns %TRUE if the parsing succeeded
    */
   function color_parse(
-    spec: string
-  ): [/* returnType */ boolean, /* color */ Color];
+    spec: string | null
+  ): [/* returnType */ boolean, /* color */ Color | null];
   /**
    * Disables multidevice support in GDK. This call must happen prior
    * to gdk_display_open(), gtk_init(), gtk_init_with_args() or
@@ -4828,7 +4842,7 @@ declare namespace Gdk {
    * @param context a #GdkDragContext
    * @param time_ the timestamp for this operation
    */
-  function drag_abort(context: DragContext, time_: number): void;
+  function drag_abort(context: DragContext | null, time_: number): void;
   /**
    * Starts a drag and creates a new drag context for it.
    * This function assumes that the drag is controlled by the
@@ -4840,7 +4854,10 @@ declare namespace Gdk {
    * @param targets the offered targets,     as list of #GdkAtoms
    * @returns a newly created #GdkDragContext
    */
-  function drag_begin(window: Window, targets: Atom[]): DragContext;
+  function drag_begin(
+    window: Window | null,
+    targets: Atom[] | null
+  ): DragContext | null;
   /**
    * Starts a drag and creates a new drag context for it.
    *
@@ -4851,10 +4868,10 @@ declare namespace Gdk {
    * @returns a newly created #GdkDragContext
    */
   function drag_begin_for_device(
-    window: Window,
-    device: Device,
-    targets: Atom[]
-  ): DragContext;
+    window: Window | null,
+    device: Device | null,
+    targets: Atom[] | null
+  ): DragContext | null;
   /**
    * Starts a drag and creates a new drag context for it.
    *
@@ -4867,12 +4884,12 @@ declare namespace Gdk {
    * @returns a newly created #GdkDragContext
    */
   function drag_begin_from_point(
-    window: Window,
-    device: Device,
-    targets: Atom[],
+    window: Window | null,
+    device: Device | null,
+    targets: Atom[] | null,
     x_root: number,
     y_root: number
-  ): DragContext;
+  ): DragContext | null;
   /**
    * Drops on the current destination.
    *
@@ -4883,7 +4900,7 @@ declare namespace Gdk {
    * @param context a #GdkDragContext
    * @param time_ the timestamp for this operation
    */
-  function drag_drop(context: DragContext, time_: number): void;
+  function drag_drop(context: DragContext | null, time_: number): void;
   /**
    * Inform GDK if the drop ended successfully. Passing %FALSE
    * for `success` may trigger a drag cancellation animation.
@@ -4898,7 +4915,7 @@ declare namespace Gdk {
    * @param context a #GdkDragContext
    * @param success whether the drag was ultimatively successful
    */
-  function drag_drop_done(context: DragContext, success: boolean): void;
+  function drag_drop_done(context: DragContext | null, success: boolean): void;
   /**
    * Returns whether the dropped data has been successfully
    * transferred. This function is intended to be used while
@@ -4907,7 +4924,7 @@ declare namespace Gdk {
    * @param context a #GdkDragContext
    * @returns %TRUE if the drop was successful.
    */
-  function drag_drop_succeeded(context: DragContext): boolean;
+  function drag_drop_succeeded(context: DragContext | null): boolean;
   /**
    * Finds the destination window and DND protocol to use at the
    * given pointer position.
@@ -4921,18 +4938,18 @@ declare namespace Gdk {
    * @param y_root the y position of the pointer in root coordinates
    */
   function drag_find_window_for_screen(
-    context: DragContext,
-    drag_window: Window,
-    screen: Screen,
+    context: DragContext | null,
+    drag_window: Window | null,
+    screen: Screen | null,
     x_root: number,
     y_root: number
-  ): [/* dest_window */ Window, /* protocol */ DragProtocol];
+  ): [/* dest_window */ Window | null, /* protocol */ DragProtocol | null];
   /**
    * Returns the selection atom for the current source window.
    * @param context a #GdkDragContext.
    * @returns the selection atom, or %GDK_NONE
    */
-  function drag_get_selection(context: DragContext): Atom;
+  function drag_get_selection(context: DragContext | null): Atom;
   /**
    * Updates the drag context when the pointer moves or the
    * set of actions changes.
@@ -4951,8 +4968,8 @@ declare namespace Gdk {
    * @param time_ the timestamp for this operation
    */
   function drag_motion(
-    context: DragContext,
-    dest_window: Window,
+    context: DragContext | null,
+    dest_window: Window | null,
     protocol: DragProtocol,
     x_root: number,
     y_root: number,
@@ -4970,7 +4987,7 @@ declare namespace Gdk {
    * @param time_ the timestamp for this operation
    */
   function drag_status(
-    context: DragContext,
+    context: DragContext | null,
     action: DragAction,
     time_: number
   ): void;
@@ -4983,7 +5000,7 @@ declare namespace Gdk {
    * @param time_ the timestamp for this operation
    */
   function drop_finish(
-    context: DragContext,
+    context: DragContext | null,
     success: boolean,
     time_: number
   ): void;
@@ -4997,7 +5014,7 @@ declare namespace Gdk {
    * @param time_ the timestamp for this operation
    */
   function drop_reply(
-    context: DragContext,
+    context: DragContext | null,
     accepted: boolean,
     time_: number
   ): void;
@@ -5100,7 +5117,7 @@ declare namespace Gdk {
    *
    * @param event a valid #GdkEvent
    */
-  function event_request_motions(event: EventMotion): void;
+  function event_request_motions(event: EventMotion | null): void;
   /**
    * If both events contain X/Y information, this function will return %TRUE
    * and return in `angle` the relative angle from `event1` to `event2`. The rotation
@@ -5111,9 +5128,9 @@ declare namespace Gdk {
    * @returns %TRUE if the angle could be calculated.
    */
   function events_get_angle(
-    event1: Event,
-    event2: Event
-  ): [/* returnType */ boolean, /* angle */ number];
+    event1: Event | null,
+    event2: Event | null
+  ): [/* returnType */ boolean, /* angle */ number | null];
   /**
    * If both events contain X/Y information, the center of both coordinates
    * will be returned in `x` and `y`.
@@ -5122,9 +5139,9 @@ declare namespace Gdk {
    * @returns %TRUE if the center could be calculated.
    */
   function events_get_center(
-    event1: Event,
-    event2: Event
-  ): [/* returnType */ boolean, /* x */ number, /* y */ number];
+    event1: Event | null,
+    event2: Event | null
+  ): [/* returnType */ boolean, /* x */ number | null, /* y */ number | null];
   /**
    * If both events have X/Y information, the distance between both coordinates
    * (as in a straight line going from `event1` to `event2`) will be returned.
@@ -5133,9 +5150,9 @@ declare namespace Gdk {
    * @returns %TRUE if the distance could be calculated.
    */
   function events_get_distance(
-    event1: Event,
-    event2: Event
-  ): [/* returnType */ boolean, /* distance */ number];
+    event1: Event | null,
+    event2: Event | null
+  ): [/* returnType */ boolean, /* distance */ number | null];
   /**
    * Checks if any events are ready to be processed for any display.
    * @returns %TRUE if any events are pending.
@@ -5152,14 +5169,14 @@ declare namespace Gdk {
    * for the default display and screen.
    * @returns the default root window
    */
-  function get_default_root_window(): Window;
+  function get_default_root_window(): Window | null;
   /**
    * Gets the name of the display, which usually comes from the
    * `DISPLAY` environment variable or the
    * `--display` command line option.
    * @returns the name of the display.
    */
-  function get_display(): string;
+  function get_display(): string | null;
   /**
    * Gets the display name specified in the command line arguments passed
    * to gdk_init() or gdk_parse_args(), if any.
@@ -5173,7 +5190,7 @@ declare namespace Gdk {
    * with g_get_prgname()) with the first character converted to uppercase.
    * @returns the program class.
    */
-  function get_program_class(): string;
+  function get_program_class(): string | null;
   /**
    * Gets whether event debugging output is enabled.
    * @returns %TRUE if event debugging output is enabled.
@@ -5222,7 +5239,7 @@ declare namespace Gdk {
    * @returns %GDK_GRAB_SUCCESS if the grab was successful.
    */
   function keyboard_grab(
-    window: Window,
+    window: Window | null,
     owner_events: boolean,
     time_: number
   ): GrabStatus;
@@ -5239,7 +5256,7 @@ declare namespace Gdk {
    */
   function keyval_convert_case(
     symbol: number
-  ): [/* lower */ number, /* upper */ number];
+  ): [/* lower */ number | null, /* upper */ number | null];
   /**
    * Converts a key name to a key value.
    *
@@ -5249,7 +5266,7 @@ declare namespace Gdk {
    * @param keyval_name a key name
    * @returns the corresponding key value, or %GDK_KEY_VoidSymbol     if the key name is not a valid key
    */
-  function keyval_from_name(keyval_name: string): number;
+  function keyval_from_name(keyval_name: string | null): number;
   /**
    * Returns %TRUE if the given key value is in lower case.
    * @param keyval a key value.
@@ -5301,7 +5318,7 @@ declare namespace Gdk {
    * Call g_list_free() on the return value when you’re finished with it.
    * @returns      a list of visuals; the list must be freed, but not its contents
    */
-  function list_visuals(): Visual[];
+  function list_visuals(): Visual[] | null;
   /**
    * Indicates to the GUI environment that the application has finished
    * loading. If the applications opens windows, this function is
@@ -5323,13 +5340,13 @@ declare namespace Gdk {
    * disable that feature.
    * @param startup_id a startup-notification identifier, for which     notification process should be completed
    */
-  function notify_startup_complete_with_id(startup_id: string): void;
+  function notify_startup_complete_with_id(startup_id: string | null): void;
   /**
    * Gets the window that `window` is embedded in.
    * @param window a #GdkWindow
    * @returns the embedding #GdkWindow, or     %NULL if @window is not an mbedded offscreen window
    */
-  function offscreen_window_get_embedder(window: Window): Window | null;
+  function offscreen_window_get_embedder(window: Window | null): Window | null;
   /**
    * Gets the offscreen surface that an offscreen window renders into.
    * If you need to keep this around over window resizes, you need to
@@ -5337,7 +5354,9 @@ declare namespace Gdk {
    * @param window a #GdkWindow
    * @returns The offscreen surface, or   %NULL if not offscreen
    */
-  function offscreen_window_get_surface(window: Window): cairo.Surface | null;
+  function offscreen_window_get_surface(
+    window: Window | null
+  ): cairo.Surface | null;
   /**
    * Sets `window` to be embedded in `embedder`.
    *
@@ -5349,8 +5368,8 @@ declare namespace Gdk {
    * @param embedder the #GdkWindow that `window` gets embedded in
    */
   function offscreen_window_set_embedder(
-    window: Window,
-    embedder: Window
+    window: Window | null,
+    embedder: Window | null
   ): void;
   /**
    * Creates a #PangoContext for the default GDK screen.
@@ -5368,7 +5387,7 @@ declare namespace Gdk {
    * changes to the screen’s font rendering settings.
    * @returns a new #PangoContext for the default display
    */
-  function pango_context_get(): Pango.Context;
+  function pango_context_get(): Pango.Context | null;
   /**
    * Creates a #PangoContext for `display`.
    *
@@ -5386,7 +5405,9 @@ declare namespace Gdk {
    * @param display the #GdkDisplay for which the context is to be created
    * @returns a new #PangoContext for @display
    */
-  function pango_context_get_for_display(display: Display): Pango.Context;
+  function pango_context_get_for_display(
+    display: Display | null
+  ): Pango.Context | null;
   /**
    * Creates a #PangoContext for `screen`.
    *
@@ -5404,7 +5425,9 @@ declare namespace Gdk {
    * @param screen the #GdkScreen for which the context is to be created.
    * @returns a new #PangoContext for @screen
    */
-  function pango_context_get_for_screen(screen: Screen): Pango.Context;
+  function pango_context_get_for_screen(
+    screen: Screen | null
+  ): Pango.Context | null;
   /**
    * Parse command line arguments, and store for future
    * use by calls to gdk_display_open().
@@ -5433,7 +5456,7 @@ declare namespace Gdk {
    * @returns A newly-created pixbuf with a     reference count of 1, or %NULL on error
    */
   function pixbuf_get_from_surface(
-    surface: cairo.Surface,
+    surface: cairo.Surface | null,
     src_x: number,
     src_y: number,
     width: number,
@@ -5474,7 +5497,7 @@ declare namespace Gdk {
    * @returns A newly-created pixbuf with a     reference count of 1, or %NULL on error
    */
   function pixbuf_get_from_window(
-    window: Window,
+    window: Window | null,
     src_x: number,
     src_y: number,
     width: number,
@@ -5511,7 +5534,7 @@ declare namespace Gdk {
    * @returns %GDK_GRAB_SUCCESS if the grab was successful.
    */
   function pointer_grab(
-    window: Window,
+    window: Window | null,
     owner_events: boolean,
     event_mask: EventMask,
     confine_to: Window | null,
@@ -5543,7 +5566,7 @@ declare namespace Gdk {
    * @param window a #GdkWindow
    * @param property the property to delete
    */
-  function property_delete(window: Window, property: Atom): void;
+  function property_delete(window: Window | null, property: Atom): void;
   /**
    * Retrieves a portion of the contents of a property. If the
    * property does not exist, then the function returns %FALSE,
@@ -5566,7 +5589,7 @@ declare namespace Gdk {
    * @returns %TRUE if data was successfully received and stored   in @data, otherwise %FALSE.
    */
   function property_get(
-    window: Window,
+    window: Window | null,
     property: Atom,
     type: Atom,
     offset: number,
@@ -5574,8 +5597,8 @@ declare namespace Gdk {
     pdelete: number
   ): [
     /* returnType */ boolean,
-    /* actual_property_type */ Atom,
-    /* actual_format */ number,
+    /* actual_property_type */ Atom | null,
+    /* actual_format */ number | null,
     /* data */ Uint8Array
   ];
   /**
@@ -5605,7 +5628,7 @@ declare namespace Gdk {
    * @param time_ the timestamp to use when retrieving the   selection. The selection owner may refuse the   request if it did not own the selection at   the time indicated by the timestamp.
    */
   function selection_convert(
-    requestor: Window,
+    requestor: Window | null,
     selection: Atom,
     target: Atom,
     time_: number
@@ -5627,7 +5650,7 @@ declare namespace Gdk {
    * @returns if there is a selection owner    for this window, and it is a window known to the current    process, the #GdkWindow that owns the selection, otherwise    %NULL.
    */
   function selection_owner_get_for_display(
-    display: Display,
+    display: Display | null,
     selection: Atom
   ): Window | null;
   /**
@@ -5654,7 +5677,7 @@ declare namespace Gdk {
    * @returns %TRUE if the selection owner was successfully changed to owner,    otherwise %FALSE.
    */
   function selection_owner_set_for_display(
-    display: Display,
+    display: Display | null,
     owner: Window | null,
     selection: Atom,
     time_: number,
@@ -5669,7 +5692,7 @@ declare namespace Gdk {
    * @param time_ timestamp.
    */
   function selection_send_notify(
-    requestor: Window,
+    requestor: Window | null,
     selection: Atom,
     target: Atom,
     property: Atom,
@@ -5685,8 +5708,8 @@ declare namespace Gdk {
    * @param time_ timestamp
    */
   function selection_send_notify_for_display(
-    display: Display,
-    requestor: Window,
+    display: Display | null,
+    requestor: Window | null,
     selection: Atom,
     target: Atom,
     property: Atom,
@@ -5724,7 +5747,7 @@ declare namespace Gdk {
    * in order to take effect.
    * @param backends a comma-separated list of backends
    */
-  function set_allowed_backends(backends: string): void;
+  function set_allowed_backends(backends: string | null): void;
   /**
    * Set the double click time for the default display. See
    * gdk_display_set_double_click_time().
@@ -5743,7 +5766,7 @@ declare namespace Gdk {
    * line option.
    * @param program_class a string.
    */
-  function set_program_class(program_class: string): void;
+  function set_program_class(program_class: string | null): void;
   /**
    * Sets whether a trace of received events is output.
    * Note that GTK+ must be compiled with debugging (that is,
@@ -5759,9 +5782,9 @@ declare namespace Gdk {
    * @param value location to store the value of the setting.
    * @returns %TRUE if the setting existed and a value was stored   in @value, %FALSE otherwise.
    */
-  function setting_get(name: string, value: any): boolean;
+  function setting_get(name: string | null, value: any | null): boolean;
   function synthesize_window_state(
-    window: Window,
+    window: Window | null,
     unset_flags: WindowState,
     set_flags: WindowState
   ): void;
@@ -5773,7 +5796,7 @@ declare namespace Gdk {
    * pipelines, to benchmark windowing system rendering operations.
    * @param window a mapped #GdkWindow
    */
-  function test_render_sync(window: Window): void;
+  function test_render_sync(window: Window | null): void;
   /**
    * This function is intended to be used in GTK+ test programs.
    * It will warp the mouse pointer to the given (`x,``y)` coordinates
@@ -5796,7 +5819,7 @@ declare namespace Gdk {
    * @returns whether all actions necessary for a button event simulation     were carried out successfully
    */
   function test_simulate_button(
-    window: Window,
+    window: Window | null,
     x: number,
     y: number,
     button: number,
@@ -5829,7 +5852,7 @@ declare namespace Gdk {
    * @returns whether all actions necessary for a key event simulation     were carried out successfully
    */
   function test_simulate_key(
-    window: Window,
+    window: Window | null,
     x: number,
     y: number,
     keyval: number,
@@ -5846,7 +5869,7 @@ declare namespace Gdk {
    * @returns the number of strings in the resulting list
    */
   function text_property_to_utf8_list_for_display(
-    display: Display,
+    display: Display | null,
     encoding: Atom,
     format: number,
     text: Uint8Array
@@ -6006,7 +6029,7 @@ declare namespace Gdk {
    * @param str a UTF-8 string
    * @returns the newly-allocated string, or %NULL if the          conversion failed. (It should not fail for any properly          formed UTF-8 string unless system limits like memory or          file descriptors are exceeded.)
    */
-  function utf8_to_string_target(str: string): string | null;
+  function utf8_to_string_target(str: string | null): string | null;
   /**
    * Specifies the type of function passed to gdk_event_handler_set() to
    * handle all GDK events.
@@ -6014,7 +6037,7 @@ declare namespace Gdk {
    * @param event the #GdkEvent to process.
    */
   interface EventFunc {
-    (event: Event): void;
+    (event: Event | null): void;
   }
   /**
    * Specifies the type of function used to filter native events before they are
@@ -6031,7 +6054,7 @@ declare namespace Gdk {
    * @returns a #GdkFilterReturn value.
    */
   interface FilterFunc {
-    (xevent: XEvent, event: Event): FilterReturn;
+    (xevent: XEvent | null, event: Event | null): FilterReturn;
   }
   /**
    * Type of the callback used to set up `window` so it can be
@@ -6043,7 +6066,7 @@ declare namespace Gdk {
    * @param window the #GdkWindow being grabbed
    */
   interface SeatGrabPrepareFunc {
-    (seat: Seat, window: Window): void;
+    (seat: Seat | null, window: Window | null): void;
   }
   /**
    * A function of this type is passed to gdk_window_invalidate_maybe_recurse().
@@ -6054,7 +6077,7 @@ declare namespace Gdk {
    * @returns %TRUE to invalidate @window recursively
    */
   interface WindowChildFunc {
-    (window: Window): boolean;
+    (window: Window | null): boolean;
   }
   /**
    * Whenever some area of the window is invalidated (directly in the
@@ -6068,9 +6091,9 @@ declare namespace Gdk {
    * @param region a #cairo_region_t
    */
   interface WindowInvalidateHandlerFunc {
-    (window: Window, region: cairo.Region): void;
+    (window: Window | null, region: cairo.Region | null): void;
   }
-  namespace DevicePad {
+  module DevicePad {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -6285,7 +6308,7 @@ declare namespace Gdk {
     _init(config?: DevicePad.ConstructorProperties): void;
   }
 
-  namespace AppLaunchContext {
+  module AppLaunchContext {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -6320,7 +6343,7 @@ declare namespace Gdk {
      * using this context. See also gdk_app_launch_context_set_screen().
      * @param display a #GdkDisplay
      */
-    set_display(display: Display): void;
+    set_display(display: Display | null): void;
     /**
      * Sets the icon for applications that are launched with this
      * context.
@@ -6356,7 +6379,7 @@ declare namespace Gdk {
      * display are used.
      * @param screen a #GdkScreen
      */
-    set_screen(screen: Screen): void;
+    set_screen(screen: Screen | null): void;
     /**
      * Sets the timestamp of `context`. The timestamp should ideally
      * be taken from the event that triggered the launch.
@@ -6445,7 +6468,7 @@ declare namespace Gdk {
     _init(config?: AppLaunchContext.ConstructorProperties): void;
   }
 
-  namespace Cursor {
+  module Cursor {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -6474,7 +6497,7 @@ declare namespace Gdk {
      * Returns the display on which the #GdkCursor is defined.
      * @returns the #GdkDisplay associated to @cursor
      */
-    get_display(): Display;
+    get_display(): Display | null;
     /**
      * Returns a #GdkPixbuf with the image used to display the cursor.
      *
@@ -6494,14 +6517,14 @@ declare namespace Gdk {
      */
     get_surface(): [
       /* returnType */ cairo.Surface | null,
-      /* x_hot */ number,
-      /* y_hot */ number
+      /* x_hot */ number | null,
+      /* y_hot */ number | null
     ];
     /**
      * Adds a reference to `cursor`.
      * @returns Same @cursor that was passed in
      */
-    ref(): Cursor;
+    ref(): Cursor | null;
 
     // Overloads of ref
 
@@ -6587,7 +6610,10 @@ declare namespace Gdk {
      * @param cursor_type cursor to create
      * @returns a new #GdkCursor, or %NULL on failure
      */
-    static new_for_display(display: Display, cursor_type: CursorType): Cursor;
+    static new_for_display(
+      display: Display | null,
+      cursor_type: CursorType
+    ): Cursor;
     /**
      * Creates a new cursor by looking up `name` in the current cursor
      * theme.
@@ -6634,7 +6660,7 @@ declare namespace Gdk {
      * @param name the name of the cursor
      * @returns a new #GdkCursor, or %NULL if there is no   cursor with the given name
      */
-    static new_from_name(display: Display, name: string): Cursor;
+    static new_from_name(display: Display | null, name: string | null): Cursor;
     /**
      * Creates a new cursor from a pixbuf.
      *
@@ -6662,8 +6688,8 @@ declare namespace Gdk {
      * @returns a new #GdkCursor.
      */
     static new_from_pixbuf(
-      display: Display,
-      pixbuf: GdkPixbuf.Pixbuf,
+      display: Display | null,
+      pixbuf: GdkPixbuf.Pixbuf | null,
       x: number,
       y: number
     ): Cursor;
@@ -6689,15 +6715,15 @@ declare namespace Gdk {
      * @returns a new #GdkCursor.
      */
     static new_from_surface(
-      display: Display,
-      surface: cairo.Surface,
+      display: Display | null,
+      surface: cairo.Surface | null,
       x: number,
       y: number
     ): Cursor;
     _init(config?: Cursor.ConstructorProperties): void;
   }
 
-  namespace Device {
+  module Device {
     // Signal callback interfaces
 
     /**
@@ -6804,7 +6830,7 @@ declare namespace Gdk {
     /**
      * The device name.
      */
-    readonly name: string;
+    readonly name: string | null;
     /**
      * The maximal number of concurrent touches on a touch device.
      * Will be 0 if the device is not a touch device or if the number
@@ -6814,7 +6840,7 @@ declare namespace Gdk {
     /**
      * Product ID of this device, see gdk_device_get_product_id().
      */
-    readonly product_id: string;
+    readonly product_id: string | null;
     /**
      * #GdkSeat of this device.
      */
@@ -6827,7 +6853,7 @@ declare namespace Gdk {
     /**
      * Vendor ID of this device, see gdk_device_get_vendor_id().
      */
-    readonly vendor_id: string;
+    readonly vendor_id: string | null;
 
     // Owm methods of Gdk-3.0.Gdk.Device
 
@@ -6863,7 +6889,7 @@ declare namespace Gdk {
      * Returns the #GdkDisplay to which `device` pertains.
      * @returns a #GdkDisplay. This memory is owned          by GTK+, and must not be freed or unreffed.
      */
-    get_display(): Display;
+    get_display(): Display | null;
     /**
      * Determines whether the pointer follows device motion.
      * This is not meaningful for keyboard devices, which don't have a pointer.
@@ -6880,8 +6906,8 @@ declare namespace Gdk {
       index_: number
     ): [
       /* returnType */ boolean,
-      /* keyval */ number,
-      /* modifiers */ ModifierType
+      /* keyval */ number | null,
+      /* modifiers */ ModifierType | null
     ];
     /**
      * Gets information about which window the given pointer device is in, based on events
@@ -6911,14 +6937,18 @@ declare namespace Gdk {
      * Determines the name of the device.
      * @returns a name
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the current location of `device`. As a slave device
      * coordinates are those of its master pointer, This function
      * may not be called on devices of type %GDK_DEVICE_TYPE_SLAVE,
      * unless there is an ongoing grab on them, see gdk_device_grab().
      */
-    get_position(): [/* screen */ Screen, /* x */ number, /* y */ number];
+    get_position(): [
+      /* screen */ Screen | null,
+      /* x */ number | null,
+      /* y */ number | null
+    ];
     /**
      * Gets the current location of `device` in double precision. As a slave device's
      * coordinates are those of its master pointer, this function
@@ -6926,9 +6956,9 @@ declare namespace Gdk {
      * unless there is an ongoing grab on them. See gdk_device_grab().
      */
     get_position_double(): [
-      /* screen */ Screen,
-      /* x */ number,
-      /* y */ number
+      /* screen */ Screen | null,
+      /* x */ number | null,
+      /* y */ number | null
     ];
     /**
      * Returns the product ID of this device, or %NULL if this information couldn't
@@ -6941,7 +6971,7 @@ declare namespace Gdk {
      * Returns the #GdkSeat the device belongs to.
      * @returns A #GdkSeat. This memory is owned by GTK+ and          must not be freed.
      */
-    get_seat(): Seat;
+    get_seat(): Seat | null;
     /**
      * Determines the type of the device.
      * @returns a #GdkInputSource
@@ -6990,8 +7020,8 @@ declare namespace Gdk {
      */
     get_window_at_position(): [
       /* returnType */ Window | null,
-      /* win_x */ number,
-      /* win_y */ number
+      /* win_x */ number | null,
+      /* win_y */ number | null
     ];
     /**
      * Obtains the window underneath `device,` returning the location of the device in `win_x` and `win_y` in
@@ -7005,8 +7035,8 @@ declare namespace Gdk {
      */
     get_window_at_position_double(): [
       /* returnType */ Window | null,
-      /* win_x */ number,
-      /* win_y */ number
+      /* win_x */ number | null,
+      /* win_y */ number | null
     ];
     /**
      * Grabs the device so that all events coming from this device are passed to
@@ -7039,7 +7069,7 @@ declare namespace Gdk {
      * @returns %GDK_GRAB_SUCCESS if the grab was successful.
      */
     grab(
-      window: Window,
+      window: Window | null,
       grab_ownership: GrabOwnership,
       owner_events: boolean,
       event_mask: EventMask,
@@ -7051,7 +7081,7 @@ declare namespace Gdk {
      * the axes that `device` currently has.
      * @returns      A #GList of #GdkAtoms, free with g_list_free().
      */
-    list_axes(): Atom[];
+    list_axes(): Atom[] | null;
     /**
      * If the device if of type %GDK_DEVICE_TYPE_MASTER, it will return
      * the list of slave devices attached to it, otherwise it will return
@@ -7106,7 +7136,7 @@ declare namespace Gdk {
      * @param x the X coordinate of the destination.
      * @param y the Y coordinate of the destination.
      */
-    warp(screen: Screen, x: number, y: number): void;
+    warp(screen: Screen | null, x: number, y: number): void;
 
     // Own signals of Gdk-3.0.Gdk.Device
 
@@ -7296,16 +7326,16 @@ declare namespace Gdk {
      * @returns %TRUE if this application currently has the  keyboard grabbed.
      */
     static grab_info_libgtk_only(
-      display: Display,
-      device: Device
+      display: Display | null,
+      device: Device | null
     ): [
       /* returnType */ boolean,
-      /* grab_window */ Window,
-      /* owner_events */ boolean
+      /* grab_window */ Window | null,
+      /* owner_events */ boolean | null
     ];
   }
 
-  namespace DeviceManager {
+  module DeviceManager {
     // Signal callback interfaces
 
     /**
@@ -7355,7 +7385,7 @@ declare namespace Gdk {
      * and there aren’t other means to get a meaningful #GdkDevice to operate on.
      * @returns The client pointer. This memory is          owned by GDK and must not be freed or unreferenced.
      */
-    get_client_pointer(): Device;
+    get_client_pointer(): Device | null;
     /**
      * Gets the #GdkDisplay associated to `device_manager`.
      * @returns the #GdkDisplay to which          @device_manager is associated to, or %NULL. This memory is          owned by GDK and must not be freed or unreferenced.
@@ -7367,7 +7397,7 @@ declare namespace Gdk {
      * @param type device type to get.
      * @returns a list of          #GdkDevices. The returned list must be          freed with g_list_free (). The list elements are owned by          GTK+ and must not be freed or unreffed.
      */
-    list_devices(type: DeviceType): Device[];
+    list_devices(type: DeviceType): Device[] | null;
 
     // Own signals of Gdk-3.0.Gdk.DeviceManager
 
@@ -7546,7 +7576,7 @@ declare namespace Gdk {
     _init(config?: DeviceManager.ConstructorProperties): void;
   }
 
-  namespace DeviceTool {
+  module DeviceTool {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -7651,7 +7681,7 @@ declare namespace Gdk {
     _init(config?: DeviceTool.ConstructorProperties): void;
   }
 
-  namespace Display {
+  module Display {
     // Signal callback interfaces
 
     /**
@@ -7698,7 +7728,7 @@ declare namespace Gdk {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Display {
@@ -7718,7 +7748,7 @@ declare namespace Gdk {
      * @param device a #GdkDevice
      * @returns %TRUE if there is a grab in effect for @device.
      */
-    device_is_grabbed(device: Device): boolean;
+    device_is_grabbed(device: Device | null): boolean;
     /**
      * Flushes any requests queued for the windowing system; this happens automatically
      * when the main loop blocks waiting for new events, but if your application
@@ -7736,7 +7766,7 @@ declare namespace Gdk {
      * applications on the given display.
      * @returns a new #GdkAppLaunchContext for @display.     Free with g_object_unref() when done
      */
-    get_app_launch_context(): AppLaunchContext;
+    get_app_launch_context(): AppLaunchContext | null;
     /**
      * Returns the default size to use for cursors on `display`.
      * @returns the default cursor size.
@@ -7748,17 +7778,17 @@ declare namespace Gdk {
      * See gdk_window_set_group().
      * @returns The default group leader window for @display
      */
-    get_default_group(): Window;
+    get_default_group(): Window | null;
     /**
      * Get the default #GdkScreen for `display`.
      * @returns the default #GdkScreen object for @display
      */
-    get_default_screen(): Screen;
+    get_default_screen(): Screen | null;
     /**
      * Returns the default #GdkSeat for this display.
      * @returns the default seat.
      */
-    get_default_seat(): Seat;
+    get_default_seat(): Seat | null;
     /**
      * Returns the #GdkDeviceManager associated to `display`.
      * @returns A #GdkDeviceManager, or          %NULL. This memory is owned by GDK and must not be freed          or unreferenced.
@@ -7773,7 +7803,10 @@ declare namespace Gdk {
     /**
      * Gets the maximal size to use for cursors on `display`.
      */
-    get_maximal_cursor_size(): [/* width */ number, /* height */ number];
+    get_maximal_cursor_size(): [
+      /* width */ number | null,
+      /* height */ number | null
+    ];
     /**
      * Gets a monitor associated with this display.
      * @param monitor_num number of the monitor
@@ -7787,7 +7820,7 @@ declare namespace Gdk {
      * @param y the y coordinate of the point
      * @returns the monitor containing the point
      */
-    get_monitor_at_point(x: number, y: number): Monitor;
+    get_monitor_at_point(x: number, y: number): Monitor | null;
     /**
      * Gets the monitor in which the largest area of `window`
      * resides, or a monitor close to `window` if it is outside
@@ -7795,7 +7828,7 @@ declare namespace Gdk {
      * @param window a #GdkWindow
      * @returns the monitor with the largest overlap with @window
      */
-    get_monitor_at_window(window: Window): Monitor;
+    get_monitor_at_window(window: Window | null): Monitor | null;
     /**
      * Gets the number of monitors that belong to `display`.
      *
@@ -7813,16 +7846,16 @@ declare namespace Gdk {
      * Gets the name of the display.
      * @returns a string representing the display name. This string is owned by GDK and should not be modified or freed.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the current location of the pointer and the current modifier
      * mask for a given display.
      */
     get_pointer(): [
-      /* screen */ Screen,
-      /* x */ number,
-      /* y */ number,
-      /* mask */ ModifierType
+      /* screen */ Screen | null,
+      /* x */ number | null,
+      /* y */ number | null,
+      /* mask */ ModifierType | null
     ];
     /**
      * Gets the primary monitor for the display.
@@ -7839,7 +7872,7 @@ declare namespace Gdk {
      * @param screen_num the screen number
      * @returns the #GdkScreen object
      */
-    get_screen(screen_num: number): Screen;
+    get_screen(screen_num: number): Screen | null;
     /**
      * Obtains the window underneath the mouse pointer, returning the location
      * of the pointer in that window in `win_x,` `win_y` for `screen`. Returns %NULL
@@ -7849,8 +7882,8 @@ declare namespace Gdk {
      */
     get_window_at_pointer(): [
       /* returnType */ Window | null,
-      /* win_x */ number,
-      /* win_y */ number
+      /* win_x */ number | null,
+      /* win_y */ number | null
     ];
     /**
      * Returns whether the display has events that are waiting
@@ -7873,12 +7906,12 @@ declare namespace Gdk {
      * The list is statically allocated and should not be freed.
      * @returns      a list of #GdkDevice
      */
-    list_devices(): Device[];
+    list_devices(): Device[] | null;
     /**
      * Returns the list of seats known to `display`.
      * @returns the          list of seats known to the #GdkDisplay
      */
-    list_seats(): Seat[];
+    list_seats(): Seat[] | null;
     /**
      * Indicates to the GUI environment that the application has
      * finished loading, using a given identifier.
@@ -7889,7 +7922,7 @@ declare namespace Gdk {
      * disable that feature.
      * @param startup_id a startup-notification identifier, for which     notification process should be completed
      */
-    notify_startup_complete(startup_id: string): void;
+    notify_startup_complete(startup_id: string | null): void;
     /**
      * Gets a copy of the first #GdkEvent in the `display’`s event queue, without
      * removing the event from the queue.  (Note that this function will
@@ -7913,7 +7946,7 @@ declare namespace Gdk {
      * queue for `display`.
      * @param event a #GdkEvent.
      */
-    put_event(event: Event): void;
+    put_event(event: Event | null): void;
     /**
      * Request #GdkEventOwnerChange events for ownership changes
      * of the selection named by the given atom.
@@ -7948,7 +7981,7 @@ declare namespace Gdk {
      * @param targets an array of targets                    that should be saved, or %NULL                    if all available targets should be saved.
      */
     store_clipboard(
-      clipboard_window: Window,
+      clipboard_window: Window | null,
       time_: number,
       targets: Atom[] | null
     ): void;
@@ -8029,7 +8062,7 @@ declare namespace Gdk {
      * @param x the x coordinate of the destination
      * @param y the y coordinate of the destination
      */
-    warp_pointer(screen: Screen, x: number, y: number): void;
+    warp_pointer(screen: Screen | null, x: number, y: number): void;
 
     // Own signals of Gdk-3.0.Gdk.Display
 
@@ -8133,7 +8166,7 @@ declare namespace Gdk {
      * @param display_name the name of the display to open
      * @returns a #GdkDisplay, or %NULL if the     display could not be opened
      */
-    static open(display_name: string): Display | null;
+    static open(display_name: string | null): Display | null;
     /**
      * Opens the default display specified by command line arguments or
      * environment variables, sets it as the default display, and returns
@@ -8145,7 +8178,7 @@ declare namespace Gdk {
     static open_default_libgtk_only(): Display | null;
   }
 
-  namespace DisplayManager {
+  module DisplayManager {
     // Signal callback interfaces
 
     /**
@@ -8181,18 +8214,18 @@ declare namespace Gdk {
      * List all currently open displays.
      * @returns a newly     allocated #GSList of #GdkDisplay objects. Free with g_slist_free()     when you are done with it.
      */
-    list_displays(): Display[];
+    list_displays(): Display[] | null;
     /**
      * Opens a display.
      * @param name the name of the display to open
      * @returns a #GdkDisplay, or %NULL if the     display could not be opened
      */
-    open_display(name: string): Display | null;
+    open_display(name: string | null): Display | null;
     /**
      * Sets `display` as the default display.
      * @param display a #GdkDisplay
      */
-    set_default_display(display: Display): void;
+    set_default_display(display: Display | null): void;
 
     // Own signals of Gdk-3.0.Gdk.DisplayManager
 
@@ -8287,10 +8320,10 @@ declare namespace Gdk {
      * to limit what backends can be used.
      * @returns The global #GdkDisplayManager singleton;     gdk_parse_args(), gdk_init(), or gdk_init_check() must have     been called first.
      */
-    static get(): DisplayManager;
+    static get(): DisplayManager | null;
   }
 
-  namespace DragContext {
+  module DragContext {
     // Signal callback interfaces
 
     /**
@@ -8323,7 +8356,7 @@ declare namespace Gdk {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DragContext {
@@ -8339,12 +8372,12 @@ declare namespace Gdk {
      * Returns the destination window for the DND operation.
      * @returns a #GdkWindow
      */
-    get_dest_window(): Window;
+    get_dest_window(): Window | null;
     /**
      * Returns the #GdkDevice associated to the drag context.
      * @returns The #GdkDevice associated to @context.
      */
-    get_device(): Device;
+    get_device(): Device | null;
     /**
      * Returns the window on which the drag icon should be rendered
      * during the drag operation. Note that the window may not be
@@ -8369,7 +8402,7 @@ declare namespace Gdk {
      * Returns the #GdkWindow where the DND operation started.
      * @returns a #GdkWindow
      */
-    get_source_window(): Window;
+    get_source_window(): Window | null;
     /**
      * Determines the suggested drag action of the context.
      * @returns a #GdkDragAction value
@@ -8379,7 +8412,7 @@ declare namespace Gdk {
      * Retrieves the list of targets of the context.
      * @returns a #GList of targets
      */
-    list_targets(): Atom[];
+    list_targets(): Atom[] | null;
     /**
      * Requests the drag and drop operation to be managed by `context`.
      * When a drag and drop operation becomes managed, the #GdkDragContext
@@ -8401,13 +8434,13 @@ declare namespace Gdk {
      * @param actions the actions supported by the drag source
      * @returns #TRUE if the drag and drop operation is managed.
      */
-    manage_dnd(ipc_window: Window, actions: DragAction): boolean;
+    manage_dnd(ipc_window: Window | null, actions: DragAction): boolean;
     /**
      * Associates a #GdkDevice to `context,` so all Drag and Drop events
      * for `context` are emitted as if they came from this device.
      * @param device a #GdkDevice
      */
-    set_device(device: Device): void;
+    set_device(device: Device | null): void;
     /**
      * Sets the position of the drag window that will be kept
      * under the cursor hotspot. Initially, the hotspot is at the
@@ -8476,7 +8509,7 @@ declare namespace Gdk {
     _init(config?: DragContext.ConstructorProperties): void;
   }
 
-  namespace DrawingContext {
+  module DrawingContext {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -8517,7 +8550,7 @@ declare namespace Gdk {
      * gdk_window_begin_draw_frame() and gdk_window_end_draw_frame().
      * @returns a Cairo context to be used to draw   the contents of the #GdkWindow. The context is owned by the   #GdkDrawingContext and should not be destroyed
      */
-    get_cairo_context(): cairo.Context;
+    get_cairo_context(): cairo.Context | null;
     /**
      * Retrieves a copy of the clip region used when creating the `context`.
      * @returns a Cairo region
@@ -8527,7 +8560,7 @@ declare namespace Gdk {
      * Retrieves the window that created the drawing `context`.
      * @returns a #GdkWindow
      */
-    get_window(): Window;
+    get_window(): Window | null;
     /**
      * Checks whether the given #GdkDrawingContext is valid.
      * @returns %TRUE if the context is valid
@@ -8585,7 +8618,7 @@ declare namespace Gdk {
     _init(config?: DrawingContext.ConstructorProperties): void;
   }
 
-  namespace FrameClock {
+  module FrameClock {
     // Signal callback interfaces
 
     /**
@@ -8639,7 +8672,7 @@ declare namespace Gdk {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface FrameClock {
@@ -8701,8 +8734,8 @@ declare namespace Gdk {
     get_refresh_info(
       base_time: number
     ): [
-      /* refresh_interval_return */ number,
-      /* presentation_time_return */ number
+      /* refresh_interval_return */ number | null,
+      /* presentation_time_return */ number | null
     ];
     /**
      * Retrieves a #GdkFrameTimings object holding timing information
@@ -8846,7 +8879,7 @@ declare namespace Gdk {
     _init(config?: FrameClock.ConstructorProperties): void;
   }
 
-  namespace GLContext {
+  module GLContext {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -8924,7 +8957,7 @@ declare namespace Gdk {
      *
      * The `context` must be realized prior to calling this function.
      */
-    get_version(): [/* major */ number, /* minor */ number];
+    get_version(): [/* major */ number | null, /* minor */ number | null];
     /**
      * Retrieves the #GdkWindow used by the `context`.
      * @returns a #GdkWindow or %NULL
@@ -9127,7 +9160,7 @@ declare namespace Gdk {
     static get_current(): GLContext | null;
   }
 
-  namespace Keymap {
+  module Keymap {
     // Signal callback interfaces
 
     /**
@@ -9153,7 +9186,7 @@ declare namespace Gdk {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Keymap {
@@ -9172,7 +9205,9 @@ declare namespace Gdk {
      * accelerators.
      * @param state pointer to the modifier mask to change
      */
-    add_virtual_modifiers(state: ModifierType): /* state */ ModifierType;
+    add_virtual_modifiers(
+      state: ModifierType | null
+    ): /* state */ ModifierType | null;
     /**
      * Returns whether the Caps Lock modifer is locked.
      * @returns %TRUE if Caps Lock is on
@@ -9262,7 +9297,7 @@ declare namespace Gdk {
      * @param key a #GdkKeymapKey with keycode, group, and level initialized
      * @returns a keyval, or 0 if none was mapped to the given @key
      */
-    lookup_key(key: KeymapKey): number;
+    lookup_key(key: KeymapKey | null): number;
     /**
      * Maps the virtual modifiers (i.e. Super, Hyper and Meta) which
      * are set in `state` to their non-virtual counterparts (i.e. Mod2,
@@ -9274,8 +9309,8 @@ declare namespace Gdk {
      * @returns %FALSE if two virtual modifiers were mapped to the     same non-virtual modifier. Note that %FALSE is also returned     if a virtual modifier is mapped to a non-virtual modifier that     was already set in @state.
      */
     map_virtual_modifiers(
-      state: ModifierType
-    ): [/* returnType */ boolean, /* state */ ModifierType];
+      state: ModifierType | null
+    ): [/* returnType */ boolean, /* state */ ModifierType | null];
     /**
      * Translates the contents of a #GdkEventKey into a keyval, effective
      * group, and level. Modifiers that affected the translation and
@@ -9339,10 +9374,10 @@ declare namespace Gdk {
       group: number
     ): [
       /* returnType */ boolean,
-      /* keyval */ number,
-      /* effective_group */ number,
-      /* level */ number,
-      /* consumed_modifiers */ ModifierType
+      /* keyval */ number | null,
+      /* effective_group */ number | null,
+      /* level */ number | null,
+      /* consumed_modifiers */ ModifierType | null
     ];
 
     // Own signals of Gdk-3.0.Gdk.Keymap
@@ -9406,16 +9441,16 @@ declare namespace Gdk {
      * Returns the #GdkKeymap attached to the default display.
      * @returns the #GdkKeymap attached to the default display.
      */
-    static get_default(): Keymap;
+    static get_default(): Keymap | null;
     /**
      * Returns the #GdkKeymap attached to `display`.
      * @param display the #GdkDisplay.
      * @returns the #GdkKeymap attached to @display.
      */
-    static get_for_display(display: Display): Keymap;
+    static get_for_display(display: Display | null): Keymap | null;
   }
 
-  namespace Monitor {
+  module Monitor {
     // Signal callback interfaces
 
     /**
@@ -9441,8 +9476,8 @@ declare namespace Gdk {
     readonly display: Display;
     readonly geometry: Rectangle;
     readonly height_mm: number;
-    readonly manufacturer: string;
-    readonly model: string;
+    readonly manufacturer: string | null;
+    readonly model: string | null;
     readonly refresh_rate: number;
     readonly scale_factor: number;
     readonly subpixel_layout: SubpixelLayout;
@@ -9455,13 +9490,13 @@ declare namespace Gdk {
      * Gets the display that this monitor belongs to.
      * @returns the display
      */
-    get_display(): Display;
+    get_display(): Display | null;
     /**
      * Retrieves the size and position of an individual monitor within the
      * display coordinate space. The returned geometry is in  ”application pixels”,
      * not in ”device pixels” (see gdk_monitor_get_scale_factor()).
      */
-    get_geometry(): /* geometry */ Rectangle;
+    get_geometry(): /* geometry */ Rectangle | null;
     /**
      * Gets the height in millimeters of the monitor.
      * @returns the physical height of the monitor
@@ -9526,7 +9561,7 @@ declare namespace Gdk {
      * function will return the monitor geometry if a workarea is not
      * available, or does not apply.
      */
-    get_workarea(): /* workarea */ Rectangle;
+    get_workarea(): /* workarea */ Rectangle | null;
     /**
      * Gets whether this monitor should be considered primary
      * (see gdk_display_get_primary_monitor()).
@@ -9667,7 +9702,7 @@ declare namespace Gdk {
     _init(config?: Monitor.ConstructorProperties): void;
   }
 
-  namespace Screen {
+  module Screen {
     // Signal callback interfaces
 
     /**
@@ -9697,7 +9732,7 @@ declare namespace Gdk {
       extends GObject.Object.ConstructorProperties {
       // Own constructor properties of Gdk-3.0.Gdk.Screen
 
-      font_options?: object | null;
+      font_options?: any | null;
       resolution?: number | null;
     }
   }
@@ -9705,7 +9740,7 @@ declare namespace Gdk {
   interface Screen {
     // Own properties of Gdk-3.0.Gdk.Screen
 
-    font_options: object;
+    font_options: any;
     resolution: number;
 
     // Owm methods of Gdk-3.0.Gdk.Screen
@@ -9732,7 +9767,7 @@ declare namespace Gdk {
      * Gets the display to which the `screen` belongs.
      * @returns the display to which @screen belongs
      */
-    get_display(): Display;
+    get_display(): Display | null;
     /**
      * Gets any options previously set with gdk_screen_set_font_options().
      * @returns the current font options, or %NULL if no  default font options have been set.
@@ -9767,7 +9802,7 @@ declare namespace Gdk {
      * @param window a #GdkWindow
      * @returns the monitor number in which most of @window is located,     or if @window does not intersect any monitors, a monitor,     close to @window.
      */
-    get_monitor_at_window(window: Window): number;
+    get_monitor_at_window(window: Window | null): number;
     /**
      * Retrieves the #GdkRectangle representing the size and position of
      * the individual monitor within the entire screen area. The returned
@@ -9781,7 +9816,7 @@ declare namespace Gdk {
      * gdk_screen_get_width() and gdk_screen_get_height().
      * @param monitor_num the monitor number
      */
-    get_monitor_geometry(monitor_num: number): /* dest */ Rectangle;
+    get_monitor_geometry(monitor_num: number): /* dest */ Rectangle | null;
     /**
      * Gets the height in millimeters of the specified monitor.
      * @param monitor_num number of the monitor, between 0 and gdk_screen_get_n_monitors (screen)
@@ -9832,7 +9867,7 @@ declare namespace Gdk {
      * `screen,` use gdk_screen_get_n_monitors().
      * @param monitor_num the monitor number
      */
-    get_monitor_workarea(monitor_num: number): /* dest */ Rectangle;
+    get_monitor_workarea(monitor_num: number): /* dest */ Rectangle | null;
     /**
      * Returns the number of monitors which `screen` consists of.
      * @returns number of monitors which @screen consists of
@@ -9883,7 +9918,7 @@ declare namespace Gdk {
      * Gets the root window of `screen`.
      * @returns the root window
      */
-    get_root_window(): Window;
+    get_root_window(): Window | null;
     /**
      * Retrieves a desktop-wide setting such as double-click time
      * for the #GdkScreen `screen`.
@@ -9894,14 +9929,14 @@ declare namespace Gdk {
      * @param value location to store the value of the setting
      * @returns %TRUE if the setting existed and a value was stored   in @value, %FALSE otherwise.
      */
-    get_setting(name: string, value: any): boolean;
+    get_setting(name: string | null, value: any | null): boolean;
     /**
      * Get the system’s default visual for `screen`.
      * This is the visual for the root window of the display.
      * The return value should not be freed.
      * @returns the system visual
      */
-    get_system_visual(): Visual;
+    get_system_visual(): Visual | null;
     /**
      * Obtains a list of all toplevel windows known to GDK on the screen `screen`.
      * A toplevel window is a child of the root window (see
@@ -9911,7 +9946,7 @@ declare namespace Gdk {
      * its elements need not be freed.
      * @returns      list of toplevel windows, free with g_list_free()
      */
-    get_toplevel_windows(): Window[];
+    get_toplevel_windows(): Window[] | null;
     /**
      * Gets the width of `screen` in pixels. The returned size is in
      * ”application pixels”, not in ”device pixels” (see
@@ -9966,13 +10001,13 @@ declare namespace Gdk {
      * Call g_list_free() on the return value when you’re finished with it.
      * @returns      a list of visuals; the list must be freed, but not its contents
      */
-    list_visuals(): Visual[];
+    list_visuals(): Visual[] | null;
     /**
      * Determines the name to pass to gdk_display_open() to get
      * a #GdkDisplay with this screen as the default screen.
      * @returns a newly allocated string, free with g_free()
      */
-    make_display_name(): string;
+    make_display_name(): string | null;
     /**
      * Sets the default font options for the screen. These
      * options will be set on any #PangoContext’s newly created
@@ -10105,7 +10140,7 @@ declare namespace Gdk {
     static width_mm(): number;
   }
 
-  namespace Seat {
+  module Seat {
     // Signal callback interfaces
 
     /**
@@ -10172,7 +10207,7 @@ declare namespace Gdk {
      * Returns the #GdkDisplay this seat belongs to.
      * @returns a #GdkDisplay. This object is owned by GTK+          and must not be freed.
      */
-    get_display(): Display;
+    get_display(): Display | null;
     /**
      * Returns the master device that routes keyboard events.
      * @returns a master #GdkDevice with keyboard          capabilities. This object is owned by GTK+ and must not be freed.
@@ -10188,7 +10223,7 @@ declare namespace Gdk {
      * @param capabilities capabilities to get devices for
      * @returns A list of #GdkDevices.          The list must be freed with g_list_free(), the elements are owned          by GDK and must not be freed.
      */
-    get_slaves(capabilities: SeatCapabilities): Device[];
+    get_slaves(capabilities: SeatCapabilities): Device[] | null;
     /**
      * Grabs the seat so that all events corresponding to the given `capabilities`
      * are passed to this application until the seat is ungrabbed with gdk_seat_ungrab(),
@@ -10223,7 +10258,7 @@ declare namespace Gdk {
      * @returns %GDK_GRAB_SUCCESS if the grab was successful.
      */
     grab(
-      window: Window,
+      window: Window | null,
       capabilities: SeatCapabilities,
       owner_events: boolean,
       cursor: Cursor | null,
@@ -10308,10 +10343,10 @@ declare namespace Gdk {
     _init(config?: Seat.ConstructorProperties): void;
   }
 
-  namespace Visual {
+  module Visual {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Visual {
@@ -10332,9 +10367,9 @@ declare namespace Gdk {
      * to how much precision the pixel value contains for a particular primary.
      */
     get_blue_pixel_details(): [
-      /* mask */ number,
-      /* shift */ number,
-      /* precision */ number
+      /* mask */ number | null,
+      /* shift */ number | null,
+      /* precision */ number | null
     ];
     /**
      * Returns the byte order of this visual.
@@ -10365,9 +10400,9 @@ declare namespace Gdk {
      * to how much precision the pixel value contains for a particular primary.
      */
     get_green_pixel_details(): [
-      /* mask */ number,
-      /* shift */ number,
-      /* precision */ number
+      /* mask */ number | null,
+      /* shift */ number | null,
+      /* precision */ number | null
     ];
     /**
      * Obtains values that are needed to calculate red pixel values in TrueColor
@@ -10377,15 +10412,15 @@ declare namespace Gdk {
      * to how much precision the pixel value contains for a particular primary.
      */
     get_red_pixel_details(): [
-      /* mask */ number,
-      /* shift */ number,
-      /* precision */ number
+      /* mask */ number | null,
+      /* shift */ number | null,
+      /* precision */ number | null
     ];
     /**
      * Gets the screen to which this visual belongs
      * @returns the screen to which this visual belongs.
      */
-    get_screen(): Screen;
+    get_screen(): Screen | null;
     /**
      * Returns the type of visual this is (PseudoColor, TrueColor, etc).
      * @returns A #GdkVisualType stating the type of @visual.
@@ -10420,7 +10455,7 @@ declare namespace Gdk {
      * GDK screen. The return value should not be freed.
      * @returns best visual
      */
-    static get_best(): Visual;
+    static get_best(): Visual | null;
     /**
      * Get the best available depth for the default GDK screen.  “Best”
      * means “largest,” i.e. 32 preferred over 24 preferred over 8 bits
@@ -10452,7 +10487,7 @@ declare namespace Gdk {
      * @param depth a bit depth
      * @returns best visual for the given depth
      */
-    static get_best_with_depth(depth: number): Visual;
+    static get_best_with_depth(depth: number): Visual | null;
     /**
      * Get the best visual of the given `visual_type` for the default GDK screen.
      * Visuals with higher color depths are considered better. The return value
@@ -10461,17 +10496,17 @@ declare namespace Gdk {
      * @param visual_type a visual type
      * @returns best visual of the given type
      */
-    static get_best_with_type(visual_type: VisualType): Visual;
+    static get_best_with_type(visual_type: VisualType): Visual | null;
     /**
      * Get the system’s default visual for the default GDK screen.
      * This is the visual for the root window of the display.
      * The return value should not be freed.
      * @returns system visual
      */
-    static get_system(): Visual;
+    static get_system(): Visual | null;
   }
 
-  namespace Window {
+  module Window {
     // Signal callback interfaces
 
     /**
@@ -10494,8 +10529,8 @@ declare namespace Gdk {
     interface MovedToRectSignalCallback {
       (
         $obj: Window,
-        flipped_rect: object | null,
-        final_rect: object | null,
+        flipped_rect: any | null,
+        final_rect: any | null,
         flipped_x: boolean,
         flipped_y: boolean
       ): void;
@@ -10577,7 +10612,7 @@ declare namespace Gdk {
      * @param region a Cairo region
      * @returns a #GdkDrawingContext context that should be   used to draw the contents of the window; the returned context is owned   by GDK.
      */
-    begin_draw_frame(region: cairo.Region): DrawingContext;
+    begin_draw_frame(region: cairo.Region | null): DrawingContext | null;
     /**
      * Begins a window move operation (for a toplevel window).
      *
@@ -10608,7 +10643,7 @@ declare namespace Gdk {
      * @param timestamp timestamp of mouse click that began the drag
      */
     begin_move_drag_for_device(
-      device: Device,
+      device: Device | null,
       button: number,
       root_x: number,
       root_y: number,
@@ -10620,7 +10655,7 @@ declare namespace Gdk {
      * gdk_window_begin_paint_region() for details.
      * @param rectangle rectangle you intend to draw to
      */
-    begin_paint_rect(rectangle: Rectangle): void;
+    begin_paint_rect(rectangle: Rectangle | null): void;
     /**
      * Indicates that you are beginning the process of redrawing `region`.
      * A backing store (offscreen buffer) large enough to contain `region`
@@ -10662,7 +10697,7 @@ declare namespace Gdk {
      * gdk_window_begin_paint_region().
      * @param region region you intend to draw to
      */
-    begin_paint_region(region: cairo.Region): void;
+    begin_paint_region(region: cairo.Region | null): void;
     /**
      * Begins a window resize operation (for a toplevel window).
      *
@@ -10698,7 +10733,7 @@ declare namespace Gdk {
      */
     begin_resize_drag_for_device(
       edge: WindowEdge,
-      device: Device,
+      device: Device | null,
       button: number,
       root_x: number,
       root_y: number,
@@ -10731,7 +10766,7 @@ declare namespace Gdk {
     coords_from_parent(
       parent_x: number,
       parent_y: number
-    ): [/* x */ number, /* y */ number];
+    ): [/* x */ number | null, /* y */ number | null];
     /**
      * Transforms window coordinates from a child window to its parent
      * window, where the parent window is the normal parent as returned by
@@ -10755,7 +10790,7 @@ declare namespace Gdk {
     coords_to_parent(
       x: number,
       y: number
-    ): [/* parent_x */ number, /* parent_y */ number];
+    ): [/* parent_x */ number | null, /* parent_y */ number | null];
     /**
      * Creates a new #GdkGLContext matching the
      * framebuffer format to the visual of the #GdkWindow. The context
@@ -10767,7 +10802,7 @@ declare namespace Gdk {
      * call gdk_gl_context_make_current() or gdk_gl_context_realize().
      * @returns the newly created #GdkGLContext, or %NULL on error
      */
-    create_gl_context(): GLContext;
+    create_gl_context(): GLContext | null;
     /**
      * Create a new image surface that is efficient to draw on the
      * given `window`.
@@ -10810,7 +10845,7 @@ declare namespace Gdk {
       width: number,
       height: number,
       scale: number
-    ): cairo.Surface;
+    ): cairo.Surface | null;
     /**
      * Create a new surface that is as compatible as possible with the
      * given `window`. For example the new surface will have the same
@@ -10830,7 +10865,7 @@ declare namespace Gdk {
       content: cairo.Content,
       width: number,
       height: number
-    ): cairo.Surface;
+    ): cairo.Surface | null;
     /**
      * Attempt to deiconify (unminimize) `window`. On X11 the window manager may
      * choose to ignore the request to deiconify. When using GTK+,
@@ -10863,7 +10898,7 @@ declare namespace Gdk {
      * gdk_window_begin_frame() first.
      * @param context the #GdkDrawingContext created by gdk_window_begin_draw_frame()
      */
-    end_draw_frame(context: DrawingContext): void;
+    end_draw_frame(context: DrawingContext | null): void;
     /**
      * Indicates that the backing store created by the most recent call
      * to gdk_window_begin_paint_region() should be copied onscreen and
@@ -10967,7 +11002,7 @@ declare namespace Gdk {
      * list need not be.
      * @returns      list of child windows inside @window
      */
-    get_children(): Window[];
+    get_children(): Window[] | null;
     /**
      * Gets the list of children of `window` known to GDK with a
      * particular `user_data` set on it.
@@ -10980,7 +11015,7 @@ declare namespace Gdk {
      * @param user_data user data to look for
      * @returns      list of child windows inside @window
      */
-    get_children_with_user_data(user_data: object | null): Window[];
+    get_children_with_user_data(user_data: any | null): Window[] | null;
     /**
      * Computes the region of a window that potentially can be written
      * to by drawing primitives. This region may not take into account
@@ -10989,7 +11024,7 @@ declare namespace Gdk {
      * primitives.
      * @returns a #cairo_region_t. This must be freed with cairo_region_destroy()          when you are done.
      */
-    get_clip_region(): cairo.Region;
+    get_clip_region(): cairo.Region | null;
     /**
      * Determines whether `window` is composited.
      *
@@ -11012,7 +11047,7 @@ declare namespace Gdk {
      */
     get_decorations(): [
       /* returnType */ boolean,
-      /* decorations */ WMDecoration
+      /* decorations */ WMDecoration | null
     ];
     /**
      * Retrieves a #GdkCursor pointer for the `device` currently set on the
@@ -11022,13 +11057,13 @@ declare namespace Gdk {
      * @param device a master, pointer #GdkDevice.
      * @returns a #GdkCursor, or %NULL. The   returned object is owned by the #GdkWindow and should not be   unreferenced directly. Use gdk_window_set_cursor() to unset the   cursor of the window
      */
-    get_device_cursor(device: Device): Cursor | null;
+    get_device_cursor(device: Device | null): Cursor | null;
     /**
      * Returns the event mask for `window` corresponding to an specific device.
      * @param device a #GdkDevice.
      * @returns device event mask for @window
      */
-    get_device_events(device: Device): EventMask;
+    get_device_events(device: Device | null): EventMask;
     /**
      * Obtains the current device position and modifier state.
      * The position is given in coordinates relative to the upper left
@@ -11039,12 +11074,12 @@ declare namespace Gdk {
      * @returns The window underneath @device (as with gdk_device_get_window_at_position()), or %NULL if the window is not known to GDK.
      */
     get_device_position(
-      device: Device
+      device: Device | null
     ): [
       /* returnType */ Window | null,
-      /* x */ number,
-      /* y */ number,
-      /* mask */ ModifierType
+      /* x */ number | null,
+      /* y */ number | null,
+      /* mask */ ModifierType | null
     ];
     /**
      * Obtains the current device position in doubles and modifier state.
@@ -11054,23 +11089,26 @@ declare namespace Gdk {
      * @returns The window underneath @device (as with gdk_device_get_window_at_position()), or %NULL if the window is not known to GDK.
      */
     get_device_position_double(
-      device: Device
+      device: Device | null
     ): [
       /* returnType */ Window | null,
-      /* x */ number,
-      /* y */ number,
-      /* mask */ ModifierType
+      /* x */ number | null,
+      /* y */ number | null,
+      /* mask */ ModifierType | null
     ];
     /**
      * Gets the #GdkDisplay associated with a #GdkWindow.
      * @returns the #GdkDisplay associated with @window
      */
-    get_display(): Display;
+    get_display(): Display | null;
     /**
      * Finds out the DND protocol supported by a window.
      * @returns the supported DND protocol.
      */
-    get_drag_protocol(): [/* returnType */ DragProtocol, /* target */ Window];
+    get_drag_protocol(): [
+      /* returnType */ DragProtocol,
+      /* target */ Window | null
+    ];
     /**
      * Obtains the parent of `window,` as known to GDK. Works like
      * gdk_window_get_parent() for normal windows, but returns the
@@ -11079,7 +11117,7 @@ declare namespace Gdk {
      * See also: gdk_offscreen_window_get_embedder()
      * @returns effective parent of @window
      */
-    get_effective_parent(): Window;
+    get_effective_parent(): Window | null;
     /**
      * Gets the toplevel window that’s an ancestor of `window`.
      *
@@ -11089,7 +11127,7 @@ declare namespace Gdk {
      * See also: gdk_offscreen_window_get_embedder()
      * @returns the effective toplevel window containing @window
      */
-    get_effective_toplevel(): Window;
+    get_effective_toplevel(): Window | null;
     /**
      * Get the current event compression setting for this window.
      * @returns %TRUE if motion events will be compressed
@@ -11113,14 +11151,14 @@ declare namespace Gdk {
      * window.
      * @returns the frame clock
      */
-    get_frame_clock(): FrameClock;
+    get_frame_clock(): FrameClock | null;
     /**
      * Obtains the bounding box of the window, including window manager
      * titlebar/borders if any. The frame position is given in root window
      * coordinates. To get the position of the window itself (rather than
      * the frame) in root window coordinates, use gdk_window_get_origin().
      */
-    get_frame_extents(): /* rect */ Rectangle;
+    get_frame_extents(): /* rect */ Rectangle | null;
     /**
      * Obtains the #GdkFullscreenMode of the `window`.
      * @returns The #GdkFullscreenMode applied to the window when fullscreen.
@@ -11149,16 +11187,16 @@ declare namespace Gdk {
      * the 16-bit coordinates of X11.
      */
     get_geometry(): [
-      /* x */ number,
-      /* y */ number,
-      /* width */ number,
-      /* height */ number
+      /* x */ number | null,
+      /* y */ number | null,
+      /* width */ number | null,
+      /* height */ number | null
     ];
     /**
      * Returns the group leader window for `window`. See gdk_window_set_group().
      * @returns the group leader window for @window
      */
-    get_group(): Window;
+    get_group(): Window | null;
     /**
      * Returns the height of the given `window`.
      *
@@ -11181,7 +11219,11 @@ declare namespace Gdk {
      * relative to its parent window.)
      * @returns not meaningful, ignore
      */
-    get_origin(): [/* returnType */ number, /* x */ number, /* y */ number];
+    get_origin(): [
+      /* returnType */ number,
+      /* x */ number | null,
+      /* y */ number | null
+    ];
     /**
      * Obtains the parent of `window,` as known to GDK. Does not query the
      * X server; thus this returns the parent as passed to gdk_window_new(),
@@ -11196,7 +11238,7 @@ declare namespace Gdk {
      * there are offscreen windows in the hierarchy.
      * @returns parent of @window
      */
-    get_parent(): Window;
+    get_parent(): Window | null;
     /**
      * Returns whether input to the window is passed through to the window
      * below.
@@ -11212,9 +11254,9 @@ declare namespace Gdk {
      */
     get_pointer(): [
       /* returnType */ Window | null,
-      /* x */ number,
-      /* y */ number,
-      /* mask */ ModifierType
+      /* x */ number | null,
+      /* y */ number | null,
+      /* mask */ ModifierType | null
     ];
     /**
      * Obtains the position of the window as reported in the
@@ -11225,7 +11267,7 @@ declare namespace Gdk {
      *
      * The position coordinates are relative to the window’s parent window.
      */
-    get_position(): [/* x */ number, /* y */ number];
+    get_position(): [/* x */ number | null, /* y */ number | null];
     /**
      * Obtains the position of a window position in root
      * window coordinates. This is similar to
@@ -11237,12 +11279,12 @@ declare namespace Gdk {
     get_root_coords(
       x: number,
       y: number
-    ): [/* root_x */ number, /* root_y */ number];
+    ): [/* root_x */ number | null, /* root_y */ number | null];
     /**
      * Obtains the top-left corner of the window manager frame in root
      * window coordinates.
      */
-    get_root_origin(): [/* x */ number, /* y */ number];
+    get_root_origin(): [/* x */ number | null, /* y */ number | null];
     /**
      * Returns the internal scale factor that maps from window coordiantes
      * to the actual device pixels. On traditional systems this is 1, but
@@ -11263,7 +11305,7 @@ declare namespace Gdk {
      * Gets the #GdkScreen associated with a #GdkWindow.
      * @returns the #GdkScreen associated with @window
      */
-    get_screen(): Screen;
+    get_screen(): Screen | null;
     /**
      * Returns the event mask for `window` corresponding to the device class specified
      * by `source`.
@@ -11296,7 +11338,7 @@ declare namespace Gdk {
      * if there are offscreen windows in the hierarchy.
      * @returns the toplevel window containing @window
      */
-    get_toplevel(): Window;
+    get_toplevel(): Window | null;
     /**
      * This function returns the type hint set for a window.
      * @returns The type hint set for @window
@@ -11311,12 +11353,12 @@ declare namespace Gdk {
      * calling cairo_region_destroy() on the returned region if it’s non-%NULL.
      * @returns the update area for @window
      */
-    get_update_area(): cairo.Region;
+    get_update_area(): cairo.Region | null;
     /**
      * Retrieves the user data for `window,` which is normally the widget
      * that `window` belongs to. See gdk_window_set_user_data().
      */
-    get_user_data(): /* data */ object | null;
+    get_user_data(): /* data */ any | null;
     /**
      * Computes the region of the `window` that is potentially visible.
      * This does not necessarily take into account if the window is
@@ -11324,12 +11366,12 @@ declare namespace Gdk {
      * is visible.
      * @returns a #cairo_region_t. This must be freed with cairo_region_destroy()          when you are done.
      */
-    get_visible_region(): cairo.Region;
+    get_visible_region(): cairo.Region | null;
     /**
      * Gets the #GdkVisual describing the pixel format of `window`.
      * @returns a #GdkVisual
      */
-    get_visual(): Visual;
+    get_visual(): Visual | null;
     /**
      * Returns the width of the given `window`.
      *
@@ -11387,7 +11429,7 @@ declare namespace Gdk {
      * @param offset_y Y position of `shape_region` in `window` coordinates
      */
     input_shape_combine_region(
-      shape_region: cairo.Region,
+      shape_region: cairo.Region | null,
       offset_x: number,
       offset_y: number
     ): void;
@@ -11412,7 +11454,7 @@ declare namespace Gdk {
      * @param child_func function to use to decide if to     recurse to a child, %NULL means never recurse.
      */
     invalidate_maybe_recurse(
-      region: cairo.Region,
+      region: cairo.Region | null,
       child_func: WindowChildFunc | null
     ): void;
     /**
@@ -11444,7 +11486,10 @@ declare namespace Gdk {
      * @param region a #cairo_region_t
      * @param invalidate_children %TRUE to also invalidate child windows
      */
-    invalidate_region(region: cairo.Region, invalidate_children: boolean): void;
+    invalidate_region(
+      region: cairo.Region | null,
+      invalidate_children: boolean
+    ): void;
     /**
      * Check to see if a window is destroyed..
      * @returns %TRUE if the window is destroyed
@@ -11498,7 +11543,7 @@ declare namespace Gdk {
      * to care about this.
      * @param cr a #cairo_t
      */
-    mark_paint_from_clip(cr: cairo.Context): void;
+    mark_paint_from_clip(cr: cairo.Context | null): void;
     /**
      * Maximizes the window. If the window was already maximized, then
      * this function does nothing.
@@ -11558,7 +11603,7 @@ declare namespace Gdk {
      * @param dx Amount to move in the X direction
      * @param dy Amount to move in the Y direction
      */
-    move_region(region: cairo.Region, dx: number, dy: number): void;
+    move_region(region: cairo.Region | null, dx: number, dy: number): void;
     /**
      * Equivalent to calling gdk_window_move() and gdk_window_resize(),
      * except that both operations are performed at once, avoiding strange
@@ -11594,7 +11639,7 @@ declare namespace Gdk {
      * @param rect_anchor_dy vertical offset to shift `window,` i.e. `rect'`s anchor point
      */
     move_to_rect(
-      rect: Rectangle,
+      rect: Rectangle | null,
       rect_anchor: Gravity,
       window_anchor: Gravity,
       anchor_hints: AnchorHints,
@@ -11606,7 +11651,7 @@ declare namespace Gdk {
      * children, so the list does not need to be freed.
      * @returns      a reference to the list of child windows in @window
      */
-    peek_children(): Window[];
+    peek_children(): Window[] | null;
     /**
      * Sends one or more expose events to `window`. The areas in each
      * expose event will cover the entire update area for the window (see
@@ -11640,7 +11685,7 @@ declare namespace Gdk {
      * @param x X location inside the new parent
      * @param y Y location inside the new parent
      */
-    reparent(new_parent: Window, x: number, y: number): void;
+    reparent(new_parent: Window | null, x: number, y: number): void;
     /**
      * Resizes `window;` for toplevel windows, asks the window manager to resize
      * the window. The window manager may not allow the resize. When using GTK+,
@@ -11703,7 +11748,7 @@ declare namespace Gdk {
      * custom widget.
      * @param color a #GdkColor
      */
-    set_background(color: Color): void;
+    set_background(color: Color | null): void;
     /**
      * Sets the background of `window`.
      *
@@ -11722,7 +11767,7 @@ declare namespace Gdk {
      * See also gdk_window_set_background_pattern().
      * @param rgba a #GdkRGBA color
      */
-    set_background_rgba(rgba: RGBA): void;
+    set_background_rgba(rgba: RGBA | null): void;
     /**
      * Sets the input shape mask of `window` to the union of input shape masks
      * for all children of `window,` ignoring the input shape mask of `window`
@@ -11804,7 +11849,7 @@ declare namespace Gdk {
      * @param device a master, pointer #GdkDevice
      * @param cursor a #GdkCursor
      */
-    set_device_cursor(device: Device, cursor: Cursor): void;
+    set_device_cursor(device: Device | null, cursor: Cursor | null): void;
     /**
      * Sets the event mask for a given device (Normally a floating device, not
      * attached to any visible pointer) to `window`. For example, an event mask
@@ -11816,7 +11861,7 @@ declare namespace Gdk {
      * @param device #GdkDevice to enable events for.
      * @param event_mask event mask for `window`
      */
-    set_device_events(device: Device, event_mask: EventMask): void;
+    set_device_events(device: Device | null, event_mask: EventMask): void;
     /**
      * Determines whether or not extra unprocessed motion events in
      * the event queue can be discarded. If %TRUE only the most recent
@@ -11915,7 +11960,7 @@ declare namespace Gdk {
      * @param geometry geometry hints
      * @param geom_mask bitmask indicating fields of `geometry` to pay attention to
      */
-    set_geometry_hints(geometry: Geometry, geom_mask: WindowHints): void;
+    set_geometry_hints(geometry: Geometry | null, geom_mask: WindowHints): void;
     /**
      * Sets the group leader window for `window`. By default,
      * GDK sets the group leader for all toplevel windows
@@ -11942,7 +11987,7 @@ declare namespace Gdk {
      * Note that some platforms don't support window icons.
      * @param pixbufs      A list of pixbufs, of different sizes.
      */
-    set_icon_list(pixbufs: GdkPixbuf.Pixbuf[]): void;
+    set_icon_list(pixbufs: GdkPixbuf.Pixbuf[] | null): void;
     /**
      * Windows may have a name used while minimized, distinct from the
      * name they display in their titlebar. Most of the time this is a bad
@@ -12085,7 +12130,7 @@ declare namespace Gdk {
      * non-interchangeable kind of window.
      * @param role a string indicating its role
      */
-    set_role(role: string): void;
+    set_role(role: string | null): void;
     /**
      * Newer GTK+ windows using client-side decorations use extra geometry
      * around their frames for effects like shadows and invisible borders.
@@ -12143,7 +12188,7 @@ declare namespace Gdk {
      * instead of this low-level function.
      * @param startup_id a string with startup-notification identifier
      */
-    set_startup_id(startup_id: string): void;
+    set_startup_id(startup_id: string | null): void;
     /**
      * Used to set the bit gravity of the given window to static, and flag
      * it so all children get static subwindow gravity. This is used if you
@@ -12169,7 +12214,7 @@ declare namespace Gdk {
      * user-readable strings in GDK/GTK+). `title` may not be %NULL.
      * @param title title of `window`
      */
-    set_title(title: string): void;
+    set_title(title: string | null): void;
     /**
      * Indicates to the window manager that `window` is a transient dialog
      * associated with the application window `parent`. This allows the
@@ -12180,7 +12225,7 @@ declare namespace Gdk {
      * #GtkDialog.
      * @param parent another toplevel #GdkWindow
      */
-    set_transient_for(parent: Window): void;
+    set_transient_for(parent: Window | null): void;
     /**
      * The application can use this call to provide a hint to the window
      * manager about the functionality of a window. The window manager
@@ -12263,7 +12308,7 @@ declare namespace Gdk {
      * @param event a #GdkEvent to show the menu for
      * @returns %TRUE if the window menu was shown and %FALSE otherwise.
      */
-    show_window_menu(event: Event): boolean;
+    show_window_menu(event: Event | null): boolean;
     /**
      * “Pins” a window such that it’s on all workspaces and does not scroll
      * with viewports, for window managers that have scrollable viewports.
@@ -12329,18 +12374,18 @@ declare namespace Gdk {
 
     // Own virtual methods of Gdk-3.0.Gdk.Window
 
-    vfunc_create_surface(width: number, height: number): cairo.Surface;
+    vfunc_create_surface(width: number, height: number): cairo.Surface | null;
     vfunc_from_embedder(
       embedder_x: number,
       embedder_y: number,
-      offscreen_x: number,
-      offscreen_y: number
+      offscreen_x: number | null,
+      offscreen_y: number | null
     ): void;
     vfunc_to_embedder(
       offscreen_x: number,
       offscreen_y: number,
-      embedder_x: number,
-      embedder_y: number
+      embedder_x: number | null,
+      embedder_y: number | null
     ): void;
 
     // Own signals of Gdk-3.0.Gdk.Window
@@ -12383,8 +12428,8 @@ declare namespace Gdk {
     ): number;
     emit(
       sigName: "moved-to-rect",
-      flipped_rect: object | null,
-      final_rect: object | null,
+      flipped_rect: any | null,
+      final_rect: any | null,
       flipped_x: boolean,
       flipped_y: boolean,
       ...args: any[]
@@ -12457,7 +12502,7 @@ declare namespace Gdk {
      */
     constructor(
       parent: Window | null,
-      attributes: WindowAttr,
+      attributes: WindowAttr | null,
       attributes_mask: WindowAttributesType
     );
     /**
@@ -12473,7 +12518,7 @@ declare namespace Gdk {
      */
     static new(
       parent: Window | null,
-      attributes: WindowAttr,
+      attributes: WindowAttr | null,
       attributes_mask: WindowAttributesType
     ): Window;
     _init(config?: Window.ConstructorProperties): void;
@@ -12489,9 +12534,9 @@ declare namespace Gdk {
      * @returns window under the mouse pointer
      */
     static at_pointer(): [
-      /* returnType */ Window,
-      /* win_x */ number,
-      /* win_y */ number
+      /* returnType */ Window | null,
+      /* win_x */ number | null,
+      /* win_y */ number | null
     ];
     /**
      * Constrains a desired width and height according to a
@@ -12502,11 +12547,11 @@ declare namespace Gdk {
      * @param height desired height of the window
      */
     static constrain_size(
-      geometry: Geometry,
+      geometry: Geometry | null,
       flags: WindowHints,
       width: number,
       height: number
-    ): [/* new_width */ number, /* new_height */ number];
+    ): [/* new_width */ number | null, /* new_height */ number | null];
     /**
      * Calls gdk_window_process_updates() for all windows (see #GdkWindow)
      * in the application.
@@ -12544,7 +12589,7 @@ declare namespace Gdk {
      * Determines the string corresponding to an atom.
      * @returns a newly-allocated string containing the string   corresponding to @atom. When you are done with the   return value, you should free it using g_free().
      */
-    name(): string;
+    name(): string | null;
   }
 
   /**
@@ -12565,7 +12610,7 @@ declare namespace Gdk {
      * @param only_if_exists if %TRUE, GDK is allowed to not create a new atom, but   just return %GDK_NONE if the requested atom doesn’t already   exists. Currently, the flag is ignored, since checking the   existance of an atom is as expensive as creating it.
      * @returns the atom corresponding to @atom_name.
      */
-    static intern(atom_name: string, only_if_exists: boolean): Atom;
+    static intern(atom_name: string | null, only_if_exists: boolean): Atom;
     /**
      * Finds or creates an atom corresponding to a given string.
      *
@@ -12580,7 +12625,7 @@ declare namespace Gdk {
      * @param atom_name a static string
      * @returns the atom corresponding to @atom_name
      */
-    static intern_static_string(atom_name: string): Atom;
+    static intern_static_string(atom_name: string | null): Atom;
   }
 
   interface Color {
@@ -12618,13 +12663,13 @@ declare namespace Gdk {
      * The result must be freed using gdk_color_free().
      * @returns a copy of @color
      */
-    copy(): Color;
+    copy(): Color | null;
     /**
      * Compares two colors.
      * @param colorb another #GdkColor
      * @returns %TRUE if the two colors compare equal
      */
-    equal(colorb: Color): boolean;
+    equal(colorb: Color | null): boolean;
     /**
      * Frees a #GdkColor created with gdk_color_copy().
      */
@@ -12643,7 +12688,7 @@ declare namespace Gdk {
      * The returned string can be parsed by gdk_color_parse().
      * @returns a newly-allocated text string
      */
-    to_string(): string;
+    to_string(): string | null;
   }
 
   /**
@@ -12672,7 +12717,9 @@ declare namespace Gdk {
      * @param spec the string specifying the color
      * @returns %TRUE if the parsing succeeded
      */
-    static parse(spec: string): [/* returnType */ boolean, /* color */ Color];
+    static parse(
+      spec: string | null
+    ): [/* returnType */ boolean, /* color */ Color | null];
   }
 
   interface DevicePadInterface {}
@@ -12703,7 +12750,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -12736,7 +12783,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -12762,7 +12809,7 @@ declare namespace Gdk {
      *   the mouse.
      * @field
      */
-    axes: number;
+    axes: number | null;
     /**
      * a bit-mask representing the state of
      *   the modifier keys (e.g. Control, Shift and Alt) and the pointer
@@ -12783,7 +12830,7 @@ declare namespace Gdk {
      * gdk_event_get_source_device() to get the slave device.
      * @field
      */
-    device: Device;
+    device: Device | null;
     /**
      * the x coordinate of the pointer relative to the root of the
      *   screen.
@@ -12852,7 +12899,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -12902,7 +12949,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -12912,7 +12959,7 @@ declare namespace Gdk {
      * the window that was entered or left.
      * @field
      */
-    subwindow: Window;
+    subwindow: Window | null;
     /**
      * the time of the event in milliseconds.
      * @field
@@ -12992,7 +13039,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13002,7 +13049,7 @@ declare namespace Gdk {
      * the #GdkDragContext for the current DND operation.
      * @field
      */
-    context: DragContext;
+    context: DragContext | null;
     /**
      * the time of the event in milliseconds.
      * @field
@@ -13044,7 +13091,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13059,7 +13106,7 @@ declare namespace Gdk {
      * the region that needs to be redrawn.
      * @field
      */
-    region: cairo.Region;
+    region: cairo.Region | null;
     /**
      * the number of contiguous %GDK_EXPOSE events following this one.
      *   The only use for this is “exposure compression”, i.e. handling all
@@ -13093,7 +13140,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13130,7 +13177,7 @@ declare namespace Gdk {
      *   that previously owned the grab
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13153,7 +13200,7 @@ declare namespace Gdk {
      *   `grab_window` is %NULL.
      * @field
      */
-    grab_window: Window;
+    grab_window: Window | null;
   }
 
   /**
@@ -13182,7 +13229,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13226,7 +13273,7 @@ declare namespace Gdk {
      *   it from the an empty translation.
      * @field
      */
-    string: string;
+    string: string | null;
     /**
      * the raw code of the key that was pressed or released.
      * @field
@@ -13267,7 +13314,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13293,7 +13340,7 @@ declare namespace Gdk {
      *   the mouse.
      * @field
      */
-    axes: number;
+    axes: number | null;
     /**
      * a bit-mask representing the state of
      *   the modifier keys (e.g. Control, Shift and Alt) and the pointer
@@ -13312,7 +13359,7 @@ declare namespace Gdk {
      * gdk_event_get_source_device() to get the slave device.
      * @field
      */
-    device: Device;
+    device: Device | null;
     /**
      * the x coordinate of the pointer relative to the root of the
      *   screen.
@@ -13349,7 +13396,7 @@ declare namespace Gdk {
      * the window which received the event
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13359,7 +13406,7 @@ declare namespace Gdk {
      * the new owner of the selection, or %NULL if there is none
      * @field
      */
-    owner: Window;
+    owner: Window | null;
     /**
      * the reason for the ownership change as a #GdkOwnerChange value
      * @field
@@ -13407,7 +13454,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13465,7 +13512,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13517,7 +13564,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13565,7 +13612,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13611,7 +13658,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13627,7 +13674,7 @@ declare namespace Gdk {
      * gdk_event_get_source_device() to get the slave device.
      * @field
      */
-    device: Device;
+    device: Device | null;
   }
 
   /**
@@ -13660,7 +13707,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13700,7 +13747,7 @@ declare namespace Gdk {
      * gdk_event_get_source_device() to get the slave device.
      * @field
      */
-    device: Device;
+    device: Device | null;
     /**
      * the x coordinate of the pointer relative to the root of the
      *   screen.
@@ -13756,7 +13803,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13786,7 +13833,7 @@ declare namespace Gdk {
      * the window on which to place `property` or %NULL if none.
      * @field
      */
-    requestor: Window;
+    requestor: Window | null;
   }
 
   /**
@@ -13820,7 +13867,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13836,7 +13883,7 @@ declare namespace Gdk {
      * the name of the setting.
      * @field
      */
-    name: string;
+    name: string | null;
   }
 
   /**
@@ -13862,7 +13909,7 @@ declare namespace Gdk {
      * the window which received the event
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -13888,7 +13935,7 @@ declare namespace Gdk {
      *   the mouse
      * @field
      */
-    axes: number;
+    axes: number | null;
     /**
      * a bit-mask representing the state of
      *   the modifier keys (e.g. Control, Shift and Alt) and the pointer
@@ -13900,7 +13947,7 @@ declare namespace Gdk {
      * the event sequence that the event belongs to
      * @field
      */
-    sequence: EventSequence;
+    sequence: EventSequence | null;
     /**
      * whether the event should be used for emulating
      *   pointer event
@@ -13912,7 +13959,7 @@ declare namespace Gdk {
      * gdk_event_get_source_device() to get the slave device.
      * @field
      */
-    device: Device;
+    device: Device | null;
     /**
      * the x coordinate of the pointer relative to the root of the
      *   screen
@@ -13958,7 +14005,7 @@ declare namespace Gdk {
      * the window which received the event
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly
      * @field
@@ -14054,7 +14101,7 @@ declare namespace Gdk {
      * the window which received the event
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly
      * @field
@@ -14138,7 +14185,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -14174,7 +14221,7 @@ declare namespace Gdk {
      * the window which received the event.
      * @field
      */
-    window: Window;
+    window: Window | null;
     /**
      * %TRUE if the event was sent explicitly.
      * @field
@@ -14278,7 +14325,7 @@ declare namespace Gdk {
      * Increases the reference count of `timings`.
      * @returns @timings
      */
-    ref(): FrameTimings;
+    ref(): FrameTimings | null;
     /**
      * Decreases the reference count of `timings`. If `timings`
      * is no longer referenced, it will be freed.
@@ -14538,7 +14585,7 @@ declare namespace Gdk {
      * The result must be freed through gdk_rgba_free().
      * @returns A newly allocated #GdkRGBA, with the same contents as @rgba
      */
-    copy(): RGBA;
+    copy(): RGBA | null;
     /**
      * Compares two RGBA colors.
      * @param p2 another #GdkRGBA pointer
@@ -14574,7 +14621,7 @@ declare namespace Gdk {
      * @param spec the string specifying the color
      * @returns %TRUE if the parsing succeeded
      */
-    parse(spec: string): boolean;
+    parse(spec: string | null): boolean;
     /**
      * Returns a textual specification of `rgba` in the form
      * `rgb(r,g,b)` or
@@ -14593,7 +14640,7 @@ declare namespace Gdk {
      * different representation.
      * @returns A newly allocated text string
      */
-    to_string(): string;
+    to_string(): string | null;
   }
 
   /**
@@ -14622,7 +14669,7 @@ declare namespace Gdk {
      * @param rect2 a #GdkRectangle
      * @returns %TRUE if the rectangles are equal.
      */
-    equal(rect2: Rectangle): boolean;
+    equal(rect2: Rectangle | null): boolean;
     /**
      * Calculates the intersection of two rectangles. It is allowed for
      * `dest` to be the same as either `src1` or `src2`. If the rectangles
@@ -14634,8 +14681,8 @@ declare namespace Gdk {
      * @returns %TRUE if the rectangles intersect.
      */
     intersect(
-      src2: Rectangle
-    ): [/* returnType */ boolean, /* dest */ Rectangle];
+      src2: Rectangle | null
+    ): [/* returnType */ boolean, /* dest */ Rectangle | null];
     /**
      * Calculates the union of two rectangles.
      * The union of rectangles `src1` and `src2` is the smallest rectangle which
@@ -14646,7 +14693,7 @@ declare namespace Gdk {
      * zero width or height).
      * @param src2 a #GdkRectangle
      */
-    union(src2: Rectangle): /* dest */ Rectangle;
+    union(src2: Rectangle | null): /* dest */ Rectangle | null;
   }
 
   /**
@@ -14692,7 +14739,7 @@ declare namespace Gdk {
      * title of the window (for toplevel windows)
      * @field
      */
-    title: string;
+    title: string | null;
     /**
      * event mask (see gdk_window_set_events())
      * @field
@@ -14728,7 +14775,7 @@ declare namespace Gdk {
      * #GdkVisual for window
      * @field
      */
-    visual: Visual;
+    visual: Visual | null;
     /**
      * type of window
      * @field
@@ -14738,17 +14785,17 @@ declare namespace Gdk {
      * cursor for the window (see gdk_window_set_cursor())
      * @field
      */
-    cursor: Cursor;
+    cursor: Cursor | null;
     /**
      * don’t use (see gtk_window_set_wmclass())
      * @field
      */
-    wmclass_name: string;
+    wmclass_name: string | null;
     /**
      * don’t use (see gtk_window_set_wmclass())
      * @field
      */
-    wmclass_class: string;
+    wmclass_class: string | null;
     /**
      * %TRUE to bypass the window manager
      * @field
@@ -14776,24 +14823,24 @@ declare namespace Gdk {
 
     parent_class: GObject.ObjectClass;
     to_embedder: (
-      window: Window,
+      window: Window | null,
       offscreen_x: number,
       offscreen_y: number,
-      embedder_x: number,
-      embedder_y: number
+      embedder_x: number | null,
+      embedder_y: number | null
     ) => void;
     from_embedder: (
-      window: Window,
+      window: Window | null,
       embedder_x: number,
       embedder_y: number,
-      offscreen_x: number,
-      offscreen_y: number
+      offscreen_x: number | null,
+      offscreen_y: number | null
     ) => void;
     create_surface: (
-      window: Window,
+      window: Window | null,
       width: number,
       height: number
-    ) => cairo.Surface;
+    ) => cairo.Surface | null;
   }
 
   abstract class WindowClass {
@@ -14949,7 +14996,9 @@ declare namespace Gdk {
      * @param event2 second #GdkEvent
      * @returns %TRUE if the angle could be calculated.
      */
-    _get_angle(event2: Event): [/* returnType */ boolean, /* angle */ number];
+    _get_angle(
+      event2: Event | null
+    ): [/* returnType */ boolean, /* angle */ number | null];
     /**
      * If both events contain X/Y information, the center of both coordinates
      * will be returned in `x` and `y`.
@@ -14957,8 +15006,8 @@ declare namespace Gdk {
      * @returns %TRUE if the center could be calculated.
      */
     _get_center(
-      event2: Event
-    ): [/* returnType */ boolean, /* x */ number, /* y */ number];
+      event2: Event | null
+    ): [/* returnType */ boolean, /* x */ number | null, /* y */ number | null];
     /**
      * If both events have X/Y information, the distance between both coordinates
      * (as in a straight line going from `event1` to `event2`) will be returned.
@@ -14966,14 +15015,14 @@ declare namespace Gdk {
      * @returns %TRUE if the distance could be calculated.
      */
     _get_distance(
-      event2: Event
-    ): [/* returnType */ boolean, /* distance */ number];
+      event2: Event | null
+    ): [/* returnType */ boolean, /* distance */ number | null];
     /**
      * Copies a #GdkEvent, copying or incrementing the reference count of the
      * resources associated with it (e.g. #GdkWindow’s and strings).
      * @returns a copy of @event. The returned #GdkEvent should be freed with gdk_event_free().
      */
-    copy(): Event;
+    copy(): Event | null;
     /**
      * Frees a #GdkEvent, freeing or decrementing any resources associated with it.
      * Note that this function should only be called with events returned from
@@ -14987,25 +15036,30 @@ declare namespace Gdk {
      * @param axis_use the axis use to look for
      * @returns %TRUE if the specified axis was found, otherwise %FALSE
      */
-    get_axis(axis_use: AxisUse): [/* returnType */ boolean, /* value */ number];
+    get_axis(
+      axis_use: AxisUse
+    ): [/* returnType */ boolean, /* value */ number | null];
     /**
      * Extract the button number from an event.
      * @returns %TRUE if the event delivered a button number
      */
-    get_button(): [/* returnType */ boolean, /* button */ number];
+    get_button(): [/* returnType */ boolean, /* button */ number | null];
     /**
      * Extracts the click count from an event.
      * @returns %TRUE if the event delivered a click count
      */
-    get_click_count(): [/* returnType */ boolean, /* click_count */ number];
+    get_click_count(): [
+      /* returnType */ boolean,
+      /* click_count */ number | null
+    ];
     /**
      * Extract the event window relative x/y coordinates from an event.
      * @returns %TRUE if the event delivered event window coordinates
      */
     get_coords(): [
       /* returnType */ boolean,
-      /* x_win */ number,
-      /* y_win */ number
+      /* x_win */ number | null,
+      /* y_win */ number | null
     ];
     /**
      * If the event contains a “device” field, this function will return
@@ -15024,14 +15078,14 @@ declare namespace Gdk {
      * persistently across runs, see gdk_device_tool_get_serial()
      * @returns The current device tool, or %NULL
      */
-    get_device_tool(): DeviceTool;
+    get_device_tool(): DeviceTool | null;
     /**
      * If `event` if of type %GDK_TOUCH_BEGIN, %GDK_TOUCH_UPDATE,
      * %GDK_TOUCH_END or %GDK_TOUCH_CANCEL, returns the #GdkEventSequence
      * to which the event belongs. Otherwise, return %NULL.
      * @returns the event sequence that the event belongs to
      */
-    get_event_sequence(): EventSequence;
+    get_event_sequence(): EventSequence | null;
     /**
      * Retrieves the type of the event.
      * @returns a #GdkEventType
@@ -15043,12 +15097,12 @@ declare namespace Gdk {
      * Also see gdk_event_get_scancode().
      * @returns %TRUE if the event delivered a hardware keycode
      */
-    get_keycode(): [/* returnType */ boolean, /* keycode */ number];
+    get_keycode(): [/* returnType */ boolean, /* keycode */ number | null];
     /**
      * Extracts the keyval from an event.
      * @returns %TRUE if the event delivered a key symbol
      */
-    get_keyval(): [/* returnType */ boolean, /* keyval */ number];
+    get_keyval(): [/* returnType */ boolean, /* keyval */ number | null];
     /**
      * #event: a #GdkEvent
      * Returns whether this event is an 'emulated' pointer event (typically
@@ -15062,8 +15116,8 @@ declare namespace Gdk {
      */
     get_root_coords(): [
       /* returnType */ boolean,
-      /* x_root */ number,
-      /* y_root */ number
+      /* x_root */ number | null,
+      /* y_root */ number | null
     ];
     /**
      * Gets the keyboard low-level scancode of a key event.
@@ -15084,7 +15138,7 @@ declare namespace Gdk {
      * `event->motion.y_root` are relative.
      * @returns the screen for the event
      */
-    get_screen(): Screen;
+    get_screen(): Screen | null;
     /**
      * Retrieves the scroll deltas from a #GdkEvent
      *
@@ -15093,8 +15147,8 @@ declare namespace Gdk {
      */
     get_scroll_deltas(): [
       /* returnType */ boolean,
-      /* delta_x */ number,
-      /* delta_y */ number
+      /* delta_x */ number | null,
+      /* delta_y */ number | null
     ];
     /**
      * Extracts the scroll direction from an event.
@@ -15141,13 +15195,13 @@ declare namespace Gdk {
      */
     get_scroll_direction(): [
       /* returnType */ boolean,
-      /* direction */ ScrollDirection
+      /* direction */ ScrollDirection | null
     ];
     /**
      * Returns the #GdkSeat this event was generated for.
      * @returns The #GdkSeat of this event
      */
-    get_seat(): Seat;
+    get_seat(): Seat | null;
     /**
      * This function returns the hardware (slave) #GdkDevice that has
      * triggered the event, falling back to the virtual (master) device
@@ -15168,7 +15222,7 @@ declare namespace Gdk {
      * as if the event had no state field.
      * @returns %TRUE if there was a state field in the event
      */
-    get_state(): [/* returnType */ boolean, /* state */ ModifierType];
+    get_state(): [/* returnType */ boolean, /* state */ ModifierType | null];
     /**
      * Returns the time stamp from `event,` if there is one; otherwise
      * returns #GDK_CURRENT_TIME. If `event` is %NULL, returns #GDK_CURRENT_TIME.
@@ -15179,7 +15233,7 @@ declare namespace Gdk {
      * Extracts the #GdkWindow associated with an event.
      * @returns The #GdkWindow associated with the event
      */
-    get_window(): Window;
+    get_window(): Window | null;
     /**
      * Check whether a scroll event is a stop scroll event. Scroll sequences
      * with smooth scroll information may provide a stop scroll event once the
@@ -15203,7 +15257,7 @@ declare namespace Gdk {
      * gdk_event_copy().
      * @param device a #GdkDevice
      */
-    set_device(device: Device): void;
+    set_device(device: Device | null): void;
     /**
      * Sets the device tool for this event, should be rarely used.
      * @param tool tool to set on the event, or %NULL
@@ -15215,7 +15269,7 @@ declare namespace Gdk {
      * gdk_event_copy().
      * @param screen a #GdkScreen
      */
-    set_screen(screen: Screen): void;
+    set_screen(screen: Screen | null): void;
     /**
      * Sets the slave device for `event` to `device`.
      *
@@ -15223,7 +15277,7 @@ declare namespace Gdk {
      * for instance by gdk_event_copy().
      * @param device a #GdkDevice
      */
-    set_source_device(device: Device): void;
+    set_source_device(device: Device | null): void;
     /**
      * This function returns whether a #GdkEventButton should trigger a
      * context menu, according to platform conventions. The right mouse
@@ -15344,7 +15398,7 @@ declare namespace Gdk {
      *
      * @param event a valid #GdkEvent
      */
-    static request_motions(event: EventMotion): void;
+    static request_motions(event: EventMotion | null): void;
   }
 
   type XEvent = void;

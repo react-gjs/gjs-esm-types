@@ -1534,7 +1534,7 @@ declare namespace Pango {
   /**
    * A string literal containing the version of Pango available at compile-time.
    */
-  const VERSION_STRING: string;
+  const VERSION_STRING: string | null;
   /**
    * Create a new allow-breaks attribute.
    *
@@ -1543,13 +1543,13 @@ declare namespace Pango {
    * @param allow_breaks %TRUE if we line breaks are allowed
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_allow_breaks_new(allow_breaks: boolean): Attribute;
+  function attr_allow_breaks_new(allow_breaks: boolean): Attribute | null;
   /**
    * Create a new background alpha attribute.
    * @param alpha the alpha value, between 1 and 65536
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_background_alpha_new(alpha: number): Attribute;
+  function attr_background_alpha_new(alpha: number): Attribute | null;
   /**
    * Create a new background color attribute.
    * @param red the red value (ranging from 0 to 65535)
@@ -1561,7 +1561,7 @@ declare namespace Pango {
     red: number,
     green: number,
     blue: number
-  ): Attribute;
+  ): Attribute | null;
   /**
    * Create a new baseline displacement attribute.
    *
@@ -1575,7 +1575,7 @@ declare namespace Pango {
    * @param shift either a `PangoBaselineShift` enumeration value or an absolute value (> 1024)   in Pango units, relative to the baseline of the previous run.   Positive values displace the text upwards.
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_baseline_shift_new(shift: number): Attribute;
+  function attr_baseline_shift_new(shift: number): Attribute | null;
   /**
    * Apply customization from attributes to the breaks in `attrs`.
    *
@@ -1588,9 +1588,9 @@ declare namespace Pango {
    * @param attrs array with one `PangoLogAttr`   per character in `text,` plus one extra, to be filled in
    */
   function attr_break(
-    text: string,
+    text: string | null,
     length: number,
-    attr_list: AttrList,
+    attr_list: AttrList | null,
     offset: number,
     attrs: LogAttr[]
   ): void;
@@ -1604,13 +1604,13 @@ declare namespace Pango {
    * @param enable_fallback %TRUE if we should fall back on other fonts   for characters the active font is missing
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_fallback_new(enable_fallback: boolean): Attribute;
+  function attr_fallback_new(enable_fallback: boolean): Attribute | null;
   /**
    * Create a new font family attribute.
    * @param family the family or comma-separated list of families
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_family_new(family: string): Attribute;
+  function attr_family_new(family: string | null): Attribute | null;
   /**
    * Create a new font description attribute.
    *
@@ -1619,7 +1619,7 @@ declare namespace Pango {
    * @param desc the font description
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_font_desc_new(desc: FontDescription): Attribute;
+  function attr_font_desc_new(desc: FontDescription | null): Attribute | null;
   /**
    * Create a new font features tag attribute.
    *
@@ -1628,7 +1628,7 @@ declare namespace Pango {
    * @param features a string with OpenType font features, with the syntax of the [CSS font-feature-settings property](https://www.w3.org/TR/css-fonts-4/#font-rend-desc)
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_font_features_new(features: string): Attribute;
+  function attr_font_features_new(features: string | null): Attribute | null;
   /**
    * Create a new font scale attribute.
    *
@@ -1637,13 +1637,13 @@ declare namespace Pango {
    * @param scale a `PangoFontScale` value, which indicates font size change relative   to the size of the previous run.
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_font_scale_new(scale: FontScale): Attribute;
+  function attr_font_scale_new(scale: FontScale): Attribute | null;
   /**
    * Create a new foreground alpha attribute.
    * @param alpha the alpha value, between 1 and 65536
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_foreground_alpha_new(alpha: number): Attribute;
+  function attr_foreground_alpha_new(alpha: number): Attribute | null;
   /**
    * Create a new foreground color attribute.
    * @param red the red value (ranging from 0 to 65535)
@@ -1655,19 +1655,19 @@ declare namespace Pango {
     red: number,
     green: number,
     blue: number
-  ): Attribute;
+  ): Attribute | null;
   /**
    * Create a new gravity hint attribute.
    * @param hint the gravity hint value
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_gravity_hint_new(hint: GravityHint): Attribute;
+  function attr_gravity_hint_new(hint: GravityHint): Attribute | null;
   /**
    * Create a new gravity attribute.
    * @param gravity the gravity value; should not be %PANGO_GRAVITY_AUTO
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_gravity_new(gravity: Gravity): Attribute;
+  function attr_gravity_new(gravity: Gravity): Attribute | null;
   /**
    * Create a new insert-hyphens attribute.
    *
@@ -1677,19 +1677,19 @@ declare namespace Pango {
    * @param insert_hyphens %TRUE if hyphens should be inserted
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_insert_hyphens_new(insert_hyphens: boolean): Attribute;
+  function attr_insert_hyphens_new(insert_hyphens: boolean): Attribute | null;
   /**
    * Create a new language tag attribute.
    * @param language language tag
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_language_new(language: Language): Attribute;
+  function attr_language_new(language: Language | null): Attribute | null;
   /**
    * Create a new letter-spacing attribute.
    * @param letter_spacing amount of extra space to add between   graphemes of the text, in Pango units
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_letter_spacing_new(letter_spacing: number): Attribute;
+  function attr_letter_spacing_new(letter_spacing: number): Attribute | null;
   /**
    * Modify the height of logical line extents by a factor.
    *
@@ -1699,7 +1699,7 @@ declare namespace Pango {
    * [method`Pango`.LayoutIter.get_line_extents].
    * @param factor the scaling factor to apply to the logical height
    */
-  function attr_line_height_new(factor: number): Attribute;
+  function attr_line_height_new(factor: number): Attribute | null;
   /**
    * Override the height of logical line extents to be `height`.
    *
@@ -1709,7 +1709,7 @@ declare namespace Pango {
    * [method`Pango`.LayoutIter.get_line_extents].
    * @param height the line height, in %PANGO_SCALE-ths of a point
    */
-  function attr_line_height_new_absolute(height: number): Attribute;
+  function attr_line_height_new_absolute(height: number): Attribute | null;
   /**
    * Deserializes a `PangoAttrList` from a string.
    *
@@ -1718,7 +1718,7 @@ declare namespace Pango {
    * @param text a string
    * @returns a new `PangoAttrList`
    */
-  function attr_list_from_string(text: string): AttrList | null;
+  function attr_list_from_string(text: string | null): AttrList | null;
   /**
    * Create a new overline color attribute.
    *
@@ -1733,19 +1733,19 @@ declare namespace Pango {
     red: number,
     green: number,
     blue: number
-  ): Attribute;
+  ): Attribute | null;
   /**
    * Create a new overline-style attribute.
    * @param overline the overline style
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_overline_new(overline: Overline): Attribute;
+  function attr_overline_new(overline: Overline): Attribute | null;
   /**
    * Create a new baseline displacement attribute.
    * @param rise the amount that the text should be displaced vertically,   in Pango units. Positive values displace the text upwards.
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_rise_new(rise: number): Attribute;
+  function attr_rise_new(rise: number): Attribute | null;
   /**
    * Create a new font size scale attribute.
    *
@@ -1754,7 +1754,7 @@ declare namespace Pango {
    * @param scale_factor factor to scale the font
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_scale_new(scale_factor: number): Attribute;
+  function attr_scale_new(scale_factor: number): Attribute | null;
   /**
    * Marks the range of the attribute as a single sentence.
    *
@@ -1762,7 +1762,7 @@ declare namespace Pango {
    * sentence classification around the range.
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_sentence_new(): Attribute;
+  function attr_sentence_new(): Attribute | null;
   /**
    * Create a new shape attribute.
    *
@@ -1775,9 +1775,9 @@ declare namespace Pango {
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
   function attr_shape_new(
-    ink_rect: Rectangle,
-    logical_rect: Rectangle
-  ): Attribute;
+    ink_rect: Rectangle | null,
+    logical_rect: Rectangle | null
+  ): Attribute | null;
   /**
    * Creates a new shape attribute.
    *
@@ -1791,36 +1791,36 @@ declare namespace Pango {
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
   function attr_shape_new_with_data(
-    ink_rect: Rectangle,
-    logical_rect: Rectangle,
-    data: object | null,
+    ink_rect: Rectangle | null,
+    logical_rect: Rectangle | null,
+    data: any | null,
     copy_func: AttrDataCopyFunc | null
-  ): Attribute;
+  ): Attribute | null;
   /**
    * Create a new attribute that influences how invisible
    * characters are rendered.
    * @param flags `PangoShowFlags` to apply
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_show_new(flags: ShowFlags): Attribute;
+  function attr_show_new(flags: ShowFlags): Attribute | null;
   /**
    * Create a new font-size attribute in fractional points.
    * @param size the font size, in %PANGO_SCALE-ths of a point
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_size_new(size: number): Attribute;
+  function attr_size_new(size: number): Attribute | null;
   /**
    * Create a new font-size attribute in device units.
    * @param size the font size, in %PANGO_SCALE-ths of a device unit
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_size_new_absolute(size: number): Attribute;
+  function attr_size_new_absolute(size: number): Attribute | null;
   /**
    * Create a new font stretch attribute.
    * @param stretch the stretch
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_stretch_new(stretch: Stretch): Attribute;
+  function attr_stretch_new(stretch: Stretch): Attribute | null;
   /**
    * Create a new strikethrough color attribute.
    *
@@ -1835,26 +1835,26 @@ declare namespace Pango {
     red: number,
     green: number,
     blue: number
-  ): Attribute;
+  ): Attribute | null;
   /**
    * Create a new strike-through attribute.
    * @param strikethrough %TRUE if the text should be struck-through
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_strikethrough_new(strikethrough: boolean): Attribute;
+  function attr_strikethrough_new(strikethrough: boolean): Attribute | null;
   /**
    * Create a new font slant style attribute.
    * @param style the slant style
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_style_new(style: Style): Attribute;
+  function attr_style_new(style: Style): Attribute | null;
   /**
    * Create a new attribute that influences how characters
    * are transformed during shaping.
    * @param transform `PangoTextTransform` to apply
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_text_transform_new(transform: TextTransform): Attribute;
+  function attr_text_transform_new(transform: TextTransform): Attribute | null;
   /**
    * Fetches the attribute type name.
    *
@@ -1877,7 +1877,7 @@ declare namespace Pango {
    * @param name an identifier for the type
    * @returns the new type ID.
    */
-  function attr_type_register(name: string): AttrType;
+  function attr_type_register(name: string | null): AttrType;
   /**
    * Create a new underline color attribute.
    *
@@ -1892,25 +1892,25 @@ declare namespace Pango {
     red: number,
     green: number,
     blue: number
-  ): Attribute;
+  ): Attribute | null;
   /**
    * Create a new underline-style attribute.
    * @param underline the underline style
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_underline_new(underline: Underline): Attribute;
+  function attr_underline_new(underline: Underline): Attribute | null;
   /**
    * Create a new font variant attribute (normal or small caps).
    * @param variant the variant
    * @returns the newly allocated `PangoAttribute`,   which should be freed with [method@Pango.Attribute.destroy].
    */
-  function attr_variant_new(variant: Variant): Attribute;
+  function attr_variant_new(variant: Variant): Attribute | null;
   /**
    * Create a new font weight attribute.
    * @param weight the weight
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_weight_new(weight: Weight): Attribute;
+  function attr_weight_new(weight: Weight): Attribute | null;
   /**
    * Marks the range of the attribute as a single word.
    *
@@ -1918,7 +1918,7 @@ declare namespace Pango {
    * sentence classification around the range.
    * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
    */
-  function attr_word_new(): Attribute;
+  function attr_word_new(): Attribute | null;
   /**
    * Determines the bidirectional type of a character.
    *
@@ -1940,9 +1940,9 @@ declare namespace Pango {
    * @param attrs an array to store character information in
    */
   function break_TODO(
-    text: string,
+    text: string | null,
     length: number,
-    analysis: Analysis,
+    analysis: Analysis | null,
     attrs: LogAttr[]
   ): void;
   /**
@@ -1962,10 +1962,10 @@ declare namespace Pango {
    * @param attrs_len size of the array passed as `attrs`
    */
   function default_break(
-    text: string,
+    text: string | null,
     length: number,
     analysis: Analysis | null,
-    attrs: LogAttr,
+    attrs: LogAttr | null,
     attrs_len: number
   ): void;
   /**
@@ -2000,7 +2000,7 @@ declare namespace Pango {
    * @param length length of `text` in bytes (may be -1 if `text` is nul-terminated)
    * @returns The direction corresponding to the first strong character.   If no such character is found, then %PANGO_DIRECTION_NEUTRAL is returned.
    */
-  function find_base_dir(text: string, length: number): Direction;
+  function find_base_dir(text: string | null, length: number): Direction;
   /**
    * Locates a paragraph boundary in `text`.
    *
@@ -2020,11 +2020,11 @@ declare namespace Pango {
    * @param length length of `text` in bytes, or -1 if nul-terminated
    */
   function find_paragraph_boundary(
-    text: string,
+    text: string | null,
     length: number
   ): [
-    /* paragraph_delimiter_index */ number,
-    /* next_paragraph_start */ number
+    /* paragraph_delimiter_index */ number | null,
+    /* next_paragraph_start */ number | null
   ];
   /**
    * Creates a new font description from a string representation.
@@ -2074,7 +2074,9 @@ declare namespace Pango {
    * @param str string representation of a font description.
    * @returns a new `PangoFontDescription`.
    */
-  function font_description_from_string(str: string): FontDescription;
+  function font_description_from_string(
+    str: string | null
+  ): FontDescription | null;
   /**
    * Computes a `PangoLogAttr` for each character in `text`.
    *
@@ -2092,10 +2094,10 @@ declare namespace Pango {
    * @param attrs array with one `PangoLogAttr`   per character in `text,` plus one extra, to be filled in
    */
   function get_log_attrs(
-    text: string,
+    text: string | null,
     length: number,
     level: number,
-    language: Language,
+    language: Language | null,
     attrs: LogAttr[]
   ): void;
   /**
@@ -2106,7 +2108,7 @@ declare namespace Pango {
    * @param mirrored_ch location to store the mirrored character
    * @returns %TRUE if @ch has a mirrored character and @mirrored_ch is filled in, %FALSE otherwise
    */
-  function get_mirror_char(ch: string, mirrored_ch: string): boolean;
+  function get_mirror_char(ch: string, mirrored_ch: string | null): boolean;
   /**
    * Finds the gravity that best matches the rotation component
    * in a `PangoMatrix`.
@@ -2203,13 +2205,13 @@ declare namespace Pango {
    * @returns a `GList` of   [struct@Pango.Item] structures. The items should be freed using   [method@Pango.Item.free] in combination with [func@GLib.List.free_full].
    */
   function itemize(
-    context: Context,
-    text: string,
+    context: Context | null,
+    text: string | null,
     start_index: number,
     length: number,
-    attrs: AttrList,
+    attrs: AttrList | null,
     cached_iter: AttrIterator | null
-  ): Item[];
+  ): Item[] | null;
   /**
    * Like `pango_itemize()`, but with an explicitly specified base direction.
    *
@@ -2226,14 +2228,14 @@ declare namespace Pango {
    * @returns a `GList` of   [struct@Pango.Item] structures. The items should be freed using   [method@Pango.Item.free] probably in combination with [func@GLib.List.free_full].
    */
   function itemize_with_base_dir(
-    context: Context,
+    context: Context | null,
     base_dir: Direction,
-    text: string,
+    text: string | null,
     start_index: number,
     length: number,
-    attrs: AttrList,
+    attrs: AttrList | null,
     cached_iter: AttrIterator | null
-  ): Item[];
+  ): Item[] | null;
   /**
    * Convert a language tag to a `PangoLanguage`.
    *
@@ -2285,7 +2287,7 @@ declare namespace Pango {
    * just call pango_language_from_string() yourself.
    * @returns the default language as a `PangoLanguage`
    */
-  function language_get_default(): Language;
+  function language_get_default(): Language | null;
   /**
    * Returns the list of languages that the user prefers.
    *
@@ -2316,10 +2318,10 @@ declare namespace Pango {
    * @returns a newly allocated array of embedding levels, one item per   character (not byte), that should be freed using [func@GLib.free].
    */
   function log2vis_get_embedding_levels(
-    text: string,
+    text: string | null,
     length: number,
-    pbase_dir: Direction
-  ): number;
+    pbase_dir: Direction | null
+  ): number | null;
   /**
    * Finishes parsing markup.
    *
@@ -2331,12 +2333,12 @@ declare namespace Pango {
    * @returns %FALSE if @error is set, otherwise %TRUE
    */
   function markup_parser_finish(
-    context: GLib.MarkupParseContext
+    context: GLib.MarkupParseContext | null
   ): [
     /* returnType */ boolean,
-    /* attr_list */ AttrList,
-    /* text */ string,
-    /* accel_char */ string
+    /* attr_list */ AttrList | null,
+    /* text */ string | null,
+    /* accel_char */ string | null
   ];
   /**
    * Incrementally parses marked-up text to create a plain-text string
@@ -2364,7 +2366,9 @@ declare namespace Pango {
    * @param accel_marker character that precedes an accelerator, or 0 for none
    * @returns a `GMarkupParseContext` that should be destroyed with [method@GLib.MarkupParseContext.free].
    */
-  function markup_parser_new(accel_marker: string): GLib.MarkupParseContext;
+  function markup_parser_new(
+    accel_marker: string
+  ): GLib.MarkupParseContext | null;
   /**
    * Parses an enum type and stores the result in `value`.
    *
@@ -2387,8 +2391,8 @@ declare namespace Pango {
     warn: boolean
   ): [
     /* returnType */ boolean,
-    /* value */ number,
-    /* possible_values */ string
+    /* value */ number | null,
+    /* possible_values */ string | null
   ];
   /**
    * Parses marked-up text to create a plain-text string and an attribute list.
@@ -2414,14 +2418,14 @@ declare namespace Pango {
    * @returns %FALSE if @error is set, otherwise %TRUE
    */
   function parse_markup(
-    markup_text: string,
+    markup_text: string | null,
     length: number,
     accel_marker: string
   ): [
     /* returnType */ boolean,
-    /* attr_list */ AttrList,
-    /* text */ string,
-    /* accel_char */ string
+    /* attr_list */ AttrList | null,
+    /* text */ string | null,
+    /* accel_char */ string | null
   ];
   /**
    * Parses a font stretch.
@@ -2436,9 +2440,9 @@ declare namespace Pango {
    * @returns %TRUE if @str was successfully parsed.
    */
   function parse_stretch(
-    str: string,
+    str: string | null,
     warn: boolean
-  ): [/* returnType */ boolean, /* stretch */ Stretch];
+  ): [/* returnType */ boolean, /* stretch */ Stretch | null];
   /**
    * Parses a font style.
    *
@@ -2450,9 +2454,9 @@ declare namespace Pango {
    * @returns %TRUE if @str was successfully parsed.
    */
   function parse_style(
-    str: string,
+    str: string | null,
     warn: boolean
-  ): [/* returnType */ boolean, /* style */ Style];
+  ): [/* returnType */ boolean, /* style */ Style | null];
   /**
    * Parses a font variant.
    *
@@ -2464,9 +2468,9 @@ declare namespace Pango {
    * @returns %TRUE if @str was successfully parsed.
    */
   function parse_variant(
-    str: string,
+    str: string | null,
     warn: boolean
-  ): [/* returnType */ boolean, /* variant */ Variant];
+  ): [/* returnType */ boolean, /* variant */ Variant | null];
   /**
    * Parses a font weight.
    *
@@ -2478,9 +2482,9 @@ declare namespace Pango {
    * @returns %TRUE if @str was successfully parsed.
    */
   function parse_weight(
-    str: string,
+    str: string | null,
     warn: boolean
-  ): [/* returnType */ boolean, /* weight */ Weight];
+  ): [/* returnType */ boolean, /* weight */ Weight | null];
   /**
    * Quantizes the thickness and position of a line to whole device pixels.
    *
@@ -2494,9 +2498,9 @@ declare namespace Pango {
    * @param position corresponding position
    */
   function quantize_line_geometry(
-    thickness: number,
-    position: number
-  ): [/* thickness */ number, /* position */ number];
+    thickness: number | null,
+    position: number | null
+  ): [/* thickness */ number | null, /* position */ number | null];
   /**
    * Reads an entire line from a file into a buffer.
    *
@@ -2510,7 +2514,7 @@ declare namespace Pango {
    * @param str `GString` buffer into which to write the result
    * @returns 0 if the stream was already at an %EOF character,   otherwise the number of lines read (this is useful for maintaining   a line number counter which doesn't combine lines with '\')
    */
-  function read_line(stream: object | null, str: GLib.String): number;
+  function read_line(stream: any | null, str: GLib.String | null): number;
   /**
    * Reorder items from logical order to visual order.
    *
@@ -2523,7 +2527,7 @@ declare namespace Pango {
    * @param items a `GList` of `PangoItem`   in logical order.
    * @returns a `GList`   of `PangoItem` structures in visual order.
    */
-  function reorder_items(items: Item[]): Item[];
+  function reorder_items(items: Item[] | null): Item[] | null;
   /**
    * Scans an integer.
    *
@@ -2532,8 +2536,12 @@ declare namespace Pango {
    * @returns %FALSE if a parse error occurred
    */
   function scan_int(
-    pos: string
-  ): [/* returnType */ boolean, /* pos */ string, /* out */ number];
+    pos: string | null
+  ): [
+    /* returnType */ boolean,
+    /* pos */ string | null,
+    /* out */ number | null
+  ];
   /**
    * Scans a string into a `GString` buffer.
    *
@@ -2545,9 +2553,9 @@ declare namespace Pango {
    * @returns %FALSE if a parse error occurred
    */
   function scan_string(
-    pos: string,
-    out: GLib.String
-  ): [/* returnType */ boolean, /* pos */ string];
+    pos: string | null,
+    out: GLib.String | null
+  ): [/* returnType */ boolean, /* pos */ string | null];
   /**
    * Scans a word into a `GString` buffer.
    *
@@ -2558,9 +2566,9 @@ declare namespace Pango {
    * @returns %FALSE if a parse error occurred
    */
   function scan_word(
-    pos: string,
-    out: GLib.String
-  ): [/* returnType */ boolean, /* pos */ string];
+    pos: string | null,
+    out: GLib.String | null
+  ): [/* returnType */ boolean, /* pos */ string | null];
   /**
    * Looks up the script for a particular character.
    *
@@ -2637,10 +2645,10 @@ declare namespace Pango {
    * @param glyphs glyph string in which to store results
    */
   function shape(
-    text: string,
+    text: string | null,
     length: number,
-    analysis: Analysis,
-    glyphs: GlyphString
+    analysis: Analysis | null,
+    glyphs: GlyphString | null
   ): void;
   /**
    * Convert the characters in `text` into glyphs.
@@ -2672,12 +2680,12 @@ declare namespace Pango {
    * @param glyphs glyph string in which to store results.
    */
   function shape_full(
-    item_text: string,
+    item_text: string | null,
     item_length: number,
     paragraph_text: string | null,
     paragraph_length: number,
-    analysis: Analysis,
-    glyphs: GlyphString
+    analysis: Analysis | null,
+    glyphs: GlyphString | null
   ): void;
   /**
    * Convert the characters in `item` into glyphs.
@@ -2701,11 +2709,11 @@ declare namespace Pango {
    * @param flags flags influencing the shaping process
    */
   function shape_item(
-    item: Item,
+    item: Item | null,
     paragraph_text: string | null,
     paragraph_length: number,
     log_attrs: LogAttr | null,
-    glyphs: GlyphString,
+    glyphs: GlyphString | null,
     flags: ShapeFlags
   ): void;
   /**
@@ -2736,12 +2744,12 @@ declare namespace Pango {
    * @param flags flags influencing the shaping process
    */
   function shape_with_flags(
-    item_text: string,
+    item_text: string | null,
     item_length: number,
     paragraph_text: string | null,
     paragraph_length: number,
-    analysis: Analysis,
-    glyphs: GlyphString,
+    analysis: Analysis | null,
+    glyphs: GlyphString | null,
     flags: ShapeFlags
   ): void;
   /**
@@ -2750,15 +2758,15 @@ declare namespace Pango {
    * @returns %FALSE if skipping the white space leaves   the position at a '\0' character.
    */
   function skip_space(
-    pos: string
-  ): [/* returnType */ boolean, /* pos */ string];
+    pos: string | null
+  ): [/* returnType */ boolean, /* pos */ string | null];
   /**
    * Splits a %G_SEARCHPATH_SEPARATOR-separated list of files, stripping
    * white space and substituting ~/ with $HOME/.
    * @param str a %G_SEARCHPATH_SEPARATOR separated list of filenames
    * @returns a list of   strings to be freed with g_strfreev()
    */
-  function split_file_list(str: string): string[];
+  function split_file_list(str: string | null): string[];
   /**
    * Deserializes a `PangoTabArray` from a string.
    *
@@ -2767,7 +2775,7 @@ declare namespace Pango {
    * @param text a string
    * @returns a new `PangoTabArray`
    */
-  function tab_array_from_string(text: string): TabArray | null;
+  function tab_array_from_string(text: string | null): TabArray | null;
   /**
    * Apply language-specific tailoring to the breaks in `attrs`.
    *
@@ -2785,9 +2793,9 @@ declare namespace Pango {
    * @param attrs array with one `PangoLogAttr`   per character in `text,` plus one extra, to be filled in
    */
   function tailor_break(
-    text: string,
+    text: string | null,
     length: number,
-    analysis: Analysis,
+    analysis: Analysis | null,
     offset: number,
     attrs: LogAttr[]
   ): void;
@@ -2796,7 +2804,7 @@ declare namespace Pango {
    * @param str a string
    * @returns A newly-allocated string that must be freed with g_free()
    */
-  function trim_string(str: string): string;
+  function trim_string(str: string | null): string | null;
   /**
    * Determines the inherent direction of a character.
    *
@@ -2872,14 +2880,14 @@ declare namespace Pango {
    * macro returns the version available at compile-time.
    * @returns A string containing the version of Pango library available   at run time. The returned string is owned by Pango and should not   be modified or freed.
    */
-  function version_string(): string;
+  function version_string(): string | null;
   /**
    * Type of a function that can duplicate user data for an attribute.
    * @callback
    * @returns new copy of @user_data.
    */
   interface AttrDataCopyFunc {
-    (): object | null;
+    (): any | null;
   }
   /**
    * Type of a function filtering a list of attributes.
@@ -2888,7 +2896,7 @@ declare namespace Pango {
    * @returns %TRUE if the attribute should be selected for   filtering, %FALSE otherwise.
    */
   interface AttrFilterFunc {
-    (attribute: Attribute): boolean;
+    (attribute: Attribute | null): boolean;
   }
   /**
    * Callback used when enumerating fonts in a fontset.
@@ -2900,12 +2908,12 @@ declare namespace Pango {
    * @returns if %TRUE, stop iteration and return immediately.
    */
   interface FontsetForeachFunc {
-    (fontset: Fontset, font: Font): boolean;
+    (fontset: Fontset | null, font: Font | null): boolean;
   }
-  namespace Context {
+  module Context {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Context {
@@ -2966,7 +2974,7 @@ declare namespace Pango {
      * Retrieves the global language tag for the context.
      * @returns the global language tag.
      */
-    get_language(): Language;
+    get_language(): Language | null;
     /**
      * Gets the transformation matrix that will be applied when
      * rendering with this context.
@@ -2994,7 +3002,7 @@ declare namespace Pango {
     get_metrics(
       desc: FontDescription | null,
       language: Language | null
-    ): FontMetrics;
+    ): FontMetrics | null;
     /**
      * Returns whether font rendering with this context should
      * round glyph positions and widths.
@@ -3026,7 +3034,7 @@ declare namespace Pango {
      * @param desc a `PangoFontDescription` describing the font to load
      * @returns the newly allocated `PangoFont`   that was loaded, or %NULL if no font matched.
      */
-    load_font(desc: FontDescription): Font | null;
+    load_font(desc: FontDescription | null): Font | null;
     /**
      * Load a set of fonts in the context that can be used to render
      * a font matching `desc`.
@@ -3034,7 +3042,10 @@ declare namespace Pango {
      * @param language a `PangoLanguage` the fonts will be used for
      * @returns the newly allocated   `PangoFontset` loaded, or %NULL if no font matched.
      */
-    load_fontset(desc: FontDescription, language: Language): Fontset | null;
+    load_fontset(
+      desc: FontDescription | null,
+      language: Language | null
+    ): Fontset | null;
     /**
      * Sets the base direction for the context.
      *
@@ -3176,10 +3187,10 @@ declare namespace Pango {
     _init(config?: Context.ConstructorProperties): void;
   }
 
-  namespace Coverage {
+  module Coverage {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Coverage {
@@ -3189,7 +3200,7 @@ declare namespace Pango {
      * Copy an existing `PangoCoverage`.
      * @returns the newly allocated `PangoCoverage`,   with a reference count of one, which should be freed with   [method@Pango.Coverage.unref].
      */
-    copy(): Coverage;
+    copy(): Coverage | null;
     /**
      * Determine whether a particular index is covered by `coverage`.
      * @param index_ the index to check
@@ -3202,12 +3213,12 @@ declare namespace Pango {
      * the corresponding index in `other`.
      * @param other another `PangoCoverage`
      */
-    max(other: Coverage): void;
+    max(other: Coverage | null): void;
     /**
      * Increase the reference count on the `PangoCoverage` by one.
      * @returns @coverage
      */
-    ref(): Coverage;
+    ref(): Coverage | null;
 
     // Overloads of ref
 
@@ -3288,10 +3299,10 @@ declare namespace Pango {
     static from_bytes(bytes: Uint8Array): Coverage | null;
   }
 
-  namespace Font {
+  module Font {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Font {
@@ -3308,7 +3319,7 @@ declare namespace Pango {
      * the font size in device units.
      * @returns a newly-allocated `PangoFontDescription` object.
      */
-    describe(): FontDescription;
+    describe(): FontDescription | null;
     /**
      * Returns a description of the font, with absolute font size set
      * in device units.
@@ -3316,18 +3327,18 @@ declare namespace Pango {
      * Use [method`Pango`.Font.describe] if you want the font size in points.
      * @returns a newly-allocated `PangoFontDescription` object.
      */
-    describe_with_absolute_size(): FontDescription;
+    describe_with_absolute_size(): FontDescription | null;
     /**
      * Computes the coverage map for a given font and language tag.
      * @param language the language tag
      * @returns a newly-allocated `PangoCoverage`   object.
      */
-    get_coverage(language: Language): Coverage;
+    get_coverage(language: Language | null): Coverage | null;
     /**
      * Gets the `PangoFontFace` to which `font` belongs.
      * @returns the `PangoFontFace`
      */
-    get_face(): FontFace;
+    get_face(): FontFace | null;
     /**
      * Obtain the OpenType features that are provided by the font.
      *
@@ -3339,8 +3350,8 @@ declare namespace Pango {
      * @param num_features the number of used items in `features`
      */
     get_features(
-      num_features: number
-    ): [/* features */ HarfBuzz.feature_t[], /* num_features */ number];
+      num_features: number | null
+    ): [/* features */ HarfBuzz.feature_t[], /* num_features */ number | null];
     /**
      * Gets the font map for which the font was created.
      *
@@ -3372,7 +3383,7 @@ declare namespace Pango {
      */
     get_glyph_extents(
       glyph: Glyph
-    ): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+    ): [/* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null];
     /**
      * Returns the languages that are supported by `font`.
      *
@@ -3397,7 +3408,7 @@ declare namespace Pango {
      * @param language language tag used to determine which script   to get the metrics for, or %NULL to indicate to get the metrics for   the entire font.
      * @returns a `PangoFontMetrics` object. The caller must call   [method@Pango.FontMetrics.unref] when finished using the object.
      */
-    get_metrics(language: Language | null): FontMetrics;
+    get_metrics(language: Language | null): FontMetrics | null;
     /**
      * Returns whether the font provides a glyph for this character.
      * @param wc a Unicode character
@@ -3416,11 +3427,11 @@ declare namespace Pango {
      * To recreate a font from its serialized form, use [func`Pango`.Font.deserialize].
      * @returns a `GBytes` containing the serialized form of @font
      */
-    serialize(): GLib.Bytes;
+    serialize(): GLib.Bytes | null;
 
     // Own virtual methods of Pango-1.0.Pango.Font
 
-    vfunc_create_hb_font(): HarfBuzz.font_t;
+    vfunc_create_hb_font(): HarfBuzz.font_t | null;
     /**
      * Returns a description of the font, with font size set in points.
      *
@@ -3429,15 +3440,15 @@ declare namespace Pango {
      * @virtual
      * @returns a newly-allocated `PangoFontDescription` object.
      */
-    vfunc_describe(): FontDescription;
-    vfunc_describe_absolute(): FontDescription;
+    vfunc_describe(): FontDescription | null;
+    vfunc_describe_absolute(): FontDescription | null;
     /**
      * Computes the coverage map for a given font and language tag.
      * @virtual
      * @param language the language tag
      * @returns a newly-allocated `PangoCoverage`   object.
      */
-    vfunc_get_coverage(language: Language): Coverage;
+    vfunc_get_coverage(language: Language | null): Coverage | null;
     /**
      * Obtain the OpenType features that are provided by the font.
      *
@@ -3450,8 +3461,8 @@ declare namespace Pango {
      * @param num_features the number of used items in `features`
      */
     vfunc_get_features(
-      num_features: number
-    ): [/* features */ HarfBuzz.feature_t[], /* num_features */ number];
+      num_features: number | null
+    ): [/* features */ HarfBuzz.feature_t[], /* num_features */ number | null];
     /**
      * Gets the font map for which the font was created.
      *
@@ -3485,7 +3496,7 @@ declare namespace Pango {
      */
     vfunc_get_glyph_extents(
       glyph: Glyph
-    ): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+    ): [/* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null];
     /**
      * Gets overall metric information for a font.
      *
@@ -3499,7 +3510,7 @@ declare namespace Pango {
      * @param language language tag used to determine which script   to get the metrics for, or %NULL to indicate to get the metrics for   the entire font.
      * @returns a `PangoFontMetrics` object. The caller must call   [method@Pango.FontMetrics.unref] when finished using the object.
      */
-    vfunc_get_metrics(language: Language | null): FontMetrics;
+    vfunc_get_metrics(language: Language | null): FontMetrics | null;
 
     // Class property signals of Pango-1.0.Pango.Font
 
@@ -3541,13 +3552,16 @@ declare namespace Pango {
      * @param bytes the bytes containing the data
      * @returns a new `PangoFont`
      */
-    static deserialize(context: Context, bytes: GLib.Bytes): Font | null;
+    static deserialize(
+      context: Context | null,
+      bytes: GLib.Bytes | null
+    ): Font | null;
   }
 
-  namespace FontFace {
+  module FontFace {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface FontFace {
@@ -3565,7 +3579,7 @@ declare namespace Pango {
      * will be unset.
      * @returns a newly-created `PangoFontDescription` structure   holding the description of the face. Use [method@Pango.FontDescription.free]   to free the result.
      */
-    describe(): FontDescription;
+    describe(): FontDescription | null;
     /**
      * Gets a name representing the style of this face.
      *
@@ -3574,12 +3588,12 @@ declare namespace Pango {
      * face for the same style).
      * @returns the face name for the face. This string is   owned by the face object and must not be modified or freed.
      */
-    get_face_name(): string;
+    get_face_name(): string | null;
     /**
      * Gets the `PangoFontFamily` that `face` belongs to.
      * @returns the `PangoFontFamily`
      */
-    get_family(): FontFamily;
+    get_family(): FontFamily | null;
     /**
      * Returns whether a `PangoFontFace` is synthesized.
      *
@@ -3610,7 +3624,7 @@ declare namespace Pango {
      * @virtual
      * @returns a newly-created `PangoFontDescription` structure   holding the description of the face. Use [method@Pango.FontDescription.free]   to free the result.
      */
-    vfunc_describe(): FontDescription;
+    vfunc_describe(): FontDescription | null;
     /**
      * Gets a name representing the style of this face.
      *
@@ -3620,13 +3634,13 @@ declare namespace Pango {
      * @virtual
      * @returns the face name for the face. This string is   owned by the face object and must not be modified or freed.
      */
-    vfunc_get_face_name(): string;
+    vfunc_get_face_name(): string | null;
     /**
      * Gets the `PangoFontFamily` that `face` belongs to.
      * @virtual
      * @returns the `PangoFontFamily`
      */
-    vfunc_get_family(): FontFamily;
+    vfunc_get_family(): FontFamily | null;
     /**
      * Returns whether a `PangoFontFace` is synthesized.
      *
@@ -3673,7 +3687,7 @@ declare namespace Pango {
     _init(config?: FontFace.ConstructorProperties): void;
   }
 
-  namespace FontFamily {
+  module FontFamily {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -3713,7 +3727,7 @@ declare namespace Pango {
      * this family is desired.
      * @returns the name of the family. This string is owned   by the family object and must not be modified or freed.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * A monospace font is a font designed for text display where the the
      * characters form a regular grid.
@@ -3773,7 +3787,7 @@ declare namespace Pango {
      * @virtual
      * @returns the name of the family. This string is owned   by the family object and must not be modified or freed.
      */
-    vfunc_get_name(): string;
+    vfunc_get_name(): string | null;
     /**
      * A monospace font is a font designed for text display where the the
      * characters form a regular grid.
@@ -3864,7 +3878,7 @@ declare namespace Pango {
     _init(config?: FontFamily.ConstructorProperties): void;
   }
 
-  namespace FontMap {
+  module FontMap {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -3912,13 +3926,13 @@ declare namespace Pango {
      * gtk_widget_get_pango_context(). Use those instead.
      * @returns the newly allocated `PangoContext`,   which should be freed with g_object_unref().
      */
-    create_context(): Context;
+    create_context(): Context | null;
     /**
      * Gets a font family by name.
      * @param name a family name
      * @returns the `PangoFontFamily`
      */
-    get_family(name: string): FontFamily;
+    get_family(name: string | null): FontFamily | null;
     /**
      * Returns the current serial number of `fontmap`.
      *
@@ -3950,7 +3964,10 @@ declare namespace Pango {
      * @param desc a `PangoFontDescription` describing the font to load
      * @returns the newly allocated `PangoFont`   loaded, or %NULL if no font matched.
      */
-    load_font(context: Context, desc: FontDescription): Font | null;
+    load_font(
+      context: Context | null,
+      desc: FontDescription | null
+    ): Font | null;
     /**
      * Load a set of fonts in the fontmap that can be used to render
      * a font matching `desc`.
@@ -3960,9 +3977,9 @@ declare namespace Pango {
      * @returns the newly allocated   `PangoFontset` loaded, or %NULL if no font matched.
      */
     load_fontset(
-      context: Context,
-      desc: FontDescription,
-      language: Language
+      context: Context | null,
+      desc: FontDescription | null,
+      language: Language | null
     ): Fontset | null;
 
     // Own virtual methods of Pango-1.0.Pango.FontMap
@@ -3984,7 +4001,7 @@ declare namespace Pango {
      * @param name a family name
      * @returns the `PangoFontFamily`
      */
-    vfunc_get_family(name: string): FontFamily;
+    vfunc_get_family(name: string | null): FontFamily | null;
     /**
      * Returns the current serial number of `fontmap`.
      *
@@ -4019,7 +4036,10 @@ declare namespace Pango {
      * @param desc a `PangoFontDescription` describing the font to load
      * @returns the newly allocated `PangoFont`   loaded, or %NULL if no font matched.
      */
-    vfunc_load_font(context: Context, desc: FontDescription): Font | null;
+    vfunc_load_font(
+      context: Context | null,
+      desc: FontDescription | null
+    ): Font | null;
     /**
      * Load a set of fonts in the fontmap that can be used to render
      * a font matching `desc`.
@@ -4030,9 +4050,9 @@ declare namespace Pango {
      * @returns the newly allocated   `PangoFontset` loaded, or %NULL if no font matched.
      */
     vfunc_load_fontset(
-      context: Context,
-      desc: FontDescription,
-      language: Language
+      context: Context | null,
+      desc: FontDescription | null,
+      language: Language | null
     ): Fontset | null;
 
     // Class property signals of Pango-1.0.Pango.FontMap
@@ -4081,10 +4101,10 @@ declare namespace Pango {
     _init(config?: FontMap.ConstructorProperties): void;
   }
 
-  namespace Fontset {
+  module Fontset {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Fontset {
@@ -4108,12 +4128,12 @@ declare namespace Pango {
      * @param wc a Unicode character
      * @returns a `PangoFont`
      */
-    get_font(wc: number): Font;
+    get_font(wc: number): Font | null;
     /**
      * Get overall metric information for the fonts in the fontset.
      * @returns a `PangoFontMetrics` object
      */
-    get_metrics(): FontMetrics;
+    get_metrics(): FontMetrics | null;
 
     // Own virtual methods of Pango-1.0.Pango.Fontset
 
@@ -4133,14 +4153,14 @@ declare namespace Pango {
      * @param wc a Unicode character
      * @returns a `PangoFont`
      */
-    vfunc_get_font(wc: number): Font;
-    vfunc_get_language(): Language;
+    vfunc_get_font(wc: number): Font | null;
+    vfunc_get_language(): Language | null;
     /**
      * Get overall metric information for the fonts in the fontset.
      * @virtual
      * @returns a `PangoFontMetrics` object
      */
-    vfunc_get_metrics(): FontMetrics;
+    vfunc_get_metrics(): FontMetrics | null;
 
     // Class property signals of Pango-1.0.Pango.Fontset
 
@@ -4171,10 +4191,10 @@ declare namespace Pango {
     _init(config?: Fontset.ConstructorProperties): void;
   }
 
-  namespace FontsetSimple {
+  module FontsetSimple {
     // Constructor properties interface
 
-    type ConstructorProperties = Fontset.ConstructorProperties;
+    type ConstructorProperties = Fontset.ConstructorProperties
   }
 
   interface FontsetSimple {
@@ -4186,7 +4206,7 @@ declare namespace Pango {
      * The fontset takes ownership of `font`.
      * @param font a `PangoFont`.
      */
-    append(font: Font): void;
+    append(font: Font | null): void;
     /**
      * Returns the number of fonts in the fontset.
      * @returns the size of @fontset
@@ -4224,21 +4244,21 @@ declare namespace Pango {
      * @param language a `PangoLanguage` tag
      * @returns the newly allocated `PangoFontsetSimple`
      */
-    constructor(language: Language);
+    constructor(language: Language | null);
     /**
      * Creates a new `PangoFontsetSimple` for the given language.
      * @constructor
      * @param language a `PangoLanguage` tag
      * @returns the newly allocated `PangoFontsetSimple`
      */
-    static new(language: Language): FontsetSimple;
+    static new(language: Language | null): FontsetSimple;
     _init(config?: FontsetSimple.ConstructorProperties): void;
   }
 
-  namespace Layout {
+  module Layout {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Layout {
@@ -4259,7 +4279,7 @@ declare namespace Pango {
      * are all copied by value.
      * @returns the newly allocated `PangoLayout`
      */
-    copy(): Layout;
+    copy(): Layout | null;
     /**
      * Gets the alignment for the layout: how partial lines are
      * positioned within the horizontal space available.
@@ -4300,7 +4320,7 @@ declare namespace Pango {
      */
     get_caret_pos(
       index_: number
-    ): [/* strong_pos */ Rectangle, /* weak_pos */ Rectangle];
+    ): [/* strong_pos */ Rectangle | null, /* weak_pos */ Rectangle | null];
     /**
      * Returns the number of Unicode characters in the
      * the text of `layout`.
@@ -4311,7 +4331,7 @@ declare namespace Pango {
      * Retrieves the `PangoContext` used for this layout.
      * @returns the `PangoContext` for the layout
      */
-    get_context(): Context;
+    get_context(): Context | null;
     /**
      * Given an index within a layout, determines the positions that of the
      * strong and weak cursors if the insertion point is at that index.
@@ -4344,7 +4364,7 @@ declare namespace Pango {
      */
     get_cursor_pos(
       index_: number
-    ): [/* strong_pos */ Rectangle, /* weak_pos */ Rectangle];
+    ): [/* strong_pos */ Rectangle | null, /* weak_pos */ Rectangle | null];
     /**
      * Gets the text direction at the given character position in `layout`.
      * @param index the byte index of the char
@@ -4373,7 +4393,10 @@ declare namespace Pango {
      * The extents are given in layout coordinates and in Pango units; layout
      * coordinates begin at the top left corner of the layout.
      */
-    get_extents(): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+    get_extents(): [
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
+    ];
     /**
      * Gets the font description for the layout, if any.
      * @returns a pointer to the   layout's font description, or %NULL if the font description   from the layout's context is inherited.
@@ -4397,7 +4420,7 @@ declare namespace Pango {
      * Returns an iterator to iterate over the visual extents of the layout.
      * @returns the new `PangoLayoutIter`
      */
-    get_iter(): LayoutIter;
+    get_iter(): LayoutIter | null;
     /**
      * Gets whether each complete line should be stretched to fill the entire
      * width of the layout.
@@ -4447,7 +4470,7 @@ declare namespace Pango {
      * plan to modify the contents of the lines (glyphs, glyph widths, etc.).
      * @returns a `GSList`   containing the lines in the layout. This points to internal data of the   `PangoLayout` and must be used with care. It will become invalid on any   change to the layout's text or properties.
      */
-    get_lines(): LayoutLine[];
+    get_lines(): LayoutLine[] | null;
     /**
      * Returns the lines of the `layout` as a list.
      *
@@ -4456,7 +4479,7 @@ declare namespace Pango {
      * (glyphs, glyph widths, etc.).
      * @returns a `GSList`   containing the lines in the layout. This points to internal data of the   `PangoLayout` and must be used with care. It will become invalid on any   change to the layout's text or properties. No changes should be made to   the lines.
      */
-    get_lines_readonly(): LayoutLine[];
+    get_lines_readonly(): LayoutLine[] | null;
     /**
      * Retrieves an array of logical attributes for each character in
      * the `layout`.
@@ -4486,8 +4509,8 @@ declare namespace Pango {
      * passes them as first argument to [func`Pango`.extents_to_pixels]).
      */
     get_pixel_extents(): [
-      /* ink_rect */ Rectangle,
-      /* logical_rect */ Rectangle
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
     ];
     /**
      * Determines the logical width and height of a `PangoLayout` in device
@@ -4497,7 +4520,7 @@ declare namespace Pango {
      * scaled by %PANGO_SCALE. This is simply a convenience function
      * around [method`Pango`.Layout.get_pixel_extents].
      */
-    get_pixel_size(): [/* width */ number, /* height */ number];
+    get_pixel_size(): [/* width */ number | null, /* height */ number | null];
     /**
      * Returns the current serial number of `layout`.
      *
@@ -4527,7 +4550,7 @@ declare namespace Pango {
      *
      * This is simply a convenience function around [method`Pango`.Layout.get_extents].
      */
-    get_size(): [/* width */ number, /* height */ number];
+    get_size(): [/* width */ number | null, /* height */ number | null];
     /**
      * Gets the amount of spacing between the lines of the layout.
      * @returns the spacing in Pango units
@@ -4549,7 +4572,7 @@ declare namespace Pango {
      * The returned text should not be freed or modified.
      * @returns the text in the @layout
      */
-    get_text(): string;
+    get_text(): string | null;
     /**
      * Counts the number of unknown glyphs in `layout`.
      *
@@ -4583,7 +4606,7 @@ declare namespace Pango {
     index_to_line_x(
       index_: number,
       trailing: boolean
-    ): [/* line */ number, /* x_pos */ number];
+    ): [/* line */ number | null, /* x_pos */ number | null];
     /**
      * Converts from an index within a `PangoLayout` to the onscreen position
      * corresponding to the grapheme at that index.
@@ -4594,7 +4617,7 @@ declare namespace Pango {
      * is right-to-left, then `pos->width` will be negative.
      * @param index_ byte index within `layout`
      */
-    index_to_pos(index_: number): /* pos */ Rectangle;
+    index_to_pos(index_: number): /* pos */ Rectangle | null;
     /**
      * Queries whether the layout had to ellipsize any paragraphs.
      *
@@ -4641,7 +4664,7 @@ declare namespace Pango {
       old_index: number,
       old_trailing: number,
       direction: number
-    ): [/* new_index */ number, /* new_trailing */ number];
+    ): [/* new_index */ number | null, /* new_trailing */ number | null];
     /**
      * Serializes the `layout` for later deserialization via [func`Pango`.Layout.deserialize].
      *
@@ -4654,7 +4677,7 @@ declare namespace Pango {
      * @param flags `PangoLayoutSerializeFlags`
      * @returns a `GBytes` containing the serialized form of @layout
      */
-    serialize(flags: LayoutSerializeFlags): GLib.Bytes;
+    serialize(flags: LayoutSerializeFlags): GLib.Bytes | null;
     /**
      * Sets the alignment for the layout: how partial lines are
      * positioned within the horizontal space available.
@@ -4824,7 +4847,7 @@ declare namespace Pango {
      * @param markup marked-up text
      * @param length length of marked-up text in bytes, or -1 if `markup` is   `NUL`-terminated
      */
-    set_markup(markup: string, length: number): void;
+    set_markup(markup: string | null, length: number): void;
     /**
      * Sets the layout text and attribute list from marked-up text.
      *
@@ -4844,10 +4867,10 @@ declare namespace Pango {
      * @param accel_marker marker for accelerators in the text
      */
     set_markup_with_accel(
-      markup: string,
+      markup: string | null,
       length: number,
       accel_marker: string
-    ): /* accel_char */ string;
+    ): /* accel_char */ string | null;
     /**
      * Sets the single paragraph mode of `layout`.
      *
@@ -4911,7 +4934,7 @@ declare namespace Pango {
      * @param text the text
      * @param length maximum length of `text,` in bytes. -1 indicates that   the string is nul-terminated and the length should be calculated.   The text will also be truncated on encountering a nul-termination   even when `length` is positive.
      */
-    set_text(text: string, length: number): void;
+    set_text(text: string | null, length: number): void;
     /**
      * Sets the width to which the lines of the `PangoLayout` should wrap or
      * ellipsized.
@@ -4945,7 +4968,10 @@ declare namespace Pango {
      * @param filename the file to save it to
      * @returns %TRUE if saving was successful
      */
-    write_to_file(flags: LayoutSerializeFlags, filename: string): boolean;
+    write_to_file(
+      flags: LayoutSerializeFlags,
+      filename: string | null
+    ): boolean;
     /**
      * Converts from X and Y position within a layout to the byte index to the
      * character at that logical position.
@@ -4963,7 +4989,11 @@ declare namespace Pango {
     xy_to_index(
       x: number,
       y: number
-    ): [/* returnType */ boolean, /* index_ */ number, /* trailing */ number];
+    ): [
+      /* returnType */ boolean,
+      /* index_ */ number | null,
+      /* trailing */ number | null
+    ];
 
     // Class property signals of Pango-1.0.Pango.Layout
 
@@ -5030,7 +5060,7 @@ declare namespace Pango {
      * @param context a `PangoContext`
      * @returns the newly allocated `PangoLayout`
      */
-    constructor(context: Context);
+    constructor(context: Context | null);
     /**
      * Create a new `PangoLayout` object with attributes initialized to
      * default values for a particular `PangoContext`.
@@ -5038,7 +5068,7 @@ declare namespace Pango {
      * @param context a `PangoContext`
      * @returns the newly allocated `PangoLayout`
      */
-    static new(context: Context): Layout;
+    static new(context: Context | null): Layout;
     _init(config?: Layout.ConstructorProperties): void;
     /**
      * Loads data previously created via [method`Pango`.Layout.serialize].
@@ -5054,16 +5084,16 @@ declare namespace Pango {
      * @returns a new `PangoLayout`
      */
     static deserialize(
-      context: Context,
-      bytes: GLib.Bytes,
+      context: Context | null,
+      bytes: GLib.Bytes | null,
       flags: LayoutDeserializeFlags
     ): Layout | null;
   }
 
-  namespace Renderer {
+  module Renderer {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Renderer {
@@ -5075,7 +5105,7 @@ declare namespace Pango {
      *   same as the identity matrix.
      * @field
      */
-    matrix: Matrix;
+    matrix: Matrix | null;
 
     // Owm methods of Pango-1.0.Pango.Renderer
 
@@ -5125,7 +5155,7 @@ declare namespace Pango {
      * @param x X coordinate of left edge of baseline of glyph
      * @param y Y coordinate of left edge of baseline of glyph
      */
-    draw_glyph(font: Font, glyph: Glyph, x: number, y: number): void;
+    draw_glyph(font: Font | null, glyph: Glyph, x: number, y: number): void;
     /**
      * Draws the glyphs in `glyph_item` with the specified `PangoRenderer`,
      * embedding the text associated with the glyphs in the output if the
@@ -5152,7 +5182,7 @@ declare namespace Pango {
      */
     draw_glyph_item(
       text: string | null,
-      glyph_item: GlyphItem,
+      glyph_item: GlyphItem | null,
       x: number,
       y: number
     ): void;
@@ -5163,7 +5193,12 @@ declare namespace Pango {
      * @param x X position of left edge of baseline, in user space coordinates   in Pango units.
      * @param y Y position of left edge of baseline, in user space coordinates   in Pango units.
      */
-    draw_glyphs(font: Font, glyphs: GlyphString, x: number, y: number): void;
+    draw_glyphs(
+      font: Font | null,
+      glyphs: GlyphString | null,
+      x: number,
+      y: number
+    ): void;
     /**
      * Draws `layout` with the specified `PangoRenderer`.
      *
@@ -5173,7 +5208,7 @@ declare namespace Pango {
      * @param x X position of left edge of baseline, in user space coordinates   in Pango units.
      * @param y Y position of left edge of baseline, in user space coordinates   in Pango units.
      */
-    draw_layout(layout: Layout, x: number, y: number): void;
+    draw_layout(layout: Layout | null, x: number, y: number): void;
     /**
      * Draws `line` with the specified `PangoRenderer`.
      *
@@ -5184,7 +5219,7 @@ declare namespace Pango {
      * @param x X position of left edge of baseline, in user space coordinates   in Pango units.
      * @param y Y position of left edge of baseline, in user space coordinates   in Pango units.
      */
-    draw_layout_line(line: LayoutLine, x: number, y: number): void;
+    draw_layout_line(line: LayoutLine | null, x: number, y: number): void;
     /**
      * Draws an axis-aligned rectangle in user space coordinates with the
      * specified `PangoRenderer`.
@@ -5341,7 +5376,12 @@ declare namespace Pango {
      * @param x X coordinate of left edge of baseline of glyph
      * @param y Y coordinate of left edge of baseline of glyph
      */
-    vfunc_draw_glyph(font: Font, glyph: Glyph, x: number, y: number): void;
+    vfunc_draw_glyph(
+      font: Font | null,
+      glyph: Glyph,
+      x: number,
+      y: number
+    ): void;
     /**
      * Draws the glyphs in `glyph_item` with the specified `PangoRenderer`,
      * embedding the text associated with the glyphs in the output if the
@@ -5369,7 +5409,7 @@ declare namespace Pango {
      */
     vfunc_draw_glyph_item(
       text: string | null,
-      glyph_item: GlyphItem,
+      glyph_item: GlyphItem | null,
       x: number,
       y: number
     ): void;
@@ -5382,8 +5422,8 @@ declare namespace Pango {
      * @param y Y position of left edge of baseline, in user space coordinates   in Pango units.
      */
     vfunc_draw_glyphs(
-      font: Font,
-      glyphs: GlyphString,
+      font: Font | null,
+      glyphs: GlyphString | null,
       x: number,
       y: number
     ): void;
@@ -5407,7 +5447,7 @@ declare namespace Pango {
       width: number,
       height: number
     ): void;
-    vfunc_draw_shape(attr: AttrShape, x: number, y: number): void;
+    vfunc_draw_shape(attr: AttrShape | null, x: number, y: number): void;
     /**
      * Draws a trapezoid with the parallel sides aligned with the X axis
      * using the given `PangoRenderer`; coordinates are in device space.
@@ -5450,7 +5490,7 @@ declare namespace Pango {
      * @param part the part for which rendering has changed.
      */
     vfunc_part_changed(part: RenderPart): void;
-    vfunc_prepare_run(run: LayoutRun): void;
+    vfunc_prepare_run(run: LayoutRun | null): void;
 
     // Class property signals of Pango-1.0.Pango.Renderer
 
@@ -5488,17 +5528,17 @@ declare namespace Pango {
      * unused, reserved
      * @field
      */
-    shape_engine: object;
+    shape_engine: any;
     /**
      * unused, reserved
      * @field
      */
-    lang_engine: object;
+    lang_engine: any;
     /**
      * the font for this segment.
      * @field
      */
-    font: Font;
+    font: Font | null;
     /**
      * the bidirectional level for this segment.
      * @field
@@ -5523,12 +5563,12 @@ declare namespace Pango {
      * the detected language for this segment.
      * @field
      */
-    language: Language;
+    language: Language | null;
     /**
      * extra attributes for this segment.
      * @field
      */
-    extra_attrs: object[];
+    extra_attrs: any[] | null;
   }
 
   /**
@@ -5550,9 +5590,9 @@ declare namespace Pango {
      * @field
      */
     type: AttrType;
-    copy: (attr: Attribute) => Attribute;
-    destroy: (attr: Attribute) => void;
-    equal: (attr1: Attribute, attr2: Attribute) => boolean;
+    copy: (attr: Attribute | null) => Attribute | null;
+    destroy: (attr: Attribute | null) => void;
+    equal: (attr1: Attribute | null, attr2: Attribute | null) => boolean;
   }
 
   /**
@@ -5633,7 +5673,7 @@ declare namespace Pango {
      * the font description which is the value of this attribute
      * @field
      */
-    desc: FontDescription;
+    desc: FontDescription | null;
   }
 
   /**
@@ -5656,7 +5696,7 @@ declare namespace Pango {
      * @param desc the font description
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
-    static new(desc: FontDescription): Attribute;
+    static new(desc: FontDescription | null): Attribute | null;
   }
 
   interface AttrFontFeatures {
@@ -5671,7 +5711,7 @@ declare namespace Pango {
      * the features, as a string in CSS syntax
      * @field
      */
-    features: string;
+    features: string | null;
   }
 
   /**
@@ -5694,7 +5734,7 @@ declare namespace Pango {
      * @param features a string with OpenType font features, with the syntax of the [CSS font-feature-settings property](https://www.w3.org/TR/css-fonts-4/#font-rend-desc)
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
-    static new(features: string): Attribute;
+    static new(features: string | null): Attribute | null;
   }
 
   interface AttrInt {
@@ -5730,7 +5770,7 @@ declare namespace Pango {
      * Copy a `PangoAttrIterator`.
      * @returns the newly allocated   `PangoAttrIterator`, which should be freed with   [method@Pango.AttrIterator.destroy]
      */
-    copy(): AttrIterator;
+    copy(): AttrIterator | null;
     /**
      * Destroy a `PangoAttrIterator` and free all associated memory.
      */
@@ -5751,15 +5791,15 @@ declare namespace Pango {
      * iterator.
      * @returns    a list of all attributes for the current range. To free   this value, call [method@Pango.Attribute.destroy] on each   value and g_slist_free() on the list.
      */
-    get_attrs(): Attribute[];
+    get_attrs(): Attribute[] | null;
     /**
      * Get the font and other attributes at the current
      * iterator position.
      * @param desc a `PangoFontDescription` to fill in with the current   values. The family name in this structure will be set using   [method`Pango`.FontDescription.set_family_static] using   values from an attribute in the `PangoAttrList` associated   with the iterator, so if you plan to keep it around, you   must call:   `pango_font_description_set_family (desc, pango_font_description_get_family (desc))`.
      */
     get_font(
-      desc: FontDescription
-    ): [/* language */ Language, /* extra_attrs */ Attribute[]];
+      desc: FontDescription | null
+    ): [/* language */ Language | null, /* extra_attrs */ Attribute[] | null];
     /**
      * Advance the iterator until the next change of style.
      * @returns %FALSE if the iterator is at the end   of the list, otherwise %TRUE
@@ -5773,7 +5813,7 @@ declare namespace Pango {
      * oversight, stored return values that wouldn't fit into
      * a signed integer are clamped to %G_MAXINT.
      */
-    range(): [/* start */ number, /* end */ number];
+    range(): [/* start */ number | null, /* end */ number | null];
   }
 
   /**
@@ -5804,7 +5844,7 @@ declare namespace Pango {
      * the `PangoLanguage` which is the value of the attribute
      * @field
      */
-    value: Language;
+    value: Language | null;
   }
 
   /**
@@ -5824,7 +5864,7 @@ declare namespace Pango {
      * @param language language tag
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
-    static new(language: Language): Attribute;
+    static new(language: Language | null): Attribute | null;
   }
 
   interface AttrList {
@@ -5845,7 +5885,7 @@ declare namespace Pango {
      * never removes or combines existing attributes.
      * @param attr the attribute to insert
      */
-    change(attr: Attribute): void;
+    change(attr: Attribute | null): void;
     /**
      * Copy `list` and return an identical new list.
      * @returns the newly allocated   `PangoAttrList`, with a reference count of one,   which should be freed with [method@Pango.AttrList.unref].   Returns %NULL if @list was %NULL.
@@ -5861,7 +5901,7 @@ declare namespace Pango {
      * @param other_list the other `PangoAttrList`
      * @returns %TRUE if the lists are equal, %FALSE if   they aren't
      */
-    equal(other_list: AttrList): boolean;
+    equal(other_list: AttrList | null): boolean;
     /**
      * Given a `PangoAttrList` and callback function, removes
      * any elements of `list` for which `func` returns %TRUE and
@@ -5874,14 +5914,14 @@ declare namespace Pango {
      * Gets a list of all attributes in `list`.
      * @returns    a list of all attributes in @list. To free this value,   call [method@Pango.Attribute.destroy] on each value and   g_slist_free() on the list.
      */
-    get_attributes(): Attribute[];
+    get_attributes(): Attribute[] | null;
     /**
      * Create a iterator initialized to the beginning of the list.
      *
      * `list` must not be modified until this iterator is freed.
      * @returns the newly allocated   `PangoAttrIterator`, which should be freed with   [method@Pango.AttrIterator.destroy]
      */
-    get_iterator(): AttrIterator;
+    get_iterator(): AttrIterator | null;
     /**
      * Insert the given attribute into the `PangoAttrList`.
      *
@@ -5889,7 +5929,7 @@ declare namespace Pango {
      * matching `start_index`.
      * @param attr the attribute to insert
      */
-    insert(attr: Attribute): void;
+    insert(attr: Attribute | null): void;
     /**
      * Insert the given attribute into the `PangoAttrList`.
      *
@@ -5897,13 +5937,13 @@ declare namespace Pango {
      * matching `start_index`.
      * @param attr the attribute to insert
      */
-    insert_before(attr: Attribute): void;
+    insert_before(attr: Attribute | null): void;
     /**
      * Increase the reference count of the given attribute
      * list by one.
      * @returns The attribute list passed in
      */
-    ref(): AttrList;
+    ref(): AttrList | null;
     /**
      * This function opens up a hole in `list,` fills it
      * in with attributes from the left, and then merges
@@ -5927,7 +5967,7 @@ declare namespace Pango {
      * @param pos the position in `list` at which to insert `other`
      * @param len the length of the spliced segment. (Note that this   must be specified since the attributes in `other` may only   be present at some subsection of this range)
      */
-    splice(other: AttrList, pos: number, len: number): void;
+    splice(other: AttrList | null, pos: number, len: number): void;
     /**
      * Serializes a `PangoAttrList` to a string.
      *
@@ -5965,7 +6005,7 @@ declare namespace Pango {
      * Note that shape attributes can not be serialized.
      * @returns a newly allocated string
      */
-    to_string(): string;
+    to_string(): string | null;
     /**
      * Decrease the reference count of the given attribute
      * list by one.
@@ -6039,7 +6079,7 @@ declare namespace Pango {
      * @param text a string
      * @returns a new `PangoAttrList`
      */
-    static from_string(text: string): AttrList | null;
+    static from_string(text: string | null): AttrList | null;
   }
 
   interface AttrShape {
@@ -6064,7 +6104,7 @@ declare namespace Pango {
      * user data set (see [func`Pango`.AttrShape.new_with_data])
      * @field
      */
-    data: object;
+    data: any;
     /**
      * copy function for the user data
      * @field
@@ -6100,7 +6140,10 @@ declare namespace Pango {
      * @param logical_rect logical rectangle to assign to each character
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
-    static new(ink_rect: Rectangle, logical_rect: Rectangle): Attribute;
+    static new(
+      ink_rect: Rectangle | null,
+      logical_rect: Rectangle | null
+    ): Attribute | null;
     /**
      * Creates a new shape attribute.
      *
@@ -6114,11 +6157,11 @@ declare namespace Pango {
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
     static new_with_data(
-      ink_rect: Rectangle,
-      logical_rect: Rectangle,
-      data: object | null,
+      ink_rect: Rectangle | null,
+      logical_rect: Rectangle | null,
+      data: any | null,
       copy_func: AttrDataCopyFunc | null
-    ): Attribute;
+    ): Attribute | null;
   }
 
   interface AttrSize {
@@ -6162,13 +6205,13 @@ declare namespace Pango {
      * @param size the font size, in %PANGO_SCALE-ths of a point
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
-    static new(size: number): Attribute;
+    static new(size: number): Attribute | null;
     /**
      * Create a new font-size attribute in device units.
      * @param size the font size, in %PANGO_SCALE-ths of a device unit
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy]
      */
-    static new_absolute(size: number): Attribute;
+    static new_absolute(size: number): Attribute | null;
   }
 
   interface AttrString {
@@ -6183,7 +6226,7 @@ declare namespace Pango {
      * the string which is the value of the attribute
      * @field
      */
-    value: string;
+    value: string | null;
   }
 
   /**
@@ -6204,7 +6247,7 @@ declare namespace Pango {
      * the class structure holding information about the type of the attribute
      * @field
      */
-    klass: AttrClass;
+    klass: AttrClass | null;
     /**
      * the start index of the range (in bytes).
      * @field
@@ -6286,7 +6329,7 @@ declare namespace Pango {
      * Make a copy of an attribute.
      * @returns the newly allocated   `PangoAttribute`, which should be freed with   [method@Pango.Attribute.destroy].
      */
-    copy(): Attribute;
+    copy(): Attribute | null;
     /**
      * Destroy a `PangoAttribute` and free all associated memory.
      */
@@ -6300,7 +6343,7 @@ declare namespace Pango {
      * @param attr2 another `PangoAttribute`
      * @returns %TRUE if the two attributes have the same value
      */
-    equal(attr2: Attribute): boolean;
+    equal(attr2: Attribute | null): boolean;
     /**
      * Initializes `attr'`s klass to `klass,` it's start_index to
      * %PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING and end_index to
@@ -6308,7 +6351,7 @@ declare namespace Pango {
      * to the entire text by default.
      * @param klass a `PangoAttrClass`
      */
-    init(klass: AttrClass): void;
+    init(klass: AttrClass | null): void;
   }
 
   /**
@@ -6376,7 +6419,7 @@ declare namespace Pango {
      * @param spec a string specifying the new color
      * @returns %TRUE if parsing of the specifier succeeded,   otherwise %FALSE
      */
-    parse(spec: string): boolean;
+    parse(spec: string | null): boolean;
     /**
      * Fill in the fields of a color from a string specification.
      *
@@ -6397,8 +6440,8 @@ declare namespace Pango {
      * @returns %TRUE if parsing of the specifier succeeded,   otherwise %FALSE
      */
     parse_with_alpha(
-      spec: string
-    ): [/* returnType */ boolean, /* alpha */ number];
+      spec: string | null
+    ): [/* returnType */ boolean, /* alpha */ number | null];
     /**
      * Returns a textual specification of `color`.
      *
@@ -6407,7 +6450,7 @@ declare namespace Pango {
      * red, green, and blue components respectively.
      * @returns a newly-allocated text string that must   be freed with g_free().
      */
-    to_string(): string;
+    to_string(): string | null;
   }
 
   /**
@@ -6433,20 +6476,29 @@ declare namespace Pango {
     // Own fields of Pango-1.0.Pango.FontClass
 
     parent_class: GObject.ObjectClass;
-    describe: (font: Font) => FontDescription;
-    get_coverage: (font: Font, language: Language) => Coverage;
+    describe: (font: Font | null) => FontDescription | null;
+    get_coverage: (
+      font: Font | null,
+      language: Language | null
+    ) => Coverage | null;
     get_glyph_extents: (
       font: Font | null,
       glyph: Glyph
-    ) => [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
-    get_metrics: (font: Font | null, language: Language | null) => FontMetrics;
+    ) => [/* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null];
+    get_metrics: (
+      font: Font | null,
+      language: Language | null
+    ) => FontMetrics | null;
     get_font_map: (font: Font | null) => FontMap | null;
-    describe_absolute: (font: Font) => FontDescription;
+    describe_absolute: (font: Font | null) => FontDescription | null;
     get_features: (
-      font: Font,
-      num_features: number
-    ) => [/* features */ HarfBuzz.feature_t[], /* num_features */ number];
-    create_hb_font: (font: Font) => HarfBuzz.font_t;
+      font: Font | null,
+      num_features: number | null
+    ) => [
+      /* features */ HarfBuzz.feature_t[],
+      /* num_features */ number | null
+    ];
+    create_hb_font: (font: Font | null) => HarfBuzz.font_t | null;
   }
 
   abstract class FontClass {
@@ -6476,7 +6528,7 @@ declare namespace Pango {
      */
     better_match(
       old_match: FontDescription | null,
-      new_match: FontDescription
+      new_match: FontDescription | null
     ): boolean;
     /**
      * Make a copy of a `PangoFontDescription`.
@@ -6504,7 +6556,7 @@ declare namespace Pango {
      * @param desc2 another `PangoFontDescription`
      * @returns %TRUE if the two font descriptions are identical,   %FALSE otherwise.
      */
-    equal(desc2: FontDescription): boolean;
+    equal(desc2: FontDescription | null): boolean;
     /**
      * Frees a font description.
      */
@@ -6615,7 +6667,7 @@ declare namespace Pango {
      * @param replace_existing if %TRUE, replace fields in `desc` with the   corresponding values from `desc_to_merge,` even if they   are already exist.
      */
     merge_static(
-      desc_to_merge: FontDescription,
+      desc_to_merge: FontDescription | null,
       replace_existing: boolean
     ): void;
     /**
@@ -6636,7 +6688,7 @@ declare namespace Pango {
      * separated list of family names for this field.
      * @param family a string representing the family name.
      */
-    set_family(family: string): void;
+    set_family(family: string | null): void;
     /**
      * Sets the family name field of a font description, without copying the string.
      *
@@ -6647,7 +6699,7 @@ declare namespace Pango {
      * string such as a C string literal, or if `desc` is only needed temporarily.
      * @param family a string representing the family name
      */
-    set_family_static(family: string): void;
+    set_family_static(family: string | null): void;
     /**
      * Sets the gravity field of a font description.
      *
@@ -6730,7 +6782,7 @@ declare namespace Pango {
      * or if `desc` is only needed temporarily.
      * @param variations a string representing the variations
      */
-    set_variations_static(variations: string): void;
+    set_variations_static(variations: string | null): void;
     /**
      * Sets the weight field of a font description.
      *
@@ -6760,7 +6812,7 @@ declare namespace Pango {
      * the last word of the list is a valid style option.
      * @returns a new string that must be freed with g_free().
      */
-    to_string(): string;
+    to_string(): string | null;
     /**
      * Unsets some of the fields in a `PangoFontDescription`.
      *
@@ -6846,18 +6898,18 @@ declare namespace Pango {
      * @param str string representation of a font description.
      * @returns a new `PangoFontDescription`.
      */
-    static from_string(str: string): FontDescription;
+    static from_string(str: string | null): FontDescription | null;
   }
 
   interface FontFaceClass {
     // Own fields of Pango-1.0.Pango.FontFaceClass
 
     parent_class: GObject.ObjectClass;
-    get_face_name: (face: FontFace) => string;
-    describe: (face: FontFace) => FontDescription;
-    list_sizes: (face: FontFace) => /* sizes */ number[] | null;
-    is_synthesized: (face: FontFace) => boolean;
-    get_family: (face: FontFace) => FontFamily;
+    get_face_name: (face: FontFace | null) => string | null;
+    describe: (face: FontFace | null) => FontDescription | null;
+    list_sizes: (face: FontFace | null) => /* sizes */ number[] | null;
+    is_synthesized: (face: FontFace | null) => boolean;
+    get_family: (face: FontFace | null) => FontFamily | null;
   }
 
   abstract class FontFaceClass {
@@ -6870,11 +6922,14 @@ declare namespace Pango {
     // Own fields of Pango-1.0.Pango.FontFamilyClass
 
     parent_class: GObject.ObjectClass;
-    list_faces: (family: FontFamily) => /* faces */ FontFace[];
-    get_name: (family: FontFamily) => string;
-    is_monospace: (family: FontFamily) => boolean;
-    is_variable: (family: FontFamily) => boolean;
-    get_face: (family: FontFamily, name: string | null) => FontFace | null;
+    list_faces: (family: FontFamily | null) => /* faces */ FontFace[];
+    get_name: (family: FontFamily | null) => string | null;
+    is_monospace: (family: FontFamily | null) => boolean;
+    is_variable: (family: FontFamily | null) => boolean;
+    get_face: (
+      family: FontFamily | null,
+      name: string | null
+    ) => FontFace | null;
   }
 
   abstract class FontFamilyClass {
@@ -6892,26 +6947,29 @@ declare namespace Pango {
      */
     parent_class: GObject.ObjectClass;
     load_font: (
-      fontmap: FontMap,
-      context: Context,
-      desc: FontDescription
+      fontmap: FontMap | null,
+      context: Context | null,
+      desc: FontDescription | null
     ) => Font | null;
-    list_families: (fontmap: FontMap) => /* families */ FontFamily[];
+    list_families: (fontmap: FontMap | null) => /* families */ FontFamily[];
     load_fontset: (
-      fontmap: FontMap,
-      context: Context,
-      desc: FontDescription,
-      language: Language
+      fontmap: FontMap | null,
+      context: Context | null,
+      desc: FontDescription | null,
+      language: Language | null
     ) => Fontset | null;
     /**
      * the type of rendering-system-dependent engines that
      * can handle fonts of this fonts loaded with this fontmap.
      * @field
      */
-    shape_engine_type: string;
-    get_serial: (fontmap: FontMap) => number;
-    changed: (fontmap: FontMap) => void;
-    get_family: (fontmap: FontMap, name: string) => FontFamily;
+    shape_engine_type: string | null;
+    get_serial: (fontmap: FontMap | null) => number;
+    changed: (fontmap: FontMap | null) => void;
+    get_family: (
+      fontmap: FontMap | null,
+      name: string | null
+    ) => FontFamily | null;
   }
 
   /**
@@ -7049,10 +7107,10 @@ declare namespace Pango {
      * @field
      */
     parent_class: GObject.ObjectClass;
-    get_font: (fontset: Fontset, wc: number) => Font;
-    get_metrics: (fontset: Fontset) => FontMetrics;
-    get_language: (fontset: Fontset) => Language;
-    foreach: (fontset: Fontset, func: FontsetForeachFunc) => void;
+    get_font: (fontset: Fontset | null, wc: number) => Font | null;
+    get_metrics: (fontset: Fontset | null) => FontMetrics | null;
+    get_language: (fontset: Fontset | null) => Language | null;
+    foreach: (fontset: Fontset | null, func: FontsetForeachFunc) => void;
   }
 
   /**
@@ -7156,12 +7214,12 @@ declare namespace Pango {
      * corresponding `PangoItem`
      * @field
      */
-    item: Item;
+    item: Item | null;
     /**
      * corresponding `PangoGlyphString`
      * @field
      */
-    glyphs: GlyphString;
+    glyphs: GlyphString | null;
     /**
      * shift of the baseline, relative to the baseline
      *   of the containing line. Positive values shift upwards
@@ -7205,7 +7263,7 @@ declare namespace Pango {
      * @param list a `PangoAttrList`
      * @returns a   list of glyph items resulting from splitting @glyph_item. Free   the elements using [method@Pango.GlyphItem.free], the list using   g_slist_free().
      */
-    apply_attrs(text: string, list: AttrList): GlyphItem[];
+    apply_attrs(text: string | null, list: AttrList | null): GlyphItem[] | null;
     /**
      * Make a deep copy of an existing `PangoGlyphItem` structure.
      * @returns the newly allocated `PangoGlyphItem`
@@ -7226,7 +7284,7 @@ declare namespace Pango {
      * @param text text that `glyph_item` corresponds to   (glyph_item->item->offset is an offset from the   start of `text)`
      * @param logical_widths an array whose length is the number of   characters in glyph_item (equal to glyph_item->item->num_chars)   to be filled in with the resulting character widths.
      */
-    get_logical_widths(text: string, logical_widths: number[]): void;
+    get_logical_widths(text: string | null, logical_widths: number[]): void;
     /**
      * Adds spacing between the graphemes of `glyph_item` to
      * give the effect of typographic letter spacing.
@@ -7235,7 +7293,7 @@ declare namespace Pango {
      * @param letter_spacing amount of letter spacing to add   in Pango units. May be negative, though too large   negative values will give ugly results.
      */
     letter_space(
-      text: string,
+      text: string | null,
       log_attrs: LogAttr[],
       letter_spacing: number
     ): void;
@@ -7255,7 +7313,7 @@ declare namespace Pango {
      * @param split_index byte index of position to split item, relative to the   start of the item
      * @returns the newly allocated item   representing text before @split_index, which should be freed   with pango_glyph_item_free().
      */
-    split(text: string, split_index: number): GlyphItem | null;
+    split(text: string | null, split_index: number): GlyphItem | null;
   }
 
   /**
@@ -7276,8 +7334,8 @@ declare namespace Pango {
   interface GlyphItemIter {
     // Own fields of Pango-1.0.Pango.GlyphItemIter
 
-    glyph_item: GlyphItem;
-    text: string;
+    glyph_item: GlyphItem | null;
+    text: string | null;
     start_glyph: number;
     start_index: number;
     start_char: number;
@@ -7305,7 +7363,7 @@ declare namespace Pango {
      * @param text text corresponding to the glyph item
      * @returns %FALSE if there are no clusters in the glyph item
      */
-    init_end(glyph_item: GlyphItem, text: string): boolean;
+    init_end(glyph_item: GlyphItem | null, text: string | null): boolean;
     /**
      * Initializes a `PangoGlyphItemIter` structure to point to the
      * first cluster in a glyph item.
@@ -7315,7 +7373,7 @@ declare namespace Pango {
      * @param text text corresponding to the glyph item
      * @returns %FALSE if there are no clusters in the glyph item
      */
-    init_start(glyph_item: GlyphItem, text: string): boolean;
+    init_start(glyph_item: GlyphItem | null, text: string | null): boolean;
     /**
      * Advances the iterator to the next cluster in the glyph item.
      *
@@ -7398,7 +7456,7 @@ declare namespace Pango {
      *   within the text corresponding to the glyph string
      * @field
      */
-    log_clusters: number;
+    log_clusters: number | null;
 
     // Owm methods of Pango-1.0.Pango.GlyphString
 
@@ -7419,8 +7477,8 @@ declare namespace Pango {
      * @param font a `PangoFont`
      */
     extents(
-      font: Font
-    ): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+      font: Font | null
+    ): [/* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null];
     /**
      * Computes the extents of a sub-portion of a glyph string.
      *
@@ -7434,8 +7492,8 @@ declare namespace Pango {
     extents_range(
       start: number,
       end: number,
-      font: Font
-    ): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+      font: Font | null
+    ): [/* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null];
     /**
      * Free a glyph string and associated storage.
      */
@@ -7454,7 +7512,7 @@ declare namespace Pango {
      * @param logical_widths an array whose length is the number of   characters in text (equal to `g_utf8_strlen (text, length)` unless   text has `NUL` bytes) to be filled in with the resulting character widths.
      */
     get_logical_widths(
-      text: string,
+      text: string | null,
       length: number,
       embedding_level: number,
       logical_widths: number[]
@@ -7488,12 +7546,12 @@ declare namespace Pango {
      * @param trailing whether we should compute the result for the beginning (%FALSE)   or end (%TRUE) of the character.
      */
     index_to_x(
-      text: string,
+      text: string | null,
       length: number,
-      analysis: Analysis,
+      analysis: Analysis | null,
       index_: number,
       trailing: boolean
-    ): /* x_pos */ number;
+    ): /* x_pos */ number | null;
     /**
      * Converts from character position to x position.
      *
@@ -7509,13 +7567,13 @@ declare namespace Pango {
      * @param trailing whether we should compute the result for the beginning (%FALSE)   or end (%TRUE) of the character.
      */
     index_to_x_full(
-      text: string,
+      text: string | null,
       length: number,
-      analysis: Analysis,
+      analysis: Analysis | null,
       attrs: LogAttr | null,
       index_: number,
       trailing: boolean
-    ): /* x_pos */ number;
+    ): /* x_pos */ number | null;
     /**
      * Resize a glyph string to the given length.
      * @param new_len the new length of the string
@@ -7535,11 +7593,11 @@ declare namespace Pango {
      * @param x_pos the x offset (in Pango units)
      */
     x_to_index(
-      text: string,
+      text: string | null,
       length: number,
-      analysis: Analysis,
+      analysis: Analysis | null,
       x_pos: number
-    ): [/* index_ */ number, /* trailing */ number];
+    ): [/* index_ */ number | null, /* trailing */ number | null];
   }
 
   /**
@@ -7645,7 +7703,7 @@ declare namespace Pango {
      * the iter to each call.
      * @param iter a `PangoAttrIterator`
      */
-    apply_attrs(iter: AttrIterator): void;
+    apply_attrs(iter: AttrIterator | null): void;
     /**
      * Copy an existing `PangoItem` structure.
      * @returns the newly allocated `PangoItem`
@@ -7672,7 +7730,7 @@ declare namespace Pango {
      * @param split_offset number of chars between start of `orig` and `split_index`
      * @returns new item representing text before @split_index, which   should be freed with [method@Pango.Item.free].
      */
-    split(split_index: number, split_offset: number): Item;
+    split(split_index: number, split_offset: number): Item | null;
   }
 
   /**
@@ -7728,7 +7786,7 @@ declare namespace Pango {
      * ```
      * @returns the sample string
      */
-    get_sample_string(): string;
+    get_sample_string(): string | null;
     /**
      * Determines the scripts used to to write `language`.
      *
@@ -7784,13 +7842,13 @@ declare namespace Pango {
      * @param range_list a list of language ranges, separated by ';', ':',   ',', or space characters.   Each element must either be '*', or a RFC 3066 language range   canonicalized as by [func`Pango`.Language.from_string]
      * @returns %TRUE if a match was found
      */
-    matches(range_list: string): boolean;
+    matches(range_list: string | null): boolean;
     /**
      * Gets the RFC-3066 format string representing the given language tag.
      *
      * Returns (transfer none): a string representing the language tag
      */
-    to_string(): string;
+    to_string(): string | null;
   }
 
   /**
@@ -7859,7 +7917,7 @@ declare namespace Pango {
      * just call pango_language_from_string() yourself.
      * @returns the default language as a `PangoLanguage`
      */
-    static get_default(): Language;
+    static get_default(): Language | null;
     /**
      * Returns the list of languages that the user prefers.
      *
@@ -7918,15 +7976,15 @@ declare namespace Pango {
      * Only logical extents can sensibly be obtained for characters;
      * ink extents make sense only down to the level of clusters.
      */
-    get_char_extents(): /* logical_rect */ Rectangle;
+    get_char_extents(): /* logical_rect */ Rectangle | null;
     /**
      * Gets the extents of the current cluster, in layout coordinates.
      *
      * Layout coordinates have the origin at the top left of the entire layout.
      */
     get_cluster_extents(): [
-      /* ink_rect */ Rectangle,
-      /* logical_rect */ Rectangle
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
     ];
     /**
      * Gets the current byte index.
@@ -7947,8 +8005,8 @@ declare namespace Pango {
      * Obtains the extents of the `PangoLayout` being iterated over.
      */
     get_layout_extents(): [
-      /* ink_rect */ Rectangle,
-      /* logical_rect */ Rectangle
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
     ];
     /**
      * Gets the current line.
@@ -7968,8 +8026,8 @@ declare namespace Pango {
      * as the extents returned from [method`Pango`.LayoutLine.get_extents].
      */
     get_line_extents(): [
-      /* ink_rect */ Rectangle,
-      /* logical_rect */ Rectangle
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
     ];
     /**
      * Gets the current line for read-only access.
@@ -7993,7 +8051,7 @@ declare namespace Pango {
      * Note: Since 1.44, Pango uses line heights for placing lines, and there
      * may be gaps between the ranges returned by this function.
      */
-    get_line_yrange(): [/* y0_ */ number, /* y1_ */ number];
+    get_line_yrange(): [/* y0_ */ number | null, /* y1_ */ number | null];
     /**
      * Gets the current run.
      *
@@ -8022,7 +8080,10 @@ declare namespace Pango {
      *
      * Layout coordinates have the origin at the top left of the entire layout.
      */
-    get_run_extents(): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+    get_run_extents(): [
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
+    ];
     /**
      * Gets the current run for read-only access.
      *
@@ -8089,7 +8150,7 @@ declare namespace Pango {
      * the layout this line belongs to, might be %NULL
      * @field
      */
-    layout: Layout;
+    layout: Layout | null;
     /**
      * start of line as byte index into layout->text
      * @field
@@ -8105,7 +8166,7 @@ declare namespace Pango {
      *   line, from left to right
      * @field
      */
-    runs: LayoutRun[];
+    runs: LayoutRun[] | null;
     /**
      * #TRUE if this is the first line of the paragraph
      * @field
@@ -8125,7 +8186,10 @@ declare namespace Pango {
      * See [method`Pango`.Font.get_glyph_extents] for details
      * about the interpretation of the rectangles.
      */
-    get_extents(): [/* ink_rect */ Rectangle, /* logical_rect */ Rectangle];
+    get_extents(): [
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
+    ];
     /**
      * Computes the height of the line, as the maximum of the heights
      * of fonts used in this line.
@@ -8135,7 +8199,7 @@ declare namespace Pango {
      * [method`Pango`.Layout.set_spacing] and
      * [method`Pango`.Layout.set_line_spacing].
      */
-    get_height(): /* height */ number;
+    get_height(): /* height */ number | null;
     /**
      * Returns the length of the line, in bytes.
      * @returns the length of the line
@@ -8150,8 +8214,8 @@ declare namespace Pango {
      * passes them as first argument to [func`extents_to_pixels]`).
      */
     get_pixel_extents(): [
-      /* ink_rect */ Rectangle,
-      /* logical_rect */ Rectangle
+      /* ink_rect */ Rectangle | null,
+      /* logical_rect */ Rectangle | null
     ];
     /**
      * Returns the resolved direction of the line.
@@ -8180,7 +8244,7 @@ declare namespace Pango {
      * @param index_ byte offset of a grapheme within the layout
      * @param trailing an integer indicating the edge of the grapheme to retrieve   the position of. If > 0, the trailing edge of the grapheme,   if 0, the leading of the grapheme
      */
-    index_to_x(index_: number, trailing: boolean): /* x_pos */ number;
+    index_to_x(index_: number, trailing: boolean): /* x_pos */ number | null;
     /**
      * Increase the reference count of a `PangoLayoutLine` by one.
      * @returns the line passed in.
@@ -8210,7 +8274,11 @@ declare namespace Pango {
      */
     x_to_index(
       x_pos: number
-    ): [/* returnType */ boolean, /* index_ */ number, /* trailing */ number];
+    ): [
+      /* returnType */ boolean,
+      /* index_ */ number | null,
+      /* trailing */ number | null
+    ];
   }
 
   /**
@@ -8391,7 +8459,7 @@ declare namespace Pango {
      * given by `new_matrix` then applying the original transformation.
      * @param new_matrix a `PangoMatrix`
      */
-    concat(new_matrix: Matrix): void;
+    concat(new_matrix: Matrix | null): void;
     /**
      * Copies a `PangoMatrix`.
      * @returns the newly allocated `PangoMatrix`
@@ -8419,7 +8487,10 @@ declare namespace Pango {
      *
      * Note that output numbers will always be non-negative.
      */
-    get_font_scale_factors(): [/* xscale */ number, /* yscale */ number];
+    get_font_scale_factors(): [
+      /* xscale */ number | null,
+      /* yscale */ number | null
+    ];
     /**
      * Gets the slant ratio of a matrix.
      *
@@ -8468,9 +8539,9 @@ declare namespace Pango {
      * @param dy in/out Y component of a distance vector
      */
     transform_distance(
-      dx: number,
-      dy: number
-    ): [/* dx */ number, /* dy */ number];
+      dx: number | null,
+      dy: number | null
+    ): [/* dx */ number | null, /* dy */ number | null];
     /**
      * First transforms the `rect` using `matrix,` then calculates the bounding box
      * of the transformed rectangle.
@@ -8484,13 +8555,18 @@ declare namespace Pango {
      * using [func`extents_to_pixels]`'s first argument.
      * @param rect in/out bounding box in device units
      */
-    transform_pixel_rectangle(rect?: Rectangle): /* rect */ Rectangle;
+    transform_pixel_rectangle(
+      rect?: Rectangle | null
+    ): /* rect */ Rectangle | null;
     /**
      * Transforms the point (`x,` `y)` by `matrix`.
      * @param x in/out X position
      * @param y in/out Y position
      */
-    transform_point(x: number, y: number): [/* x */ number, /* y */ number];
+    transform_point(
+      x: number | null,
+      y: number | null
+    ): [/* x */ number | null, /* y */ number | null];
     /**
      * First transforms `rect` using `matrix,` then calculates the bounding box
      * of the transformed rectangle.
@@ -8512,7 +8588,7 @@ declare namespace Pango {
      * example).
      * @param rect in/out bounding box in Pango units
      */
-    transform_rectangle(rect?: Rectangle): /* rect */ Rectangle;
+    transform_rectangle(rect?: Rectangle | null): /* rect */ Rectangle | null;
     /**
      * Changes the transformation represented by `matrix` to be the
      * transformation given by first translating by (`tx,` `ty)`
@@ -8584,14 +8660,14 @@ declare namespace Pango {
     // Own fields of Pango-1.0.Pango.RendererClass
 
     draw_glyphs: (
-      renderer: Renderer,
-      font: Font,
-      glyphs: GlyphString,
+      renderer: Renderer | null,
+      font: Font | null,
+      glyphs: GlyphString | null,
       x: number,
       y: number
     ) => void;
     draw_rectangle: (
-      renderer: Renderer,
+      renderer: Renderer | null,
       part: RenderPart,
       x: number,
       y: number,
@@ -8599,20 +8675,20 @@ declare namespace Pango {
       height: number
     ) => void;
     draw_error_underline: (
-      renderer: Renderer,
+      renderer: Renderer | null,
       x: number,
       y: number,
       width: number,
       height: number
     ) => void;
     draw_shape: (
-      renderer: Renderer,
-      attr: AttrShape,
+      renderer: Renderer | null,
+      attr: AttrShape | null,
       x: number,
       y: number
     ) => void;
     draw_trapezoid: (
-      renderer: Renderer,
+      renderer: Renderer | null,
       part: RenderPart,
       y1_: number,
       x11: number,
@@ -8622,20 +8698,20 @@ declare namespace Pango {
       x22: number
     ) => void;
     draw_glyph: (
-      renderer: Renderer,
-      font: Font,
+      renderer: Renderer | null,
+      font: Font | null,
       glyph: Glyph,
       x: number,
       y: number
     ) => void;
-    part_changed: (renderer: Renderer, part: RenderPart) => void;
-    begin: (renderer: Renderer) => void;
-    end: (renderer: Renderer) => void;
-    prepare_run: (renderer: Renderer, run: LayoutRun) => void;
+    part_changed: (renderer: Renderer | null, part: RenderPart) => void;
+    begin: (renderer: Renderer | null) => void;
+    end: (renderer: Renderer | null) => void;
+    prepare_run: (renderer: Renderer | null, run: LayoutRun | null) => void;
     draw_glyph_item: (
-      renderer: Renderer,
+      renderer: Renderer | null,
       text: string | null,
-      glyph_item: GlyphItem,
+      glyph_item: GlyphItem | null,
       x: number,
       y: number
     ) => void;
@@ -8692,7 +8768,11 @@ declare namespace Pango {
      * `GUnicodeScript` values. Callers must be prepared to handle unknown
      * values.
      */
-    get_range(): [/* start */ string, /* end */ string, /* script */ Script];
+    get_range(): [
+      /* start */ string | null,
+      /* end */ string | null,
+      /* script */ Script | null
+    ];
     /**
      * Advances a `PangoScriptIter` to the next range.
      *
@@ -8727,7 +8807,7 @@ declare namespace Pango {
      * @param length length of `text,` or -1 if `text` is nul-terminated
      * @returns the new script iterator, initialized  to point at the first range in the text, which should be  freed with [method@Pango.ScriptIter.free]. If the string is  empty, it will point at an empty range.
      */
-    constructor(text: string, length: number);
+    constructor(text: string | null, length: number);
     /**
      * Create a new `PangoScriptIter`, used to break a string of
      * Unicode text into runs by Unicode script.
@@ -8740,7 +8820,7 @@ declare namespace Pango {
      * @param length length of `text,` or -1 if `text` is nul-terminated
      * @returns the new script iterator, initialized  to point at the first range in the text, which should be  freed with [method@Pango.ScriptIter.free]. If the string is  empty, it will point at an empty range.
      */
-    static new(text: string, length: number): ScriptIter;
+    static new(text: string | null, length: number): ScriptIter;
   }
 
   interface TabArray {
@@ -8750,7 +8830,7 @@ declare namespace Pango {
      * Copies a `PangoTabArray`.
      * @returns the newly allocated `PangoTabArray`, which should   be freed with [method@Pango.TabArray.free].
      */
-    copy(): TabArray;
+    copy(): TabArray | null;
     /**
      * Frees a tab array and associated resources.
      */
@@ -8784,7 +8864,7 @@ declare namespace Pango {
      */
     get_tab(
       tab_index: number
-    ): [/* alignment */ TabAlign, /* location */ number];
+    ): [/* alignment */ TabAlign | null, /* location */ number | null];
     /**
      * If non-%NULL, `alignments` and `locations` are filled with allocated
      * arrays.
@@ -8792,7 +8872,7 @@ declare namespace Pango {
      * The arrays are of length [method`Pango`.TabArray.get_size].
      * You must free the returned array.
      */
-    get_tabs(): [/* alignments */ TabAlign, /* locations */ number[]];
+    get_tabs(): [/* alignments */ TabAlign | null, /* locations */ number[]];
     /**
      * Resizes a tab array.
      *
@@ -8842,7 +8922,7 @@ declare namespace Pango {
      * storage format.
      * @returns a newly allocated string
      */
-    to_string(): string;
+    to_string(): string | null;
   }
 
   /**
@@ -8890,7 +8970,7 @@ declare namespace Pango {
      * @param text a string
      * @returns a new `PangoTabArray`
      */
-    static from_string(text: string): TabArray | null;
+    static from_string(text: string | null): TabArray | null;
   }
 
   type Glyph = number;

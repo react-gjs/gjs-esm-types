@@ -3642,19 +3642,19 @@ declare namespace GLib {
    * Used for specifying valid identifier characters
    * in #GScannerConfig.
    */
-  const CSET_A_2_Z: string;
+  const CSET_A_2_Z: string | null;
   /**
    * The set of ASCII digits.
    * Used for specifying valid identifier characters
    * in #GScannerConfig.
    */
-  const CSET_DIGITS: string;
+  const CSET_DIGITS: string | null;
   /**
    * The set of lowercase ASCII alphabet characters.
    * Used for specifying valid identifier characters
    * in #GScannerConfig.
    */
-  const CSET_a_2_z: string;
+  const CSET_a_2_z: string | null;
   /**
    * A bitmask that restricts the possible flags passed to
    * g_datalist_set_flags(). Passing a flags value where
@@ -3682,7 +3682,7 @@ declare namespace GLib {
    * The directory separator as a string.
    * This is "/" on UNIX machines and "\" under Windows.
    */
-  const DIR_SEPARATOR_S: string;
+  const DIR_SEPARATOR_S: string | null;
   /**
    * The base of natural logarithms.
    */
@@ -3703,7 +3703,7 @@ declare namespace GLib {
    * ```
    *
    */
-  const GINT16_FORMAT: string;
+  const GINT16_FORMAT: string | null;
   /**
    * The platform dependent length modifier for conversion specifiers
    * for scanning and printing values of type #gint16 or #guint16. It
@@ -3719,18 +3719,18 @@ declare namespace GLib {
    * ```
    *
    */
-  const GINT16_MODIFIER: string;
+  const GINT16_MODIFIER: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #gint32. See also %G_GINT16_FORMAT.
    */
-  const GINT32_FORMAT: string;
+  const GINT32_FORMAT: string | null;
   /**
    * The platform dependent length modifier for conversion specifiers
    * for scanning and printing values of type #gint32 or #guint32. It
    * is a string literal. See also %G_GINT16_MODIFIER.
    */
-  const GINT32_MODIFIER: string;
+  const GINT32_MODIFIER: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #gint64. See also %G_GINT16_FORMAT.
@@ -3742,7 +3742,7 @@ declare namespace GLib {
    * is not recommended for parsing anyway; consider using g_ascii_strtoull()
    * instead.
    */
-  const GINT64_FORMAT: string;
+  const GINT64_FORMAT: string | null;
   /**
    * The platform dependent length modifier for conversion specifiers
    * for scanning and printing values of type #gint64 or #guint64.
@@ -3752,60 +3752,60 @@ declare namespace GLib {
    * though the types are supported. On such platforms %G_GINT64_MODIFIER
    * is not defined.
    */
-  const GINT64_MODIFIER: string;
+  const GINT64_MODIFIER: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #gintptr.
    */
-  const GINTPTR_FORMAT: string;
+  const GINTPTR_FORMAT: string | null;
   /**
    * The platform dependent length modifier for conversion specifiers
    * for scanning and printing values of type #gintptr or #guintptr.
    * It is a string literal.
    */
-  const GINTPTR_MODIFIER: string;
+  const GINTPTR_MODIFIER: string | null;
   /**
    * Expands to "" on all modern compilers, and to  __FUNCTION__ on gcc
    * version 2.x. Don't use it.
    */
-  const GNUC_FUNCTION: string;
+  const GNUC_FUNCTION: string | null;
   /**
    * Expands to "" on all modern compilers, and to __PRETTY_FUNCTION__
    * on gcc version 2.x. Don't use it.
    */
-  const GNUC_PRETTY_FUNCTION: string;
+  const GNUC_PRETTY_FUNCTION: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #gsize. See also %G_GINT16_FORMAT.
    */
-  const GSIZE_FORMAT: string;
+  const GSIZE_FORMAT: string | null;
   /**
    * The platform dependent length modifier for conversion specifiers
    * for scanning and printing values of type #gsize. It
    * is a string literal.
    */
-  const GSIZE_MODIFIER: string;
+  const GSIZE_MODIFIER: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #gssize. See also %G_GINT16_FORMAT.
    */
-  const GSSIZE_FORMAT: string;
+  const GSSIZE_FORMAT: string | null;
   /**
    * The platform dependent length modifier for conversion specifiers
    * for scanning and printing values of type #gssize. It
    * is a string literal.
    */
-  const GSSIZE_MODIFIER: string;
+  const GSSIZE_MODIFIER: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #guint16. See also %G_GINT16_FORMAT
    */
-  const GUINT16_FORMAT: string;
+  const GUINT16_FORMAT: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #guint32. See also %G_GINT16_FORMAT.
    */
-  const GUINT32_FORMAT: string;
+  const GUINT32_FORMAT: string | null;
   /**
    * This is the platform dependent conversion specifier for scanning
    * and printing values of type #guint64. See also %G_GINT16_FORMAT.
@@ -3817,12 +3817,12 @@ declare namespace GLib {
    * is not recommended for parsing anyway; consider using g_ascii_strtoull()
    * instead.
    */
-  const GUINT64_FORMAT: string;
+  const GUINT64_FORMAT: string | null;
   /**
    * This is the platform dependent conversion specifier
    * for scanning and printing values of type #guintptr.
    */
-  const GUINTPTR_FORMAT: string;
+  const GUINTPTR_FORMAT: string | null;
   const HAVE_GINT64: number;
   const HAVE_GNUC_VARARGS: number;
   /**
@@ -3852,110 +3852,110 @@ declare namespace GLib {
    * Consult the specification for more
    * details about the meanings of the keys below.
    */
-  const KEY_FILE_DESKTOP_GROUP: string;
+  const KEY_FILE_DESKTOP_GROUP: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string list
    * giving the available application actions.
    */
-  const KEY_FILE_DESKTOP_KEY_ACTIONS: string;
+  const KEY_FILE_DESKTOP_KEY_ACTIONS: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a list
    * of strings giving the categories in which the desktop entry
    * should be shown in a menu.
    */
-  const KEY_FILE_DESKTOP_KEY_CATEGORIES: string;
+  const KEY_FILE_DESKTOP_KEY_CATEGORIES: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a localized
    * string giving the tooltip for the desktop entry.
    */
-  const KEY_FILE_DESKTOP_KEY_COMMENT: string;
+  const KEY_FILE_DESKTOP_KEY_COMMENT: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a boolean
    * set to true if the application is D-Bus activatable.
    */
-  const KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE: string;
+  const KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string
    * giving the command line to execute. It is only valid for desktop
    * entries with the `Application` type.
    */
-  const KEY_FILE_DESKTOP_KEY_EXEC: string;
+  const KEY_FILE_DESKTOP_KEY_EXEC: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a localized
    * string giving the generic name of the desktop entry.
    */
-  const KEY_FILE_DESKTOP_KEY_GENERIC_NAME: string;
+  const KEY_FILE_DESKTOP_KEY_GENERIC_NAME: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a boolean
    * stating whether the desktop entry has been deleted by the user.
    */
-  const KEY_FILE_DESKTOP_KEY_HIDDEN: string;
+  const KEY_FILE_DESKTOP_KEY_HIDDEN: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a localized
    * string giving the name of the icon to be displayed for the desktop
    * entry.
    */
-  const KEY_FILE_DESKTOP_KEY_ICON: string;
+  const KEY_FILE_DESKTOP_KEY_ICON: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a list
    * of strings giving the MIME types supported by this desktop entry.
    */
-  const KEY_FILE_DESKTOP_KEY_MIME_TYPE: string;
+  const KEY_FILE_DESKTOP_KEY_MIME_TYPE: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a localized
    * string giving the specific name of the desktop entry.
    */
-  const KEY_FILE_DESKTOP_KEY_NAME: string;
+  const KEY_FILE_DESKTOP_KEY_NAME: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a list of
    * strings identifying the environments that should not display the
    * desktop entry.
    */
-  const KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN: string;
+  const KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a boolean
    * stating whether the desktop entry should be shown in menus.
    */
-  const KEY_FILE_DESKTOP_KEY_NO_DISPLAY: string;
+  const KEY_FILE_DESKTOP_KEY_NO_DISPLAY: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a list of
    * strings identifying the environments that should display the
    * desktop entry.
    */
-  const KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN: string;
+  const KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string
    * containing the working directory to run the program in. It is only
    * valid for desktop entries with the `Application` type.
    */
-  const KEY_FILE_DESKTOP_KEY_PATH: string;
+  const KEY_FILE_DESKTOP_KEY_PATH: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a boolean
    * stating whether the application supports the
    * [Startup Notification Protocol Specification](http://www.freedesktop.org/Standards/startup-notification-spec).
    */
-  const KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY: string;
+  const KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is string
    * identifying the WM class or name hint of a window that the application
    * will create, which can be used to emulate Startup Notification with
    * older applications.
    */
-  const KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS: string;
+  const KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a boolean
    * stating whether the program should be run in a terminal window.
    *
    * It is only valid for desktop entries with the `Application` type.
    */
-  const KEY_FILE_DESKTOP_KEY_TERMINAL: string;
+  const KEY_FILE_DESKTOP_KEY_TERMINAL: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string
    * giving the file name of a binary on disk used to determine if the
    * program is actually installed. It is only valid for desktop entries
    * with the `Application` type.
    */
-  const KEY_FILE_DESKTOP_KEY_TRY_EXEC: string;
+  const KEY_FILE_DESKTOP_KEY_TRY_EXEC: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string
    * giving the type of the desktop entry.
@@ -3964,34 +3964,34 @@ declare namespace GLib {
    * %G_KEY_FILE_DESKTOP_TYPE_LINK, or
    * %G_KEY_FILE_DESKTOP_TYPE_DIRECTORY.
    */
-  const KEY_FILE_DESKTOP_KEY_TYPE: string;
+  const KEY_FILE_DESKTOP_KEY_TYPE: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string
    * giving the URL to access. It is only valid for desktop entries
    * with the `Link` type.
    */
-  const KEY_FILE_DESKTOP_KEY_URL: string;
+  const KEY_FILE_DESKTOP_KEY_URL: string | null;
   /**
    * A key under %G_KEY_FILE_DESKTOP_GROUP, whose value is a string
    * giving the version of the Desktop Entry Specification used for
    * the desktop entry file.
    */
-  const KEY_FILE_DESKTOP_KEY_VERSION: string;
+  const KEY_FILE_DESKTOP_KEY_VERSION: string | null;
   /**
    * The value of the %G_KEY_FILE_DESKTOP_KEY_TYPE, key for desktop
    * entries representing applications.
    */
-  const KEY_FILE_DESKTOP_TYPE_APPLICATION: string;
+  const KEY_FILE_DESKTOP_TYPE_APPLICATION: string | null;
   /**
    * The value of the %G_KEY_FILE_DESKTOP_KEY_TYPE, key for desktop
    * entries representing directories.
    */
-  const KEY_FILE_DESKTOP_TYPE_DIRECTORY: string;
+  const KEY_FILE_DESKTOP_TYPE_DIRECTORY: string | null;
   /**
    * The value of the %G_KEY_FILE_DESKTOP_KEY_TYPE, key for desktop
    * entries representing links to documents.
    */
-  const KEY_FILE_DESKTOP_TYPE_LINK: string;
+  const KEY_FILE_DESKTOP_TYPE_LINK: string | null;
   /**
    * Specifies one of the possible types of byte order.
    * See %G_BYTE_ORDER.
@@ -4120,7 +4120,7 @@ declare namespace GLib {
    * linked against at application run time.
    */
   const MINOR_VERSION: number;
-  const MODULE_SUFFIX: string;
+  const MODULE_SUFFIX: string | null;
   /**
    * If a long option in the main group has this name, it is not treated as a
    * regular option. Instead it collects all non-option arguments which would
@@ -4133,7 +4133,7 @@ declare namespace GLib {
    * for leftover arguments has the advantage that GOption takes care of
    * necessary encoding conversions for strings or filenames.
    */
-  const OPTION_REMAINING: string;
+  const OPTION_REMAINING: string | null;
   /**
    * Specifies one of the possible types of byte order
    * (currently unused). See %G_BYTE_ORDER.
@@ -4147,7 +4147,7 @@ declare namespace GLib {
    * A format specifier that can be used in printf()-style format strings
    * when printing a #GPid.
    */
-  const PID_FORMAT: string;
+  const PID_FORMAT: string | null;
   /**
    * Pi divided by 2.
    */
@@ -4160,7 +4160,7 @@ declare namespace GLib {
    * A format specifier that can be used in printf()-style format strings
    * when printing the `fd` member of a #GPollFD.
    */
-  const POLLFD_FORMAT: string;
+  const POLLFD_FORMAT: string | null;
   /**
    * Use this for default priority event sources.
    *
@@ -4206,7 +4206,7 @@ declare namespace GLib {
    * The search path separator as a string.
    * This is ":" on UNIX machines and ";" under Windows.
    */
-  const SEARCHPATH_SEPARATOR_S: string;
+  const SEARCHPATH_SEPARATOR_S: string | null;
   const SIZEOF_LONG: number;
   const SIZEOF_SIZE_T: number;
   const SIZEOF_SSIZE_T: number;
@@ -4228,7 +4228,7 @@ declare namespace GLib {
   /**
    * The standard delimiters, used in g_strdelimit().
    */
-  const STR_DELIMITERS: string;
+  const STR_DELIMITERS: string | null;
   const SYSDEF_AF_INET: number;
   const SYSDEF_AF_INET6: number;
   const SYSDEF_AF_UNIX: number;
@@ -4260,7 +4260,7 @@ declare namespace GLib {
    * calls to functions like g_get_user_cache_dir(), the caller must be prepared
    * to create the directory if it doesn’t exist.
    */
-  const TEST_OPTION_ISOLATE_DIRS: string;
+  const TEST_OPTION_ISOLATE_DIRS: string | null;
   /**
    * Evaluates to a time span of one day.
    */
@@ -4292,12 +4292,12 @@ declare namespace GLib {
    * Generic delimiters characters as defined in
    * [RFC 3986](https://tools.ietf.org/html/rfc3986). Includes `:/?#[]```.
    */
-  const URI_RESERVED_CHARS_GENERIC_DELIMITERS: string;
+  const URI_RESERVED_CHARS_GENERIC_DELIMITERS: string | null;
   /**
    * Subcomponent delimiter characters as defined in
    * [RFC 3986](https://tools.ietf.org/html/rfc3986). Includes `!$&'()*+,;=`.
    */
-  const URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS: string;
+  const URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS: string | null;
   /**
    * Number of microseconds in one second (1 million).
    * This macro is provided for code readability.
@@ -4338,7 +4338,7 @@ declare namespace GLib {
    * @param mode as in access()
    * @returns zero if the pathname refers to an existing file system     object that has all the tested permissions, or -1 otherwise     or on error.
    */
-  function access(filename: string, mode: number): number;
+  function access(filename: string | null, mode: number): number;
   /**
    * This function is similar to g_malloc(), allocating (`n_blocks` * `n_block_bytes)`
    * bytes, but care is taken to align the allocated memory to with the given
@@ -4359,7 +4359,7 @@ declare namespace GLib {
     n_blocks: number,
     n_block_bytes: number,
     alignment: number
-  ): object | null;
+  ): any | null;
   /**
    * This function is similar to g_aligned_alloc(), but it will
    * also clear the allocated memory before returning it.
@@ -4372,12 +4372,12 @@ declare namespace GLib {
     n_blocks: number,
     n_block_bytes: number,
     alignment: number
-  ): object | null;
+  ): any | null;
   /**
    * Frees the memory allocated by g_aligned_alloc().
    * @param mem the memory to deallocate
    */
-  function aligned_free(mem: object | null): void;
+  function aligned_free(mem: any | null): void;
   /**
    * Determines the numeric value of a character as a decimal digit.
    * Differs from g_unichar_digit_value() because it takes a char, so
@@ -4401,7 +4401,11 @@ declare namespace GLib {
    * @param d The #gdouble to convert
    * @returns The pointer to the buffer with the converted string.
    */
-  function ascii_dtostr(buffer: string, buf_len: number, d: number): string;
+  function ascii_dtostr(
+    buffer: string | null,
+    buf_len: number,
+    d: number
+  ): string | null;
   /**
    * Converts a #gdouble to a string, using the '.' as
    * decimal point. To format the number you pass in
@@ -4422,11 +4426,11 @@ declare namespace GLib {
    * @returns The pointer to the buffer with the converted string.
    */
   function ascii_formatd(
-    buffer: string,
+    buffer: string | null,
     buf_len: number,
-    format: string,
+    format: string | null,
     d: number
-  ): string;
+  ): string | null;
   /**
    * Compare two strings, ignoring the case of ASCII characters.
    *
@@ -4447,14 +4451,14 @@ declare namespace GLib {
    * @param s2 string to compare with `s1`
    * @returns 0 if the strings match, a negative value if @s1 < @s2,     or a positive value if @s1 > @s2.
    */
-  function ascii_strcasecmp(s1: string, s2: string): number;
+  function ascii_strcasecmp(s1: string | null, s2: string | null): number;
   /**
    * Converts all upper case ASCII letters to lower case ASCII letters.
    * @param str a string
    * @param len length of `str` in bytes, or -1 if `str` is nul-terminated
    * @returns a newly-allocated string, with all the upper case     characters in @str converted to lower case, with semantics that     exactly match g_ascii_tolower(). (Note that this is unlike the     old g_strdown(), which modified the string in place.)
    */
-  function ascii_strdown(str: string, len: number): string;
+  function ascii_strdown(str: string | null, len: number): string | null;
   /**
    * A convenience function for converting a string to a signed number.
    *
@@ -4484,11 +4488,11 @@ declare namespace GLib {
    * @returns %TRUE if @str was a number, otherwise %FALSE.
    */
   function ascii_string_to_signed(
-    str: string,
+    str: string | null,
     base: number,
     min: number,
     max: number
-  ): [/* returnType */ boolean, /* out_num */ number];
+  ): [/* returnType */ boolean, /* out_num */ number | null];
   /**
    * A convenience function for converting a string to an unsigned number.
    *
@@ -4519,11 +4523,11 @@ declare namespace GLib {
    * @returns %TRUE if @str was a number, otherwise %FALSE.
    */
   function ascii_string_to_unsigned(
-    str: string,
+    str: string | null,
     base: number,
     min: number,
     max: number
-  ): [/* returnType */ boolean, /* out_num */ number];
+  ): [/* returnType */ boolean, /* out_num */ number | null];
   /**
    * Compare `s1` and `s2`, ignoring the case of ASCII characters and any
    * characters after the first `n` in each string. If either string is
@@ -4542,7 +4546,11 @@ declare namespace GLib {
    * @param n number of characters to compare
    * @returns 0 if the strings match, a negative value if @s1 < @s2,     or a positive value if @s1 > @s2.
    */
-  function ascii_strncasecmp(s1: string, s2: string, n: number): number;
+  function ascii_strncasecmp(
+    s1: string | null,
+    s2: string | null,
+    n: number
+  ): number;
   /**
    * Converts a string to a #gdouble value.
    *
@@ -4571,8 +4579,8 @@ declare namespace GLib {
    * @returns the #gdouble value.
    */
   function ascii_strtod(
-    nptr: string
-  ): [/* returnType */ number, /* endptr */ string];
+    nptr: string | null
+  ): [/* returnType */ number, /* endptr */ string | null];
   /**
    * Converts a string to a #gint64 value.
    * This function behaves like the standard strtoll() function
@@ -4596,9 +4604,9 @@ declare namespace GLib {
    * @returns the #gint64 value or zero on error.
    */
   function ascii_strtoll(
-    nptr: string,
+    nptr: string | null,
     base: number
-  ): [/* returnType */ number, /* endptr */ string];
+  ): [/* returnType */ number, /* endptr */ string | null];
   /**
    * Converts a string to a #guint64 value.
    * This function behaves like the standard strtoull() function
@@ -4627,16 +4635,16 @@ declare namespace GLib {
    * @returns the #guint64 value or zero on error.
    */
   function ascii_strtoull(
-    nptr: string,
+    nptr: string | null,
     base: number
-  ): [/* returnType */ number, /* endptr */ string];
+  ): [/* returnType */ number, /* endptr */ string | null];
   /**
    * Converts all lower case ASCII letters to upper case ASCII letters.
    * @param str a string
    * @param len length of `str` in bytes, or -1 if `str` is nul-terminated
    * @returns a newly allocated string, with all the lower case     characters in @str converted to upper case, with semantics that     exactly match g_ascii_toupper(). (Note that this is unlike the     old g_strup(), which modified the string in place.)
    */
-  function ascii_strup(str: string, len: number): string;
+  function ascii_strup(str: string | null, len: number): string | null;
   /**
    * Convert a character to ASCII lower case.
    *
@@ -4675,46 +4683,46 @@ declare namespace GLib {
    */
   function ascii_xdigit_value(c: number): number;
   function assert_warning(
-    log_domain: string,
-    file: string,
+    log_domain: string | null,
+    file: string | null,
     line: number,
-    pretty_function: string,
-    expression: string
+    pretty_function: string | null,
+    expression: string | null
   ): void;
   function assertion_message(
-    domain: string,
-    file: string,
+    domain: string | null,
+    file: string | null,
     line: number,
-    func: string,
-    message: string
+    func: string | null,
+    message: string | null
   ): void;
   function assertion_message_cmpstr(
-    domain: string,
-    file: string,
+    domain: string | null,
+    file: string | null,
     line: number,
-    func: string,
-    expr: string,
-    arg1: string,
-    cmp: string,
-    arg2: string
+    func: string | null,
+    expr: string | null,
+    arg1: string | null,
+    cmp: string | null,
+    arg2: string | null
   ): void;
   function assertion_message_cmpstrv(
-    domain: string,
-    file: string,
+    domain: string | null,
+    file: string | null,
     line: number,
-    func: string,
-    expr: string,
-    arg1: string,
-    arg2: string,
+    func: string | null,
+    expr: string | null,
+    arg1: string | null,
+    arg2: string | null,
     first_wrong_idx: number
   ): void;
   function assertion_message_error(
-    domain: string,
-    file: string,
+    domain: string | null,
+    file: string | null,
     line: number,
-    func: string,
-    expr: string,
-    error: Error,
+    func: string | null,
+    expr: string | null,
+    error: Error | null,
     error_domain: Quark,
     error_code: number
   ): void;
@@ -4769,7 +4777,7 @@ declare namespace GLib {
    * @param val the value to add
    * @returns the value of @atomic before the add, signed
    */
-  function atomic_int_add(atomic: number, val: number): number;
+  function atomic_int_add(atomic: number | null, val: number): number;
   /**
    * Performs an atomic bitwise 'and' of the value of `atomic` and `val,`
    * storing the result back in `atomic`.
@@ -4785,7 +4793,7 @@ declare namespace GLib {
    * @param val the value to 'and'
    * @returns the value of @atomic before the operation, unsigned
    */
-  function atomic_int_and(atomic: number, val: number): number;
+  function atomic_int_and(atomic: number | null, val: number): number;
   /**
    * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
    * If `atomic` was not equal to `oldval` then no change occurs.
@@ -4805,7 +4813,7 @@ declare namespace GLib {
    * @returns %TRUE if the exchange took place
    */
   function atomic_int_compare_and_exchange(
-    atomic: number,
+    atomic: number | null,
     oldval: number,
     newval: number
   ): boolean;
@@ -4828,10 +4836,10 @@ declare namespace GLib {
    * @returns %TRUE if the exchange took place
    */
   function atomic_int_compare_and_exchange_full(
-    atomic: number,
+    atomic: number | null,
     oldval: number,
     newval: number
-  ): [/* returnType */ boolean, /* preval */ number];
+  ): [/* returnType */ boolean, /* preval */ number | null];
   /**
    * Decrements the value of `atomic` by 1.
    *
@@ -4845,7 +4853,7 @@ declare namespace GLib {
    * @param atomic a pointer to a #gint or #guint
    * @returns %TRUE if the resultant value is zero
    */
-  function atomic_int_dec_and_test(atomic: number): boolean;
+  function atomic_int_dec_and_test(atomic: number | null): boolean;
   /**
    * Sets the `atomic` to `newval` and returns the old value from `atomic`.
    *
@@ -4859,7 +4867,7 @@ declare namespace GLib {
    * @param newval the value to replace with
    * @returns the value of @atomic before the exchange, signed
    */
-  function atomic_int_exchange(atomic: number, newval: number): number;
+  function atomic_int_exchange(atomic: number | null, newval: number): number;
   /**
    * This function existed before g_atomic_int_add() returned the prior
    * value of the integer (which it now does).  It is retained only for
@@ -4868,7 +4876,10 @@ declare namespace GLib {
    * @param val the value to add
    * @returns the value of @atomic before the add, signed
    */
-  function atomic_int_exchange_and_add(atomic: number, val: number): number;
+  function atomic_int_exchange_and_add(
+    atomic: number | null,
+    val: number
+  ): number;
   /**
    * Gets the current value of `atomic`.
    *
@@ -4880,7 +4891,7 @@ declare namespace GLib {
    * @param atomic a pointer to a #gint or #guint
    * @returns the value of the integer
    */
-  function atomic_int_get(atomic: number): number;
+  function atomic_int_get(atomic: number | null): number;
   /**
    * Increments the value of `atomic` by 1.
    *
@@ -4892,7 +4903,7 @@ declare namespace GLib {
    * the pointer passed to it should not be `volatile`.
    * @param atomic a pointer to a #gint or #guint
    */
-  function atomic_int_inc(atomic: number): void;
+  function atomic_int_inc(atomic: number | null): void;
   /**
    * Performs an atomic bitwise 'or' of the value of `atomic` and `val,`
    * storing the result back in `atomic`.
@@ -4908,7 +4919,7 @@ declare namespace GLib {
    * @param val the value to 'or'
    * @returns the value of @atomic before the operation, unsigned
    */
-  function atomic_int_or(atomic: number, val: number): number;
+  function atomic_int_or(atomic: number | null, val: number): number;
   /**
    * Sets the value of `atomic` to `newval`.
    *
@@ -4920,7 +4931,7 @@ declare namespace GLib {
    * @param atomic a pointer to a #gint or #guint
    * @param newval a new value to store
    */
-  function atomic_int_set(atomic: number, newval: number): void;
+  function atomic_int_set(atomic: number | null, newval: number): void;
   /**
    * Performs an atomic bitwise 'xor' of the value of `atomic` and `val,`
    * storing the result back in `atomic`.
@@ -4936,7 +4947,7 @@ declare namespace GLib {
    * @param val the value to 'xor'
    * @returns the value of @atomic before the operation, unsigned
    */
-  function atomic_int_xor(atomic: number, val: number): number;
+  function atomic_int_xor(atomic: number | null, val: number): number;
   /**
    * Atomically adds `val` to the value of `atomic`.
    *
@@ -4951,7 +4962,7 @@ declare namespace GLib {
    * @param val the value to add
    * @returns the value of @atomic before the add, signed
    */
-  function atomic_pointer_add(atomic: object, val: number): number;
+  function atomic_pointer_add(atomic: any | null, val: number): number;
   /**
    * Performs an atomic bitwise 'and' of the value of `atomic` and `val,`
    * storing the result back in `atomic`.
@@ -4967,7 +4978,7 @@ declare namespace GLib {
    * @param val the value to 'and'
    * @returns the value of @atomic before the operation, unsigned
    */
-  function atomic_pointer_and(atomic: object, val: number): number;
+  function atomic_pointer_and(atomic: any | null, val: number): number;
   /**
    * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
    * If `atomic` was not equal to `oldval` then no change occurs.
@@ -4987,9 +4998,9 @@ declare namespace GLib {
    * @returns %TRUE if the exchange took place
    */
   function atomic_pointer_compare_and_exchange(
-    atomic: object,
-    oldval: object | null,
-    newval: object | null
+    atomic: any | null,
+    oldval: any | null,
+    newval: any | null
   ): boolean;
   /**
    * Compares `atomic` to `oldval` and, if equal, sets it to `newval`.
@@ -5010,10 +5021,10 @@ declare namespace GLib {
    * @returns %TRUE if the exchange took place
    */
   function atomic_pointer_compare_and_exchange_full(
-    atomic: object,
-    oldval: object | null,
-    newval: object | null
-  ): [/* returnType */ boolean, /* preval */ object];
+    atomic: any | null,
+    oldval: any | null,
+    newval: any | null
+  ): [/* returnType */ boolean, /* preval */ any | null];
   /**
    * Sets the `atomic` to `newval` and returns the old value from `atomic`.
    *
@@ -5028,9 +5039,9 @@ declare namespace GLib {
    * @returns the value of @atomic before the exchange
    */
   function atomic_pointer_exchange(
-    atomic: object | null,
-    newval: object | null
-  ): object | null;
+    atomic: any | null,
+    newval: any | null
+  ): any | null;
   /**
    * Gets the current value of `atomic`.
    *
@@ -5042,7 +5053,7 @@ declare namespace GLib {
    * @param atomic a pointer to a #gpointer-sized value
    * @returns the value of the pointer
    */
-  function atomic_pointer_get(atomic: object): object | null;
+  function atomic_pointer_get(atomic: any | null): any | null;
   /**
    * Performs an atomic bitwise 'or' of the value of `atomic` and `val,`
    * storing the result back in `atomic`.
@@ -5058,7 +5069,7 @@ declare namespace GLib {
    * @param val the value to 'or'
    * @returns the value of @atomic before the operation, unsigned
    */
-  function atomic_pointer_or(atomic: object, val: number): number;
+  function atomic_pointer_or(atomic: any | null, val: number): number;
   /**
    * Sets the value of `atomic` to `newval`.
    *
@@ -5070,7 +5081,7 @@ declare namespace GLib {
    * @param atomic a pointer to a #gpointer-sized value
    * @param newval a new value to store
    */
-  function atomic_pointer_set(atomic: object, newval: object | null): void;
+  function atomic_pointer_set(atomic: any | null, newval: any | null): void;
   /**
    * Performs an atomic bitwise 'xor' of the value of `atomic` and `val,`
    * storing the result back in `atomic`.
@@ -5086,13 +5097,13 @@ declare namespace GLib {
    * @param val the value to 'xor'
    * @returns the value of @atomic before the operation, unsigned
    */
-  function atomic_pointer_xor(atomic: object, val: number): number;
+  function atomic_pointer_xor(atomic: any | null, val: number): number;
   /**
    * Atomically acquires a reference on the data pointed by `mem_block`.
    * @param mem_block a pointer to reference counted data
    * @returns a pointer to the data,   with its reference count increased
    */
-  function atomic_rc_box_acquire(mem_block: object): object;
+  function atomic_rc_box_acquire(mem_block: any): any;
   /**
    * Allocates `block_size` bytes of memory, and adds atomic
    * reference counting semantics to it.
@@ -5105,7 +5116,7 @@ declare namespace GLib {
    * @param block_size the size of the allocation, must be greater than 0
    * @returns a pointer to the allocated memory
    */
-  function atomic_rc_box_alloc(block_size: number): object;
+  function atomic_rc_box_alloc(block_size: number): any;
   /**
    * Allocates `block_size` bytes of memory, and adds atomic
    * reference counting semantics to it.
@@ -5120,7 +5131,7 @@ declare namespace GLib {
    * @param block_size the size of the allocation, must be greater than 0
    * @returns a pointer to the allocated memory
    */
-  function atomic_rc_box_alloc0(block_size: number): object;
+  function atomic_rc_box_alloc0(block_size: number): any;
   /**
    * Allocates a new block of data with atomic reference counting
    * semantics, and copies `block_size` bytes of `mem_block`
@@ -5129,13 +5140,13 @@ declare namespace GLib {
    * @param mem_block the memory to copy
    * @returns a pointer to the allocated   memory
    */
-  function atomic_rc_box_dup(block_size: number, mem_block: object): object;
+  function atomic_rc_box_dup(block_size: number, mem_block: any): any;
   /**
    * Retrieves the size of the reference counted data pointed by `mem_block`.
    * @param mem_block a pointer to reference counted data
    * @returns the size of the data, in bytes
    */
-  function atomic_rc_box_get_size(mem_block: object): number;
+  function atomic_rc_box_get_size(mem_block: any): number;
   /**
    * Atomically releases a reference on the data pointed by `mem_block`.
    *
@@ -5143,7 +5154,7 @@ declare namespace GLib {
    * resources allocated for `mem_block`.
    * @param mem_block a pointer to reference counted data
    */
-  function atomic_rc_box_release(mem_block: object): void;
+  function atomic_rc_box_release(mem_block: any): void;
   /**
    * Atomically releases a reference on the data pointed by `mem_block`.
    *
@@ -5154,7 +5165,7 @@ declare namespace GLib {
    * @param clear_func a function to call when clearing the data
    */
   function atomic_rc_box_release_full(
-    mem_block: object,
+    mem_block: any,
     clear_func: DestroyNotify
   ): void;
   /**
@@ -5163,7 +5174,7 @@ declare namespace GLib {
    * @param val the value to compare
    * @returns %TRUE if the reference count is the same   as the given value
    */
-  function atomic_ref_count_compare(arc: number, val: number): boolean;
+  function atomic_ref_count_compare(arc: number | null, val: number): boolean;
   /**
    * Atomically decreases the reference count.
    *
@@ -5173,17 +5184,17 @@ declare namespace GLib {
    * @param arc the address of an atomic reference count variable
    * @returns %TRUE if the reference count reached 0, and %FALSE otherwise
    */
-  function atomic_ref_count_dec(arc: number): boolean;
+  function atomic_ref_count_dec(arc: number | null): boolean;
   /**
    * Atomically increases the reference count.
    * @param arc the address of an atomic reference count variable
    */
-  function atomic_ref_count_inc(arc: number): void;
+  function atomic_ref_count_inc(arc: number | null): void;
   /**
    * Initializes a reference count variable to 1.
    * @param arc the address of an atomic reference count variable
    */
-  function atomic_ref_count_init(arc: number): void;
+  function atomic_ref_count_init(arc: number | null): void;
   /**
    * Decode a sequence of Base-64 encoded text into binary data.  Note
    * that the returned binary data is not necessarily zero-terminated,
@@ -5191,7 +5202,7 @@ declare namespace GLib {
    * @param text zero-terminated string with base64 text to decode
    * @returns                newly allocated buffer containing the binary data               that @text represents. The returned buffer must               be freed with g_free().
    */
-  function base64_decode(text: string): Uint8Array;
+  function base64_decode(text: string | null): Uint8Array;
   /**
    * Decode a sequence of Base-64 encoded text into binary data
    * by overwriting the input data.
@@ -5200,14 +5211,14 @@ declare namespace GLib {
    */
   function base64_decode_inplace(
     text: Uint8Array
-  ): [/* returnType */ number, /* text */ Uint8Array];
+  ): [/* returnType */ number | null, /* text */ Uint8Array];
   /**
    * Encode a sequence of binary data into its Base-64 stringified
    * representation.
    * @param data the binary data to encode
    * @returns a newly allocated, zero-terminated Base-64               encoded string representing @data. The returned string must               be freed with g_free().
    */
-  function base64_encode(data: Uint8Array | null): string;
+  function base64_encode(data: Uint8Array | null): string | null;
   /**
    * Flush the status from a sequence of calls to g_base64_encode_step().
    *
@@ -5223,13 +5234,13 @@ declare namespace GLib {
    */
   function base64_encode_close(
     break_lines: boolean,
-    state: number,
-    save: number
+    state: number | null,
+    save: number | null
   ): [
     /* returnType */ number,
     /* out */ Uint8Array,
-    /* state */ number,
-    /* save */ number
+    /* state */ number | null,
+    /* save */ number | null
   ];
   /**
    * Incrementally encode a sequence of binary data into its Base-64 stringified
@@ -5260,13 +5271,13 @@ declare namespace GLib {
   function base64_encode_step(
     in_: Uint8Array,
     break_lines: boolean,
-    state: number,
-    save: number
+    state: number | null,
+    save: number | null
   ): [
     /* returnType */ number,
     /* out */ Uint8Array,
-    /* state */ number,
-    /* save */ number
+    /* state */ number | null,
+    /* save */ number | null
   ];
   /**
    * Gets the name of the file without any leading directory
@@ -5275,7 +5286,7 @@ declare namespace GLib {
    * @param file_name the name of the file
    * @returns the name of the file without any leading     directory components
    */
-  function basename(file_name: string): string;
+  function basename(file_name: string | null): string | null;
   /**
    * Sets the indicated `lock_bit` in `address`.  If the bit is already
    * set, this call will block until g_bit_unlock() unsets the
@@ -5294,7 +5305,7 @@ declare namespace GLib {
    * @param address a pointer to an integer
    * @param lock_bit a bit value between 0 and 31
    */
-  function bit_lock(address: number, lock_bit: number): void;
+  function bit_lock(address: number | null, lock_bit: number): void;
   /**
    * Find the position of the first bit set in `mask,` searching
    * from (but not including) `nth_bit` upwards. Bits are numbered
@@ -5341,7 +5352,7 @@ declare namespace GLib {
    * @param lock_bit a bit value between 0 and 31
    * @returns %TRUE if the lock was acquired
    */
-  function bit_trylock(address: number, lock_bit: number): boolean;
+  function bit_trylock(address: number | null, lock_bit: number): boolean;
   /**
    * Clears the indicated `lock_bit` in `address`.  If another thread is
    * currently blocked in g_bit_lock() on this same bit then it will be
@@ -5354,7 +5365,7 @@ declare namespace GLib {
    * @param address a pointer to an integer
    * @param lock_bit a bit value between 0 and 31
    */
-  function bit_unlock(address: number, lock_bit: number): void;
+  function bit_unlock(address: number | null, lock_bit: number): void;
   function bookmark_file_error_quark(): Quark;
   /**
    * Behaves exactly like g_build_filename(), but takes the path elements
@@ -5363,7 +5374,7 @@ declare namespace GLib {
    * @param args %NULL-terminated     array of strings containing the path elements.
    * @returns a newly-allocated string that     must be freed with g_free().
    */
-  function build_filenamev(args: string[]): string;
+  function build_filenamev(args: string[]): string | null;
   /**
    * Behaves exactly like g_build_path(), but takes the path elements
    * as a string array, instead of varargs. This function is mainly
@@ -5372,7 +5383,7 @@ declare namespace GLib {
    * @param args %NULL-terminated     array of strings containing the path elements.
    * @returns a newly-allocated string that     must be freed with g_free().
    */
-  function build_pathv(separator: string, args: string[]): string;
+  function build_pathv(separator: string | null, args: string[]): string | null;
   /**
    * Frees the memory allocated by the #GByteArray. If `free_segment` is
    * %TRUE it frees the actual byte data. If the reference count of
@@ -5382,7 +5393,10 @@ declare namespace GLib {
    * @param free_segment if %TRUE the actual byte data is freed as well
    * @returns the element data if @free_segment is %FALSE, otherwise          %NULL.  The element data should be freed using g_free().
    */
-  function byte_array_free(array: Uint8Array, free_segment: boolean): number;
+  function byte_array_free(
+    array: Uint8Array,
+    free_segment: boolean
+  ): number | null;
   /**
    * Transfers the data from the #GByteArray into a new immutable #GBytes.
    *
@@ -5395,7 +5409,7 @@ declare namespace GLib {
    * @param array a #GByteArray
    * @returns a new immutable #GBytes representing same     byte data that was in the array
    */
-  function byte_array_free_to_bytes(array: Uint8Array): Bytes;
+  function byte_array_free_to_bytes(array: Uint8Array): Bytes | null;
   /**
    * Creates a new #GByteArray with a reference count of 1.
    * @returns the new #GByteArray
@@ -5421,7 +5435,7 @@ declare namespace GLib {
    */
   function byte_array_steal(
     array: Uint8Array
-  ): [/* returnType */ number, /* len */ number];
+  ): [/* returnType */ number | null, /* len */ number | null];
   /**
    * Atomically decrements the reference count of `array` by one. If the
    * reference count drops to 0, all memory allocated by the array is
@@ -5450,9 +5464,9 @@ declare namespace GLib {
    * @returns a newly allocated string with the canonical file path
    */
   function canonicalize_filename(
-    filename: string,
+    filename: string | null,
     relative_to: string | null
-  ): string;
+  ): string | null;
   /**
    * A wrapper for the POSIX chdir() function. The function changes the
    * current directory of the process to `path`.
@@ -5461,7 +5475,7 @@ declare namespace GLib {
    * @param path a pathname in the GLib file name encoding     (UTF-8 on Windows)
    * @returns 0 on success, -1 if an error occurred.
    */
-  function chdir(path: string): number;
+  function chdir(path: string | null): number;
   /**
    * Checks that the GLib library in use is compatible with the
    * given version.
@@ -5565,7 +5579,7 @@ declare namespace GLib {
    * @param pid process to watch. On POSIX the positive pid of a child process. On Windows a handle for a process (which doesn't have to be a child).
    * @returns the newly-created child watch source
    */
-  function child_watch_source_new(pid: Pid): Source;
+  function child_watch_source_new(pid: Pid): Source | null;
   /**
    * If `err` or *`err` is %NULL, does nothing. Otherwise,
    * calls g_error_free() on *`err` and sets *`err` to %NULL.
@@ -5595,7 +5609,7 @@ declare namespace GLib {
    */
   function compute_checksum_for_bytes(
     checksum_type: ChecksumType,
-    data: Bytes
+    data: Bytes | null
   ): string | null;
   /**
    * Computes the checksum for a binary `data` of `length`. This is a
@@ -5622,7 +5636,7 @@ declare namespace GLib {
    */
   function compute_checksum_for_string(
     checksum_type: ChecksumType,
-    str: string,
+    str: string | null,
     length: number
   ): string | null;
   /**
@@ -5638,9 +5652,9 @@ declare namespace GLib {
    */
   function compute_hmac_for_bytes(
     digest_type: ChecksumType,
-    key: Bytes,
-    data: Bytes
-  ): string;
+    key: Bytes | null,
+    data: Bytes | null
+  ): string | null;
   /**
    * Computes the HMAC for a binary `data` of `length`. This is a
    * convenience wrapper for g_hmac_new(), g_hmac_get_string()
@@ -5656,7 +5670,7 @@ declare namespace GLib {
     digest_type: ChecksumType,
     key: Uint8Array,
     data: Uint8Array
-  ): string;
+  ): string | null;
   /**
    * Computes the HMAC for a string.
    *
@@ -5670,9 +5684,9 @@ declare namespace GLib {
   function compute_hmac_for_string(
     digest_type: ChecksumType,
     key: Uint8Array,
-    str: string,
+    str: string | null,
     length: number
-  ): string;
+  ): string | null;
   /**
    * Converts a string from one character set to another.
    *
@@ -5695,9 +5709,9 @@ declare namespace GLib {
    */
   function convert(
     str: Uint8Array,
-    to_codeset: string,
-    from_codeset: string
-  ): [/* returnType */ Uint8Array, /* bytes_read */ number];
+    to_codeset: string | null,
+    from_codeset: string | null
+  ): [/* returnType */ Uint8Array, /* bytes_read */ number | null];
   function convert_error_quark(): Quark;
   /**
    * Converts a string from one character set to another, possibly
@@ -5725,10 +5739,10 @@ declare namespace GLib {
    */
   function convert_with_fallback(
     str: Uint8Array,
-    to_codeset: string,
-    from_codeset: string,
-    fallback: string
-  ): [/* returnType */ Uint8Array, /* bytes_read */ number];
+    to_codeset: string | null,
+    from_codeset: string | null,
+    fallback: string | null
+  ): [/* returnType */ Uint8Array, /* bytes_read */ number | null];
   /**
    * Calls the given function for each data element of the datalist. The
    * function is called with each data element's #GQuark id and data,
@@ -5743,7 +5757,7 @@ declare namespace GLib {
    * @param datalist a datalist.
    * @param func the function to call for each data element.
    */
-  function datalist_foreach(datalist: Data, func: DataForeachFunc): void;
+  function datalist_foreach(datalist: Data | null, func: DataForeachFunc): void;
   /**
    * Gets a data element, using its string identifier. This is slower than
    * g_datalist_id_get_data() because it compares strings.
@@ -5751,21 +5765,27 @@ declare namespace GLib {
    * @param key the string identifying a data element.
    * @returns the data element, or %NULL if it          is not found.
    */
-  function datalist_get_data(datalist: Data, key: string): object | null;
+  function datalist_get_data(
+    datalist: Data | null,
+    key: string | null
+  ): any | null;
   /**
    * Gets flags values packed in together with the datalist.
    * See g_datalist_set_flags().
    * @param datalist pointer to the location that holds a list
    * @returns the flags of the datalist
    */
-  function datalist_get_flags(datalist: Data): number;
+  function datalist_get_flags(datalist: Data | null): number;
   /**
    * Retrieves the data element corresponding to `key_id`.
    * @param datalist a datalist.
    * @param key_id the #GQuark identifying a data element.
    * @returns the data element, or %NULL if          it is not found.
    */
-  function datalist_id_get_data(datalist: Data, key_id: Quark): object | null;
+  function datalist_id_get_data(
+    datalist: Data | null,
+    key_id: Quark
+  ): any | null;
   /**
    * Removes multiple keys from a datalist.
    *
@@ -5774,7 +5794,10 @@ declare namespace GLib {
    * @param datalist a datalist
    * @param keys keys to remove
    */
-  function datalist_id_remove_multiple(datalist: Data, keys: Quark[]): void;
+  function datalist_id_remove_multiple(
+    datalist: Data | null,
+    keys: Quark[]
+  ): void;
   /**
    * Turns on flag values for a data list. This function is used
    * to keep a small number of boolean flags in an object with
@@ -5785,19 +5808,19 @@ declare namespace GLib {
    * @param datalist pointer to the location that holds a list
    * @param flags the flags to turn on. The values of the flags are   restricted by %G_DATALIST_FLAGS_MASK (currently   3; giving two possible boolean flags).   A value for `flags` that doesn't fit within the mask is   an error.
    */
-  function datalist_set_flags(datalist: Data, flags: number): void;
+  function datalist_set_flags(datalist: Data | null, flags: number): void;
   /**
    * Turns off flag values for a data list. See g_datalist_unset_flags()
    * @param datalist pointer to the location that holds a list
    * @param flags the flags to turn off. The values of the flags are   restricted by %G_DATALIST_FLAGS_MASK (currently   3: giving two possible boolean flags).   A value for `flags` that doesn't fit within the mask is   an error.
    */
-  function datalist_unset_flags(datalist: Data, flags: number): void;
+  function datalist_unset_flags(datalist: Data | null, flags: number): void;
   /**
    * Destroys the dataset, freeing all memory allocated, and calling any
    * destroy functions set for data elements.
    * @param dataset_location the location identifying the dataset.
    */
-  function dataset_destroy(dataset_location: object): void;
+  function dataset_destroy(dataset_location: any): void;
   /**
    * Calls the given function for each data element which is associated
    * with the given location. Note that this function is NOT thread-safe.
@@ -5810,10 +5833,7 @@ declare namespace GLib {
    * @param dataset_location the location identifying the dataset.
    * @param func the function to call for each data element.
    */
-  function dataset_foreach(
-    dataset_location: object,
-    func: DataForeachFunc
-  ): void;
+  function dataset_foreach(dataset_location: any, func: DataForeachFunc): void;
   /**
    * Gets the data element corresponding to a #GQuark.
    * @param dataset_location the location identifying the dataset.
@@ -5821,9 +5841,9 @@ declare namespace GLib {
    * @returns the data element corresponding to          the #GQuark, or %NULL if it is not found.
    */
   function dataset_id_get_data(
-    dataset_location: object,
+    dataset_location: any,
     key_id: Quark
-  ): object | null;
+  ): any | null;
   /**
    * Returns the number of days in a month, taking leap
    * years into account.
@@ -5888,10 +5908,10 @@ declare namespace GLib {
    * @returns number of characters written to the buffer, or 0 the buffer was too small
    */
   function date_strftime(
-    s: string,
+    s: string | null,
     slen: number,
-    format: string,
-    date: Date
+    format: string | null,
+    date: Date | null
   ): number;
   /**
    * Returns %TRUE if the day of the month is valid (a day is valid if it's
@@ -5954,9 +5974,9 @@ declare namespace GLib {
    */
   function dcgettext(
     domain: string | null,
-    msgid: string,
+    msgid: string | null,
     category: number
-  ): string;
+  ): string | null;
   /**
    * This function is a wrapper of dgettext() which does not translate
    * the message if the default domain as set with textdomain() has no
@@ -5994,7 +6014,7 @@ declare namespace GLib {
    * @param msgid message to translate
    * @returns The translated string
    */
-  function dgettext(domain: string | null, msgid: string): string;
+  function dgettext(domain: string | null, msgid: string | null): string | null;
   /**
    * Creates a subdirectory in the preferred directory for temporary
    * files (as returned by g_get_tmp_dir()).
@@ -6010,7 +6030,7 @@ declare namespace GLib {
    * @param tmpl Template for directory name,     as in g_mkdtemp(), basename only, or %NULL for a default template
    * @returns The actual name used. This string     should be freed with g_free() when not needed any longer and is     is in the GLib file name encoding. In case of errors, %NULL is     returned and @error will be set.
    */
-  function dir_make_tmp(tmpl: string | null): string;
+  function dir_make_tmp(tmpl: string | null): string | null;
   /**
    * Compares two #gpointer arguments and returns %TRUE if they are equal.
    * It can be passed to g_hash_table_new() as the `key_equal_func`
@@ -6023,7 +6043,7 @@ declare namespace GLib {
    * @param v2 a key to compare with `v1`
    * @returns %TRUE if the two keys match.
    */
-  function direct_equal(v1: object | null, v2: object | null): boolean;
+  function direct_equal(v1: any | null, v2: any | null): boolean;
   /**
    * Converts a gpointer to a hash value.
    * It can be passed to g_hash_table_new() as the `hash_func` parameter,
@@ -6035,7 +6055,7 @@ declare namespace GLib {
    * @param v a #gpointer key
    * @returns a hash value corresponding to the key.
    */
-  function direct_hash(v: object | null): number;
+  function direct_hash(v: any | null): number;
   /**
    * This function is a wrapper of dngettext() which does not translate
    * the message if the default domain as set with textdomain() has no
@@ -6051,10 +6071,10 @@ declare namespace GLib {
    */
   function dngettext(
     domain: string | null,
-    msgid: string,
-    msgid_plural: string,
+    msgid: string | null,
+    msgid_plural: string | null,
     n: number
-  ): string;
+  ): string | null;
   /**
    * Compares the two #gdouble values being pointed to and returns
    * %TRUE if they are equal.
@@ -6065,7 +6085,7 @@ declare namespace GLib {
    * @param v2 a pointer to a #gdouble key to compare with `v1`
    * @returns %TRUE if the two keys match.
    */
-  function double_equal(v1: object, v2: object): boolean;
+  function double_equal(v1: any, v2: any): boolean;
   /**
    * Converts a pointer to a #gdouble to a hash value.
    * It can be passed to g_hash_table_new() as the `hash_func` parameter,
@@ -6074,7 +6094,7 @@ declare namespace GLib {
    * @param v a pointer to a #gdouble key
    * @returns a hash value corresponding to the key.
    */
-  function double_hash(v: object): number;
+  function double_hash(v: any): number;
   /**
    * This function is a variant of g_dgettext() which supports
    * a disambiguating message context. GNU gettext uses the
@@ -6096,9 +6116,9 @@ declare namespace GLib {
    */
   function dpgettext(
     domain: string | null,
-    msgctxtid: string,
+    msgctxtid: string | null,
     msgidoffset: number
-  ): string;
+  ): string | null;
   /**
    * This function is a variant of g_dgettext() which supports
    * a disambiguating message context. GNU gettext uses the
@@ -6117,9 +6137,9 @@ declare namespace GLib {
    */
   function dpgettext2(
     domain: string | null,
-    context: string,
-    msgid: string
-  ): string;
+    context: string | null,
+    msgid: string | null
+  ): string | null;
   /**
    * Returns the value of the environment variable `variable` in the
    * provided list `envp`.
@@ -6129,7 +6149,7 @@ declare namespace GLib {
    */
   function environ_getenv(
     envp: string[] | null,
-    variable: string
+    variable: string | null
   ): string | null;
   /**
    * Sets the environment variable `variable` in the provided list
@@ -6142,8 +6162,8 @@ declare namespace GLib {
    */
   function environ_setenv(
     envp: string[] | null,
-    variable: string,
-    value: string,
+    variable: string | null,
+    value: string | null,
     overwrite: boolean
   ): string[];
   /**
@@ -6153,7 +6173,10 @@ declare namespace GLib {
    * @param variable the environment variable to remove, must not     contain '='
    * @returns      the updated environment list. Free it using g_strfreev().
    */
-  function environ_unsetenv(envp: string[] | null, variable: string): string[];
+  function environ_unsetenv(
+    envp: string[] | null,
+    variable: string | null
+  ): string[];
   /**
    * Gets a #GFileError constant based on the passed-in `err_no`.
    *
@@ -6184,7 +6207,7 @@ declare namespace GLib {
    * @returns %TRUE on success, %FALSE if an error occurred
    */
   function file_get_contents(
-    filename: string
+    filename: string | null
   ): [/* returnType */ boolean, /* contents */ Uint8Array];
   /**
    * Opens a file for writing in the preferred directory for temporary
@@ -6208,7 +6231,7 @@ declare namespace GLib {
    */
   function file_open_tmp(
     tmpl: string | null
-  ): [/* returnType */ number, /* name_used */ string];
+  ): [/* returnType */ number, /* name_used */ string | null];
   /**
    * Reads the contents of the symbolic link `filename` like the POSIX
    * readlink() function.  The returned string is in the encoding used
@@ -6216,7 +6239,7 @@ declare namespace GLib {
    * @param filename the symbolic link
    * @returns A newly-allocated string with     the contents of the symbolic link, or %NULL if an error occurred.
    */
-  function file_read_link(filename: string): string;
+  function file_read_link(filename: string | null): string | null;
   /**
    * Writes all of `contents` to a file named `filename`. This is a convenience
    * wrapper around calling g_file_set_contents_full() with `flags` set to
@@ -6226,7 +6249,10 @@ declare namespace GLib {
    * @param contents string to write to the file
    * @returns %TRUE on success, %FALSE if an error occurred
    */
-  function file_set_contents(filename: string, contents: Uint8Array): boolean;
+  function file_set_contents(
+    filename: string | null,
+    contents: Uint8Array
+  ): boolean;
   /**
    * Writes all of `contents` to a file named `filename,` with good error checking.
    * If a file called `filename` already exists it will be overwritten.
@@ -6289,7 +6315,7 @@ declare namespace GLib {
    * @returns %TRUE on success, %FALSE if an error occurred
    */
   function file_set_contents_full(
-    filename: string,
+    filename: string | null,
     contents: Uint8Array,
     flags: FileSetContentsFlags,
     mode: number
@@ -6342,7 +6368,7 @@ declare namespace GLib {
    * @param test bitfield of #GFileTest flags
    * @returns whether a test was %TRUE
    */
-  function file_test(filename: string, test: FileTest): boolean;
+  function file_test(filename: string | null, test: FileTest): boolean;
   /**
    * Returns the display basename for the particular filename, guaranteed
    * to be valid UTF-8. The display name might not be identical to the filename,
@@ -6363,7 +6389,7 @@ declare namespace GLib {
    * @param filename an absolute pathname in the     GLib file name encoding
    * @returns a newly allocated string containing   a rendition of the basename of the filename in valid UTF-8
    */
-  function filename_display_basename(filename: string): string;
+  function filename_display_basename(filename: string | null): string | null;
   /**
    * Converts a filename into a valid UTF-8 string. The conversion is
    * not necessarily reversible, so you should keep the original around
@@ -6383,7 +6409,7 @@ declare namespace GLib {
    * @param filename a pathname hopefully in the     GLib file name encoding
    * @returns a newly allocated string containing   a rendition of the filename in valid UTF-8
    */
-  function filename_display_name(filename: string): string;
+  function filename_display_name(filename: string | null): string | null;
   /**
    * Converts an escaped ASCII-encoded URI to a local filename in the
    * encoding used for filenames.
@@ -6391,8 +6417,8 @@ declare namespace GLib {
    * @returns a newly-allocated string holding               the resulting filename, or %NULL on an error.
    */
   function filename_from_uri(
-    uri: string
-  ): [/* returnType */ string, /* hostname */ string | null];
+    uri: string | null
+  ): [/* returnType */ string | null, /* hostname */ string | null];
   /**
    * Converts a string from UTF-8 to the encoding GLib uses for
    * filenames. Note that on Windows GLib uses UTF-8 for filenames;
@@ -6409,12 +6435,12 @@ declare namespace GLib {
    * @returns                The converted string, or %NULL on an error.
    */
   function filename_from_utf8(
-    utf8string: string,
+    utf8string: string | null,
     len: number
   ): [
-    /* returnType */ string,
-    /* bytes_read */ number,
-    /* bytes_written */ number
+    /* returnType */ string | null,
+    /* bytes_read */ number | null,
+    /* bytes_written */ number | null
   ];
   /**
    * Converts an absolute filename to an escaped ASCII-encoded URI, with the path
@@ -6423,7 +6449,10 @@ declare namespace GLib {
    * @param hostname A UTF-8 encoded hostname, or %NULL for none.
    * @returns a newly-allocated string holding the resulting               URI, or %NULL on an error.
    */
-  function filename_to_uri(filename: string, hostname: string | null): string;
+  function filename_to_uri(
+    filename: string | null,
+    hostname: string | null
+  ): string | null;
   /**
    * Converts a string which is in the encoding used by GLib for
    * filenames into a UTF-8 string. Note that on Windows GLib uses UTF-8
@@ -6442,12 +6471,12 @@ declare namespace GLib {
    * @returns The converted string, or %NULL on an error.
    */
   function filename_to_utf8(
-    opsysstring: string,
+    opsysstring: string | null,
     len: number
   ): [
-    /* returnType */ string,
-    /* bytes_read */ number,
-    /* bytes_written */ number
+    /* returnType */ string | null,
+    /* bytes_read */ number | null,
+    /* bytes_written */ number | null
   ];
   /**
    * Locates the first executable named `program` in the user's path, in the
@@ -6470,7 +6499,7 @@ declare namespace GLib {
    * @param program a program name in the GLib file name encoding
    * @returns a newly-allocated   string with the absolute path, or %NULL
    */
-  function find_program_in_path(program: string): string | null;
+  function find_program_in_path(program: string | null): string | null;
   /**
    * Formats a size (for example the size of a file) into a human readable
    * string.  Sizes are rounded to the nearest size prefix (kB, MB, GB)
@@ -6488,7 +6517,7 @@ declare namespace GLib {
    * @param size a size in bytes
    * @returns a newly-allocated formatted string containing   a human readable file size
    */
-  function format_size(size: number): string;
+  function format_size(size: number): string | null;
   /**
    * Formats a size (for example the size of a file) into a human
    * readable string. Sizes are rounded to the nearest size prefix
@@ -6502,7 +6531,7 @@ declare namespace GLib {
    * @param size a size in bytes
    * @returns a newly-allocated formatted string   containing a human readable file size
    */
-  function format_size_for_display(size: number): string;
+  function format_size_for_display(size: number): string | null;
   /**
    * Formats a size.
    *
@@ -6512,7 +6541,10 @@ declare namespace GLib {
    * @param flags #GFormatSizeFlags to modify the output
    * @returns a newly-allocated formatted string   containing a human readable file size
    */
-  function format_size_full(size: number, flags: FormatSizeFlags): string;
+  function format_size_full(
+    size: number,
+    flags: FormatSizeFlags
+  ): string | null;
   /**
    * Frees the memory pointed to by `mem`.
    *
@@ -6520,7 +6552,7 @@ declare namespace GLib {
    * against %NULL before calling this function.
    * @param mem the memory to free
    */
-  function free(mem: object | null): void;
+  function free(mem: any | null): void;
   /**
    * Gets a human-readable name for the application, as set by
    * g_set_application_name(). This name should be localized if
@@ -6555,12 +6587,15 @@ declare namespace GLib {
    * freed.
    * @returns %TRUE if the returned charset is UTF-8
    */
-  function get_charset(): [/* returnType */ boolean, /* charset */ string];
+  function get_charset(): [
+    /* returnType */ boolean,
+    /* charset */ string | null
+  ];
   /**
    * Gets the character set for the current locale.
    * @returns a newly allocated string containing the name     of the character set. This string must be freed with g_free().
    */
-  function get_codeset(): string;
+  function get_codeset(): string | null;
   /**
    * Obtains the character set used by the console attached to the process,
    * which is suitable for printing output to the terminal.
@@ -6583,7 +6618,7 @@ declare namespace GLib {
    */
   function get_console_charset(): [
     /* returnType */ boolean,
-    /* charset */ string
+    /* charset */ string | null
   ];
   /**
    * Gets the current directory.
@@ -6598,14 +6633,14 @@ declare namespace GLib {
    * the current directory is the target of a symbolic link.
    * @returns the current directory
    */
-  function get_current_dir(): string;
+  function get_current_dir(): string | null;
   /**
    * Equivalent to the UNIX gettimeofday() function, but portable.
    *
    * You may find g_get_real_time() to be more convenient.
    * @param result #GTimeVal structure in which to store current time.
    */
-  function get_current_time(result: TimeVal): void;
+  function get_current_time(result: TimeVal | null): void;
   /**
    * Gets the list of environment variables for the current process.
    *
@@ -6674,7 +6709,7 @@ declare namespace GLib {
    * or unset it before calling any functions in GLib.
    * @returns the current user's home directory
    */
-  function get_home_dir(): string;
+  function get_home_dir(): string | null;
   /**
    * Return a name for the machine.
    *
@@ -6692,7 +6727,7 @@ declare namespace GLib {
    * The encoding of the returned string is UTF-8.
    * @returns the host name of the machine.
    */
-  function get_host_name(): string;
+  function get_host_name(): string | null;
   /**
    * Computes a list of applicable locale names, which can be used to
    * e.g. construct locale-dependent filenames or search paths. The returned
@@ -6722,7 +6757,9 @@ declare namespace GLib {
    * @param category_name a locale category name
    * @returns a %NULL-terminated array of strings owned by    the thread g_get_language_names_with_category was called from.    It must not be modified or freed. It must be copied if planned to be used in another thread.
    */
-  function get_language_names_with_category(category_name: string): string[];
+  function get_language_names_with_category(
+    category_name: string | null
+  ): string[];
   /**
    * Returns a list of derived variants of `locale,` which can be used to
    * e.g. construct locale-dependent filenames or search paths. The returned
@@ -6742,7 +6779,7 @@ declare namespace GLib {
    * @param locale a locale identifier
    * @returns a newly   allocated array of newly allocated strings with the locale variants. Free with   g_strfreev().
    */
-  function get_locale_variants(locale: string): string[];
+  function get_locale_variants(locale: string | null): string[];
   /**
    * Queries the system monotonic time.
    *
@@ -6777,7 +6814,7 @@ declare namespace GLib {
    * @param key_name a key for the OS info being requested, for example %G_OS_INFO_KEY_NAME.
    * @returns The associated value for the requested key or %NULL if   this information is not provided.
    */
-  function get_os_info(key_name: string): string | null;
+  function get_os_info(key_name: string | null): string | null;
   /**
    * Gets the name of the program. This name should not be localized,
    * in contrast to g_get_application_name().
@@ -6798,7 +6835,7 @@ declare namespace GLib {
    * returned.
    * @returns the user's real name.
    */
-  function get_real_name(): string;
+  function get_real_name(): string | null;
   /**
    * Queries the system wall-clock time.
    *
@@ -6891,7 +6928,7 @@ declare namespace GLib {
    * string.
    * @returns the directory to use for temporary files.
    */
-  function get_tmp_dir(): string;
+  function get_tmp_dir(): string | null;
   /**
    * Returns a base directory in which to store non-essential, cached
    * data specific to particular user.
@@ -6911,7 +6948,7 @@ declare namespace GLib {
    * it’s not thread-safe to modify environment variables at runtime.
    * @returns a string owned by GLib that   must not be modified or freed.
    */
-  function get_user_cache_dir(): string;
+  function get_user_cache_dir(): string | null;
   /**
    * Returns a base directory in which to store user-specific application
    * configuration information such as user preferences and settings.
@@ -6932,7 +6969,7 @@ declare namespace GLib {
    * it’s not thread-safe to modify environment variables at runtime.
    * @returns a string owned by GLib that   must not be modified or freed.
    */
-  function get_user_config_dir(): string;
+  function get_user_config_dir(): string | null;
   /**
    * Returns a base directory in which to access application data such
    * as icons that is customized for a particular user.
@@ -6953,7 +6990,7 @@ declare namespace GLib {
    * it’s not thread-safe to modify environment variables at runtime.
    * @returns a string owned by GLib that must   not be modified or freed.
    */
-  function get_user_data_dir(): string;
+  function get_user_data_dir(): string | null;
   /**
    * Gets the user name of the current user. The encoding of the returned
    * string is system-defined. On UNIX, it might be the preferred file name
@@ -6961,7 +6998,7 @@ declare namespace GLib {
    * consistent on a machine. On Windows, it is always UTF-8.
    * @returns the user name of the current user.
    */
-  function get_user_name(): string;
+  function get_user_name(): string | null;
   /**
    * Returns a directory that is unique to the current user on the local
    * system.
@@ -6978,7 +7015,7 @@ declare namespace GLib {
    * it’s not thread-safe to modify environment variables at runtime.
    * @returns a string owned by GLib that must not be     modified or freed.
    */
-  function get_user_runtime_dir(): string;
+  function get_user_runtime_dir(): string | null;
   /**
    * Returns the full path of a special directory using its logical id.
    *
@@ -7014,7 +7051,7 @@ declare namespace GLib {
    * it’s not thread-safe to modify environment variables at runtime.
    * @returns a string owned by GLib that   must not be modified or freed.
    */
-  function get_user_state_dir(): string;
+  function get_user_state_dir(): string | null;
   /**
    * Returns the value of an environment variable.
    *
@@ -7026,7 +7063,7 @@ declare namespace GLib {
    * @param variable the environment variable to get
    * @returns the value of the environment variable, or %NULL if     the environment variable is not found. The returned string     may be overwritten by the next call to g_getenv(), g_setenv()     or g_unsetenv().
    */
-  function getenv(variable: string): string | null;
+  function getenv(variable: string | null): string | null;
   /**
    * This is a convenience function for using a #GHashTable as a set.  It
    * is equivalent to calling g_hash_table_replace() with `key` as both the
@@ -7047,7 +7084,10 @@ declare namespace GLib {
    * @param key a key to insert
    * @returns %TRUE if the key did not exist yet
    */
-  function hash_table_add(hash_table: HashTable, key: object | null): boolean;
+  function hash_table_add(
+    hash_table: HashTable | null,
+    key: any | null
+  ): boolean;
   /**
    * Checks if `key` is in `hash_table`.
    * @param hash_table a #GHashTable
@@ -7055,8 +7095,8 @@ declare namespace GLib {
    * @returns %TRUE if @key is in @hash_table, %FALSE otherwise.
    */
   function hash_table_contains(
-    hash_table: HashTable,
-    key: object | null
+    hash_table: HashTable | null,
+    key: any | null
   ): boolean;
   /**
    * Destroys all keys and values in the #GHashTable and decrements its
@@ -7067,7 +7107,7 @@ declare namespace GLib {
    * destruction phase.
    * @param hash_table a #GHashTable
    */
-  function hash_table_destroy(hash_table: HashTable): void;
+  function hash_table_destroy(hash_table: HashTable | null): void;
   /**
    * Inserts a new key and value into a #GHashTable.
    *
@@ -7087,9 +7127,9 @@ declare namespace GLib {
    * @returns %TRUE if the key did not exist yet
    */
   function hash_table_insert(
-    hash_table: HashTable,
-    key: object | null,
-    value: object | null
+    hash_table: HashTable | null,
+    key: any | null,
+    value: any | null
   ): boolean;
   /**
    * Looks up a key in a #GHashTable. Note that this function cannot
@@ -7101,9 +7141,9 @@ declare namespace GLib {
    * @returns the associated value, or %NULL if the key is not found
    */
   function hash_table_lookup(
-    hash_table: HashTable,
-    key: object | null
-  ): object | null;
+    hash_table: HashTable | null,
+    key: any | null
+  ): any | null;
   /**
    * Looks up a key in the #GHashTable, returning the original key and the
    * associated value and a #gboolean which is %TRUE if the key was found. This
@@ -7118,12 +7158,12 @@ declare namespace GLib {
    * @returns %TRUE if the key was found in the #GHashTable
    */
   function hash_table_lookup_extended(
-    hash_table: HashTable,
-    lookup_key: object | null
+    hash_table: HashTable | null,
+    lookup_key: any | null
   ): [
     /* returnType */ boolean,
-    /* orig_key */ object | null,
-    /* value */ object | null
+    /* orig_key */ any | null,
+    /* value */ any | null
   ];
   /**
    * Creates a new #GHashTable like g_hash_table_new_full() with a reference
@@ -7137,7 +7177,9 @@ declare namespace GLib {
    * @param other_hash_table Another #GHashTable
    * @returns a new #GHashTable
    */
-  function hash_table_new_similar(other_hash_table: HashTable): HashTable;
+  function hash_table_new_similar(
+    other_hash_table: HashTable | null
+  ): HashTable | null;
   /**
    * Removes a key and its associated value from a #GHashTable.
    *
@@ -7150,8 +7192,8 @@ declare namespace GLib {
    * @returns %TRUE if the key was found and removed from the #GHashTable
    */
   function hash_table_remove(
-    hash_table: HashTable,
-    key: object | null
+    hash_table: HashTable | null,
+    key: any | null
   ): boolean;
   /**
    * Removes all keys and their associated values from a #GHashTable.
@@ -7162,7 +7204,7 @@ declare namespace GLib {
    * values are freed yourself.
    * @param hash_table a #GHashTable
    */
-  function hash_table_remove_all(hash_table: HashTable): void;
+  function hash_table_remove_all(hash_table: HashTable | null): void;
   /**
    * Inserts a new key and value into a #GHashTable similar to
    * g_hash_table_insert(). The difference is that if the key
@@ -7181,16 +7223,16 @@ declare namespace GLib {
    * @returns %TRUE if the key did not exist yet
    */
   function hash_table_replace(
-    hash_table: HashTable,
-    key: object | null,
-    value: object | null
+    hash_table: HashTable | null,
+    key: any | null,
+    value: any | null
   ): boolean;
   /**
    * Returns the number of elements contained in the #GHashTable.
    * @param hash_table a #GHashTable
    * @returns the number of key/value pairs in the #GHashTable.
    */
-  function hash_table_size(hash_table: HashTable): number;
+  function hash_table_size(hash_table: HashTable | null): number;
   /**
    * Removes a key and its associated value from a #GHashTable without
    * calling the key and value destroy functions.
@@ -7198,13 +7240,16 @@ declare namespace GLib {
    * @param key the key to remove
    * @returns %TRUE if the key was found and removed from the #GHashTable
    */
-  function hash_table_steal(hash_table: HashTable, key: object | null): boolean;
+  function hash_table_steal(
+    hash_table: HashTable | null,
+    key: any | null
+  ): boolean;
   /**
    * Removes all keys and their associated values from a #GHashTable
    * without calling the key and value destroy functions.
    * @param hash_table a #GHashTable
    */
-  function hash_table_steal_all(hash_table: HashTable): void;
+  function hash_table_steal_all(hash_table: HashTable | null): void;
   /**
    * Looks up a key in the #GHashTable, stealing the original key and the
    * associated value and returning %TRUE if the key was found. If the key was
@@ -7221,12 +7266,12 @@ declare namespace GLib {
    * @returns %TRUE if the key was found in the #GHashTable
    */
   function hash_table_steal_extended(
-    hash_table: HashTable,
-    lookup_key: object | null
+    hash_table: HashTable | null,
+    lookup_key: any | null
   ): [
     /* returnType */ boolean,
-    /* stolen_key */ object | null,
-    /* stolen_value */ object | null
+    /* stolen_key */ any | null,
+    /* stolen_value */ any | null
   ];
   /**
    * Atomically decrements the reference count of `hash_table` by one.
@@ -7235,28 +7280,31 @@ declare namespace GLib {
    * This function is MT-safe and may be called from any thread.
    * @param hash_table a valid #GHashTable
    */
-  function hash_table_unref(hash_table: HashTable): void;
+  function hash_table_unref(hash_table: HashTable | null): void;
   /**
    * Destroys a #GHook, given its ID.
    * @param hook_list a #GHookList
    * @param hook_id a hook ID
    * @returns %TRUE if the #GHook was found in the #GHookList and destroyed
    */
-  function hook_destroy(hook_list: HookList, hook_id: number): boolean;
+  function hook_destroy(hook_list: HookList | null, hook_id: number): boolean;
   /**
    * Removes one #GHook from a #GHookList, marking it
    * inactive and calling g_hook_unref() on it.
    * @param hook_list a #GHookList
    * @param hook the #GHook to remove
    */
-  function hook_destroy_link(hook_list: HookList, hook: Hook): void;
+  function hook_destroy_link(
+    hook_list: HookList | null,
+    hook: Hook | null
+  ): void;
   /**
    * Calls the #GHookList `finalize_hook` function if it exists,
    * and frees the memory allocated for the #GHook.
    * @param hook_list a #GHookList
    * @param hook the #GHook to free
    */
-  function hook_free(hook_list: HookList, hook: Hook): void;
+  function hook_free(hook_list: HookList | null, hook: Hook | null): void;
   /**
    * Inserts a #GHook into a #GHookList, before a given #GHook.
    * @param hook_list a #GHookList
@@ -7264,16 +7312,16 @@ declare namespace GLib {
    * @param hook the #GHook to insert
    */
   function hook_insert_before(
-    hook_list: HookList,
+    hook_list: HookList | null,
     sibling: Hook | null,
-    hook: Hook
+    hook: Hook | null
   ): void;
   /**
    * Prepends a #GHook on the start of a #GHookList.
    * @param hook_list a #GHookList
    * @param hook the #GHook to add to the start of `hook_list`
    */
-  function hook_prepend(hook_list: HookList, hook: Hook): void;
+  function hook_prepend(hook_list: HookList | null, hook: Hook | null): void;
   /**
    * Decrements the reference count of a #GHook.
    * If the reference count falls to 0, the #GHook is removed
@@ -7281,7 +7329,7 @@ declare namespace GLib {
    * @param hook_list a #GHookList
    * @param hook the #GHook to unref
    */
-  function hook_unref(hook_list: HookList, hook: Hook): void;
+  function hook_unref(hook_list: HookList | null, hook: Hook | null): void;
   /**
    * Tests if `hostname` contains segments with an ASCII-compatible
    * encoding of an Internationalized Domain Name. If this returns
@@ -7294,7 +7342,7 @@ declare namespace GLib {
    * @param hostname a hostname
    * @returns %TRUE if @hostname contains any ASCII-encoded segments.
    */
-  function hostname_is_ascii_encoded(hostname: string): boolean;
+  function hostname_is_ascii_encoded(hostname: string | null): boolean;
   /**
    * Tests if `hostname` is the string form of an IPv4 or IPv6 address.
    * (Eg, "192.168.0.1".)
@@ -7303,7 +7351,7 @@ declare namespace GLib {
    * @param hostname a hostname (or IP address in string form)
    * @returns %TRUE if @hostname is an IP address
    */
-  function hostname_is_ip_address(hostname: string): boolean;
+  function hostname_is_ip_address(hostname: string | null): boolean;
   /**
    * Tests if `hostname` contains Unicode characters. If this returns
    * %TRUE, you need to encode the hostname with g_hostname_to_ascii()
@@ -7315,7 +7363,7 @@ declare namespace GLib {
    * @param hostname a hostname
    * @returns %TRUE if @hostname contains any non-ASCII characters
    */
-  function hostname_is_non_ascii(hostname: string): boolean;
+  function hostname_is_non_ascii(hostname: string | null): boolean;
   /**
    * Converts `hostname` to its canonical ASCII form; an ASCII-only
    * string containing no uppercase letters and not ending with a
@@ -7323,7 +7371,7 @@ declare namespace GLib {
    * @param hostname a valid UTF-8 or ASCII hostname
    * @returns an ASCII hostname, which must be freed,    or %NULL if @hostname is in some way invalid.
    */
-  function hostname_to_ascii(hostname: string): string | null;
+  function hostname_to_ascii(hostname: string | null): string | null;
   /**
    * Converts `hostname` to its canonical presentation form; a UTF-8
    * string in Unicode normalization form C, containing no uppercase
@@ -7335,7 +7383,7 @@ declare namespace GLib {
    * @param hostname a valid UTF-8 or ASCII hostname
    * @returns a UTF-8 hostname, which must be freed,    or %NULL if @hostname is in some way invalid.
    */
-  function hostname_to_unicode(hostname: string): string | null;
+  function hostname_to_unicode(hostname: string | null): string | null;
   /**
    * Adds a function to be called whenever there are no higher priority
    * events pending.
@@ -7361,7 +7409,7 @@ declare namespace GLib {
    * @param data the data for the idle source's callback.
    * @returns %TRUE if an idle source was found and removed.
    */
-  function idle_remove_by_data(data: object | null): boolean;
+  function idle_remove_by_data(data: any | null): boolean;
   /**
    * Creates a new idle source.
    *
@@ -7372,7 +7420,7 @@ declare namespace GLib {
    * have a default priority of %G_PRIORITY_DEFAULT.
    * @returns the newly-created idle source
    */
-  function idle_source_new(): Source;
+  function idle_source_new(): Source | null;
   /**
    * Compares the two #gint64 values being pointed to and returns
    * %TRUE if they are equal.
@@ -7383,7 +7431,7 @@ declare namespace GLib {
    * @param v2 a pointer to a #gint64 key to compare with `v1`
    * @returns %TRUE if the two keys match.
    */
-  function int64_equal(v1: object, v2: object): boolean;
+  function int64_equal(v1: any, v2: any): boolean;
   /**
    * Converts a pointer to a #gint64 to a hash value.
    *
@@ -7393,7 +7441,7 @@ declare namespace GLib {
    * @param v a pointer to a #gint64 key
    * @returns a hash value corresponding to the key.
    */
-  function int64_hash(v: object): number;
+  function int64_hash(v: any): number;
   /**
    * Compares the two #gint values being pointed to and returns
    * %TRUE if they are equal.
@@ -7408,7 +7456,7 @@ declare namespace GLib {
    * @param v2 a pointer to a #gint key to compare with `v1`
    * @returns %TRUE if the two keys match.
    */
-  function int_equal(v1: object, v2: object): boolean;
+  function int_equal(v1: any, v2: any): boolean;
   /**
    * Converts a pointer to a #gint to a hash value.
    * It can be passed to g_hash_table_new() as the `hash_func` parameter,
@@ -7420,7 +7468,7 @@ declare namespace GLib {
    * @param v a pointer to a #gint key
    * @returns a hash value corresponding to the key.
    */
-  function int_hash(v: object): number;
+  function int_hash(v: any): number;
   /**
    * Returns a canonical representation for `string`. Interned strings
    * can be compared for equality by comparing the pointers, instead of
@@ -7433,7 +7481,7 @@ declare namespace GLib {
    * @param string a static string
    * @returns a canonical representation for the string
    */
-  function intern_static_string(string: string | null): string;
+  function intern_static_string(string: string | null): string | null;
   /**
    * Returns a canonical representation for `string`. Interned strings
    * can be compared for equality by comparing the pointers, instead of
@@ -7445,7 +7493,7 @@ declare namespace GLib {
    * @param string a string
    * @returns a canonical representation for the string
    */
-  function intern_string(string: string | null): string;
+  function intern_string(string: string | null): string | null;
   /**
    * Adds the #GIOChannel into the default main loop context
    * with the given priority.
@@ -7460,7 +7508,7 @@ declare namespace GLib {
    * @returns the event source id
    */
   function io_add_watch(
-    channel: IOChannel,
+    channel: IOChannel | null,
     priority: number,
     condition: IOCondition,
     func: IOFunc
@@ -7491,7 +7539,10 @@ declare namespace GLib {
    * @param condition conditions to watch for
    * @returns a new #GSource
    */
-  function io_create_watch(channel: IOChannel, condition: IOCondition): Source;
+  function io_create_watch(
+    channel: IOChannel | null,
+    condition: IOCondition
+  ): Source | null;
   function key_file_error_quark(): Quark;
   /**
    * Gets the names of all variables set in the environment.
@@ -7520,9 +7571,9 @@ declare namespace GLib {
    * @returns           A newly-allocated buffer containing the converted string,          or %NULL on an error, and error will be set.
    */
   function locale_from_utf8(
-    utf8string: string,
+    utf8string: string | null,
     len: number
-  ): [/* returnType */ Uint8Array, /* bytes_read */ number];
+  ): [/* returnType */ Uint8Array, /* bytes_read */ number | null];
   /**
    * Converts a string which is in the encoding used for strings by
    * the C runtime (usually the same as that used by the operating
@@ -7541,9 +7592,9 @@ declare namespace GLib {
   function locale_to_utf8(
     opsysstring: Uint8Array
   ): [
-    /* returnType */ string,
-    /* bytes_read */ number,
-    /* bytes_written */ number
+    /* returnType */ string | null,
+    /* bytes_read */ number | null,
+    /* bytes_written */ number | null
   ];
   /**
    * The default log handler set up by GLib; g_log_set_default_handler()
@@ -7581,7 +7632,7 @@ declare namespace GLib {
     log_domain: string | null,
     log_level: LogLevelFlags,
     message: string | null,
-    unused_data: object | null
+    unused_data: any | null
   ): void;
   /**
    * Return whether debug output from the GLib logging system is enabled.
@@ -7603,7 +7654,10 @@ declare namespace GLib {
    * @param log_domain the log domain
    * @param handler_id the id of the handler, which was returned     in g_log_set_handler()
    */
-  function log_remove_handler(log_domain: string, handler_id: number): void;
+  function log_remove_handler(
+    log_domain: string | null,
+    handler_id: number
+  ): void;
   /**
    * Sets the message levels which are always fatal, in any log domain.
    * When a message with any of these levels is logged the program terminates.
@@ -7654,7 +7708,7 @@ declare namespace GLib {
    * @returns the old fatal mask for the log domain
    */
   function log_set_fatal_mask(
-    log_domain: string,
+    log_domain: string | null,
     fatal_mask: LogLevelFlags
   ): LogLevelFlags;
   /**
@@ -7723,7 +7777,7 @@ declare namespace GLib {
   function log_variant(
     log_domain: string | null,
     log_level: LogLevelFlags,
-    fields: Variant
+    fields: Variant | null
   ): void;
   /**
    * Format a structured log message and output it to the default log destination
@@ -7753,7 +7807,7 @@ declare namespace GLib {
   function log_writer_default(
     log_level: LogLevelFlags,
     fields: LogField[],
-    user_data: object | null
+    user_data: any | null
   ): LogWriterOutput;
   /**
    * Configure whether the built-in log functions
@@ -7831,7 +7885,7 @@ declare namespace GLib {
     log_level: LogLevelFlags,
     fields: LogField[],
     use_color: boolean
-  ): string;
+  ): string | null;
   /**
    * Check whether the given `output_fd` file descriptor is a connection to the
    * systemd journal, or something else (like a log file or `stdout` or
@@ -7866,7 +7920,7 @@ declare namespace GLib {
   function log_writer_journald(
     log_level: LogLevelFlags,
     fields: LogField[],
-    user_data: object | null
+    user_data: any | null
   ): LogWriterOutput;
   /**
    * Format a structured log message and print it to either `stdout` or `stderr`,
@@ -7891,7 +7945,7 @@ declare namespace GLib {
   function log_writer_standard_streams(
     log_level: LogLevelFlags,
     fields: LogField[],
-    user_data: object | null
+    user_data: any | null
   ): LogWriterOutput;
   /**
    * Check whether the given `output_fd` file descriptor supports ANSI color
@@ -7908,7 +7962,7 @@ declare namespace GLib {
    * g_main_context_get_thread_default().
    * @returns the global default main context.
    */
-  function main_context_default(): MainContext;
+  function main_context_default(): MainContext | null;
   /**
    * Gets the thread-default #GMainContext for this thread. Asynchronous
    * operations that want to be able to be run in contexts other than
@@ -7933,7 +7987,7 @@ declare namespace GLib {
    * (with a ref added to it) rather than returning %NULL.
    * @returns the thread-default #GMainContext. Unref     with g_main_context_unref() when you are done with it.
    */
-  function main_context_ref_thread_default(): MainContext;
+  function main_context_ref_thread_default(): MainContext | null;
   /**
    * Returns the currently firing source for this thread.
    * @returns The currently firing source or %NULL.
@@ -8057,7 +8111,7 @@ declare namespace GLib {
    * @param n_bytes the number of bytes to allocate
    * @returns a pointer to the allocated memory
    */
-  function malloc(n_bytes: number): object | null;
+  function malloc(n_bytes: number): any | null;
   /**
    * Allocates `n_bytes` bytes of memory, initialized to 0's.
    * If `n_bytes` is 0 it returns %NULL.
@@ -8067,7 +8121,7 @@ declare namespace GLib {
    * @param n_bytes the number of bytes to allocate
    * @returns a pointer to the allocated memory
    */
-  function malloc0(n_bytes: number): object | null;
+  function malloc0(n_bytes: number): any | null;
   /**
    * This function is similar to g_malloc0(), allocating (`n_blocks` * `n_block_bytes)` bytes,
    * but care is taken to detect possible overflow during multiplication.
@@ -8078,7 +8132,7 @@ declare namespace GLib {
    * @param n_block_bytes the size of each block in bytes
    * @returns a pointer to the allocated memory
    */
-  function malloc0_n(n_blocks: number, n_block_bytes: number): object | null;
+  function malloc0_n(n_blocks: number, n_block_bytes: number): any | null;
   /**
    * This function is similar to g_malloc(), allocating (`n_blocks` * `n_block_bytes)` bytes,
    * but care is taken to detect possible overflow during multiplication.
@@ -8089,7 +8143,7 @@ declare namespace GLib {
    * @param n_block_bytes the size of each block in bytes
    * @returns a pointer to the allocated memory
    */
-  function malloc_n(n_blocks: number, n_block_bytes: number): object | null;
+  function malloc_n(n_blocks: number, n_block_bytes: number): any | null;
   function markup_error_quark(): Quark;
   /**
    * Escapes text so that the markup parser will parse it verbatim.
@@ -8110,7 +8164,10 @@ declare namespace GLib {
    * @param length length of `text` in bytes, or -1 if the text is nul-terminated
    * @returns a newly allocated string with the escaped text
    */
-  function markup_escape_text(text: string, length: number): string;
+  function markup_escape_text(
+    text: string | null,
+    length: number
+  ): string | null;
   /**
    * Checks whether the allocator used by g_malloc() is the system's
    * malloc implementation. If it returns %TRUE memory allocated with
@@ -8133,7 +8190,7 @@ declare namespace GLib {
    * reached. Therefore this function is now deprecated and is just a stub.
    * @param vtable table of memory allocation routines.
    */
-  function mem_set_vtable(vtable: MemVTable): void;
+  function mem_set_vtable(vtable: MemVTable | null): void;
   /**
    * Allocates `byte_size` bytes of memory, and copies `byte_size` bytes into it
    * from `mem`. If `mem` is %NULL it returns %NULL.
@@ -8141,7 +8198,7 @@ declare namespace GLib {
    * @param byte_size the number of bytes to copy.
    * @returns a pointer to the newly-allocated copy of the memory, or %NULL if @mem  is %NULL.
    */
-  function memdup(mem: object | null, byte_size: number): object | null;
+  function memdup(mem: any | null, byte_size: number): any | null;
   /**
    * Allocates `byte_size` bytes of memory, and copies `byte_size` bytes into it
    * from `mem`. If `mem` is %NULL it returns %NULL.
@@ -8152,7 +8209,7 @@ declare namespace GLib {
    * @param byte_size the number of bytes to copy.
    * @returns a pointer to the newly-allocated copy of the memory,    or %NULL if @mem is %NULL.
    */
-  function memdup2(mem: object | null, byte_size: number): object | null;
+  function memdup2(mem: any | null, byte_size: number): any | null;
   /**
    * Create a directory if it doesn't already exist. Create intermediate
    * parent directories as needed, too.
@@ -8160,12 +8217,12 @@ declare namespace GLib {
    * @param mode permissions to use for newly created directories
    * @returns 0 if the directory already exists, or was successfully created. Returns -1 if an error occurred, with errno set.
    */
-  function mkdir_with_parents(pathname: string, mode: number): number;
+  function mkdir_with_parents(pathname: string | null, mode: number): number;
   /**
    * Set the pointer at the specified location to %NULL.
    * @param nullify_location the memory address of the pointer.
    */
-  function nullify_pointer(nullify_location: object): void;
+  function nullify_pointer(nullify_location: any | null): void;
   function number_parser_error_quark(): Quark;
   /**
    * Prompts the user with
@@ -8218,7 +8275,7 @@ declare namespace GLib {
    * calling g_on_error_stack_trace() instead.
    * @param prg_name the program name, needed by gdb for the "[S]tack trace"     option. If `prg_name` is %NULL, g_get_prgname() is called to get     the program name (which will work correctly if gdk_init() or     gtk_init() has been called)
    */
-  function on_error_query(prg_name: string): void;
+  function on_error_query(prg_name: string | null): void;
   /**
    * Invokes gdb, which attaches to the current process and shows a
    * stack trace. Called by g_on_error_query() when the "[S]tack trace"
@@ -8235,7 +8292,7 @@ declare namespace GLib {
    * handle that exception (see [Running GLib Applications](glib-running.html)).
    * @param prg_name the program name, needed by gdb for the "[S]tack trace"     option
    */
-  function on_error_stack_trace(prg_name: string): void;
+  function on_error_stack_trace(prg_name: string | null): void;
   /**
    * Function to be called when starting a critical initialization
    * section. The argument `location` must point to a static
@@ -8267,7 +8324,7 @@ declare namespace GLib {
    * @param location location of a static initializable variable    containing 0
    * @returns %TRUE if the initialization section should be entered,     %FALSE and blocks otherwise
    */
-  function once_init_enter(location: object): boolean;
+  function once_init_enter(location: any | null): boolean;
   /**
    * Counterpart to g_once_init_enter(). Expects a location of a static
    * 0-initialized initialization variable, and an initialization value
@@ -8280,7 +8337,7 @@ declare namespace GLib {
    * @param location location of a static initializable variable    containing 0
    * @param result new non-0 value for *`value_location`
    */
-  function once_init_leave(location: object, result: number): void;
+  function once_init_leave(location: any | null, result: number): void;
   function option_error_quark(): Quark;
   /**
    * Parses a string containing debugging options
@@ -8310,7 +8367,7 @@ declare namespace GLib {
    * @param file_name the name of the file
    * @returns a newly allocated string    containing the last component of the filename
    */
-  function path_get_basename(file_name: string): string;
+  function path_get_basename(file_name: string | null): string | null;
   /**
    * Gets the directory components of a file name. For example, the directory
    * component of `/usr/bin/test` is `/usr/bin`. The directory component of `/`
@@ -8321,7 +8378,7 @@ declare namespace GLib {
    * @param file_name the name of the file
    * @returns the directory components of the file
    */
-  function path_get_dirname(file_name: string): string;
+  function path_get_dirname(file_name: string | null): string | null;
   /**
    * Returns %TRUE if the given `file_name` is an absolute file name.
    * Note that this is a somewhat vague concept on Windows.
@@ -8350,7 +8407,7 @@ declare namespace GLib {
    * @param file_name a file name
    * @returns %TRUE if @file_name is absolute
    */
-  function path_is_absolute(file_name: string): boolean;
+  function path_is_absolute(file_name: string | null): boolean;
   /**
    * Returns a pointer into `file_name` after the root component,
    * i.e. after the "/" in UNIX or "C:\" under Windows. If `file_name`
@@ -8358,7 +8415,7 @@ declare namespace GLib {
    * @param file_name a file name
    * @returns a pointer into @file_name after the     root component
    */
-  function path_skip_root(file_name: string): string | null;
+  function path_skip_root(file_name: string | null): string | null;
   /**
    * Matches a string against a pattern given as a string. If this
    * function is to be called in a loop, it's more efficient to compile
@@ -8368,7 +8425,10 @@ declare namespace GLib {
    * @param string the UTF-8 encoded string to match
    * @returns %TRUE if @string matches @pspec
    */
-  function pattern_match_simple(pattern: string, string: string): boolean;
+  function pattern_match_simple(
+    pattern: string | null,
+    string: string | null
+  ): boolean;
   /**
    * This is equivalent to g_bit_lock, but working on pointers (or other
    * pointer-sized values).
@@ -8381,7 +8441,7 @@ declare namespace GLib {
    * @param address a pointer to a #gpointer-sized value
    * @param lock_bit a bit value between 0 and 31
    */
-  function pointer_bit_lock(address: object, lock_bit: number): void;
+  function pointer_bit_lock(address: any | null, lock_bit: number): void;
   /**
    * This is equivalent to g_bit_trylock(), but working on pointers (or
    * other pointer-sized values).
@@ -8395,7 +8455,7 @@ declare namespace GLib {
    * @param lock_bit a bit value between 0 and 31
    * @returns %TRUE if the lock was acquired
    */
-  function pointer_bit_trylock(address: object, lock_bit: number): boolean;
+  function pointer_bit_trylock(address: any | null, lock_bit: number): boolean;
   /**
    * This is equivalent to g_bit_unlock, but working on pointers (or other
    * pointer-sized values).
@@ -8408,7 +8468,7 @@ declare namespace GLib {
    * @param address a pointer to a #gpointer-sized value
    * @param lock_bit a bit value between 0 and 31
    */
-  function pointer_bit_unlock(address: object, lock_bit: number): void;
+  function pointer_bit_unlock(address: any | null, lock_bit: number): void;
   /**
    * Polls `fds,` as with the poll() system call, but portably. (On
    * systems that don't have poll(), it is emulated using select().)
@@ -8432,14 +8492,14 @@ declare namespace GLib {
    * @param timeout amount of time to wait, in milliseconds, or -1 to wait forever
    * @returns the number of entries in @fds whose @revents fields were filled in, or 0 if the operation timed out, or -1 on error or if the call was interrupted.
    */
-  function poll(fds: PollFD, nfds: number, timeout: number): number;
+  function poll(fds: PollFD | null, nfds: number, timeout: number): number;
   /**
    * Prefixes `prefix` to an existing error message. If `err` or *`err` is
    * %NULL (i.e.: no error variable) then do nothing.
    * @param err a return location for a #GError, or %NULL
    * @param prefix string to prefix `err` with
    */
-  function prefix_error_literal(err: Error | null, prefix: string): void;
+  function prefix_error_literal(err: Error | null, prefix: string | null): void;
   /**
    * If `dest` is %NULL, free `src;` otherwise, moves `src` into *`dest`.
    * The error variable `dest` points to must be %NULL.
@@ -8451,7 +8511,7 @@ declare namespace GLib {
    * after calling this function on it.
    * @param src error to move into the return location
    */
-  function propagate_error(src: Error): /* dest */ Error | null;
+  function propagate_error(src: Error | null): /* dest */ Error | null;
   /**
    * Gets the #GQuark identifying the given (static) string. If the
    * string does not currently have an associated #GQuark, a new #GQuark
@@ -8490,7 +8550,7 @@ declare namespace GLib {
    * @param quark a #GQuark.
    * @returns the string associated with the #GQuark
    */
-  function quark_to_string(quark: Quark): string;
+  function quark_to_string(quark: Quark): string | null;
   /**
    * Gets the #GQuark associated with the given string, or 0 if string is
    * %NULL or it has no associated #GQuark.
@@ -8542,7 +8602,7 @@ declare namespace GLib {
    * @param mem_block a pointer to reference counted data
    * @returns a pointer to the data,   with its reference count increased
    */
-  function rc_box_acquire(mem_block: object): object;
+  function rc_box_acquire(mem_block: any): any;
   /**
    * Allocates `block_size` bytes of memory, and adds reference
    * counting semantics to it.
@@ -8555,7 +8615,7 @@ declare namespace GLib {
    * @param block_size the size of the allocation, must be greater than 0
    * @returns a pointer to the allocated memory
    */
-  function rc_box_alloc(block_size: number): object;
+  function rc_box_alloc(block_size: number): any;
   /**
    * Allocates `block_size` bytes of memory, and adds reference
    * counting semantics to it.
@@ -8570,7 +8630,7 @@ declare namespace GLib {
    * @param block_size the size of the allocation, must be greater than 0
    * @returns a pointer to the allocated memory
    */
-  function rc_box_alloc0(block_size: number): object;
+  function rc_box_alloc0(block_size: number): any;
   /**
    * Allocates a new block of data with reference counting
    * semantics, and copies `block_size` bytes of `mem_block`
@@ -8579,13 +8639,13 @@ declare namespace GLib {
    * @param mem_block the memory to copy
    * @returns a pointer to the allocated   memory
    */
-  function rc_box_dup(block_size: number, mem_block: object): object;
+  function rc_box_dup(block_size: number, mem_block: any): any;
   /**
    * Retrieves the size of the reference counted data pointed by `mem_block`.
    * @param mem_block a pointer to reference counted data
    * @returns the size of the data, in bytes
    */
-  function rc_box_get_size(mem_block: object): number;
+  function rc_box_get_size(mem_block: any): number;
   /**
    * Releases a reference on the data pointed by `mem_block`.
    *
@@ -8593,7 +8653,7 @@ declare namespace GLib {
    * resources allocated for `mem_block`.
    * @param mem_block a pointer to reference counted data
    */
-  function rc_box_release(mem_block: object): void;
+  function rc_box_release(mem_block: any): void;
   /**
    * Releases a reference on the data pointed by `mem_block`.
    *
@@ -8603,10 +8663,7 @@ declare namespace GLib {
    * @param mem_block a pointer to reference counted data
    * @param clear_func a function to call when clearing the data
    */
-  function rc_box_release_full(
-    mem_block: object,
-    clear_func: DestroyNotify
-  ): void;
+  function rc_box_release_full(mem_block: any, clear_func: DestroyNotify): void;
   /**
    * Reallocates the memory pointed to by `mem,` so that it now has space for
    * `n_bytes` bytes of memory. It returns the new address of the memory, which may
@@ -8620,7 +8677,7 @@ declare namespace GLib {
    * @param n_bytes new size of the memory in bytes
    * @returns the new address of the allocated memory
    */
-  function realloc(mem: object | null, n_bytes: number): object | null;
+  function realloc(mem: any | null, n_bytes: number): any | null;
   /**
    * This function is similar to g_realloc(), allocating (`n_blocks` * `n_block_bytes)` bytes,
    * but care is taken to detect possible overflow during multiplication.
@@ -8633,17 +8690,17 @@ declare namespace GLib {
    * @returns the new address of the allocated memory
    */
   function realloc_n(
-    mem: object | null,
+    mem: any | null,
     n_blocks: number,
     n_block_bytes: number
-  ): object | null;
+  ): any | null;
   /**
    * Compares the current value of `rc` with `val`.
    * @param rc the address of a reference count variable
    * @param val the value to compare
    * @returns %TRUE if the reference count is the same   as the given value
    */
-  function ref_count_compare(rc: number, val: number): boolean;
+  function ref_count_compare(rc: number | null, val: number): boolean;
   /**
    * Decreases the reference count.
    *
@@ -8653,36 +8710,36 @@ declare namespace GLib {
    * @param rc the address of a reference count variable
    * @returns %TRUE if the reference count reached 0, and %FALSE otherwise
    */
-  function ref_count_dec(rc: number): boolean;
+  function ref_count_dec(rc: number | null): boolean;
   /**
    * Increases the reference count.
    * @param rc the address of a reference count variable
    */
-  function ref_count_inc(rc: number): void;
+  function ref_count_inc(rc: number | null): void;
   /**
    * Initializes a reference count variable to 1.
    * @param rc the address of a reference count variable
    */
-  function ref_count_init(rc: number): void;
+  function ref_count_init(rc: number | null): void;
   /**
    * Acquires a reference on a string.
    * @param str a reference counted string
    * @returns the given string, with its reference count increased
    */
-  function ref_string_acquire(str: string): string;
+  function ref_string_acquire(str: string | null): string | null;
   /**
    * Retrieves the length of `str`.
    * @param str a reference counted string
    * @returns the length of the given string, in bytes
    */
-  function ref_string_length(str: string): number;
+  function ref_string_length(str: string | null): number;
   /**
    * Creates a new reference counted string and copies the contents of `str`
    * into it.
    * @param str a NUL-terminated string
    * @returns the newly created reference counted string
    */
-  function ref_string_new(str: string): string;
+  function ref_string_new(str: string | null): string | null;
   /**
    * Creates a new reference counted string and copies the content of `str`
    * into it.
@@ -8693,7 +8750,7 @@ declare namespace GLib {
    * @param str a NUL-terminated string
    * @returns the newly created reference   counted string, or a new reference to an existing string
    */
-  function ref_string_new_intern(str: string): string;
+  function ref_string_new_intern(str: string | null): string | null;
   /**
    * Creates a new reference counted string and copies the contents of `str`
    * into it, up to `len` bytes.
@@ -8704,13 +8761,13 @@ declare namespace GLib {
    * @param len length of `str` to use, or -1 if `str` is nul-terminated
    * @returns the newly created reference counted string
    */
-  function ref_string_new_len(str: string, len: number): string;
+  function ref_string_new_len(str: string | null, len: number): string | null;
   /**
    * Releases a reference on a string; if it was the last reference, the
    * resources allocated by the string are freed as well.
    * @param str a reference counted string
    */
-  function ref_string_release(str: string): void;
+  function ref_string_release(str: string | null): void;
   /**
    * Checks whether `replacement` is a valid replacement string
    * (see g_regex_replace()), i.e. that all escape sequences in
@@ -8725,8 +8782,8 @@ declare namespace GLib {
    * @returns whether @replacement is a valid replacement string
    */
   function regex_check_replacement(
-    replacement: string
-  ): [/* returnType */ boolean, /* has_references */ boolean];
+    replacement: string | null
+  ): [/* returnType */ boolean, /* has_references */ boolean | null];
   function regex_error_quark(): Quark;
   /**
    * Escapes the nul characters in `string` to "\x00".  It can be used
@@ -8738,7 +8795,10 @@ declare namespace GLib {
    * @param length the length of `string`
    * @returns a newly-allocated escaped string
    */
-  function regex_escape_nul(string: string, length: number): string;
+  function regex_escape_nul(
+    string: string | null,
+    length: number
+  ): string | null;
   /**
    * Escapes the special characters used for regular expressions
    * in `string,` for instance "a.b*c" becomes "a\.b\*c". This
@@ -8750,7 +8810,7 @@ declare namespace GLib {
    * @param string the string to escape
    * @returns a newly-allocated escaped string
    */
-  function regex_escape_string(string: string[]): string;
+  function regex_escape_string(string: string[]): string | null;
   /**
    * Scans for a match in `string` for `pattern`.
    *
@@ -8769,8 +8829,8 @@ declare namespace GLib {
    * @returns %TRUE if the string matched, %FALSE otherwise
    */
   function regex_match_simple(
-    pattern: string,
-    string: string,
+    pattern: string | null,
+    string: string | null,
     compile_options: RegexCompileFlags,
     match_options: RegexMatchFlags
   ): boolean;
@@ -8809,8 +8869,8 @@ declare namespace GLib {
    * @returns a %NULL-terminated array of strings. Free it using g_strfreev()
    */
   function regex_split_simple(
-    pattern: string,
-    string: string,
+    pattern: string | null,
+    string: string | null,
     compile_options: RegexCompileFlags,
     match_options: RegexMatchFlags
   ): string[];
@@ -8834,13 +8894,13 @@ declare namespace GLib {
    * @param filename a pathname in the GLib file name encoding     (UTF-8 on Windows)
    * @returns 0 if the directory was successfully removed, -1 if an error    occurred
    */
-  function rmdir(filename: string): number;
+  function rmdir(filename: string | null): number;
   /**
    * Returns the data that `iter` points to.
    * @param iter a #GSequenceIter
    * @returns the data that @iter points to
    */
-  function sequence_get(iter: SequenceIter): object | null;
+  function sequence_get(iter: SequenceIter | null): any | null;
   /**
    * Inserts a new item just before the item pointed to by `iter`.
    * @param iter a #GSequenceIter
@@ -8848,9 +8908,9 @@ declare namespace GLib {
    * @returns an iterator pointing to the new item
    */
   function sequence_insert_before(
-    iter: SequenceIter,
-    data: object | null
-  ): SequenceIter;
+    iter: SequenceIter | null,
+    data: any | null
+  ): SequenceIter | null;
   /**
    * Moves the item pointed to by `src` to the position indicated by `dest`.
    * After calling this function `dest` will point to the position immediately
@@ -8859,7 +8919,10 @@ declare namespace GLib {
    * @param src a #GSequenceIter pointing to the item to move
    * @param dest a #GSequenceIter pointing to the position to which     the item is moved
    */
-  function sequence_move(src: SequenceIter, dest: SequenceIter): void;
+  function sequence_move(
+    src: SequenceIter | null,
+    dest: SequenceIter | null
+  ): void;
   /**
    * Inserts the (`begin,` `end)` range at the destination pointed to by `dest`.
    * The `begin` and `end` iters must point into the same sequence. It is
@@ -8874,9 +8937,9 @@ declare namespace GLib {
    * @param end a #GSequenceIter
    */
   function sequence_move_range(
-    dest: SequenceIter,
-    begin: SequenceIter,
-    end: SequenceIter
+    dest: SequenceIter | null,
+    begin: SequenceIter | null,
+    end: SequenceIter | null
   ): void;
   /**
    * Finds an iterator somewhere in the range (`begin,` `end)`. This
@@ -8890,9 +8953,9 @@ declare namespace GLib {
    * @returns a #GSequenceIter pointing somewhere in the    (@begin, @end) range
    */
   function sequence_range_get_midpoint(
-    begin: SequenceIter,
-    end: SequenceIter
-  ): SequenceIter;
+    begin: SequenceIter | null,
+    end: SequenceIter | null
+  ): SequenceIter | null;
   /**
    * Removes the item pointed to by `iter`. It is an error to pass the
    * end iterator to this function.
@@ -8901,7 +8964,7 @@ declare namespace GLib {
    * function is called on the data for the removed item.
    * @param iter a #GSequenceIter
    */
-  function sequence_remove(iter: SequenceIter): void;
+  function sequence_remove(iter: SequenceIter | null): void;
   /**
    * Removes all items in the (`begin,` `end)` range.
    *
@@ -8910,7 +8973,10 @@ declare namespace GLib {
    * @param begin a #GSequenceIter
    * @param end a #GSequenceIter
    */
-  function sequence_remove_range(begin: SequenceIter, end: SequenceIter): void;
+  function sequence_remove_range(
+    begin: SequenceIter | null,
+    end: SequenceIter | null
+  ): void;
   /**
    * Changes the data for the item pointed to by `iter` to be `data`. If
    * the sequence has a data destroy function associated with it, that
@@ -8918,14 +8984,14 @@ declare namespace GLib {
    * @param iter a #GSequenceIter
    * @param data new data for the item
    */
-  function sequence_set(iter: SequenceIter, data: object | null): void;
+  function sequence_set(iter: SequenceIter | null, data: any | null): void;
   /**
    * Swaps the items pointed to by `a` and `b`. It is allowed for `a` and `b`
    * to point into difference sequences.
    * @param a a #GSequenceIter
    * @param b a #GSequenceIter
    */
-  function sequence_swap(a: SequenceIter, b: SequenceIter): void;
+  function sequence_swap(a: SequenceIter | null, b: SequenceIter | null): void;
   /**
    * Sets a human-readable name for the application. This name should be
    * localized if possible, and is intended for display to the user.
@@ -8940,7 +9006,7 @@ declare namespace GLib {
    * or when displaying an application's name in the task list.
    * @param application_name localized name of the application
    */
-  function set_application_name(application_name: string): void;
+  function set_application_name(application_name: string | null): void;
   /**
    * Does nothing if `err` is %NULL; if `err` is non-%NULL, then *`err`
    * must be %NULL. A new #GError is created and assigned to *`err`.
@@ -8954,8 +9020,8 @@ declare namespace GLib {
   function set_error_literal(
     domain: Quark,
     code: number,
-    message: string
-  ): /* err */ Error;
+    message: string | null
+  ): /* err */ Error | null;
   /**
    * Sets the name of the program. This name should not be localized,
    * in contrast to g_set_application_name().
@@ -8971,7 +9037,7 @@ declare namespace GLib {
    * could only be called once per process.
    * @param prgname the name of the program.
    */
-  function set_prgname(prgname: string): void;
+  function set_prgname(prgname: string | null): void;
   /**
    * Sets an environment variable. On UNIX, both the variable's name and
    * value can be arbitrary byte strings, except that the variable's name
@@ -8997,7 +9063,11 @@ declare namespace GLib {
    * @param overwrite whether to change the variable if it already exists.
    * @returns %FALSE if the environment variable couldn't be set.
    */
-  function setenv(variable: string, value: string, overwrite: boolean): boolean;
+  function setenv(
+    variable: string | null,
+    value: string | null,
+    overwrite: boolean
+  ): boolean;
   function shell_error_quark(): Quark;
   /**
    * Parses a command line into an argument vector, in much the same way
@@ -9022,7 +9092,7 @@ declare namespace GLib {
    * @returns %TRUE on success, %FALSE if error set
    */
   function shell_parse_argv(
-    command_line: string
+    command_line: string | null
   ): [/* returnType */ boolean, /* argvp */ string[]];
   /**
    * Quotes a string so that the shell (/bin/sh) will interpret the
@@ -9038,7 +9108,7 @@ declare namespace GLib {
    * @param unquoted_string a literal string
    * @returns quoted string
    */
-  function shell_quote(unquoted_string: string): string;
+  function shell_quote(unquoted_string: string | null): string | null;
   /**
    * Unquotes a string as the shell (/bin/sh) would.
    *
@@ -9070,7 +9140,7 @@ declare namespace GLib {
    * @param quoted_string shell-quoted string
    * @returns an unquoted string
    */
-  function shell_unquote(quoted_string: string): string;
+  function shell_unquote(quoted_string: string | null): string | null;
   /**
    * Allocates a block of memory from the slice allocator.
    *
@@ -9086,7 +9156,7 @@ declare namespace GLib {
    * @param block_size the number of bytes to allocate
    * @returns a pointer to the allocated memory block, which will   be %NULL if and only if @mem_size is 0
    */
-  function slice_alloc(block_size: number): object | null;
+  function slice_alloc(block_size: number): any | null;
   /**
    * Allocates a block of memory via g_slice_alloc() and initializes
    * the returned memory to 0. Note that the underlying slice allocation
@@ -9095,7 +9165,7 @@ declare namespace GLib {
    * @param block_size the number of bytes to allocate
    * @returns a pointer to the allocated block, which will be %NULL if and only    if @mem_size is 0
    */
-  function slice_alloc0(block_size: number): object | null;
+  function slice_alloc0(block_size: number): any | null;
   /**
    * Allocates a block of memory from the slice allocator
    * and copies `block_size` bytes into it from `mem_block`.
@@ -9105,10 +9175,7 @@ declare namespace GLib {
    * @param mem_block the memory to copy
    * @returns a pointer to the allocated memory block, which will be %NULL if and    only if @mem_size is 0
    */
-  function slice_copy(
-    block_size: number,
-    mem_block: object | null
-  ): object | null;
+  function slice_copy(block_size: number, mem_block: any | null): any | null;
   /**
    * Frees a block of memory.
    *
@@ -9122,7 +9189,7 @@ declare namespace GLib {
    * @param block_size the size of the block
    * @param mem_block a pointer to the block to free
    */
-  function slice_free1(block_size: number, mem_block: object | null): void;
+  function slice_free1(block_size: number, mem_block: any | null): void;
   /**
    * Frees a linked list of memory blocks of structure type `type`.
    *
@@ -9141,15 +9208,15 @@ declare namespace GLib {
    */
   function slice_free_chain_with_offset(
     block_size: number,
-    mem_chain: object | null,
+    mem_chain: any | null,
     next_offset: number
   ): void;
   function slice_get_config(ckey: SliceConfig): number;
   function slice_get_config_state(
     ckey: SliceConfig,
     address: number,
-    n_values: number
-  ): number;
+    n_values: number | null
+  ): number | null;
   function slice_set_config(ckey: SliceConfig, value: number): void;
   /**
    * Removes the source with the given ID from the default main context. You must
@@ -9184,8 +9251,8 @@ declare namespace GLib {
    * @returns %TRUE if a source was found and removed.
    */
   function source_remove_by_funcs_user_data(
-    funcs: SourceFuncs,
-    user_data: object | null
+    funcs: SourceFuncs | null,
+    user_data: any | null
   ): boolean;
   /**
    * Removes a source from the default main loop context given the user
@@ -9194,7 +9261,7 @@ declare namespace GLib {
    * @param user_data the user_data for the callback.
    * @returns %TRUE if a source was found and removed.
    */
-  function source_remove_by_user_data(user_data: object | null): boolean;
+  function source_remove_by_user_data(user_data: any | null): boolean;
   /**
    * Sets the name of a source using its ID.
    *
@@ -9215,7 +9282,7 @@ declare namespace GLib {
    * @param tag a #GSource ID
    * @param name debug name for the source
    */
-  function source_set_name_by_id(tag: number, name: string): void;
+  function source_set_name_by_id(tag: number, name: string | null): void;
   /**
    * Gets the smallest prime number from a built-in array of primes which
    * is larger than `num`. This is used within GLib to calculate the optimum
@@ -9257,7 +9324,7 @@ declare namespace GLib {
     envp: string[] | null,
     flags: SpawnFlags,
     child_setup: SpawnChildSetupFunc | null
-  ): [/* returnType */ boolean, /* child_pid */ Pid];
+  ): [/* returnType */ boolean, /* child_pid */ Pid | null];
   /**
    * Executes a child program asynchronously.
    *
@@ -9282,7 +9349,7 @@ declare namespace GLib {
     stdin_fd: number,
     stdout_fd: number,
     stderr_fd: number
-  ): [/* returnType */ boolean, /* child_pid */ Pid];
+  ): [/* returnType */ boolean, /* child_pid */ Pid | null];
   /**
    * Identical to g_spawn_async_with_pipes_and_fds() but with `n_fds` set to zero,
    * so no FD assignments are used.
@@ -9301,10 +9368,10 @@ declare namespace GLib {
     child_setup: SpawnChildSetupFunc | null
   ): [
     /* returnType */ boolean,
-    /* child_pid */ Pid,
-    /* standard_input */ number,
-    /* standard_output */ number,
-    /* standard_error */ number
+    /* child_pid */ Pid | null,
+    /* standard_input */ number | null,
+    /* standard_output */ number | null,
+    /* standard_error */ number | null
   ];
   /**
    * Executes a child program asynchronously (your program will not
@@ -9526,10 +9593,10 @@ declare namespace GLib {
     target_fds: number[] | null
   ): [
     /* returnType */ boolean,
-    /* child_pid_out */ Pid,
-    /* stdin_pipe_out */ number,
-    /* stdout_pipe_out */ number,
-    /* stderr_pipe_out */ number
+    /* child_pid_out */ Pid | null,
+    /* stdin_pipe_out */ number | null,
+    /* stdout_pipe_out */ number | null,
+    /* stderr_pipe_out */ number | null
   ];
   /**
    * An old name for g_spawn_check_wait_status(), deprecated because its
@@ -9610,7 +9677,7 @@ declare namespace GLib {
    * @param command_line a command line
    * @returns %TRUE on success, %FALSE if error is set
    */
-  function spawn_command_line_async(command_line: string): boolean;
+  function spawn_command_line_async(command_line: string | null): boolean;
   /**
    * A simple version of g_spawn_sync() with little-used parameters
    * removed, taking a command line instead of an argument vector.
@@ -9645,12 +9712,12 @@ declare namespace GLib {
    * @returns %TRUE on success, %FALSE if an error was set
    */
   function spawn_command_line_sync(
-    command_line: string
+    command_line: string | null
   ): [
     /* returnType */ boolean,
     /* standard_output */ Uint8Array,
     /* standard_error */ Uint8Array,
-    /* wait_status */ number
+    /* wait_status */ number | null
   ];
   function spawn_error_quark(): Quark;
   function spawn_exit_error_quark(): Quark;
@@ -9695,7 +9762,7 @@ declare namespace GLib {
     /* returnType */ boolean,
     /* standard_output */ Uint8Array,
     /* standard_error */ Uint8Array,
-    /* wait_status */ number
+    /* wait_status */ number | null
   ];
   /**
    * Copies a nul-terminated string into the dest buffer, include the
@@ -9706,7 +9773,7 @@ declare namespace GLib {
    * @param src source string.
    * @returns a pointer to trailing nul byte.
    */
-  function stpcpy(dest: string, src: string): string;
+  function stpcpy(dest: string | null, src: string | null): string | null;
   /**
    * Compares two strings for byte-by-byte equality and returns %TRUE
    * if they are equal. It can be passed to g_hash_table_new() as the
@@ -9720,21 +9787,21 @@ declare namespace GLib {
    * @param v2 a key to compare with `v1`
    * @returns %TRUE if the two keys match
    */
-  function str_equal(v1: object, v2: object): boolean;
+  function str_equal(v1: any, v2: any): boolean;
   /**
    * Looks whether the string `str` begins with `prefix`.
    * @param str a nul-terminated string
    * @param prefix the nul-terminated prefix to look for
    * @returns %TRUE if @str begins with @prefix, %FALSE otherwise.
    */
-  function str_has_prefix(str: string, prefix: string): boolean;
+  function str_has_prefix(str: string | null, prefix: string | null): boolean;
   /**
    * Looks whether the string `str` ends with `suffix`.
    * @param str a nul-terminated string
    * @param suffix the nul-terminated suffix to look for
    * @returns %TRUE if @str end with @suffix, %FALSE otherwise.
    */
-  function str_has_suffix(str: string, suffix: string): boolean;
+  function str_has_suffix(str: string | null, suffix: string | null): boolean;
   /**
    * Converts a string to a hash value.
    *
@@ -9753,14 +9820,14 @@ declare namespace GLib {
    * @param v a string key
    * @returns a hash value corresponding to the key
    */
-  function str_hash(v: object): number;
+  function str_hash(v: any): number;
   /**
    * Determines if a string is pure ASCII. A string is pure ASCII if it
    * contains no bytes with the high bit set.
    * @param str a string
    * @returns %TRUE if @str is ASCII
    */
-  function str_is_ascii(str: string): boolean;
+  function str_is_ascii(str: string | null): boolean;
   /**
    * Checks if a search conducted for `search_term` should match
    * `potential_hit`.
@@ -9790,8 +9857,8 @@ declare namespace GLib {
    * @returns %TRUE if @potential_hit is a hit
    */
   function str_match_string(
-    search_term: string,
-    potential_hit: string,
+    search_term: string | null,
+    potential_hit: string | null,
     accept_alternates: boolean
   ): boolean;
   /**
@@ -9817,7 +9884,10 @@ declare namespace GLib {
    * @param from_locale the source locale, if known
    * @returns a string in plain ASCII
    */
-  function str_to_ascii(str: string, from_locale: string | null): string;
+  function str_to_ascii(
+    str: string | null,
+    from_locale: string | null
+  ): string | null;
   /**
    * Tokenises `string` and performs folding on each token.
    *
@@ -9839,7 +9909,7 @@ declare namespace GLib {
    * @returns the folded tokens
    */
   function str_tokenize_and_fold(
-    string: string,
+    string: string | null,
     translit_locale: string | null
   ): [/* returnType */ string[], /* ascii_alternates */ string[]];
   /**
@@ -9870,10 +9940,10 @@ declare namespace GLib {
    * @returns the modified @string
    */
   function strcanon(
-    string: string,
-    valid_chars: string,
+    string: string | null,
+    valid_chars: string | null,
     substitutor: number
-  ): string;
+  ): string | null;
   /**
    * A case-insensitive string comparison, corresponding to the standard
    * strcasecmp() function on platforms which support it.
@@ -9881,7 +9951,7 @@ declare namespace GLib {
    * @param s2 a string to compare with `s1`
    * @returns 0 if the strings match, a negative value if @s1 < @s2,     or a positive value if @s1 > @s2.
    */
-  function strcasecmp(s1: string, s2: string): number;
+  function strcasecmp(s1: string | null, s2: string | null): number;
   /**
    * Removes trailing whitespace from a string.
    *
@@ -9895,7 +9965,7 @@ declare namespace GLib {
    * @param string a string to remove the trailing whitespace from
    * @returns @string
    */
-  function strchomp(string: string): string;
+  function strchomp(string: string | null): string | null;
   /**
    * Removes leading whitespace from a string, by moving the rest
    * of the characters forward.
@@ -9910,7 +9980,7 @@ declare namespace GLib {
    * @param string a string to remove the leading whitespace from
    * @returns @string
    */
-  function strchug(string: string): string;
+  function strchug(string: string | null): string | null;
   /**
    * Compares `str1` and `str2` like strcmp(). Handles %NULL
    * gracefully by sorting it before non-%NULL strings.
@@ -9927,7 +9997,7 @@ declare namespace GLib {
    * @param source a string to compress
    * @returns a newly-allocated copy of @source with all escaped     character compressed
    */
-  function strcompress(source: string): string;
+  function strcompress(source: string | null): string | null;
   /**
    * Converts any delimiter characters in `string` to `new_delimiter`.
    *
@@ -9958,16 +10028,16 @@ declare namespace GLib {
    * @returns the modified @string
    */
   function strdelimit(
-    string: string,
+    string: string | null,
     delimiters: string | null,
     new_delimiter: number
-  ): string;
+  ): string | null;
   /**
    * Converts a string to lower case.
    * @param string the string to convert.
    * @returns the string
    */
-  function strdown(string: string): string;
+  function strdown(string: string | null): string | null;
   /**
    * Duplicates a string. If `str` is %NULL it returns %NULL.
    * The returned string should be freed with g_free()
@@ -9975,7 +10045,7 @@ declare namespace GLib {
    * @param str the string to duplicate
    * @returns a newly-allocated copy of @str
    */
-  function strdup(str: string | null): string;
+  function strdup(str: string | null): string | null;
   /**
    * Returns a string corresponding to the given error code, e.g. "no
    * such process". Unlike strerror(), this always returns a string in
@@ -9999,7 +10069,7 @@ declare namespace GLib {
    * @param errnum the system error number. See the standard C %errno     documentation
    * @returns a UTF-8 string describing the error code. If the error code     is unknown, it returns a string like "Unknown error: <code>".
    */
-  function strerror(errnum: number): string;
+  function strerror(errnum: number): string | null;
   /**
    * Escapes the special characters '\b', '\f', '\n', '\r', '\t', '\v', '\'
    * and '"' in the string `source` by inserting a '\' before
@@ -10013,7 +10083,10 @@ declare namespace GLib {
    * @param exceptions a string of characters not to escape in `source`
    * @returns a newly-allocated copy of @source with certain     characters escaped. See above.
    */
-  function strescape(source: string, exceptions: string | null): string;
+  function strescape(
+    source: string | null,
+    exceptions: string | null
+  ): string | null;
   /**
    * Frees a %NULL-terminated array of strings, as well as each
    * string it contains.
@@ -10028,7 +10101,10 @@ declare namespace GLib {
    * @param msgval another string
    * @returns @msgval, unless @msgval is identical to @msgid     and contains a '|' character, in which case a pointer to     the substring of msgid after the first '|' character is returned.
    */
-  function strip_context(msgid: string, msgval: string): string;
+  function strip_context(
+    msgid: string | null,
+    msgval: string | null
+  ): string | null;
   /**
    * Joins a number of strings together to form one long string, with the
    * optional `separator` inserted between each of them. The returned string
@@ -10041,7 +10117,10 @@ declare namespace GLib {
    * @param str_array a %NULL-terminated array of strings to join
    * @returns a newly-allocated string containing all of the strings joined     together, with @separator between them
    */
-  function strjoinv(separator: string | null, str_array: string): string;
+  function strjoinv(
+    separator: string | null,
+    str_array: string | null
+  ): string | null;
   /**
    * Portability wrapper that calls strlcat() on systems which have it,
    * and emulates it otherwise. Appends nul-terminated `src` string to `dest,`
@@ -10061,7 +10140,11 @@ declare namespace GLib {
    * @param dest_size length of `dest` buffer in bytes (not length of existing string     inside `dest)`
    * @returns size of attempted result, which is MIN (dest_size, strlen     (original dest)) + strlen (src), so if retval >= dest_size,     truncation occurred.
    */
-  function strlcat(dest: string, src: string, dest_size: number): number;
+  function strlcat(
+    dest: string | null,
+    src: string | null,
+    dest_size: number
+  ): number;
   /**
    * Portability wrapper that calls strlcpy() on systems which have it,
    * and emulates strlcpy() otherwise. Copies `src` to `dest;` `dest` is
@@ -10082,7 +10165,11 @@ declare namespace GLib {
    * @param dest_size length of `dest` in bytes
    * @returns length of @src
    */
-  function strlcpy(dest: string, src: string, dest_size: number): number;
+  function strlcpy(
+    dest: string | null,
+    src: string | null,
+    dest_size: number
+  ): number;
   /**
    * A case-insensitive string comparison, corresponding to the standard
    * strncasecmp() function on platforms which support it. It is similar
@@ -10093,7 +10180,7 @@ declare namespace GLib {
    * @param n the maximum number of characters to compare
    * @returns 0 if the strings match, a negative value if @s1 < @s2,     or a positive value if @s1 > @s2.
    */
-  function strncasecmp(s1: string, s2: string, n: number): number;
+  function strncasecmp(s1: string | null, s2: string | null, n: number): number;
   /**
    * Duplicates the first `n` bytes of a string, returning a newly-allocated
    * buffer `n` + 1 bytes long which will always be nul-terminated. If `str`
@@ -10107,7 +10194,7 @@ declare namespace GLib {
    * @param n the maximum number of bytes to copy from `str`
    * @returns a newly-allocated buffer containing the first @n bytes     of @str, nul-terminated
    */
-  function strndup(str: string, n: number): string;
+  function strndup(str: string | null, n: number): string | null;
   /**
    * Creates a new string `length` bytes long filled with `fill_char`.
    * The returned string should be freed when no longer needed.
@@ -10115,7 +10202,7 @@ declare namespace GLib {
    * @param fill_char the byte to fill the string with
    * @returns a newly-allocated string filled the @fill_char
    */
-  function strnfill(length: number, fill_char: number): string;
+  function strnfill(length: number, fill_char: number): string | null;
   /**
    * Reverses all of the bytes in a string. For example,
    * `g_strreverse ("abcdef")` will result in "fedcba".
@@ -10126,7 +10213,7 @@ declare namespace GLib {
    * @param string the string to reverse
    * @returns the same pointer passed in as @string
    */
-  function strreverse(string: string): string;
+  function strreverse(string: string | null): string | null;
   /**
    * Searches the string `haystack` for the last occurrence
    * of the string `needle`.
@@ -10134,7 +10221,10 @@ declare namespace GLib {
    * @param needle the nul-terminated string to search for
    * @returns a pointer to the found occurrence, or    %NULL if not found.
    */
-  function strrstr(haystack: string, needle: string): string;
+  function strrstr(
+    haystack: string | null,
+    needle: string | null
+  ): string | null;
   /**
    * Searches the string `haystack` for the last occurrence
    * of the string `needle,` limiting the length of the search
@@ -10145,10 +10235,10 @@ declare namespace GLib {
    * @returns a pointer to the found occurrence, or    %NULL if not found.
    */
   function strrstr_len(
-    haystack: string,
+    haystack: string | null,
     haystack_len: number,
-    needle: string
-  ): string;
+    needle: string | null
+  ): string | null;
   /**
    * Returns a string describing the given signal, e.g. "Segmentation fault".
    * You should use this function in preference to strsignal(), because it
@@ -10157,7 +10247,7 @@ declare namespace GLib {
    * @param signum the signal number. See the `signal` documentation
    * @returns a UTF-8 string describing the signal. If the signal is unknown,     it returns "unknown signal (<signum>)".
    */
-  function strsignal(signum: number): string;
+  function strsignal(signum: number): string | null;
   /**
    * Searches the string `haystack` for the first occurrence
    * of the string `needle,` limiting the length of the search
@@ -10168,10 +10258,10 @@ declare namespace GLib {
    * @returns a pointer to the found occurrence, or    %NULL if not found.
    */
   function strstr_len(
-    haystack: string,
+    haystack: string | null,
     haystack_len: number,
-    needle: string
-  ): string;
+    needle: string | null
+  ): string | null;
   /**
    * Converts a string to a #gdouble value.
    * It calls the standard strtod() function to handle the conversion, but
@@ -10187,20 +10277,22 @@ declare namespace GLib {
    * @param nptr the string to convert to a numeric value.
    * @returns the #gdouble value.
    */
-  function strtod(nptr: string): [/* returnType */ number, /* endptr */ string];
+  function strtod(
+    nptr: string | null
+  ): [/* returnType */ number, /* endptr */ string | null];
   /**
    * Converts a string to upper case.
    * @param string the string to convert
    * @returns the string
    */
-  function strup(string: string): string;
+  function strup(string: string | null): string | null;
   /**
    * Checks if `strv` contains `str`. `strv` must not be %NULL.
    * @param strv a %NULL-terminated array of strings
    * @param str a string
    * @returns %TRUE if @str is an element of @strv, according to g_str_equal().
    */
-  function strv_contains(strv: string, str: string): boolean;
+  function strv_contains(strv: string | null, str: string | null): boolean;
   /**
    * Checks if `strv1` and `strv2` contain exactly the same elements in exactly the
    * same order. Elements are compared using g_str_equal(). To match independently
@@ -10212,7 +10304,7 @@ declare namespace GLib {
    * @param strv2 another %NULL-terminated array of strings
    * @returns %TRUE if @strv1 and @strv2 are equal
    */
-  function strv_equal(strv1: string, strv2: string): boolean;
+  function strv_equal(strv1: string | null, strv2: string | null): boolean;
   function strv_get_type(): GObject.GType;
   /**
    * Returns the length of the given %NULL-terminated
@@ -10220,7 +10312,7 @@ declare namespace GLib {
    * @param str_array a %NULL-terminated array of strings
    * @returns length of @str_array.
    */
-  function strv_length(str_array: string): number;
+  function strv_length(str_array: string | null): number;
   /**
    * Create a new test case, similar to g_test_create_case(). However
    * the test is assumed to use no fixture, and test suites are automatically
@@ -10240,8 +10332,8 @@ declare namespace GLib {
    * @param test_func The test function to invoke for this test.
    */
   function test_add_data_func(
-    testpath: string,
-    test_data: object | null,
+    testpath: string | null,
+    test_data: any | null,
     test_func: TestDataFunc
   ): void;
   /**
@@ -10252,8 +10344,8 @@ declare namespace GLib {
    * @param test_func The test function to invoke for this test.
    */
   function test_add_data_func_full(
-    testpath: string,
-    test_data: object | null,
+    testpath: string | null,
+    test_data: any | null,
     test_func: TestDataFunc
   ): void;
   /**
@@ -10272,12 +10364,12 @@ declare namespace GLib {
    * @param testpath /-separated test case path name for the test.
    * @param test_func The test function to invoke for this test.
    */
-  function test_add_func(testpath: string, test_func: TestFunc): void;
+  function test_add_func(testpath: string | null, test_func: TestFunc): void;
   function test_assert_expected_messages_internal(
-    domain: string,
-    file: string,
+    domain: string | null,
+    file: string | null,
     line: number,
-    func: string
+    func: string | null
   ): void;
   /**
    * This function adds a message to test reports that
@@ -10292,7 +10384,7 @@ declare namespace GLib {
    * is already a valid URI.
    * @param bug_uri_snippet Bug specific bug tracker URI or URI portion.
    */
-  function test_bug(bug_uri_snippet: string): void;
+  function test_bug(bug_uri_snippet: string | null): void;
   /**
    * Specify the base URI for bug reports.
    *
@@ -10310,7 +10402,7 @@ declare namespace GLib {
    * from the value provided by g_test_bug().
    * @param uri_pattern the base pattern for bug URIs
    */
-  function test_bug_base(uri_pattern: string): void;
+  function test_bug_base(uri_pattern: string | null): void;
   /**
    * Indicates that a message with the given `log_domain` and `log_level,`
    * with text matching `pattern,` is expected to be logged. When this
@@ -10355,7 +10447,7 @@ declare namespace GLib {
   function test_expect_message(
     log_domain: string | null,
     log_level: LogLevelFlags,
-    pattern: string
+    pattern: string | null
   ): void;
   /**
    * Indicates that a test failed. This function can be called
@@ -10402,7 +10494,7 @@ declare namespace GLib {
    * @param file_type the type of file (built vs. distributed)
    * @returns the path of the directory, owned by GLib
    */
-  function test_get_dir(file_type: TestFileType): string;
+  function test_get_dir(file_type: TestFileType): string | null;
   /**
    * Gets the test path for the test currently being run.
    *
@@ -10412,7 +10504,7 @@ declare namespace GLib {
    * This function returns a valid string only within a test function.
    * @returns the test path for the test currently being run
    */
-  function test_get_path(): string;
+  function test_get_path(): string | null;
   /**
    * Indicates that a test failed because of some incomplete
    * functionality. This function can be called multiple times
@@ -10427,7 +10519,7 @@ declare namespace GLib {
    * @param msg explanation
    */
   function test_incomplete(msg: string | null): void;
-  function test_log_type_name(log_type: TestLogType): string;
+  function test_log_type_name(log_type: TestLogType): string | null;
   /**
    * This function enqueus a callback `destroy_func` to be executed
    * during the next test case teardown phase. This is most useful
@@ -10440,7 +10532,7 @@ declare namespace GLib {
    */
   function test_queue_destroy(
     destroy_func: DestroyNotify,
-    destroy_data: object | null
+    destroy_data: any | null
   ): void;
   /**
    * Enqueue a pointer to be released with g_free() during the next
@@ -10448,7 +10540,7 @@ declare namespace GLib {
    * with a destroy callback of g_free().
    * @param gfree_pointer the pointer to be stored.
    */
-  function test_queue_free(gfree_pointer: object | null): void;
+  function test_queue_free(gfree_pointer: any | null): void;
   /**
    * Get a reproducible random floating point number,
    * see g_test_rand_int() for details on test case random numbers.
@@ -10535,7 +10627,7 @@ declare namespace GLib {
    * @param suite a #GTestSuite
    * @returns 0 on success
    */
-  function test_run_suite(suite: TestSuite): number;
+  function test_run_suite(suite: TestSuite | null): number;
   /**
    * Changes the behaviour of the various `g_assert_*()` macros,
    * g_test_assert_expected_messages() and the various
@@ -10591,7 +10683,7 @@ declare namespace GLib {
    *
    * @param summary One or two sentences summarising what the test checks, and how it    checks it.
    */
-  function test_summary(summary: string): void;
+  function test_summary(summary: string | null): void;
   /**
    * Get the number of seconds since the last start of the timer with
    * g_test_timer_start().
@@ -10609,12 +10701,12 @@ declare namespace GLib {
    */
   function test_timer_start(): void;
   function test_trap_assertions(
-    domain: string,
-    file: string,
+    domain: string | null,
+    file: string | null,
     line: number,
-    func: string,
+    func: string | null,
     assertion_flags: number,
-    pattern: string
+    pattern: string | null
   ): void;
   /**
    * Fork the current test program to execute a test case that might
@@ -10755,7 +10847,7 @@ declare namespace GLib {
    * or or from within a #GThreadPool.
    * @param retval the return value of this thread
    */
-  function thread_exit(retval: object | null): void;
+  function thread_exit(retval: any | null): void;
   /**
    * This function will return the maximum `interval` that a
    * thread will wait in the thread pool for new tasks before
@@ -10816,7 +10908,7 @@ declare namespace GLib {
    * as g_thread_join()) on these threads.
    * @returns the #GThread representing the current thread
    */
-  function thread_self(): Thread;
+  function thread_self(): Thread | null;
   /**
    * Causes the calling thread to voluntarily relinquish the CPU, so
    * that other threads can run.
@@ -10847,8 +10939,8 @@ declare namespace GLib {
    * @returns %TRUE if the conversion was successful.
    */
   function time_val_from_iso8601(
-    iso_date: string
-  ): [/* returnType */ boolean, /* time_ */ TimeVal];
+    iso_date: string | null
+  ): [/* returnType */ boolean, /* time_ */ TimeVal | null];
   /**
    * Sets a function to be called at regular intervals, with the given
    * priority.  The function is called repeatedly until it returns
@@ -10946,7 +11038,7 @@ declare namespace GLib {
    * @param interval the timeout interval in milliseconds.
    * @returns the newly-created timeout source
    */
-  function timeout_source_new(interval: number): Source;
+  function timeout_source_new(interval: number): Source | null;
   /**
    * Creates a new timeout source.
    *
@@ -10962,7 +11054,7 @@ declare namespace GLib {
    * @param interval the timeout interval in seconds
    * @returns the newly-created timeout source
    */
-  function timeout_source_new_seconds(interval: number): Source;
+  function timeout_source_new_seconds(interval: number): Source | null;
   /**
    * Returns the height of a #GTrashStack.
    *
@@ -10971,40 +11063,40 @@ declare namespace GLib {
    * @param stack_p a #GTrashStack
    * @returns the height of the stack
    */
-  function trash_stack_height(stack_p: TrashStack): number;
+  function trash_stack_height(stack_p: TrashStack | null): number;
   /**
    * Returns the element at the top of a #GTrashStack
    * which may be %NULL.
    * @param stack_p a #GTrashStack
    * @returns the element at the top of the stack
    */
-  function trash_stack_peek(stack_p: TrashStack): object | null;
+  function trash_stack_peek(stack_p: TrashStack | null): any | null;
   /**
    * Pops a piece of memory off a #GTrashStack.
    * @param stack_p a #GTrashStack
    * @returns the element at the top of the stack
    */
-  function trash_stack_pop(stack_p: TrashStack): object | null;
+  function trash_stack_pop(stack_p: TrashStack | null): any | null;
   /**
    * Pushes a piece of memory onto a #GTrashStack.
    * @param stack_p a #GTrashStack
    * @param data_p the piece of memory to push on the stack
    */
-  function trash_stack_push(stack_p: TrashStack, data_p: object): void;
+  function trash_stack_push(stack_p: TrashStack | null, data_p: any): void;
   /**
    * Attempts to allocate `n_bytes,` and returns %NULL on failure.
    * Contrast with g_malloc(), which aborts the program on failure.
    * @param n_bytes number of bytes to allocate.
    * @returns the allocated memory, or %NULL.
    */
-  function try_malloc(n_bytes: number): object | null;
+  function try_malloc(n_bytes: number): any | null;
   /**
    * Attempts to allocate `n_bytes,` initialized to 0's, and returns %NULL on
    * failure. Contrast with g_malloc0(), which aborts the program on failure.
    * @param n_bytes number of bytes to allocate
    * @returns the allocated memory, or %NULL
    */
-  function try_malloc0(n_bytes: number): object | null;
+  function try_malloc0(n_bytes: number): any | null;
   /**
    * This function is similar to g_try_malloc0(), allocating (`n_blocks` * `n_block_bytes)` bytes,
    * but care is taken to detect possible overflow during multiplication.
@@ -11012,10 +11104,7 @@ declare namespace GLib {
    * @param n_block_bytes the size of each block in bytes
    * @returns the allocated memory, or %NULL
    */
-  function try_malloc0_n(
-    n_blocks: number,
-    n_block_bytes: number
-  ): object | null;
+  function try_malloc0_n(n_blocks: number, n_block_bytes: number): any | null;
   /**
    * This function is similar to g_try_malloc(), allocating (`n_blocks` * `n_block_bytes)` bytes,
    * but care is taken to detect possible overflow during multiplication.
@@ -11023,7 +11112,7 @@ declare namespace GLib {
    * @param n_block_bytes the size of each block in bytes
    * @returns the allocated memory, or %NULL.
    */
-  function try_malloc_n(n_blocks: number, n_block_bytes: number): object | null;
+  function try_malloc_n(n_blocks: number, n_block_bytes: number): any | null;
   /**
    * Attempts to realloc `mem` to a new size, `n_bytes,` and returns %NULL
    * on failure. Contrast with g_realloc(), which aborts the program
@@ -11034,7 +11123,7 @@ declare namespace GLib {
    * @param n_bytes number of bytes to allocate.
    * @returns the allocated memory, or %NULL.
    */
-  function try_realloc(mem: object | null, n_bytes: number): object | null;
+  function try_realloc(mem: any | null, n_bytes: number): any | null;
   /**
    * This function is similar to g_try_realloc(), allocating (`n_blocks` * `n_block_bytes)` bytes,
    * but care is taken to detect possible overflow during multiplication.
@@ -11044,10 +11133,10 @@ declare namespace GLib {
    * @returns the allocated memory, or %NULL.
    */
   function try_realloc_n(
-    mem: object | null,
+    mem: any | null,
     n_blocks: number,
     n_block_bytes: number
-  ): object | null;
+  ): any | null;
   /**
    * Convert a string from UCS-4 to UTF-16. A 0 character will be
    * added to the result after the converted text.
@@ -11056,12 +11145,12 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UTF-16 string.     This value must be freed with g_free(). If an error occurs,     %NULL will be returned and @error set.
    */
   function ucs4_to_utf16(
-    str: string,
+    str: string | null,
     len: number
   ): [
-    /* returnType */ number,
-    /* items_read */ number,
-    /* items_written */ number
+    /* returnType */ number | null,
+    /* items_read */ number | null,
+    /* items_written */ number | null
   ];
   /**
    * Convert a string from a 32-bit fixed width representation as UCS-4.
@@ -11071,12 +11160,12 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UTF-8 string.     This value must be freed with g_free(). If an error occurs,     %NULL will be returned and @error set. In that case, @items_read     will be set to the position of the first invalid input character.
    */
   function ucs4_to_utf8(
-    str: string,
+    str: string | null,
     len: number
   ): [
-    /* returnType */ string,
-    /* items_read */ number,
-    /* items_written */ number
+    /* returnType */ string | null,
+    /* items_read */ number | null,
+    /* items_written */ number | null
   ];
   /**
    * Determines the break type of `c`. `c` should be a Unicode character
@@ -11119,7 +11208,7 @@ declare namespace GLib {
   function unichar_compose(
     a: string,
     b: string
-  ): [/* returnType */ boolean, /* ch */ string];
+  ): [/* returnType */ boolean, /* ch */ string | null];
   /**
    * Performs a single decomposition step of the
    * Unicode canonical decomposition algorithm.
@@ -11149,7 +11238,7 @@ declare namespace GLib {
    */
   function unichar_decompose(
     ch: string
-  ): [/* returnType */ boolean, /* a */ string, /* b */ string];
+  ): [/* returnType */ boolean, /* a */ string | null, /* b */ string | null];
   /**
    * Determines the numeric value of a character as a decimal
    * digit.
@@ -11186,7 +11275,7 @@ declare namespace GLib {
     ch: string,
     compat: boolean,
     result_len: number
-  ): [/* returnType */ number, /* result */ string];
+  ): [/* returnType */ number, /* result */ string | null];
   /**
    * In Unicode, some characters are "mirrored". This means that their
    * images are mirrored horizontally in text that is laid out from right
@@ -11201,7 +11290,10 @@ declare namespace GLib {
    * @param mirrored_ch location to store the mirrored character
    * @returns %TRUE if @ch has a mirrored character, %FALSE otherwise
    */
-  function unichar_get_mirror_char(ch: string, mirrored_ch: string): boolean;
+  function unichar_get_mirror_char(
+    ch: string,
+    mirrored_ch: string | null
+  ): boolean;
   /**
    * Looks up the #GUnicodeScript for a particular character (as defined
    * by Unicode Standard Annex \#24). No check is made for `ch` being a
@@ -11380,7 +11472,7 @@ declare namespace GLib {
    */
   function unichar_to_utf8(
     c: string
-  ): [/* returnType */ number, /* outbuf */ string];
+  ): [/* returnType */ number, /* outbuf */ string | null];
   /**
    * Converts a character to lower case.
    * @param c a Unicode character.
@@ -11428,8 +11520,8 @@ declare namespace GLib {
    */
   function unicode_canonical_decomposition(
     ch: string,
-    result_len: number
-  ): string;
+    result_len: number | null
+  ): string | null;
   /**
    * Computes the canonical ordering of a string in-place.
    * This rearranges decomposed characters in the string
@@ -11438,7 +11530,7 @@ declare namespace GLib {
    * @param string a UCS-4 encoded string.
    * @param len the maximum length of `string` to use.
    */
-  function unicode_canonical_ordering(string: string, len: number): void;
+  function unicode_canonical_ordering(string: string | null, len: number): void;
   /**
    * Looks up the Unicode script for `iso1`5924.  ISO 15924 assigns four-letter
    * codes to scripts.  For example, the code for Arabic is 'Arab'.
@@ -11496,7 +11588,10 @@ declare namespace GLib {
    * @param condition IO conditions to watch for on `fd`
    * @returns the newly created #GSource
    */
-  function unix_fd_source_new(fd: number, condition: IOCondition): Source;
+  function unix_fd_source_new(
+    fd: number,
+    condition: IOCondition
+  ): Source | null;
   /**
    * Get the `passwd` file entry for the given `user_name` using `getpwnam_r()`.
    * This can fail if the given `user_name` doesn’t exist.
@@ -11512,7 +11607,7 @@ declare namespace GLib {
    * @param user_name the username to get the passwd file entry for
    * @returns passwd entry, or %NULL on error; free the returned    value with g_free()
    */
-  function unix_get_passwd_entry(user_name: string): object | null;
+  function unix_get_passwd_entry(user_name: string | null): any | null;
   /**
    * Similar to the UNIX pipe() call, but on modern systems like Linux
    * uses the pipe2() system call, which atomically creates a pipe with
@@ -11577,7 +11672,7 @@ declare namespace GLib {
    * @param signum A signal number
    * @returns A newly created #GSource
    */
-  function unix_signal_source_new(signum: number): Source;
+  function unix_signal_source_new(signum: number): Source | null;
   /**
    * A wrapper for the POSIX unlink() function. The unlink() function
    * deletes a name from the filesystem. If this was the last link to the
@@ -11590,7 +11685,7 @@ declare namespace GLib {
    * @param filename a pathname in the GLib file name encoding     (UTF-8 on Windows)
    * @returns 0 if the name was successfully deleted, -1 if an error    occurred
    */
-  function unlink(filename: string): number;
+  function unlink(filename: string | null): number;
   /**
    * Removes an environment variable from the environment.
    *
@@ -11611,7 +11706,7 @@ declare namespace GLib {
    * array directly to execvpe(), g_spawn_async(), or the like.
    * @param variable the environment variable to remove, must     not contain '='
    */
-  function unsetenv(variable: string): void;
+  function unsetenv(variable: string | null): void;
   /**
    * Creates a new #GUri from the given components according to `flags`.
    *
@@ -11629,14 +11724,14 @@ declare namespace GLib {
    */
   function uri_build(
     flags: UriFlags,
-    scheme: string,
+    scheme: string | null,
     userinfo: string | null,
     host: string | null,
     port: number,
-    path: string,
+    path: string | null,
     query: string | null,
     fragment: string | null
-  ): Uri;
+  ): Uri | null;
   /**
    * Creates a new #GUri from the given components according to `flags`
    * (%G_URI_FLAGS_HAS_PASSWORD is added unconditionally). The `flags` must be
@@ -11660,16 +11755,16 @@ declare namespace GLib {
    */
   function uri_build_with_user(
     flags: UriFlags,
-    scheme: string,
+    scheme: string | null,
     user: string | null,
     password: string | null,
     auth_params: string | null,
     host: string | null,
     port: number,
-    path: string,
+    path: string | null,
     query: string | null,
     fragment: string | null
-  ): Uri;
+  ): Uri | null;
   function uri_error_quark(): Quark;
   /**
    * Escapes arbitrary data for use in a URI.
@@ -11690,7 +11785,7 @@ declare namespace GLib {
   function uri_escape_bytes(
     unescaped: Uint8Array,
     reserved_chars_allowed: string | null
-  ): string;
+  ): string | null;
   /**
    * Escapes a string for use in a URI.
    *
@@ -11706,10 +11801,10 @@ declare namespace GLib {
    * @returns an escaped version of @unescaped. The returned string should be freed when no longer needed.
    */
   function uri_escape_string(
-    unescaped: string,
+    unescaped: string | null,
     reserved_chars_allowed: string | null,
     allow_utf8: boolean
-  ): string;
+  ): string | null;
   /**
    * Parses `uri_string` according to `flags,` to determine whether it is a valid
    * [absolute URI][relative-absolute-uris], i.e. it does not need to be resolved
@@ -11723,7 +11818,7 @@ declare namespace GLib {
    * @param flags flags for parsing `uri_string`
    * @returns %TRUE if @uri_string is a valid absolute URI, %FALSE on error.
    */
-  function uri_is_valid(uri_string: string, flags: UriFlags): boolean;
+  function uri_is_valid(uri_string: string | null, flags: UriFlags): boolean;
   /**
    * Joins the given components together according to `flags` to create
    * an absolute URI string. `path` may not be %NULL (though it may be the empty
@@ -11755,10 +11850,10 @@ declare namespace GLib {
     userinfo: string | null,
     host: string | null,
     port: number,
-    path: string,
+    path: string | null,
     query: string | null,
     fragment: string | null
-  ): string;
+  ): string | null;
   /**
    * Joins the given components together according to `flags` to create
    * an absolute URI string. `path` may not be %NULL (though it may be the empty
@@ -11789,10 +11884,10 @@ declare namespace GLib {
     auth_params: string | null,
     host: string | null,
     port: number,
-    path: string,
+    path: string | null,
     query: string | null,
     fragment: string | null
-  ): string;
+  ): string | null;
   /**
    * Splits an URI list conforming to the text/uri-list
    * mime type defined in RFC 2483 into individual URIs,
@@ -11800,7 +11895,7 @@ declare namespace GLib {
    * @param uri_list an URI list
    * @returns a newly allocated %NULL-terminated list   of strings holding the individual URIs. The array should be freed   with g_strfreev().
    */
-  function uri_list_extract_uris(uri_list: string): string[];
+  function uri_list_extract_uris(uri_list: string | null): string[];
   /**
    * Parses `uri_string` according to `flags`. If the result is not a
    * valid [absolute URI][relative-absolute-uris], it will be discarded, and an
@@ -11809,7 +11904,7 @@ declare namespace GLib {
    * @param flags flags describing how to parse `uri_string`
    * @returns a new #GUri, or NULL on error.
    */
-  function uri_parse(uri_string: string, flags: UriFlags): Uri;
+  function uri_parse(uri_string: string | null, flags: UriFlags): Uri | null;
   /**
    * Many URI schemes include one or more attribute/value pairs as part of the URI
    * value. This method can be used to parse them into a hash table. When an
@@ -11842,11 +11937,11 @@ declare namespace GLib {
    * @returns      A hash table of attribute/value pairs, with both names and values     fully-decoded; or %NULL on error.
    */
   function uri_parse_params(
-    params: string,
+    params: string | null,
     length: number,
-    separators: string,
+    separators: string | null,
     flags: UriParamsFlags
-  ): HashTable;
+  ): HashTable | null;
   /**
    * Gets the scheme portion of a URI string.
    * [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
@@ -11859,7 +11954,7 @@ declare namespace GLib {
    * @param uri a valid URI.
    * @returns The ‘scheme’ component of the URI, or     %NULL on error. The returned string should be freed when no longer needed.
    */
-  function uri_parse_scheme(uri: string): string | null;
+  function uri_parse_scheme(uri: string | null): string | null;
   /**
    * Gets the scheme portion of a URI string.
    * [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
@@ -11875,7 +11970,7 @@ declare namespace GLib {
    * @param uri a valid URI.
    * @returns The ‘scheme’ component of the URI, or     %NULL on error. The returned string is normalized to all-lowercase, and     interned via g_intern_string(), so it does not need to be freed.
    */
-  function uri_peek_scheme(uri: string): string | null;
+  function uri_peek_scheme(uri: string | null): string | null;
   /**
    * Parses `uri_ref` according to `flags` and, if it is a
    * [relative URI][relative-absolute-uris], resolves it relative to
@@ -11891,9 +11986,9 @@ declare namespace GLib {
    */
   function uri_resolve_relative(
     base_uri_string: string | null,
-    uri_ref: string,
+    uri_ref: string | null,
     flags: UriFlags
-  ): string;
+  ): string | null;
   /**
    * Parses `uri_ref` (which can be an
    * [absolute or relative URI][relative-absolute-uris]) according to `flags,` and
@@ -11916,15 +12011,15 @@ declare namespace GLib {
    * @returns %TRUE if @uri_ref parsed successfully, %FALSE   on error.
    */
   function uri_split(
-    uri_ref: string,
+    uri_ref: string | null,
     flags: UriFlags
   ): [
     /* returnType */ boolean,
     /* scheme */ string | null,
     /* userinfo */ string | null,
     /* host */ string | null,
-    /* port */ number,
-    /* path */ string,
+    /* port */ number | null,
+    /* path */ string | null,
     /* query */ string | null,
     /* fragment */ string | null
   ];
@@ -11940,13 +12035,13 @@ declare namespace GLib {
    * @returns %TRUE if @uri_string parsed successfully,   %FALSE on error.
    */
   function uri_split_network(
-    uri_string: string,
+    uri_string: string | null,
     flags: UriFlags
   ): [
     /* returnType */ boolean,
     /* scheme */ string | null,
     /* host */ string | null,
-    /* port */ number
+    /* port */ number | null
   ];
   /**
    * Parses `uri_ref` (which can be an
@@ -11965,7 +12060,7 @@ declare namespace GLib {
    * @returns %TRUE if @uri_ref parsed successfully, %FALSE   on error.
    */
   function uri_split_with_user(
-    uri_ref: string,
+    uri_ref: string | null,
     flags: UriFlags
   ): [
     /* returnType */ boolean,
@@ -11974,8 +12069,8 @@ declare namespace GLib {
     /* password */ string | null,
     /* auth_params */ string | null,
     /* host */ string | null,
-    /* port */ number,
-    /* path */ string,
+    /* port */ number | null,
+    /* path */ string | null,
     /* query */ string | null,
     /* fragment */ string | null
   ];
@@ -11996,10 +12091,10 @@ declare namespace GLib {
    * @returns an unescaped version of @escaped_string     or %NULL on error (if decoding failed, using %G_URI_ERROR_FAILED error     code). The returned #GBytes should be unreffed when no longer needed.
    */
   function uri_unescape_bytes(
-    escaped_string: string,
+    escaped_string: string | null,
     length: number,
     illegal_characters: string | null
-  ): Bytes;
+  ): Bytes | null;
   /**
    * Unescapes a segment of an escaped string.
    *
@@ -12034,7 +12129,7 @@ declare namespace GLib {
    * @returns an unescaped version of @escaped_string. The returned string should be freed when no longer needed.
    */
   function uri_unescape_string(
-    escaped_string: string,
+    escaped_string: string | null,
     illegal_characters: string | null
   ): string | null;
   /**
@@ -12055,12 +12150,12 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UCS-4 string.     This value must be freed with g_free(). If an error occurs,     %NULL will be returned and @error set.
    */
   function utf16_to_ucs4(
-    str: number,
+    str: number | null,
     len: number
   ): [
-    /* returnType */ string,
-    /* items_read */ number,
-    /* items_written */ number
+    /* returnType */ string | null,
+    /* items_read */ number | null,
+    /* items_written */ number | null
   ];
   /**
    * Convert a string from UTF-16 to UTF-8. The result will be
@@ -12081,12 +12176,12 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UTF-8 string.     This value must be freed with g_free(). If an error occurs,     %NULL will be returned and @error set.
    */
   function utf16_to_utf8(
-    str: number,
+    str: number | null,
     len: number
   ): [
-    /* returnType */ string,
-    /* items_read */ number,
-    /* items_written */ number
+    /* returnType */ string | null,
+    /* items_read */ number | null,
+    /* items_written */ number | null
   ];
   /**
    * Converts a string into a form that is independent of case. The
@@ -12104,7 +12199,7 @@ declare namespace GLib {
    * @param len length of `str,` in bytes, or -1 if `str` is nul-terminated.
    * @returns a newly allocated string, that is a   case independent form of @str.
    */
-  function utf8_casefold(str: string, len: number): string;
+  function utf8_casefold(str: string | null, len: number): string | null;
   /**
    * Compares two strings for ordering using the linguistically
    * correct rules for the [current locale][setlocale].
@@ -12120,7 +12215,7 @@ declare namespace GLib {
    * @param str2 a UTF-8 encoded string
    * @returns < 0 if @str1 compares before @str2,   0 if they compare equal, > 0 if @str1 compares after @str2.
    */
-  function utf8_collate(str1: string, str2: string): number;
+  function utf8_collate(str1: string | null, str2: string | null): number;
   /**
    * Converts a string into a collation key that can be compared
    * with other collation keys produced by the same function using
@@ -12135,7 +12230,7 @@ declare namespace GLib {
    * @param len length of `str,` in bytes, or -1 if `str` is nul-terminated.
    * @returns a newly allocated string. This string should   be freed with g_free() when you are done with it.
    */
-  function utf8_collate_key(str: string, len: number): string;
+  function utf8_collate_key(str: string | null, len: number): string | null;
   /**
    * Converts a string into a collation key that can be compared
    * with other collation keys produced by the same function using strcmp().
@@ -12152,7 +12247,10 @@ declare namespace GLib {
    * @param len length of `str,` in bytes, or -1 if `str` is nul-terminated.
    * @returns a newly allocated string. This string should   be freed with g_free() when you are done with it.
    */
-  function utf8_collate_key_for_filename(str: string, len: number): string;
+  function utf8_collate_key_for_filename(
+    str: string | null,
+    len: number
+  ): string | null;
   /**
    * Finds the start of the next UTF-8 character in the string after `p`.
    *
@@ -12168,7 +12266,10 @@ declare namespace GLib {
    * @param end a pointer to the byte following the end of the string,     or %NULL to indicate that the string is nul-terminated
    * @returns a pointer to the found character or %NULL if @end is    set and is reached
    */
-  function utf8_find_next_char(p: string, end: string | null): string | null;
+  function utf8_find_next_char(
+    p: string | null,
+    end: string | null
+  ): string | null;
   /**
    * Given a position `p` with a UTF-8 encoded string `str,` find the start
    * of the previous UTF-8 character starting before `p`. Returns %NULL if no
@@ -12181,7 +12282,10 @@ declare namespace GLib {
    * @param p pointer to some position within `str`
    * @returns a pointer to the found character or %NULL.
    */
-  function utf8_find_prev_char(str: string, p: string): string | null;
+  function utf8_find_prev_char(
+    str: string | null,
+    p: string | null
+  ): string | null;
   /**
    * Converts a sequence of bytes encoded as UTF-8 to a Unicode character.
    *
@@ -12192,7 +12296,7 @@ declare namespace GLib {
    * @param p a pointer to Unicode character encoded as UTF-8
    * @returns the resulting character
    */
-  function utf8_get_char(p: string): string;
+  function utf8_get_char(p: string | null): string;
   /**
    * Convert a sequence of bytes encoded as UTF-8 to a Unicode character.
    * This function checks for incomplete characters, for invalid characters
@@ -12206,7 +12310,7 @@ declare namespace GLib {
    * @param max_len the maximum number of bytes to read, or -1 if `p` is nul-terminated
    * @returns the resulting character. If @p points to a partial     sequence at the end of a string that could begin a valid     character (or if @max_len is zero), returns (gunichar)-2;     otherwise, if @p does not point to a valid UTF-8 encoded     Unicode character, returns (gunichar)-1.
    */
-  function utf8_get_char_validated(p: string, max_len: number): string;
+  function utf8_get_char_validated(p: string | null, max_len: number): string;
   /**
    * If the provided string is valid UTF-8, return a copy of it. If not,
    * return a copy in which bytes that could not be interpreted as valid Unicode
@@ -12221,7 +12325,7 @@ declare namespace GLib {
    * @param len the maximum length of `str` to use, in bytes. If `len` < 0,     then the string is nul-terminated.
    * @returns a valid UTF-8 string whose content resembles @str
    */
-  function utf8_make_valid(str: string, len: number): string;
+  function utf8_make_valid(str: string | null, len: number): string | null;
   /**
    * Converts a string into canonical form, standardizing
    * such issues as whether a character with an accent
@@ -12254,7 +12358,7 @@ declare namespace GLib {
    * @returns a newly allocated string, that   is the normalized form of @str, or %NULL if @str   is not valid UTF-8.
    */
   function utf8_normalize(
-    str: string,
+    str: string | null,
     len: number,
     mode: NormalizeMode
   ): string | null;
@@ -12276,7 +12380,10 @@ declare namespace GLib {
    * @param offset a character offset within `str`
    * @returns the resulting pointer
    */
-  function utf8_offset_to_pointer(str: string, offset: number): string;
+  function utf8_offset_to_pointer(
+    str: string | null,
+    offset: number
+  ): string | null;
   /**
    * Converts from a pointer to position within a string to an integer
    * character offset.
@@ -12287,7 +12394,10 @@ declare namespace GLib {
    * @param pos a pointer to a position within `str`
    * @returns the resulting character offset
    */
-  function utf8_pointer_to_offset(str: string, pos: string): number;
+  function utf8_pointer_to_offset(
+    str: string | null,
+    pos: string | null
+  ): number;
   /**
    * Finds the previous UTF-8 character in the string before `p`.
    *
@@ -12298,7 +12408,7 @@ declare namespace GLib {
    * @param p a pointer to a position within a UTF-8 encoded string
    * @returns a pointer to the found character
    */
-  function utf8_prev_char(p: string): string;
+  function utf8_prev_char(p: string | null): string | null;
   /**
    * Finds the leftmost occurrence of the given Unicode character
    * in a UTF-8 encoded string, while limiting the search to `len` bytes.
@@ -12308,7 +12418,7 @@ declare namespace GLib {
    * @param c a Unicode character
    * @returns %NULL if the string does not contain the character,     otherwise, a pointer to the start of the leftmost occurrence     of the character in the string.
    */
-  function utf8_strchr(p: string, len: number, c: string): string | null;
+  function utf8_strchr(p: string | null, len: number, c: string): string | null;
   /**
    * Converts all Unicode characters in the string that have a case
    * to lowercase. The exact manner that this is done depends
@@ -12318,7 +12428,7 @@ declare namespace GLib {
    * @param len length of `str,` in bytes, or -1 if `str` is nul-terminated.
    * @returns a newly allocated string, with all characters    converted to lowercase.
    */
-  function utf8_strdown(str: string, len: number): string;
+  function utf8_strdown(str: string | null, len: number): string | null;
   /**
    * Computes the length of the string in characters, not including
    * the terminating nul character. If the `max'`th byte falls in the
@@ -12327,7 +12437,7 @@ declare namespace GLib {
    * @param max the maximum number of bytes to examine. If `max`       is less than 0, then the string is assumed to be       nul-terminated. If `max` is 0, `p` will not be examined and       may be %NULL. If `max` is greater than 0, up to `max`       bytes are examined
    * @returns the length of the string in characters
    */
-  function utf8_strlen(p: string, max: number): number;
+  function utf8_strlen(p: string | null, max: number): number;
   /**
    * Like the standard C strncpy() function, but copies a given number
    * of characters instead of a given number of bytes. The `src` string
@@ -12341,7 +12451,11 @@ declare namespace GLib {
    * @param n character count
    * @returns @dest
    */
-  function utf8_strncpy(dest: string, src: string, n: number): string;
+  function utf8_strncpy(
+    dest: string | null,
+    src: string | null,
+    n: number
+  ): string | null;
   /**
    * Find the rightmost occurrence of the given Unicode character
    * in a UTF-8 encoded string, while limiting the search to `len` bytes.
@@ -12351,7 +12465,11 @@ declare namespace GLib {
    * @param c a Unicode character
    * @returns %NULL if the string does not contain the character,     otherwise, a pointer to the start of the rightmost occurrence     of the character in the string.
    */
-  function utf8_strrchr(p: string, len: number, c: string): string | null;
+  function utf8_strrchr(
+    p: string | null,
+    len: number,
+    c: string
+  ): string | null;
   /**
    * Reverses a UTF-8 string. `str` must be valid UTF-8 encoded text.
    * (Use g_utf8_validate() on all text before trying to use UTF-8
@@ -12370,7 +12488,7 @@ declare namespace GLib {
    * @param len the maximum length of `str` to use, in bytes. If `len` < 0,     then the string is nul-terminated.
    * @returns a newly-allocated string which is the reverse of @str
    */
-  function utf8_strreverse(str: string, len: number): string;
+  function utf8_strreverse(str: string | null, len: number): string | null;
   /**
    * Converts all Unicode characters in the string that have a case
    * to uppercase. The exact manner that this is done depends
@@ -12381,7 +12499,7 @@ declare namespace GLib {
    * @param len length of `str,` in bytes, or -1 if `str` is nul-terminated.
    * @returns a newly allocated string, with all characters    converted to uppercase.
    */
-  function utf8_strup(str: string, len: number): string;
+  function utf8_strup(str: string | null, len: number): string | null;
   /**
    * Copies a substring out of a UTF-8 encoded string.
    * The substring will contain `end_pos` - `start_pos` characters.
@@ -12394,10 +12512,10 @@ declare namespace GLib {
    * @returns a newly allocated copy of the requested     substring. Free with g_free() when no longer needed.
    */
   function utf8_substring(
-    str: string,
+    str: string | null,
     start_pos: number,
     end_pos: number
-  ): string;
+  ): string | null;
   /**
    * Convert a string from UTF-8 to a 32-bit fixed width
    * representation as UCS-4. A trailing 0 character will be added to the
@@ -12407,12 +12525,12 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UCS-4 string.     This value must be freed with g_free(). If an error occurs,     %NULL will be returned and @error set.
    */
   function utf8_to_ucs4(
-    str: string,
+    str: string | null,
     len: number
   ): [
-    /* returnType */ string,
-    /* items_read */ number,
-    /* items_written */ number
+    /* returnType */ string | null,
+    /* items_read */ number | null,
+    /* items_written */ number | null
   ];
   /**
    * Convert a string from UTF-8 to a 32-bit fixed width
@@ -12425,9 +12543,9 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UCS-4 string.     This value must be freed with g_free().
    */
   function utf8_to_ucs4_fast(
-    str: string,
+    str: string | null,
     len: number
-  ): [/* returnType */ string, /* items_written */ number];
+  ): [/* returnType */ string | null, /* items_written */ number | null];
   /**
    * Convert a string from UTF-8 to UTF-16. A 0 character will be
    * added to the result after the converted text.
@@ -12436,12 +12554,12 @@ declare namespace GLib {
    * @returns a pointer to a newly allocated UTF-16 string.     This value must be freed with g_free(). If an error occurs,     %NULL will be returned and @error set.
    */
   function utf8_to_utf16(
-    str: string,
+    str: string | null,
     len: number
   ): [
-    /* returnType */ number,
-    /* items_read */ number,
-    /* items_written */ number
+    /* returnType */ number | null,
+    /* items_read */ number | null,
+    /* items_written */ number | null
   ];
   /**
    * Validates UTF-8 encoded text. `str` is the text to validate;
@@ -12464,7 +12582,7 @@ declare namespace GLib {
    */
   function utf8_validate(
     str: Uint8Array
-  ): [/* returnType */ boolean, /* end */ string];
+  ): [/* returnType */ boolean, /* end */ string | null];
   /**
    * Validates UTF-8 encoded text.
    *
@@ -12475,7 +12593,7 @@ declare namespace GLib {
    */
   function utf8_validate_len(
     str: Uint8Array
-  ): [/* returnType */ boolean, /* end */ string];
+  ): [/* returnType */ boolean, /* end */ string | null];
   /**
    * Parses the string `str` and verify if it is a UUID.
    *
@@ -12488,14 +12606,14 @@ declare namespace GLib {
    * @param str a string representing a UUID
    * @returns %TRUE if @str is a valid UUID, %FALSE otherwise.
    */
-  function uuid_string_is_valid(str: string): boolean;
+  function uuid_string_is_valid(str: string | null): boolean;
   /**
    * Generates a random UUID (RFC 4122 version 4) as a string. It has the same
    * randomness guarantees as #GRand, so must not be used for cryptographic
    * purposes such as key generation, nonces, salts or one-time pads.
    * @returns A string that should be freed with g_free().
    */
-  function uuid_string_random(): string;
+  function uuid_string_random(): string | null;
   function variant_get_gtype(): GObject.GType;
   /**
    * Determines if a given string is a valid D-Bus object path.  You
@@ -12509,7 +12627,7 @@ declare namespace GLib {
    * @param string a normal C nul-terminated string
    * @returns %TRUE if @string is a D-Bus object path
    */
-  function variant_is_object_path(string: string): boolean;
+  function variant_is_object_path(string: string | null): boolean;
   /**
    * Determines if a given string is a valid D-Bus type signature.  You
    * should ensure that a string is a valid D-Bus type signature before
@@ -12520,7 +12638,7 @@ declare namespace GLib {
    * @param string a normal C nul-terminated string
    * @returns %TRUE if @string is a D-Bus type signature
    */
-  function variant_is_signature(string: string): boolean;
+  function variant_is_signature(string: string | null): boolean;
   /**
    * Parses a #GVariant from a text representation.
    *
@@ -12565,10 +12683,10 @@ declare namespace GLib {
    */
   function variant_parse(
     type: VariantType | null,
-    text: string,
+    text: string | null,
     limit: string | null,
     endptr: string | null
-  ): Variant;
+  ): Variant | null;
   /**
    * Pretty-prints a message showing the context of a #GVariant parse
    * error within the string for which parsing was attempted.
@@ -12606,16 +12724,16 @@ declare namespace GLib {
    * @returns the printed message
    */
   function variant_parse_error_print_context(
-    error: Error,
-    source_str: string
-  ): string;
+    error: Error | null,
+    source_str: string | null
+  ): string | null;
   function variant_parse_error_quark(): Quark;
   /**
    * Same as g_variant_error_quark().
    */
   function variant_parser_get_error_quark(): Quark;
-  function variant_type_checked_(arg0: string): VariantType;
-  function variant_type_string_get_depth_(type_string: string): number;
+  function variant_type_checked_(arg0: string | null): VariantType | null;
+  function variant_type_string_get_depth_(type_string: string | null): number;
   /**
    * Checks if `type_string` is a valid GVariant type string.  This call is
    * equivalent to calling g_variant_type_string_scan() and confirming
@@ -12623,7 +12741,7 @@ declare namespace GLib {
    * @param type_string a pointer to any string
    * @returns %TRUE if @type_string is exactly one valid type string Since 2.24
    */
-  function variant_type_string_is_valid(type_string: string): boolean;
+  function variant_type_string_is_valid(type_string: string | null): boolean;
   /**
    * Scan for a single complete and valid GVariant type string in `string`.
    * The memory pointed to by `limit` (or bytes beyond it) is never
@@ -12643,9 +12761,9 @@ declare namespace GLib {
    * @returns %TRUE if a valid type string was found
    */
   function variant_type_string_scan(
-    string: string,
+    string: string | null,
     limit: string | null
-  ): [/* returnType */ boolean, /* endptr */ string];
+  ): [/* returnType */ boolean, /* endptr */ string | null];
   /**
    * Prototype of a #GChildWatchSource callback, called when a child
    * process has exited.
@@ -12683,7 +12801,7 @@ declare namespace GLib {
    * @returns negative value if @a < @b; zero if @a = @b; positive          value if @a > @b
    */
   interface CompareDataFunc {
-    (a: object | null, b: object | null): number;
+    (a: any | null, b: any | null): number;
   }
   /**
    * Specifies the type of a comparison function used to compare two
@@ -12696,7 +12814,7 @@ declare namespace GLib {
    * @returns negative value if @a < @b; zero if @a = @b; positive          value if @a > @b
    */
   interface CompareFunc {
-    (a: object | null, b: object | null): number;
+    (a: any | null, b: any | null): number;
   }
   /**
    * A function of this signature is used to copy the node data
@@ -12706,7 +12824,7 @@ declare namespace GLib {
    * @returns A pointer to the copy
    */
   interface CopyFunc {
-    (src: object): object;
+    (src: any): any;
   }
   /**
    * Specifies the type of function passed to g_dataset_foreach(). It is
@@ -12717,7 +12835,7 @@ declare namespace GLib {
    * @param data the data element.
    */
   interface DataForeachFunc {
-    (key_id: Quark, data: object | null): void;
+    (key_id: Quark, data: any | null): void;
   }
   /**
    * Specifies the type of function which is called when a data element
@@ -12727,7 +12845,7 @@ declare namespace GLib {
    * @param data the data element.
    */
   interface DestroyNotify {
-    (data: object | null): void;
+    (data: any | null): void;
   }
   /**
    * The type of functions that are used to 'duplicate' an object.
@@ -12739,7 +12857,7 @@ declare namespace GLib {
    * @returns a duplicate of data
    */
   interface DuplicateFunc {
-    (data: object | null): object | null;
+    (data: any | null): any | null;
   }
   /**
    * Specifies the type of a function used to test two values for
@@ -12751,7 +12869,7 @@ declare namespace GLib {
    * @returns %TRUE if @a = @b; %FALSE otherwise
    */
   interface EqualFunc {
-    (a: object | null, b: object | null): boolean;
+    (a: any | null, b: any | null): boolean;
   }
   /**
    * Specifies the type of a function used to test two values for
@@ -12766,7 +12884,7 @@ declare namespace GLib {
    * @returns %TRUE if @a = @b; %FALSE otherwise
    */
   interface EqualFuncFull {
-    (a: object | null, b: object | null): boolean;
+    (a: any | null, b: any | null): boolean;
   }
   /**
    * Specifies the type of function which is called when an extended
@@ -12779,7 +12897,7 @@ declare namespace GLib {
    * @param error extended error to clear
    */
   interface ErrorClearFunc {
-    (error: Error): void;
+    (error: Error | null): void;
   }
   /**
    * Specifies the type of function which is called when an extended
@@ -12795,7 +12913,7 @@ declare namespace GLib {
    * @param dest_error destination extended error
    */
   interface ErrorCopyFunc {
-    (src_error: Error, dest_error: Error): void;
+    (src_error: Error | null, dest_error: Error | null): void;
   }
   /**
    * Specifies the type of function which is called just after an
@@ -12809,7 +12927,7 @@ declare namespace GLib {
    * @param error extended error
    */
   interface ErrorInitFunc {
-    (error: Error): void;
+    (error: Error | null): void;
   }
   /**
    * Declares a type of function which takes an arbitrary
@@ -12819,7 +12937,7 @@ declare namespace GLib {
    * @param data a data pointer
    */
   interface FreeFunc {
-    (data: object | null): void;
+    (data: any | null): void;
   }
   /**
    * Specifies the type of functions passed to g_list_foreach() and
@@ -12828,7 +12946,7 @@ declare namespace GLib {
    * @param data the element's data
    */
   interface Func {
-    (data: object | null): void;
+    (data: any | null): void;
   }
   /**
    * Specifies the type of the function passed to g_hash_table_foreach().
@@ -12839,7 +12957,7 @@ declare namespace GLib {
    * @param value the value corresponding to the key
    */
   interface HFunc {
-    (key: object | null, value: object | null): void;
+    (key: any | null, value: any | null): void;
   }
   /**
    * Specifies the type of the function passed to
@@ -12853,7 +12971,7 @@ declare namespace GLib {
    * @returns %TRUE if the key/value pair should be removed from the     #GHashTable
    */
   interface HRFunc {
-    (key: object | null, value: object | null): boolean;
+    (key: any | null, value: any | null): boolean;
   }
   /**
    * Specifies the type of the hash function which is passed to
@@ -12891,7 +13009,7 @@ declare namespace GLib {
    * @returns the hash value corresponding to the key
    */
   interface HashFunc {
-    (key: object | null): number;
+    (key: any | null): number;
   }
   /**
    * Defines the type of a hook function that can be invoked
@@ -12901,7 +13019,7 @@ declare namespace GLib {
    * @returns %FALSE if the #GHook should be destroyed
    */
   interface HookCheckFunc {
-    (data: object | null): boolean;
+    (data: any | null): boolean;
   }
   /**
    * Defines the type of function used by g_hook_list_marshal_check().
@@ -12910,7 +13028,7 @@ declare namespace GLib {
    * @returns %FALSE if @hook should be destroyed
    */
   interface HookCheckMarshaller {
-    (hook: Hook): boolean;
+    (hook: Hook | null): boolean;
   }
   /**
    * Defines the type of function used to compare #GHook elements in
@@ -12921,7 +13039,7 @@ declare namespace GLib {
    * @returns a value <= 0 if @new_hook should be before @sibling
    */
   interface HookCompareFunc {
-    (new_hook: Hook, sibling: Hook): number;
+    (new_hook: Hook | null, sibling: Hook | null): number;
   }
   /**
    * Defines the type of function to be called when a hook in a
@@ -12931,7 +13049,7 @@ declare namespace GLib {
    * @param hook the hook in `hook_list` that gets finalized
    */
   interface HookFinalizeFunc {
-    (hook_list: HookList, hook: Hook): void;
+    (hook_list: HookList | null, hook: Hook | null): void;
   }
   /**
    * Defines the type of the function passed to g_hook_find().
@@ -12940,7 +13058,7 @@ declare namespace GLib {
    * @returns %TRUE if the required #GHook has been found
    */
   interface HookFindFunc {
-    (hook: Hook): boolean;
+    (hook: Hook | null): boolean;
   }
   /**
    * Defines the type of a hook function that can be invoked
@@ -12949,7 +13067,7 @@ declare namespace GLib {
    * @param data the data field of the #GHook is passed to the hook function here
    */
   interface HookFunc {
-    (data: object | null): void;
+    (data: any | null): void;
   }
   /**
    * Defines the type of function used by g_hook_list_marshal().
@@ -12957,7 +13075,7 @@ declare namespace GLib {
    * @param hook a #GHook
    */
   interface HookMarshaller {
-    (hook: Hook): void;
+    (hook: Hook | null): void;
   }
   /**
    * Specifies the type of function passed to g_io_add_watch() or
@@ -12969,7 +13087,7 @@ declare namespace GLib {
    * @returns the function should return %FALSE if the event source          should be removed
    */
   interface IOFunc {
-    (source: IOChannel, condition: IOCondition): boolean;
+    (source: IOChannel | null, condition: IOCondition): boolean;
   }
   /**
    * Specifies the prototype of log handler functions.
@@ -12988,7 +13106,11 @@ declare namespace GLib {
    * @param message the message to process
    */
   interface LogFunc {
-    (log_domain: string, log_level: LogLevelFlags, message: string): void;
+    (
+      log_domain: string | null,
+      log_level: LogLevelFlags,
+      message: string | null
+    ): void;
   }
   /**
    * Writer function for log entries. A log entry is a collection of one or more
@@ -13025,7 +13147,7 @@ declare namespace GLib {
    * @param node a #GNode.
    */
   interface NodeForeachFunc {
-    (node: Node): void;
+    (node: Node | null): void;
   }
   /**
    * Specifies the type of function passed to g_node_traverse(). The
@@ -13037,7 +13159,7 @@ declare namespace GLib {
    * @returns %TRUE to stop the traversal.
    */
   interface NodeTraverseFunc {
-    (node: Node): boolean;
+    (node: Node | null): boolean;
   }
   /**
    * The type of function to be passed as callback for %G_OPTION_ARG_CALLBACK
@@ -13048,7 +13170,7 @@ declare namespace GLib {
    * @returns %TRUE if the option was successfully parsed, %FALSE if an error  occurred, in which case @error should be set with g_set_error()
    */
   interface OptionArgFunc {
-    (option_name: string, value: string): boolean;
+    (option_name: string | null, value: string | null): boolean;
   }
   /**
    * The type of function to be used as callback when a parse error occurs.
@@ -13057,7 +13179,7 @@ declare namespace GLib {
    * @param group The group to which the function belongs
    */
   interface OptionErrorFunc {
-    (context: OptionContext, group: OptionGroup): void;
+    (context: OptionContext | null, group: OptionGroup | null): void;
   }
   /**
    * The type of function that can be called before and after parsing.
@@ -13067,7 +13189,7 @@ declare namespace GLib {
    * @returns %TRUE if the function completed successfully, %FALSE if an error  occurred, in which case @error should be set with g_set_error()
    */
   interface OptionParseFunc {
-    (context: OptionContext, group: OptionGroup): boolean;
+    (context: OptionContext | null, group: OptionGroup | null): boolean;
   }
   /**
    * Specifies the type of function passed to g_main_context_set_poll_func().
@@ -13079,7 +13201,7 @@ declare namespace GLib {
    * @returns the number of #GPollFD elements which have events or errors     reported, or -1 if an error occurred.
    */
   interface PollFunc {
-    (ufds: PollFD, nfsd: number, timeout_: number): number;
+    (ufds: PollFD | null, nfsd: number, timeout_: number): number;
   }
   /**
    * Specifies the type of the print handler functions.
@@ -13088,7 +13210,7 @@ declare namespace GLib {
    * @param string the message to output
    */
   interface PrintFunc {
-    (string: string): void;
+    (string: string | null): void;
   }
   /**
    * Specifies the type of the function passed to g_regex_replace_eval().
@@ -13101,7 +13223,7 @@ declare namespace GLib {
    * @returns %FALSE to continue the replacement process, %TRUE to stop it
    */
   interface RegexEvalCallback {
-    (match_info: MatchInfo, result: string): boolean;
+    (match_info: MatchInfo | null, result: String | null): boolean;
   }
   /**
    * Specifies the type of the message handler function.
@@ -13111,7 +13233,7 @@ declare namespace GLib {
    * @param error %TRUE if the message signals an error,     %FALSE if it signals a warning.
    */
   interface ScannerMsgFunc {
-    (scanner: Scanner, message: string, error: boolean): void;
+    (scanner: Scanner | null, message: string | null, error: boolean): void;
   }
   /**
    * A #GSequenceIterCompareFunc is a function used to compare iterators.
@@ -13123,7 +13245,7 @@ declare namespace GLib {
    * @returns zero if the iterators are equal, a negative value if @a     comes before @b, and a positive value if @b comes before @a.
    */
   interface SequenceIterCompareFunc {
-    (a: SequenceIter, b: SequenceIter): number;
+    (a: SequenceIter | null, b: SequenceIter | null): number;
   }
   /**
    * Dispose function for `source`. See g_source_set_dispose_function() for
@@ -13132,7 +13254,7 @@ declare namespace GLib {
    * @param source #GSource that is currently being disposed
    */
   interface SourceDisposeFunc {
-    (source: Source): void;
+    (source: Source | null): void;
   }
   /**
    * This is just a placeholder for #GClosureMarshal,
@@ -13224,7 +13346,7 @@ declare namespace GLib {
    * @param fixture the test fixture
    */
   interface TestFixtureFunc {
-    (fixture: object): void;
+    (fixture: any): void;
   }
   /**
    * The type used for test case functions.
@@ -13242,7 +13364,11 @@ declare namespace GLib {
    * @returns %TRUE if the program should abort, %FALSE otherwise
    */
   interface TestLogFatalFunc {
-    (log_domain: string, log_level: LogLevelFlags, message: string): boolean;
+    (
+      log_domain: string | null,
+      log_level: LogLevelFlags,
+      message: string | null
+    ): boolean;
   }
   /**
    * Specifies the type of the `func` functions passed to g_thread_new()
@@ -13251,7 +13377,7 @@ declare namespace GLib {
    * @returns the return value of the thread
    */
   interface ThreadFunc {
-    (): object | null;
+    (): any | null;
   }
   /**
    * The type of functions which are used to translate user-visible
@@ -13261,7 +13387,7 @@ declare namespace GLib {
    * @returns a translation of the string for the current locale.  The returned string is owned by GLib and must not be freed.
    */
   interface TranslateFunc {
-    (str: string): string;
+    (str: string | null): string | null;
   }
   /**
    * Specifies the type of function passed to g_tree_traverse(). It is
@@ -13274,7 +13400,7 @@ declare namespace GLib {
    * @returns %TRUE to stop the traversal
    */
   interface TraverseFunc {
-    (key: object | null, value: object | null): boolean;
+    (key: any | null, value: any | null): boolean;
   }
   /**
    * Specifies the type of function passed to g_tree_foreach_node(). It is
@@ -13286,7 +13412,7 @@ declare namespace GLib {
    * @returns %TRUE to stop the traversal
    */
   interface TraverseNodeFunc {
-    (node: TreeNode): boolean;
+    (node: TreeNode | null): boolean;
   }
   /**
    * The type of functions to be called when a UNIX fd watch source
@@ -13316,7 +13442,7 @@ declare namespace GLib {
      *     elements are added to the #GArray.
      * @field
      */
-    data: string;
+    data: string | null;
     /**
      * the number of elements in the #GArray not including the
      *     possible terminating zero element.
@@ -13381,7 +13507,7 @@ declare namespace GLib {
      * blocks until data becomes available.
      * @returns data from the queue
      */
-    pop(): object | null;
+    pop(): any | null;
     /**
      * Pops data from the `queue`. If `queue` is empty, this function
      * blocks until data becomes available.
@@ -13389,12 +13515,12 @@ declare namespace GLib {
      * This function must be called while holding the `queue'`s lock.
      * @returns data from the queue.
      */
-    pop_unlocked(): object | null;
+    pop_unlocked(): any | null;
     /**
      * Pushes the `data` into the `queue`. `data` must not be %NULL.
      * @param data `data` to push into the `queue`
      */
-    push(data: object | null): void;
+    push(data: any | null): void;
     /**
      * Pushes the `item` into the `queue`. `item` must not be %NULL.
      * In contrast to g_async_queue_push(), this function
@@ -13402,7 +13528,7 @@ declare namespace GLib {
      * so that it will be the next one to be popped off the queue.
      * @param item data to push into the `queue`
      */
-    push_front(item: object | null): void;
+    push_front(item: any | null): void;
     /**
      * Pushes the `item` into the `queue`. `item` must not be %NULL.
      * In contrast to g_async_queue_push_unlocked(), this function
@@ -13412,14 +13538,14 @@ declare namespace GLib {
      * This function must be called while holding the `queue'`s lock.
      * @param item data to push into the `queue`
      */
-    push_front_unlocked(item: object | null): void;
+    push_front_unlocked(item: any | null): void;
     /**
      * Pushes the `data` into the `queue`. `data` must not be %NULL.
      *
      * This function must be called while holding the `queue'`s lock.
      * @param data `data` to push into the `queue`
      */
-    push_unlocked(data: object | null): void;
+    push_unlocked(data: any | null): void;
     /**
      * Increases the reference count of the asynchronous `queue` by 1.
      */
@@ -13429,7 +13555,7 @@ declare namespace GLib {
      * @param item the data to remove from the `queue`
      * @returns %TRUE if the item was removed
      */
-    remove(item: object | null): boolean;
+    remove(item: any | null): boolean;
     /**
      * Remove an item from the queue.
      *
@@ -13437,7 +13563,7 @@ declare namespace GLib {
      * @param item the data to remove from the `queue`
      * @returns %TRUE if the item was removed
      */
-    remove_unlocked(item: object | null): boolean;
+    remove_unlocked(item: any | null): boolean;
     /**
      * Pops data from the `queue`. If the queue is empty, blocks until
      * `end_time` or until data becomes available.
@@ -13449,7 +13575,7 @@ declare namespace GLib {
      * @param end_time a #GTimeVal, determining the final time
      * @returns data from the queue or %NULL, when no data is     received before @end_time.
      */
-    timed_pop(end_time: TimeVal): object | null;
+    timed_pop(end_time: TimeVal | null): any | null;
     /**
      * Pops data from the `queue`. If the queue is empty, blocks until
      * `end_time` or until data becomes available.
@@ -13463,7 +13589,7 @@ declare namespace GLib {
      * @param end_time a #GTimeVal, determining the final time
      * @returns data from the queue or %NULL, when no data is     received before @end_time.
      */
-    timed_pop_unlocked(end_time: TimeVal): object | null;
+    timed_pop_unlocked(end_time: TimeVal | null): any | null;
     /**
      * Pops data from the `queue`. If the queue is empty, blocks for
      * `timeout` microseconds, or until data becomes available.
@@ -13472,7 +13598,7 @@ declare namespace GLib {
      * @param timeout the number of microseconds to wait
      * @returns data from the queue or %NULL, when no data is     received before the timeout.
      */
-    timeout_pop(timeout: number): object | null;
+    timeout_pop(timeout: number): any | null;
     /**
      * Pops data from the `queue`. If the queue is empty, blocks for
      * `timeout` microseconds, or until data becomes available.
@@ -13483,13 +13609,13 @@ declare namespace GLib {
      * @param timeout the number of microseconds to wait
      * @returns data from the queue or %NULL, when no data is     received before the timeout.
      */
-    timeout_pop_unlocked(timeout: number): object | null;
+    timeout_pop_unlocked(timeout: number): any | null;
     /**
      * Tries to pop data from the `queue`. If no data is available,
      * %NULL is returned.
      * @returns data from the queue or %NULL, when no data is     available immediately.
      */
-    try_pop(): object | null;
+    try_pop(): any | null;
     /**
      * Tries to pop data from the `queue`. If no data is available,
      * %NULL is returned.
@@ -13497,7 +13623,7 @@ declare namespace GLib {
      * This function must be called while holding the `queue'`s lock.
      * @returns data from the queue or %NULL, when no data is     available immediately.
      */
-    try_pop_unlocked(): object | null;
+    try_pop_unlocked(): any | null;
     /**
      * Releases the queue's lock.
      *
@@ -13567,7 +13693,7 @@ declare namespace GLib {
      * @param exec command line to be used to launch the bookmark or %NULL
      */
     add_application(
-      uri: string,
+      uri: string | null,
       name: string | null,
       exec: string | null
     ): void;
@@ -13579,7 +13705,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param group the group name to be added
      */
-    add_group(uri: string, group: string): void;
+    add_group(uri: string | null, group: string | null): void;
     /**
      * Frees a #GBookmarkFile.
      */
@@ -13592,7 +13718,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a timestamp
      */
-    get_added(uri: string): number;
+    get_added(uri: string | null): number;
     /**
      * Gets the time the bookmark for `uri` was added to `bookmark`
      *
@@ -13601,7 +13727,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a #GDateTime
      */
-    get_added_date_time(uri: string): DateTime;
+    get_added_date_time(uri: string | null): DateTime | null;
     /**
      * Gets the registration information of `app_name` for the bookmark for
      * `uri`.  See g_bookmark_file_set_application_info() for more information about
@@ -13621,13 +13747,13 @@ declare namespace GLib {
      * @returns %TRUE on success.
      */
     get_app_info(
-      uri: string,
-      name: string
+      uri: string | null,
+      name: string | null
     ): [
       /* returnType */ boolean,
-      /* exec */ string,
-      /* count */ number,
-      /* stamp */ number
+      /* exec */ string | null,
+      /* count */ number | null,
+      /* stamp */ number | null
     ];
     /**
      * Gets the registration information of `app_name` for the bookmark for
@@ -13648,13 +13774,13 @@ declare namespace GLib {
      * @returns %TRUE on success.
      */
     get_application_info(
-      uri: string,
-      name: string
+      uri: string | null,
+      name: string | null
     ): [
       /* returnType */ boolean,
-      /* exec */ string,
-      /* count */ number,
-      /* stamp */ DateTime
+      /* exec */ string | null,
+      /* count */ number | null,
+      /* stamp */ DateTime | null
     ];
     /**
      * Retrieves the names of the applications that have registered the
@@ -13665,7 +13791,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a newly allocated %NULL-terminated array of strings.   Use g_strfreev() to free it.
      */
-    get_applications(uri: string): string[];
+    get_applications(uri: string | null): string[];
     /**
      * Retrieves the description of the bookmark for `uri`.
      *
@@ -13674,7 +13800,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a newly allocated string or %NULL if the specified   URI cannot be found.
      */
-    get_description(uri: string): string;
+    get_description(uri: string | null): string | null;
     /**
      * Retrieves the list of group names of the bookmark for `uri`.
      *
@@ -13686,7 +13812,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a newly allocated %NULL-terminated array of group names.   Use g_strfreev() to free it.
      */
-    get_groups(uri: string): string[];
+    get_groups(uri: string | null): string[];
     /**
      * Gets the icon of the bookmark for `uri`.
      *
@@ -13696,8 +13822,12 @@ declare namespace GLib {
      * @returns %TRUE if the icon for the bookmark for the URI was found.   You should free the returned strings.
      */
     get_icon(
-      uri: string
-    ): [/* returnType */ boolean, /* href */ string, /* mime_type */ string];
+      uri: string | null
+    ): [
+      /* returnType */ boolean,
+      /* href */ string | null,
+      /* mime_type */ string | null
+    ];
     /**
      * Gets whether the private flag of the bookmark for `uri` is set.
      *
@@ -13708,7 +13838,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns %TRUE if the private flag is set, %FALSE otherwise.
      */
-    get_is_private(uri: string): boolean;
+    get_is_private(uri: string | null): boolean;
     /**
      * Retrieves the MIME type of the resource pointed by `uri`.
      *
@@ -13719,7 +13849,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a newly allocated string or %NULL if the specified   URI cannot be found.
      */
-    get_mime_type(uri: string): string;
+    get_mime_type(uri: string | null): string | null;
     /**
      * Gets the time when the bookmark for `uri` was last modified.
      *
@@ -13728,7 +13858,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a timestamp
      */
-    get_modified(uri: string): number;
+    get_modified(uri: string | null): number;
     /**
      * Gets the time when the bookmark for `uri` was last modified.
      *
@@ -13737,7 +13867,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a #GDateTime
      */
-    get_modified_date_time(uri: string): DateTime;
+    get_modified_date_time(uri: string | null): DateTime | null;
     /**
      * Gets the number of bookmarks inside `bookmark`.
      * @returns the number of bookmarks
@@ -13753,7 +13883,7 @@ declare namespace GLib {
      * @param uri a valid URI or %NULL
      * @returns a newly allocated string or %NULL if the specified   URI cannot be found.
      */
-    get_title(uri: string | null): string;
+    get_title(uri: string | null): string | null;
     /**
      * Returns all URIs of the bookmarks in the bookmark file `bookmark`.
      * The array of returned URIs will be %NULL-terminated, so `length` may
@@ -13769,7 +13899,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a timestamp.
      */
-    get_visited(uri: string): number;
+    get_visited(uri: string | null): number;
     /**
      * Gets the time the bookmark for `uri` was last visited.
      *
@@ -13778,7 +13908,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @returns a #GDateTime
      */
-    get_visited_date_time(uri: string): DateTime;
+    get_visited_date_time(uri: string | null): DateTime | null;
     /**
      * Checks whether the bookmark for `uri` inside `bookmark` has been
      * registered by application `name`.
@@ -13789,7 +13919,7 @@ declare namespace GLib {
      * @param name the name of the application
      * @returns %TRUE if the application @name was found
      */
-    has_application(uri: string, name: string): boolean;
+    has_application(uri: string | null, name: string | null): boolean;
     /**
      * Checks whether `group` appears in the list of groups to which
      * the bookmark for `uri` belongs to.
@@ -13800,13 +13930,13 @@ declare namespace GLib {
      * @param group the group name to be searched
      * @returns %TRUE if @group was found.
      */
-    has_group(uri: string, group: string): boolean;
+    has_group(uri: string | null, group: string | null): boolean;
     /**
      * Looks whether the desktop bookmark has an item with its URI set to `uri`.
      * @param uri a valid URI
      * @returns %TRUE if @uri is inside @bookmark, %FALSE otherwise
      */
-    has_item(uri: string): boolean;
+    has_item(uri: string | null): boolean;
     /**
      * Loads a bookmark file from memory into an empty #GBookmarkFile
      * structure.  If the object cannot be created then `error` is set to a
@@ -13825,8 +13955,8 @@ declare namespace GLib {
      * @returns %TRUE if a key file could be loaded, %FALSE otherwise
      */
     load_from_data_dirs(
-      file: string
-    ): [/* returnType */ boolean, /* full_path */ string];
+      file: string | null
+    ): [/* returnType */ boolean, /* full_path */ string | null];
     /**
      * Loads a desktop bookmark file into an empty #GBookmarkFile structure.
      * If the file could not be loaded then `error` is set to either a #GFileError
@@ -13834,7 +13964,7 @@ declare namespace GLib {
      * @param filename the path of a filename to load, in the     GLib file name encoding
      * @returns %TRUE if a desktop bookmark file could be loaded
      */
-    load_from_file(filename: string): boolean;
+    load_from_file(filename: string | null): boolean;
     /**
      * Changes the URI of a bookmark item from `old_uri` to `new_uri`.  Any
      * existing bookmark for `new_uri` will be overwritten.  If `new_uri` is
@@ -13846,7 +13976,7 @@ declare namespace GLib {
      * @param new_uri a valid URI, or %NULL
      * @returns %TRUE if the URI was successfully changed
      */
-    move_item(old_uri: string, new_uri: string | null): boolean;
+    move_item(old_uri: string | null, new_uri: string | null): boolean;
     /**
      * Removes application registered with `name` from the list of applications
      * that have registered a bookmark for `uri` inside `bookmark`.
@@ -13860,7 +13990,7 @@ declare namespace GLib {
      * @param name the name of the application
      * @returns %TRUE if the application was successfully removed.
      */
-    remove_application(uri: string, name: string): boolean;
+    remove_application(uri: string | null, name: string | null): boolean;
     /**
      * Removes `group` from the list of groups to which the bookmark
      * for `uri` belongs to.
@@ -13873,13 +14003,13 @@ declare namespace GLib {
      * @param group the group name to be removed
      * @returns %TRUE if @group was successfully removed.
      */
-    remove_group(uri: string, group: string): boolean;
+    remove_group(uri: string | null, group: string | null): boolean;
     /**
      * Removes the bookmark for `uri` from the bookmark file `bookmark`.
      * @param uri a valid URI
      * @returns %TRUE if the bookmark was removed successfully.
      */
-    remove_item(uri: string): boolean;
+    remove_item(uri: string | null): boolean;
     /**
      * Sets the time the bookmark for `uri` was added into `bookmark`.
      *
@@ -13887,7 +14017,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param added a timestamp or -1 to use the current time
      */
-    set_added(uri: string, added: number): void;
+    set_added(uri: string | null, added: number): void;
     /**
      * Sets the time the bookmark for `uri` was added into `bookmark`.
      *
@@ -13895,7 +14025,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param added a #GDateTime
      */
-    set_added_date_time(uri: string, added: DateTime): void;
+    set_added_date_time(uri: string | null, added: DateTime | null): void;
     /**
      * Sets the meta-data of application `name` inside the list of
      * applications that have registered a bookmark for `uri` inside
@@ -13933,9 +14063,9 @@ declare namespace GLib {
      * @returns %TRUE if the application's meta-data was successfully   changed.
      */
     set_app_info(
-      uri: string,
-      name: string,
-      exec: string,
+      uri: string | null,
+      name: string | null,
+      exec: string | null,
       count: number,
       stamp: number
     ): boolean;
@@ -13975,9 +14105,9 @@ declare namespace GLib {
      * @returns %TRUE if the application's meta-data was successfully   changed.
      */
     set_application_info(
-      uri: string,
-      name: string,
-      exec: string,
+      uri: string | null,
+      name: string | null,
+      exec: string | null,
       count: number,
       stamp: DateTime | null
     ): boolean;
@@ -13990,7 +14120,7 @@ declare namespace GLib {
      * @param uri a valid URI or %NULL
      * @param description a string
      */
-    set_description(uri: string | null, description: string): void;
+    set_description(uri: string | null, description: string | null): void;
     /**
      * Sets a list of group names for the item with URI `uri`.  Each previously
      * set group name list is removed.
@@ -13999,7 +14129,7 @@ declare namespace GLib {
      * @param uri an item's URI
      * @param groups an array of    group names, or %NULL to remove all groups
      */
-    set_groups(uri: string, groups: string[] | null): void;
+    set_groups(uri: string | null, groups: string[] | null): void;
     /**
      * Sets the icon for the bookmark for `uri`. If `href` is %NULL, unsets
      * the currently set icon. `href` can either be a full URL for the icon
@@ -14010,7 +14140,11 @@ declare namespace GLib {
      * @param href the URI of the icon for the bookmark, or %NULL
      * @param mime_type the MIME type of the icon for the bookmark
      */
-    set_icon(uri: string, href: string | null, mime_type: string): void;
+    set_icon(
+      uri: string | null,
+      href: string | null,
+      mime_type: string | null
+    ): void;
     /**
      * Sets the private flag of the bookmark for `uri`.
      *
@@ -14018,7 +14152,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param is_private %TRUE if the bookmark should be marked as private
      */
-    set_is_private(uri: string, is_private: boolean): void;
+    set_is_private(uri: string | null, is_private: boolean): void;
     /**
      * Sets `mime_type` as the MIME type of the bookmark for `uri`.
      *
@@ -14026,7 +14160,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param mime_type a MIME type
      */
-    set_mime_type(uri: string, mime_type: string): void;
+    set_mime_type(uri: string | null, mime_type: string | null): void;
     /**
      * Sets the last time the bookmark for `uri` was last modified.
      *
@@ -14039,7 +14173,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param modified a timestamp or -1 to use the current time
      */
-    set_modified(uri: string, modified: number): void;
+    set_modified(uri: string | null, modified: number): void;
     /**
      * Sets the last time the bookmark for `uri` was last modified.
      *
@@ -14052,7 +14186,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param modified a #GDateTime
      */
-    set_modified_date_time(uri: string, modified: DateTime): void;
+    set_modified_date_time(uri: string | null, modified: DateTime | null): void;
     /**
      * Sets `title` as the title of the bookmark for `uri` inside the
      * bookmark file `bookmark`.
@@ -14063,7 +14197,7 @@ declare namespace GLib {
      * @param uri a valid URI or %NULL
      * @param title a UTF-8 encoded string
      */
-    set_title(uri: string | null, title: string): void;
+    set_title(uri: string | null, title: string | null): void;
     /**
      * Sets the time the bookmark for `uri` was last visited.
      *
@@ -14077,7 +14211,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param visited a timestamp or -1 to use the current time
      */
-    set_visited(uri: string, visited: number): void;
+    set_visited(uri: string | null, visited: number): void;
     /**
      * Sets the time the bookmark for `uri` was last visited.
      *
@@ -14091,7 +14225,7 @@ declare namespace GLib {
      * @param uri a valid URI
      * @param visited a #GDateTime
      */
-    set_visited_date_time(uri: string, visited: DateTime): void;
+    set_visited_date_time(uri: string | null, visited: DateTime | null): void;
     /**
      * This function outputs `bookmark` as a string.
      * @returns    a newly allocated string holding the contents of the #GBookmarkFile
@@ -14103,7 +14237,7 @@ declare namespace GLib {
      * @param filename path of the output file
      * @returns %TRUE if the file was successfully written.
      */
-    to_file(filename: string): boolean;
+    to_file(filename: string | null): boolean;
   }
 
   /**
@@ -14128,7 +14262,7 @@ declare namespace GLib {
      *     elements are added to the #GByteArray
      * @field
      */
-    data: number;
+    data: number | null;
     /**
      * the number of elements in the #GByteArray
      * @field
@@ -14172,7 +14306,7 @@ declare namespace GLib {
      * @param free_segment if %TRUE the actual byte data is freed as well
      * @returns the element data if @free_segment is %FALSE, otherwise          %NULL.  The element data should be freed using g_free().
      */
-    static free(array: Uint8Array, free_segment: boolean): number;
+    static free(array: Uint8Array, free_segment: boolean): number | null;
     /**
      * Transfers the data from the #GByteArray into a new immutable #GBytes.
      *
@@ -14185,7 +14319,7 @@ declare namespace GLib {
      * @param array a #GByteArray
      * @returns a new immutable #GBytes representing same     byte data that was in the array
      */
-    static free_to_bytes(array: Uint8Array): Bytes;
+    static free_to_bytes(array: Uint8Array): Bytes | null;
     /**
      * Frees the data in the array and resets the size to zero, while
      * the underlying array is preserved for use elsewhere and returned
@@ -14195,7 +14329,7 @@ declare namespace GLib {
      */
     static steal(
       array: Uint8Array
-    ): [/* returnType */ number, /* len */ number];
+    ): [/* returnType */ number | null, /* len */ number | null];
     /**
      * Atomically decrements the reference count of `array` by one. If the
      * reference count drops to 0, all memory allocated by the array is
@@ -14274,7 +14408,7 @@ declare namespace GLib {
       element_size: number,
       offset: number,
       n_elements: number
-    ): object | null;
+    ): any | null;
     /**
      * Get the size of the byte data in the #GBytes.
      *
@@ -14306,12 +14440,12 @@ declare namespace GLib {
      * @param length length of subsection
      * @returns a new #GBytes
      */
-    new_from_bytes(offset: number, length: number): Bytes;
+    new_from_bytes(offset: number, length: number): Bytes | null;
     /**
      * Increase the reference count on `bytes`.
      * @returns the #GBytes
      */
-    ref(): Bytes;
+    ref(): Bytes | null;
     /**
      * Releases a reference on `bytes`.  This may result in the bytes being
      * freed. If `bytes` is %NULL, it will return immediately.
@@ -14431,7 +14565,7 @@ declare namespace GLib {
      * checksum will be closed as well.
      * @returns the copy of the passed #GChecksum. Use   g_checksum_free() when finished using it.
      */
-    copy(): Checksum;
+    copy(): Checksum | null;
     /**
      * Frees the memory allocated for `checksum`.
      */
@@ -14445,7 +14579,7 @@ declare namespace GLib {
      * The hexadecimal characters will be lower case.
      * @returns the hexadecimal representation of the checksum. The   returned string is owned by the checksum and should not be modified   or freed.
      */
-    get_string(): string;
+    get_string(): string | null;
     /**
      * Resets the state of the `checksum` back to its initial state.
      */
@@ -14577,7 +14711,7 @@ declare namespace GLib {
      * the documentation for #GCond for a complete example.
      * @param mutex a #GMutex that is currently locked
      */
-    wait(mutex: Mutex): void;
+    wait(mutex: Mutex | null): void;
     /**
      * Waits until either `cond` is signalled or `end_time` has passed.
      *
@@ -14633,7 +14767,7 @@ declare namespace GLib {
      * @param end_time the monotonic time to wait until
      * @returns %TRUE on a signal, %FALSE on a timeout
      */
-    wait_until(mutex: Mutex, end_time: number): boolean;
+    wait_until(mutex: Mutex | null, end_time: number): boolean;
   }
 
   /**
@@ -14797,7 +14931,7 @@ declare namespace GLib {
      * @param min_date minimum accepted value for `date`
      * @param max_date maximum accepted value for `date`
      */
-    clamp(min_date: Date, max_date: Date): void;
+    clamp(min_date: Date | null, max_date: Date | null): void;
     /**
      * Initializes one or more #GDate structs to a safe but invalid
      * state. The cleared dates will not represent an existing date, but will
@@ -14812,14 +14946,14 @@ declare namespace GLib {
      * @param rhs second date to compare
      * @returns 0 for equal, less than zero if @lhs is less than @rhs,     greater than zero if @lhs is greater than @rhs
      */
-    compare(rhs: Date): number;
+    compare(rhs: Date | null): number;
     /**
      * Copies a GDate to a newly-allocated GDate. If the input was invalid
      * (as determined by g_date_valid()), the invalid state will be copied
      * as is into the new object.
      * @returns a newly-allocated #GDate initialized from @date
      */
-    copy(): Date;
+    copy(): Date | null;
     /**
      * Computes the number of days between two dates.
      * If `date2` is prior to `date1`, the returned value is negative.
@@ -14827,7 +14961,7 @@ declare namespace GLib {
      * @param date2 the second date
      * @returns the number of days between @date1 and @date2
      */
-    days_between(date2: Date): number;
+    days_between(date2: Date | null): number;
     /**
      * Frees a #GDate returned from g_date_new().
      */
@@ -14903,7 +15037,7 @@ declare namespace GLib {
      * and swap the values if this is not the case.
      * @param date2 the second date
      */
-    order(date2: Date): void;
+    order(date2: Date | null): void;
     /**
      * Sets the day of the month for a #GDate. If the resulting
      * day-month-year triplet is invalid, the date will be invalid.
@@ -14945,7 +15079,7 @@ declare namespace GLib {
      * capacity).
      * @param str string to parse
      */
-    set_parse(str: string): void;
+    set_parse(str: string | null): void;
     /**
      * Sets the value of a date from a #GTime value.
      * The time to date conversion is done using the user's current timezone.
@@ -14977,7 +15111,7 @@ declare namespace GLib {
      * The time to date conversion is done using the user's current timezone.
      * @param timeval #GTimeVal value to set
      */
-    set_time_val(timeval: TimeVal): void;
+    set_time_val(timeval: TimeVal | null): void;
     /**
      * Sets the year for a #GDate. If the resulting day-month-year
      * triplet is invalid, the date will be invalid.
@@ -15013,7 +15147,7 @@ declare namespace GLib {
      * Initializes the non-date parts with something safe but meaningless.
      * @param tm struct tm to fill
      */
-    to_struct_tm(tm: object): void;
+    to_struct_tm(tm: any | null): void;
     /**
      * Returns %TRUE if the #GDate represents an existing day. The date must not
      * contain garbage; it should have been initialized with g_date_clear()
@@ -15150,10 +15284,10 @@ declare namespace GLib {
      * @returns number of characters written to the buffer, or 0 the buffer was too small
      */
     static strftime(
-      s: string,
+      s: string | null,
       slen: number,
-      format: string,
-      date: Date
+      format: string | null,
+      date: Date | null
     ): number;
     /**
      * Returns %TRUE if the day of the month is valid (a day is valid if it's
@@ -15301,7 +15435,7 @@ declare namespace GLib {
      * @param begin a #GDateTime
      * @returns the difference between the two #GDateTime, as a time   span expressed in microseconds.
      */
-    difference(begin: DateTime): TimeSpan;
+    difference(begin: DateTime | null): TimeSpan;
     /**
      * Checks to see if `dt1` and `dt2` are equal.
      *
@@ -15415,7 +15549,7 @@ declare namespace GLib {
      * @param format a valid UTF-8 string, containing the format for the          #GDateTime
      * @returns a newly allocated string formatted to    the requested format or %NULL in the case that there was an error (such    as a format specifier not being supported in the current locale). The    string should be freed with g_free().
      */
-    format(format: string): string | null;
+    format(format: string | null): string | null;
     /**
      * Format `datetime` in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601),
      * including the date, time and time zone, and return that as a UTF-8 encoded
@@ -15479,7 +15613,7 @@ declare namespace GLib {
      * Get the time zone for this `datetime`.
      * @returns the time zone
      */
-    get_timezone(): TimeZone;
+    get_timezone(): TimeZone | null;
     /**
      * Determines the time zone abbreviation to be used at the time and in
      * the time zone of `datetime`.
@@ -15489,7 +15623,7 @@ declare namespace GLib {
      * time is in effect.
      * @returns the time zone abbreviation. The returned          string is owned by the #GDateTime and it should not be          modified or freed
      */
-    get_timezone_abbreviation(): string;
+    get_timezone_abbreviation(): string | null;
     /**
      * Determines the offset to UTC in effect at the time and in the time
      * zone of `datetime`.
@@ -15564,7 +15698,11 @@ declare namespace GLib {
     /**
      * Retrieves the Gregorian day, month, and year of a given #GDateTime.
      */
-    get_ymd(): [/* year */ number, /* month */ number, /* day */ number];
+    get_ymd(): [
+      /* year */ number | null,
+      /* month */ number | null,
+      /* day */ number | null
+    ];
     /**
      * Hashes `datetime` into a #guint, suitable for use within #GHashTable.
      * @returns a #guint containing the hash
@@ -15580,7 +15718,7 @@ declare namespace GLib {
      * Atomically increments the reference count of `datetime` by one.
      * @returns the #GDateTime with the reference count increased
      */
-    ref(): DateTime;
+    ref(): DateTime | null;
     /**
      * Creates a new #GDateTime corresponding to the same instant in time as
      * `datetime,` but in the local time zone.
@@ -15607,7 +15745,7 @@ declare namespace GLib {
      * @param tv a #GTimeVal to modify
      * @returns %TRUE if successful, else %FALSE
      */
-    to_timeval(tv: TimeVal): boolean;
+    to_timeval(tv: TimeVal | null): boolean;
     /**
      * Create a new #GDateTime corresponding to the same instant in time as
      * `datetime,` but in the time zone `tz`.
@@ -15618,7 +15756,7 @@ declare namespace GLib {
      * @param tz the new #GTimeZone
      * @returns the newly created #GDateTime which   should be freed with g_date_time_unref(), or %NULL
      */
-    to_timezone(tz: TimeZone): DateTime | null;
+    to_timezone(tz: TimeZone | null): DateTime | null;
     /**
      * Gives the Unix time corresponding to `datetime,` rounding down to the
      * nearest second.
@@ -15697,7 +15835,7 @@ declare namespace GLib {
      * @returns a new #GDateTime, or %NULL
      */
     constructor(
-      tz: TimeZone,
+      tz: TimeZone | null,
       year: number,
       month: number,
       day: number,
@@ -15745,7 +15883,7 @@ declare namespace GLib {
      * @returns a new #GDateTime, or %NULL
      */
     static new(
-      tz: TimeZone,
+      tz: TimeZone | null,
       year: number,
       month: number,
       day: number,
@@ -15803,7 +15941,7 @@ declare namespace GLib {
      * @returns a new #GDateTime, or %NULL
      */
     static new_from_iso8601(
-      text: string,
+      text: string | null,
       default_tz: TimeZone | null
     ): DateTime;
     /**
@@ -15823,7 +15961,7 @@ declare namespace GLib {
      * @param tv a #GTimeVal
      * @returns a new #GDateTime, or %NULL
      */
-    static new_from_timeval_local(tv: TimeVal): DateTime;
+    static new_from_timeval_local(tv: TimeVal | null): DateTime;
     /**
      * Creates a #GDateTime corresponding to the given #GTimeVal `tv` in UTC.
      *
@@ -15839,7 +15977,7 @@ declare namespace GLib {
      * @param tv a #GTimeVal
      * @returns a new #GDateTime, or %NULL
      */
-    static new_from_timeval_utc(tv: TimeVal): DateTime;
+    static new_from_timeval_utc(tv: TimeVal | null): DateTime;
     /**
      * Creates a #GDateTime corresponding to the given Unix time `t` in the
      * local time zone.
@@ -15910,7 +16048,7 @@ declare namespace GLib {
      * @param tz a #GTimeZone
      * @returns a new #GDateTime, or %NULL
      */
-    static new_now(tz: TimeZone): DateTime;
+    static new_now(tz: TimeZone | null): DateTime;
     /**
      * Creates a #GDateTime corresponding to this exact instant in the local
      * time zone.
@@ -15962,7 +16100,7 @@ declare namespace GLib {
      * the string
      * @field
      */
-    key: string;
+    key: string | null;
     /**
      * the flag
      * @field
@@ -16004,7 +16142,7 @@ declare namespace GLib {
      * filenames, the returned name is in UTF-8.
      * @returns The entry's name or %NULL if there are no   more entries. The return value is owned by GLib and   must not be modified or freed.
      */
-    read_name(): string;
+    read_name(): string | null;
     /**
      * Resets the given directory. The next call to g_dir_read_name()
      * will return the first entry again.
@@ -16038,7 +16176,7 @@ declare namespace GLib {
      * @param tmpl Template for directory name,     as in g_mkdtemp(), basename only, or %NULL for a default template
      * @returns The actual name used. This string     should be freed with g_free() when not needed any longer and is     is in the GLib file name encoding. In case of errors, %NULL is     returned and @error will be set.
      */
-    static make_tmp(tmpl: string | null): string;
+    static make_tmp(tmpl: string | null): string | null;
   }
 
   interface Error {
@@ -16081,7 +16219,7 @@ declare namespace GLib {
      * human-readable informative error message
      * @field
      */
-    message: string;
+    message: string | null;
 
     // Owm methods of GLib-2.0.GLib.Error
 
@@ -16089,7 +16227,7 @@ declare namespace GLib {
      * Makes a copy of `error`.
      * @returns a new #GError
      */
-    copy(): Error;
+    copy(): Error | null;
     /**
      * Frees a #GError and associated resources.
      */
@@ -16136,7 +16274,11 @@ declare namespace GLib {
      * @param message error message
      * @returns a new #GError
      */
-    static new_literal(domain: Quark, code: number, message: string): Error;
+    static new_literal(
+      domain: Quark,
+      code: number,
+      message: string | null
+    ): Error;
 
     // Owm static methods of GLib-2.0.GLib.Error
 
@@ -16173,7 +16315,7 @@ declare namespace GLib {
      * @param other_hash_table Another #GHashTable
      * @returns a new #GHashTable
      */
-    static new_similar(other_hash_table: HashTable): HashTable;
+    static new_similar(other_hash_table: HashTable | null): HashTable | null;
     /**
      * This is a convenience function for using a #GHashTable as a set.  It
      * is equivalent to calling g_hash_table_replace() with `key` as both the
@@ -16194,14 +16336,14 @@ declare namespace GLib {
      * @param key a key to insert
      * @returns %TRUE if the key did not exist yet
      */
-    static add(hash_table: HashTable, key: object | null): boolean;
+    static add(hash_table: HashTable | null, key: any | null): boolean;
     /**
      * Checks if `key` is in `hash_table`.
      * @param hash_table a #GHashTable
      * @param key a key to check
      * @returns %TRUE if @key is in @hash_table, %FALSE otherwise.
      */
-    static contains(hash_table: HashTable, key: object | null): boolean;
+    static contains(hash_table: HashTable | null, key: any | null): boolean;
     /**
      * Destroys all keys and values in the #GHashTable and decrements its
      * reference count by 1. If keys and/or values are dynamically allocated,
@@ -16211,7 +16353,7 @@ declare namespace GLib {
      * destruction phase.
      * @param hash_table a #GHashTable
      */
-    static destroy(hash_table: HashTable): void;
+    static destroy(hash_table: HashTable | null): void;
     /**
      * Inserts a new key and value into a #GHashTable.
      *
@@ -16231,9 +16373,9 @@ declare namespace GLib {
      * @returns %TRUE if the key did not exist yet
      */
     static insert(
-      hash_table: HashTable,
-      key: object | null,
-      value: object | null
+      hash_table: HashTable | null,
+      key: any | null,
+      value: any | null
     ): boolean;
     /**
      * Looks up a key in a #GHashTable. Note that this function cannot
@@ -16244,7 +16386,7 @@ declare namespace GLib {
      * @param key the key to look up
      * @returns the associated value, or %NULL if the key is not found
      */
-    static lookup(hash_table: HashTable, key: object | null): object | null;
+    static lookup(hash_table: HashTable | null, key: any | null): any | null;
     /**
      * Looks up a key in the #GHashTable, returning the original key and the
      * associated value and a #gboolean which is %TRUE if the key was found. This
@@ -16259,12 +16401,12 @@ declare namespace GLib {
      * @returns %TRUE if the key was found in the #GHashTable
      */
     static lookup_extended(
-      hash_table: HashTable,
-      lookup_key: object | null
+      hash_table: HashTable | null,
+      lookup_key: any | null
     ): [
       /* returnType */ boolean,
-      /* orig_key */ object | null,
-      /* value */ object | null
+      /* orig_key */ any | null,
+      /* value */ any | null
     ];
     /**
      * Removes a key and its associated value from a #GHashTable.
@@ -16277,7 +16419,7 @@ declare namespace GLib {
      * @param key the key to remove
      * @returns %TRUE if the key was found and removed from the #GHashTable
      */
-    static remove(hash_table: HashTable, key: object | null): boolean;
+    static remove(hash_table: HashTable | null, key: any | null): boolean;
     /**
      * Removes all keys and their associated values from a #GHashTable.
      *
@@ -16287,7 +16429,7 @@ declare namespace GLib {
      * values are freed yourself.
      * @param hash_table a #GHashTable
      */
-    static remove_all(hash_table: HashTable): void;
+    static remove_all(hash_table: HashTable | null): void;
     /**
      * Inserts a new key and value into a #GHashTable similar to
      * g_hash_table_insert(). The difference is that if the key
@@ -16306,16 +16448,16 @@ declare namespace GLib {
      * @returns %TRUE if the key did not exist yet
      */
     static replace(
-      hash_table: HashTable,
-      key: object | null,
-      value: object | null
+      hash_table: HashTable | null,
+      key: any | null,
+      value: any | null
     ): boolean;
     /**
      * Returns the number of elements contained in the #GHashTable.
      * @param hash_table a #GHashTable
      * @returns the number of key/value pairs in the #GHashTable.
      */
-    static size(hash_table: HashTable): number;
+    static size(hash_table: HashTable | null): number;
     /**
      * Removes a key and its associated value from a #GHashTable without
      * calling the key and value destroy functions.
@@ -16323,13 +16465,13 @@ declare namespace GLib {
      * @param key the key to remove
      * @returns %TRUE if the key was found and removed from the #GHashTable
      */
-    static steal(hash_table: HashTable, key: object | null): boolean;
+    static steal(hash_table: HashTable | null, key: any | null): boolean;
     /**
      * Removes all keys and their associated values from a #GHashTable
      * without calling the key and value destroy functions.
      * @param hash_table a #GHashTable
      */
-    static steal_all(hash_table: HashTable): void;
+    static steal_all(hash_table: HashTable | null): void;
     /**
      * Looks up a key in the #GHashTable, stealing the original key and the
      * associated value and returning %TRUE if the key was found. If the key was
@@ -16346,12 +16488,12 @@ declare namespace GLib {
      * @returns %TRUE if the key was found in the #GHashTable
      */
     static steal_extended(
-      hash_table: HashTable,
-      lookup_key: object | null
+      hash_table: HashTable | null,
+      lookup_key: any | null
     ): [
       /* returnType */ boolean,
-      /* stolen_key */ object | null,
-      /* stolen_value */ object | null
+      /* stolen_key */ any | null,
+      /* stolen_value */ any | null
     ];
     /**
      * Atomically decrements the reference count of `hash_table` by one.
@@ -16360,7 +16502,7 @@ declare namespace GLib {
      * This function is MT-safe and may be called from any thread.
      * @param hash_table a valid #GHashTable
      */
-    static unref(hash_table: HashTable): void;
+    static unref(hash_table: HashTable | null): void;
   }
 
   interface HashTableIter {
@@ -16388,7 +16530,7 @@ declare namespace GLib {
      *
      * @param hash_table a #GHashTable
      */
-    init(hash_table: HashTable): void;
+    init(hash_table: HashTable | null): void;
     /**
      * Advances `iter` and retrieves the key and/or value that are now
      * pointed to as a result of this advancement. If %FALSE is returned,
@@ -16397,8 +16539,8 @@ declare namespace GLib {
      */
     next(): [
       /* returnType */ boolean,
-      /* key */ object | null,
-      /* value */ object | null
+      /* key */ any | null,
+      /* value */ any | null
     ];
     /**
      * Removes the key/value pair currently pointed to by the iterator
@@ -16432,7 +16574,7 @@ declare namespace GLib {
      * #GHashTable, the old value is freed using that function.
      * @param value the value to replace with
      */
-    replace(value: object | null): void;
+    replace(value: any | null): void;
     /**
      * Removes the key/value pair currently pointed to by the
      * iterator from its associated #GHashTable, without calling
@@ -16480,7 +16622,7 @@ declare namespace GLib {
      * The hexadecimal characters will be lower case.
      * @returns the hexadecimal representation of the HMAC. The   returned string is owned by the HMAC and should not be modified   or freed.
      */
-    get_string(): string;
+    get_string(): string | null;
     /**
      * Atomically decrements the reference count of `hmac` by one.
      *
@@ -16519,17 +16661,17 @@ declare namespace GLib {
      * data which is passed to func when this hook is invoked
      * @field
      */
-    data: object;
+    data: any;
     /**
      * pointer to the next hook in the list
      * @field
      */
-    next: Hook;
+    next: Hook | null;
     /**
      * pointer to the previous hook in the list
      * @field
      */
-    prev: Hook;
+    prev: Hook | null;
     /**
      * the reference count of this hook
      * @field
@@ -16551,7 +16693,7 @@ declare namespace GLib {
      *     signatures for this function are #GHookFunc and #GHookCheckFunc
      * @field
      */
-    func: object;
+    func: any;
     /**
      * the default `finalize_hook` function of a #GHookList calls
      *     this member of the hook that is being finalized
@@ -16567,7 +16709,7 @@ declare namespace GLib {
      * @param sibling a #GHook to compare with `new_hook`
      * @returns a value <= 0 if the id of @sibling is >= the id of @new_hook
      */
-    compare_ids(sibling: Hook): number;
+    compare_ids(sibling: Hook | null): number;
   }
 
   /**
@@ -16587,21 +16729,21 @@ declare namespace GLib {
      * @param hook_id a hook ID
      * @returns %TRUE if the #GHook was found in the #GHookList and destroyed
      */
-    static destroy(hook_list: HookList, hook_id: number): boolean;
+    static destroy(hook_list: HookList | null, hook_id: number): boolean;
     /**
      * Removes one #GHook from a #GHookList, marking it
      * inactive and calling g_hook_unref() on it.
      * @param hook_list a #GHookList
      * @param hook the #GHook to remove
      */
-    static destroy_link(hook_list: HookList, hook: Hook): void;
+    static destroy_link(hook_list: HookList | null, hook: Hook | null): void;
     /**
      * Calls the #GHookList `finalize_hook` function if it exists,
      * and frees the memory allocated for the #GHook.
      * @param hook_list a #GHookList
      * @param hook the #GHook to free
      */
-    static free(hook_list: HookList, hook: Hook): void;
+    static free(hook_list: HookList | null, hook: Hook | null): void;
     /**
      * Inserts a #GHook into a #GHookList, before a given #GHook.
      * @param hook_list a #GHookList
@@ -16609,16 +16751,16 @@ declare namespace GLib {
      * @param hook the #GHook to insert
      */
     static insert_before(
-      hook_list: HookList,
+      hook_list: HookList | null,
       sibling: Hook | null,
-      hook: Hook
+      hook: Hook | null
     ): void;
     /**
      * Prepends a #GHook on the start of a #GHookList.
      * @param hook_list a #GHookList
      * @param hook the #GHook to add to the start of `hook_list`
      */
-    static prepend(hook_list: HookList, hook: Hook): void;
+    static prepend(hook_list: HookList | null, hook: Hook | null): void;
     /**
      * Decrements the reference count of a #GHook.
      * If the reference count falls to 0, the #GHook is removed
@@ -16626,7 +16768,7 @@ declare namespace GLib {
      * @param hook_list a #GHookList
      * @param hook the #GHook to unref
      */
-    static unref(hook_list: HookList, hook: Hook): void;
+    static unref(hook_list: HookList | null, hook: Hook | null): void;
   }
 
   interface HookList {
@@ -16651,12 +16793,12 @@ declare namespace GLib {
      * the first #GHook element in the list
      * @field
      */
-    hooks: Hook;
+    hooks: Hook | null;
     /**
      * unused
      * @field
      */
-    dummy3: object;
+    dummy3: any;
     /**
      * the function to call to finalize a #GHook element.
      *     The default behaviour is to call the hooks `destroy` function
@@ -16667,7 +16809,7 @@ declare namespace GLib {
      * unused
      * @field
      */
-    dummy: object[];
+    dummy: any[];
 
     // Owm methods of GLib-2.0.GLib.HookList
 
@@ -16762,7 +16904,7 @@ declare namespace GLib {
      * makes the channel safe for binary data.
      * @returns A string containing the encoding, this string is   owned by GLib and must not be freed.
      */
-    get_encoding(): string;
+    get_encoding(): string | null;
     /**
      * Gets the current flags for a #GIOChannel, including read-only
      * flags such as %G_IO_FLAG_IS_READABLE.
@@ -16783,7 +16925,7 @@ declare namespace GLib {
      * @param length a location to return the length of the line terminator
      * @returns The line termination string. This value   is owned by GLib and must not be freed.
      */
-    get_line_term(length: number): string;
+    get_line_term(length: number | null): string | null;
     /**
      * Initializes a #GIOChannel struct.
      *
@@ -16799,7 +16941,7 @@ declare namespace GLib {
      * @param bytes_read returns the number of bytes actually read
      * @returns %G_IO_ERROR_NONE if the operation was successful.
      */
-    read(buf: string, count: number, bytes_read: number): IOError;
+    read(buf: string | null, count: number, bytes_read: number | null): IOError;
     /**
      * Replacement for g_io_channel_read() with the new API.
      * @returns the status of the operation.
@@ -16807,7 +16949,7 @@ declare namespace GLib {
     read_chars(): [
       /* returnType */ IOStatus,
       /* buf */ Uint8Array,
-      /* bytes_read */ number
+      /* bytes_read */ number | null
     ];
     /**
      * Reads a line, including the terminating character(s),
@@ -16818,9 +16960,9 @@ declare namespace GLib {
      */
     read_line(): [
       /* returnType */ IOStatus,
-      /* str_return */ string,
-      /* length */ number,
-      /* terminator_pos */ number
+      /* str_return */ string | null,
+      /* length */ number | null,
+      /* terminator_pos */ number | null
     ];
     /**
      * Reads a line from a #GIOChannel, using a #GString as a buffer.
@@ -16828,7 +16970,10 @@ declare namespace GLib {
      * @param terminator_pos location to store position of line terminator, or %NULL
      * @returns the status of the operation.
      */
-    read_line_string(buffer: string, terminator_pos: number | null): IOStatus;
+    read_line_string(
+      buffer: String | null,
+      terminator_pos: number | null
+    ): IOStatus;
     /**
      * Reads all the remaining data from the file.
      * @returns %G_IO_STATUS_NORMAL on success.     This function never returns %G_IO_STATUS_EOF.
@@ -16839,12 +16984,12 @@ declare namespace GLib {
      * This function cannot be called on a channel with %NULL encoding.
      * @returns a #GIOStatus
      */
-    read_unichar(): [/* returnType */ IOStatus, /* thechar */ string];
+    read_unichar(): [/* returnType */ IOStatus, /* thechar */ string | null];
     /**
      * Increments the reference count of a #GIOChannel.
      * @returns the @channel that was passed in (since 2.6)
      */
-    ref(): IOChannel;
+    ref(): IOChannel | null;
     /**
      * Sets the current position in the #GIOChannel, similar to the standard
      * library function fseek().
@@ -16977,7 +17122,11 @@ declare namespace GLib {
      * @param bytes_written the number of bytes actually written
      * @returns %G_IO_ERROR_NONE if the operation was successful.
      */
-    write(buf: string, count: number, bytes_written: number): IOError;
+    write(
+      buf: string | null,
+      count: number,
+      bytes_written: number | null
+    ): IOError;
     /**
      * Replacement for g_io_channel_write() with the new API.
      *
@@ -16992,7 +17141,7 @@ declare namespace GLib {
     write_chars(
       buf: Uint8Array,
       count: number
-    ): [/* returnType */ IOStatus, /* bytes_written */ number];
+    ): [/* returnType */ IOStatus, /* bytes_written */ number | null];
     /**
      * Writes a Unicode character to `channel`.
      * This function cannot be called on a channel with %NULL encoding.
@@ -17026,7 +17175,7 @@ declare namespace GLib {
      * @param mode One of "r", "w", "a", "r+", "w+", "a+". These have        the same meaning as in fopen()
      * @returns A #GIOChannel on success, %NULL on failure.
      */
-    static new_file(filename: string, mode: string): IOChannel;
+    static new_file(filename: string | null, mode: string | null): IOChannel;
     /**
      * Creates a new #GIOChannel given a file descriptor. On UNIX systems
      * this works for plain files, pipes, and sockets.
@@ -17068,23 +17217,30 @@ declare namespace GLib {
     // Own fields of GLib-2.0.GLib.IOFuncs
 
     io_read: (
-      channel: IOChannel,
-      buf: string,
+      channel: IOChannel | null,
+      buf: string | null,
       count: number,
-      bytes_read: number
+      bytes_read: number | null
     ) => IOStatus;
     io_write: (
-      channel: IOChannel,
-      buf: string,
+      channel: IOChannel | null,
+      buf: string | null,
       count: number,
-      bytes_written: number
+      bytes_written: number | null
     ) => IOStatus;
-    io_seek: (channel: IOChannel, offset: number, type: SeekType) => IOStatus;
-    io_close: (channel: IOChannel) => IOStatus;
-    io_create_watch: (channel: IOChannel, condition: IOCondition) => Source;
-    io_free: (channel: IOChannel) => void;
-    io_set_flags: (channel: IOChannel, flags: IOFlags) => IOStatus;
-    io_get_flags: (channel: IOChannel) => IOFlags;
+    io_seek: (
+      channel: IOChannel | null,
+      offset: number,
+      type: SeekType
+    ) => IOStatus;
+    io_close: (channel: IOChannel | null) => IOStatus;
+    io_create_watch: (
+      channel: IOChannel | null,
+      condition: IOCondition
+    ) => Source | null;
+    io_free: (channel: IOChannel | null) => void;
+    io_set_flags: (channel: IOChannel | null, flags: IOFlags) => IOStatus;
+    io_get_flags: (channel: IOChannel | null) => IOFlags;
   }
 
   /**
@@ -17113,7 +17269,7 @@ declare namespace GLib {
      * @param key a key
      * @returns the value associated with the key as a boolean,    or %FALSE if the key was not found or could not be parsed.
      */
-    get_boolean(group_name: string, key: string): boolean;
+    get_boolean(group_name: string | null, key: string | null): boolean;
     /**
      * Returns the values associated with `key` under `group_name` as
      * booleans.
@@ -17126,7 +17282,7 @@ declare namespace GLib {
      * @param key a key
      * @returns     the values associated with the key as a list of booleans, or %NULL if the    key was not found or could not be parsed. The returned list of booleans    should be freed with g_free() when no longer needed.
      */
-    get_boolean_list(group_name: string, key: string): boolean[];
+    get_boolean_list(group_name: string | null, key: string | null): boolean[];
     /**
      * Retrieves a comment above `key` from `group_name`.
      * If `key` is %NULL then `comment` will be read from above
@@ -17140,7 +17296,7 @@ declare namespace GLib {
      * @param key a key
      * @returns a comment that should be freed with g_free()
      */
-    get_comment(group_name: string | null, key: string | null): string;
+    get_comment(group_name: string | null, key: string | null): string | null;
     /**
      * Returns the value associated with `key` under `group_name` as a
      * double. If `group_name` is %NULL, the start_group is used.
@@ -17153,7 +17309,7 @@ declare namespace GLib {
      * @param key a key
      * @returns the value associated with the key as a double, or     0.0 if the key was not found or could not be parsed.
      */
-    get_double(group_name: string, key: string): number;
+    get_double(group_name: string | null, key: string | null): number;
     /**
      * Returns the values associated with `key` under `group_name` as
      * doubles.
@@ -17166,14 +17322,14 @@ declare namespace GLib {
      * @param key a key
      * @returns      the values associated with the key as a list of doubles, or %NULL if the     key was not found or could not be parsed. The returned list of doubles     should be freed with g_free() when no longer needed.
      */
-    get_double_list(group_name: string, key: string): number[];
+    get_double_list(group_name: string | null, key: string | null): number[];
     /**
      * Returns all groups in the key file loaded with `key_file`.
      * The array of returned groups will be %NULL-terminated, so
      * `length` may optionally be %NULL.
      * @returns a newly-allocated %NULL-terminated array of strings.   Use g_strfreev() to free it.
      */
-    get_groups(): [/* returnType */ string[], /* length */ number];
+    get_groups(): [/* returnType */ string[], /* length */ number | null];
     /**
      * Returns the value associated with `key` under `group_name` as a signed
      * 64-bit integer. This is similar to g_key_file_get_integer() but can return
@@ -17182,7 +17338,7 @@ declare namespace GLib {
      * @param key a non-%NULL key
      * @returns the value associated with the key as a signed 64-bit integer, or 0 if the key was not found or could not be parsed.
      */
-    get_int64(group_name: string, key: string): number;
+    get_int64(group_name: string | null, key: string | null): number;
     /**
      * Returns the value associated with `key` under `group_name` as an
      * integer.
@@ -17196,7 +17352,7 @@ declare namespace GLib {
      * @param key a key
      * @returns the value associated with the key as an integer, or     0 if the key was not found or could not be parsed.
      */
-    get_integer(group_name: string, key: string): number;
+    get_integer(group_name: string | null, key: string | null): number;
     /**
      * Returns the values associated with `key` under `group_name` as
      * integers.
@@ -17210,7 +17366,7 @@ declare namespace GLib {
      * @param key a key
      * @returns      the values associated with the key as a list of integers, or %NULL if     the key was not found or could not be parsed. The returned list of     integers should be freed with g_free() when no longer needed.
      */
-    get_integer_list(group_name: string, key: string): number[];
+    get_integer_list(group_name: string | null, key: string | null): number[];
     /**
      * Returns all keys for the group name `group_name`.  The array of
      * returned keys will be %NULL-terminated, so `length` may
@@ -17221,8 +17377,8 @@ declare namespace GLib {
      * @returns a newly-allocated %NULL-terminated array of strings.     Use g_strfreev() to free it.
      */
     get_keys(
-      group_name: string
-    ): [/* returnType */ string[], /* length */ number];
+      group_name: string | null
+    ): [/* returnType */ string[], /* length */ number | null];
     /**
      * Returns the actual locale which the result of
      * g_key_file_get_locale_string() or g_key_file_get_locale_string_list()
@@ -17239,8 +17395,8 @@ declare namespace GLib {
      * @returns the locale from the file, or %NULL if the key was not   found or the entry in the file was was untranslated
      */
     get_locale_for_key(
-      group_name: string,
-      key: string,
+      group_name: string | null,
+      key: string | null,
       locale: string | null
     ): string | null;
     /**
@@ -17262,10 +17418,10 @@ declare namespace GLib {
      * @returns a newly allocated string or %NULL if the specified   key cannot be found.
      */
     get_locale_string(
-      group_name: string,
-      key: string,
+      group_name: string | null,
+      key: string | null,
       locale: string | null
-    ): string;
+    ): string | null;
     /**
      * Returns the values associated with `key` under `group_name`
      * translated in the given `locale` if available.  If `locale` is
@@ -17287,8 +17443,8 @@ declare namespace GLib {
      * @returns a newly allocated %NULL-terminated string array   or %NULL if the key isn't found. The string array should be freed   with g_strfreev().
      */
     get_locale_string_list(
-      group_name: string,
-      key: string,
+      group_name: string | null,
+      key: string | null,
       locale: string | null
     ): string[];
     /**
@@ -17309,7 +17465,7 @@ declare namespace GLib {
      * @param key a key
      * @returns a newly allocated string or %NULL if the specified   key cannot be found.
      */
-    get_string(group_name: string, key: string): string;
+    get_string(group_name: string | null, key: string | null): string | null;
     /**
      * Returns the values associated with `key` under `group_name`.
      *
@@ -17321,7 +17477,7 @@ declare namespace GLib {
      * @param key a key
      * @returns   a %NULL-terminated string array or %NULL if the specified  key cannot be found. The array should be freed with g_strfreev().
      */
-    get_string_list(group_name: string, key: string): string[];
+    get_string_list(group_name: string | null, key: string | null): string[];
     /**
      * Returns the value associated with `key` under `group_name` as an unsigned
      * 64-bit integer. This is similar to g_key_file_get_integer() but can return
@@ -17330,7 +17486,7 @@ declare namespace GLib {
      * @param key a non-%NULL key
      * @returns the value associated with the key as an unsigned 64-bit integer, or 0 if the key was not found or could not be parsed.
      */
-    get_uint64(group_name: string, key: string): number;
+    get_uint64(group_name: string | null, key: string | null): number;
     /**
      * Returns the raw value associated with `key` under `group_name`.
      * Use g_key_file_get_string() to retrieve an unescaped UTF-8 string.
@@ -17343,13 +17499,13 @@ declare namespace GLib {
      * @param key a key
      * @returns a newly allocated string or %NULL if the specified  key cannot be found.
      */
-    get_value(group_name: string, key: string): string;
+    get_value(group_name: string | null, key: string | null): string | null;
     /**
      * Looks whether the key file has the group `group_name`.
      * @param group_name a group name
      * @returns %TRUE if @group_name is a part of @key_file, %FALSE otherwise.
      */
-    has_group(group_name: string): boolean;
+    has_group(group_name: string | null): boolean;
     /**
      * Loads a key file from the data in `bytes` into an empty #GKeyFile structure.
      * If the object cannot be created then %error is set to a #GKeyFileError.
@@ -17357,7 +17513,7 @@ declare namespace GLib {
      * @param flags flags from #GKeyFileFlags
      * @returns %TRUE if a key file could be loaded, %FALSE otherwise
      */
-    load_from_bytes(bytes: Bytes, flags: KeyFileFlags): boolean;
+    load_from_bytes(bytes: Bytes | null, flags: KeyFileFlags): boolean;
     /**
      * Loads a key file from memory into an empty #GKeyFile structure.
      * If the object cannot be created then %error is set to a #GKeyFileError.
@@ -17366,7 +17522,11 @@ declare namespace GLib {
      * @param flags flags from #GKeyFileFlags
      * @returns %TRUE if a key file could be loaded, %FALSE otherwise
      */
-    load_from_data(data: string, length: number, flags: KeyFileFlags): boolean;
+    load_from_data(
+      data: string | null,
+      length: number,
+      flags: KeyFileFlags
+    ): boolean;
     /**
      * This function looks for a key file named `file` in the paths
      * returned from g_get_user_data_dir() and g_get_system_data_dirs(),
@@ -17378,9 +17538,9 @@ declare namespace GLib {
      * @returns %TRUE if a key file could be loaded, %FALSE otherwise
      */
     load_from_data_dirs(
-      file: string,
+      file: string | null,
       flags: KeyFileFlags
-    ): [/* returnType */ boolean, /* full_path */ string];
+    ): [/* returnType */ boolean, /* full_path */ string | null];
     /**
      * This function looks for a key file named `file` in the paths
      * specified in `search_dirs,` loads the file into `key_file` and
@@ -17397,10 +17557,10 @@ declare namespace GLib {
      * @returns %TRUE if a key file could be loaded, %FALSE otherwise
      */
     load_from_dirs(
-      file: string,
+      file: string | null,
       search_dirs: string[],
       flags: KeyFileFlags
-    ): [/* returnType */ boolean, /* full_path */ string];
+    ): [/* returnType */ boolean, /* full_path */ string | null];
     /**
      * Loads a key file into an empty #GKeyFile structure.
      *
@@ -17414,7 +17574,7 @@ declare namespace GLib {
      * @param flags flags from #GKeyFileFlags
      * @returns %TRUE if a key file could be loaded, %FALSE otherwise
      */
-    load_from_file(file: string, flags: KeyFileFlags): boolean;
+    load_from_file(file: string | null, flags: KeyFileFlags): boolean;
     /**
      * Removes a comment above `key` from `group_name`.
      * If `key` is %NULL then `comment` will be removed above `group_name`.
@@ -17431,14 +17591,14 @@ declare namespace GLib {
      * @param group_name a group name
      * @returns %TRUE if the group was removed, %FALSE otherwise
      */
-    remove_group(group_name: string): boolean;
+    remove_group(group_name: string | null): boolean;
     /**
      * Removes `key` in `group_name` from the key file.
      * @param group_name a group name
      * @param key a key name to remove
      * @returns %TRUE if the key was removed, %FALSE otherwise
      */
-    remove_key(group_name: string, key: string): boolean;
+    remove_key(group_name: string | null, key: string | null): boolean;
     /**
      * Writes the contents of `key_file` to `filename` using
      * g_file_set_contents(). If you need stricter guarantees about durability of
@@ -17450,7 +17610,7 @@ declare namespace GLib {
      * @param filename the name of the file to write to
      * @returns %TRUE if successful, else %FALSE with @error set
      */
-    save_to_file(filename: string): boolean;
+    save_to_file(filename: string | null): boolean;
     /**
      * Associates a new boolean value with `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17458,7 +17618,11 @@ declare namespace GLib {
      * @param key a key
      * @param value %TRUE or %FALSE
      */
-    set_boolean(group_name: string, key: string, value: boolean): void;
+    set_boolean(
+      group_name: string | null,
+      key: string | null,
+      value: boolean
+    ): void;
     /**
      * Associates a list of boolean values with `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17467,7 +17631,11 @@ declare namespace GLib {
      * @param key a key
      * @param list an array of boolean values
      */
-    set_boolean_list(group_name: string, key: string, list: boolean[]): void;
+    set_boolean_list(
+      group_name: string | null,
+      key: string | null,
+      list: boolean[]
+    ): void;
     /**
      * Places a comment above `key` from `group_name`.
      *
@@ -17485,7 +17653,7 @@ declare namespace GLib {
     set_comment(
       group_name: string | null,
       key: string | null,
-      comment: string
+      comment: string | null
     ): boolean;
     /**
      * Associates a new double value with `key` under `group_name`.
@@ -17494,7 +17662,11 @@ declare namespace GLib {
      * @param key a key
      * @param value a double value
      */
-    set_double(group_name: string, key: string, value: number): void;
+    set_double(
+      group_name: string | null,
+      key: string | null,
+      value: number
+    ): void;
     /**
      * Associates a list of double values with `key` under
      * `group_name`.  If `key` cannot be found then it is created.
@@ -17502,7 +17674,11 @@ declare namespace GLib {
      * @param key a key
      * @param list an array of double values
      */
-    set_double_list(group_name: string, key: string, list: number[]): void;
+    set_double_list(
+      group_name: string | null,
+      key: string | null,
+      list: number[]
+    ): void;
     /**
      * Associates a new integer value with `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17510,7 +17686,11 @@ declare namespace GLib {
      * @param key a key
      * @param value an integer value
      */
-    set_int64(group_name: string, key: string, value: number): void;
+    set_int64(
+      group_name: string | null,
+      key: string | null,
+      value: number
+    ): void;
     /**
      * Associates a new integer value with `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17518,7 +17698,11 @@ declare namespace GLib {
      * @param key a key
      * @param value an integer value
      */
-    set_integer(group_name: string, key: string, value: number): void;
+    set_integer(
+      group_name: string | null,
+      key: string | null,
+      value: number
+    ): void;
     /**
      * Associates a list of integer values with `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17526,7 +17710,11 @@ declare namespace GLib {
      * @param key a key
      * @param list an array of integer values
      */
-    set_integer_list(group_name: string, key: string, list: number[]): void;
+    set_integer_list(
+      group_name: string | null,
+      key: string | null,
+      list: number[]
+    ): void;
     /**
      * Sets the character which is used to separate
      * values in lists. Typically ';' or ',' are used
@@ -17543,10 +17731,10 @@ declare namespace GLib {
      * @param string a string
      */
     set_locale_string(
-      group_name: string,
-      key: string,
-      locale: string,
-      string: string
+      group_name: string | null,
+      key: string | null,
+      locale: string | null,
+      string: string | null
     ): void;
     /**
      * Associates a list of string values for `key` and `locale` under
@@ -17558,9 +17746,9 @@ declare namespace GLib {
      * @param list a %NULL-terminated array of locale string values
      */
     set_locale_string_list(
-      group_name: string,
-      key: string,
-      locale: string,
+      group_name: string | null,
+      key: string | null,
+      locale: string | null,
       list: string[]
     ): void;
     /**
@@ -17573,7 +17761,11 @@ declare namespace GLib {
      * @param key a key
      * @param string a string
      */
-    set_string(group_name: string, key: string, string: string): void;
+    set_string(
+      group_name: string | null,
+      key: string | null,
+      string: string | null
+    ): void;
     /**
      * Associates a list of string values for `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17582,7 +17774,11 @@ declare namespace GLib {
      * @param key a key
      * @param list an array of string values
      */
-    set_string_list(group_name: string, key: string, list: string[]): void;
+    set_string_list(
+      group_name: string | null,
+      key: string | null,
+      list: string[]
+    ): void;
     /**
      * Associates a new integer value with `key` under `group_name`.
      * If `key` cannot be found then it is created.
@@ -17590,7 +17786,11 @@ declare namespace GLib {
      * @param key a key
      * @param value an integer value
      */
-    set_uint64(group_name: string, key: string, value: number): void;
+    set_uint64(
+      group_name: string | null,
+      key: string | null,
+      value: number
+    ): void;
     /**
      * Associates a new value with `key` under `group_name`.
      *
@@ -17602,7 +17802,11 @@ declare namespace GLib {
      * @param key a key
      * @param value a string
      */
-    set_value(group_name: string, key: string, value: string): void;
+    set_value(
+      group_name: string | null,
+      key: string | null,
+      value: string | null
+    ): void;
     /**
      * This function outputs `key_file` as a string.
      *
@@ -17610,7 +17814,7 @@ declare namespace GLib {
      * so it is safe to pass %NULL as `error`.
      * @returns a newly allocated string holding   the contents of the #GKeyFile
      */
-    to_data(): [/* returnType */ string, /* length */ number];
+    to_data(): [/* returnType */ string | null, /* length */ number | null];
     /**
      * Decreases the reference count of `key_file` by 1. If the reference count
      * reaches zero, frees the key file and all its allocated memory.
@@ -17660,17 +17864,17 @@ declare namespace GLib {
      *        [Type Conversion Macros][glib-Type-Conversion-Macros]
      * @field
      */
-    data: object;
+    data: any;
     /**
      * contains the link to the next element in the list
      * @field
      */
-    next: object[];
+    next: any[] | null;
     /**
      * contains the link to the previous element in the list
      * @field
      */
-    prev: object[];
+    prev: any[] | null;
   }
 
   /**
@@ -17690,12 +17894,12 @@ declare namespace GLib {
      * field name (UTF-8 string)
      * @field
      */
-    key: string;
+    key: string | null;
     /**
      * field value (arbitrary bytes)
      * @field
      */
-    value: object;
+    value: any;
     /**
      * length of `value,` in bytes, or -1 if it is nul-terminated
      * @field
@@ -17743,7 +17947,7 @@ declare namespace GLib {
      * @param fd a #GPollFD structure holding information about a file      descriptor to watch.
      * @param priority the priority for this file descriptor which should be      the same as the priority used for g_source_attach() to ensure that the      file descriptor is polled whenever the results may be needed.
      */
-    add_poll(fd: PollFD, priority: number): void;
+    add_poll(fd: PollFD | null, priority: number): void;
     /**
      * Passes the results of polling back to the main loop. You should be
      * careful to pass `fds` and its length `n_fds` as received from
@@ -17773,9 +17977,9 @@ declare namespace GLib {
      * @returns the source, if one was found, otherwise %NULL
      */
     find_source_by_funcs_user_data(
-      funcs: SourceFuncs,
-      user_data: object | null
-    ): Source;
+      funcs: SourceFuncs | null,
+      user_data: any | null
+    ): Source | null;
     /**
      * Finds a #GSource given a pair of context and ID.
      *
@@ -17792,7 +17996,7 @@ declare namespace GLib {
      * @param source_id the source ID, as returned by g_source_get_id().
      * @returns the #GSource
      */
-    find_source_by_id(source_id: number): Source;
+    find_source_by_id(source_id: number): Source | null;
     /**
      * Finds a source with the given user data for the callback.  If
      * multiple sources exist with the same user data, the first
@@ -17800,7 +18004,7 @@ declare namespace GLib {
      * @param user_data the user_data for the callback.
      * @returns the source, if one was found, otherwise %NULL
      */
-    find_source_by_user_data(user_data: object | null): Source;
+    find_source_by_user_data(user_data: any | null): Source | null;
     /**
      * Invokes a function in such a way that `context` is owned during the
      * invocation of `function`.
@@ -17858,7 +18062,7 @@ declare namespace GLib {
      * g_main_context_acquire() before you may call this function.
      * @returns %TRUE if some source is ready to be dispatched               prior to polling.
      */
-    prepare(): [/* returnType */ boolean, /* priority */ number];
+    prepare(): [/* returnType */ boolean, /* priority */ number | null];
     /**
      * Acquires `context` and sets it as the thread-default context for the
      * current thread. This will cause certain asynchronous operations
@@ -17913,12 +18117,16 @@ declare namespace GLib {
      */
     query(
       max_priority: number
-    ): [/* returnType */ number, /* timeout_ */ number, /* fds */ PollFD[]];
+    ): [
+      /* returnType */ number,
+      /* timeout_ */ number | null,
+      /* fds */ PollFD[]
+    ];
     /**
      * Increases the reference count on a #GMainContext object by one.
      * @returns the @context that was passed in (since 2.6)
      */
-    ref(): MainContext;
+    ref(): MainContext | null;
     /**
      * Releases ownership of a context previously acquired by this thread
      * with g_main_context_acquire(). If the context was acquired multiple
@@ -17931,7 +18139,7 @@ declare namespace GLib {
      * polled for a particular context.
      * @param fd a #GPollFD descriptor previously added with g_main_context_add_poll()
      */
-    remove_poll(fd: PollFD): void;
+    remove_poll(fd: PollFD | null): void;
     /**
      * Decreases the reference count on a #GMainContext object by one. If
      * the result is zero, free the context and free all associated memory.
@@ -17947,7 +18155,7 @@ declare namespace GLib {
      * @param mutex a mutex, currently held
      * @returns %TRUE if the operation succeeded, and   this thread is now the owner of @context.
      */
-    wait(cond: Cond, mutex: Mutex): boolean;
+    wait(cond: Cond | null, mutex: Mutex | null): boolean;
     /**
      * If `context` is currently blocking in g_main_context_iteration()
      * waiting for a source to become ready, cause it to stop blocking
@@ -18023,7 +18231,7 @@ declare namespace GLib {
      * g_main_context_get_thread_default().
      * @returns the global default main context.
      */
-    static default(): MainContext;
+    static default(): MainContext | null;
     /**
      * Gets the thread-default #GMainContext for this thread. Asynchronous
      * operations that want to be able to be run in contexts other than
@@ -18048,7 +18256,7 @@ declare namespace GLib {
      * (with a ref added to it) rather than returning %NULL.
      * @returns the thread-default #GMainContext. Unref     with g_main_context_unref() when you are done with it.
      */
-    static ref_thread_default(): MainContext;
+    static ref_thread_default(): MainContext | null;
   }
 
   interface MainLoop {
@@ -18058,7 +18266,7 @@ declare namespace GLib {
      * Returns the #GMainContext of `loop`.
      * @returns the #GMainContext of @loop
      */
-    get_context(): MainContext;
+    get_context(): MainContext | null;
     /**
      * Checks to see if the main loop is currently being run via g_main_loop_run().
      * @returns %TRUE if the mainloop is currently being run.
@@ -18076,7 +18284,7 @@ declare namespace GLib {
      * Increases the reference count on a #GMainLoop object by one.
      * @returns @loop
      */
-    ref(): MainLoop;
+    ref(): MainLoop | null;
     /**
      * Runs a main loop until g_main_loop_quit() is called on the loop.
      * If this is called for the thread of the loop's #GMainContext,
@@ -18135,7 +18343,7 @@ declare namespace GLib {
      * bytes object, because a #GBytes should be immutable.
      * @returns A newly allocated #GBytes referencing data     from @file
      */
-    get_bytes(): Bytes;
+    get_bytes(): Bytes | null;
     /**
      * Returns the contents of a #GMappedFile.
      *
@@ -18145,7 +18353,7 @@ declare namespace GLib {
      * If the file is empty then %NULL is returned.
      * @returns the contents of @file, or %NULL.
      */
-    get_contents(): string;
+    get_contents(): string | null;
     /**
      * Returns the length of the contents of a #GMappedFile.
      * @returns the length of the contents of @file.
@@ -18156,7 +18364,7 @@ declare namespace GLib {
      * this function from any thread.
      * @returns the passed in #GMappedFile.
      */
-    ref(): MappedFile;
+    ref(): MappedFile | null;
     /**
      * Decrements the reference count of `file` by one.  If the reference count
      * drops to 0, unmaps the buffer of `file` and frees it.
@@ -18203,7 +18411,7 @@ declare namespace GLib {
      * @param writable whether the mapping should be writable
      * @returns a newly allocated #GMappedFile which must be unref'd    with g_mapped_file_unref(), or %NULL if the mapping failed.
      */
-    constructor(filename: string, writable: boolean);
+    constructor(filename: string | null, writable: boolean);
     /**
      * Maps a file into memory. On UNIX, this is using the mmap() function.
      *
@@ -18226,7 +18434,7 @@ declare namespace GLib {
      * @param writable whether the mapping should be writable
      * @returns a newly allocated #GMappedFile which must be unref'd    with g_mapped_file_unref(), or %NULL if the mapping failed.
      */
-    static new(filename: string, writable: boolean): MappedFile;
+    static new(filename: string | null, writable: boolean): MappedFile;
     /**
      * Maps a file into memory. On UNIX, this is using the mmap() function.
      *
@@ -18274,14 +18482,17 @@ declare namespace GLib {
      * elements, see g_markup_parse_context_get_element_stack().
      * @returns the name of the currently open element, or %NULL
      */
-    get_element(): string;
+    get_element(): string | null;
     /**
      * Retrieves the current line number and the number of the character on
      * that line. Intended for use in error messages; there are no strict
      * semantics for what constitutes the "current" line number other than
      * "the best number we could come up with for error messages."
      */
-    get_position(): [/* line_number */ number, /* char_number */ number];
+    get_position(): [
+      /* line_number */ number | null,
+      /* char_number */ number | null
+    ];
     /**
      * Returns the user_data associated with `context`.
      *
@@ -18290,7 +18501,7 @@ declare namespace GLib {
      * of g_markup_parse_context_push().
      * @returns the provided user_data. The returned data belongs to     the markup context and will be freed when     g_markup_parse_context_free() is called.
      */
-    get_user_data(): object | null;
+    get_user_data(): any | null;
     /**
      * Feed some data to the #GMarkupParseContext.
      *
@@ -18306,7 +18517,7 @@ declare namespace GLib {
      * @param text_len length of `text` in bytes
      * @returns %FALSE if an error occurred, %TRUE on success
      */
-    parse(text: string, text_len: number): boolean;
+    parse(text: string | null, text_len: number): boolean;
     /**
      * Completes the process of a temporary sub-parser redirection.
      *
@@ -18323,7 +18534,7 @@ declare namespace GLib {
      * interface.
      * @returns the user data passed to g_markup_parse_context_push()
      */
-    pop(): object | null;
+    pop(): any | null;
     /**
      * Temporarily redirects markup data to a sub-parser.
      *
@@ -18448,12 +18659,12 @@ declare namespace GLib {
      * @param parser a #GMarkupParser
      * @param user_data user data to pass to #GMarkupParser functions
      */
-    push(parser: MarkupParser, user_data: object | null): void;
+    push(parser: MarkupParser | null, user_data: any | null): void;
     /**
      * Increases the reference count of `context`.
      * @returns the same @context
      */
-    ref(): MarkupParseContext;
+    ref(): MarkupParseContext | null;
     /**
      * Decreases the reference count of `context`.  When its reference count
      * drops to 0, it is freed.
@@ -18490,9 +18701,9 @@ declare namespace GLib {
      * @returns a new #GMarkupParseContext
      */
     constructor(
-      parser: MarkupParser,
+      parser: MarkupParser | null,
       flags: MarkupParseFlags,
-      user_data: object | null,
+      user_data: any | null,
       user_data_dnotify: DestroyNotify
     );
     /**
@@ -18509,9 +18720,9 @@ declare namespace GLib {
      * @returns a new #GMarkupParseContext
      */
     static new(
-      parser: MarkupParser,
+      parser: MarkupParser | null,
       flags: MarkupParseFlags,
-      user_data: object | null,
+      user_data: any | null,
       user_data_dnotify: DestroyNotify
     ): MarkupParseContext;
   }
@@ -18520,19 +18731,26 @@ declare namespace GLib {
     // Own fields of GLib-2.0.GLib.MarkupParser
 
     start_element: (
-      context: MarkupParseContext,
-      element_name: string,
-      attribute_names: string,
-      attribute_values: string
+      context: MarkupParseContext | null,
+      element_name: string | null,
+      attribute_names: string | null,
+      attribute_values: string | null
     ) => void;
-    end_element: (context: MarkupParseContext, element_name: string) => void;
-    text: (context: MarkupParseContext, text: string, text_len: number) => void;
-    passthrough: (
-      context: MarkupParseContext,
-      passthrough_text: string,
+    end_element: (
+      context: MarkupParseContext | null,
+      element_name: string | null
+    ) => void;
+    text: (
+      context: MarkupParseContext | null,
+      text: string | null,
       text_len: number
     ) => void;
-    error: (context: MarkupParseContext, error: Error) => void;
+    passthrough: (
+      context: MarkupParseContext | null,
+      passthrough_text: string | null,
+      text_len: number
+    ) => void;
+    error: (context: MarkupParseContext | null, error: Error | null) => void;
   }
 
   /**
@@ -18575,7 +18793,7 @@ declare namespace GLib {
      * @param string_to_expand the string to expand
      * @returns the expanded string, or %NULL if an error occurred
      */
-    expand_references(string_to_expand: string): string | null;
+    expand_references(string_to_expand: string | null): string | null;
     /**
      * Retrieves the text matching the `match_num'`th capturing
      * parentheses. 0 is the full text of the match, 1 is the first paren
@@ -18629,7 +18847,7 @@ declare namespace GLib {
      * @param name name of the subexpression
      * @returns The matched substring, or %NULL if an error     occurred. You have to free the string yourself
      */
-    fetch_named(name: string): string | null;
+    fetch_named(name: string | null): string | null;
     /**
      * Retrieves the position in bytes of the capturing parentheses named `name`.
      *
@@ -18640,8 +18858,12 @@ declare namespace GLib {
      * @returns %TRUE if the position was fetched, %FALSE otherwise.     If the position cannot be fetched, @start_pos and @end_pos     are left unchanged.
      */
     fetch_named_pos(
-      name: string
-    ): [/* returnType */ boolean, /* start_pos */ number, /* end_pos */ number];
+      name: string | null
+    ): [
+      /* returnType */ boolean,
+      /* start_pos */ number | null,
+      /* end_pos */ number | null
+    ];
     /**
      * Retrieves the position in bytes of the `match_num'`th capturing
      * parentheses. 0 is the full text of the match, 1 is the first
@@ -18661,7 +18883,11 @@ declare namespace GLib {
      */
     fetch_pos(
       match_num: number
-    ): [/* returnType */ boolean, /* start_pos */ number, /* end_pos */ number];
+    ): [
+      /* returnType */ boolean,
+      /* start_pos */ number | null,
+      /* end_pos */ number | null
+    ];
     /**
      * If `match_info` is not %NULL, calls g_match_info_unref(); otherwise does
      * nothing.
@@ -18685,14 +18911,14 @@ declare namespace GLib {
      * after you free `match_info` object.
      * @returns #GRegex object used in @match_info
      */
-    get_regex(): Regex;
+    get_regex(): Regex | null;
     /**
      * Returns the string searched with `match_info`. This is the
      * string passed to g_regex_match() or g_regex_replace() so
      * you may not free it before calling this function.
      * @returns the string searched with @match_info
      */
-    get_string(): string;
+    get_string(): string | null;
     /**
      * Usually if the string passed to g_regex_match*() matches as far as
      * it goes, but is too short to match the entire pattern, %FALSE is
@@ -18749,7 +18975,7 @@ declare namespace GLib {
      * Increases reference count of `match_info` by 1.
      * @returns @match_info
      */
-    ref(): MatchInfo;
+    ref(): MatchInfo | null;
     /**
      * Decreases reference count of `match_info` by 1. When reference count drops
      * to zero, it frees all the memory associated with the match_info structure.
@@ -18771,12 +18997,12 @@ declare namespace GLib {
   interface MemVTable {
     // Own fields of GLib-2.0.GLib.MemVTable
 
-    malloc: (n_bytes: number) => object;
-    realloc: (mem: object, n_bytes: number) => object;
-    free: (mem: object) => void;
-    calloc: (n_blocks: number, n_block_bytes: number) => object;
-    try_malloc: (n_bytes: number) => object;
-    try_realloc: (mem: object, n_bytes: number) => object;
+    malloc: (n_bytes: number) => any;
+    realloc: (mem: any, n_bytes: number) => any;
+    free: (mem: any) => void;
+    calloc: (n_blocks: number, n_block_bytes: number) => any;
+    try_malloc: (n_bytes: number) => any;
+    try_realloc: (mem: any, n_bytes: number) => any;
   }
 
   /**
@@ -18800,31 +19026,31 @@ declare namespace GLib {
      * contains the actual data of the node.
      * @field
      */
-    data: object;
+    data: any;
     /**
      * points to the node's next sibling (a sibling is another
      *        #GNode with the same parent).
      * @field
      */
-    next: Node;
+    next: Node | null;
     /**
      * points to the node's previous sibling.
      * @field
      */
-    prev: Node;
+    prev: Node | null;
     /**
      * points to the parent of the #GNode, or is %NULL if the
      *          #GNode is the root of the tree.
      * @field
      */
-    parent: Node;
+    parent: Node | null;
     /**
      * points to the first child of the #GNode.  The other
      *            children are accessed by using the `next` pointer of each
      *            child.
      * @field
      */
-    children: Node;
+    children: Node | null;
 
     // Owm methods of GLib-2.0.GLib.Node
 
@@ -18834,7 +19060,7 @@ declare namespace GLib {
      * @param data the data to find
      * @returns the index of the child of @node which contains     @data, or -1 if the data is not found
      */
-    child_index(data: object | null): number;
+    child_index(data: any | null): number;
     /**
      * Gets the position of a #GNode with respect to its siblings.
      * `child` must be a child of `node`. The first child is numbered 0,
@@ -18842,7 +19068,7 @@ declare namespace GLib {
      * @param child a child of `node`
      * @returns the position of @child with respect to its siblings
      */
-    child_position(child: Node): number;
+    child_position(child: Node | null): number;
     /**
      * Gets the depth of a #GNode.
      *
@@ -18863,7 +19089,7 @@ declare namespace GLib {
      * @param descendant a #GNode
      * @returns %TRUE if @node is an ancestor of @descendant
      */
-    is_ancestor(descendant: Node): boolean;
+    is_ancestor(descendant: Node | null): boolean;
     /**
      * Gets the maximum height of all branches beneath a #GNode.
      * This is the maximum distance from the #GNode to all leaf nodes.
@@ -18918,7 +19144,7 @@ declare namespace GLib {
      *          is %G_ONCE_STATUS_READY
      * @field
      */
-    retval: object;
+    retval: any;
   }
 
   /**
@@ -18965,7 +19191,7 @@ declare namespace GLib {
      * @param location location of a static initializable variable    containing 0
      * @returns %TRUE if the initialization section should be entered,     %FALSE and blocks otherwise
      */
-    static init_enter(location: object): boolean;
+    static init_enter(location: any | null): boolean;
     /**
      * Counterpart to g_once_init_enter(). Expects a location of a static
      * 0-initialized initialization variable, and an initialization value
@@ -18978,7 +19204,7 @@ declare namespace GLib {
      * @param location location of a static initializable variable    containing 0
      * @param result new non-0 value for *`value_location`
      */
-    static init_leave(location: object, result: number): void;
+    static init_leave(location: any | null, result: number): void;
   }
 
   interface OptionContext {
@@ -18990,7 +19216,7 @@ declare namespace GLib {
      * ownership of the `group` and thus the `group` should not be freed.
      * @param group the group to add
      */
-    add_group(group: OptionGroup): void;
+    add_group(group: OptionGroup | null): void;
     /**
      * A convenience function which creates a main group if it doesn't
      * exist, adds the `entries` to it and sets the translation domain.
@@ -19013,7 +19239,7 @@ declare namespace GLib {
      * Returns the description. See g_option_context_set_description().
      * @returns the description
      */
-    get_description(): string;
+    get_description(): string | null;
     /**
      * Returns a formatted, translated help text for the given context.
      * To obtain the text produced by `--help`, call
@@ -19026,7 +19252,7 @@ declare namespace GLib {
      * @param group the #GOptionGroup to create help for, or %NULL
      * @returns A newly allocated string containing the help text
      */
-    get_help(main_help: boolean, group: OptionGroup | null): string;
+    get_help(main_help: boolean, group: OptionGroup | null): string | null;
     /**
      * Returns whether automatic `--help` generation
      * is turned on for `context`. See g_option_context_set_help_enabled().
@@ -19043,7 +19269,7 @@ declare namespace GLib {
      * Returns a pointer to the main group of `context`.
      * @returns the main group of @context, or %NULL if  @context doesn't have a main group. Note that group belongs to  @context and should not be modified or freed.
      */
-    get_main_group(): OptionGroup;
+    get_main_group(): OptionGroup | null;
     /**
      * Returns whether strict POSIX code is enabled.
      *
@@ -19055,7 +19281,7 @@ declare namespace GLib {
      * Returns the summary. See g_option_context_set_summary().
      * @returns the summary
      */
-    get_summary(): string;
+    get_summary(): string | null;
     /**
      * Parses the command line arguments, recognizing options
      * which have been added to `context`. A side-effect of
@@ -19140,7 +19366,7 @@ declare namespace GLib {
      * treated differently when generating `--help` output.
      * @param group the group to set as main group
      */
-    set_main_group(group: OptionGroup): void;
+    set_main_group(group: OptionGroup | null): void;
     /**
      * Sets strict POSIX mode.
      *
@@ -19199,7 +19425,7 @@ declare namespace GLib {
      * user-visible strings.
      * @param domain the domain to use
      */
-    set_translation_domain(domain: string): void;
+    set_translation_domain(domain: string | null): void;
   }
 
   /**
@@ -19225,7 +19451,7 @@ declare namespace GLib {
      *     `--groupname-long_name`.
      * @field
      */
-    long_name: string;
+    long_name: string | null;
     /**
      * If an option has a short name, it can be specified
      *     `-short_name` in a commandline. `short_name` must be  a printable
@@ -19264,14 +19490,14 @@ declare namespace GLib {
      *     %G_OPTION_ARG_FILENAME_ARRAY, the data should be freed using g_strfreev().
      * @field
      */
-    arg_data: object;
+    arg_data: any;
     /**
      * the description for the option in `--help`
      *     output. The `description` is translated using the `translate_func`
      *     of the group, see g_option_group_set_translation_domain().
      * @field
      */
-    description: string;
+    description: string | null;
     /**
      * The placeholder to use for the extra argument parsed
      *     by the option in `--help` output. The `arg_description` is translated
@@ -19279,7 +19505,7 @@ declare namespace GLib {
      *     g_option_group_set_translation_domain().
      * @field
      */
-    arg_description: string;
+    arg_description: string | null;
   }
 
   /**
@@ -19311,7 +19537,7 @@ declare namespace GLib {
      * Increments the reference count of `group` by one.
      * @returns a #GOptionGroup
      */
-    ref(): OptionGroup;
+    ref(): OptionGroup | null;
     /**
      * Sets the function which is used to translate user-visible strings,
      * for `--help` output. Different groups can use different
@@ -19327,7 +19553,7 @@ declare namespace GLib {
      * user-visible strings.
      * @param domain the domain to use
      */
-    set_translation_domain(domain: string): void;
+    set_translation_domain(domain: string | null): void;
     /**
      * Decrements the reference count of `group` by one.
      * If the reference count drops to 0, the `group` will be freed.
@@ -19364,10 +19590,10 @@ declare namespace GLib {
      * @returns a newly created option group. It should be added   to a #GOptionContext or freed with g_option_group_unref().
      */
     constructor(
-      name: string,
-      description: string,
-      help_description: string,
-      user_data: object | null,
+      name: string | null,
+      description: string | null,
+      help_description: string | null,
+      user_data: any | null,
       destroy: DestroyNotify | null
     );
     /**
@@ -19381,10 +19607,10 @@ declare namespace GLib {
      * @returns a newly created option group. It should be added   to a #GOptionContext or freed with g_option_group_unref().
      */
     static new(
-      name: string,
-      description: string,
-      help_description: string,
-      user_data: object | null,
+      name: string | null,
+      description: string | null,
+      help_description: string | null,
+      user_data: any | null,
       destroy: DestroyNotify | null
     ): OptionGroup;
   }
@@ -19396,14 +19622,14 @@ declare namespace GLib {
      * Copies `pspec` in a new #GPatternSpec.
      * @returns a copy of @pspec.
      */
-    copy(): PatternSpec;
+    copy(): PatternSpec | null;
     /**
      * Compares two compiled pattern specs and returns whether they will
      * match the same set of strings.
      * @param pspec2 another #GPatternSpec
      * @returns Whether the compiled patterns are equal
      */
-    equal(pspec2: PatternSpec): boolean;
+    equal(pspec2: PatternSpec | null): boolean;
     /**
      * Frees the memory allocated for the #GPatternSpec.
      */
@@ -19433,7 +19659,7 @@ declare namespace GLib {
      */
     match(
       string_length: number,
-      string: string,
+      string: string | null,
       string_reversed: string | null
     ): boolean;
     /**
@@ -19443,7 +19669,7 @@ declare namespace GLib {
      * @param string the UTF-8 encoded string to match
      * @returns %TRUE if @string matches @pspec
      */
-    match_string(string: string): boolean;
+    match_string(string: string | null): boolean;
   }
 
   /**
@@ -19464,14 +19690,14 @@ declare namespace GLib {
      * @param pattern a zero-terminated UTF-8 encoded string
      * @returns a newly-allocated #GPatternSpec
      */
-    constructor(pattern: string);
+    constructor(pattern: string | null);
     /**
      * Compiles a pattern to a #GPatternSpec.
      * @constructor
      * @param pattern a zero-terminated UTF-8 encoded string
      * @returns a newly-allocated #GPatternSpec
      */
-    static new(pattern: string): PatternSpec;
+    static new(pattern: string | null): PatternSpec;
   }
 
   interface PollFD {
@@ -19520,7 +19746,7 @@ declare namespace GLib {
      * created, for example).
      * @returns the thread-local value
      */
-    get(): object | null;
+    get(): any | null;
     /**
      * Sets the thread local variable `key` to have the value `value` in the
      * current thread.
@@ -19530,7 +19756,7 @@ declare namespace GLib {
      * `key` is run on it.
      * @param value the new value
      */
-    replace(value: object | null): void;
+    replace(value: any | null): void;
     /**
      * Sets the thread local variable `key` to have the value `value` in the
      * current thread.
@@ -19539,7 +19765,7 @@ declare namespace GLib {
      * the #GDestroyNotify for `key` is not called on the old value.
      * @param value the new value
      */
-    set(value: object | null): void;
+    set(value: any | null): void;
   }
 
   /**
@@ -19576,7 +19802,7 @@ declare namespace GLib {
      *     array grows
      * @field
      */
-    pdata: object;
+    pdata: any | null;
     /**
      * number of pointers in the array
      * @field
@@ -19601,12 +19827,12 @@ declare namespace GLib {
      * a pointer to the first element of the queue
      * @field
      */
-    head: object[];
+    head: any[] | null;
     /**
      * a pointer to the last element of the queue
      * @field
      */
-    tail: object[];
+    tail: any[] | null;
     /**
      * the number of elements in the queue
      * @field
@@ -19654,7 +19880,7 @@ declare namespace GLib {
      * @param data the data to find
      * @returns the position of the first element in @queue which     contains @data, or -1 if no element in @queue contains @data
      */
-    index(data: object | null): number;
+    index(data: any | null): number;
     /**
      * A statically-allocated #GQueue must be initialized with this function
      * before it can be used. Alternatively you can initialize it with
@@ -19671,62 +19897,62 @@ declare namespace GLib {
      * Returns the first element of the queue.
      * @returns the data of the first element in the queue, or %NULL     if the queue is empty
      */
-    peek_head(): object | null;
+    peek_head(): any | null;
     /**
      * Returns the `n'`th element of `queue`.
      * @param n the position of the element
      * @returns the data for the @n'th element of @queue,     or %NULL if @n is off the end of @queue
      */
-    peek_nth(n: number): object | null;
+    peek_nth(n: number): any | null;
     /**
      * Returns the last element of the queue.
      * @returns the data of the last element in the queue, or %NULL     if the queue is empty
      */
-    peek_tail(): object | null;
+    peek_tail(): any | null;
     /**
      * Removes the first element of the queue and returns its data.
      * @returns the data of the first element in the queue, or %NULL     if the queue is empty
      */
-    pop_head(): object | null;
+    pop_head(): any | null;
     /**
      * Removes the `n'`th element of `queue` and returns its data.
      * @param n the position of the element
      * @returns the element's data, or %NULL if @n is off the end of @queue
      */
-    pop_nth(n: number): object | null;
+    pop_nth(n: number): any | null;
     /**
      * Removes the last element of the queue and returns its data.
      * @returns the data of the last element in the queue, or %NULL     if the queue is empty
      */
-    pop_tail(): object | null;
+    pop_tail(): any | null;
     /**
      * Adds a new element at the head of the queue.
      * @param data the data for the new element.
      */
-    push_head(data: object | null): void;
+    push_head(data: any | null): void;
     /**
      * Inserts a new element into `queue` at the given position.
      * @param data the data for the new element
      * @param n the position to insert the new element. If `n` is negative or     larger than the number of elements in the `queue,` the element is     added to the end of the queue.
      */
-    push_nth(data: object | null, n: number): void;
+    push_nth(data: any | null, n: number): void;
     /**
      * Adds a new element at the tail of the queue.
      * @param data the data for the new element
      */
-    push_tail(data: object | null): void;
+    push_tail(data: any | null): void;
     /**
      * Removes the first element in `queue` that contains `data`.
      * @param data the data to remove
      * @returns %TRUE if @data was found and removed from @queue
      */
-    remove(data: object | null): boolean;
+    remove(data: any | null): boolean;
     /**
      * Remove all elements whose data equals `data` from `queue`.
      * @param data the data to remove
      * @returns the number of elements removed from @queue
      */
-    remove_all(data: object | null): number;
+    remove_all(data: any | null): number;
     /**
      * Reverses the order of the items in `queue`.
      */
@@ -19967,7 +20193,7 @@ declare namespace GLib {
      * @param seed array to initialize with
      * @param seed_length length of array
      */
-    set_seed_array(seed: number, seed_length: number): void;
+    set_seed_array(seed: number | null, seed_length: number): void;
   }
 
   /**
@@ -20120,13 +20346,13 @@ declare namespace GLib {
      * the string passed to g_regex_new().
      * @returns the pattern of @regex
      */
-    get_pattern(): string;
+    get_pattern(): string | null;
     /**
      * Retrieves the number of the subexpression named `name`.
      * @param name name of the subexpression
      * @returns The number of the subexpression or -1 if @name   does not exists
      */
-    get_string_number(name: string): number;
+    get_string_number(name: string | null): number;
     /**
      * Scans for a match in `string` for the pattern in `regex`.
      * The `match_options` are combined with the match options specified
@@ -20175,9 +20401,9 @@ declare namespace GLib {
      * @returns %TRUE is the string matched, %FALSE otherwise
      */
     match(
-      string: string,
+      string: string | null,
       match_options: RegexMatchFlags
-    ): [/* returnType */ boolean, /* match_info */ MatchInfo];
+    ): [/* returnType */ boolean, /* match_info */ MatchInfo | null];
     /**
      * Using the standard algorithm for regular expression matching only
      * the longest match in the string is retrieved. This function uses
@@ -20198,9 +20424,9 @@ declare namespace GLib {
      * @returns %TRUE is the string matched, %FALSE otherwise
      */
     match_all(
-      string: string,
+      string: string | null,
       match_options: RegexMatchFlags
-    ): [/* returnType */ boolean, /* match_info */ MatchInfo];
+    ): [/* returnType */ boolean, /* match_info */ MatchInfo | null];
     /**
      * Using the standard algorithm for regular expression matching only
      * the longest match in the `string` is retrieved, it is not possible
@@ -20249,7 +20475,7 @@ declare namespace GLib {
       string: string[],
       start_position: number,
       match_options: RegexMatchFlags
-    ): [/* returnType */ boolean, /* match_info */ MatchInfo];
+    ): [/* returnType */ boolean, /* match_info */ MatchInfo | null];
     /**
      * Scans for a match in `string` for the pattern in `regex`.
      * The `match_options` are combined with the match options specified
@@ -20313,12 +20539,12 @@ declare namespace GLib {
       string: string[],
       start_position: number,
       match_options: RegexMatchFlags
-    ): [/* returnType */ boolean, /* match_info */ MatchInfo];
+    ): [/* returnType */ boolean, /* match_info */ MatchInfo | null];
     /**
      * Increases reference count of `regex` by 1.
      * @returns @regex
      */
-    ref(): Regex;
+    ref(): Regex | null;
     /**
      * Replaces all occurrences of the pattern in `regex` with the
      * replacement text. Backreferences of the form '\number' or
@@ -20355,9 +20581,9 @@ declare namespace GLib {
     replace(
       string: string[],
       start_position: number,
-      replacement: string,
+      replacement: string | null,
       match_options: RegexMatchFlags
-    ): string;
+    ): string | null;
     /**
      * Replaces all occurrences of the pattern in `regex` with the
      * replacement text. `replacement` is replaced literally, to
@@ -20376,9 +20602,9 @@ declare namespace GLib {
     replace_literal(
       string: string[],
       start_position: number,
-      replacement: string,
+      replacement: string | null,
       match_options: RegexMatchFlags
-    ): string;
+    ): string | null;
     /**
      * Breaks the string on the pattern, and returns an array of the tokens.
      * If the pattern contains capturing parentheses, then the text for each
@@ -20401,7 +20627,7 @@ declare namespace GLib {
      * @param match_options match time option flags
      * @returns a %NULL-terminated gchar ** array. Free it using g_strfreev()
      */
-    split(string: string, match_options: RegexMatchFlags): string[];
+    split(string: string | null, match_options: RegexMatchFlags): string[];
     /**
      * Breaks the string on the pattern, and returns an array of the tokens.
      * If the pattern contains capturing parentheses, then the text for each
@@ -20528,7 +20754,7 @@ declare namespace GLib {
      * @returns a #GRegex structure or %NULL if an error occurred. Call   g_regex_unref() when you are done with it
      */
     constructor(
-      pattern: string,
+      pattern: string | null,
       compile_options: RegexCompileFlags,
       match_options: RegexMatchFlags
     );
@@ -20542,7 +20768,7 @@ declare namespace GLib {
      * @returns a #GRegex structure or %NULL if an error occurred. Call   g_regex_unref() when you are done with it
      */
     static new(
-      pattern: string,
+      pattern: string | null,
       compile_options: RegexCompileFlags,
       match_options: RegexMatchFlags
     ): Regex;
@@ -20560,8 +20786,8 @@ declare namespace GLib {
      * @returns whether @replacement is a valid replacement string
      */
     static check_replacement(
-      replacement: string
-    ): [/* returnType */ boolean, /* has_references */ boolean];
+      replacement: string | null
+    ): [/* returnType */ boolean, /* has_references */ boolean | null];
     static error_quark(): Quark;
     /**
      * Escapes the nul characters in `string` to "\x00".  It can be used
@@ -20573,7 +20799,7 @@ declare namespace GLib {
      * @param length the length of `string`
      * @returns a newly-allocated escaped string
      */
-    static escape_nul(string: string, length: number): string;
+    static escape_nul(string: string | null, length: number): string | null;
     /**
      * Escapes the special characters used for regular expressions
      * in `string,` for instance "a.b*c" becomes "a\.b\*c". This
@@ -20585,7 +20811,7 @@ declare namespace GLib {
      * @param string the string to escape
      * @returns a newly-allocated escaped string
      */
-    static escape_string(string: string[]): string;
+    static escape_string(string: string[]): string | null;
     /**
      * Scans for a match in `string` for `pattern`.
      *
@@ -20604,8 +20830,8 @@ declare namespace GLib {
      * @returns %TRUE if the string matched, %FALSE otherwise
      */
     static match_simple(
-      pattern: string,
-      string: string,
+      pattern: string | null,
+      string: string | null,
       compile_options: RegexCompileFlags,
       match_options: RegexMatchFlags
     ): boolean;
@@ -20644,8 +20870,8 @@ declare namespace GLib {
      * @returns a %NULL-terminated array of strings. Free it using g_strfreev()
      */
     static split_simple(
-      pattern: string,
-      string: string,
+      pattern: string | null,
+      string: string | null,
       compile_options: RegexCompileFlags,
       match_options: RegexMatchFlags
     ): string[];
@@ -20660,12 +20886,12 @@ declare namespace GLib {
      *        [Type Conversion Macros][glib-Type-Conversion-Macros]
      * @field
      */
-    data: object;
+    data: any;
     /**
      * contains the link to the next element in the list.
      * @field
      */
-    next: object[];
+    next: any[] | null;
   }
 
   /**
@@ -20686,7 +20912,7 @@ declare namespace GLib {
      * unused
      * @field
      */
-    user_data: object;
+    user_data: any;
     /**
      * unused
      * @field
@@ -20701,17 +20927,17 @@ declare namespace GLib {
      * name of input stream, featured by the default message handler
      * @field
      */
-    input_name: string;
+    input_name: string | null;
     /**
      * quarked data
      * @field
      */
-    qdata: Data;
+    qdata: Data | null;
     /**
      * link into the scanner configuration
      * @field
      */
-    config: ScannerConfig;
+    config: ScannerConfig | null;
     /**
      * token parsed by the last g_scanner_get_next_token()
      * @field
@@ -20808,7 +21034,7 @@ declare namespace GLib {
      * @param text the text buffer to scan
      * @param text_len the length of the text buffer
      */
-    input_text(text: string, text_len: number): void;
+    input_text(text: string | null, text_len: number): void;
     /**
      * Looks up a symbol in the current scope and return its value.
      * If the symbol is not bound in the current scope, %NULL is
@@ -20816,7 +21042,7 @@ declare namespace GLib {
      * @param symbol the symbol to look up
      * @returns the value of @symbol in the current scope, or %NULL     if @symbol is not bound in the current scope
      */
-    lookup_symbol(symbol: string): object | null;
+    lookup_symbol(symbol: string | null): any | null;
     /**
      * Parses the next token, without removing it from the input stream.
      * The token data is placed in the `next_token,` `next_value,` `next_line,`
@@ -20840,8 +21066,8 @@ declare namespace GLib {
      */
     scope_add_symbol(
       scope_id: number,
-      symbol: string,
-      value: object | null
+      symbol: string | null,
+      value: any | null
     ): void;
     /**
      * Looks up a symbol in a scope and return its value. If the
@@ -20850,13 +21076,13 @@ declare namespace GLib {
      * @param symbol the symbol to look up
      * @returns the value of @symbol in the given scope, or %NULL     if @symbol is not bound in the given scope.
      */
-    scope_lookup_symbol(scope_id: number, symbol: string): object | null;
+    scope_lookup_symbol(scope_id: number, symbol: string | null): any | null;
     /**
      * Removes a symbol from a scope.
      * @param scope_id the scope id
      * @param symbol the symbol to remove
      */
-    scope_remove_symbol(scope_id: number, symbol: string): void;
+    scope_remove_symbol(scope_id: number, symbol: string | null): void;
     /**
      * Sets the current scope.
      * @param scope_id the new scope id
@@ -20887,10 +21113,10 @@ declare namespace GLib {
      */
     unexp_token(
       expected_token: TokenType,
-      identifier_spec: string,
-      symbol_spec: string,
-      symbol_name: string,
-      message: string,
+      identifier_spec: string | null,
+      symbol_spec: string | null,
+      symbol_name: string | null,
+      message: string | null,
       is_error: number
     ): void;
   }
@@ -20927,13 +21153,13 @@ declare namespace GLib {
      *     tab, carriage-return and line-feed).
      * @field
      */
-    cset_skip_characters: string;
+    cset_skip_characters: string | null;
     /**
      * specifies the characters which can start
      *     identifiers (the default is %G_CSET_a_2_z, "_", and %G_CSET_A_2_Z).
      * @field
      */
-    cset_identifier_first: string;
+    cset_identifier_first: string | null;
     /**
      * specifies the characters which can be used
      *     in identifiers, after the first character (the default is
@@ -20941,7 +21167,7 @@ declare namespace GLib {
      *     %G_CSET_LATINC).
      * @field
      */
-    cset_identifier_nth: string;
+    cset_identifier_nth: string | null;
     /**
      * specifies the characters at the start and
      *     end of single-line comments. The default is "#\n" which means
@@ -20949,7 +21175,7 @@ declare namespace GLib {
      *     a '\n' (end of line).
      * @field
      */
-    cpair_comment_single: string;
+    cpair_comment_single: string | null;
     /**
      * specifies if symbols are case sensitive (the
      *     default is %FALSE).
@@ -21103,7 +21329,7 @@ declare namespace GLib {
      * @param data the data for the new item
      * @returns an iterator pointing to the new item
      */
-    append(data: object | null): SequenceIter;
+    append(data: any | null): SequenceIter | null;
     /**
      * Frees the memory allocated for `seq`. If `seq` has a data destroy
      * function associated with it, that function is called on all items
@@ -21114,19 +21340,19 @@ declare namespace GLib {
      * Returns the begin iterator for `seq`.
      * @returns the begin iterator for @seq.
      */
-    get_begin_iter(): SequenceIter;
+    get_begin_iter(): SequenceIter | null;
     /**
      * Returns the end iterator for `seg`
      * @returns the end iterator for @seq
      */
-    get_end_iter(): SequenceIter;
+    get_end_iter(): SequenceIter | null;
     /**
      * Returns the iterator at position `pos`. If `pos` is negative or larger
      * than the number of items in `seq,` the end iterator is returned.
      * @param pos a position in `seq,` or -1 for the end
      * @returns The #GSequenceIter at position @pos
      */
-    get_iter_at_pos(pos: number): SequenceIter;
+    get_iter_at_pos(pos: number): SequenceIter | null;
     /**
      * Returns the positive length (>= 0) of `seq`. Note that this method is
      * O(h) where `h' is the height of the tree. It is thus more efficient
@@ -21148,7 +21374,7 @@ declare namespace GLib {
      * @param data the data for the new item
      * @returns an iterator pointing to the new item
      */
-    prepend(data: object | null): SequenceIter;
+    prepend(data: any | null): SequenceIter | null;
   }
 
   /**
@@ -21168,14 +21394,17 @@ declare namespace GLib {
      * @param iter a #GSequenceIter
      * @returns the data that @iter points to
      */
-    static get(iter: SequenceIter): object | null;
+    static get(iter: SequenceIter | null): any | null;
     /**
      * Inserts a new item just before the item pointed to by `iter`.
      * @param iter a #GSequenceIter
      * @param data the data for the new item
      * @returns an iterator pointing to the new item
      */
-    static insert_before(iter: SequenceIter, data: object | null): SequenceIter;
+    static insert_before(
+      iter: SequenceIter | null,
+      data: any | null
+    ): SequenceIter | null;
     /**
      * Moves the item pointed to by `src` to the position indicated by `dest`.
      * After calling this function `dest` will point to the position immediately
@@ -21184,7 +21413,7 @@ declare namespace GLib {
      * @param src a #GSequenceIter pointing to the item to move
      * @param dest a #GSequenceIter pointing to the position to which     the item is moved
      */
-    static move(src: SequenceIter, dest: SequenceIter): void;
+    static move(src: SequenceIter | null, dest: SequenceIter | null): void;
     /**
      * Inserts the (`begin,` `end)` range at the destination pointed to by `dest`.
      * The `begin` and `end` iters must point into the same sequence. It is
@@ -21199,9 +21428,9 @@ declare namespace GLib {
      * @param end a #GSequenceIter
      */
     static move_range(
-      dest: SequenceIter,
-      begin: SequenceIter,
-      end: SequenceIter
+      dest: SequenceIter | null,
+      begin: SequenceIter | null,
+      end: SequenceIter | null
     ): void;
     /**
      * Finds an iterator somewhere in the range (`begin,` `end)`. This
@@ -21215,9 +21444,9 @@ declare namespace GLib {
      * @returns a #GSequenceIter pointing somewhere in the    (@begin, @end) range
      */
     static range_get_midpoint(
-      begin: SequenceIter,
-      end: SequenceIter
-    ): SequenceIter;
+      begin: SequenceIter | null,
+      end: SequenceIter | null
+    ): SequenceIter | null;
     /**
      * Removes the item pointed to by `iter`. It is an error to pass the
      * end iterator to this function.
@@ -21226,7 +21455,7 @@ declare namespace GLib {
      * function is called on the data for the removed item.
      * @param iter a #GSequenceIter
      */
-    static remove(iter: SequenceIter): void;
+    static remove(iter: SequenceIter | null): void;
     /**
      * Removes all items in the (`begin,` `end)` range.
      *
@@ -21235,7 +21464,10 @@ declare namespace GLib {
      * @param begin a #GSequenceIter
      * @param end a #GSequenceIter
      */
-    static remove_range(begin: SequenceIter, end: SequenceIter): void;
+    static remove_range(
+      begin: SequenceIter | null,
+      end: SequenceIter | null
+    ): void;
     /**
      * Changes the data for the item pointed to by `iter` to be `data`. If
      * the sequence has a data destroy function associated with it, that
@@ -21243,14 +21475,14 @@ declare namespace GLib {
      * @param iter a #GSequenceIter
      * @param data new data for the item
      */
-    static set(iter: SequenceIter, data: object | null): void;
+    static set(iter: SequenceIter | null, data: any | null): void;
     /**
      * Swaps the items pointed to by `a` and `b`. It is allowed for `a` and `b`
      * to point into difference sequences.
      * @param a a #GSequenceIter
      * @param b a #GSequenceIter
      */
-    static swap(a: SequenceIter, b: SequenceIter): void;
+    static swap(a: SequenceIter | null, b: SequenceIter | null): void;
   }
 
   interface SequenceIter {
@@ -21264,7 +21496,7 @@ declare namespace GLib {
      * @param b a #GSequenceIter
      * @returns a negative number if @a comes before @b, 0 if they are     equal, and a positive number if @a comes after @b
      */
-    compare(b: SequenceIter): number;
+    compare(b: SequenceIter | null): number;
     /**
      * Returns the position of `iter`
      * @returns the position of @iter
@@ -21274,7 +21506,7 @@ declare namespace GLib {
      * Returns the #GSequence that `iter` points into.
      * @returns the #GSequence that @iter points into
      */
-    get_sequence(): Sequence;
+    get_sequence(): Sequence | null;
     /**
      * Returns whether `iter` is the begin iterator
      * @returns whether @iter is the begin iterator
@@ -21293,19 +21525,19 @@ declare namespace GLib {
      * @param delta A positive or negative number indicating how many positions away    from `iter` the returned #GSequenceIter will be
      * @returns a #GSequenceIter which is @delta positions away from @iter
      */
-    move(delta: number): SequenceIter;
+    move(delta: number): SequenceIter | null;
     /**
      * Returns an iterator pointing to the next position after `iter`.
      * If `iter` is the end iterator, the end iterator is returned.
      * @returns a #GSequenceIter pointing to the next position after @iter
      */
-    next(): SequenceIter;
+    next(): SequenceIter | null;
     /**
      * Returns an iterator pointing to the previous position before `iter`.
      * If `iter` is the begin iterator, the begin iterator is returned.
      * @returns a #GSequenceIter pointing to the previous position     before @iter
      */
-    prev(): SequenceIter;
+    prev(): SequenceIter | null;
   }
 
   /**
@@ -21342,7 +21574,7 @@ declare namespace GLib {
      * Do not call this API on a #GSource that you did not create.
      * @param child_source a second #GSource that `source` should "poll"
      */
-    add_child_source(child_source: Source): void;
+    add_child_source(child_source: Source | null): void;
     /**
      * Adds a file descriptor to the set of file descriptors polled for
      * this source. This is usually combined with g_source_new() to add an
@@ -21358,7 +21590,7 @@ declare namespace GLib {
      * g_source_add_unix_fd() instead of this API.
      * @param fd a #GPollFD structure holding information about a file      descriptor to watch.
      */
-    add_poll(fd: PollFD): void;
+    add_poll(fd: PollFD | null): void;
     /**
      * Monitors `fd` for the IO events in `events`.
      *
@@ -21377,7 +21609,7 @@ declare namespace GLib {
      * @param events an event mask
      * @returns an opaque tag
      */
-    add_unix_fd(fd: number, events: IOCondition): object;
+    add_unix_fd(fd: number, events: IOCondition): any;
     /**
      * Adds a #GSource to a `context` so that it will be executed within
      * that context. Remove it by calling g_source_destroy().
@@ -21428,7 +21660,7 @@ declare namespace GLib {
      * g_get_current_time().
      * @param timeval #GTimeVal structure in which to store current time.
      */
-    get_current_time(timeval: TimeVal): void;
+    get_current_time(timeval: TimeVal | null): void;
     /**
      * Returns the numeric ID for a particular source. The ID of a source
      * is a positive integer which is unique within a particular main loop
@@ -21574,7 +21806,7 @@ declare namespace GLib {
      * @param tag the tag from g_source_add_unix_fd()
      * @param new_events the new event mask to watch
      */
-    modify_unix_fd(tag: object, new_events: IOCondition): void;
+    modify_unix_fd(tag: any, new_events: IOCondition): void;
     /**
      * Queries the events reported for the fd corresponding to `tag` on
      * `source` during the last poll.
@@ -21589,12 +21821,12 @@ declare namespace GLib {
      * @param tag the tag from g_source_add_unix_fd()
      * @returns the conditions reported on the fd
      */
-    query_unix_fd(tag: object): IOCondition;
+    query_unix_fd(tag: any): IOCondition;
     /**
      * Increases the reference count on a source by one.
      * @returns @source
      */
-    ref(): Source;
+    ref(): Source | null;
     /**
      * Detaches `child_source` from `source` and destroys it.
      *
@@ -21602,7 +21834,7 @@ declare namespace GLib {
      * Do not call this API on a #GSource that you did not create.
      * @param child_source a #GSource previously passed to     g_source_add_child_source().
      */
-    remove_child_source(child_source: Source): void;
+    remove_child_source(child_source: Source | null): void;
     /**
      * Removes a file descriptor from the set of file descriptors polled for
      * this source.
@@ -21611,7 +21843,7 @@ declare namespace GLib {
      * Do not call this API on a #GSource that you did not create.
      * @param fd a #GPollFD structure previously passed to g_source_add_poll().
      */
-    remove_poll(fd: PollFD): void;
+    remove_poll(fd: PollFD | null): void;
     /**
      * Reverses the effect of a previous call to g_source_add_unix_fd().
      *
@@ -21625,7 +21857,7 @@ declare namespace GLib {
      * As the name suggests, this function is not available on Windows.
      * @param tag the tag from g_source_add_unix_fd()
      */
-    remove_unix_fd(tag: object): void;
+    remove_unix_fd(tag: any): void;
     /**
      * Sets the callback function for a source. The callback for a source is
      * called from the source's dispatch function.
@@ -21665,8 +21897,8 @@ declare namespace GLib {
      * @param callback_funcs functions for reference counting `callback_data`                  and getting the callback and data
      */
     set_callback_indirect(
-      callback_data: object | null,
-      callback_funcs: SourceCallbackFuncs
+      callback_data: any | null,
+      callback_funcs: SourceCallbackFuncs | null
     ): void;
     /**
      * Sets whether a source can be called recursively. If `can_recurse` is
@@ -21681,7 +21913,7 @@ declare namespace GLib {
      * default implementations) of an unattached source.
      * @param funcs the new #GSourceFuncs
      */
-    set_funcs(funcs: SourceFuncs): void;
+    set_funcs(funcs: SourceFuncs | null): void;
     /**
      * Sets a name for the source, used in debugging and profiling.
      * The name defaults to #NULL.
@@ -21703,7 +21935,7 @@ declare namespace GLib {
      * Also see g_source_set_static_name().
      * @param name debug name for the source
      */
-    set_name(name: string): void;
+    set_name(name: string | null): void;
     /**
      * Sets the priority of a source. While the main loop is being run, a
      * source will be dispatched if it is ready to be dispatched and no
@@ -21748,7 +21980,7 @@ declare namespace GLib {
      * string literals.
      * @param name debug name for the source
      */
-    set_static_name(name: string): void;
+    set_static_name(name: string | null): void;
     /**
      * Decreases the reference count of a source by one. If the
      * resulting reference count is zero the source and associated
@@ -21783,7 +22015,7 @@ declare namespace GLib {
      * @param struct_size size of the #GSource structure to create.
      * @returns the newly-created #GSource.
      */
-    constructor(source_funcs: SourceFuncs, struct_size: number);
+    constructor(source_funcs: SourceFuncs | null, struct_size: number);
     /**
      * Creates a new #GSource structure. The size is specified to
      * allow creating structures derived from #GSource that contain
@@ -21798,7 +22030,7 @@ declare namespace GLib {
      * @param struct_size size of the #GSource structure to create.
      * @returns the newly-created #GSource.
      */
-    static new(source_funcs: SourceFuncs, struct_size: number): Source;
+    static new(source_funcs: SourceFuncs | null, struct_size: number): Source;
     /**
      * Removes the source with the given ID from the default main context. You must
      * use g_source_destroy() for sources added to a non-default main context.
@@ -21832,8 +22064,8 @@ declare namespace GLib {
      * @returns %TRUE if a source was found and removed.
      */
     static remove_by_funcs_user_data(
-      funcs: SourceFuncs,
-      user_data: object | null
+      funcs: SourceFuncs | null,
+      user_data: any | null
     ): boolean;
     /**
      * Removes a source from the default main loop context given the user
@@ -21842,7 +22074,7 @@ declare namespace GLib {
      * @param user_data the user_data for the callback.
      * @returns %TRUE if a source was found and removed.
      */
-    static remove_by_user_data(user_data: object | null): boolean;
+    static remove_by_user_data(user_data: any | null): boolean;
     /**
      * Sets the name of a source using its ID.
      *
@@ -21863,14 +22095,14 @@ declare namespace GLib {
      * @param tag a #GSource ID
      * @param name debug name for the source
      */
-    static set_name_by_id(tag: number, name: string): void;
+    static set_name_by_id(tag: number, name: string | null): void;
   }
 
   interface SourceCallbackFuncs {
     // Own fields of GLib-2.0.GLib.SourceCallbackFuncs
 
-    ref: (cb_data: object) => void;
-    unref: (cb_data: object) => void;
+    ref: (cb_data: any) => void;
+    unref: (cb_data: any) => void;
   }
 
   /**
@@ -21887,9 +22119,9 @@ declare namespace GLib {
   interface SourceFuncs {
     // Own fields of GLib-2.0.GLib.SourceFuncs
 
-    prepare: (source: Source, timeout_: number) => boolean;
-    check: (source: Source) => boolean;
-    finalize: (source: Source) => void;
+    prepare: (source: Source | null, timeout_: number | null) => boolean;
+    check: (source: Source | null) => boolean;
+    finalize: (source: Source | null) => void;
   }
 
   /**
@@ -21953,7 +22185,7 @@ declare namespace GLib {
      *   can be used as an ordinary C string.
      * @field
      */
-    str: string;
+    str: string | null;
     /**
      * contains the length of the string, not including the
      *   terminating nul byte.
@@ -21975,14 +22207,14 @@ declare namespace GLib {
      * @param val the string to append onto the end of `string`
      * @returns @string
      */
-    append(val: string): string;
+    append(val: string | null): String | null;
     /**
      * Adds a byte onto the end of a #GString, expanding
      * it if necessary.
      * @param c the byte to append onto the end of `string`
      * @returns @string
      */
-    append_c(c: number): string;
+    append_c(c: number): String | null;
     /**
      * Appends `len` bytes of `val` to `string`.
      *
@@ -21997,14 +22229,14 @@ declare namespace GLib {
      * @param len number of bytes of `val` to use, or -1 for all of `val`
      * @returns @string
      */
-    append_len(val: string, len: number): string;
+    append_len(val: string | null, len: number): String | null;
     /**
      * Converts a Unicode character into UTF-8, and appends it
      * to the string.
      * @param wc a Unicode character
      * @returns @string
      */
-    append_unichar(wc: string): string;
+    append_unichar(wc: string): String | null;
     /**
      * Appends `unescaped` to `string,` escaping any characters that
      * are reserved in URIs using URI-style escape sequences.
@@ -22014,20 +22246,20 @@ declare namespace GLib {
      * @returns @string
      */
     append_uri_escaped(
-      unescaped: string,
-      reserved_chars_allowed: string,
+      unescaped: string | null,
+      reserved_chars_allowed: string | null,
       allow_utf8: boolean
-    ): string;
+    ): String | null;
     /**
      * Converts all uppercase ASCII letters to lowercase ASCII letters.
      * @returns passed-in @string pointer, with all the     uppercase characters converted to lowercase in place,     with semantics that exactly match g_ascii_tolower().
      */
-    ascii_down(): string;
+    ascii_down(): String | null;
     /**
      * Converts all lowercase ASCII letters to uppercase ASCII letters.
      * @returns passed-in @string pointer, with all the     lowercase characters converted to uppercase in place,     with semantics that exactly match g_ascii_toupper().
      */
-    ascii_up(): string;
+    ascii_up(): String | null;
     /**
      * Copies the bytes from a string into a #GString,
      * destroying any previous contents. It is rather like
@@ -22036,19 +22268,19 @@ declare namespace GLib {
      * @param rval the string to copy into `string`
      * @returns @string
      */
-    assign(rval: string): string;
+    assign(rval: string | null): String | null;
     /**
      * Converts a #GString to lowercase.
      * @returns the #GString
      */
-    down(): string;
+    down(): String | null;
     /**
      * Compares two strings for equality, returning %TRUE if they are equal.
      * For use with #GHashTable.
      * @param v2 another #GString
      * @returns %TRUE if the strings are the same length and contain the     same bytes
      */
-    equal(v2: string): boolean;
+    equal(v2: String | null): boolean;
     /**
      * Removes `len` bytes from a #GString, starting at position `pos`.
      * The rest of the #GString is shifted down to fill the gap.
@@ -22056,7 +22288,7 @@ declare namespace GLib {
      * @param len the number of bytes to remove, or -1 to remove all       following bytes
      * @returns @string
      */
-    erase(pos: number, len: number): string;
+    erase(pos: number, len: number): String | null;
     /**
      * Frees the memory allocated for the #GString.
      * If `free_segment` is %TRUE it also frees the character data.  If
@@ -22077,7 +22309,7 @@ declare namespace GLib {
      * equal to the "len" member.
      * @returns A newly allocated #GBytes containing contents of @string; @string itself is freed
      */
-    free_to_bytes(): Bytes;
+    free_to_bytes(): Bytes | null;
     /**
      * Creates a hash code for `str;` for use with #GHashTable.
      * @returns hash code for @str
@@ -22090,14 +22322,14 @@ declare namespace GLib {
      * @param val the string to insert
      * @returns @string
      */
-    insert(pos: number, val: string): string;
+    insert(pos: number, val: string | null): String | null;
     /**
      * Inserts a byte into a #GString, expanding it if necessary.
      * @param pos the position to insert the byte
      * @param c the byte to insert
      * @returns @string
      */
-    insert_c(pos: number, c: number): string;
+    insert_c(pos: number, c: number): String | null;
     /**
      * Inserts `len` bytes of `val` into `string` at `pos`.
      *
@@ -22114,7 +22346,7 @@ declare namespace GLib {
      * @param len number of bytes of `val` to insert, or -1 for all of `val`
      * @returns @string
      */
-    insert_len(pos: number, val: string, len: number): string;
+    insert_len(pos: number, val: string | null, len: number): String | null;
     /**
      * Converts a Unicode character into UTF-8, and insert it
      * into the string at the given position.
@@ -22122,14 +22354,14 @@ declare namespace GLib {
      * @param wc a Unicode character
      * @returns @string
      */
-    insert_unichar(pos: number, wc: string): string;
+    insert_unichar(pos: number, wc: string): String | null;
     /**
      * Overwrites part of a string, lengthening it if necessary.
      * @param pos the position at which to start overwriting
      * @param val the string that will overwrite the `string` starting at `pos`
      * @returns @string
      */
-    overwrite(pos: number, val: string): string;
+    overwrite(pos: number, val: string | null): String | null;
     /**
      * Overwrites part of a string, lengthening it if necessary.
      * This function will work with embedded nuls.
@@ -22138,21 +22370,21 @@ declare namespace GLib {
      * @param len the number of bytes to write from `val`
      * @returns @string
      */
-    overwrite_len(pos: number, val: string, len: number): string;
+    overwrite_len(pos: number, val: string | null, len: number): String | null;
     /**
      * Adds a string on to the start of a #GString,
      * expanding it if necessary.
      * @param val the string to prepend on the start of `string`
      * @returns @string
      */
-    prepend(val: string): string;
+    prepend(val: string | null): String | null;
     /**
      * Adds a byte onto the start of a #GString,
      * expanding it if necessary.
      * @param c the byte to prepend on the start of the #GString
      * @returns @string
      */
-    prepend_c(c: number): string;
+    prepend_c(c: number): String | null;
     /**
      * Prepends `len` bytes of `val` to `string`.
      *
@@ -22167,14 +22399,14 @@ declare namespace GLib {
      * @param len number of bytes in `val` to prepend, or -1 for all of `val`
      * @returns @string
      */
-    prepend_len(val: string, len: number): string;
+    prepend_len(val: string | null, len: number): String | null;
     /**
      * Converts a Unicode character into UTF-8, and prepends it
      * to the string.
      * @param wc a Unicode character
      * @returns @string
      */
-    prepend_unichar(wc: string): string;
+    prepend_unichar(wc: string): String | null;
     /**
      * Replaces the string `find` with the string `replace` in a #GString up to
      * `limit` times. If the number of instances of `find` in the #GString is
@@ -22190,7 +22422,7 @@ declare namespace GLib {
      * @param limit the maximum instances of `find` to replace with `replace,` or `0` for no limit
      * @returns the number of find and replace operations performed.
      */
-    replace(find: string, replace: string, limit: number): number;
+    replace(find: string | null, replace: string | null, limit: number): number;
     /**
      * Sets the length of a #GString. If the length is less than
      * the current length, the string will be truncated. If the
@@ -22200,18 +22432,18 @@ declare namespace GLib {
      * @param len the new length
      * @returns @string
      */
-    set_size(len: number): string;
+    set_size(len: number): String | null;
     /**
      * Cuts off the end of the GString, leaving the first `len` bytes.
      * @param len the new size of `string`
      * @returns @string
      */
-    truncate(len: number): string;
+    truncate(len: number): String | null;
     /**
      * Converts a #GString to uppercase.
      * @returns @string
      */
-    up(): string;
+    up(): String | null;
   }
 
   /**
@@ -22238,7 +22470,7 @@ declare namespace GLib {
      * @param init the initial text to copy into the string, or %NULL to   start with an empty string
      * @returns the new #GString
      */
-    static new(init: string | null): string;
+    static new(init: string | null): String;
     /**
      * Creates a new #GString with `len` bytes of the `init` buffer.
      * Because a length is provided, `init` need not be nul-terminated,
@@ -22252,7 +22484,7 @@ declare namespace GLib {
      * @param len length of `init` to use
      * @returns a new #GString
      */
-    static new_len(init: string, len: number): string;
+    static new_len(init: string | null, len: number): String;
     /**
      * Creates a new #GString, with enough space for `dfl_size`
      * bytes. This is useful if you are going to add a lot of
@@ -22262,7 +22494,7 @@ declare namespace GLib {
      * @param dfl_size the default size of the space allocated to hold the string
      * @returns the new #GString
      */
-    static sized_new(dfl_size: number): string;
+    static sized_new(dfl_size: number): String;
   }
 
   interface StringChunk {
@@ -22295,7 +22527,7 @@ declare namespace GLib {
      * @param string the string to add
      * @returns a pointer to the copy of @string within     the #GStringChunk
      */
-    insert(string: string): string;
+    insert(string: string | null): string | null;
     /**
      * Adds a copy of `string` to the #GStringChunk, unless the same
      * string has already been added to the #GStringChunk with
@@ -22313,7 +22545,7 @@ declare namespace GLib {
      * @param string the string to add
      * @returns a pointer to the new or existing copy of @string     within the #GStringChunk
      */
-    insert_const(string: string): string;
+    insert_const(string: string | null): string | null;
     /**
      * Adds a copy of the first `len` bytes of `string` to the #GStringChunk.
      * The copy is nul-terminated.
@@ -22328,7 +22560,7 @@ declare namespace GLib {
      * @param len number of bytes of `string` to insert, or -1 to insert a     nul-terminated string
      * @returns a pointer to the copy of @string within the #GStringChunk
      */
-    insert_len(string: string, len: number): string;
+    insert_len(string: string | null, len: number): string | null;
   }
 
   /**
@@ -22351,7 +22583,7 @@ declare namespace GLib {
      * Since 2.68
      * @param value a string.
      */
-    add(value: string): void;
+    add(value: string | null): void;
     /**
      * Appends all the strings in the given vector to the builder.
      *
@@ -22445,7 +22677,7 @@ declare namespace GLib {
      * @param n_bytes
      * @param bytes
      */
-    push(n_bytes: number, bytes: number): void;
+    push(n_bytes: number, bytes: number | null): void;
   }
 
   class TestLogBuffer {
@@ -22459,7 +22691,7 @@ declare namespace GLib {
 
     log_type: TestLogType;
     n_strings: number;
-    strings: string;
+    strings: string | null;
     n_nums: number;
 
     // Owm methods of GLib-2.0.GLib.TestLogMsg
@@ -22483,12 +22715,12 @@ declare namespace GLib {
      * Adds `test_case` to `suite`.
      * @param test_case a #GTestCase
      */
-    add(test_case: TestCase): void;
+    add(test_case: TestCase | null): void;
     /**
      * Adds `nestedsuite` to `suite`.
      * @param nestedsuite another #GTestSuite
      */
-    add_suite(nestedsuite: TestSuite): void;
+    add_suite(nestedsuite: TestSuite | null): void;
     /**
      * Free the `suite` and all nested #GTestSuites.
      */
@@ -22527,12 +22759,12 @@ declare namespace GLib {
      * want to keep the GThread alive beyond the g_thread_join() call.
      * @returns the return value of the thread
      */
-    join(): object | null;
+    join(): any | null;
     /**
      * Increase the reference count on `thread`.
      * @returns a new reference to @thread
      */
-    ref(): Thread;
+    ref(): Thread | null;
     /**
      * Decrease the reference count on `thread,` possibly freeing all
      * resources associated with it.
@@ -22664,7 +22896,7 @@ declare namespace GLib {
      * or or from within a #GThreadPool.
      * @param retval the return value of this thread
      */
-    static exit(retval: object | null): void;
+    static exit(retval: any | null): void;
     /**
      * This function returns the #GThread corresponding to the
      * current thread. Note that this function does not increase
@@ -22677,7 +22909,7 @@ declare namespace GLib {
      * as g_thread_join()) on these threads.
      * @returns the #GThread representing the current thread
      */
-    static self(): Thread;
+    static self(): Thread | null;
     /**
      * Causes the calling thread to voluntarily relinquish the CPU, so
      * that other threads can run.
@@ -22699,7 +22931,7 @@ declare namespace GLib {
      * the user data for the threads of this pool
      * @field
      */
-    user_data: object;
+    user_data: any;
     /**
      * are all threads exclusive to this pool
      * @field
@@ -22743,7 +22975,7 @@ declare namespace GLib {
      * @param data an unprocessed item in the pool
      * @returns %TRUE if the item was found and moved
      */
-    move_to_front(data: object | null): boolean;
+    move_to_front(data: any | null): boolean;
     /**
      * Inserts `data` into the list of tasks to be executed by `pool`.
      *
@@ -22762,7 +22994,7 @@ declare namespace GLib {
      * @param data a new task for `pool`
      * @returns %TRUE on success, %FALSE if an error occurred
      */
-    push(data: object | null): boolean;
+    push(data: any | null): boolean;
     /**
      * Sets the maximal allowed number of threads for `pool`.
      * A value of -1 means that the maximal number of threads
@@ -22964,8 +23196,8 @@ declare namespace GLib {
      * @returns %TRUE if the conversion was successful.
      */
     static from_iso8601(
-      iso_date: string
-    ): [/* returnType */ boolean, /* time_ */ TimeVal];
+      iso_date: string | null
+    ): [/* returnType */ boolean, /* time_ */ TimeVal | null];
   }
 
   interface TimeZone {
@@ -22992,7 +23224,7 @@ declare namespace GLib {
      * @param time_ a pointer to a number of seconds since January 1, 1970
      * @returns the interval containing @time_, never -1
      */
-    adjust_time(type: TimeType, time_: number): number;
+    adjust_time(type: TimeType, time_: number | null): number;
     /**
      * Finds an interval within `tz` that corresponds to the given `time_`.
      * The meaning of `time_` depends on `type`.
@@ -23027,7 +23259,7 @@ declare namespace GLib {
      * @param interval an interval within the timezone
      * @returns the time zone abbreviation, which belongs to @tz
      */
-    get_abbreviation(interval: number): string;
+    get_abbreviation(interval: number): string | null;
     /**
      * Get the identifier of this #GTimeZone, as passed to g_time_zone_new().
      * If the identifier passed at construction time was not recognised, `UTC` will
@@ -23039,7 +23271,7 @@ declare namespace GLib {
      * this function.
      * @returns identifier for this timezone
      */
-    get_identifier(): string;
+    get_identifier(): string | null;
     /**
      * Determines the offset to UTC in effect during a particular `interval`
      * of time in the time zone `tz`.
@@ -23062,7 +23294,7 @@ declare namespace GLib {
      * Increases the reference count on `tz`.
      * @returns a new reference to @tz.
      */
-    ref(): TimeZone;
+    ref(): TimeZone | null;
     /**
      * Decreases the reference count on `tz`.
      */
@@ -23241,7 +23473,7 @@ declare namespace GLib {
      * @param microseconds return location for the fractional part of seconds                elapsed, in microseconds (that is, the total number                of microseconds elapsed, modulo 1000000), or %NULL
      * @returns seconds elapsed as a floating point value, including any          fractional part.
      */
-    elapsed(microseconds: number): number;
+    elapsed(microseconds: number | null): number;
     /**
      * Exposes whether the timer is currently active.
      * @returns %TRUE if the timer is running, %FALSE otherwise
@@ -23286,7 +23518,7 @@ declare namespace GLib {
      *     bytes of the element
      * @field
      */
-    next: TrashStack;
+    next: TrashStack | null;
   }
 
   /**
@@ -23309,26 +23541,26 @@ declare namespace GLib {
      * @param stack_p a #GTrashStack
      * @returns the height of the stack
      */
-    static height(stack_p: TrashStack): number;
+    static height(stack_p: TrashStack | null): number;
     /**
      * Returns the element at the top of a #GTrashStack
      * which may be %NULL.
      * @param stack_p a #GTrashStack
      * @returns the element at the top of the stack
      */
-    static peek(stack_p: TrashStack): object | null;
+    static peek(stack_p: TrashStack | null): any | null;
     /**
      * Pops a piece of memory off a #GTrashStack.
      * @param stack_p a #GTrashStack
      * @returns the element at the top of the stack
      */
-    static pop(stack_p: TrashStack): object | null;
+    static pop(stack_p: TrashStack | null): any | null;
     /**
      * Pushes a piece of memory onto a #GTrashStack.
      * @param stack_p a #GTrashStack
      * @param data_p the piece of memory to push on the stack
      */
-    static push(stack_p: TrashStack, data_p: object): void;
+    static push(stack_p: TrashStack | null, data_p: any): void;
   }
 
   interface Tree {
@@ -23360,7 +23592,7 @@ declare namespace GLib {
      * @param key the key to insert
      * @param value the value corresponding to the key
      */
-    insert(key: object | null, value: object | null): void;
+    insert(key: any | null, value: any | null): void;
     /**
      * Inserts a key/value pair into a #GTree.
      *
@@ -23379,7 +23611,7 @@ declare namespace GLib {
      * @param value the value corresponding to the key
      * @returns the inserted (or set) node.
      */
-    insert_node(key: object | null, value: object | null): TreeNode;
+    insert_node(key: any | null, value: any | null): TreeNode | null;
     /**
      * Gets the value corresponding to the given key. Since a #GTree is
      * automatically balanced as key/value pairs are added, key lookup
@@ -23387,7 +23619,7 @@ declare namespace GLib {
      * @param key the key to look up
      * @returns the value corresponding to the key, or %NULL     if the key was not found
      */
-    lookup(key: object | null): object | null;
+    lookup(key: any | null): any | null;
     /**
      * Looks up a key in the #GTree, returning the original key and the
      * associated value. This is useful if you need to free the memory
@@ -23397,11 +23629,11 @@ declare namespace GLib {
      * @returns %TRUE if the key was found in the #GTree
      */
     lookup_extended(
-      lookup_key: object | null
+      lookup_key: any | null
     ): [
       /* returnType */ boolean,
-      /* orig_key */ object | null,
-      /* value */ object | null
+      /* orig_key */ any | null,
+      /* value */ any | null
     ];
     /**
      * Gets the tree node corresponding to the given key. Since a #GTree is
@@ -23410,7 +23642,7 @@ declare namespace GLib {
      * @param key the key to look up
      * @returns the tree node corresponding to          the key, or %NULL if the key was not found
      */
-    lookup_node(key: object | null): TreeNode | null;
+    lookup_node(key: any | null): TreeNode | null;
     /**
      * Gets the lower bound node corresponding to the given key,
      * or %NULL if the tree is empty or all the nodes in the tree
@@ -23421,7 +23653,7 @@ declare namespace GLib {
      * @param key the key to calculate the lower bound for
      * @returns the tree node corresponding to          the lower bound, or %NULL if the tree is empty or has only          keys strictly lower than the searched key.
      */
-    lower_bound(key: object | null): TreeNode | null;
+    lower_bound(key: any | null): TreeNode | null;
     /**
      * Gets the number of nodes in a #GTree.
      * @returns the number of nodes in @tree
@@ -23445,7 +23677,7 @@ declare namespace GLib {
      * It is safe to call this function from any thread.
      * @returns the passed in #GTree
      */
-    ref(): Tree;
+    ref(): Tree | null;
     /**
      * Removes a key/value pair from a #GTree.
      *
@@ -23460,7 +23692,7 @@ declare namespace GLib {
      * @param key the key to remove
      * @returns %TRUE if the key was found (prior to 2.8, this function     returned nothing)
      */
-    remove(key: object | null): boolean;
+    remove(key: any | null): boolean;
     /**
      * Removes all nodes from a #GTree and destroys their keys and values,
      * then resets the #GTree’s root to %NULL.
@@ -23472,7 +23704,7 @@ declare namespace GLib {
      * @param key the key to insert
      * @param value the value corresponding to the key
      */
-    replace(key: object | null, value: object | null): void;
+    replace(key: any | null, value: any | null): void;
     /**
      * Inserts a new key and value into a #GTree similar to g_tree_insert_node().
      * The difference is that if the key already exists in the #GTree, it gets
@@ -23487,7 +23719,7 @@ declare namespace GLib {
      * @param value the value corresponding to the key
      * @returns the inserted (or set) node.
      */
-    replace_node(key: object | null, value: object | null): TreeNode;
+    replace_node(key: any | null, value: any | null): TreeNode | null;
     /**
      * Removes a key and its associated value from a #GTree without calling
      * the key and value destroy functions.
@@ -23496,7 +23728,7 @@ declare namespace GLib {
      * @param key the key to remove
      * @returns %TRUE if the key was found (prior to 2.8, this function     returned nothing)
      */
-    steal(key: object | null): boolean;
+    steal(key: any | null): boolean;
     /**
      * Decrements the reference count of `tree` by one.
      * If the reference count drops to 0, all keys and values will
@@ -23516,7 +23748,7 @@ declare namespace GLib {
      * @param key the key to calculate the upper bound for
      * @returns the tree node corresponding to the          upper bound, or %NULL if the tree is empty or has only keys          lower than or equal to the searched key.
      */
-    upper_bound(key: object | null): TreeNode | null;
+    upper_bound(key: any | null): TreeNode | null;
   }
 
   /**
@@ -23554,7 +23786,7 @@ declare namespace GLib {
      * Gets the key stored at a particular tree node.
      * @returns the key at the node.
      */
-    key(): object | null;
+    key(): any | null;
     /**
      * Returns the next in-order node of the tree, or %NULL
      * if the passed node was already the last one.
@@ -23571,7 +23803,7 @@ declare namespace GLib {
      * Gets the value stored at a particular tree node.
      * @returns the value at the node.
      */
-    value(): object | null;
+    value(): any | null;
   }
 
   /**
@@ -23634,7 +23866,7 @@ declare namespace GLib {
      * flags with which `uri` was created.
      * @returns @uri's path.
      */
-    get_path(): string;
+    get_path(): string | null;
     /**
      * Gets `uri'`s port.
      * @returns @uri's port, or `-1` if no port was specified.
@@ -23654,7 +23886,7 @@ declare namespace GLib {
      * regardless of the string or strings that `uri` was created from.
      * @returns @uri's scheme.
      */
-    get_scheme(): string;
+    get_scheme(): string | null;
     /**
      * Gets the ‘username’ component of `uri'`s userinfo, which may contain
      * `%`-encoding, depending on the flags with which `uri` was created.
@@ -23678,7 +23910,7 @@ declare namespace GLib {
      * @param flags flags describing how to parse `uri_ref`
      * @returns a new #GUri, or NULL on error.
      */
-    parse_relative(uri_ref: string, flags: UriFlags): Uri;
+    parse_relative(uri_ref: string | null, flags: UriFlags): Uri | null;
     /**
      * Returns a string representing `uri`.
      *
@@ -23694,14 +23926,14 @@ declare namespace GLib {
      * logged, then consider using g_uri_to_string_partial() to redact parts.
      * @returns a string representing @uri,     which the caller must free.
      */
-    to_string(): string;
+    to_string(): string | null;
     /**
      * Returns a string representing `uri,` subject to the options in
      * `flags`. See g_uri_to_string() and #GUriHideFlags for more details.
      * @param flags flags describing what parts of `uri` to hide
      * @returns a string representing     @uri, which the caller must free.
      */
-    to_string_partial(flags: UriHideFlags): string;
+    to_string_partial(flags: UriHideFlags): string | null;
   }
 
   /**
@@ -23839,14 +24071,14 @@ declare namespace GLib {
      */
     static build(
       flags: UriFlags,
-      scheme: string,
+      scheme: string | null,
       userinfo: string | null,
       host: string | null,
       port: number,
-      path: string,
+      path: string | null,
       query: string | null,
       fragment: string | null
-    ): Uri;
+    ): Uri | null;
     /**
      * Creates a new #GUri from the given components according to `flags`
      * (%G_URI_FLAGS_HAS_PASSWORD is added unconditionally). The `flags` must be
@@ -23870,16 +24102,16 @@ declare namespace GLib {
      */
     static build_with_user(
       flags: UriFlags,
-      scheme: string,
+      scheme: string | null,
       user: string | null,
       password: string | null,
       auth_params: string | null,
       host: string | null,
       port: number,
-      path: string,
+      path: string | null,
       query: string | null,
       fragment: string | null
-    ): Uri;
+    ): Uri | null;
     static error_quark(): Quark;
     /**
      * Escapes arbitrary data for use in a URI.
@@ -23900,7 +24132,7 @@ declare namespace GLib {
     static escape_bytes(
       unescaped: Uint8Array,
       reserved_chars_allowed: string | null
-    ): string;
+    ): string | null;
     /**
      * Escapes a string for use in a URI.
      *
@@ -23916,10 +24148,10 @@ declare namespace GLib {
      * @returns an escaped version of @unescaped. The returned string should be freed when no longer needed.
      */
     static escape_string(
-      unescaped: string,
+      unescaped: string | null,
       reserved_chars_allowed: string | null,
       allow_utf8: boolean
-    ): string;
+    ): string | null;
     /**
      * Parses `uri_string` according to `flags,` to determine whether it is a valid
      * [absolute URI][relative-absolute-uris], i.e. it does not need to be resolved
@@ -23933,7 +24165,7 @@ declare namespace GLib {
      * @param flags flags for parsing `uri_string`
      * @returns %TRUE if @uri_string is a valid absolute URI, %FALSE on error.
      */
-    static is_valid(uri_string: string, flags: UriFlags): boolean;
+    static is_valid(uri_string: string | null, flags: UriFlags): boolean;
     /**
      * Joins the given components together according to `flags` to create
      * an absolute URI string. `path` may not be %NULL (though it may be the empty
@@ -23965,10 +24197,10 @@ declare namespace GLib {
       userinfo: string | null,
       host: string | null,
       port: number,
-      path: string,
+      path: string | null,
       query: string | null,
       fragment: string | null
-    ): string;
+    ): string | null;
     /**
      * Joins the given components together according to `flags` to create
      * an absolute URI string. `path` may not be %NULL (though it may be the empty
@@ -23999,10 +24231,10 @@ declare namespace GLib {
       auth_params: string | null,
       host: string | null,
       port: number,
-      path: string,
+      path: string | null,
       query: string | null,
       fragment: string | null
-    ): string;
+    ): string | null;
     /**
      * Splits an URI list conforming to the text/uri-list
      * mime type defined in RFC 2483 into individual URIs,
@@ -24010,7 +24242,7 @@ declare namespace GLib {
      * @param uri_list an URI list
      * @returns a newly allocated %NULL-terminated list   of strings holding the individual URIs. The array should be freed   with g_strfreev().
      */
-    static list_extract_uris(uri_list: string): string[];
+    static list_extract_uris(uri_list: string | null): string[];
     /**
      * Parses `uri_string` according to `flags`. If the result is not a
      * valid [absolute URI][relative-absolute-uris], it will be discarded, and an
@@ -24019,7 +24251,7 @@ declare namespace GLib {
      * @param flags flags describing how to parse `uri_string`
      * @returns a new #GUri, or NULL on error.
      */
-    static parse(uri_string: string, flags: UriFlags): Uri;
+    static parse(uri_string: string | null, flags: UriFlags): Uri | null;
     /**
      * Many URI schemes include one or more attribute/value pairs as part of the URI
      * value. This method can be used to parse them into a hash table. When an
@@ -24052,11 +24284,11 @@ declare namespace GLib {
      * @returns      A hash table of attribute/value pairs, with both names and values     fully-decoded; or %NULL on error.
      */
     static parse_params(
-      params: string,
+      params: string | null,
       length: number,
-      separators: string,
+      separators: string | null,
       flags: UriParamsFlags
-    ): HashTable;
+    ): HashTable | null;
     /**
      * Gets the scheme portion of a URI string.
      * [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
@@ -24069,7 +24301,7 @@ declare namespace GLib {
      * @param uri a valid URI.
      * @returns The ‘scheme’ component of the URI, or     %NULL on error. The returned string should be freed when no longer needed.
      */
-    static parse_scheme(uri: string): string | null;
+    static parse_scheme(uri: string | null): string | null;
     /**
      * Gets the scheme portion of a URI string.
      * [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
@@ -24085,7 +24317,7 @@ declare namespace GLib {
      * @param uri a valid URI.
      * @returns The ‘scheme’ component of the URI, or     %NULL on error. The returned string is normalized to all-lowercase, and     interned via g_intern_string(), so it does not need to be freed.
      */
-    static peek_scheme(uri: string): string | null;
+    static peek_scheme(uri: string | null): string | null;
     /**
      * Parses `uri_ref` according to `flags` and, if it is a
      * [relative URI][relative-absolute-uris], resolves it relative to
@@ -24101,9 +24333,9 @@ declare namespace GLib {
      */
     static resolve_relative(
       base_uri_string: string | null,
-      uri_ref: string,
+      uri_ref: string | null,
       flags: UriFlags
-    ): string;
+    ): string | null;
     /**
      * Parses `uri_ref` (which can be an
      * [absolute or relative URI][relative-absolute-uris]) according to `flags,` and
@@ -24126,15 +24358,15 @@ declare namespace GLib {
      * @returns %TRUE if @uri_ref parsed successfully, %FALSE   on error.
      */
     static split(
-      uri_ref: string,
+      uri_ref: string | null,
       flags: UriFlags
     ): [
       /* returnType */ boolean,
       /* scheme */ string | null,
       /* userinfo */ string | null,
       /* host */ string | null,
-      /* port */ number,
-      /* path */ string,
+      /* port */ number | null,
+      /* path */ string | null,
       /* query */ string | null,
       /* fragment */ string | null
     ];
@@ -24150,13 +24382,13 @@ declare namespace GLib {
      * @returns %TRUE if @uri_string parsed successfully,   %FALSE on error.
      */
     static split_network(
-      uri_string: string,
+      uri_string: string | null,
       flags: UriFlags
     ): [
       /* returnType */ boolean,
       /* scheme */ string | null,
       /* host */ string | null,
-      /* port */ number
+      /* port */ number | null
     ];
     /**
      * Parses `uri_ref` (which can be an
@@ -24175,7 +24407,7 @@ declare namespace GLib {
      * @returns %TRUE if @uri_ref parsed successfully, %FALSE   on error.
      */
     static split_with_user(
-      uri_ref: string,
+      uri_ref: string | null,
       flags: UriFlags
     ): [
       /* returnType */ boolean,
@@ -24184,8 +24416,8 @@ declare namespace GLib {
       /* password */ string | null,
       /* auth_params */ string | null,
       /* host */ string | null,
-      /* port */ number,
-      /* path */ string,
+      /* port */ number | null,
+      /* path */ string | null,
       /* query */ string | null,
       /* fragment */ string | null
     ];
@@ -24206,10 +24438,10 @@ declare namespace GLib {
      * @returns an unescaped version of @escaped_string     or %NULL on error (if decoding failed, using %G_URI_ERROR_FAILED error     code). The returned #GBytes should be unreffed when no longer needed.
      */
     static unescape_bytes(
-      escaped_string: string,
+      escaped_string: string | null,
       length: number,
       illegal_characters: string | null
-    ): Bytes;
+    ): Bytes | null;
     /**
      * Unescapes a segment of an escaped string.
      *
@@ -24244,7 +24476,7 @@ declare namespace GLib {
      * @returns an unescaped version of @escaped_string. The returned string should be freed when no longer needed.
      */
     static unescape_string(
-      escaped_string: string,
+      escaped_string: string | null,
       illegal_characters: string | null
     ): string | null;
   }
@@ -24294,9 +24526,9 @@ declare namespace GLib {
      * @param flags flags to modify the way the parameters are handled.
      */
     init(
-      params: string,
+      params: string | null,
       length: number,
-      separators: string,
+      separators: string | null,
       flags: UriParamsFlags
     ): void;
     /**
@@ -24353,7 +24585,7 @@ declare namespace GLib {
      * The returned value is always in normal form and is marked as trusted.
      * @returns the byteswapped form of @value
      */
-    byteswap(): Variant;
+    byteswap(): Variant | null;
     /**
      * Checks if calling g_variant_get() with `format_string` on `value` would
      * be valid from a type-compatibility standpoint.  `format_string` is
@@ -24373,7 +24605,10 @@ declare namespace GLib {
      * @param copy_only %TRUE to ensure the format string makes deep copies
      * @returns %TRUE if @format_string is safe to use
      */
-    check_format_string(format_string: string, copy_only: boolean): boolean;
+    check_format_string(
+      format_string: string | null,
+      copy_only: boolean
+    ): boolean;
     /**
      * Classifies `value` according to its top-level type.
      * @returns the #GVariantClass of @value
@@ -24448,7 +24683,7 @@ declare namespace GLib {
      * The return value must be freed using g_free().
      * @returns a newly allocated string, UTF-8 encoded
      */
-    dup_string(): [/* returnType */ string, /* length */ number];
+    dup_string(): [/* returnType */ string | null, /* length */ number | null];
     /**
      * Gets the contents of an array of strings #GVariant.  This call
      * makes a deep copy; the return result should be released with
@@ -24551,7 +24786,7 @@ declare namespace GLib {
      * @param index_ the index of the child to fetch
      * @returns the child at the specified index
      */
-    get_child_value(index_: number): Variant;
+    get_child_value(index_: number): Variant | null;
     /**
      * Returns a pointer to the serialized form of a #GVariant instance.
      * The returned data may not be in fully-normalised form if read from an
@@ -24580,7 +24815,7 @@ declare namespace GLib {
      * serialized data).
      * @returns the serialized form of @value, or %NULL
      */
-    get_data(): object | null;
+    get_data(): any | null;
     /**
      * Returns a pointer to the serialized form of a #GVariant instance.
      * The semantics of this function are exactly the same as
@@ -24588,7 +24823,7 @@ declare namespace GLib {
      * a reference to the variant data.
      * @returns A new #GBytes representing the variant data
      */
-    get_data_as_bytes(): Bytes;
+    get_data_as_bytes(): Bytes | null;
     /**
      * Returns the double precision floating point value of `value`.
      *
@@ -24665,7 +24900,7 @@ declare namespace GLib {
      * reference to it.
      * @returns a trusted #GVariant
      */
-    get_normal_form(): Variant;
+    get_normal_form(): Variant | null;
     /**
      * Gets the contents of an array of object paths #GVariant.  This call
      * makes a shallow copy; the return result should be released with
@@ -24716,7 +24951,7 @@ declare namespace GLib {
      * The return value remains valid as long as `value` exists.
      * @returns the constant string, UTF-8 encoded
      */
-    get_string(): [/* returnType */ string, /* length */ number];
+    get_string(): [/* returnType */ string | null, /* length */ number | null];
     /**
      * Gets the contents of an array of strings #GVariant.  This call
      * makes a shallow copy; the return result should be released with
@@ -24738,14 +24973,14 @@ declare namespace GLib {
      * be freed.
      * @returns a #GVariantType
      */
-    get_type(): VariantType;
+    get_type(): VariantType | null;
     /**
      * Returns the type string of `value`.  Unlike the result of calling
      * g_variant_type_peek_string(), this string is nul-terminated.  This
      * string belongs to #GVariant and must not be freed.
      * @returns the type string for the type of @value
      */
-    get_type_string(): string;
+    get_type_string(): string | null;
     /**
      * Returns the 16-bit unsigned integer value of `value`.
      *
@@ -24775,7 +25010,7 @@ declare namespace GLib {
      * contained in `value`.
      * @returns the item contained in the variant
      */
-    get_variant(): Variant;
+    get_variant(): Variant | null;
     /**
      * Generates a hash value for a #GVariant instance.
      *
@@ -24829,7 +25064,7 @@ declare namespace GLib {
      * @param type a #GVariantType
      * @returns %TRUE if the type of @value matches @type
      */
-    is_of_type(type: VariantType): boolean;
+    is_of_type(type: VariantType | null): boolean;
     /**
      * Looks up a value in a dictionary #GVariant.
      *
@@ -24856,7 +25091,10 @@ declare namespace GLib {
      * @param expected_type a #GVariantType, or %NULL
      * @returns the value of the dictionary key, or %NULL
      */
-    lookup_value(key: string, expected_type: VariantType | null): Variant;
+    lookup_value(
+      key: string | null,
+      expected_type: VariantType | null
+    ): Variant | null;
     /**
      * Determines the number of children in a container #GVariant instance.
      * This includes variants, maybes, arrays, tuples and dictionary
@@ -24882,12 +25120,12 @@ declare namespace GLib {
      * @param type_annotate %TRUE if type information should be included in                 the output
      * @returns a newly-allocated string holding the result.
      */
-    print(type_annotate: boolean): string;
+    print(type_annotate: boolean): string | null;
     /**
      * Increases the reference count of `value`.
      * @returns the same @value
      */
-    ref(): Variant;
+    ref(): Variant | null;
     /**
      * #GVariant uses a floating reference count system.  All functions with
      * names starting with `g_variant_new_` return floating
@@ -24913,7 +25151,7 @@ declare namespace GLib {
      * are not floating.
      * @returns the same @value
      */
-    ref_sink(): Variant;
+    ref_sink(): Variant | null;
     /**
      * Stores the serialized form of `value` at `data`.  `data` should be
      * large enough.  See g_variant_get_size().
@@ -24929,7 +25167,7 @@ declare namespace GLib {
      * This function is approximately O(n) in the size of `data`.
      * @param data the location to store the serialized data at
      */
-    store(data: object): void;
+    store(data: any): void;
     /**
      * If `value` is floating, sink it.  Otherwise, do nothing.
      *
@@ -24965,7 +25203,7 @@ declare namespace GLib {
      * avoid this situation.
      * @returns the same @value
      */
-    take_ref(): Variant;
+    take_ref(): Variant | null;
     /**
      * Decreases the reference count of `value`.  When its reference count
      * drops to 0, the memory used by the variant is freed.
@@ -25303,7 +25541,7 @@ declare namespace GLib {
      * @param value a #GVariant, the value
      * @returns a floating reference to a new dictionary entry #GVariant
      */
-    static new_dict_entry(key: Variant, value: Variant): Variant;
+    static new_dict_entry(key: Variant | null, value: Variant | null): Variant;
     /**
      * Creates a new double #GVariant instance.
      * @constructor
@@ -25333,8 +25571,8 @@ declare namespace GLib {
      * @returns a floating reference to a new array #GVariant instance
      */
     static new_fixed_array(
-      element_type: VariantType,
-      elements: object | null,
+      element_type: VariantType | null,
+      elements: any | null,
       n_elements: number,
       element_size: number
     ): Variant;
@@ -25355,8 +25593,8 @@ declare namespace GLib {
      * @returns a new #GVariant with a floating reference
      */
     static new_from_bytes(
-      type: VariantType,
-      bytes: Bytes,
+      type: VariantType | null,
+      bytes: Bytes | null,
       trusted: boolean
     ): Variant;
     /**
@@ -25398,11 +25636,11 @@ declare namespace GLib {
      * @returns a new floating #GVariant of type @type
      */
     static new_from_data(
-      type: VariantType,
+      type: VariantType | null,
       data: Uint8Array,
       trusted: boolean,
       notify: DestroyNotify,
-      user_data: object | null
+      user_data: any | null
     ): Variant;
     /**
      * Creates a new handle #GVariant instance.
@@ -25464,7 +25702,7 @@ declare namespace GLib {
      * @param object_path a normal C nul-terminated string
      * @returns a floating reference to a new object path #GVariant instance
      */
-    static new_object_path(object_path: string): Variant;
+    static new_object_path(object_path: string | null): Variant;
     /**
      * Constructs an array of object paths #GVariant from the given array of
      * strings.
@@ -25486,7 +25724,7 @@ declare namespace GLib {
      * @param signature a normal C nul-terminated string
      * @returns a floating reference to a new signature #GVariant instance
      */
-    static new_signature(signature: string): Variant;
+    static new_signature(signature: string | null): Variant;
     /**
      * Creates a string #GVariant with the contents of `string`.
      *
@@ -25497,7 +25735,7 @@ declare namespace GLib {
      * @param string a normal UTF-8 nul-terminated string
      * @returns a floating reference to a new string #GVariant instance
      */
-    static new_string(string: string): Variant;
+    static new_string(string: string | null): Variant;
     /**
      * Constructs an array of strings #GVariant from the given array of
      * strings.
@@ -25553,7 +25791,7 @@ declare namespace GLib {
      * @param value a #GVariant instance
      * @returns a floating reference to a new variant #GVariant instance
      */
-    static new_variant(value: Variant): Variant;
+    static new_variant(value: Variant | null): Variant;
     /**
      * Determines if a given string is a valid D-Bus object path.  You
      * should ensure that a string is a valid D-Bus object path before
@@ -25566,7 +25804,7 @@ declare namespace GLib {
      * @param string a normal C nul-terminated string
      * @returns %TRUE if @string is a D-Bus object path
      */
-    static is_object_path(string: string): boolean;
+    static is_object_path(string: string | null): boolean;
     /**
      * Determines if a given string is a valid D-Bus type signature.  You
      * should ensure that a string is a valid D-Bus type signature before
@@ -25577,7 +25815,7 @@ declare namespace GLib {
      * @param string a normal C nul-terminated string
      * @returns %TRUE if @string is a D-Bus type signature
      */
-    static is_signature(string: string): boolean;
+    static is_signature(string: string | null): boolean;
     /**
      * Parses a #GVariant from a text representation.
      *
@@ -25622,10 +25860,10 @@ declare namespace GLib {
      */
     static parse(
       type: VariantType | null,
-      text: string,
+      text: string | null,
       limit: string | null,
       endptr: string | null
-    ): Variant;
+    ): Variant | null;
     /**
      * Pretty-prints a message showing the context of a #GVariant parse
      * error within the string for which parsing was attempted.
@@ -25662,7 +25900,10 @@ declare namespace GLib {
      * @param source_str the string that was given to the parser
      * @returns the printed message
      */
-    static parse_error_print_context(error: Error, source_str: string): string;
+    static parse_error_print_context(
+      error: Error | null,
+      source_str: string | null
+    ): string | null;
     static parse_error_quark(): Quark;
     /**
      * Same as g_variant_error_quark().
@@ -25690,7 +25931,7 @@ declare namespace GLib {
      * the `builder` instance takes ownership of `value`.
      * @param value a #GVariant
      */
-    add_value(value: Variant): void;
+    add_value(value: Variant | null): void;
     /**
      * Closes the subcontainer inside the given `builder` that was opened by
      * the most recent call to g_variant_builder_open().
@@ -25720,7 +25961,7 @@ declare namespace GLib {
      * the empty array.
      * @returns a new, floating, #GVariant
      */
-    end(): Variant;
+    end(): Variant | null;
     /**
      * Opens a subcontainer inside the given `builder`.  When done adding
      * items to the subcontainer, g_variant_builder_close() must be called. `type`
@@ -25762,7 +26003,7 @@ declare namespace GLib {
      *
      * @param type the #GVariantType of the container
      */
-    open(type: VariantType): void;
+    open(type: VariantType | null): void;
     /**
      * Increases the reference count on `builder`.
      *
@@ -25770,7 +26011,7 @@ declare namespace GLib {
      * things will happen.
      * @returns a new reference to @builder
      */
-    ref(): VariantBuilder;
+    ref(): VariantBuilder | null;
     /**
      * Decreases the reference count on `builder`.
      *
@@ -25814,7 +26055,7 @@ declare namespace GLib {
      * @param type a container type
      * @returns a #GVariantBuilder
      */
-    constructor(type: VariantType);
+    constructor(type: VariantType | null);
     /**
      * Allocates and initialises a new #GVariantBuilder.
      *
@@ -25829,7 +26070,7 @@ declare namespace GLib {
      * @param type a container type
      * @returns a #GVariantBuilder
      */
-    static new(type: VariantType): VariantBuilder;
+    static new(type: VariantType | null): VariantBuilder;
   }
 
   interface VariantDict {
@@ -25857,7 +26098,7 @@ declare namespace GLib {
      * @param key the key to look up in the dictionary
      * @returns %TRUE if @key is in @dict
      */
-    contains(key: string): boolean;
+    contains(key: string | null): boolean;
     /**
      * Returns the current value of `dict` as a #GVariant of type
      * %G_VARIANT_TYPE_VARDICT, clearing it in the process.
@@ -25868,7 +26109,7 @@ declare namespace GLib {
      * the case of stack-allocated).
      * @returns a new, floating, #GVariant
      */
-    end(): Variant;
+    end(): Variant | null;
     /**
      * Inserts (or replaces) a key in a #GVariantDict.
      *
@@ -25876,7 +26117,7 @@ declare namespace GLib {
      * @param key the key to insert a value for
      * @param value the value to insert
      */
-    insert_value(key: string, value: Variant): void;
+    insert_value(key: string | null, value: Variant | null): void;
     /**
      * Looks up a value in a #GVariantDict.
      *
@@ -25894,7 +26135,7 @@ declare namespace GLib {
      * @returns the value of the dictionary key, or %NULL
      */
     lookup_value(
-      key: string,
+      key: string | null,
       expected_type: VariantType | null
     ): Variant | null;
     /**
@@ -25904,13 +26145,13 @@ declare namespace GLib {
      * things will happen.
      * @returns a new reference to @dict
      */
-    ref(): VariantDict;
+    ref(): VariantDict | null;
     /**
      * Removes a key and its associated value from a #GVariantDict.
      * @param key the key to remove
      * @returns %TRUE if the key was found and removed
      */
-    remove(key: string): boolean;
+    remove(key: string | null): boolean;
     /**
      * Decreases the reference count on `dict`.
      *
@@ -26132,21 +26373,21 @@ declare namespace GLib {
      * g_variant_type_free() on the return value.  `type` may not be %NULL.
      * @returns a new #GVariantType Since 2.24
      */
-    copy(): VariantType;
+    copy(): VariantType | null;
     /**
      * Returns a newly-allocated copy of the type string corresponding to
      * `type`.  The returned string is nul-terminated.  It is appropriate to
      * call g_free() on the return value.
      * @returns the corresponding type string Since 2.24
      */
-    dup_string(): string;
+    dup_string(): string | null;
     /**
      * Determines the element type of an array or maybe type.
      *
      * This function may only be used with array or maybe types.
      * @returns the element type of @type Since 2.24
      */
-    element(): VariantType;
+    element(): VariantType | null;
     /**
      * Compares `type1` and `type2` for equality.
      *
@@ -26179,7 +26420,7 @@ declare namespace GLib {
      * interface over tuple and dictionary entry types.
      * @returns the first item type of @type, or %NULL Since 2.24
      */
-    first(): VariantType;
+    first(): VariantType | null;
     /**
      * Frees a #GVariantType that was allocated with
      * g_variant_type_copy(), g_variant_type_new() or one of the container
@@ -26284,7 +26525,7 @@ declare namespace GLib {
      * @param supertype a #GVariantType
      * @returns %TRUE if @type is a subtype of @supertype Since 2.24
      */
-    is_subtype_of(supertype: VariantType): boolean;
+    is_subtype_of(supertype: VariantType | null): boolean;
     /**
      * Determines if the given `type` is a tuple type.  This is true if the
      * type string for `type` starts with a '(' or if `type` is
@@ -26309,7 +26550,7 @@ declare namespace GLib {
      * g_variant_type_first().
      * @returns the key type of the dictionary entry Since 2.24
      */
-    key(): VariantType;
+    key(): VariantType | null;
     /**
      * Determines the number of items contained in a tuple or
      * dictionary entry type.
@@ -26337,14 +26578,14 @@ declare namespace GLib {
      * For tuples, %NULL is returned when `type` is the last item in a tuple.
      * @returns the next #GVariantType after @type, or %NULL Since 2.24
      */
-    next(): VariantType;
+    next(): VariantType | null;
     /**
      * Determines the value type of a dictionary entry type.
      *
      * This function may only be used with a dictionary entry type.
      * @returns the value type of the dictionary entry Since 2.24
      */
-    value(): VariantType;
+    value(): VariantType | null;
   }
 
   /**
@@ -26515,7 +26756,7 @@ declare namespace GLib {
      * @param type_string a valid GVariant type string
      * @returns a new #GVariantType
      */
-    constructor(type_string: string);
+    constructor(type_string: string | null);
     /**
      * Creates a new #GVariantType corresponding to the type string given
      * by `type_string`.  It is appropriate to call g_variant_type_free() on
@@ -26527,7 +26768,7 @@ declare namespace GLib {
      * @param type_string a valid GVariant type string
      * @returns a new #GVariantType
      */
-    static new(type_string: string): VariantType;
+    static new(type_string: string | null): VariantType;
     /**
      * Constructs the type corresponding to an array of elements of the
      * type `type`.
@@ -26537,7 +26778,7 @@ declare namespace GLib {
      * @param element a #GVariantType
      * @returns a new array #GVariantType Since 2.24
      */
-    static new_array(element: VariantType): VariantType;
+    static new_array(element: VariantType | null): VariantType;
     /**
      * Constructs the type corresponding to a dictionary entry with a key
      * of type `key` and a value of type `value`.
@@ -26548,7 +26789,10 @@ declare namespace GLib {
      * @param value a #GVariantType
      * @returns a new dictionary entry #GVariantType Since 2.24
      */
-    static new_dict_entry(key: VariantType, value: VariantType): VariantType;
+    static new_dict_entry(
+      key: VariantType | null,
+      value: VariantType | null
+    ): VariantType;
     /**
      * Constructs the type corresponding to a maybe instance containing
      * type `type` or Nothing.
@@ -26558,7 +26802,7 @@ declare namespace GLib {
      * @param element a #GVariantType
      * @returns a new maybe #GVariantType Since 2.24
      */
-    static new_maybe(element: VariantType): VariantType;
+    static new_maybe(element: VariantType | null): VariantType;
     /**
      * Constructs a new tuple type, from `items`.
      *
@@ -26571,8 +26815,8 @@ declare namespace GLib {
      * @returns a new tuple #GVariantType Since 2.24
      */
     static new_tuple(items: VariantType[]): VariantType;
-    static checked_(arg0: string): VariantType;
-    static string_get_depth_(type_string: string): number;
+    static checked_(arg0: string | null): VariantType | null;
+    static string_get_depth_(type_string: string | null): number;
     /**
      * Checks if `type_string` is a valid GVariant type string.  This call is
      * equivalent to calling g_variant_type_string_scan() and confirming
@@ -26580,7 +26824,7 @@ declare namespace GLib {
      * @param type_string a pointer to any string
      * @returns %TRUE if @type_string is exactly one valid type string Since 2.24
      */
-    static string_is_valid(type_string: string): boolean;
+    static string_is_valid(type_string: string | null): boolean;
     /**
      * Scan for a single complete and valid GVariant type string in `string`.
      * The memory pointed to by `limit` (or bytes beyond it) is never
@@ -26600,9 +26844,9 @@ declare namespace GLib {
      * @returns %TRUE if a valid type string was found
      */
     static string_scan(
-      string: string,
+      string: string | null,
       limit: string | null
-    ): [/* returnType */ boolean, /* endptr */ string];
+    ): [/* returnType */ boolean, /* endptr */ string | null];
   }
 
   interface DoubleIEEE754 {
@@ -26790,12 +27034,12 @@ declare namespace GLib {
      * token symbol value
      * @field
      */
-    v_symbol: object;
+    v_symbol: any;
     /**
      * token identifier value
      * @field
      */
-    v_identifier: string;
+    v_identifier: string | null;
     /**
      * token binary integer value
      * @field
@@ -26830,12 +27074,12 @@ declare namespace GLib {
      * string value
      * @field
      */
-    v_string: string;
+    v_string: string | null;
     /**
      * comment value
      * @field
      */
-    v_comment: string;
+    v_comment: string | null;
     /**
      * character value
      * @field

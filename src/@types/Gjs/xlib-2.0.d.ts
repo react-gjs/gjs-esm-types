@@ -92,7 +92,7 @@ declare namespace xlib {
   type Colormap = number;
   type Cursor = number;
   type Drawable = number;
-  type GC = object;
+  type GC = any;
   type KeyCode = number;
   type KeySym = number;
   type Picture = number;

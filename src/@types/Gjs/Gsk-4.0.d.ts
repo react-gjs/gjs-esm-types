@@ -371,21 +371,21 @@ declare namespace Gsk {
    * @returns %TRUE if @string described a valid transform.
    */
   function transform_parse(
-    string: string
-  ): [/* returnType */ boolean, /* out_transform */ Transform];
+    string: string | null
+  ): [/* returnType */ boolean, /* out_transform */ Transform | null];
   /**
    * Retrieves the `GskRenderNode` stored inside the given `value`, and acquires
    * a reference to it.
    * @param value a [struct`GObject`.Value] initialized with type `GSK_TYPE_RENDER_NODE`
    * @returns a `GskRenderNode`
    */
-  function value_dup_render_node(value: any): RenderNode | null;
+  function value_dup_render_node(value: any | null): RenderNode | null;
   /**
    * Retrieves the `GskRenderNode` stored inside the given `value`.
    * @param value a `GValue` initialized with type `GSK_TYPE_RENDER_NODE`
    * @returns a `GskRenderNode`
    */
-  function value_get_render_node(value: any): RenderNode | null;
+  function value_get_render_node(value: any | null): RenderNode | null;
   /**
    * Stores the given `GskRenderNode` inside `value`.
    *
@@ -393,7 +393,10 @@ declare namespace Gsk {
    * @param value a [struct`GObject`.Value] initialized with type `GSK_TYPE_RENDER_NODE`
    * @param node a `GskRenderNode`
    */
-  function value_set_render_node(value: any, node: RenderNode): void;
+  function value_set_render_node(
+    value: any | null,
+    node: RenderNode | null
+  ): void;
   /**
    * Stores the given `GskRenderNode` inside `value`.
    *
@@ -401,7 +404,10 @@ declare namespace Gsk {
    * @param value a [struct`GObject`.Value] initialized with type `GSK_TYPE_RENDER_NODE`
    * @param node a `GskRenderNode`
    */
-  function value_take_render_node(value: any, node: RenderNode | null): void;
+  function value_take_render_node(
+    value: any | null,
+    node: RenderNode | null
+  ): void;
   /**
    * Type of callback that is called when an error occurs
    * during node deserialization.
@@ -411,7 +417,11 @@ declare namespace Gsk {
    * @param error the error
    */
   interface ParseErrorFunc {
-    (start: ParseLocation, end: ParseLocation, error: GLib.Error): void;
+    (
+      start: ParseLocation | null,
+      end: ParseLocation | null,
+      error: GLib.Error | null
+    ): void;
   }
   interface BlendNode {
     // Owm methods of Gsk-4.0.Gsk.BlendNode
@@ -425,12 +435,12 @@ declare namespace Gsk {
      * Retrieves the bottom `GskRenderNode` child of the `node`.
      * @returns the bottom child node
      */
-    get_bottom_child(): RenderNode;
+    get_bottom_child(): RenderNode | null;
     /**
      * Retrieves the top `GskRenderNode` child of the `node`.
      * @returns the top child node
      */
-    get_top_child(): RenderNode;
+    get_top_child(): RenderNode | null;
   }
 
   /**
@@ -453,7 +463,11 @@ declare namespace Gsk {
      * @param blend_mode The blend mode to use
      * @returns A new `GskRenderNode`
      */
-    constructor(bottom: RenderNode, top: RenderNode, blend_mode: BlendMode);
+    constructor(
+      bottom: RenderNode | null,
+      top: RenderNode | null,
+      blend_mode: BlendMode
+    );
     /**
      * Creates a `GskRenderNode` that will use `blend_mode` to blend the `top`
      * node onto the `bottom` node.
@@ -464,8 +478,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bottom: RenderNode,
-      top: RenderNode,
+      bottom: RenderNode | null,
+      top: RenderNode | null,
       blend_mode: BlendMode
     ): BlendNode;
   }
@@ -477,7 +491,7 @@ declare namespace Gsk {
      * Retrieves the child `GskRenderNode` of the blur `node`.
      * @returns the blurred child node
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the blur radius of the `node`.
      * @returns the blur radius
@@ -503,7 +517,7 @@ declare namespace Gsk {
      * @param radius the blur radius. Must be positive
      * @returns a new `GskRenderNode`
      */
-    constructor(child: RenderNode, radius: number);
+    constructor(child: RenderNode | null, radius: number);
     /**
      * Creates a render node that blurs the child.
      * @constructor
@@ -511,7 +525,7 @@ declare namespace Gsk {
      * @param radius the blur radius. Must be positive
      * @returns a new `GskRenderNode`
      */
-    static new(child: RenderNode, radius: number): BlurNode;
+    static new(child: RenderNode | null, radius: number): BlurNode;
   }
 
   interface BorderNode {
@@ -521,12 +535,12 @@ declare namespace Gsk {
      * Retrieves the colors of the border.
      * @returns an array of 4 `GdkRGBA` structs     for the top, right, bottom and left color of the border
      */
-    get_colors(): Gdk.RGBA;
+    get_colors(): Gdk.RGBA | null;
     /**
      * Retrieves the outline of the border.
      * @returns the outline of the border
      */
-    get_outline(): RoundedRect;
+    get_outline(): RoundedRect | null;
     /**
      * Retrieves the stroke widths of the border.
      * @returns an array of 4 floats   for the top, right, bottom and left stroke width of the border,   respectively
@@ -557,7 +571,7 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      outline: RoundedRect,
+      outline: RoundedRect | null,
       border_width: number[],
       border_color: Gdk.RGBA[]
     );
@@ -573,16 +587,16 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      outline: RoundedRect,
+      outline: RoundedRect | null,
       border_width: number[],
       border_color: Gdk.RGBA[]
     ): BorderNode;
   }
 
-  namespace BroadwayRenderer {
+  module BroadwayRenderer {
     // Constructor properties interface
 
-    type ConstructorProperties = Renderer.ConstructorProperties;
+    type ConstructorProperties = Renderer.ConstructorProperties
   }
 
   interface BroadwayRenderer {
@@ -661,12 +675,12 @@ declare namespace Gsk {
      * rendering to `renderer`.
      * @returns a Cairo context used for drawing; use   cairo_destroy() when done drawing
      */
-    get_draw_context(): cairo.Context;
+    get_draw_context(): cairo.Context | null;
     /**
      * Retrieves the Cairo surface used by the render node.
      * @returns a Cairo surface
      */
-    get_surface(): cairo.Surface;
+    get_surface(): cairo.Surface | null;
   }
 
   /**
@@ -689,7 +703,7 @@ declare namespace Gsk {
      * @param bounds the rectangle to render to
      * @returns A new `GskRenderNode`
      */
-    constructor(bounds: Graphene.Rect);
+    constructor(bounds: Graphene.Rect | null);
     /**
      * Creates a `GskRenderNode` that will render a cairo surface
      * into the area given by `bounds`.
@@ -699,13 +713,13 @@ declare namespace Gsk {
      * @param bounds the rectangle to render to
      * @returns A new `GskRenderNode`
      */
-    static new(bounds: Graphene.Rect): CairoNode;
+    static new(bounds: Graphene.Rect | null): CairoNode;
   }
 
-  namespace CairoRenderer {
+  module CairoRenderer {
     // Constructor properties interface
 
-    type ConstructorProperties = Renderer.ConstructorProperties;
+    type ConstructorProperties = Renderer.ConstructorProperties
   }
 
   interface CairoRenderer {
@@ -787,12 +801,12 @@ declare namespace Gsk {
      * Gets the child node that is getting clipped by the given `node`.
      * @returns The child that is getting clipped
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the clip rectangle for `node`.
      * @returns a clip rectangle
      */
-    get_clip(): Graphene.Rect;
+    get_clip(): Graphene.Rect | null;
   }
 
   /**
@@ -814,7 +828,7 @@ declare namespace Gsk {
      * @param clip The clip to apply
      * @returns A new `GskRenderNode`
      */
-    constructor(child: RenderNode, clip: Graphene.Rect);
+    constructor(child: RenderNode | null, clip: Graphene.Rect | null);
     /**
      * Creates a `GskRenderNode` that will clip the `child` to the area
      * given by `clip`.
@@ -823,7 +837,7 @@ declare namespace Gsk {
      * @param clip The clip to apply
      * @returns A new `GskRenderNode`
      */
-    static new(child: RenderNode, clip: Graphene.Rect): ClipNode;
+    static new(child: RenderNode | null, clip: Graphene.Rect | null): ClipNode;
   }
 
   interface ColorMatrixNode {
@@ -833,17 +847,17 @@ declare namespace Gsk {
      * Gets the child node that is getting its colors modified by the given `node`.
      * @returns The child that is getting its colors modified
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the color matrix used by the `node`.
      * @returns a 4x4 color matrix
      */
-    get_color_matrix(): Graphene.Matrix;
+    get_color_matrix(): Graphene.Matrix | null;
     /**
      * Retrieves the color offset used by the `node`.
      * @returns a color vector
      */
-    get_color_offset(): Graphene.Vec4;
+    get_color_offset(): Graphene.Vec4 | null;
   }
 
   /**
@@ -873,9 +887,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      child: RenderNode,
-      color_matrix: Graphene.Matrix,
-      color_offset: Graphene.Vec4
+      child: RenderNode | null,
+      color_matrix: Graphene.Matrix | null,
+      color_offset: Graphene.Vec4 | null
     );
     /**
      * Creates a `GskRenderNode` that will drawn the `child` with
@@ -893,9 +907,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      child: RenderNode,
-      color_matrix: Graphene.Matrix,
-      color_offset: Graphene.Vec4
+      child: RenderNode | null,
+      color_matrix: Graphene.Matrix | null,
+      color_offset: Graphene.Vec4 | null
     ): ColorMatrixNode;
   }
 
@@ -906,7 +920,7 @@ declare namespace Gsk {
      * Retrieves the color of the given `node`.
      * @returns the color of the node
      */
-    get_color(): Gdk.RGBA;
+    get_color(): Gdk.RGBA | null;
   }
 
   /**
@@ -928,7 +942,7 @@ declare namespace Gsk {
      * @param bounds the rectangle to render the color into
      * @returns A new `GskRenderNode`
      */
-    constructor(rgba: Gdk.RGBA, bounds: Graphene.Rect);
+    constructor(rgba: Gdk.RGBA | null, bounds: Graphene.Rect | null);
     /**
      * Creates a `GskRenderNode` that will render the color specified by `rgba` into
      * the area given by `bounds`.
@@ -937,7 +951,7 @@ declare namespace Gsk {
      * @param bounds the rectangle to render the color into
      * @returns A new `GskRenderNode`
      */
-    static new(rgba: Gdk.RGBA, bounds: Graphene.Rect): ColorNode;
+    static new(rgba: Gdk.RGBA | null, bounds: Graphene.Rect | null): ColorNode;
   }
 
   interface ConicGradientNode {
@@ -957,7 +971,7 @@ declare namespace Gsk {
      * Retrieves the center pointer for the gradient.
      * @returns the center point for the gradient
      */
-    get_center(): Graphene.Point;
+    get_center(): Graphene.Point | null;
     /**
      * Retrieves the color stops in the gradient.
      * @returns the color stops in the gradient
@@ -1000,8 +1014,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      bounds: Graphene.Rect,
-      center: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      center: Graphene.Point | null,
       rotation: number,
       color_stops: ColorStop[]
     );
@@ -1019,8 +1033,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bounds: Graphene.Rect,
-      center: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      center: Graphene.Point | null,
       rotation: number,
       color_stops: ColorStop[]
     ): ConicGradientNode;
@@ -1034,7 +1048,7 @@ declare namespace Gsk {
      * @param idx the position of the child to get
      * @returns the @idx'th child of @container
      */
-    get_child(idx: number): RenderNode;
+    get_child(idx: number): RenderNode | null;
     /**
      * Retrieves the number of direct children of `node`.
      * @returns the number of children of the `GskRenderNode`
@@ -1080,7 +1094,7 @@ declare namespace Gsk {
      * Retrieves the child `GskRenderNode` at the end of the cross-fade.
      * @returns a `GskRenderNode`
      */
-    get_end_child(): RenderNode;
+    get_end_child(): RenderNode | null;
     /**
      * Retrieves the progress value of the cross fade.
      * @returns the progress value, between 0 and 1
@@ -1090,7 +1104,7 @@ declare namespace Gsk {
      * Retrieves the child `GskRenderNode` at the beginning of the cross-fade.
      * @returns a `GskRenderNode`
      */
-    get_start_child(): RenderNode;
+    get_start_child(): RenderNode | null;
   }
 
   /**
@@ -1112,7 +1126,11 @@ declare namespace Gsk {
      * @param progress How far the fade has progressed from start to end. The value will     be clamped to the range [0 ... 1]
      * @returns A new `GskRenderNode`
      */
-    constructor(start: RenderNode, end: RenderNode, progress: number);
+    constructor(
+      start: RenderNode | null,
+      end: RenderNode | null,
+      progress: number
+    );
     /**
      * Creates a `GskRenderNode` that will do a cross-fade between `start` and `end`.
      * @constructor
@@ -1122,8 +1140,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      start: RenderNode,
-      end: RenderNode,
+      start: RenderNode | null,
+      end: RenderNode | null,
       progress: number
     ): CrossFadeNode;
   }
@@ -1135,12 +1153,12 @@ declare namespace Gsk {
      * Gets the child node that is getting drawn by the given `node`.
      * @returns the child `GskRenderNode`
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Gets the debug message that was set on this node
      * @returns The debug message
      */
-    get_message(): string;
+    get_message(): string | null;
   }
 
   /**
@@ -1165,7 +1183,7 @@ declare namespace Gsk {
      * @param message The debug message
      * @returns A new `GskRenderNode`
      */
-    constructor(child: RenderNode, message: string);
+    constructor(child: RenderNode | null, message: string | null);
     /**
      * Creates a `GskRenderNode` that will add debug information about
      * the given `child`.
@@ -1176,13 +1194,13 @@ declare namespace Gsk {
      * @param message The debug message
      * @returns A new `GskRenderNode`
      */
-    static new(child: RenderNode, message: string): DebugNode;
+    static new(child: RenderNode | null, message: string | null): DebugNode;
   }
 
-  namespace GLRenderer {
+  module GLRenderer {
     // Constructor properties interface
 
-    type ConstructorProperties = Renderer.ConstructorProperties;
+    type ConstructorProperties = Renderer.ConstructorProperties
   }
 
   interface GLRenderer {
@@ -1236,7 +1254,7 @@ declare namespace Gsk {
     _init(config?: GLRenderer.ConstructorProperties): void;
   }
 
-  namespace GLShader {
+  module GLShader {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -1263,7 +1281,7 @@ declare namespace Gsk {
      * If the shader source is not coming from a resource, this
      * will be %NULL.
      */
-    readonly resource: string;
+    readonly resource: string | null;
     readonly source: GLib.Bytes;
 
     // Owm methods of Gsk-4.0.Gsk.GLShader
@@ -1284,14 +1302,14 @@ declare namespace Gsk {
      * @param renderer a `GskRenderer`
      * @returns %TRUE on success, %FALSE if an error occurred
      */
-    compile(renderer: Renderer): boolean;
+    compile(renderer: Renderer | null): boolean;
     /**
      * Looks for a uniform by the name `name,` and returns the index
      * of the uniform, or -1 if it was not found.
      * @param name uniform name
      * @returns The index of the uniform, or -1
      */
-    find_uniform_by_name(name: string): number;
+    find_uniform_by_name(name: string | null): number;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1300,7 +1318,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @returns The value
      */
-    get_arg_bool(args: GLib.Bytes, idx: number): boolean;
+    get_arg_bool(args: GLib.Bytes | null, idx: number): boolean;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1309,7 +1327,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @returns The value
      */
-    get_arg_float(args: GLib.Bytes, idx: number): number;
+    get_arg_float(args: GLib.Bytes | null, idx: number): number;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1318,7 +1336,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @returns The value
      */
-    get_arg_int(args: GLib.Bytes, idx: number): number;
+    get_arg_int(args: GLib.Bytes | null, idx: number): number;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1327,7 +1345,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @returns The value
      */
-    get_arg_uint(args: GLib.Bytes, idx: number): number;
+    get_arg_uint(args: GLib.Bytes | null, idx: number): number;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1336,7 +1354,11 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @param out_value location to store the uniform value in
      */
-    get_arg_vec2(args: GLib.Bytes, idx: number, out_value: Graphene.Vec2): void;
+    get_arg_vec2(
+      args: GLib.Bytes | null,
+      idx: number,
+      out_value: Graphene.Vec2 | null
+    ): void;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1345,7 +1367,11 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @param out_value location to store the uniform value in
      */
-    get_arg_vec3(args: GLib.Bytes, idx: number, out_value: Graphene.Vec3): void;
+    get_arg_vec3(
+      args: GLib.Bytes | null,
+      idx: number,
+      out_value: Graphene.Vec3 | null
+    ): void;
     /**
      * Gets the value of the uniform `idx` in the `args` block.
      *
@@ -1354,7 +1380,11 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @param out_value location to store set the uniform value in
      */
-    get_arg_vec4(args: GLib.Bytes, idx: number, out_value: Graphene.Vec4): void;
+    get_arg_vec4(
+      args: GLib.Bytes | null,
+      idx: number,
+      out_value: Graphene.Vec4 | null
+    ): void;
     /**
      * Get the size of the data block used to specify arguments for this shader.
      * @returns The size of the data block
@@ -1384,13 +1414,13 @@ declare namespace Gsk {
      * Gets the GLSL sourcecode being used to render this shader.
      * @returns The source code for the shader
      */
-    get_source(): GLib.Bytes;
+    get_source(): GLib.Bytes | null;
     /**
      * Get the name of the declared uniform for this shader at index `idx`.
      * @param idx index of the uniform
      * @returns The name of the declared uniform
      */
-    get_uniform_name(idx: number): string;
+    get_uniform_name(idx: number): string | null;
     /**
      * Get the offset into the data block where data for this uniforms is stored.
      * @param idx index of the uniform
@@ -1561,14 +1591,14 @@ declare namespace Gsk {
      * @param sourcecode GLSL sourcecode for the shader, as a `GBytes`
      * @returns A new `GskGLShader`
      */
-    static new_from_bytes(sourcecode: GLib.Bytes): GLShader;
+    static new_from_bytes(sourcecode: GLib.Bytes | null): GLShader;
     /**
      * Creates a `GskGLShader` that will render pixels using the specified code.
      * @constructor
      * @param resource_path path to a resource that contains the GLSL sourcecode for     the shader
      * @returns A new `GskGLShader`
      */
-    static new_from_resource(resource_path: string): GLShader;
+    static new_from_resource(resource_path: string | null): GLShader;
     _init(config?: GLShader.ConstructorProperties): void;
   }
 
@@ -1579,13 +1609,13 @@ declare namespace Gsk {
      * Gets args for the node.
      * @returns A `GBytes` with the uniform arguments
      */
-    get_args(): GLib.Bytes;
+    get_args(): GLib.Bytes | null;
     /**
      * Gets one of the children.
      * @param idx the position of the child to get
      * @returns the @idx'th child of @node
      */
-    get_child(idx: number): RenderNode;
+    get_child(idx: number): RenderNode | null;
     /**
      * Returns the number of children
      * @returns The number of children
@@ -1595,7 +1625,7 @@ declare namespace Gsk {
      * Gets shader code for the node.
      * @returns the `GskGLShader` shader
      */
-    get_shader(): GLShader;
+    get_shader(): GLShader | null;
   }
 
   /**
@@ -1635,9 +1665,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      shader: GLShader,
-      bounds: Graphene.Rect,
-      args: GLib.Bytes,
+      shader: GLShader | null,
+      bounds: Graphene.Rect | null,
+      args: GLib.Bytes | null,
       children: RenderNode[] | null
     );
     /**
@@ -1666,9 +1696,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      shader: GLShader,
-      bounds: Graphene.Rect,
-      args: GLib.Bytes,
+      shader: GLShader | null,
+      bounds: Graphene.Rect | null,
+      args: GLib.Bytes | null,
       children: RenderNode[] | null
     ): GLShaderNode;
   }
@@ -1685,7 +1715,7 @@ declare namespace Gsk {
      * Retrieves the color of the inset shadow.
      * @returns the color of the shadow
      */
-    get_color(): Gdk.RGBA;
+    get_color(): Gdk.RGBA | null;
     /**
      * Retrieves the horizontal offset of the inset shadow.
      * @returns an offset, in pixels
@@ -1700,7 +1730,7 @@ declare namespace Gsk {
      * Retrieves the outline rectangle of the inset shadow.
      * @returns a rounded rectangle
      */
-    get_outline(): RoundedRect;
+    get_outline(): RoundedRect | null;
     /**
      * Retrieves how much the shadow spreads inwards.
      * @returns the size of the shadow, in pixels
@@ -1732,8 +1762,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      outline: RoundedRect,
-      color: Gdk.RGBA,
+      outline: RoundedRect | null,
+      color: Gdk.RGBA | null,
       dx: number,
       dy: number,
       spread: number,
@@ -1752,8 +1782,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      outline: RoundedRect,
-      color: Gdk.RGBA,
+      outline: RoundedRect | null,
+      color: Gdk.RGBA | null,
       dx: number,
       dy: number,
       spread: number,
@@ -1773,7 +1803,7 @@ declare namespace Gsk {
      * Retrieves the final point of the linear gradient.
      * @returns the final point
      */
-    get_end(): Graphene.Point;
+    get_end(): Graphene.Point | null;
     /**
      * Retrieves the number of color stops in the gradient.
      * @returns the number of color stops
@@ -1783,7 +1813,7 @@ declare namespace Gsk {
      * Retrieves the initial point of the linear gradient.
      * @returns the initial point
      */
-    get_start(): Graphene.Point;
+    get_start(): Graphene.Point | null;
   }
 
   /**
@@ -1808,9 +1838,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      bounds: Graphene.Rect,
-      start: Graphene.Point,
-      end: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      start: Graphene.Point | null,
+      end: Graphene.Point | null,
       color_stops: ColorStop[]
     );
     /**
@@ -1824,17 +1854,17 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bounds: Graphene.Rect,
-      start: Graphene.Point,
-      end: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      start: Graphene.Point | null,
+      end: Graphene.Point | null,
       color_stops: ColorStop[]
     ): LinearGradientNode;
   }
 
-  namespace NglRenderer {
+  module NglRenderer {
     // Constructor properties interface
 
-    type ConstructorProperties = Renderer.ConstructorProperties;
+    type ConstructorProperties = Renderer.ConstructorProperties
   }
 
   interface NglRenderer {
@@ -1895,7 +1925,7 @@ declare namespace Gsk {
      * Gets the child node that is getting opacityed by the given `node`.
      * @returns The child that is getting opacityed
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Gets the transparency factor for an opacity node.
      * @returns the opacity factor
@@ -1922,7 +1952,7 @@ declare namespace Gsk {
      * @param opacity The opacity to apply
      * @returns A new `GskRenderNode`
      */
-    constructor(child: RenderNode, opacity: number);
+    constructor(child: RenderNode | null, opacity: number);
     /**
      * Creates a `GskRenderNode` that will drawn the `child` with reduced
      * `opacity`.
@@ -1931,7 +1961,7 @@ declare namespace Gsk {
      * @param opacity The opacity to apply
      * @returns A new `GskRenderNode`
      */
-    static new(child: RenderNode, opacity: number): OpacityNode;
+    static new(child: RenderNode | null, opacity: number): OpacityNode;
   }
 
   interface OutsetShadowNode {
@@ -1946,7 +1976,7 @@ declare namespace Gsk {
      * Retrieves the color of the outset shadow.
      * @returns a color
      */
-    get_color(): Gdk.RGBA;
+    get_color(): Gdk.RGBA | null;
     /**
      * Retrieves the horizontal offset of the outset shadow.
      * @returns an offset, in pixels
@@ -1961,7 +1991,7 @@ declare namespace Gsk {
      * Retrieves the outline rectangle of the outset shadow.
      * @returns a rounded rectangle
      */
-    get_outline(): RoundedRect;
+    get_outline(): RoundedRect | null;
     /**
      * Retrieves how much the shadow spreads outwards.
      * @returns the size of the shadow, in pixels
@@ -1993,8 +2023,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      outline: RoundedRect,
-      color: Gdk.RGBA,
+      outline: RoundedRect | null,
+      color: Gdk.RGBA | null,
       dx: number,
       dy: number,
       spread: number,
@@ -2013,8 +2043,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      outline: RoundedRect,
-      color: Gdk.RGBA,
+      outline: RoundedRect | null,
+      color: Gdk.RGBA | null,
       dx: number,
       dy: number,
       spread: number,
@@ -2029,7 +2059,7 @@ declare namespace Gsk {
      * Retrieves the center pointer for the gradient.
      * @returns the center point for the gradient
      */
-    get_center(): Graphene.Point;
+    get_center(): Graphene.Point | null;
     /**
      * Retrieves the color stops in the gradient.
      * @returns the color stops in the gradient
@@ -2090,8 +2120,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      bounds: Graphene.Rect,
-      center: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      center: Graphene.Point | null,
       hradius: number,
       vradius: number,
       start: number,
@@ -2115,8 +2145,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bounds: Graphene.Rect,
-      center: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      center: Graphene.Point | null,
       hradius: number,
       vradius: number,
       start: number,
@@ -2139,13 +2169,13 @@ declare namespace Gsk {
      * for nodes doing 3D operations, this function may fail.
      * @param cr cairo context to draw to
      */
-    draw(cr: cairo.Context): void;
+    draw(cr: cairo.Context | null): void;
     /**
      * Retrieves the boundaries of the `node`.
      *
      * The node will not draw outside of its boundaries.
      */
-    get_bounds(): /* bounds */ Graphene.Rect;
+    get_bounds(): /* bounds */ Graphene.Rect | null;
     /**
      * Returns the type of the `node`.
      * @returns the type of the `GskRenderNode`
@@ -2155,7 +2185,7 @@ declare namespace Gsk {
      * Acquires a reference on the given `GskRenderNode`.
      * @returns the `GskRenderNode` with an additional reference
      */
-    ref(): RenderNode;
+    ref(): RenderNode | null;
     /**
      * Serializes the `node` for later deserialization via
      * gsk_render_node_deserialize(). No guarantees are made about the format
@@ -2168,7 +2198,7 @@ declare namespace Gsk {
      * The format is not meant as a permanent storage format.
      * @returns a `GBytes` representing the node.
      */
-    serialize(): GLib.Bytes;
+    serialize(): GLib.Bytes | null;
     /**
      * Releases a reference on the given `GskRenderNode`.
      *
@@ -2187,7 +2217,7 @@ declare namespace Gsk {
      * @param filename the file to save it to.
      * @returns %TRUE if saving was successful
      */
-    write_to_file(filename: string): boolean;
+    write_to_file(filename: string | null): boolean;
   }
 
   /**
@@ -2220,13 +2250,13 @@ declare namespace Gsk {
      * @param bytes the bytes containing the data
      * @returns a new `GskRenderNode`
      */
-    static deserialize(bytes: GLib.Bytes): RenderNode | null;
+    static deserialize(bytes: GLib.Bytes | null): RenderNode | null;
   }
 
-  namespace Renderer {
+  module Renderer {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Renderer {
@@ -2284,7 +2314,7 @@ declare namespace Gsk {
      * @param root a `GskRenderNode`
      * @param region the `cairo_region_t` that must be redrawn or %NULL   for the whole window
      */
-    render(root: RenderNode, region: cairo.Region | null): void;
+    render(root: RenderNode | null, region: cairo.Region | null): void;
     /**
      * Renders the scene graph, described by a tree of `GskRenderNode` instances,
      * to a `GdkTexture`.
@@ -2299,9 +2329,9 @@ declare namespace Gsk {
      * @returns a `GdkTexture` with the rendered contents of @root.
      */
     render_texture(
-      root: RenderNode,
+      root: RenderNode | null,
       viewport: Graphene.Rect | null
-    ): Gdk.Texture;
+    ): Gdk.Texture | null;
     /**
      * Releases all the resources created by gsk_renderer_realize().
      */
@@ -2368,7 +2398,7 @@ declare namespace Gsk {
      * @param surface a `GdkSurface`
      * @returns a `GskRenderer`
      */
-    static new_for_surface(surface: Gdk.Surface): Renderer;
+    static new_for_surface(surface: Gdk.Surface | null): Renderer;
     _init(config?: Renderer.ConstructorProperties): void;
   }
 
@@ -2379,12 +2409,12 @@ declare namespace Gsk {
      * Retrieves the child of `node`.
      * @returns a `GskRenderNode`
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the bounding rectangle of the child of `node`.
      * @returns a bounding rectangle
      */
-    get_child_bounds(): Graphene.Rect;
+    get_child_bounds(): Graphene.Rect | null;
   }
 
   /**
@@ -2408,8 +2438,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      bounds: Graphene.Rect,
-      child: RenderNode,
+      bounds: Graphene.Rect | null,
+      child: RenderNode | null,
       child_bounds: Graphene.Rect | null
     );
     /**
@@ -2422,8 +2452,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bounds: Graphene.Rect,
-      child: RenderNode,
+      bounds: Graphene.Rect | null,
+      child: RenderNode | null,
       child_bounds: Graphene.Rect | null
     ): RepeatNode;
   }
@@ -2453,9 +2483,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      bounds: Graphene.Rect,
-      start: Graphene.Point,
-      end: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      start: Graphene.Point | null,
+      end: Graphene.Point | null,
       color_stops: ColorStop[]
     );
     /**
@@ -2470,9 +2500,9 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bounds: Graphene.Rect,
-      start: Graphene.Point,
-      end: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      start: Graphene.Point | null,
+      end: Graphene.Point | null,
       color_stops: ColorStop[]
     ): RepeatingLinearGradientNode;
   }
@@ -2507,8 +2537,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     constructor(
-      bounds: Graphene.Rect,
-      center: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      center: Graphene.Point | null,
       hradius: number,
       vradius: number,
       start: number,
@@ -2532,8 +2562,8 @@ declare namespace Gsk {
      * @returns A new `GskRenderNode`
      */
     static new(
-      bounds: Graphene.Rect,
-      center: Graphene.Point,
+      bounds: Graphene.Rect | null,
+      center: Graphene.Point | null,
       hradius: number,
       vradius: number,
       start: number,
@@ -2549,12 +2579,12 @@ declare namespace Gsk {
      * Gets the child node that is getting clipped by the given `node`.
      * @returns The child that is getting clipped
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the rounded rectangle used to clip the contents of the `node`.
      * @returns a rounded rectangle
      */
-    get_clip(): RoundedRect;
+    get_clip(): RoundedRect | null;
   }
 
   /**
@@ -2576,7 +2606,7 @@ declare namespace Gsk {
      * @param clip The clip to apply
      * @returns A new `GskRenderNode`
      */
-    constructor(child: RenderNode, clip: RoundedRect);
+    constructor(child: RenderNode | null, clip: RoundedRect | null);
     /**
      * Creates a `GskRenderNode` that will clip the `child` to the area
      * given by `clip`.
@@ -2585,7 +2615,10 @@ declare namespace Gsk {
      * @param clip The clip to apply
      * @returns A new `GskRenderNode`
      */
-    static new(child: RenderNode, clip: RoundedRect): RoundedClipNode;
+    static new(
+      child: RenderNode | null,
+      clip: RoundedRect | null
+    ): RoundedClipNode;
   }
 
   interface ShadowNode {
@@ -2595,7 +2628,7 @@ declare namespace Gsk {
      * Retrieves the child `GskRenderNode` of the shadow `node`.
      * @returns the child render node
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the number of shadows in the `node`.
      * @returns the number of shadows.
@@ -2606,7 +2639,7 @@ declare namespace Gsk {
      * @param i the given index
      * @returns the shadow data
      */
-    get_shadow(i: number): Shadow;
+    get_shadow(i: number): Shadow | null;
   }
 
   /**
@@ -2628,7 +2661,7 @@ declare namespace Gsk {
      * @param shadows The shadows to apply
      * @returns A new `GskRenderNode`
      */
-    constructor(child: RenderNode, shadows: Shadow[]);
+    constructor(child: RenderNode | null, shadows: Shadow[]);
     /**
      * Creates a `GskRenderNode` that will draw a `child` with the given
      * `shadows` below it.
@@ -2637,7 +2670,7 @@ declare namespace Gsk {
      * @param shadows The shadows to apply
      * @returns A new `GskRenderNode`
      */
-    static new(child: RenderNode, shadows: Shadow[]): ShadowNode;
+    static new(child: RenderNode | null, shadows: Shadow[]): ShadowNode;
   }
 
   interface TextNode {
@@ -2647,12 +2680,12 @@ declare namespace Gsk {
      * Retrieves the color used by the text `node`.
      * @returns the text color
      */
-    get_color(): Gdk.RGBA;
+    get_color(): Gdk.RGBA | null;
     /**
      * Returns the font used by the text `node`.
      * @returns the font
      */
-    get_font(): Pango.Font;
+    get_font(): Pango.Font | null;
     /**
      * Retrieves the glyph information in the `node`.
      * @returns the glyph information
@@ -2667,7 +2700,7 @@ declare namespace Gsk {
      * Retrieves the offset applied to the text.
      * @returns a point with the horizontal and vertical offsets
      */
-    get_offset(): Graphene.Point;
+    get_offset(): Graphene.Point | null;
     /**
      * Checks whether the text `node` has color glyphs.
      * @returns %TRUE if the text node has color glyphs
@@ -2699,10 +2732,10 @@ declare namespace Gsk {
      * @returns a new `GskRenderNode`
      */
     constructor(
-      font: Pango.Font,
-      glyphs: Pango.GlyphString,
-      color: Gdk.RGBA,
-      offset: Graphene.Point
+      font: Pango.Font | null,
+      glyphs: Pango.GlyphString | null,
+      color: Gdk.RGBA | null,
+      offset: Graphene.Point | null
     );
     /**
      * Creates a render node that renders the given glyphs.
@@ -2717,10 +2750,10 @@ declare namespace Gsk {
      * @returns a new `GskRenderNode`
      */
     static new(
-      font: Pango.Font,
-      glyphs: Pango.GlyphString,
-      color: Gdk.RGBA,
-      offset: Graphene.Point
+      font: Pango.Font | null,
+      glyphs: Pango.GlyphString | null,
+      color: Gdk.RGBA | null,
+      offset: Graphene.Point | null
     ): TextNode;
   }
 
@@ -2731,7 +2764,7 @@ declare namespace Gsk {
      * Retrieves the `GdkTexture` used when creating this `GskRenderNode`.
      * @returns the `GdkTexture`
      */
-    get_texture(): Gdk.Texture;
+    get_texture(): Gdk.Texture | null;
   }
 
   /**
@@ -2753,7 +2786,7 @@ declare namespace Gsk {
      * @param bounds the rectangle to render the texture into
      * @returns A new `GskRenderNode`
      */
-    constructor(texture: Gdk.Texture, bounds: Graphene.Rect);
+    constructor(texture: Gdk.Texture | null, bounds: Graphene.Rect | null);
     /**
      * Creates a `GskRenderNode` that will render the given
      * `texture` into the area given by `bounds`.
@@ -2762,7 +2795,10 @@ declare namespace Gsk {
      * @param bounds the rectangle to render the texture into
      * @returns A new `GskRenderNode`
      */
-    static new(texture: Gdk.Texture, bounds: Graphene.Rect): TextureNode;
+    static new(
+      texture: Gdk.Texture | null,
+      bounds: Graphene.Rect | null
+    ): TextureNode;
   }
 
   interface TransformNode {
@@ -2772,12 +2808,12 @@ declare namespace Gsk {
      * Gets the child node that is getting transformed by the given `node`.
      * @returns The child that is getting transformed
      */
-    get_child(): RenderNode;
+    get_child(): RenderNode | null;
     /**
      * Retrieves the `GskTransform` used by the `node`.
      * @returns a `GskTransform`
      */
-    get_transform(): Transform;
+    get_transform(): Transform | null;
   }
 
   /**
@@ -2799,7 +2835,7 @@ declare namespace Gsk {
      * @param transform The transform to apply
      * @returns A new `GskRenderNode`
      */
-    constructor(child: RenderNode, transform: Transform);
+    constructor(child: RenderNode | null, transform: Transform | null);
     /**
      * Creates a `GskRenderNode` that will transform the given `child`
      * with the given `transform`.
@@ -2808,7 +2844,10 @@ declare namespace Gsk {
      * @param transform The transform to apply
      * @returns A new `GskRenderNode`
      */
-    static new(child: RenderNode, transform: Transform): TransformNode;
+    static new(
+      child: RenderNode | null,
+      transform: Transform | null
+    ): TransformNode;
   }
 
   interface BroadwayRendererClass {}
@@ -2941,13 +2980,13 @@ declare namespace Gsk {
      * @param point the point to check
      * @returns %TRUE if the @point is inside the rounded rectangle
      */
-    contains_point(point: Graphene.Point): boolean;
+    contains_point(point: Graphene.Point | null): boolean;
     /**
      * Checks if the given `rect` is contained inside the rounded rectangle.
      * @param rect the rectangle to check
      * @returns %TRUE if the @rect is fully contained inside the rounded rectangle
      */
-    contains_rect(rect: Graphene.Rect): boolean;
+    contains_rect(rect: Graphene.Rect | null): boolean;
     /**
      * Initializes the given `GskRoundedRect` with the given values.
      *
@@ -2961,12 +3000,12 @@ declare namespace Gsk {
      * @returns the initialized rectangle
      */
     init(
-      bounds: Graphene.Rect,
-      top_left: Graphene.Size,
-      top_right: Graphene.Size,
-      bottom_right: Graphene.Size,
-      bottom_left: Graphene.Size
-    ): RoundedRect;
+      bounds: Graphene.Rect | null,
+      top_left: Graphene.Size | null,
+      top_right: Graphene.Size | null,
+      bottom_right: Graphene.Size | null,
+      bottom_left: Graphene.Size | null
+    ): RoundedRect | null;
     /**
      * Initializes `self` using the given `src` rectangle.
      *
@@ -2975,7 +3014,7 @@ declare namespace Gsk {
      * @param src a `GskRoundedRect`
      * @returns the initialized rectangle
      */
-    init_copy(src: RoundedRect): RoundedRect;
+    init_copy(src: RoundedRect | null): RoundedRect | null;
     /**
      * Initializes `self` to the given `bounds` and sets the radius
      * of all four corners to `radius`.
@@ -2983,13 +3022,16 @@ declare namespace Gsk {
      * @param radius the border radius
      * @returns the initialized rectangle
      */
-    init_from_rect(bounds: Graphene.Rect, radius: number): RoundedRect;
+    init_from_rect(
+      bounds: Graphene.Rect | null,
+      radius: number
+    ): RoundedRect | null;
     /**
      * Checks if part of the given `rect` is contained inside the rounded rectangle.
      * @param rect the rectangle to check
      * @returns %TRUE if the @rect intersects with the rounded rectangle
      */
-    intersects_rect(rect: Graphene.Rect): boolean;
+    intersects_rect(rect: Graphene.Rect | null): boolean;
     /**
      * Checks if all corners of `self` are right angles and the
      * rectangle covers all of its bounds.
@@ -3007,7 +3049,7 @@ declare namespace Gsk {
      * and the corners do not overlap.
      * @returns the normalized rectangle
      */
-    normalize(): RoundedRect;
+    normalize(): RoundedRect | null;
     /**
      * Offsets the bound's origin by `dx` and `dy`.
      *
@@ -3016,7 +3058,7 @@ declare namespace Gsk {
      * @param dy the vertical offset
      * @returns the offset rectangle
      */
-    offset(dx: number, dy: number): RoundedRect;
+    offset(dx: number, dy: number): RoundedRect | null;
     /**
      * Shrinks (or grows) the given rectangle by moving the 4 sides
      * according to the offsets given.
@@ -3037,7 +3079,7 @@ declare namespace Gsk {
       right: number,
       bottom: number,
       left: number
-    ): RoundedRect;
+    ): RoundedRect | null;
   }
 
   /**
@@ -3069,7 +3111,7 @@ declare namespace Gsk {
      * Increases the reference count of a `GskShaderArgsBuilder` by one.
      * @returns the passed in `GskShaderArgsBuilder`
      */
-    ref(): ShaderArgsBuilder;
+    ref(): ShaderArgsBuilder | null;
     /**
      * Sets the value of the uniform `idx`.
      *
@@ -3109,7 +3151,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @param value value to set the uniform too
      */
-    set_vec2(idx: number, value: Graphene.Vec2): void;
+    set_vec2(idx: number, value: Graphene.Vec2 | null): void;
     /**
      * Sets the value of the uniform `idx`.
      *
@@ -3117,7 +3159,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @param value value to set the uniform too
      */
-    set_vec3(idx: number, value: Graphene.Vec3): void;
+    set_vec3(idx: number, value: Graphene.Vec3 | null): void;
     /**
      * Sets the value of the uniform `idx`.
      *
@@ -3125,7 +3167,7 @@ declare namespace Gsk {
      * @param idx index of the uniform
      * @param value value to set the uniform too
      */
-    set_vec4(idx: number, value: Graphene.Vec4): void;
+    set_vec4(idx: number, value: Graphene.Vec4 | null): void;
     /**
      * Creates a new `GBytes` args from the current state of the
      * given `builder`.
@@ -3140,7 +3182,7 @@ declare namespace Gsk {
      * [method`Gsk`.ShaderArgsBuilder.free_to_args].
      * @returns the newly allocated buffer with   all the args added to @builder
      */
-    to_args(): GLib.Bytes;
+    to_args(): GLib.Bytes | null;
     /**
      * Decreases the reference count of a `GskShaderArgBuilder` by one.
      *
@@ -3168,7 +3210,7 @@ declare namespace Gsk {
      * @param initial_values optional `GBytes` with initial values
      * @returns The newly allocated builder, free with     [method@Gsk.ShaderArgsBuilder.unref]
      */
-    constructor(shader: GLShader, initial_values: GLib.Bytes | null);
+    constructor(shader: GLShader | null, initial_values: GLib.Bytes | null);
     /**
      * Allocates a builder that can be used to construct a new uniform data
      * chunk.
@@ -3178,7 +3220,7 @@ declare namespace Gsk {
      * @returns The newly allocated builder, free with     [method@Gsk.ShaderArgsBuilder.unref]
      */
     static new(
-      shader: GLShader,
+      shader: GLShader | null,
       initial_values: GLib.Bytes | null
     ): ShaderArgsBuilder;
   }
@@ -3248,7 +3290,7 @@ declare namespace Gsk {
      * @param matrix the matrix to multiply `next` with
      * @returns The new transform
      */
-    matrix(matrix: Graphene.Matrix): Transform;
+    matrix(matrix: Graphene.Matrix | null): Transform | null;
     /**
      * Applies a perspective projection transform.
      *
@@ -3259,7 +3301,7 @@ declare namespace Gsk {
      * @param depth distance of the z=0 plane. Lower values give a more   flattened pyramid and therefore a more pronounced   perspective effect.
      * @returns The new transform
      */
-    perspective(depth: number): Transform;
+    perspective(depth: number): Transform | null;
     /**
      * Converts `self` into a human-readable string representation suitable
      * for printing.
@@ -3268,7 +3310,7 @@ declare namespace Gsk {
      * [func`Gsk`.Transform.parse].
      * @param string The string to print into
      */
-    print(string: GLib.String): void;
+    print(string: GLib.String | null): void;
     /**
      * Acquires a reference on the given `GskTransform`.
      * @returns the `GskTransform` with an additional reference
@@ -3288,7 +3330,7 @@ declare namespace Gsk {
      * @param axis The rotation axis
      * @returns The new transform
      */
-    rotate_3d(angle: number, axis: Graphene.Vec3): Transform | null;
+    rotate_3d(angle: number, axis: Graphene.Vec3 | null): Transform | null;
     /**
      * Scales `next` in 2-dimensional space by the given factors.
      *
@@ -3337,12 +3379,12 @@ declare namespace Gsk {
      * Cairo.
      */
     to_2d(): [
-      /* out_xx */ number,
-      /* out_yx */ number,
-      /* out_xy */ number,
-      /* out_yy */ number,
-      /* out_dx */ number,
-      /* out_dy */ number
+      /* out_xx */ number | null,
+      /* out_yx */ number | null,
+      /* out_xy */ number | null,
+      /* out_yy */ number | null,
+      /* out_dx */ number | null,
+      /* out_dy */ number | null
     ];
     /**
      * Converts a `GskTransform` to 2D transformation factors.
@@ -3365,13 +3407,13 @@ declare namespace Gsk {
      * to check.
      */
     to_2d_components(): [
-      /* out_skew_x */ number,
-      /* out_skew_y */ number,
-      /* out_scale_x */ number,
-      /* out_scale_y */ number,
-      /* out_angle */ number,
-      /* out_dx */ number,
-      /* out_dy */ number
+      /* out_skew_x */ number | null,
+      /* out_skew_y */ number | null,
+      /* out_scale_x */ number | null,
+      /* out_scale_y */ number | null,
+      /* out_angle */ number | null,
+      /* out_dx */ number | null,
+      /* out_dy */ number | null
     ];
     /**
      * Converts a `GskTransform` to 2D affine transformation factors.
@@ -3391,17 +3433,17 @@ declare namespace Gsk {
      * to check.
      */
     to_affine(): [
-      /* out_scale_x */ number,
-      /* out_scale_y */ number,
-      /* out_dx */ number,
-      /* out_dy */ number
+      /* out_scale_x */ number | null,
+      /* out_scale_y */ number | null,
+      /* out_dx */ number | null,
+      /* out_dy */ number | null
     ];
     /**
      * Computes the actual value of `self` and stores it in `out_matrix`.
      *
      * The previous value of `out_matrix` will be ignored.
      */
-    to_matrix(): /* out_matrix */ Graphene.Matrix;
+    to_matrix(): /* out_matrix */ Graphene.Matrix | null;
     /**
      * Converts a matrix into a string that is suitable for printing.
      *
@@ -3410,7 +3452,7 @@ declare namespace Gsk {
      * This is a wrapper around [method`Gsk`.Transform.print].
      * @returns A new string for @self
      */
-    to_string(): string;
+    to_string(): string | null;
     /**
      * Converts a `GskTransform` to a translation operation.
      *
@@ -3421,7 +3463,7 @@ declare namespace Gsk {
      *
      * to check.
      */
-    to_translate(): [/* out_dx */ number, /* out_dy */ number];
+    to_translate(): [/* out_dx */ number | null, /* out_dy */ number | null];
     /**
      * Applies all the operations from `other` to `next`.
      * @param other Transform to apply
@@ -3434,24 +3476,28 @@ declare namespace Gsk {
      * The result is the bounding box containing the coplanar quad.
      * @param rect a `graphene_rect_t`
      */
-    transform_bounds(rect: Graphene.Rect): /* out_rect */ Graphene.Rect;
+    transform_bounds(
+      rect: Graphene.Rect | null
+    ): /* out_rect */ Graphene.Rect | null;
     /**
      * Transforms a `graphene_point_t` using the given transform `self`.
      * @param point a `graphene_point_t`
      */
-    transform_point(point: Graphene.Point): /* out_point */ Graphene.Point;
+    transform_point(
+      point: Graphene.Point | null
+    ): /* out_point */ Graphene.Point | null;
     /**
      * Translates `next` in 2-dimensional space by `point`.
      * @param point the point to translate the transform by
      * @returns The new transform
      */
-    translate(point: Graphene.Point): Transform | null;
+    translate(point: Graphene.Point | null): Transform | null;
     /**
      * Translates `next` by `point`.
      * @param point the point to translate the transform by
      * @returns The new transform
      */
-    translate_3d(point: Graphene.Point3D): Transform | null;
+    translate_3d(point: Graphene.Point3D | null): Transform | null;
     /**
      * Releases a reference on the given `GskTransform`.
      *
@@ -3495,8 +3541,8 @@ declare namespace Gsk {
      * @returns %TRUE if @string described a valid transform.
      */
     static parse(
-      string: string
-    ): [/* returnType */ boolean, /* out_transform */ Transform];
+      string: string | null
+    ): [/* returnType */ boolean, /* out_transform */ Transform | null];
   }
 
   /**

@@ -65,13 +65,13 @@ declare namespace GModule {
    */
   function module_build_path(
     directory: string | null,
-    module_name: string
-  ): string;
+    module_name: string | null
+  ): string | null;
   /**
    * Gets a string describing the last module error.
    * @returns a string describing the last module error
    */
-  function module_error(): string;
+  function module_error(): string | null;
   function module_error_quark(): GLib.Quark;
   /**
    * Checks if modules are supported on the current platform.
@@ -89,7 +89,7 @@ declare namespace GModule {
    * @returns %NULL on success, or a string describing the initialization error
    */
   interface ModuleCheckInit {
-    (module: Module): string;
+    (module: Module | null): string | null;
   }
   /**
    * Specifies the type of the module function called when it is unloaded.
@@ -100,7 +100,7 @@ declare namespace GModule {
    * @param module the #GModule about to be unloaded
    */
   interface ModuleUnload {
-    (module: Module): void;
+    (module: Module | null): void;
   }
   interface Module {
     // Owm methods of GModule-2.0.GModule.Module
@@ -121,7 +121,7 @@ declare namespace GModule {
      * If `module` refers to the application itself, "main" is returned.
      * @returns the filename of the module
      */
-    name(): string;
+    name(): string | null;
     /**
      * Gets a symbol pointer from a module, such as one exported
      * by %G_MODULE_EXPORT. Note that a valid symbol can be %NULL.
@@ -129,8 +129,8 @@ declare namespace GModule {
      * @returns %TRUE on success
      */
     symbol(
-      symbol_name: string
-    ): [/* returnType */ boolean, /* symbol */ object | null];
+      symbol_name: string | null
+    ): [/* returnType */ boolean, /* symbol */ any | null];
   }
 
   /**
@@ -164,12 +164,15 @@ declare namespace GModule {
      * @param module_name the name of the module
      * @returns the complete path of the module, including the standard library     prefix and suffix. This should be freed when no longer needed
      */
-    static build_path(directory: string | null, module_name: string): string;
+    static build_path(
+      directory: string | null,
+      module_name: string | null
+    ): string | null;
     /**
      * Gets a string describing the last module error.
      * @returns a string describing the last module error
      */
-    static error(): string;
+    static error(): string | null;
     static error_quark(): GLib.Quark;
     /**
      * Checks if modules are supported on the current platform.

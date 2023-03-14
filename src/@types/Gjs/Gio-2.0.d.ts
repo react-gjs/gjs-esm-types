@@ -2621,16 +2621,16 @@ declare namespace Gio {
    * Extension point for debug control functionality.
    * See [Extending GIO][extending-gio].
    */
-  const DEBUG_CONTROLLER_EXTENSION_POINT_NAME: string;
+  const DEBUG_CONTROLLER_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for default handler to URI association. See
    * [Extending GIO][extending-gio].
    */
-  const DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME: string;
+  const DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME: string | null;
   /**
    * The string used to obtain a Unix device path with g_drive_get_identifier().
    */
-  const DRIVE_IDENTIFIER_KIND_UNIX_DEVICE: string;
+  const DRIVE_IDENTIFIER_KIND_UNIX_DEVICE: string | null;
   /**
    * A key in the "access" namespace for checking deletion privileges.
    *
@@ -2638,7 +2638,7 @@ declare namespace Gio {
    *
    * This attribute will be %TRUE if the user is able to delete the file.
    */
-  const FILE_ATTRIBUTE_ACCESS_CAN_DELETE: string;
+  const FILE_ATTRIBUTE_ACCESS_CAN_DELETE: string | null;
   /**
    * A key in the "access" namespace for getting execution privileges.
    *
@@ -2646,7 +2646,7 @@ declare namespace Gio {
    *
    * This attribute will be %TRUE if the user is able to execute the file.
    */
-  const FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE: string;
+  const FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE: string | null;
   /**
    * A key in the "access" namespace for getting read privileges.
    *
@@ -2654,7 +2654,7 @@ declare namespace Gio {
    *
    * This attribute will be %TRUE if the user is able to read the file.
    */
-  const FILE_ATTRIBUTE_ACCESS_CAN_READ: string;
+  const FILE_ATTRIBUTE_ACCESS_CAN_READ: string | null;
   /**
    * A key in the "access" namespace for checking renaming privileges.
    *
@@ -2662,7 +2662,7 @@ declare namespace Gio {
    *
    * This attribute will be %TRUE if the user is able to rename the file.
    */
-  const FILE_ATTRIBUTE_ACCESS_CAN_RENAME: string;
+  const FILE_ATTRIBUTE_ACCESS_CAN_RENAME: string | null;
   /**
    * A key in the "access" namespace for checking trashing privileges.
    *
@@ -2671,7 +2671,7 @@ declare namespace Gio {
    * This attribute will be %TRUE if the user is able to move the file to
    * the trash.
    */
-  const FILE_ATTRIBUTE_ACCESS_CAN_TRASH: string;
+  const FILE_ATTRIBUTE_ACCESS_CAN_TRASH: string | null;
   /**
    * A key in the "access" namespace for getting write privileges.
    *
@@ -2679,7 +2679,7 @@ declare namespace Gio {
    *
    * This attribute will be %TRUE if the user is able to write to the file.
    */
-  const FILE_ATTRIBUTE_ACCESS_CAN_WRITE: string;
+  const FILE_ATTRIBUTE_ACCESS_CAN_WRITE: string | null;
   /**
    * A key in the "dos" namespace for checking if the file's archive flag
    * is set.
@@ -2690,7 +2690,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_DOS_IS_ARCHIVE: string;
+  const FILE_ATTRIBUTE_DOS_IS_ARCHIVE: string | null;
   /**
    * A key in the "dos" namespace for checking if the file is a NTFS mount point
    * (a volume mount or a junction point).
@@ -2702,7 +2702,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT: string;
+  const FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT: string | null;
   /**
    * A key in the "dos" namespace for checking if the file's backup flag
    * is set.
@@ -2713,7 +2713,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_DOS_IS_SYSTEM: string;
+  const FILE_ATTRIBUTE_DOS_IS_SYSTEM: string | null;
   /**
    * A key in the "dos" namespace for getting the file NTFS reparse tag.
    *
@@ -2724,21 +2724,21 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG: string;
+  const FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG: string | null;
   /**
    * A key in the "etag" namespace for getting the value of the file's
    * entity tag.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_ETAG_VALUE: string;
+  const FILE_ATTRIBUTE_ETAG_VALUE: string | null;
   /**
    * A key in the "filesystem" namespace for getting the number of bytes
    * of free space left on the file system.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_FREE: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_FREE: string | null;
   /**
    * A key in the "filesystem" namespace for checking if the file system
    * is read only.
@@ -2747,7 +2747,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_READONLY: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_READONLY: string | null;
   /**
    * A key in the "filesystem" namespace for checking if the file system
    * is remote.
@@ -2756,27 +2756,27 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_REMOTE: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_REMOTE: string | null;
   /**
    * A key in the "filesystem" namespace for getting the total size (in
    * bytes) of the file system, used in g_file_query_filesystem_info().
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_SIZE: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_SIZE: string | null;
   /**
    * A key in the "filesystem" namespace for getting the file system's type.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_TYPE: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_TYPE: string | null;
   /**
    * A key in the "filesystem" namespace for getting the number of bytes
    * used by data on the file system.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_USED: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_USED: string | null;
   /**
    * A key in the "filesystem" namespace for hinting a file manager
    * application whether it should preview (e.g. thumbnail) files on the
@@ -2784,14 +2784,14 @@ declare namespace Gio {
    *
    * The value for this key contain a #GFilesystemPreviewType.
    */
-  const FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW: string;
+  const FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW: string | null;
   /**
    * A key in the "gvfs" namespace that gets the name of the current
    * GVFS backend in use.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_GVFS_BACKEND: string;
+  const FILE_ATTRIBUTE_GVFS_BACKEND: string | null;
   /**
    * A key in the "id" namespace for getting a file identifier.
    *
@@ -2800,7 +2800,7 @@ declare namespace Gio {
    * An example use would be during listing files, to avoid recursive
    * directory scanning.
    */
-  const FILE_ATTRIBUTE_ID_FILE: string;
+  const FILE_ATTRIBUTE_ID_FILE: string | null;
   /**
    * A key in the "id" namespace for getting the file system identifier.
    *
@@ -2810,108 +2810,108 @@ declare namespace Gio {
    * and target are on the same filesystem (default to move) or not (default
    * to copy).
    */
-  const FILE_ATTRIBUTE_ID_FILESYSTEM: string;
+  const FILE_ATTRIBUTE_ID_FILESYSTEM: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) can be ejected.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) is mountable.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) can be polled.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) can be started.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_START: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_START: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) can be started degraded.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) can be stopped.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE)  is unmountable.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT: string | null;
   /**
    * A key in the "mountable" namespace for getting the HAL UDI for the mountable
    * file.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI: string | null;
   /**
    * A key in the "mountable" namespace for checking if a file (of
    * type G_FILE_TYPE_MOUNTABLE) is automatically polled for media.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC: string | null;
   /**
    * A key in the "mountable" namespace for getting the #GDriveStartStopType.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE: string | null;
   /**
    * A key in the "mountable" namespace for getting the unix device.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE: string | null;
   /**
    * A key in the "mountable" namespace for getting the unix device file.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE: string;
+  const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE: string | null;
   /**
    * A key in the "owner" namespace for getting the file owner's group.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_OWNER_GROUP: string;
+  const FILE_ATTRIBUTE_OWNER_GROUP: string | null;
   /**
    * A key in the "owner" namespace for getting the user name of the
    * file's owner.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_OWNER_USER: string;
+  const FILE_ATTRIBUTE_OWNER_USER: string | null;
   /**
    * A key in the "owner" namespace for getting the real name of the
    * user that owns the file.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_OWNER_USER_REAL: string;
+  const FILE_ATTRIBUTE_OWNER_USER_REAL: string | null;
   /**
    * A key in the "preview" namespace for getting a #GIcon that can be
    * used to get preview of the file.
@@ -2922,14 +2922,14 @@ declare namespace Gio {
    *
    * The value for this key should contain a #GIcon.
    */
-  const FILE_ATTRIBUTE_PREVIEW_ICON: string;
+  const FILE_ATTRIBUTE_PREVIEW_ICON: string | null;
   /**
    * A key in the "recent" namespace for getting time, when the metadata for the
    * file in `recent:///` was last changed.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_INT64.
    */
-  const FILE_ATTRIBUTE_RECENT_MODIFIED: string;
+  const FILE_ATTRIBUTE_RECENT_MODIFIED: string | null;
   /**
    * A key in the "selinux" namespace for getting the file's SELinux
    * context.
@@ -2939,7 +2939,7 @@ declare namespace Gio {
    * Note that this attribute is only available if GLib has been built
    * with SELinux support.
    */
-  const FILE_ATTRIBUTE_SELINUX_CONTEXT: string;
+  const FILE_ATTRIBUTE_SELINUX_CONTEXT: string | null;
   /**
    * A key in the "standard" namespace for getting the amount of disk space
    * that is consumed by the file (in bytes).
@@ -2949,7 +2949,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE: string;
+  const FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE: string | null;
   /**
    * A key in the "standard" namespace for getting the content type of the file.
    *
@@ -2957,7 +2957,7 @@ declare namespace Gio {
    *
    * The value for this key should contain a valid content type.
    */
-  const FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE: string;
+  const FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE: string | null;
   /**
    * A key in the "standard" namespace for getting the copy name of the file.
    *
@@ -2969,7 +2969,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_COPY_NAME: string;
+  const FILE_ATTRIBUTE_STANDARD_COPY_NAME: string | null;
   /**
    * A key in the "standard" namespace for getting the description of the file.
    *
@@ -2981,7 +2981,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_DESCRIPTION: string;
+  const FILE_ATTRIBUTE_STANDARD_DESCRIPTION: string | null;
   /**
    * A key in the "standard" namespace for getting the display name of the file.
    *
@@ -2990,7 +2990,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME: string;
+  const FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME: string | null;
   /**
    * A key in the "standard" namespace for edit name of the file.
    *
@@ -3001,7 +3001,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_EDIT_NAME: string;
+  const FILE_ATTRIBUTE_STANDARD_EDIT_NAME: string | null;
   /**
    * A key in the "standard" namespace for getting the fast content type.
    *
@@ -3011,7 +3011,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE: string;
+  const FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE: string | null;
   /**
    * A key in the "standard" namespace for getting the icon for the file.
    *
@@ -3019,19 +3019,19 @@ declare namespace Gio {
    *
    * The value for this key should contain a #GIcon.
    */
-  const FILE_ATTRIBUTE_STANDARD_ICON: string;
+  const FILE_ATTRIBUTE_STANDARD_ICON: string | null;
   /**
    * A key in the "standard" namespace for checking if a file is a backup file.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_STANDARD_IS_BACKUP: string;
+  const FILE_ATTRIBUTE_STANDARD_IS_BACKUP: string | null;
   /**
    * A key in the "standard" namespace for checking if a file is hidden.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_STANDARD_IS_HIDDEN: string;
+  const FILE_ATTRIBUTE_STANDARD_IS_HIDDEN: string | null;
   /**
    * A key in the "standard" namespace for checking if the file is a symlink.
    * Typically the actual type is something else, if we followed the symlink
@@ -3041,13 +3041,13 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_STANDARD_IS_SYMLINK: string;
+  const FILE_ATTRIBUTE_STANDARD_IS_SYMLINK: string | null;
   /**
    * A key in the "standard" namespace for checking if a file is virtual.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL: string;
+  const FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL: string | null;
   /**
    * A key in the "standard" namespace for checking if a file is
    * volatile. This is meant for opaque, non-POSIX-like backends to
@@ -3056,7 +3056,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_STANDARD_IS_VOLATILE: string;
+  const FILE_ATTRIBUTE_STANDARD_IS_VOLATILE: string | null;
   /**
    * A key in the "standard" namespace for getting the name of the file.
    *
@@ -3069,13 +3069,13 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_NAME: string;
+  const FILE_ATTRIBUTE_STANDARD_NAME: string | null;
   /**
    * A key in the "standard" namespace for getting the file's size (in bytes).
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_STANDARD_SIZE: string;
+  const FILE_ATTRIBUTE_STANDARD_SIZE: string | null;
   /**
    * A key in the "standard" namespace for setting the sort order of a file.
    *
@@ -3086,7 +3086,7 @@ declare namespace Gio {
    * should be sorted first, and files without sort order as if sort order
    * was zero.
    */
-  const FILE_ATTRIBUTE_STANDARD_SORT_ORDER: string;
+  const FILE_ATTRIBUTE_STANDARD_SORT_ORDER: string | null;
   /**
    * A key in the "standard" namespace for getting the symbolic icon for the file.
    *
@@ -3094,21 +3094,21 @@ declare namespace Gio {
    *
    * The value for this key should contain a #GIcon.
    */
-  const FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON: string;
+  const FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON: string | null;
   /**
    * A key in the "standard" namespace for getting the symlink target, if the file
    * is a symlink.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET: string;
+  const FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET: string | null;
   /**
    * A key in the "standard" namespace for getting the target URI for the file, in
    * the case of %G_FILE_TYPE_SHORTCUT or %G_FILE_TYPE_MOUNTABLE files.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_STANDARD_TARGET_URI: string;
+  const FILE_ATTRIBUTE_STANDARD_TARGET_URI: string | null;
   /**
    * A key in the "standard" namespace for storing file types.
    *
@@ -3116,7 +3116,7 @@ declare namespace Gio {
    *
    * The value for this key should contain a #GFileType.
    */
-  const FILE_ATTRIBUTE_STANDARD_TYPE: string;
+  const FILE_ATTRIBUTE_STANDARD_TYPE: string | null;
   /**
    * A key in the "thumbnail" namespace for checking if thumbnailing failed.
    *
@@ -3124,7 +3124,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_THUMBNAILING_FAILED: string;
+  const FILE_ATTRIBUTE_THUMBNAILING_FAILED: string | null;
   /**
    * A key in the "thumbnail" namespace for checking whether the thumbnail is outdated.
    *
@@ -3136,14 +3136,14 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID: string;
+  const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID: string | null;
   /**
    * A key in the "thumbnail" namespace for getting the path to the thumbnail
    * image.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
    */
-  const FILE_ATTRIBUTE_THUMBNAIL_PATH: string;
+  const FILE_ATTRIBUTE_THUMBNAIL_PATH: string | null;
   /**
    * A key in the "time" namespace for getting the time the file was last
    * accessed.
@@ -3152,14 +3152,14 @@ declare namespace Gio {
    * contains the time since the file was last accessed, in seconds since the
    * UNIX epoch.
    */
-  const FILE_ATTRIBUTE_TIME_ACCESS: string;
+  const FILE_ATTRIBUTE_TIME_ACCESS: string | null;
   /**
    * A key in the "time" namespace for getting the nanoseconds of the time
    * the file was last accessed. This should be used in conjunction with
    * #G_FILE_ATTRIBUTE_TIME_ACCESS. Corresponding #GFileAttributeType is
    * %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_ACCESS_NSEC: string;
+  const FILE_ATTRIBUTE_TIME_ACCESS_NSEC: string | null;
   /**
    * A key in the "time" namespace for getting the microseconds of the time
    * the file was last accessed.
@@ -3168,7 +3168,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_ACCESS_USEC: string;
+  const FILE_ATTRIBUTE_TIME_ACCESS_USEC: string | null;
   /**
    * A key in the "time" namespace for getting the time the file was last
    * changed.
@@ -3179,14 +3179,14 @@ declare namespace Gio {
    *
    * This corresponds to the traditional UNIX ctime.
    */
-  const FILE_ATTRIBUTE_TIME_CHANGED: string;
+  const FILE_ATTRIBUTE_TIME_CHANGED: string | null;
   /**
    * A key in the "time" namespace for getting the nanoseconds of the time
    * the file was last changed. This should be used in conjunction with
    * #G_FILE_ATTRIBUTE_TIME_CHANGED. Corresponding #GFileAttributeType is
    * %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_CHANGED_NSEC: string;
+  const FILE_ATTRIBUTE_TIME_CHANGED_NSEC: string | null;
   /**
    * A key in the "time" namespace for getting the microseconds of the time
    * the file was last changed.
@@ -3195,7 +3195,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_CHANGED_USEC: string;
+  const FILE_ATTRIBUTE_TIME_CHANGED_USEC: string | null;
   /**
    * A key in the "time" namespace for getting the time the file was created.
    *
@@ -3206,14 +3206,14 @@ declare namespace Gio {
    * This may correspond to Linux `stx_btime`, FreeBSD `st_birthtim`, NetBSD
    * `st_birthtime` or NTFS `ctime`.
    */
-  const FILE_ATTRIBUTE_TIME_CREATED: string;
+  const FILE_ATTRIBUTE_TIME_CREATED: string | null;
   /**
    * A key in the "time" namespace for getting the nanoseconds of the time
    * the file was created. This should be used in conjunction with
    * #G_FILE_ATTRIBUTE_TIME_CREATED. Corresponding #GFileAttributeType is
    * %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_CREATED_NSEC: string;
+  const FILE_ATTRIBUTE_TIME_CREATED_NSEC: string | null;
   /**
    * A key in the "time" namespace for getting the microseconds of the time
    * the file was created.
@@ -3222,7 +3222,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_CREATED_USEC: string;
+  const FILE_ATTRIBUTE_TIME_CREATED_USEC: string | null;
   /**
    * A key in the "time" namespace for getting the time the file was last
    * modified.
@@ -3231,14 +3231,14 @@ declare namespace Gio {
    * contains the time since the file was modified, in seconds since the UNIX
    * epoch.
    */
-  const FILE_ATTRIBUTE_TIME_MODIFIED: string;
+  const FILE_ATTRIBUTE_TIME_MODIFIED: string | null;
   /**
    * A key in the "time" namespace for getting the nanoseconds of the time
    * the file was last modified. This should be used in conjunction with
    * #G_FILE_ATTRIBUTE_TIME_MODIFIED. Corresponding #GFileAttributeType is
    * %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_MODIFIED_NSEC: string;
+  const FILE_ATTRIBUTE_TIME_MODIFIED_NSEC: string | null;
   /**
    * A key in the "time" namespace for getting the microseconds of the time
    * the file was last modified.
@@ -3247,7 +3247,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TIME_MODIFIED_USEC: string;
+  const FILE_ATTRIBUTE_TIME_MODIFIED_USEC: string | null;
   /**
    * A key in the "trash" namespace for getting the deletion date and time
    * of a file inside the `trash:///` folder.
@@ -3256,21 +3256,21 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_STRING.
    */
-  const FILE_ATTRIBUTE_TRASH_DELETION_DATE: string;
+  const FILE_ATTRIBUTE_TRASH_DELETION_DATE: string | null;
   /**
    * A key in the "trash" namespace for getting the number of (toplevel) items
    * that are present in the `trash:///` folder.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_TRASH_ITEM_COUNT: string;
+  const FILE_ATTRIBUTE_TRASH_ITEM_COUNT: string | null;
   /**
    * A key in the "trash" namespace for getting the original path of a file
    * inside the `trash:///` folder before it was trashed.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
    */
-  const FILE_ATTRIBUTE_TRASH_ORIG_PATH: string;
+  const FILE_ATTRIBUTE_TRASH_ORIG_PATH: string | null;
   /**
    * A key in the "unix" namespace for getting the number of blocks allocated
    * for the file.
@@ -3279,7 +3279,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_UNIX_BLOCKS: string;
+  const FILE_ATTRIBUTE_UNIX_BLOCKS: string | null;
   /**
    * A key in the "unix" namespace for getting the block size for the file
    * system.
@@ -3288,7 +3288,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_BLOCK_SIZE: string;
+  const FILE_ATTRIBUTE_UNIX_BLOCK_SIZE: string | null;
   /**
    * A key in the "unix" namespace for getting the device id of the device the
    * file is located on (see stat() documentation).
@@ -3297,7 +3297,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_DEVICE: string;
+  const FILE_ATTRIBUTE_UNIX_DEVICE: string | null;
   /**
    * A key in the "unix" namespace for getting the group ID for the file.
    *
@@ -3305,7 +3305,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_GID: string;
+  const FILE_ATTRIBUTE_UNIX_GID: string | null;
   /**
    * A key in the "unix" namespace for getting the inode of the file.
    *
@@ -3313,7 +3313,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT64.
    */
-  const FILE_ATTRIBUTE_UNIX_INODE: string;
+  const FILE_ATTRIBUTE_UNIX_INODE: string | null;
   /**
    * A key in the "unix" namespace for checking if the file represents a
    * UNIX mount point.
@@ -3326,7 +3326,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
    */
-  const FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT: string;
+  const FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT: string | null;
   /**
    * A key in the "unix" namespace for getting the mode of the file
    * (e.g. whether the file is a regular file, symlink, etc).
@@ -3339,7 +3339,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_MODE: string;
+  const FILE_ATTRIBUTE_UNIX_MODE: string | null;
   /**
    * A key in the "unix" namespace for getting the number of hard links
    * for a file.
@@ -3350,7 +3350,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_NLINK: string;
+  const FILE_ATTRIBUTE_UNIX_NLINK: string | null;
   /**
    * A key in the "unix" namespace for getting the device ID for the file
    * (if it is a special file).
@@ -3361,7 +3361,7 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_RDEV: string;
+  const FILE_ATTRIBUTE_UNIX_RDEV: string | null;
   /**
    * A key in the "unix" namespace for getting the user ID for the file.
    *
@@ -3369,12 +3369,12 @@ declare namespace Gio {
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_UINT32.
    */
-  const FILE_ATTRIBUTE_UNIX_UID: string;
+  const FILE_ATTRIBUTE_UNIX_UID: string | null;
   /**
    * Extension point for memory usage monitoring functionality.
    * See [Extending GIO][extending-gio].
    */
-  const MEMORY_MONITOR_EXTENSION_POINT_NAME: string;
+  const MEMORY_MONITOR_EXTENSION_POINT_NAME: string | null;
   /**
    * The menu item attribute which holds the action name of the item.  Action
    * names are namespaced with an identifier for the action group in which the
@@ -3383,12 +3383,12 @@ declare namespace Gio {
    *
    * See also g_menu_model_get_item_attribute() and g_menu_item_set_attribute().
    */
-  const MENU_ATTRIBUTE_ACTION: string;
+  const MENU_ATTRIBUTE_ACTION: string | null;
   /**
    * The menu item attribute that holds the namespace for all action names in
    * menus that are linked from this item.
    */
-  const MENU_ATTRIBUTE_ACTION_NAMESPACE: string;
+  const MENU_ATTRIBUTE_ACTION_NAMESPACE: string | null;
   /**
    * The menu item attribute which holds the icon of the item.
    *
@@ -3398,18 +3398,18 @@ declare namespace Gio {
    * favicons for a webpage, or application icons.  It should not be used
    * for 'verbs' (ie: stock icons).
    */
-  const MENU_ATTRIBUTE_ICON: string;
+  const MENU_ATTRIBUTE_ICON: string | null;
   /**
    * The menu item attribute which holds the label of the item.
    */
-  const MENU_ATTRIBUTE_LABEL: string;
+  const MENU_ATTRIBUTE_LABEL: string | null;
   /**
    * The menu item attribute which holds the target with which the item's action
    * will be activated.
    *
    * See also g_menu_item_set_action_and_target()
    */
-  const MENU_ATTRIBUTE_TARGET: string;
+  const MENU_ATTRIBUTE_TARGET: string | null;
   /**
    * The name of the link that associates a menu item with a section.  The linked
    * menu will usually be shown in place of the menu item, using the item's label
@@ -3417,58 +3417,58 @@ declare namespace Gio {
    *
    * See also g_menu_item_set_link().
    */
-  const MENU_LINK_SECTION: string;
+  const MENU_LINK_SECTION: string | null;
   /**
    * The name of the link that associates a menu item with a submenu.
    *
    * See also g_menu_item_set_link().
    */
-  const MENU_LINK_SUBMENU: string;
-  const NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME: string;
+  const MENU_LINK_SUBMENU: string | null;
+  const NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for network status monitoring functionality.
    * See [Extending GIO][extending-gio].
    */
-  const NETWORK_MONITOR_EXTENSION_POINT_NAME: string;
+  const NETWORK_MONITOR_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for power profile usage monitoring functionality.
    * See [Extending GIO][extending-gio].
    */
-  const POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME: string;
+  const POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for proxy functionality.
    * See [Extending GIO][extending-gio].
    */
-  const PROXY_EXTENSION_POINT_NAME: string;
+  const PROXY_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for proxy resolving functionality.
    * See [Extending GIO][extending-gio].
    */
-  const PROXY_RESOLVER_EXTENSION_POINT_NAME: string;
+  const PROXY_RESOLVER_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for #GSettingsBackend functionality.
    */
-  const SETTINGS_BACKEND_EXTENSION_POINT_NAME: string;
+  const SETTINGS_BACKEND_EXTENSION_POINT_NAME: string | null;
   /**
    * Extension point for TLS functionality via #GTlsBackend.
    * See [Extending GIO][extending-gio].
    */
-  const TLS_BACKEND_EXTENSION_POINT_NAME: string;
+  const TLS_BACKEND_EXTENSION_POINT_NAME: string | null;
   /**
    * The purpose used to verify the client certificate in a TLS connection.
    * Used by TLS servers.
    */
-  const TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT: string;
+  const TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT: string | null;
   /**
    * The purpose used to verify the server certificate in a TLS connection. This
    * is the most common purpose in use. Used by TLS clients.
    */
-  const TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER: string;
+  const TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER: string | null;
   /**
    * Extension point for #GVfs functionality.
    * See [Extending GIO][extending-gio].
    */
-  const VFS_EXTENSION_POINT_NAME: string;
+  const VFS_EXTENSION_POINT_NAME: string | null;
   /**
    * The string used to obtain the volume class with g_volume_get_identifier().
    *
@@ -3480,32 +3480,32 @@ declare namespace Gio {
    * file chooser can use this information to show `network` volumes under
    * a "Network" heading and `device` volumes under a "Devices" heading.
    */
-  const VOLUME_IDENTIFIER_KIND_CLASS: string;
+  const VOLUME_IDENTIFIER_KIND_CLASS: string | null;
   /**
    * The string used to obtain a Hal UDI with g_volume_get_identifier().
    */
-  const VOLUME_IDENTIFIER_KIND_HAL_UDI: string;
+  const VOLUME_IDENTIFIER_KIND_HAL_UDI: string | null;
   /**
    * The string used to obtain a filesystem label with g_volume_get_identifier().
    */
-  const VOLUME_IDENTIFIER_KIND_LABEL: string;
+  const VOLUME_IDENTIFIER_KIND_LABEL: string | null;
   /**
    * The string used to obtain a NFS mount with g_volume_get_identifier().
    */
-  const VOLUME_IDENTIFIER_KIND_NFS_MOUNT: string;
+  const VOLUME_IDENTIFIER_KIND_NFS_MOUNT: string | null;
   /**
    * The string used to obtain a Unix device path with g_volume_get_identifier().
    */
-  const VOLUME_IDENTIFIER_KIND_UNIX_DEVICE: string;
+  const VOLUME_IDENTIFIER_KIND_UNIX_DEVICE: string | null;
   /**
    * The string used to obtain a UUID with g_volume_get_identifier().
    */
-  const VOLUME_IDENTIFIER_KIND_UUID: string;
+  const VOLUME_IDENTIFIER_KIND_UUID: string | null;
   /**
    * Extension point for volume monitor functionality.
    * See [Extending GIO][extending-gio].
    */
-  const VOLUME_MONITOR_EXTENSION_POINT_NAME: string;
+  const VOLUME_MONITOR_EXTENSION_POINT_NAME: string | null;
   /**
    * Checks if `action_name` is valid.
    *
@@ -3517,7 +3517,7 @@ declare namespace Gio {
    * @param action_name a potential action name
    * @returns %TRUE if @action_name is valid
    */
-  function action_name_is_valid(action_name: string): boolean;
+  function action_name_is_valid(action_name: string | null): boolean;
   /**
    * Parses a detailed action name into its separate name and target
    * components.
@@ -3547,11 +3547,11 @@ declare namespace Gio {
    * @returns %TRUE if successful, else %FALSE with @error set
    */
   function action_parse_detailed_name(
-    detailed_name: string
+    detailed_name: string | null
   ): [
     /* returnType */ boolean,
-    /* action_name */ string,
-    /* target_value */ GLib.Variant
+    /* action_name */ string | null,
+    /* target_value */ GLib.Variant | null
   ];
   /**
    * Formats a detailed action name from `action_name` and `target_value`.
@@ -3569,9 +3569,9 @@ declare namespace Gio {
    * @returns a detailed format string
    */
   function action_print_detailed_name(
-    action_name: string,
+    action_name: string | null,
     target_value: GLib.Variant | null
-  ): string;
+  ): string | null;
   /**
    * Creates a new #GAppInfo from the given information.
    *
@@ -3586,10 +3586,10 @@ declare namespace Gio {
    * @returns new #GAppInfo for given command.
    */
   function app_info_create_from_commandline(
-    commandline: string,
+    commandline: string | null,
     application_name: string | null,
     flags: AppInfoCreateFlags
-  ): AppInfo;
+  ): AppInfo | null;
   /**
    * Gets a list of all of the applications currently registered
    * on this system.
@@ -3601,7 +3601,7 @@ declare namespace Gio {
    * the `Hidden` key set.
    * @returns a newly allocated #GList of references to #GAppInfos.
    */
-  function app_info_get_all(): AppInfo[];
+  function app_info_get_all(): AppInfo[] | null;
   /**
    * Gets a list of all #GAppInfos for a given content type,
    * including the recommended and fallback #GAppInfos. See
@@ -3610,7 +3610,9 @@ declare namespace Gio {
    * @param content_type the content type to find a #GAppInfo for
    * @returns #GList of #GAppInfos     for given @content_type or %NULL on error.
    */
-  function app_info_get_all_for_type(content_type: string): AppInfo[];
+  function app_info_get_all_for_type(
+    content_type: string | null
+  ): AppInfo[] | null;
   /**
    * Gets the default #GAppInfo for a given content type.
    * @param content_type the content type to find a #GAppInfo for
@@ -3618,7 +3620,7 @@ declare namespace Gio {
    * @returns #GAppInfo for given @content_type or     %NULL on error.
    */
   function app_info_get_default_for_type(
-    content_type: string,
+    content_type: string | null,
     must_support_uris: boolean
   ): AppInfo | null;
   /**
@@ -3629,7 +3631,7 @@ declare namespace Gio {
    * @param callback a #GAsyncReadyCallback to call when the request is done
    */
   function app_info_get_default_for_type_async<Z = unknown>(
-    content_type: string,
+    content_type: string | null,
     must_support_uris: boolean,
     cancellable: Cancellable | null,
     callback: AsyncReadyCallback<Z> | null
@@ -3642,7 +3644,9 @@ declare namespace Gio {
    * @param result a #GAsyncResult
    * @returns #GAppInfo for given @content_type or     %NULL on error.
    */
-  function app_info_get_default_for_type_finish(result: AsyncResult): AppInfo;
+  function app_info_get_default_for_type_finish(
+    result: AsyncResult | null
+  ): AppInfo | null;
   /**
    * Gets the default application for handling URIs with
    * the given URI scheme. A URI scheme is the initial part
@@ -3652,7 +3656,7 @@ declare namespace Gio {
    * @returns #GAppInfo for given @uri_scheme or     %NULL on error.
    */
   function app_info_get_default_for_uri_scheme(
-    uri_scheme: string
+    uri_scheme: string | null
   ): AppInfo | null;
   /**
    * Asynchronously gets the default application for handling URIs with
@@ -3664,7 +3668,7 @@ declare namespace Gio {
    * @param callback a #GAsyncReadyCallback to call when the request is done
    */
   function app_info_get_default_for_uri_scheme_async<Z = unknown>(
-    uri_scheme: string,
+    uri_scheme: string | null,
     cancellable: Cancellable | null,
     callback: AsyncReadyCallback<Z> | null
   ): void;
@@ -3677,8 +3681,8 @@ declare namespace Gio {
    * @returns #GAppInfo for given @uri_scheme or     %NULL on error.
    */
   function app_info_get_default_for_uri_scheme_finish(
-    result: AsyncResult
-  ): AppInfo;
+    result: AsyncResult | null
+  ): AppInfo | null;
   /**
    * Gets a list of fallback #GAppInfos for a given content type, i.e.
    * those applications which claim to support the given content type
@@ -3686,7 +3690,9 @@ declare namespace Gio {
    * @param content_type the content type to find a #GAppInfo for
    * @returns #GList of #GAppInfos     for given @content_type or %NULL on error.
    */
-  function app_info_get_fallback_for_type(content_type: string): AppInfo[];
+  function app_info_get_fallback_for_type(
+    content_type: string | null
+  ): AppInfo[] | null;
   /**
    * Gets a list of recommended #GAppInfos for a given content type, i.e.
    * those applications which claim to support the given content type exactly,
@@ -3697,7 +3703,9 @@ declare namespace Gio {
    * @param content_type the content type to find a #GAppInfo for
    * @returns #GList of #GAppInfos     for given @content_type or %NULL on error.
    */
-  function app_info_get_recommended_for_type(content_type: string): AppInfo[];
+  function app_info_get_recommended_for_type(
+    content_type: string | null
+  ): AppInfo[] | null;
   /**
    * Utility function that launches the default application
    * registered to handle the specified uri. Synchronous I/O
@@ -3712,7 +3720,7 @@ declare namespace Gio {
    * @returns %TRUE on success, %FALSE on error.
    */
   function app_info_launch_default_for_uri(
-    uri: string,
+    uri: string | null,
     context: AppLaunchContext | null
   ): boolean;
   /**
@@ -3732,7 +3740,7 @@ declare namespace Gio {
    * @param callback a #GAsyncReadyCallback to call when the request is done
    */
   function app_info_launch_default_for_uri_async<Z = unknown>(
-    uri: string,
+    uri: string | null,
     context: AppLaunchContext | null,
     cancellable: Cancellable | null,
     callback: AsyncReadyCallback<Z> | null
@@ -3742,7 +3750,9 @@ declare namespace Gio {
    * @param result a #GAsyncResult
    * @returns %TRUE if the launch was successful, %FALSE if @error is set
    */
-  function app_info_launch_default_for_uri_finish(result: AsyncResult): boolean;
+  function app_info_launch_default_for_uri_finish(
+    result: AsyncResult | null
+  ): boolean;
   /**
    * Removes all changes to the type associations done by
    * g_app_info_set_as_default_for_type(),
@@ -3751,7 +3761,7 @@ declare namespace Gio {
    * g_app_info_remove_supports_type().
    * @param content_type a content type
    */
-  function app_info_reset_type_associations(content_type: string): void;
+  function app_info_reset_type_associations(content_type: string | null): void;
   /**
    * Helper function for constructing #GAsyncInitable object. This is
    * similar to g_object_newv() but also initializes the object asynchronously.
@@ -3769,7 +3779,7 @@ declare namespace Gio {
   function async_initable_newv_async<Z = unknown>(
     object_type: GObject.GType,
     n_parameters: number,
-    parameters: GObject.Parameter,
+    parameters: GObject.Parameter | null,
     io_priority: number,
     cancellable: Cancellable | null,
     callback: AsyncReadyCallback<Z> | null
@@ -3807,7 +3817,7 @@ declare namespace Gio {
    * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback passed     to g_bus_get()
    * @returns a #GDBusConnection or %NULL if @error is set.     Free with g_object_unref().
    */
-  function bus_get_finish(res: AsyncResult): DBusConnection;
+  function bus_get_finish(res: AsyncResult | null): DBusConnection | null;
   /**
    * Synchronously connects to the message bus specified by `bus_type`.
    * Note that the returned object may shared with other callers,
@@ -3834,7 +3844,7 @@ declare namespace Gio {
   function bus_get_sync(
     bus_type: BusType,
     cancellable: Cancellable | null
-  ): DBusConnection;
+  ): DBusConnection | null;
   /**
    * Version of g_bus_own_name_on_connection() using closures instead of
    * callbacks for easier binding in other languages.
@@ -3846,8 +3856,8 @@ declare namespace Gio {
    * @returns an identifier (never 0) that can be used with     g_bus_unown_name() to stop owning the name.
    */
   function bus_own_name_on_connection(
-    connection: DBusConnection,
-    name: string,
+    connection: DBusConnection | null,
+    name: string | null,
     flags: BusNameOwnerFlags,
     name_acquired_closure: GObject.TClosure | null,
     name_lost_closure: GObject.TClosure | null
@@ -3865,7 +3875,7 @@ declare namespace Gio {
    */
   function bus_own_name(
     bus_type: BusType,
-    name: string,
+    name: string | null,
     flags: BusNameOwnerFlags,
     bus_acquired_closure: GObject.TClosure | null,
     name_acquired_closure: GObject.TClosure | null,
@@ -3906,8 +3916,8 @@ declare namespace Gio {
    * @returns An identifier (never 0) that can be used with g_bus_unwatch_name() to stop watching the name.
    */
   function bus_watch_name_on_connection(
-    connection: DBusConnection,
-    name: string,
+    connection: DBusConnection | null,
+    name: string | null,
     flags: BusNameWatcherFlags,
     name_appeared_closure: GObject.TClosure | null,
     name_vanished_closure: GObject.TClosure | null
@@ -3924,7 +3934,7 @@ declare namespace Gio {
    */
   function bus_watch_name(
     bus_type: BusType,
-    name: string,
+    name: string | null,
     flags: BusNameWatcherFlags,
     name_appeared_closure: GObject.TClosure | null,
     name_vanished_closure: GObject.TClosure | null
@@ -3935,26 +3945,29 @@ declare namespace Gio {
    * @param type a content type string
    * @returns %TRUE if the file type corresponds to a type that     can be executable, %FALSE otherwise.
    */
-  function content_type_can_be_executable(type: string): boolean;
+  function content_type_can_be_executable(type: string | null): boolean;
   /**
    * Compares two content types for equality.
    * @param type1 a content type string
    * @param type2 a content type string
    * @returns %TRUE if the two strings are identical or equivalent,     %FALSE otherwise.
    */
-  function content_type_equals(type1: string, type2: string): boolean;
+  function content_type_equals(
+    type1: string | null,
+    type2: string | null
+  ): boolean;
   /**
    * Tries to find a content type based on the mime type name.
    * @param mime_type a mime type string
    * @returns Newly allocated string with content type or     %NULL. Free with g_free()
    */
-  function content_type_from_mime_type(mime_type: string): string | null;
+  function content_type_from_mime_type(mime_type: string | null): string | null;
   /**
    * Gets the human readable description of the content type.
    * @param type a content type string
    * @returns a short description of the content type @type. Free the     returned string with g_free()
    */
-  function content_type_get_description(type: string): string;
+  function content_type_get_description(type: string | null): string | null;
   /**
    * Gets the generic icon name for a content type.
    *
@@ -3964,13 +3977,15 @@ declare namespace Gio {
    * @param type a content type string
    * @returns the registered generic icon name for the given @type,     or %NULL if unknown. Free with g_free()
    */
-  function content_type_get_generic_icon_name(type: string): string | null;
+  function content_type_get_generic_icon_name(
+    type: string | null
+  ): string | null;
   /**
    * Gets the icon for a content type.
    * @param type a content type string
    * @returns #GIcon corresponding to the content type. Free the returned     object with g_object_unref()
    */
-  function content_type_get_icon(type: string): Icon;
+  function content_type_get_icon(type: string | null): Icon | null;
   /**
    * Get the list of directories which MIME data is loaded from. See
    * g_content_type_set_mime_dirs() for details.
@@ -3982,13 +3997,13 @@ declare namespace Gio {
    * @param type a content type string
    * @returns the registered mime type for the     given @type, or %NULL if unknown; free with g_free().
    */
-  function content_type_get_mime_type(type: string): string | null;
+  function content_type_get_mime_type(type: string | null): string | null;
   /**
    * Gets the symbolic icon for a content type.
    * @param type a content type string
    * @returns symbolic #GIcon corresponding to the content type.     Free the returned object with g_object_unref()
    */
-  function content_type_get_symbolic_icon(type: string): Icon;
+  function content_type_get_symbolic_icon(type: string | null): Icon | null;
   /**
    * Guesses the content type based on example data. If the function is
    * uncertain, `result_uncertain` will be set to %TRUE. Either `filename`
@@ -4001,7 +4016,7 @@ declare namespace Gio {
   function content_type_guess(
     filename: string | null,
     data: Uint8Array | null
-  ): [/* returnType */ string, /* result_uncertain */ boolean];
+  ): [/* returnType */ string | null, /* result_uncertain */ boolean | null];
   /**
    * Tries to guess the type of the tree with root `root,` by
    * looking at the files it contains. The result is an array
@@ -4018,14 +4033,17 @@ declare namespace Gio {
    * @param root the root of the tree to guess a type for
    * @returns an %NULL-terminated     array of zero or more content types. Free with g_strfreev()
    */
-  function content_type_guess_for_tree(root: File): string[];
+  function content_type_guess_for_tree(root: File | null): string[];
   /**
    * Determines if `type` is a subset of `supertype`.
    * @param type a content type string
    * @param supertype a content type string
    * @returns %TRUE if @type is a kind of @supertype,     %FALSE otherwise.
    */
-  function content_type_is_a(type: string, supertype: string): boolean;
+  function content_type_is_a(
+    type: string | null,
+    supertype: string | null
+  ): boolean;
   /**
    * Determines if `type` is a subset of `mime_type`.
    * Convenience wrapper around g_content_type_is_a().
@@ -4033,7 +4051,10 @@ declare namespace Gio {
    * @param mime_type a mime type string
    * @returns %TRUE if @type is a kind of @mime_type,     %FALSE otherwise.
    */
-  function content_type_is_mime_type(type: string, mime_type: string): boolean;
+  function content_type_is_mime_type(
+    type: string | null,
+    mime_type: string | null
+  ): boolean;
   /**
    * Checks if the content type is the generic "unknown" type.
    * On UNIX this is the "application/octet-stream" mimetype,
@@ -4042,7 +4063,7 @@ declare namespace Gio {
    * @param type a content type string
    * @returns %TRUE if the type is the unknown type.
    */
-  function content_type_is_unknown(type: string): boolean;
+  function content_type_is_unknown(type: string | null): boolean;
   /**
    * Set the list of directories used by GIO to load the MIME database.
    * If `dirs` is %NULL, the directories used are the default:
@@ -4078,7 +4099,7 @@ declare namespace Gio {
    * `g_list_free_full (list, g_free)`.
    * @returns list of the registered     content types
    */
-  function content_types_get_registered(): string[];
+  function content_types_get_registered(): string[] | null;
   /**
    * Escape `string` so it can appear in a D-Bus address as the value
    * part of a key-value pair.
@@ -4090,7 +4111,7 @@ declare namespace Gio {
    * @param string an unescaped string to be included in a D-Bus address     as the value in a key-value pair
    * @returns a copy of @string with all     non-optionally-escaped bytes escaped
    */
-  function dbus_address_escape_value(string: string): string;
+  function dbus_address_escape_value(string: string | null): string | null;
   /**
    * Synchronously looks up the D-Bus address for the well-known message
    * bus instance specified by `bus_type`. This may involve using various
@@ -4105,7 +4126,7 @@ declare namespace Gio {
   function dbus_address_get_for_bus_sync(
     bus_type: BusType,
     cancellable: Cancellable | null
-  ): string;
+  ): string | null;
   /**
    * Asynchronously connects to an endpoint specified by `address` and
    * sets up the connection so it is in a state to run the client-side
@@ -4123,7 +4144,7 @@ declare namespace Gio {
    * @param callback A #GAsyncReadyCallback to call when the request is satisfied.
    */
   function dbus_address_get_stream<Z = unknown>(
-    address: string,
+    address: string | null,
     cancellable: Cancellable | null,
     callback: AsyncReadyCallback<Z> | null
   ): void;
@@ -4136,8 +4157,8 @@ declare namespace Gio {
    * @returns A #GIOStream or %NULL if @error is set.
    */
   function dbus_address_get_stream_finish(
-    res: AsyncResult
-  ): [/* returnType */ IOStream, /* out_guid */ string | null];
+    res: AsyncResult | null
+  ): [/* returnType */ IOStream | null, /* out_guid */ string | null];
   /**
    * Synchronously connects to an endpoint specified by `address` and
    * sets up the connection so it is in a state to run the client-side
@@ -4154,9 +4175,9 @@ declare namespace Gio {
    * @returns A #GIOStream or %NULL if @error is set.
    */
   function dbus_address_get_stream_sync(
-    address: string,
+    address: string | null,
     cancellable: Cancellable | null
-  ): [/* returnType */ IOStream, /* out_guid */ string | null];
+  ): [/* returnType */ IOStream | null, /* out_guid */ string | null];
   /**
    * Looks up the value of an annotation.
    *
@@ -4167,7 +4188,7 @@ declare namespace Gio {
    */
   function dbus_annotation_info_lookup(
     annotations: DBusAnnotationInfo[] | null,
-    name: string
+    name: string | null
   ): string | null;
   /**
    * Creates a D-Bus error name to use for `error`. If `error` matches
@@ -4184,7 +4205,7 @@ declare namespace Gio {
    * @param error A #GError.
    * @returns A D-Bus error name (never %NULL).     Free with g_free().
    */
-  function dbus_error_encode_gerror(error: GLib.Error): string;
+  function dbus_error_encode_gerror(error: GLib.Error | null): string | null;
   /**
    * Gets the D-Bus error name used for `error,` if any.
    *
@@ -4195,14 +4216,14 @@ declare namespace Gio {
    * @param error a #GError
    * @returns an allocated string or %NULL if the     D-Bus error name could not be found. Free with g_free().
    */
-  function dbus_error_get_remote_error(error: GLib.Error): string | null;
+  function dbus_error_get_remote_error(error: GLib.Error | null): string | null;
   /**
    * Checks if `error` represents an error received via D-Bus from a remote peer. If so,
    * use g_dbus_error_get_remote_error() to get the name of the error.
    * @param error A #GError.
    * @returns %TRUE if @error represents an error from a remote peer, %FALSE otherwise.
    */
-  function dbus_error_is_remote_error(error: GLib.Error): boolean;
+  function dbus_error_is_remote_error(error: GLib.Error | null): boolean;
   /**
    * Creates a #GError based on the contents of `dbus_error_name` and
    * `dbus_error_message`.
@@ -4235,9 +4256,9 @@ declare namespace Gio {
    * @returns An allocated #GError. Free with g_error_free().
    */
   function dbus_error_new_for_dbus_error(
-    dbus_error_name: string,
-    dbus_error_message: string
-  ): GLib.Error;
+    dbus_error_name: string | null,
+    dbus_error_message: string | null
+  ): GLib.Error | null;
   function dbus_error_quark(): GLib.Quark;
   /**
    * Creates an association to map between `dbus_error_name` and
@@ -4253,7 +4274,7 @@ declare namespace Gio {
   function dbus_error_register_error(
     error_domain: GLib.Quark,
     error_code: number,
-    dbus_error_name: string
+    dbus_error_name: string | null
   ): boolean;
   /**
    * Helper function for associating a #GError error domain with D-Bus error names.
@@ -4265,8 +4286,8 @@ declare namespace Gio {
    * @param entries A pointer to `num_entries` #GDBusErrorEntry struct items.
    */
   function dbus_error_register_error_domain(
-    error_domain_quark_name: string,
-    quark_volatile: number,
+    error_domain_quark_name: string | null,
+    quark_volatile: number | null,
     entries: DBusErrorEntry[]
   ): void;
   /**
@@ -4279,7 +4300,7 @@ declare namespace Gio {
    * @param error A #GError.
    * @returns %TRUE if information was stripped, %FALSE otherwise.
    */
-  function dbus_error_strip_remote_error(error: GLib.Error): boolean;
+  function dbus_error_strip_remote_error(error: GLib.Error | null): boolean;
   /**
    * Destroys an association previously set up with g_dbus_error_register_error().
    * @param error_domain A #GQuark for an error domain.
@@ -4290,14 +4311,14 @@ declare namespace Gio {
   function dbus_error_unregister_error(
     error_domain: GLib.Quark,
     error_code: number,
-    dbus_error_name: string
+    dbus_error_name: string | null
   ): boolean;
   /**
    * This is a language binding friendly version of g_dbus_escape_object_path_bytestring().
    * @param s the string to escape
    * @returns an escaped version of @s. Free with g_free().
    */
-  function dbus_escape_object_path(s: string): string;
+  function dbus_escape_object_path(s: string | null): string | null;
   /**
    * Escapes `bytes` for use in a D-Bus object path component.
    * `bytes` is an array of zero or more nonzero bytes in an
@@ -4318,7 +4339,7 @@ declare namespace Gio {
    * @param bytes the string of bytes to escape
    * @returns an escaped version of @bytes. Free with g_free().
    */
-  function dbus_escape_object_path_bytestring(bytes: Uint8Array): string;
+  function dbus_escape_object_path_bytestring(bytes: Uint8Array): string | null;
   /**
    * Generate a D-Bus GUID that can be used with
    * e.g. g_dbus_connection_new().
@@ -4333,7 +4354,7 @@ declare namespace Gio {
    * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122).
    * @returns A valid D-Bus GUID. Free with g_free().
    */
-  function dbus_generate_guid(): string;
+  function dbus_generate_guid(): string | null;
   /**
    * Converts a #GValue to a #GVariant of the type indicated by the `type`
    * parameter.
@@ -4368,9 +4389,9 @@ declare namespace Gio {
    * @returns A #GVariant (never floating) of     #GVariantType @type holding the data from @gvalue or an empty #GVariant     in case of failure. Free with g_variant_unref().
    */
   function dbus_gvalue_to_gvariant(
-    gvalue: any,
-    type: GLib.VariantType
-  ): GLib.Variant;
+    gvalue: any | null,
+    type: GLib.VariantType | null
+  ): GLib.Variant | null;
   /**
    * Converts a #GVariant to a #GValue. If `value` is floating, it is consumed.
    *
@@ -4385,7 +4406,9 @@ declare namespace Gio {
    * `out_gvalue`.
    * @param value A #GVariant.
    */
-  function dbus_gvariant_to_gvalue(value: GLib.Variant): /* out_gvalue */ any;
+  function dbus_gvariant_to_gvalue(
+    value: GLib.Variant | null
+  ): /* out_gvalue */ any | null;
   /**
    * Checks if `string` is a
    * [D-Bus address](https://dbus.freedesktop.org/doc/dbus-specification.html#addresses).
@@ -4396,7 +4419,7 @@ declare namespace Gio {
    * @param string A string.
    * @returns %TRUE if @string is a valid D-Bus address, %FALSE otherwise.
    */
-  function dbus_is_address(string: string): boolean;
+  function dbus_is_address(string: string | null): boolean;
   /**
    * Check whether `string` is a valid D-Bus error name.
    *
@@ -4406,7 +4429,7 @@ declare namespace Gio {
    * @param string The string to check.
    * @returns %TRUE if valid, %FALSE otherwise.
    */
-  function dbus_is_error_name(string: string): boolean;
+  function dbus_is_error_name(string: string | null): boolean;
   /**
    * Checks if `string` is a D-Bus GUID.
    *
@@ -4415,25 +4438,25 @@ declare namespace Gio {
    * @param string The string to check.
    * @returns %TRUE if @string is a GUID, %FALSE otherwise.
    */
-  function dbus_is_guid(string: string): boolean;
+  function dbus_is_guid(string: string | null): boolean;
   /**
    * Checks if `string` is a valid D-Bus interface name.
    * @param string The string to check.
    * @returns %TRUE if valid, %FALSE otherwise.
    */
-  function dbus_is_interface_name(string: string): boolean;
+  function dbus_is_interface_name(string: string | null): boolean;
   /**
    * Checks if `string` is a valid D-Bus member (e.g. signal or method) name.
    * @param string The string to check.
    * @returns %TRUE if valid, %FALSE otherwise.
    */
-  function dbus_is_member_name(string: string): boolean;
+  function dbus_is_member_name(string: string | null): boolean;
   /**
    * Checks if `string` is a valid D-Bus bus name (either unique or well-known).
    * @param string The string to check.
    * @returns %TRUE if valid, %FALSE otherwise.
    */
-  function dbus_is_name(string: string): boolean;
+  function dbus_is_name(string: string | null): boolean;
   /**
    * Like g_dbus_is_address() but also checks if the library supports the
    * transports in `string` and that key/value pairs for each transport
@@ -4442,13 +4465,13 @@ declare namespace Gio {
    * @param string A string.
    * @returns %TRUE if @string is a valid D-Bus address that is supported by this library, %FALSE if @error is set.
    */
-  function dbus_is_supported_address(string: string): boolean;
+  function dbus_is_supported_address(string: string | null): boolean;
   /**
    * Checks if `string` is a valid D-Bus unique bus name.
    * @param string The string to check.
    * @returns %TRUE if valid, %FALSE otherwise.
    */
-  function dbus_is_unique_name(string: string): boolean;
+  function dbus_is_unique_name(string: string | null): boolean;
   /**
    * Unescapes an string that was previously escaped with
    * g_dbus_escape_object_path(). If the string is in a format that could
@@ -4461,7 +4484,7 @@ declare namespace Gio {
    * @param s the string to unescape
    * @returns an   unescaped version of @s, or %NULL if @s is not a string returned   from g_dbus_escape_object_path(). Free with g_free().
    */
-  function dbus_unescape_object_path(s: string): Uint8Array | null;
+  function dbus_unescape_object_path(s: string | null): Uint8Array | null;
   /**
    * Creates a new #GDtlsClientConnection wrapping `base_socket` which is
    * assumed to communicate with the server identified by `server_identity`.
@@ -4470,9 +4493,9 @@ declare namespace Gio {
    * @returns the new   #GDtlsClientConnection, or %NULL on error
    */
   function dtls_client_connection_new(
-    base_socket: DatagramBased,
+    base_socket: DatagramBased | null,
     server_identity: SocketConnectable | null
-  ): DtlsClientConnection;
+  ): DtlsClientConnection | null;
   /**
    * Creates a new #GDtlsServerConnection wrapping `base_socket`.
    * @param base_socket the #GDatagramBased to wrap
@@ -4480,9 +4503,9 @@ declare namespace Gio {
    * @returns the new   #GDtlsServerConnection, or %NULL on error
    */
   function dtls_server_connection_new(
-    base_socket: DatagramBased,
+    base_socket: DatagramBased | null,
     certificate: TlsCertificate | null
-  ): DtlsServerConnection;
+  ): DtlsServerConnection | null;
   /**
    * Creates a #GFile with the given argument from the command line.
    * The value of `arg` can be either a URI, an absolute path or a
@@ -4501,7 +4524,7 @@ declare namespace Gio {
    * @param arg a command line string
    * @returns a new #GFile.   Free the returned object with g_object_unref().
    */
-  function file_new_for_commandline_arg(arg: string): File;
+  function file_new_for_commandline_arg(arg: string | null): File | null;
   /**
    * Creates a #GFile with the given argument from the command line.
    *
@@ -4518,7 +4541,10 @@ declare namespace Gio {
    * @param cwd the current working directory of the commandline
    * @returns a new #GFile
    */
-  function file_new_for_commandline_arg_and_cwd(arg: string, cwd: string): File;
+  function file_new_for_commandline_arg_and_cwd(
+    arg: string | null,
+    cwd: string | null
+  ): File | null;
   /**
    * Constructs a #GFile for a given path. This operation never
    * fails, but the returned object might not support any I/O
@@ -4526,7 +4552,7 @@ declare namespace Gio {
    * @param path a string containing a relative or absolute path.   The string must be encoded in the glib filename encoding.
    * @returns a new #GFile for the given @path.   Free the returned object with g_object_unref().
    */
-  function file_new_for_path(path: string): File;
+  function file_new_for_path(path: string | null): File | null;
   /**
    * Constructs a #GFile for a given URI. This operation never
    * fails, but the returned object might not support any I/O
@@ -4535,7 +4561,7 @@ declare namespace Gio {
    * @param uri a UTF-8 string containing a URI
    * @returns a new #GFile for the given @uri.   Free the returned object with g_object_unref().
    */
-  function file_new_for_uri(uri: string): File;
+  function file_new_for_uri(uri: string | null): File | null;
   /**
    * Opens a file in the preferred directory for temporary files (as
    * returned by g_get_tmp_dir()) and returns a #GFile and
@@ -4552,7 +4578,7 @@ declare namespace Gio {
    */
   function file_new_tmp(
     tmpl: string | null
-  ): [/* returnType */ File, /* iostream */ FileIOStream];
+  ): [/* returnType */ File | null, /* iostream */ FileIOStream | null];
   /**
    * Asynchronously opens a file in the preferred directory for temporary files
    *  (as returned by g_get_tmp_dir()) as g_file_new_tmp().
@@ -4595,15 +4621,15 @@ declare namespace Gio {
    * @param result a #GAsyncResult
    * @returns a new #GFile.   Free the returned object with g_object_unref().
    */
-  function file_new_tmp_dir_finish(result: AsyncResult): File;
+  function file_new_tmp_dir_finish(result: AsyncResult | null): File | null;
   /**
    * Finishes a temporary file creation started by g_file_new_tmp_async().
    * @param result a #GAsyncResult
    * @returns a new #GFile.   Free the returned object with g_object_unref().
    */
   function file_new_tmp_finish(
-    result: AsyncResult
-  ): [/* returnType */ File, /* iostream */ FileIOStream];
+    result: AsyncResult | null
+  ): [/* returnType */ File | null, /* iostream */ FileIOStream | null];
   /**
    * Constructs a #GFile with the given `parse_name` (i.e. something
    * given by g_file_get_parse_name()). This operation never fails,
@@ -4612,19 +4638,19 @@ declare namespace Gio {
    * @param parse_name a file name or path to be parsed
    * @returns a new #GFile.
    */
-  function file_parse_name(parse_name: string): File;
+  function file_parse_name(parse_name: string | null): File | null;
   /**
    * Deserializes a #GIcon previously serialized using g_icon_serialize().
    * @param value a #GVariant created with g_icon_serialize()
    * @returns a #GIcon, or %NULL when deserialization fails.
    */
-  function icon_deserialize(value: GLib.Variant): Icon | null;
+  function icon_deserialize(value: GLib.Variant | null): Icon | null;
   /**
    * Gets a hash for an icon.
    * @param icon #gconstpointer to an icon object.
    * @returns a #guint containing a hash for the @icon, suitable for use in a #GHashTable or similar data structure.
    */
-  function icon_hash(icon: object): number;
+  function icon_hash(icon: any): number;
   /**
    * Generate a #GIcon instance from `str`. This function can fail if
    * `str` is not valid - see g_icon_to_string() for discussion.
@@ -4635,7 +4661,7 @@ declare namespace Gio {
    * @param str A string obtained via g_icon_to_string().
    * @returns An object implementing the #GIcon          interface or %NULL if @error is set.
    */
-  function icon_new_for_string(str: string): Icon;
+  function icon_new_for_string(str: string | null): Icon | null;
   /**
    * Helper function for constructing #GInitable object. This is
    * similar to g_object_newv() but also initializes the object
@@ -4686,23 +4712,27 @@ declare namespace Gio {
    * @returns a #GIOExtension object for #GType
    */
   function io_extension_point_implement(
-    extension_point_name: string,
+    extension_point_name: string | null,
     type: GObject.GType,
-    extension_name: string,
+    extension_name: string | null,
     priority: number
-  ): IOExtension;
+  ): IOExtension | null;
   /**
    * Looks up an existing extension point.
    * @param name the name of the extension point
    * @returns the #GIOExtensionPoint, or %NULL if there    is no registered extension point with the given name.
    */
-  function io_extension_point_lookup(name: string): IOExtensionPoint;
+  function io_extension_point_lookup(
+    name: string | null
+  ): IOExtensionPoint | null;
   /**
    * Registers an extension point.
    * @param name The name of the extension point
    * @returns the new #GIOExtensionPoint. This object is    owned by GIO and should not be freed.
    */
-  function io_extension_point_register(name: string): IOExtensionPoint;
+  function io_extension_point_register(
+    name: string | null
+  ): IOExtensionPoint | null;
   /**
    * Loads all the modules in the specified directory.
    *
@@ -4712,7 +4742,9 @@ declare namespace Gio {
    * @param dirname pathname for a directory containing modules     to load.
    * @returns a list of #GIOModules loaded      from the directory,      All the modules are loaded into memory, if you want to      unload them (enabling on-demand loading) you must call      g_type_module_unuse() on all the modules. Free the list      with g_list_free().
    */
-  function io_modules_load_all_in_directory(dirname: string): IOModule[];
+  function io_modules_load_all_in_directory(
+    dirname: string | null
+  ): IOModule[] | null;
   /**
    * Loads all the modules in the specified directory.
    *
@@ -4724,9 +4756,9 @@ declare namespace Gio {
    * @returns a list of #GIOModules loaded      from the directory,      All the modules are loaded into memory, if you want to      unload them (enabling on-demand loading) you must call      g_type_module_unuse() on all the modules. Free the list      with g_list_free().
    */
   function io_modules_load_all_in_directory_with_scope(
-    dirname: string,
-    scope: IOModuleScope
-  ): IOModule[];
+    dirname: string | null,
+    scope: IOModuleScope | null
+  ): IOModule[] | null;
   /**
    * Scans all the modules in the specified directory, ensuring that
    * any extension point implemented by a module is registered.
@@ -4741,7 +4773,7 @@ declare namespace Gio {
    * use g_io_modules_load_all_in_directory().
    * @param dirname pathname for a directory containing modules     to scan.
    */
-  function io_modules_scan_all_in_directory(dirname: string): void;
+  function io_modules_scan_all_in_directory(dirname: string | null): void;
   /**
    * Scans all the modules in the specified directory, ensuring that
    * any extension point implemented by a module is registered.
@@ -4758,8 +4790,8 @@ declare namespace Gio {
    * @param scope a scope to use when scanning the modules
    */
   function io_modules_scan_all_in_directory_with_scope(
-    dirname: string,
-    scope: IOModuleScope
+    dirname: string | null,
+    scope: IOModuleScope | null
   ): void;
   /**
    * Cancels all cancellable I/O jobs.
@@ -4844,15 +4876,15 @@ declare namespace Gio {
    * @returns a keyfile-backed #GSettingsBackend
    */
   function keyfile_settings_backend_new(
-    filename: string,
-    root_path: string,
+    filename: string | null,
+    root_path: string | null,
     root_group: string | null
-  ): SettingsBackend;
+  ): SettingsBackend | null;
   /**
    * Gets a reference to the default #GMemoryMonitor for the system.
    * @returns a new reference to the default #GMemoryMonitor
    */
-  function memory_monitor_dup_default(): MemoryMonitor;
+  function memory_monitor_dup_default(): MemoryMonitor | null;
   /**
    * Creates a memory-backed #GSettingsBackend.
    *
@@ -4861,12 +4893,12 @@ declare namespace Gio {
    * the memory backend will start out with the default values again.
    * @returns a newly created #GSettingsBackend
    */
-  function memory_settings_backend_new(): SettingsBackend;
+  function memory_settings_backend_new(): SettingsBackend | null;
   /**
    * Gets the default #GNetworkMonitor for the system.
    * @returns a #GNetworkMonitor, which will be     a dummy object if no network monitor is available
    */
-  function network_monitor_get_default(): NetworkMonitor;
+  function network_monitor_get_default(): NetworkMonitor | null;
   /**
    * Initializes the platform networking libraries (eg, on Windows, this
    * calls WSAStartup()). GLib will call this itself if it is needed, so
@@ -4881,7 +4913,7 @@ declare namespace Gio {
    * will always have their default values.
    * @returns a newly created #GSettingsBackend
    */
-  function null_settings_backend_new(): SettingsBackend;
+  function null_settings_backend_new(): SettingsBackend | null;
   /**
    * Utility method for #GPollableInputStream and #GPollableOutputStream
    * implementations. Creates a new #GSource that expects a callback of
@@ -4891,7 +4923,9 @@ declare namespace Gio {
    * @param pollable_stream the stream associated with the new source
    * @returns the new #GSource.
    */
-  function pollable_source_new(pollable_stream: GObject.Object): GLib.Source;
+  function pollable_source_new(
+    pollable_stream: GObject.Object | null
+  ): GLib.Source | null;
   /**
    * Utility method for #GPollableInputStream and #GPollableOutputStream
    * implementations. Creates a new #GSource, as with
@@ -4906,7 +4940,7 @@ declare namespace Gio {
     pollable_stream: GObject.Object,
     child_source: GLib.Source | null,
     cancellable: Cancellable | null
-  ): GLib.Source;
+  ): GLib.Source | null;
   /**
    * Tries to read from `stream,` as with g_input_stream_read() (if
    * `blocking` is %TRUE) or g_pollable_input_stream_read_nonblocking()
@@ -4924,7 +4958,7 @@ declare namespace Gio {
    * @returns the number of bytes read, or -1 on error.
    */
   function pollable_stream_read(
-    stream: InputStream,
+    stream: InputStream | null,
     buffer: Uint8Array,
     blocking: boolean,
     cancellable: Cancellable | null
@@ -4947,7 +4981,7 @@ declare namespace Gio {
    * @returns the number of bytes written, or -1 on error.
    */
   function pollable_stream_write(
-    stream: OutputStream,
+    stream: OutputStream | null,
     buffer: Uint8Array,
     blocking: boolean,
     cancellable: Cancellable | null
@@ -4978,28 +5012,30 @@ declare namespace Gio {
    * @returns %TRUE on success, %FALSE if there was an error
    */
   function pollable_stream_write_all(
-    stream: OutputStream,
+    stream: OutputStream | null,
     buffer: Uint8Array,
     blocking: boolean,
     cancellable: Cancellable | null
-  ): [/* returnType */ boolean, /* bytes_written */ number];
+  ): [/* returnType */ boolean, /* bytes_written */ number | null];
   /**
    * Gets a reference to the default #GPowerProfileMonitor for the system.
    * @returns a new reference to the default #GPowerProfileMonitor
    */
-  function power_profile_monitor_dup_default(): PowerProfileMonitor;
+  function power_profile_monitor_dup_default(): PowerProfileMonitor | null;
   /**
    * Find the `gio-proxy` extension point for a proxy implementation that supports
    * the specified protocol.
    * @param protocol the proxy protocol name (e.g. http, socks, etc)
    * @returns return a #GProxy or NULL if protocol               is not supported.
    */
-  function proxy_get_default_for_protocol(protocol: string): Proxy | null;
+  function proxy_get_default_for_protocol(
+    protocol: string | null
+  ): Proxy | null;
   /**
    * Gets the default #GProxyResolver for the system.
    * @returns the default #GProxyResolver, which     will be a dummy object if no proxy resolver is available
    */
-  function proxy_resolver_get_default(): ProxyResolver;
+  function proxy_resolver_get_default(): ProxyResolver | null;
   /**
    * Gets the #GResolver Error Quark.
    * @returns a #GQuark.
@@ -5024,7 +5060,7 @@ declare namespace Gio {
    * @param filename the path of a filename to load, in the GLib filename encoding
    * @returns a new #GResource, or %NULL on error
    */
-  function resource_load(filename: string): Resource;
+  function resource_load(filename: string | null): Resource | null;
   /**
    * Returns all the names of children at the specified `path` in the set of
    * globally registered resources.
@@ -5037,7 +5073,7 @@ declare namespace Gio {
    * @returns an array of constant strings
    */
   function resources_enumerate_children(
-    path: string,
+    path: string | null,
     lookup_flags: ResourceLookupFlags
   ): string[];
   /**
@@ -5050,9 +5086,13 @@ declare namespace Gio {
    * @returns %TRUE if the file was found. %FALSE if there were errors
    */
   function resources_get_info(
-    path: string,
+    path: string | null,
     lookup_flags: ResourceLookupFlags
-  ): [/* returnType */ boolean, /* size */ number, /* flags */ number];
+  ): [
+    /* returnType */ boolean,
+    /* size */ number | null,
+    /* flags */ number | null
+  ];
   /**
    * Looks for a file at the specified `path` in the set of
    * globally registered resources and returns a #GBytes that
@@ -5073,9 +5113,9 @@ declare namespace Gio {
    * @returns #GBytes or %NULL on error.     Free the returned object with g_bytes_unref()
    */
   function resources_lookup_data(
-    path: string,
+    path: string | null,
     lookup_flags: ResourceLookupFlags
-  ): GLib.Bytes;
+  ): GLib.Bytes | null;
   /**
    * Looks for a file at the specified `path` in the set of
    * globally registered resources and returns a #GInputStream
@@ -5087,21 +5127,21 @@ declare namespace Gio {
    * @returns #GInputStream or %NULL on error.     Free the returned object with g_object_unref()
    */
   function resources_open_stream(
-    path: string,
+    path: string | null,
     lookup_flags: ResourceLookupFlags
-  ): InputStream;
+  ): InputStream | null;
   /**
    * Registers the resource with the process-global set of resources.
    * Once a resource is registered the files in it can be accessed
    * with the global resource lookup functions like g_resources_lookup_data().
    * @param resource A #GResource
    */
-  function resources_register(resource: Resource): void;
+  function resources_register(resource: Resource | null): void;
   /**
    * Unregisters the resource from the process-global set of resources.
    * @param resource A #GResource
    */
-  function resources_unregister(resource: Resource): void;
+  function resources_unregister(resource: Resource | null): void;
   /**
    * Gets the default system schema source.
    *
@@ -5130,13 +5170,13 @@ declare namespace Gio {
   function simple_async_report_gerror_in_idle<Z = unknown>(
     object: GObject.Object | null,
     callback: AsyncReadyCallback<Z> | null,
-    error: GLib.Error
+    error: GLib.Error | null
   ): void;
   /**
    * Gets the default #GTlsBackend for the system.
    * @returns a #GTlsBackend, which will be a     dummy object if no TLS backend is available
    */
-  function tls_backend_get_default(): TlsBackend;
+  function tls_backend_get_default(): TlsBackend | null;
   /**
    * Gets the TLS channel binding error quark.
    * @returns a #GQuark.
@@ -5155,9 +5195,9 @@ declare namespace Gio {
    * @returns the new #GTlsClientConnection, or %NULL on error
    */
   function tls_client_connection_new(
-    base_io_stream: IOStream,
+    base_io_stream: IOStream | null,
     server_identity: SocketConnectable | null
-  ): TlsClientConnection;
+  ): TlsClientConnection | null;
   /**
    * Gets the TLS error quark.
    * @returns a #GQuark.
@@ -5171,7 +5211,9 @@ declare namespace Gio {
    * @param anchors filename of anchor certificate authorities.
    * @returns the new #GTlsFileDatabase, or %NULL on error
    */
-  function tls_file_database_new(anchors: string): TlsFileDatabase;
+  function tls_file_database_new(
+    anchors: string | null
+  ): TlsFileDatabase | null;
   /**
    * Creates a new #GTlsServerConnection wrapping `base_io_stream` (which
    * must have pollable input and output streams).
@@ -5184,9 +5226,9 @@ declare namespace Gio {
    * @returns the new #GTlsServerConnection, or %NULL on error
    */
   function tls_server_connection_new(
-    base_io_stream: IOStream,
+    base_io_stream: IOStream | null,
     certificate: TlsCertificate | null
-  ): TlsServerConnection;
+  ): TlsServerConnection | null;
   /**
    * Determines if `mount_path` is considered an implementation of the
    * OS. This is primarily used for hiding mountable and mounted volumes
@@ -5195,7 +5237,9 @@ declare namespace Gio {
    * @param mount_path a mount path, e.g. `/media/disk` or `/usr`
    * @returns %TRUE if @mount_path is considered an implementation detail     of the OS.
    */
-  function unix_is_mount_path_system_internal(mount_path: string): boolean;
+  function unix_is_mount_path_system_internal(
+    mount_path: string | null
+  ): boolean;
   /**
    * Determines if `device_path` is considered a block device path which is only
    * used in implementation of the OS. This is primarily used for hiding
@@ -5207,7 +5251,7 @@ declare namespace Gio {
    * @param device_path a device path, e.g. `/dev/loop0` or `nfsd`
    * @returns %TRUE if @device_path is considered an implementation detail of    the OS.
    */
-  function unix_is_system_device_path(device_path: string): boolean;
+  function unix_is_system_device_path(device_path: string | null): boolean;
   /**
    * Determines if `fs_type` is considered a type of file system which is only
    * used in implementation of the OS. This is primarily used for hiding
@@ -5219,7 +5263,7 @@ declare namespace Gio {
    * @param fs_type a file system type, e.g. `procfs` or `tmpfs`
    * @returns %TRUE if @fs_type is considered an implementation detail of the OS.
    */
-  function unix_is_system_fs_type(fs_type: string): boolean;
+  function unix_is_system_fs_type(fs_type: string | null): boolean;
   /**
    * Gets a #GUnixMountEntry for a given mount path. If `time_read`
    * is set, it will be filled with a unix timestamp for checking
@@ -5233,8 +5277,8 @@ declare namespace Gio {
    * @returns a #GUnixMountEntry.
    */
   function unix_mount_at(
-    mount_path: string
-  ): [/* returnType */ UnixMountEntry | null, /* time_read */ number];
+    mount_path: string | null
+  ): [/* returnType */ UnixMountEntry | null, /* time_read */ number | null];
   /**
    * Compares two unix mounts.
    * @param mount1 first #GUnixMountEntry to compare.
@@ -5242,15 +5286,17 @@ declare namespace Gio {
    * @returns 1, 0 or -1 if @mount1 is greater than, equal to, or less than @mount2, respectively.
    */
   function unix_mount_compare(
-    mount1: UnixMountEntry,
-    mount2: UnixMountEntry
+    mount1: UnixMountEntry | null,
+    mount2: UnixMountEntry | null
   ): number;
   /**
    * Makes a copy of `mount_entry`.
    * @param mount_entry a #GUnixMountEntry.
    * @returns a new #GUnixMountEntry
    */
-  function unix_mount_copy(mount_entry: UnixMountEntry): UnixMountEntry;
+  function unix_mount_copy(
+    mount_entry: UnixMountEntry | null
+  ): UnixMountEntry | null;
   /**
    * Gets a #GUnixMountEntry for a given file path. If `time_read`
    * is set, it will be filled with a unix timestamp for checking
@@ -5265,31 +5311,37 @@ declare namespace Gio {
    * @returns a #GUnixMountEntry.
    */
   function unix_mount_for(
-    file_path: string
-  ): [/* returnType */ UnixMountEntry | null, /* time_read */ number];
+    file_path: string | null
+  ): [/* returnType */ UnixMountEntry | null, /* time_read */ number | null];
   /**
    * Frees a unix mount.
    * @param mount_entry a #GUnixMountEntry.
    */
-  function unix_mount_free(mount_entry: UnixMountEntry): void;
+  function unix_mount_free(mount_entry: UnixMountEntry | null): void;
   /**
    * Gets the device path for a unix mount.
    * @param mount_entry a #GUnixMount.
    * @returns a string containing the device path.
    */
-  function unix_mount_get_device_path(mount_entry: UnixMountEntry): string;
+  function unix_mount_get_device_path(
+    mount_entry: UnixMountEntry | null
+  ): string | null;
   /**
    * Gets the filesystem type for the unix mount.
    * @param mount_entry a #GUnixMount.
    * @returns a string containing the file system type.
    */
-  function unix_mount_get_fs_type(mount_entry: UnixMountEntry): string;
+  function unix_mount_get_fs_type(
+    mount_entry: UnixMountEntry | null
+  ): string | null;
   /**
    * Gets the mount path for a unix mount.
    * @param mount_entry input #GUnixMountEntry to get the mount path for.
    * @returns the mount path for @mount_entry.
    */
-  function unix_mount_get_mount_path(mount_entry: UnixMountEntry): string;
+  function unix_mount_get_mount_path(
+    mount_entry: UnixMountEntry | null
+  ): string | null;
   /**
    * Gets a comma-separated list of mount options for the unix mount. For example,
    * `rw,relatime,seclabel,data=ordered`.
@@ -5299,7 +5351,9 @@ declare namespace Gio {
    * @param mount_entry a #GUnixMountEntry.
    * @returns a string containing the options, or %NULL if not available.
    */
-  function unix_mount_get_options(mount_entry: UnixMountEntry): string | null;
+  function unix_mount_get_options(
+    mount_entry: UnixMountEntry | null
+  ): string | null;
   /**
    * Gets the root of the mount within the filesystem. This is useful e.g. for
    * mounts created by bind operation, or btrfs subvolumes.
@@ -5310,46 +5364,56 @@ declare namespace Gio {
    * @param mount_entry a #GUnixMountEntry.
    * @returns a string containing the root, or %NULL if not supported.
    */
-  function unix_mount_get_root_path(mount_entry: UnixMountEntry): string | null;
+  function unix_mount_get_root_path(
+    mount_entry: UnixMountEntry | null
+  ): string | null;
   /**
    * Guesses whether a Unix mount can be ejected.
    * @param mount_entry a #GUnixMountEntry
    * @returns %TRUE if @mount_entry is deemed to be ejectable.
    */
-  function unix_mount_guess_can_eject(mount_entry: UnixMountEntry): boolean;
+  function unix_mount_guess_can_eject(
+    mount_entry: UnixMountEntry | null
+  ): boolean;
   /**
    * Guesses the icon of a Unix mount.
    * @param mount_entry a #GUnixMountEntry
    * @returns a #GIcon
    */
-  function unix_mount_guess_icon(mount_entry: UnixMountEntry): Icon;
+  function unix_mount_guess_icon(
+    mount_entry: UnixMountEntry | null
+  ): Icon | null;
   /**
    * Guesses the name of a Unix mount.
    * The result is a translated string.
    * @param mount_entry a #GUnixMountEntry
    * @returns A newly allocated string that must     be freed with g_free()
    */
-  function unix_mount_guess_name(mount_entry: UnixMountEntry): string;
+  function unix_mount_guess_name(
+    mount_entry: UnixMountEntry | null
+  ): string | null;
   /**
    * Guesses whether a Unix mount should be displayed in the UI.
    * @param mount_entry a #GUnixMountEntry
    * @returns %TRUE if @mount_entry is deemed to be displayable.
    */
   function unix_mount_guess_should_display(
-    mount_entry: UnixMountEntry
+    mount_entry: UnixMountEntry | null
   ): boolean;
   /**
    * Guesses the symbolic icon of a Unix mount.
    * @param mount_entry a #GUnixMountEntry
    * @returns a #GIcon
    */
-  function unix_mount_guess_symbolic_icon(mount_entry: UnixMountEntry): Icon;
+  function unix_mount_guess_symbolic_icon(
+    mount_entry: UnixMountEntry | null
+  ): Icon | null;
   /**
    * Checks if a unix mount is mounted read only.
    * @param mount_entry a #GUnixMount.
    * @returns %TRUE if @mount_entry is read only.
    */
-  function unix_mount_is_readonly(mount_entry: UnixMountEntry): boolean;
+  function unix_mount_is_readonly(mount_entry: UnixMountEntry | null): boolean;
   /**
    * Checks if a Unix mount is a system mount. This is the Boolean OR of
    * g_unix_is_system_fs_type(), g_unix_is_system_device_path() and
@@ -5360,7 +5424,9 @@ declare namespace Gio {
    * @param mount_entry a #GUnixMount.
    * @returns %TRUE if the unix mount is for a system path.
    */
-  function unix_mount_is_system_internal(mount_entry: UnixMountEntry): boolean;
+  function unix_mount_is_system_internal(
+    mount_entry: UnixMountEntry | null
+  ): boolean;
   /**
    * Gets a #GUnixMountPoint for a given mount path. If `time_read` is set, it
    * will be filled with a unix timestamp for checking if the mount points have
@@ -5372,8 +5438,8 @@ declare namespace Gio {
    * @returns a #GUnixMountPoint, or %NULL if no match is found.
    */
   function unix_mount_point_at(
-    mount_path: string
-  ): [/* returnType */ UnixMountPoint | null, /* time_read */ number];
+    mount_path: string | null
+  ): [/* returnType */ UnixMountPoint | null, /* time_read */ number | null];
   /**
    * Checks if the unix mount points have changed since a given unix time.
    * @param time guint64 to contain a timestamp.
@@ -5388,8 +5454,8 @@ declare namespace Gio {
    * @returns      a #GList of the UNIX mountpoints.
    */
   function unix_mount_points_get(): [
-    /* returnType */ UnixMountPoint[],
-    /* time_read */ number
+    /* returnType */ UnixMountPoint[] | null,
+    /* time_read */ number | null
   ];
   /**
    * Checks if the unix mounts have changed since a given unix time.
@@ -5405,8 +5471,8 @@ declare namespace Gio {
    * @returns      a #GList of the UNIX mounts.
    */
   function unix_mounts_get(): [
-    /* returnType */ UnixMountEntry[],
-    /* time_read */ number
+    /* returnType */ UnixMountEntry[] | null,
+    /* time_read */ number | null
   ];
   /**
    * Type definition for a function that will be called back when an asynchronous
@@ -5435,7 +5501,7 @@ declare namespace Gio {
    * @param name The name that is requested to be owned.
    */
   interface BusAcquiredCallback {
-    (connection: DBusConnection, name: string): void;
+    (connection: DBusConnection | null, name: string | null): void;
   }
   /**
    * Invoked when the name is acquired.
@@ -5444,7 +5510,7 @@ declare namespace Gio {
    * @param name The name being owned.
    */
   interface BusNameAcquiredCallback {
-    (connection: DBusConnection, name: string): void;
+    (connection: DBusConnection | null, name: string | null): void;
   }
   /**
    * Invoked when the name being watched is known to have to have an owner.
@@ -5454,7 +5520,11 @@ declare namespace Gio {
    * @param name_owner Unique name of the owner of the name being watched.
    */
   interface BusNameAppearedCallback {
-    (connection: DBusConnection, name: string, name_owner: string): void;
+    (
+      connection: DBusConnection | null,
+      name: string | null,
+      name_owner: string | null
+    ): void;
   }
   /**
    * Invoked when the name is lost or `connection` has been closed.
@@ -5463,7 +5533,7 @@ declare namespace Gio {
    * @param name The name being owned.
    */
   interface BusNameLostCallback {
-    (connection: DBusConnection, name: string): void;
+    (connection: DBusConnection | null, name: string | null): void;
   }
   /**
    * Invoked when the name being watched is known not to have to have an owner.
@@ -5476,7 +5546,7 @@ declare namespace Gio {
    * @param name The name being watched.
    */
   interface BusNameVanishedCallback {
-    (connection: DBusConnection, name: string): void;
+    (connection: DBusConnection | null, name: string | null): void;
   }
   /**
    * This is the function type of the callback used for the #GSource
@@ -5501,13 +5571,13 @@ declare namespace Gio {
    */
   interface DBusInterfaceGetPropertyFunc {
     (
-      connection: DBusConnection,
-      sender: string,
-      object_path: string,
-      interface_name: string,
-      property_name: string,
-      error: GLib.Error
-    ): GLib.Variant;
+      connection: DBusConnection | null,
+      sender: string | null,
+      object_path: string | null,
+      interface_name: string | null,
+      property_name: string | null,
+      error: GLib.Error | null
+    ): GLib.Variant | null;
   }
   /**
    * The type of the `method_call` function in #GDBusInterfaceVTable.
@@ -5522,13 +5592,13 @@ declare namespace Gio {
    */
   interface DBusInterfaceMethodCallFunc {
     (
-      connection: DBusConnection,
-      sender: string,
-      object_path: string,
-      interface_name: string,
-      method_name: string,
-      parameters: GLib.Variant,
-      invocation: DBusMethodInvocation
+      connection: DBusConnection | null,
+      sender: string | null,
+      object_path: string | null,
+      interface_name: string | null,
+      method_name: string | null,
+      parameters: GLib.Variant | null,
+      invocation: DBusMethodInvocation | null
     ): void;
   }
   /**
@@ -5545,13 +5615,13 @@ declare namespace Gio {
    */
   interface DBusInterfaceSetPropertyFunc {
     (
-      connection: DBusConnection,
-      sender: string,
-      object_path: string,
-      interface_name: string,
-      property_name: string,
-      value: GLib.Variant,
-      error: GLib.Error
+      connection: DBusConnection | null,
+      sender: string | null,
+      object_path: string | null,
+      interface_name: string | null,
+      property_name: string | null,
+      value: GLib.Variant | null,
+      error: GLib.Error | null
     ): boolean;
   }
   /**
@@ -5625,8 +5695,8 @@ declare namespace Gio {
    */
   interface DBusMessageFilterFunction {
     (
-      connection: DBusConnection,
-      message: DBusMessage,
+      connection: DBusConnection | null,
+      message: DBusMessage | null,
       incoming: boolean
     ): DBusMessage | null;
   }
@@ -5646,8 +5716,8 @@ declare namespace Gio {
    */
   interface DBusProxyTypeFunc {
     (
-      manager: DBusObjectManagerClient,
-      object_path: string,
+      manager: DBusObjectManagerClient | null,
+      object_path: string | null,
       interface_name: string | null
     ): GObject.GType;
   }
@@ -5663,12 +5733,12 @@ declare namespace Gio {
    */
   interface DBusSignalCallback {
     (
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       sender_name: string | null,
-      object_path: string,
-      interface_name: string,
-      signal_name: string,
-      parameters: GLib.Variant
+      object_path: string | null,
+      interface_name: string | null,
+      signal_name: string | null,
+      parameters: GLib.Variant | null
     ): void;
   }
   /**
@@ -5687,12 +5757,12 @@ declare namespace Gio {
    */
   interface DBusSubtreeDispatchFunc {
     (
-      connection: DBusConnection,
-      sender: string,
-      object_path: string,
-      interface_name: string,
-      node: string,
-      out_user_data: object
+      connection: DBusConnection | null,
+      sender: string | null,
+      object_path: string | null,
+      interface_name: string | null,
+      node: string | null,
+      out_user_data: any | null
     ): DBusInterfaceVTable | null;
   }
   /**
@@ -5714,7 +5784,11 @@ declare namespace Gio {
    * @returns A newly allocated array of strings for node names that are children of @object_path.
    */
   interface DBusSubtreeEnumerateFunc {
-    (connection: DBusConnection, sender: string, object_path: string): string[];
+    (
+      connection: DBusConnection | null,
+      sender: string | null,
+      object_path: string | null
+    ): string[];
   }
   /**
    * The type of the `introspect` function in #GDBusSubtreeVTable.
@@ -5744,10 +5818,10 @@ declare namespace Gio {
    */
   interface DBusSubtreeIntrospectFunc {
     (
-      connection: DBusConnection,
-      sender: string,
-      object_path: string,
-      node: string
+      connection: DBusConnection | null,
+      sender: string | null,
+      object_path: string | null,
+      node: string | null
     ): DBusInterfaceInfo[] | null;
   }
   /**
@@ -5759,7 +5833,10 @@ declare namespace Gio {
    * @returns %G_SOURCE_REMOVE if the source should be removed,   %G_SOURCE_CONTINUE otherwise
    */
   interface DatagramBasedSourceFunc {
-    (datagram_based: DatagramBased, condition: GLib.IOCondition): boolean;
+    (
+      datagram_based: DatagramBased | null,
+      condition: GLib.IOCondition
+    ): boolean;
   }
   /**
    * During invocation, g_desktop_app_info_launch_uris_as_manager() may
@@ -5770,7 +5847,7 @@ declare namespace Gio {
    * @param pid Process identifier
    */
   interface DesktopAppLaunchCallback {
-    (appinfo: DesktopAppInfo, pid: GLib.Pid): void;
+    (appinfo: DesktopAppInfo | null, pid: GLib.Pid): void;
   }
   /**
    * This callback type is used by g_file_measure_disk_usage() to make
@@ -5836,7 +5913,7 @@ declare namespace Gio {
    * @returns %TRUE if more data should be read back. %FALSE otherwise.
    */
   interface FileReadMoreCallback {
-    (file_contents: string, file_size: number): boolean;
+    (file_contents: string | null, file_size: number): boolean;
   }
   /**
    * I/O Job function.
@@ -5849,7 +5926,7 @@ declare namespace Gio {
    * @returns %TRUE if this function should be called again to    complete the job, %FALSE if the job is complete (or cancelled)
    */
   interface IOSchedulerJobFunc {
-    (job: IOSchedulerJob, cancellable: Cancellable | null): boolean;
+    (job: IOSchedulerJob | null, cancellable: Cancellable | null): boolean;
   }
   /**
    * This is the function type of the callback used for the #GSource
@@ -5860,7 +5937,7 @@ declare namespace Gio {
    * @returns it should return %FALSE if the source should be removed.
    */
   interface PollableSourceFunc {
-    (pollable_stream: GObject.Object): boolean;
+    (pollable_stream: GObject.Object | null): boolean;
   }
   /**
    * Changes the size of the memory block pointed to by `data` to
@@ -5873,7 +5950,7 @@ declare namespace Gio {
    * @returns a pointer to the reallocated memory
    */
   interface ReallocFunc {
-    (data: object | null, size: number): object | null;
+    (data: any | null, size: number): any | null;
   }
   /**
    * The type for the function that is used to convert from #GSettings to
@@ -5885,7 +5962,7 @@ declare namespace Gio {
    * @returns %TRUE if the conversion succeeded, %FALSE in case of an error
    */
   interface SettingsBindGetMapping {
-    (value: any, variant: GLib.Variant): boolean;
+    (value: any | null, variant: GLib.Variant | null): boolean;
   }
   /**
    * The type for the function that is used to convert an object property
@@ -5896,7 +5973,10 @@ declare namespace Gio {
    * @returns a new #GVariant holding the data from @value,     or %NULL in case of an error
    */
   interface SettingsBindSetMapping {
-    (value: any, expected_type: GLib.VariantType): GLib.Variant;
+    (
+      value: any | null,
+      expected_type: GLib.VariantType | null
+    ): GLib.Variant | null;
   }
   /**
    * The type of the function that is used to convert from a value stored
@@ -5914,7 +5994,7 @@ declare namespace Gio {
    * @returns %TRUE if the conversion succeeded, %FALSE in case of an error
    */
   interface SettingsGetMapping {
-    (value: GLib.Variant): boolean;
+    (value: GLib.Variant | null): boolean;
   }
   /**
    * Simple thread function that runs an asynchronous operation and
@@ -5926,8 +6006,8 @@ declare namespace Gio {
    */
   interface SimpleAsyncThreadFunc {
     (
-      res: SimpleAsyncResult,
-      object: GObject.Object,
+      res: SimpleAsyncResult | null,
+      object: GObject.Object | null,
       cancellable: Cancellable | null
     ): void;
   }
@@ -5940,7 +6020,7 @@ declare namespace Gio {
    * @returns it should return %FALSE if the source should be removed.
    */
   interface SocketSourceFunc {
-    (socket: Socket, condition: GLib.IOCondition): boolean;
+    (socket: Socket | null, condition: GLib.IOCondition): boolean;
   }
   /**
    * The prototype for a task function to be run in a thread via
@@ -5966,9 +6046,9 @@ declare namespace Gio {
    */
   interface TaskThreadFunc {
     (
-      task: Task,
+      task: Task | null,
       source_object: GObject.Object,
-      task_data: object | null,
+      task_data: any | null,
       cancellable: Cancellable | null
     ): void;
   }
@@ -5985,12 +6065,12 @@ declare namespace Gio {
    * @returns a #GFile for @identifier.
    */
   interface VfsFileLookupFunc {
-    (vfs: Vfs, identifier: string): File;
+    (vfs: Vfs | null, identifier: string | null): File | null;
   }
-  namespace Action {
+  module Action {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Action {
@@ -6007,7 +6087,7 @@ declare namespace Gio {
      * The name of the action.  This is mostly meaningful for identifying
      * the action once it has been added to a #GActionGroup. It is immutable.
      */
-    readonly name: string;
+    readonly name: string | null;
     /**
      * The type of the parameter that must be given when activating the
      * action. This is immutable, and may be %NULL if no parameter is needed when
@@ -6050,7 +6130,7 @@ declare namespace Gio {
      * If the `value` GVariant is floating, it is consumed.
      * @param value the new state
      */
-    change_state(value: GLib.Variant): void;
+    change_state(value: GLib.Variant | null): void;
     /**
      * Checks if `action` is currently enabled.
      *
@@ -6063,7 +6143,7 @@ declare namespace Gio {
      * Queries the name of `action`.
      * @returns the name of the action
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Queries the type of the parameter that must be given when activating
      * `action`.
@@ -6155,7 +6235,7 @@ declare namespace Gio {
      * @virtual
      * @param value the new state
      */
-    vfunc_change_state(value: GLib.Variant): void;
+    vfunc_change_state(value: GLib.Variant | null): void;
     /**
      * Checks if `action` is currently enabled.
      *
@@ -6170,7 +6250,7 @@ declare namespace Gio {
      * @virtual
      * @returns the name of the action
      */
-    vfunc_get_name(): string;
+    vfunc_get_name(): string | null;
     /**
      * Queries the type of the parameter that must be given when activating
      * `action`.
@@ -6344,7 +6424,7 @@ declare namespace Gio {
      * @param action_name a potential action name
      * @returns %TRUE if @action_name is valid
      */
-    static name_is_valid(action_name: string): boolean;
+    static name_is_valid(action_name: string | null): boolean;
     /**
      * Parses a detailed action name into its separate name and target
      * components.
@@ -6374,11 +6454,11 @@ declare namespace Gio {
      * @returns %TRUE if successful, else %FALSE with @error set
      */
     static parse_detailed_name(
-      detailed_name: string
+      detailed_name: string | null
     ): [
       /* returnType */ boolean,
-      /* action_name */ string,
-      /* target_value */ GLib.Variant
+      /* action_name */ string | null,
+      /* target_value */ GLib.Variant | null
     ];
     /**
      * Formats a detailed action name from `action_name` and `target_value`.
@@ -6396,45 +6476,49 @@ declare namespace Gio {
      * @returns a detailed format string
      */
     static print_detailed_name(
-      action_name: string,
+      action_name: string | null,
       target_value: GLib.Variant | null
-    ): string;
+    ): string | null;
   }
 
-  namespace ActionGroup {
+  module ActionGroup {
     // Signal callback interfaces
 
     /**
      * Signal callback interface for `action-added`
      */
     interface ActionAddedSignalCallback {
-      ($obj: ActionGroup, action_name: string): void;
+      ($obj: ActionGroup, action_name: string | null): void;
     }
 
     /**
      * Signal callback interface for `action-enabled-changed`
      */
     interface ActionEnabledChangedSignalCallback {
-      ($obj: ActionGroup, action_name: string, enabled: boolean): void;
+      ($obj: ActionGroup, action_name: string | null, enabled: boolean): void;
     }
 
     /**
      * Signal callback interface for `action-removed`
      */
     interface ActionRemovedSignalCallback {
-      ($obj: ActionGroup, action_name: string): void;
+      ($obj: ActionGroup, action_name: string | null): void;
     }
 
     /**
      * Signal callback interface for `action-state-changed`
      */
     interface ActionStateChangedSignalCallback {
-      ($obj: ActionGroup, action_name: string, value: GLib.Variant): void;
+      (
+        $obj: ActionGroup,
+        action_name: string | null,
+        value: GLib.Variant
+      ): void;
     }
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface ActionGroup {
@@ -6446,7 +6530,7 @@ declare namespace Gio {
      * This function should only be called by #GActionGroup implementations.
      * @param action_name the name of an action in the group
      */
-    action_added(action_name: string): void;
+    action_added(action_name: string | null): void;
     /**
      * Emits the #GActionGroup::action-enabled-changed signal on `action_group`.
      *
@@ -6454,14 +6538,14 @@ declare namespace Gio {
      * @param action_name the name of an action in the group
      * @param enabled whether or not the action is now enabled
      */
-    action_enabled_changed(action_name: string, enabled: boolean): void;
+    action_enabled_changed(action_name: string | null, enabled: boolean): void;
     /**
      * Emits the #GActionGroup::action-removed signal on `action_group`.
      *
      * This function should only be called by #GActionGroup implementations.
      * @param action_name the name of an action in the group
      */
-    action_removed(action_name: string): void;
+    action_removed(action_name: string | null): void;
     /**
      * Emits the #GActionGroup::action-state-changed signal on `action_group`.
      *
@@ -6469,7 +6553,10 @@ declare namespace Gio {
      * @param action_name the name of an action in the group
      * @param state the new state of the named action
      */
-    action_state_changed(action_name: string, state: GLib.Variant): void;
+    action_state_changed(
+      action_name: string | null,
+      state: GLib.Variant | null
+    ): void;
     /**
      * Activate the named action within `action_group`.
      *
@@ -6509,7 +6596,10 @@ declare namespace Gio {
      * @param action_name the name of the action to activate
      * @param parameter parameters to the activation
      */
-    activate_action(action_name: string, parameter: GLib.Variant | null): void;
+    activate_action(
+      action_name: string | null,
+      parameter: GLib.Variant | null
+    ): void;
     /**
      * Request for the state of the named action within `action_group` to be
      * changed to `value`.
@@ -6525,7 +6615,10 @@ declare namespace Gio {
      * @param action_name the name of the action to request the change on
      * @param value the new state
      */
-    change_action_state(action_name: string, value: GLib.Variant): void;
+    change_action_state(
+      action_name: string | null,
+      value: GLib.Variant | null
+    ): void;
     /**
      * Checks if the named action within `action_group` is currently enabled.
      *
@@ -6534,7 +6627,7 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns whether or not the action is currently enabled
      */
-    get_action_enabled(action_name: string): boolean;
+    get_action_enabled(action_name: string | null): boolean;
     /**
      * Queries the type of the parameter that must be given when activating
      * the named action within `action_group`.
@@ -6552,7 +6645,9 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the parameter type
      */
-    get_action_parameter_type(action_name: string): GLib.VariantType | null;
+    get_action_parameter_type(
+      action_name: string | null
+    ): GLib.VariantType | null;
     /**
      * Queries the current state of the named action within `action_group`.
      *
@@ -6565,7 +6660,7 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the current state of the action
      */
-    get_action_state(action_name: string): GLib.Variant | null;
+    get_action_state(action_name: string | null): GLib.Variant | null;
     /**
      * Requests a hint about the valid range of values for the state of the
      * named action within `action_group`.
@@ -6588,7 +6683,7 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the state range hint
      */
-    get_action_state_hint(action_name: string): GLib.Variant | null;
+    get_action_state_hint(action_name: string | null): GLib.Variant | null;
     /**
      * Queries the type of the state of the named action within
      * `action_group`.
@@ -6609,13 +6704,13 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the state type, if the action is stateful
      */
-    get_action_state_type(action_name: string): GLib.VariantType | null;
+    get_action_state_type(action_name: string | null): GLib.VariantType | null;
     /**
      * Checks if the named action exists within `action_group`.
      * @param action_name the name of the action to check for
      * @returns whether the named action exists
      */
-    has_action(action_name: string): boolean;
+    has_action(action_name: string | null): boolean;
     /**
      * Lists the actions contained within `action_group`.
      *
@@ -6656,14 +6751,14 @@ declare namespace Gio {
      * @returns %TRUE if the action exists, else %FALSE
      */
     query_action(
-      action_name: string
+      action_name: string | null
     ): [
       /* returnType */ boolean,
-      /* enabled */ boolean,
-      /* parameter_type */ GLib.VariantType,
-      /* state_type */ GLib.VariantType,
-      /* state_hint */ GLib.Variant,
-      /* state */ GLib.Variant
+      /* enabled */ boolean | null,
+      /* parameter_type */ GLib.VariantType | null,
+      /* state_type */ GLib.VariantType | null,
+      /* state_hint */ GLib.Variant | null,
+      /* state */ GLib.Variant | null
     ];
 
     // Own virtual methods of Gio-2.0.Gio.ActionGroup
@@ -6675,7 +6770,7 @@ declare namespace Gio {
      * @virtual
      * @param action_name the name of an action in the group
      */
-    vfunc_action_added(action_name: string): void;
+    vfunc_action_added(action_name: string | null): void;
     /**
      * Emits the #GActionGroup::action-enabled-changed signal on `action_group`.
      *
@@ -6684,7 +6779,10 @@ declare namespace Gio {
      * @param action_name the name of an action in the group
      * @param enabled whether or not the action is now enabled
      */
-    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void;
+    vfunc_action_enabled_changed(
+      action_name: string | null,
+      enabled: boolean
+    ): void;
     /**
      * Emits the #GActionGroup::action-removed signal on `action_group`.
      *
@@ -6692,7 +6790,7 @@ declare namespace Gio {
      * @virtual
      * @param action_name the name of an action in the group
      */
-    vfunc_action_removed(action_name: string): void;
+    vfunc_action_removed(action_name: string | null): void;
     /**
      * Emits the #GActionGroup::action-state-changed signal on `action_group`.
      *
@@ -6701,7 +6799,10 @@ declare namespace Gio {
      * @param action_name the name of an action in the group
      * @param state the new state of the named action
      */
-    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void;
+    vfunc_action_state_changed(
+      action_name: string | null,
+      state: GLib.Variant | null
+    ): void;
     /**
      * Activate the named action within `action_group`.
      *
@@ -6743,7 +6844,7 @@ declare namespace Gio {
      * @param parameter parameters to the activation
      */
     vfunc_activate_action(
-      action_name: string,
+      action_name: string | null,
       parameter: GLib.Variant | null
     ): void;
     /**
@@ -6762,7 +6863,10 @@ declare namespace Gio {
      * @param action_name the name of the action to request the change on
      * @param value the new state
      */
-    vfunc_change_action_state(action_name: string, value: GLib.Variant): void;
+    vfunc_change_action_state(
+      action_name: string | null,
+      value: GLib.Variant | null
+    ): void;
     /**
      * Checks if the named action within `action_group` is currently enabled.
      *
@@ -6772,7 +6876,7 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns whether or not the action is currently enabled
      */
-    vfunc_get_action_enabled(action_name: string): boolean;
+    vfunc_get_action_enabled(action_name: string | null): boolean;
     /**
      * Queries the type of the parameter that must be given when activating
      * the named action within `action_group`.
@@ -6792,7 +6896,7 @@ declare namespace Gio {
      * @returns the parameter type
      */
     vfunc_get_action_parameter_type(
-      action_name: string
+      action_name: string | null
     ): GLib.VariantType | null;
     /**
      * Queries the current state of the named action within `action_group`.
@@ -6807,7 +6911,7 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the current state of the action
      */
-    vfunc_get_action_state(action_name: string): GLib.Variant | null;
+    vfunc_get_action_state(action_name: string | null): GLib.Variant | null;
     /**
      * Requests a hint about the valid range of values for the state of the
      * named action within `action_group`.
@@ -6831,7 +6935,9 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the state range hint
      */
-    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
+    vfunc_get_action_state_hint(
+      action_name: string | null
+    ): GLib.Variant | null;
     /**
      * Queries the type of the state of the named action within
      * `action_group`.
@@ -6853,14 +6959,16 @@ declare namespace Gio {
      * @param action_name the name of the action to query
      * @returns the state type, if the action is stateful
      */
-    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
+    vfunc_get_action_state_type(
+      action_name: string | null
+    ): GLib.VariantType | null;
     /**
      * Checks if the named action exists within `action_group`.
      * @virtual
      * @param action_name the name of the action to check for
      * @returns whether the named action exists
      */
-    vfunc_has_action(action_name: string): boolean;
+    vfunc_has_action(action_name: string | null): boolean;
     /**
      * Lists the actions contained within `action_group`.
      *
@@ -6903,14 +7011,14 @@ declare namespace Gio {
      * @returns %TRUE if the action exists, else %FALSE
      */
     vfunc_query_action(
-      action_name: string
+      action_name: string | null
     ): [
       /* returnType */ boolean,
-      /* enabled */ boolean,
-      /* parameter_type */ GLib.VariantType,
-      /* state_type */ GLib.VariantType,
-      /* state_hint */ GLib.Variant,
-      /* state */ GLib.Variant
+      /* enabled */ boolean | null,
+      /* parameter_type */ GLib.VariantType | null,
+      /* state_type */ GLib.VariantType | null,
+      /* state_hint */ GLib.Variant | null,
+      /* state */ GLib.Variant | null
     ];
 
     // Own signals of Gio-2.0.Gio.ActionGroup
@@ -6923,7 +7031,11 @@ declare namespace Gio {
       sigName: "action-added",
       callback: ActionGroup.ActionAddedSignalCallback
     ): number;
-    emit(sigName: "action-added", action_name: string, ...args: any[]): void;
+    emit(
+      sigName: "action-added",
+      action_name: string | null,
+      ...args: any[]
+    ): void;
     connect(
       sigName: "action-enabled-changed",
       callback: ActionGroup.ActionEnabledChangedSignalCallback
@@ -6934,7 +7046,7 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "action-enabled-changed",
-      action_name: string,
+      action_name: string | null,
       enabled: boolean,
       ...args: any[]
     ): void;
@@ -6946,7 +7058,11 @@ declare namespace Gio {
       sigName: "action-removed",
       callback: ActionGroup.ActionRemovedSignalCallback
     ): number;
-    emit(sigName: "action-removed", action_name: string, ...args: any[]): void;
+    emit(
+      sigName: "action-removed",
+      action_name: string | null,
+      ...args: any[]
+    ): void;
     connect(
       sigName: "action-state-changed",
       callback: ActionGroup.ActionStateChangedSignalCallback
@@ -6957,7 +7073,7 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "action-state-changed",
-      action_name: string,
+      action_name: string | null,
       value: GLib.Variant,
       ...args: any[]
     ): void;
@@ -7030,10 +7146,10 @@ declare namespace Gio {
     _init(config?: ActionGroup.ConstructorProperties): void;
   }
 
-  namespace ActionMap {
+  module ActionMap {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface ActionMap {
@@ -7048,7 +7164,7 @@ declare namespace Gio {
      * The action map takes its own reference on `action`.
      * @param action a #GAction
      */
-    add_action(action: Action): void;
+    add_action(action: Action | null): void;
     /**
      * A convenience function for creating multiple #GSimpleAction instances
      * and adding them to a #GActionMap.
@@ -7092,7 +7208,7 @@ declare namespace Gio {
      * @param entries a pointer to           the first item in an array of #GActionEntry structs
      * @param user_data the user data for signal connections
      */
-    add_action_entries(entries: ActionEntry[], user_data: object | null): void;
+    add_action_entries(entries: ActionEntry[], user_data: any | null): void;
     /**
      * Looks up the action with the name `action_name` in `action_map`.
      *
@@ -7100,14 +7216,14 @@ declare namespace Gio {
      * @param action_name the name of an action
      * @returns a #GAction, or %NULL
      */
-    lookup_action(action_name: string): Action | null;
+    lookup_action(action_name: string | null): Action | null;
     /**
      * Removes the named action from the action map.
      *
      * If no action of this name is in the map then nothing happens.
      * @param action_name the name of the action
      */
-    remove_action(action_name: string): void;
+    remove_action(action_name: string | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.ActionMap
 
@@ -7121,7 +7237,7 @@ declare namespace Gio {
      * @virtual
      * @param action a #GAction
      */
-    vfunc_add_action(action: Action): void;
+    vfunc_add_action(action: Action | null): void;
     /**
      * Looks up the action with the name `action_name` in `action_map`.
      *
@@ -7130,7 +7246,7 @@ declare namespace Gio {
      * @param action_name the name of an action
      * @returns a #GAction, or %NULL
      */
-    vfunc_lookup_action(action_name: string): Action | null;
+    vfunc_lookup_action(action_name: string | null): Action | null;
     /**
      * Removes the named action from the action map.
      *
@@ -7138,7 +7254,7 @@ declare namespace Gio {
      * @virtual
      * @param action_name the name of the action
      */
-    vfunc_remove_action(action_name: string): void;
+    vfunc_remove_action(action_name: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.ActionMap
 
@@ -7172,10 +7288,10 @@ declare namespace Gio {
     _init(config?: ActionMap.ConstructorProperties): void;
   }
 
-  namespace AppInfo {
+  module AppInfo {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface AppInfo {
@@ -7187,7 +7303,7 @@ declare namespace Gio {
      * @param content_type a string.
      * @returns %TRUE on success, %FALSE on error.
      */
-    add_supports_type(content_type: string): boolean;
+    add_supports_type(content_type: string | null): boolean;
     /**
      * Obtains the information whether the #GAppInfo can be deleted.
      * See g_app_info_delete().
@@ -7212,7 +7328,7 @@ declare namespace Gio {
      * Creates a duplicate of a #GAppInfo.
      * @returns a duplicate of @appinfo.
      */
-    dup(): AppInfo;
+    dup(): AppInfo | null;
     /**
      * Checks if two #GAppInfos are equal.
      *
@@ -7222,7 +7338,7 @@ declare namespace Gio {
      * @param appinfo2 the second #GAppInfo.
      * @returns %TRUE if @appinfo1 is equal to @appinfo2. %FALSE otherwise.
      */
-    equal(appinfo2: AppInfo): boolean;
+    equal(appinfo2: AppInfo | null): boolean;
     /**
      * Gets the commandline with which the application will be
      * started.
@@ -7239,12 +7355,12 @@ declare namespace Gio {
      * descriptive to the user than the name itself.
      * @returns the display name of the application for @appinfo, or the name if no display name is available.
      */
-    get_display_name(): string;
+    get_display_name(): string | null;
     /**
      * Gets the executable's name for the installed application.
      * @returns a string containing the @appinfo's application binaries name
      */
-    get_executable(): string;
+    get_executable(): string | null;
     /**
      * Gets the icon for the application.
      * @returns the default #GIcon for @appinfo or %NULL if there is no default icon.
@@ -7265,7 +7381,7 @@ declare namespace Gio {
      * Gets the installed name of the application.
      * @returns the name of the application for @appinfo.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Retrieves the list of content types that `app_info` claims to support.
      * If this information is not provided by the environment, this function
@@ -7353,25 +7469,25 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful launch, %FALSE otherwise.
      */
-    launch_uris_finish(result: AsyncResult): boolean;
+    launch_uris_finish(result: AsyncResult | null): boolean;
     /**
      * Removes a supported type from an application, if possible.
      * @param content_type a string.
      * @returns %TRUE on success, %FALSE on error.
      */
-    remove_supports_type(content_type: string): boolean;
+    remove_supports_type(content_type: string | null): boolean;
     /**
      * Sets the application as the default handler for the given file extension.
      * @param extension a string containing the file extension     (without the dot).
      * @returns %TRUE on success, %FALSE on error.
      */
-    set_as_default_for_extension(extension: string): boolean;
+    set_as_default_for_extension(extension: string | null): boolean;
     /**
      * Sets the application as the default handler for a given type.
      * @param content_type the content type.
      * @returns %TRUE on success, %FALSE on error.
      */
-    set_as_default_for_type(content_type: string): boolean;
+    set_as_default_for_type(content_type: string | null): boolean;
     /**
      * Sets the application as the last used application for a given type.
      * This will make the application appear as first in the list returned
@@ -7380,7 +7496,7 @@ declare namespace Gio {
      * @param content_type the content type.
      * @returns %TRUE on success, %FALSE on error.
      */
-    set_as_last_used_for_type(content_type: string): boolean;
+    set_as_last_used_for_type(content_type: string | null): boolean;
     /**
      * Checks if the application info should be shown in menus that
      * list available applications.
@@ -7407,7 +7523,7 @@ declare namespace Gio {
      * @param content_type a string.
      * @returns %TRUE on success, %FALSE on error.
      */
-    vfunc_add_supports_type(content_type: string): boolean;
+    vfunc_add_supports_type(content_type: string | null): boolean;
     /**
      * Obtains the information whether the #GAppInfo can be deleted.
      * See g_app_info_delete().
@@ -7436,7 +7552,7 @@ declare namespace Gio {
      * @virtual
      * @returns a duplicate of @appinfo.
      */
-    vfunc_dup(): AppInfo;
+    vfunc_dup(): AppInfo | null;
     /**
      * Checks if two #GAppInfos are equal.
      *
@@ -7447,7 +7563,7 @@ declare namespace Gio {
      * @param appinfo2 the second #GAppInfo.
      * @returns %TRUE if @appinfo1 is equal to @appinfo2. %FALSE otherwise.
      */
-    vfunc_equal(appinfo2: AppInfo): boolean;
+    vfunc_equal(appinfo2: AppInfo | null): boolean;
     /**
      * Gets the commandline with which the application will be
      * started.
@@ -7467,13 +7583,13 @@ declare namespace Gio {
      * @virtual
      * @returns the display name of the application for @appinfo, or the name if no display name is available.
      */
-    vfunc_get_display_name(): string;
+    vfunc_get_display_name(): string | null;
     /**
      * Gets the executable's name for the installed application.
      * @virtual
      * @returns a string containing the @appinfo's application binaries name
      */
-    vfunc_get_executable(): string;
+    vfunc_get_executable(): string | null;
     /**
      * Gets the icon for the application.
      * @virtual
@@ -7497,7 +7613,7 @@ declare namespace Gio {
      * @virtual
      * @returns the name of the application for @appinfo.
      */
-    vfunc_get_name(): string;
+    vfunc_get_name(): string | null;
     /**
      * Retrieves the list of content types that `app_info` claims to support.
      * If this information is not provided by the environment, this function
@@ -7593,28 +7709,28 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful launch, %FALSE otherwise.
      */
-    vfunc_launch_uris_finish(result: AsyncResult): boolean;
+    vfunc_launch_uris_finish(result: AsyncResult | null): boolean;
     /**
      * Removes a supported type from an application, if possible.
      * @virtual
      * @param content_type a string.
      * @returns %TRUE on success, %FALSE on error.
      */
-    vfunc_remove_supports_type(content_type: string): boolean;
+    vfunc_remove_supports_type(content_type: string | null): boolean;
     /**
      * Sets the application as the default handler for the given file extension.
      * @virtual
      * @param extension a string containing the file extension     (without the dot).
      * @returns %TRUE on success, %FALSE on error.
      */
-    vfunc_set_as_default_for_extension(extension: string): boolean;
+    vfunc_set_as_default_for_extension(extension: string | null): boolean;
     /**
      * Sets the application as the default handler for a given type.
      * @virtual
      * @param content_type the content type.
      * @returns %TRUE on success, %FALSE on error.
      */
-    vfunc_set_as_default_for_type(content_type: string): boolean;
+    vfunc_set_as_default_for_type(content_type: string | null): boolean;
     /**
      * Sets the application as the last used application for a given type.
      * This will make the application appear as first in the list returned
@@ -7624,7 +7740,7 @@ declare namespace Gio {
      * @param content_type the content type.
      * @returns %TRUE on success, %FALSE on error.
      */
-    vfunc_set_as_last_used_for_type(content_type: string): boolean;
+    vfunc_set_as_last_used_for_type(content_type: string | null): boolean;
     /**
      * Checks if the application info should be shown in menus that
      * list available applications.
@@ -7729,10 +7845,10 @@ declare namespace Gio {
      * @returns new #GAppInfo for given command.
      */
     static create_from_commandline(
-      commandline: string,
+      commandline: string | null,
       application_name: string | null,
       flags: AppInfoCreateFlags
-    ): AppInfo;
+    ): AppInfo | null;
     /**
      * Gets a list of all of the applications currently registered
      * on this system.
@@ -7744,7 +7860,7 @@ declare namespace Gio {
      * the `Hidden` key set.
      * @returns a newly allocated #GList of references to #GAppInfos.
      */
-    static get_all(): AppInfo[];
+    static get_all(): AppInfo[] | null;
     /**
      * Gets a list of all #GAppInfos for a given content type,
      * including the recommended and fallback #GAppInfos. See
@@ -7753,7 +7869,7 @@ declare namespace Gio {
      * @param content_type the content type to find a #GAppInfo for
      * @returns #GList of #GAppInfos     for given @content_type or %NULL on error.
      */
-    static get_all_for_type(content_type: string): AppInfo[];
+    static get_all_for_type(content_type: string | null): AppInfo[] | null;
     /**
      * Gets the default #GAppInfo for a given content type.
      * @param content_type the content type to find a #GAppInfo for
@@ -7761,7 +7877,7 @@ declare namespace Gio {
      * @returns #GAppInfo for given @content_type or     %NULL on error.
      */
     static get_default_for_type(
-      content_type: string,
+      content_type: string | null,
       must_support_uris: boolean
     ): AppInfo | null;
     /**
@@ -7772,7 +7888,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request is done
      */
     static get_default_for_type_async(
-      content_type: string,
+      content_type: string | null,
       must_support_uris: boolean,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<AppInfo> | null
@@ -7785,7 +7901,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns #GAppInfo for given @content_type or     %NULL on error.
      */
-    static get_default_for_type_finish(result: AsyncResult): AppInfo;
+    static get_default_for_type_finish(
+      result: AsyncResult | null
+    ): AppInfo | null;
     /**
      * Gets the default application for handling URIs with
      * the given URI scheme. A URI scheme is the initial part
@@ -7794,7 +7912,9 @@ declare namespace Gio {
      * @param uri_scheme a string containing a URI scheme.
      * @returns #GAppInfo for given @uri_scheme or     %NULL on error.
      */
-    static get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
+    static get_default_for_uri_scheme(
+      uri_scheme: string | null
+    ): AppInfo | null;
     /**
      * Asynchronously gets the default application for handling URIs with
      * the given URI scheme. A URI scheme is the initial part
@@ -7805,7 +7925,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request is done
      */
     static get_default_for_uri_scheme_async(
-      uri_scheme: string,
+      uri_scheme: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<AppInfo> | null
     ): void;
@@ -7817,7 +7937,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns #GAppInfo for given @uri_scheme or     %NULL on error.
      */
-    static get_default_for_uri_scheme_finish(result: AsyncResult): AppInfo;
+    static get_default_for_uri_scheme_finish(
+      result: AsyncResult | null
+    ): AppInfo | null;
     /**
      * Gets a list of fallback #GAppInfos for a given content type, i.e.
      * those applications which claim to support the given content type
@@ -7825,7 +7947,7 @@ declare namespace Gio {
      * @param content_type the content type to find a #GAppInfo for
      * @returns #GList of #GAppInfos     for given @content_type or %NULL on error.
      */
-    static get_fallback_for_type(content_type: string): AppInfo[];
+    static get_fallback_for_type(content_type: string | null): AppInfo[] | null;
     /**
      * Gets a list of recommended #GAppInfos for a given content type, i.e.
      * those applications which claim to support the given content type exactly,
@@ -7836,7 +7958,9 @@ declare namespace Gio {
      * @param content_type the content type to find a #GAppInfo for
      * @returns #GList of #GAppInfos     for given @content_type or %NULL on error.
      */
-    static get_recommended_for_type(content_type: string): AppInfo[];
+    static get_recommended_for_type(
+      content_type: string | null
+    ): AppInfo[] | null;
     /**
      * Utility function that launches the default application
      * registered to handle the specified uri. Synchronous I/O
@@ -7851,7 +7975,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on error.
      */
     static launch_default_for_uri(
-      uri: string,
+      uri: string | null,
       context: AppLaunchContext | null
     ): boolean;
     /**
@@ -7871,7 +7995,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request is done
      */
     static launch_default_for_uri_async(
-      uri: string,
+      uri: string | null,
       context: AppLaunchContext | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<AppInfo> | null
@@ -7881,7 +8005,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the launch was successful, %FALSE if @error is set
      */
-    static launch_default_for_uri_finish(result: AsyncResult): boolean;
+    static launch_default_for_uri_finish(result: AsyncResult | null): boolean;
     /**
      * Removes all changes to the type associations done by
      * g_app_info_set_as_default_for_type(),
@@ -7890,13 +8014,13 @@ declare namespace Gio {
      * g_app_info_remove_supports_type().
      * @param content_type a content type
      */
-    static reset_type_associations(content_type: string): void;
+    static reset_type_associations(content_type: string | null): void;
   }
 
-  namespace AsyncInitable {
+  module AsyncInitable {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface AsyncInitable {
@@ -7954,14 +8078,14 @@ declare namespace Gio {
      * @param res a #GAsyncResult.
      * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
      */
-    init_finish(res: AsyncResult): boolean;
+    init_finish(res: AsyncResult | null): boolean;
     /**
      * Finishes the async construction for the various g_async_initable_new
      * calls, returning the created object or %NULL on error.
      * @param res the #GAsyncResult from the callback
      * @returns a newly created #GObject,      or %NULL on error. Free with g_object_unref().
      */
-    new_finish(res: AsyncResult): GObject.Object;
+    new_finish(res: AsyncResult | null): GObject.Object | null;
 
     // Own virtual methods of Gio-2.0.Gio.AsyncInitable
 
@@ -8019,7 +8143,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult.
      * @returns %TRUE if successful. If an error has occurred, this function will return %FALSE and set @error appropriately if present.
      */
-    vfunc_init_finish(res: AsyncResult): boolean;
+    vfunc_init_finish(res: AsyncResult | null): boolean;
 
     // Class property signals of Gio-2.0.Gio.AsyncInitable
 
@@ -8160,17 +8284,17 @@ declare namespace Gio {
     static newv_async(
       object_type: GObject.GType,
       n_parameters: number,
-      parameters: GObject.Parameter,
+      parameters: GObject.Parameter | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<AsyncInitable> | null
     ): void;
   }
 
-  namespace AsyncResult {
+  module AsyncResult {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface AsyncResult {
@@ -8185,14 +8309,14 @@ declare namespace Gio {
      * Gets the user data from a #GAsyncResult.
      * @returns the user data for @res.
      */
-    get_user_data(): object | null;
+    get_user_data(): any | null;
     /**
      * Checks if `res` has the given `source_tag` (generally a function
      * pointer indicating the function `res` was created by).
      * @param source_tag an application-defined tag
      * @returns %TRUE if @res has the indicated @source_tag, %FALSE if   not.
      */
-    is_tagged(source_tag: object | null): boolean;
+    is_tagged(source_tag: any | null): boolean;
     /**
      * If `res` is a #GSimpleAsyncResult, this is equivalent to
      * g_simple_async_result_propagate_error(). Otherwise it returns
@@ -8221,7 +8345,7 @@ declare namespace Gio {
      * @virtual
      * @returns the user data for @res.
      */
-    vfunc_get_user_data(): object | null;
+    vfunc_get_user_data(): any | null;
     /**
      * Checks if `res` has the given `source_tag` (generally a function
      * pointer indicating the function `res` was created by).
@@ -8229,7 +8353,7 @@ declare namespace Gio {
      * @param source_tag an application-defined tag
      * @returns %TRUE if @res has the indicated @source_tag, %FALSE if   not.
      */
-    vfunc_is_tagged(source_tag: object | null): boolean;
+    vfunc_is_tagged(source_tag: any | null): boolean;
 
     // Class property signals of Gio-2.0.Gio.AsyncResult
 
@@ -8340,10 +8464,10 @@ declare namespace Gio {
     _init(config?: AsyncResult.ConstructorProperties): void;
   }
 
-  namespace Converter {
+  module Converter {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Converter {
@@ -8443,8 +8567,8 @@ declare namespace Gio {
       flags: ConverterFlags
     ): [
       /* returnType */ ConverterResult,
-      /* bytes_read */ number,
-      /* bytes_written */ number
+      /* bytes_read */ number | null,
+      /* bytes_written */ number | null
     ];
     /**
      * Resets all internal state in the converter, making it behave
@@ -8550,8 +8674,8 @@ declare namespace Gio {
       flags: ConverterFlags
     ): [
       /* returnType */ ConverterResult,
-      /* bytes_read */ number,
-      /* bytes_written */ number
+      /* bytes_read */ number | null,
+      /* bytes_written */ number | null
     ];
     /**
      * Resets all internal state in the converter, making it behave
@@ -8591,10 +8715,10 @@ declare namespace Gio {
     _init(config?: Converter.ConstructorProperties): void;
   }
 
-  namespace DBusInterface {
+  module DBusInterface {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DBusInterface {
@@ -8610,7 +8734,7 @@ declare namespace Gio {
      * implemented by `interface_`.
      * @returns A #GDBusInterfaceInfo. Do not free.
      */
-    get_info(): DBusInterfaceInfo;
+    get_info(): DBusInterfaceInfo | null;
     /**
      * Sets the #GDBusObject for `interface_` to `object`.
      *
@@ -8633,7 +8757,7 @@ declare namespace Gio {
      * @virtual
      * @returns A #GDBusInterfaceInfo. Do not free.
      */
-    vfunc_get_info(): DBusInterfaceInfo;
+    vfunc_get_info(): DBusInterfaceInfo | null;
     /**
      * Sets the #GDBusObject for `interface_` to `object`.
      *
@@ -8669,7 +8793,7 @@ declare namespace Gio {
     _init(config?: DBusInterface.ConstructorProperties): void;
   }
 
-  namespace DBusObject {
+  module DBusObject {
     // Signal callback interfaces
 
     /**
@@ -8688,7 +8812,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DBusObject {
@@ -8700,17 +8824,17 @@ declare namespace Gio {
      * @param interface_name A D-Bus interface name.
      * @returns %NULL if not found, otherwise a   #GDBusInterface that must be freed with g_object_unref().
      */
-    get_interface(interface_name: string): DBusInterface | null;
+    get_interface(interface_name: string | null): DBusInterface | null;
     /**
      * Gets the D-Bus interfaces associated with `object`.
      * @returns A list of #GDBusInterface instances.   The returned list must be freed by g_list_free() after each element has been freed   with g_object_unref().
      */
-    get_interfaces(): DBusInterface[];
+    get_interfaces(): DBusInterface[] | null;
     /**
      * Gets the object path for `object`.
      * @returns A string owned by @object. Do not free.
      */
-    get_object_path(): string;
+    get_object_path(): string | null;
 
     // Own virtual methods of Gio-2.0.Gio.DBusObject
 
@@ -8721,21 +8845,21 @@ declare namespace Gio {
      * @param interface_name A D-Bus interface name.
      * @returns %NULL if not found, otherwise a   #GDBusInterface that must be freed with g_object_unref().
      */
-    vfunc_get_interface(interface_name: string): DBusInterface | null;
+    vfunc_get_interface(interface_name: string | null): DBusInterface | null;
     /**
      * Gets the D-Bus interfaces associated with `object`.
      * @virtual
      * @returns A list of #GDBusInterface instances.   The returned list must be freed by g_list_free() after each element has been freed   with g_object_unref().
      */
-    vfunc_get_interfaces(): DBusInterface[];
+    vfunc_get_interfaces(): DBusInterface[] | null;
     /**
      * Gets the object path for `object`.
      * @virtual
      * @returns A string owned by @object. Do not free.
      */
-    vfunc_get_object_path(): string;
-    vfunc_interface_added(interface_: DBusInterface): void;
-    vfunc_interface_removed(interface_: DBusInterface): void;
+    vfunc_get_object_path(): string | null;
+    vfunc_interface_added(interface_: DBusInterface | null): void;
+    vfunc_interface_removed(interface_: DBusInterface | null): void;
 
     // Own signals of Gio-2.0.Gio.DBusObject
 
@@ -8793,7 +8917,7 @@ declare namespace Gio {
     _init(config?: DBusObject.ConstructorProperties): void;
   }
 
-  namespace DBusObjectManager {
+  module DBusObjectManager {
     // Signal callback interfaces
 
     /**
@@ -8834,7 +8958,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DBusObjectManager {
@@ -8848,25 +8972,25 @@ declare namespace Gio {
      * @returns A #GDBusInterface instance or %NULL. Free   with g_object_unref().
      */
     get_interface(
-      object_path: string,
-      interface_name: string
+      object_path: string | null,
+      interface_name: string | null
     ): DBusInterface | null;
     /**
      * Gets the #GDBusObject at `object_path,` if any.
      * @param object_path Object path to look up.
      * @returns A #GDBusObject or %NULL. Free with   g_object_unref().
      */
-    get_object(object_path: string): DBusObject | null;
+    get_object(object_path: string | null): DBusObject | null;
     /**
      * Gets the object path that `manager` is for.
      * @returns A string owned by @manager. Do not free.
      */
-    get_object_path(): string;
+    get_object_path(): string | null;
     /**
      * Gets all #GDBusObject objects known to `manager`.
      * @returns A list of   #GDBusObject objects. The returned list should be freed with   g_list_free() after each element has been freed with   g_object_unref().
      */
-    get_objects(): DBusObject[];
+    get_objects(): DBusObject[] | null;
 
     // Own virtual methods of Gio-2.0.Gio.DBusObjectManager
 
@@ -8879,8 +9003,8 @@ declare namespace Gio {
      * @returns A #GDBusInterface instance or %NULL. Free   with g_object_unref().
      */
     vfunc_get_interface(
-      object_path: string,
-      interface_name: string
+      object_path: string | null,
+      interface_name: string | null
     ): DBusInterface | null;
     /**
      * Gets the #GDBusObject at `object_path,` if any.
@@ -8888,26 +9012,29 @@ declare namespace Gio {
      * @param object_path Object path to look up.
      * @returns A #GDBusObject or %NULL. Free with   g_object_unref().
      */
-    vfunc_get_object(object_path: string): DBusObject | null;
+    vfunc_get_object(object_path: string | null): DBusObject | null;
     /**
      * Gets the object path that `manager` is for.
      * @virtual
      * @returns A string owned by @manager. Do not free.
      */
-    vfunc_get_object_path(): string;
+    vfunc_get_object_path(): string | null;
     /**
      * Gets all #GDBusObject objects known to `manager`.
      * @virtual
      * @returns A list of   #GDBusObject objects. The returned list should be freed with   g_list_free() after each element has been freed with   g_object_unref().
      */
-    vfunc_get_objects(): DBusObject[];
-    vfunc_interface_added(object: DBusObject, interface_: DBusInterface): void;
-    vfunc_interface_removed(
-      object: DBusObject,
-      interface_: DBusInterface
+    vfunc_get_objects(): DBusObject[] | null;
+    vfunc_interface_added(
+      object: DBusObject | null,
+      interface_: DBusInterface | null
     ): void;
-    vfunc_object_added(object: DBusObject): void;
-    vfunc_object_removed(object: DBusObject): void;
+    vfunc_interface_removed(
+      object: DBusObject | null,
+      interface_: DBusInterface | null
+    ): void;
+    vfunc_object_added(object: DBusObject | null): void;
+    vfunc_object_removed(object: DBusObject | null): void;
 
     // Own signals of Gio-2.0.Gio.DBusObjectManager
 
@@ -8988,10 +9115,10 @@ declare namespace Gio {
     _init(config?: DBusObjectManager.ConstructorProperties): void;
   }
 
-  namespace DatagramBased {
+  module DatagramBased {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DatagramBased {
@@ -9077,7 +9204,7 @@ declare namespace Gio {
     create_source(
       condition: GLib.IOCondition,
       cancellable: Cancellable | null
-    ): GLib.Source;
+    ): GLib.Source | null;
     /**
      * Receive one or more data messages from `datagram_based` in one go.
      *
@@ -9281,7 +9408,7 @@ declare namespace Gio {
     vfunc_create_source(
       condition: GLib.IOCondition,
       cancellable: Cancellable | null
-    ): GLib.Source;
+    ): GLib.Source | null;
     /**
      * Receive one or more data messages from `datagram_based` in one go.
      *
@@ -9472,7 +9599,7 @@ declare namespace Gio {
     _init(config?: DatagramBased.ConstructorProperties): void;
   }
 
-  namespace DebugController {
+  module DebugController {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -9557,10 +9684,10 @@ declare namespace Gio {
     _init(config?: DebugController.ConstructorProperties): void;
   }
 
-  namespace DesktopAppInfoLookup {
+  module DesktopAppInfoLookup {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DesktopAppInfoLookup {
@@ -9578,7 +9705,7 @@ declare namespace Gio {
      * @param uri_scheme a string containing a URI scheme.
      * @returns #GAppInfo for given @uri_scheme or    %NULL on error.
      */
-    get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
+    get_default_for_uri_scheme(uri_scheme: string | null): AppInfo | null;
 
     // Own virtual methods of Gio-2.0.Gio.DesktopAppInfoLookup
 
@@ -9595,7 +9722,7 @@ declare namespace Gio {
      * @param uri_scheme a string containing a URI scheme.
      * @returns #GAppInfo for given @uri_scheme or    %NULL on error.
      */
-    vfunc_get_default_for_uri_scheme(uri_scheme: string): AppInfo | null;
+    vfunc_get_default_for_uri_scheme(uri_scheme: string | null): AppInfo | null;
 
     // Class property signals of Gio-2.0.Gio.DesktopAppInfoLookup
 
@@ -9622,7 +9749,7 @@ declare namespace Gio {
     _init(config?: DesktopAppInfoLookup.ConstructorProperties): void;
   }
 
-  namespace Drive {
+  module Drive {
     // Signal callback interfaces
 
     /**
@@ -9655,7 +9782,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Drive {
@@ -9706,7 +9833,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been ejected successfully,     %FALSE otherwise.
      */
-    eject_finish(result: AsyncResult): boolean;
+    eject_finish(result: AsyncResult | null): boolean;
     /**
      * Ejects a drive. This is an asynchronous operation, and is
      * finished by calling g_drive_eject_with_operation_finish() with the `drive`
@@ -9728,7 +9855,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive was successfully ejected. %FALSE otherwise.
      */
-    eject_with_operation_finish(result: AsyncResult): boolean;
+    eject_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the kinds of identifiers that `drive` has.
      * Use g_drive_get_identifier() to obtain the identifiers
@@ -9740,7 +9867,7 @@ declare namespace Gio {
      * Gets the icon for `drive`.
      * @returns #GIcon for the @drive.    Free the returned object with g_object_unref().
      */
-    get_icon(): Icon;
+    get_icon(): Icon | null;
     /**
      * Gets the identifier of the given kind for `drive`. The only
      * identifier currently available is
@@ -9748,12 +9875,12 @@ declare namespace Gio {
      * @param kind the kind of identifier to return
      * @returns a newly allocated string containing the     requested identifier, or %NULL if the #GDrive     doesn't have this kind of identifier.
      */
-    get_identifier(kind: string): string | null;
+    get_identifier(kind: string | null): string | null;
     /**
      * Gets the name of `drive`.
      * @returns a string containing @drive's name. The returned     string should be freed when no longer needed.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the sort key for `drive,` if any.
      * @returns Sorting key for @drive or %NULL if no such key is available.
@@ -9768,7 +9895,7 @@ declare namespace Gio {
      * Gets the icon for `drive`.
      * @returns symbolic #GIcon for the @drive.    Free the returned object with g_object_unref().
      */
-    get_symbolic_icon(): Icon;
+    get_symbolic_icon(): Icon | null;
     /**
      * Get a list of mountable volumes for `drive`.
      *
@@ -9776,7 +9903,7 @@ declare namespace Gio {
      * its elements have been unreffed with g_object_unref().
      * @returns #GList containing any #GVolume objects on the given @drive.
      */
-    get_volumes(): Volume[];
+    get_volumes(): Volume[] | null;
     /**
      * Checks if the `drive` has media. Note that the OS may not be polling
      * the drive for media changes; see g_drive_is_media_check_automatic()
@@ -9823,7 +9950,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been poll_for_mediaed successfully,     %FALSE otherwise.
      */
-    poll_for_media_finish(result: AsyncResult): boolean;
+    poll_for_media_finish(result: AsyncResult | null): boolean;
     /**
      * Asynchronously starts a drive.
      *
@@ -9846,7 +9973,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been started successfully,     %FALSE otherwise.
      */
-    start_finish(result: AsyncResult): boolean;
+    start_finish(result: AsyncResult | null): boolean;
     /**
      * Asynchronously stops a drive.
      *
@@ -9869,7 +9996,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been stopped successfully,     %FALSE otherwise.
      */
-    stop_finish(result: AsyncResult): boolean;
+    stop_finish(result: AsyncResult | null): boolean;
 
     // Own virtual methods of Gio-2.0.Gio.Drive
 
@@ -9928,7 +10055,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been ejected successfully,     %FALSE otherwise.
      */
-    vfunc_eject_finish(result: AsyncResult): boolean;
+    vfunc_eject_finish(result: AsyncResult | null): boolean;
     /**
      * Ejects a drive. This is an asynchronous operation, and is
      * finished by calling g_drive_eject_with_operation_finish() with the `drive`
@@ -9952,7 +10079,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive was successfully ejected. %FALSE otherwise.
      */
-    vfunc_eject_with_operation_finish(result: AsyncResult): boolean;
+    vfunc_eject_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the kinds of identifiers that `drive` has.
      * Use g_drive_get_identifier() to obtain the identifiers
@@ -9966,7 +10093,7 @@ declare namespace Gio {
      * @virtual
      * @returns #GIcon for the @drive.    Free the returned object with g_object_unref().
      */
-    vfunc_get_icon(): Icon;
+    vfunc_get_icon(): Icon | null;
     /**
      * Gets the identifier of the given kind for `drive`. The only
      * identifier currently available is
@@ -9975,13 +10102,13 @@ declare namespace Gio {
      * @param kind the kind of identifier to return
      * @returns a newly allocated string containing the     requested identifier, or %NULL if the #GDrive     doesn't have this kind of identifier.
      */
-    vfunc_get_identifier(kind: string): string | null;
+    vfunc_get_identifier(kind: string | null): string | null;
     /**
      * Gets the name of `drive`.
      * @virtual
      * @returns a string containing @drive's name. The returned     string should be freed when no longer needed.
      */
-    vfunc_get_name(): string;
+    vfunc_get_name(): string | null;
     /**
      * Gets the sort key for `drive,` if any.
      * @virtual
@@ -9999,7 +10126,7 @@ declare namespace Gio {
      * @virtual
      * @returns symbolic #GIcon for the @drive.    Free the returned object with g_object_unref().
      */
-    vfunc_get_symbolic_icon(): Icon;
+    vfunc_get_symbolic_icon(): Icon | null;
     /**
      * Get a list of mountable volumes for `drive`.
      *
@@ -10008,7 +10135,7 @@ declare namespace Gio {
      * @virtual
      * @returns #GList containing any #GVolume objects on the given @drive.
      */
-    vfunc_get_volumes(): Volume[];
+    vfunc_get_volumes(): Volume[] | null;
     /**
      * Checks if the `drive` has media. Note that the OS may not be polling
      * the drive for media changes; see g_drive_is_media_check_automatic()
@@ -10062,7 +10189,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been poll_for_mediaed successfully,     %FALSE otherwise.
      */
-    vfunc_poll_for_media_finish(result: AsyncResult): boolean;
+    vfunc_poll_for_media_finish(result: AsyncResult | null): boolean;
     /**
      * Asynchronously starts a drive.
      *
@@ -10087,7 +10214,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been started successfully,     %FALSE otherwise.
      */
-    vfunc_start_finish(result: AsyncResult): boolean;
+    vfunc_start_finish(result: AsyncResult | null): boolean;
     /**
      * Asynchronously stops a drive.
      *
@@ -10113,7 +10240,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the drive has been stopped successfully,     %FALSE otherwise.
      */
-    vfunc_stop_finish(result: AsyncResult): boolean;
+    vfunc_stop_finish(result: AsyncResult | null): boolean;
 
     // Own signals of Gio-2.0.Gio.Drive
 
@@ -10200,7 +10327,7 @@ declare namespace Gio {
     _init(config?: Drive.ConstructorProperties): void;
   }
 
-  namespace DtlsClientConnection {
+  module DtlsClientConnection {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -10260,7 +10387,7 @@ declare namespace Gio {
      * Each item in the list is a #GByteArray which contains the complete
      * subject DN of the certificate authority.
      */
-    readonly accepted_cas: object[];
+    readonly accepted_cas: any[];
     /**
      * A #GSocketConnectable describing the identity of the server that
      * is expected on the other end of the connection.
@@ -10310,12 +10437,12 @@ declare namespace Gio {
      * subject DN of the certificate authority.
      * @returns the list of CA DNs. You should unref each element with g_byte_array_unref() and then the free the list with g_list_free().
      */
-    get_accepted_cas(): GLib.List[];
+    get_accepted_cas(): GLib.List[] | null;
     /**
      * Gets `conn'`s expected server identity
      * @returns a #GSocketConnectable describing the expected server identity, or %NULL if the expected identity is not known.
      */
-    get_server_identity(): SocketConnectable;
+    get_server_identity(): SocketConnectable | null;
     /**
      * Gets `conn'`s validation flags
      *
@@ -10332,7 +10459,7 @@ declare namespace Gio {
      * performing %G_TLS_CERTIFICATE_BAD_IDENTITY validation, if enabled.
      * @param identity a #GSocketConnectable describing the expected server identity
      */
-    set_server_identity(identity: SocketConnectable): void;
+    set_server_identity(identity: SocketConnectable | null): void;
     /**
      * Sets `conn'`s validation flags, to override the default set of
      * checks performed when validating a server certificate. By default,
@@ -10511,12 +10638,12 @@ declare namespace Gio {
      * @returns the new   #GDtlsClientConnection, or %NULL on error
      */
     static new(
-      base_socket: DatagramBased,
+      base_socket: DatagramBased | null,
       server_identity: SocketConnectable | null
-    ): DtlsClientConnection;
+    ): DtlsClientConnection | null;
   }
 
-  namespace DtlsConnection {
+  module DtlsConnection {
     // Signal callback interfaces
 
     /**
@@ -10613,7 +10740,7 @@ declare namespace Gio {
     /**
      * The name of the DTLS ciphersuite in use. See g_dtls_connection_get_ciphersuite_name().
      */
-    readonly ciphersuite_name: string;
+    readonly ciphersuite_name: string | null;
     /**
      * The certificate database to use when verifying this TLS connection.
      * If no certificate database is set, then the default database will be
@@ -10643,7 +10770,7 @@ declare namespace Gio {
      * The application-layer protocol negotiated during the TLS
      * handshake. See g_dtls_connection_get_negotiated_protocol().
      */
-    readonly negotiated_protocol: string;
+    readonly negotiated_protocol: string | null;
     /**
      * The connection's peer's certificate, after the TLS handshake has
      * completed or failed. Note in particular that this is not yet set
@@ -10729,7 +10856,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set
      */
-    close_finish(result: AsyncResult): boolean;
+    close_finish(result: AsyncResult | null): boolean;
     /**
      * Used by #GDtlsConnection implementations to emit the
      * #GDtlsConnection::accept-certificate signal.
@@ -10738,7 +10865,7 @@ declare namespace Gio {
      * @returns %TRUE if one of the signal handlers has returned     %TRUE to accept @peer_cert
      */
     emit_accept_certificate(
-      peer_cert: TlsCertificate,
+      peer_cert: TlsCertificate | null,
       errors: TlsCertificateFlags
     ): boolean;
     /**
@@ -10887,7 +11014,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set.
      */
-    handshake_finish(result: AsyncResult): boolean;
+    handshake_finish(result: AsyncResult | null): boolean;
     /**
      * Sets the list of application-layer protocols to advertise that the
      * caller is willing to speak on this connection. The
@@ -10923,7 +11050,7 @@ declare namespace Gio {
      * non-%NULL.)
      * @param certificate the certificate to use for `conn`
      */
-    set_certificate(certificate: TlsCertificate): void;
+    set_certificate(certificate: TlsCertificate | null): void;
     /**
      * Sets the certificate database that is used to verify peer certificates.
      * This is set to the default database by default. See
@@ -11035,12 +11162,12 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set
      */
-    shutdown_finish(result: AsyncResult): boolean;
+    shutdown_finish(result: AsyncResult | null): boolean;
 
     // Own virtual methods of Gio-2.0.Gio.DtlsConnection
 
     vfunc_accept_certificate(
-      peer_cert: TlsCertificate,
+      peer_cert: TlsCertificate | null,
       errors: TlsCertificateFlags
     ): boolean;
     vfunc_get_binding_data(
@@ -11111,7 +11238,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set.
      */
-    vfunc_handshake_finish(result: AsyncResult): boolean;
+    vfunc_handshake_finish(result: AsyncResult | null): boolean;
     /**
      * Sets the list of application-layer protocols to advertise that the
      * caller is willing to speak on this connection. The
@@ -11179,7 +11306,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set
      */
-    vfunc_shutdown_finish(result: AsyncResult): boolean;
+    vfunc_shutdown_finish(result: AsyncResult | null): boolean;
 
     // Own signals of Gio-2.0.Gio.DtlsConnection
 
@@ -11348,7 +11475,7 @@ declare namespace Gio {
     _init(config?: DtlsConnection.ConstructorProperties): void;
   }
 
-  namespace DtlsServerConnection {
+  module DtlsServerConnection {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -11523,15 +11650,15 @@ declare namespace Gio {
      * @returns the new   #GDtlsServerConnection, or %NULL on error
      */
     static new(
-      base_socket: DatagramBased,
+      base_socket: DatagramBased | null,
       certificate: TlsCertificate | null
-    ): DtlsServerConnection;
+    ): DtlsServerConnection | null;
   }
 
-  namespace File {
+  module File {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface File {
@@ -11562,7 +11689,7 @@ declare namespace Gio {
     append_to(
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileOutputStream;
+    ): FileOutputStream | null;
     /**
      * Asynchronously opens `file` for appending.
      *
@@ -11589,7 +11716,7 @@ declare namespace Gio {
      * @param res #GAsyncResult
      * @returns a valid #GFileOutputStream   or %NULL on error.   Free the returned object with g_object_unref().
      */
-    append_to_finish(res: AsyncResult): FileOutputStream;
+    append_to_finish(res: AsyncResult | null): FileOutputStream | null;
     /**
      * Prepares the file attribute query string for copying to `file`.
      *
@@ -11607,7 +11734,7 @@ declare namespace Gio {
     build_attribute_list_for_copy(
       flags: FileCopyFlags,
       cancellable: Cancellable | null
-    ): string;
+    ): string | null;
     /**
      * Copies the file `source` to the location specified by `destination`.
      * Can not handle recursive copies of directories.
@@ -11656,7 +11783,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE otherwise.
      */
     copy(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null
@@ -11678,7 +11805,7 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object,   %NULL to ignore
      */
     copy_async(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       io_priority: number,
       cancellable: Cancellable | null
@@ -11698,7 +11825,7 @@ declare namespace Gio {
      * @returns %TRUE if the attributes were copied successfully,   %FALSE otherwise.
      */
     copy_attributes(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -11707,7 +11834,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a %TRUE on success, %FALSE on error.
      */
-    copy_finish(res: AsyncResult): boolean;
+    copy_finish(res: AsyncResult | null): boolean;
     /**
      * Creates a new file and returns an output stream for writing to it.
      * The file must not already exist.
@@ -11735,7 +11862,7 @@ declare namespace Gio {
     create(
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileOutputStream;
+    ): FileOutputStream | null;
     /**
      * Asynchronously creates a new file and returns an output stream
      * for writing to it. The file must not already exist.
@@ -11763,7 +11890,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileOutputStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    create_finish(res: AsyncResult): FileOutputStream;
+    create_finish(res: AsyncResult | null): FileOutputStream | null;
     /**
      * Creates a new file and returns a stream for reading and
      * writing to it. The file must not already exist.
@@ -11795,7 +11922,7 @@ declare namespace Gio {
     create_readwrite(
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileIOStream;
+    ): FileIOStream | null;
     /**
      * Asynchronously creates a new file and returns a stream
      * for reading and writing to it. The file must not already exist.
@@ -11823,7 +11950,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileIOStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    create_readwrite_finish(res: AsyncResult): FileIOStream;
+    create_readwrite_finish(res: AsyncResult | null): FileIOStream | null;
     /**
      * Deletes a file. If the `file` is a directory, it will only be
      * deleted if it is empty. This has the same semantics as g_unlink().
@@ -11869,7 +11996,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the file was deleted. %FALSE otherwise.
      */
-    delete_finish(result: AsyncResult): boolean;
+    delete_finish(result: AsyncResult | null): boolean;
     /**
      * Duplicates a #GFile handle. This operation does not duplicate
      * the actual file or directory represented by the #GFile; see
@@ -11883,7 +12010,7 @@ declare namespace Gio {
      * This call does no blocking I/O.
      * @returns a new #GFile that is a duplicate   of the given #GFile.
      */
-    dup(): File;
+    dup(): File | null;
     /**
      * Starts an asynchronous eject on a mountable.
      * When this operation has completed, `callback` will be called with
@@ -11908,7 +12035,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the @file was ejected successfully.   %FALSE otherwise.
      */
-    eject_mountable_finish(result: AsyncResult): boolean;
+    eject_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Starts an asynchronous eject on a mountable.
      * When this operation has completed, `callback` will be called with
@@ -11935,7 +12062,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the @file was ejected successfully.   %FALSE otherwise.
      */
-    eject_mountable_with_operation_finish(result: AsyncResult): boolean;
+    eject_mountable_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the requested information about the files in a directory.
      * The result is a #GFileEnumerator object that will give out
@@ -11968,10 +12095,10 @@ declare namespace Gio {
      * @returns A #GFileEnumerator if successful,   %NULL on error. Free the returned object with g_object_unref().
      */
     enumerate_children(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
-    ): FileEnumerator;
+    ): FileEnumerator | null;
     /**
      * Asynchronously gets the requested information about the files
      * in a directory. The result is a #GFileEnumerator object that will
@@ -11990,7 +12117,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the   request is satisfied
      */
     enumerate_children_async(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -12002,7 +12129,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileEnumerator or %NULL   if an error occurred.   Free the returned object with g_object_unref().
      */
-    enumerate_children_finish(res: AsyncResult): FileEnumerator;
+    enumerate_children_finish(res: AsyncResult | null): FileEnumerator | null;
     /**
      * Checks if the two given #GFiles refer to the same file.
      *
@@ -12014,7 +12141,7 @@ declare namespace Gio {
      * @param file2 the second #GFile
      * @returns %TRUE if @file1 and @file2 are equal.
      */
-    equal(file2: File): boolean;
+    equal(file2: File | null): boolean;
     /**
      * Gets a #GMount for the #GFile.
      *
@@ -12028,7 +12155,7 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object,   %NULL to ignore
      * @returns a #GMount where the @file is located   or %NULL on error.   Free the returned object with g_object_unref().
      */
-    find_enclosing_mount(cancellable: Cancellable | null): Mount;
+    find_enclosing_mount(cancellable: Cancellable | null): Mount | null;
     /**
      * Asynchronously gets the mount for the file.
      *
@@ -12053,7 +12180,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns #GMount for given @file or %NULL on error.   Free the returned object with g_object_unref().
      */
-    find_enclosing_mount_finish(res: AsyncResult): Mount;
+    find_enclosing_mount_finish(res: AsyncResult | null): Mount | null;
     /**
      * Gets the base name (the last component of the path) for a given #GFile.
      *
@@ -12082,7 +12209,7 @@ declare namespace Gio {
      * @param name string containing the child's basename
      * @returns a #GFile to a child specified by @name.   Free the returned object with g_object_unref().
      */
-    get_child(name: string): File;
+    get_child(name: string | null): File | null;
     /**
      * Gets the child of `file` for a given `display_name` (i.e. a UTF-8
      * version of the name). If this function fails, it returns %NULL
@@ -12095,7 +12222,7 @@ declare namespace Gio {
      * @param display_name string to a possible child
      * @returns a #GFile to the specified child, or   %NULL if the display name couldn't be converted.   Free the returned object with g_object_unref().
      */
-    get_child_for_display_name(display_name: string): File;
+    get_child_for_display_name(display_name: string | null): File | null;
     /**
      * Gets the parent directory for the `file`.
      * If the `file` represents the root directory of the
@@ -12122,7 +12249,7 @@ declare namespace Gio {
      * This call does no blocking I/O.
      * @returns a string containing the #GFile's parse name.   The returned string should be freed with g_free()   when no longer needed.
      */
-    get_parse_name(): string;
+    get_parse_name(): string | null;
     /**
      * Gets the local pathname for #GFile, if one exists. If non-%NULL, this is
      * guaranteed to be an absolute, canonical path. It might contain symlinks.
@@ -12138,14 +12265,14 @@ declare namespace Gio {
      * @param descendant input #GFile
      * @returns string with the relative path from   @descendant to @parent, or %NULL if @descendant doesn't have @parent as   prefix. The returned string should be freed with g_free() when   no longer needed.
      */
-    get_relative_path(descendant: File): string | null;
+    get_relative_path(descendant: File | null): string | null;
     /**
      * Gets the URI for the `file`.
      *
      * This call does no blocking I/O.
      * @returns a string containing the #GFile's URI. If the #GFile was constructed   with an invalid URI, an invalid URI is returned.   The returned string should be freed with g_free()   when no longer needed.
      */
-    get_uri(): string;
+    get_uri(): string | null;
     /**
      * Gets the URI scheme for a #GFile.
      * RFC 3986 decodes the scheme as:
@@ -12190,7 +12317,7 @@ declare namespace Gio {
      * @param prefix input #GFile
      * @returns %TRUE if the @file's parent, grandparent, etc is @prefix,   %FALSE otherwise.
      */
-    has_prefix(prefix: File): boolean;
+    has_prefix(prefix: File | null): boolean;
     /**
      * Checks to see if a #GFile has a given URI scheme.
      *
@@ -12198,7 +12325,7 @@ declare namespace Gio {
      * @param uri_scheme a string containing a URI scheme
      * @returns %TRUE if #GFile's backend supports the   given URI scheme, %FALSE if URI scheme is %NULL,   not supported, or #GFile is invalid.
      */
-    has_uri_scheme(uri_scheme: string): boolean;
+    has_uri_scheme(uri_scheme: string | null): boolean;
     /**
      * Creates a hash value for a #GFile.
      *
@@ -12238,7 +12365,7 @@ declare namespace Gio {
      */
     load_bytes(
       cancellable: Cancellable | null
-    ): [/* returnType */ GLib.Bytes, /* etag_out */ string | null];
+    ): [/* returnType */ GLib.Bytes | null, /* etag_out */ string | null];
     /**
      * Asynchronously loads the contents of `file` as #GBytes.
      *
@@ -12271,8 +12398,8 @@ declare namespace Gio {
      * @returns a #GBytes or %NULL and @error is set
      */
     load_bytes_finish(
-      result: AsyncResult
-    ): [/* returnType */ GLib.Bytes, /* etag_out */ string | null];
+      result: AsyncResult | null
+    ): [/* returnType */ GLib.Bytes | null, /* etag_out */ string | null];
     /**
      * Loads the content of the file into memory. The data is always
      * zero-terminated, but this is not included in the resultant `length`.
@@ -12323,7 +12450,7 @@ declare namespace Gio {
      * @returns %TRUE if the load was successful. If %FALSE and @error is   present, it will be set appropriately.
      */
     load_contents_finish(
-      res: AsyncResult
+      res: AsyncResult | null
     ): [
       /* returnType */ boolean,
       /* contents */ Uint8Array,
@@ -12339,7 +12466,7 @@ declare namespace Gio {
      * @returns %TRUE if the load was successful. If %FALSE and @error is   present, it will be set appropriately.
      */
     load_partial_contents_finish(
-      res: AsyncResult
+      res: AsyncResult | null
     ): [
       /* returnType */ boolean,
       /* contents */ Uint8Array,
@@ -12381,7 +12508,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful directory creation, %FALSE otherwise.
      */
-    make_directory_finish(result: AsyncResult): boolean;
+    make_directory_finish(result: AsyncResult | null): boolean;
     /**
      * Creates a directory and any parent directories that may not
      * exist similar to 'mkdir -p'. If the file system does not support
@@ -12412,7 +12539,7 @@ declare namespace Gio {
      * @returns %TRUE on the creation of a new symlink, %FALSE otherwise.
      */
     make_symbolic_link(
-      symlink_value: string,
+      symlink_value: string | null,
       cancellable: Cancellable | null
     ): boolean;
     /**
@@ -12424,7 +12551,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     make_symbolic_link_async(
-      symlink_value: string,
+      symlink_value: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -12435,7 +12562,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful directory creation, %FALSE otherwise.
      */
-    make_symbolic_link_finish(result: AsyncResult): boolean;
+    make_symbolic_link_finish(result: AsyncResult | null): boolean;
     /**
      * Collects the results from an earlier call to
      * g_file_measure_disk_usage_async().  See g_file_measure_disk_usage() for
@@ -12444,12 +12571,12 @@ declare namespace Gio {
      * @returns %TRUE if successful, with the out parameters set.   %FALSE otherwise, with @error set.
      */
     measure_disk_usage_finish(
-      result: AsyncResult
+      result: AsyncResult | null
     ): [
       /* returnType */ boolean,
-      /* disk_usage */ number,
-      /* num_dirs */ number,
-      /* num_files */ number
+      /* disk_usage */ number | null,
+      /* num_dirs */ number | null,
+      /* num_files */ number | null
     ];
     /**
      * Obtains a file or directory monitor for the given file,
@@ -12465,7 +12592,7 @@ declare namespace Gio {
     monitor(
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ): FileMonitor;
+    ): FileMonitor | null;
     /**
      * Obtains a directory monitor for the given file.
      * This may fail if directory monitoring is not supported.
@@ -12486,7 +12613,7 @@ declare namespace Gio {
     monitor_directory(
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ): FileMonitor;
+    ): FileMonitor | null;
     /**
      * Obtains a file monitor for the given file. If no file notification
      * mechanism exists, then regular polling of the file is used.
@@ -12509,7 +12636,7 @@ declare namespace Gio {
     monitor_file(
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ): FileMonitor;
+    ): FileMonitor | null;
     /**
      * Starts a `mount_operation,` mounting the volume that contains
      * the file `location`.
@@ -12537,7 +12664,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if successful. If an error has occurred,   this function will return %FALSE and set @error   appropriately if present.
      */
-    mount_enclosing_volume_finish(result: AsyncResult): boolean;
+    mount_enclosing_volume_finish(result: AsyncResult | null): boolean;
     /**
      * Mounts a file of type G_FILE_TYPE_MOUNTABLE.
      * Using `mount_operation,` you can request callbacks when, for instance,
@@ -12569,7 +12696,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GFile or %NULL on error.   Free the returned object with g_object_unref().
      */
-    mount_mountable_finish(result: AsyncResult): File;
+    mount_mountable_finish(result: AsyncResult | null): File | null;
     /**
      * Tries to move the file or directory `source` to the location specified
      * by `destination`. If native move operations are supported then this is
@@ -12611,7 +12738,7 @@ declare namespace Gio {
      * @returns %TRUE on successful move, %FALSE otherwise.
      */
     move(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null
@@ -12634,7 +12761,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     move_async(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -12647,7 +12774,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful file move, %FALSE otherwise.
      */
-    move_finish(result: AsyncResult): boolean;
+    move_finish(result: AsyncResult | null): boolean;
     /**
      * Opens an existing file for reading and writing. The result is
      * a #GFileIOStream that can be used to read and write the contents
@@ -12668,7 +12795,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable
      * @returns #GFileIOStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    open_readwrite(cancellable: Cancellable | null): FileIOStream;
+    open_readwrite(cancellable: Cancellable | null): FileIOStream | null;
     /**
      * Asynchronously opens `file` for reading and writing.
      *
@@ -12693,7 +12820,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileIOStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    open_readwrite_finish(res: AsyncResult): FileIOStream;
+    open_readwrite_finish(res: AsyncResult | null): FileIOStream | null;
     /**
      * Exactly like g_file_get_path(), but caches the result via
      * g_object_set_qdata_full().  This is useful for example in C
@@ -12730,7 +12857,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully. %FALSE otherwise.
      */
-    poll_mountable_finish(result: AsyncResult): boolean;
+    poll_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Returns the #GAppInfo that is registered as the default
      * application to handle the file specified by `file`.
@@ -12741,7 +12868,7 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object, %NULL to ignore
      * @returns a #GAppInfo if the handle was found,   %NULL if there were errors.   When you are done with it, release it with g_object_unref()
      */
-    query_default_handler(cancellable: Cancellable | null): AppInfo;
+    query_default_handler(cancellable: Cancellable | null): AppInfo | null;
     /**
      * Async version of g_file_query_default_handler().
      * @param io_priority the [I/O priority][io-priority] of the request
@@ -12758,7 +12885,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GAppInfo if the handle was found,   %NULL if there were errors.   When you are done with it, release it with g_object_unref()
      */
-    query_default_handler_finish(result: AsyncResult): AppInfo;
+    query_default_handler_finish(result: AsyncResult | null): AppInfo | null;
     /**
      * Utility function to check if a particular file exists. This is
      * implemented using g_file_query_info() and as such does blocking I/O.
@@ -12831,9 +12958,9 @@ declare namespace Gio {
      * @returns a #GFileInfo or %NULL if there was an error.   Free the returned object with g_object_unref().
      */
     query_filesystem_info(
-      attributes: string,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Asynchronously gets the requested information about the filesystem
      * that the specified `file` is on. The result is a #GFileInfo object
@@ -12852,7 +12979,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     query_filesystem_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -12863,7 +12990,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns #GFileInfo for given @file   or %NULL on error.   Free the returned object with g_object_unref().
      */
-    query_filesystem_info_finish(res: AsyncResult): FileInfo;
+    query_filesystem_info_finish(res: AsyncResult | null): FileInfo | null;
     /**
      * Gets the requested information about specified `file`.
      * The result is a #GFileInfo object that contains key-value
@@ -12901,10 +13028,10 @@ declare namespace Gio {
      * @returns a #GFileInfo for the given @file, or %NULL   on error. Free the returned object with g_object_unref().
      */
     query_info(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Asynchronously gets the requested information about specified `file`.
      * The result is a #GFileInfo object that contains key-value attributes
@@ -12922,7 +13049,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the   request is satisfied
      */
     query_info_async(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -12934,7 +13061,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns #GFileInfo for given @file   or %NULL on error. Free the returned object with   g_object_unref().
      */
-    query_info_finish(res: AsyncResult): FileInfo;
+    query_info_finish(res: AsyncResult | null): FileInfo | null;
     /**
      * Obtain the list of settable attributes for the file.
      *
@@ -12951,7 +13078,7 @@ declare namespace Gio {
      */
     query_settable_attributes(
       cancellable: Cancellable | null
-    ): FileAttributeInfoList;
+    ): FileAttributeInfoList | null;
     /**
      * Obtain the list of attribute namespaces where new attributes
      * can be created by a user. An example of this is extended
@@ -12965,7 +13092,7 @@ declare namespace Gio {
      */
     query_writable_namespaces(
       cancellable: Cancellable | null
-    ): FileAttributeInfoList;
+    ): FileAttributeInfoList | null;
     /**
      * Opens a file for reading. The result is a #GFileInputStream that
      * can be used to read the contents of the file.
@@ -12981,7 +13108,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable
      * @returns #GFileInputStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    read(cancellable: Cancellable | null): FileInputStream;
+    read(cancellable: Cancellable | null): FileInputStream | null;
     /**
      * Asynchronously opens `file` for reading.
      *
@@ -13006,7 +13133,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileInputStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    read_finish(res: AsyncResult): FileInputStream;
+    read_finish(res: AsyncResult | null): FileInputStream | null;
     /**
      * Returns an output stream for overwriting the file, possibly
      * creating a backup copy of the file first. If the file doesn't exist,
@@ -13060,7 +13187,7 @@ declare namespace Gio {
       make_backup: boolean,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileOutputStream;
+    ): FileOutputStream | null;
     /**
      * Asynchronously overwrites the file, replacing the contents,
      * possibly creating a backup copy of the file first.
@@ -13135,7 +13262,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request is satisfied
      */
     replace_contents_bytes_async(
-      contents: GLib.Bytes,
+      contents: GLib.Bytes | null,
       etag: string | null,
       make_backup: boolean,
       flags: FileCreateFlags,
@@ -13150,7 +13277,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on failure.
      */
     replace_contents_finish(
-      res: AsyncResult
+      res: AsyncResult | null
     ): [/* returnType */ boolean, /* new_etag */ string | null];
     /**
      * Finishes an asynchronous file replace operation started with
@@ -13158,7 +13285,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileOutputStream, or %NULL on error.   Free the returned object with g_object_unref().
      */
-    replace_finish(res: AsyncResult): FileOutputStream;
+    replace_finish(res: AsyncResult | null): FileOutputStream | null;
     /**
      * Returns an output stream for overwriting the file in readwrite mode,
      * possibly creating a backup copy of the file first. If the file doesn't
@@ -13181,7 +13308,7 @@ declare namespace Gio {
       make_backup: boolean,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileIOStream;
+    ): FileIOStream | null;
     /**
      * Asynchronously overwrites the file in read-write mode,
      * replacing the contents, possibly creating a backup copy
@@ -13214,7 +13341,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileIOStream, or %NULL on error.   Free the returned object with g_object_unref().
      */
-    replace_readwrite_finish(res: AsyncResult): FileIOStream;
+    replace_readwrite_finish(res: AsyncResult | null): FileIOStream | null;
     /**
      * Resolves a relative path for `file` to an absolute path.
      *
@@ -13225,7 +13352,7 @@ declare namespace Gio {
      * @param relative_path a given relative path string
      * @returns a #GFile for the resolved path.
      */
-    resolve_relative_path(relative_path: string): File;
+    resolve_relative_path(relative_path: string | null): File | null;
     /**
      * Sets an attribute in the file with attribute name `attribute` to `value_p`.
      *
@@ -13243,9 +13370,9 @@ declare namespace Gio {
      * @returns %TRUE if the attribute was set, %FALSE otherwise.
      */
     set_attribute(
-      attribute: string,
+      attribute: string | null,
       type: FileAttributeType,
-      value_p: object | null,
+      value_p: any | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -13264,8 +13391,8 @@ declare namespace Gio {
      * @returns %TRUE if the @attribute was successfully set to @value   in the @file, %FALSE otherwise.
      */
     set_attribute_byte_string(
-      attribute: string,
-      value: string,
+      attribute: string | null,
+      value: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -13283,7 +13410,7 @@ declare namespace Gio {
      * @returns %TRUE if the @attribute was successfully set to @value   in the @file, %FALSE otherwise.
      */
     set_attribute_int32(
-      attribute: string,
+      attribute: string | null,
       value: number,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
@@ -13302,7 +13429,7 @@ declare namespace Gio {
      * @returns %TRUE if the @attribute was successfully set, %FALSE otherwise.
      */
     set_attribute_int64(
-      attribute: string,
+      attribute: string | null,
       value: number,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
@@ -13321,8 +13448,8 @@ declare namespace Gio {
      * @returns %TRUE if the @attribute was successfully set, %FALSE otherwise.
      */
     set_attribute_string(
-      attribute: string,
-      value: string,
+      attribute: string | null,
+      value: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -13340,7 +13467,7 @@ declare namespace Gio {
      * @returns %TRUE if the @attribute was successfully set to @value   in the @file, %FALSE otherwise.
      */
     set_attribute_uint32(
-      attribute: string,
+      attribute: string | null,
       value: number,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
@@ -13359,7 +13486,7 @@ declare namespace Gio {
      * @returns %TRUE if the @attribute was successfully set to @value   in the @file, %FALSE otherwise.
      */
     set_attribute_uint64(
-      attribute: string,
+      attribute: string | null,
       value: number,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
@@ -13380,7 +13507,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     set_attributes_async(
-      info: FileInfo,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -13392,8 +13519,8 @@ declare namespace Gio {
      * @returns %TRUE if the attributes were set correctly, %FALSE otherwise.
      */
     set_attributes_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* info */ FileInfo];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* info */ FileInfo | null];
     /**
      * Tries to set all attributes in the #GFileInfo on the target
      * values, not stopping on the first error.
@@ -13413,7 +13540,7 @@ declare namespace Gio {
      * @returns %FALSE if there was any error, %TRUE otherwise.
      */
     set_attributes_from_info(
-      info: FileInfo,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -13438,9 +13565,9 @@ declare namespace Gio {
      * @returns a #GFile specifying what @file was renamed to,   or %NULL if there was an error.   Free the returned object with g_object_unref().
      */
     set_display_name(
-      display_name: string,
+      display_name: string | null,
       cancellable: Cancellable | null
-    ): File;
+    ): File | null;
     /**
      * Asynchronously sets the display name for a given #GFile.
      *
@@ -13456,7 +13583,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     set_display_name_async(
-      display_name: string,
+      display_name: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -13467,7 +13594,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFile or %NULL on error.   Free the returned object with g_object_unref().
      */
-    set_display_name_finish(res: AsyncResult): File;
+    set_display_name_finish(res: AsyncResult | null): File | null;
     /**
      * Starts a file of type %G_FILE_TYPE_MOUNTABLE.
      * Using `start_operation,` you can request callbacks when, for instance,
@@ -13499,7 +13626,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully. %FALSE otherwise.
      */
-    start_mountable_finish(result: AsyncResult): boolean;
+    start_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Stops a file of type %G_FILE_TYPE_MOUNTABLE.
      *
@@ -13529,7 +13656,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully.   %FALSE otherwise.
      */
-    stop_mountable_finish(result: AsyncResult): boolean;
+    stop_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Checks if `file` supports
      * [thread-default contexts][g-main-context-push-thread-default-context].
@@ -13570,7 +13697,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful trash, %FALSE otherwise.
      */
-    trash_finish(result: AsyncResult): boolean;
+    trash_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a file of type G_FILE_TYPE_MOUNTABLE.
      *
@@ -13598,7 +13725,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully.   %FALSE otherwise.
      */
-    unmount_mountable_finish(result: AsyncResult): boolean;
+    unmount_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a file of type %G_FILE_TYPE_MOUNTABLE.
      *
@@ -13629,7 +13756,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully.   %FALSE otherwise.
      */
-    unmount_mountable_with_operation_finish(result: AsyncResult): boolean;
+    unmount_mountable_with_operation_finish(
+      result: AsyncResult | null
+    ): boolean;
     /**
      * Starts an asynchronous replacement of `file` with the given
      * `contents` of `length` bytes. `etag` will replace the document's
@@ -13694,7 +13823,7 @@ declare namespace Gio {
     vfunc_append_to(
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileOutputStream;
+    ): FileOutputStream | null;
     /**
      * Asynchronously opens `file` for appending.
      *
@@ -13723,7 +13852,7 @@ declare namespace Gio {
      * @param res #GAsyncResult
      * @returns a valid #GFileOutputStream   or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_append_to_finish(res: AsyncResult): FileOutputStream;
+    vfunc_append_to_finish(res: AsyncResult | null): FileOutputStream | null;
     /**
      * Copies the file `source` to the location specified by `destination`.
      * Can not handle recursive copies of directories.
@@ -13773,7 +13902,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE otherwise.
      */
     vfunc_copy(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null
@@ -13796,7 +13925,7 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object,   %NULL to ignore
      */
     vfunc_copy_async(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       io_priority: number,
       cancellable: Cancellable | null
@@ -13807,7 +13936,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a %TRUE on success, %FALSE on error.
      */
-    vfunc_copy_finish(res: AsyncResult): boolean;
+    vfunc_copy_finish(res: AsyncResult | null): boolean;
     /**
      * Creates a new file and returns an output stream for writing to it.
      * The file must not already exist.
@@ -13836,7 +13965,7 @@ declare namespace Gio {
     vfunc_create(
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileOutputStream;
+    ): FileOutputStream | null;
     /**
      * Asynchronously creates a new file and returns an output stream
      * for writing to it. The file must not already exist.
@@ -13866,7 +13995,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileOutputStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_create_finish(res: AsyncResult): FileOutputStream;
+    vfunc_create_finish(res: AsyncResult | null): FileOutputStream | null;
     /**
      * Creates a new file and returns a stream for reading and
      * writing to it. The file must not already exist.
@@ -13899,7 +14028,7 @@ declare namespace Gio {
     vfunc_create_readwrite(
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileIOStream;
+    ): FileIOStream | null;
     /**
      * Asynchronously creates a new file and returns a stream
      * for reading and writing to it. The file must not already exist.
@@ -13929,7 +14058,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileIOStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_create_readwrite_finish(res: AsyncResult): FileIOStream;
+    vfunc_create_readwrite_finish(res: AsyncResult | null): FileIOStream | null;
     /**
      * Deletes a file. If the `file` is a directory, it will only be
      * deleted if it is empty. This has the same semantics as g_unlink().
@@ -13978,7 +14107,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the file was deleted. %FALSE otherwise.
      */
-    vfunc_delete_file_finish(result: AsyncResult): boolean;
+    vfunc_delete_file_finish(result: AsyncResult | null): boolean;
     /**
      * Duplicates a #GFile handle. This operation does not duplicate
      * the actual file or directory represented by the #GFile; see
@@ -13993,7 +14122,7 @@ declare namespace Gio {
      * @virtual
      * @returns a new #GFile that is a duplicate   of the given #GFile.
      */
-    vfunc_dup(): File;
+    vfunc_dup(): File | null;
     /**
      * Starts an asynchronous eject on a mountable.
      * When this operation has completed, `callback` will be called with
@@ -14020,7 +14149,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the @file was ejected successfully.   %FALSE otherwise.
      */
-    vfunc_eject_mountable_finish(result: AsyncResult): boolean;
+    vfunc_eject_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Starts an asynchronous eject on a mountable.
      * When this operation has completed, `callback` will be called with
@@ -14049,7 +14178,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the @file was ejected successfully.   %FALSE otherwise.
      */
-    vfunc_eject_mountable_with_operation_finish(result: AsyncResult): boolean;
+    vfunc_eject_mountable_with_operation_finish(
+      result: AsyncResult | null
+    ): boolean;
     /**
      * Gets the requested information about the files in a directory.
      * The result is a #GFileEnumerator object that will give out
@@ -14083,10 +14214,10 @@ declare namespace Gio {
      * @returns A #GFileEnumerator if successful,   %NULL on error. Free the returned object with g_object_unref().
      */
     vfunc_enumerate_children(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
-    ): FileEnumerator;
+    ): FileEnumerator | null;
     /**
      * Asynchronously gets the requested information about the files
      * in a directory. The result is a #GFileEnumerator object that will
@@ -14106,7 +14237,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the   request is satisfied
      */
     vfunc_enumerate_children_async(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -14119,7 +14250,9 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileEnumerator or %NULL   if an error occurred.   Free the returned object with g_object_unref().
      */
-    vfunc_enumerate_children_finish(res: AsyncResult): FileEnumerator;
+    vfunc_enumerate_children_finish(
+      res: AsyncResult | null
+    ): FileEnumerator | null;
     /**
      * Checks if the two given #GFiles refer to the same file.
      *
@@ -14132,7 +14265,7 @@ declare namespace Gio {
      * @param file2 the second #GFile
      * @returns %TRUE if @file1 and @file2 are equal.
      */
-    vfunc_equal(file2: File): boolean;
+    vfunc_equal(file2: File | null): boolean;
     /**
      * Gets a #GMount for the #GFile.
      *
@@ -14147,7 +14280,7 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object,   %NULL to ignore
      * @returns a #GMount where the @file is located   or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_find_enclosing_mount(cancellable: Cancellable | null): Mount;
+    vfunc_find_enclosing_mount(cancellable: Cancellable | null): Mount | null;
     /**
      * Asynchronously gets the mount for the file.
      *
@@ -14174,7 +14307,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns #GMount for given @file or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_find_enclosing_mount_finish(res: AsyncResult): Mount;
+    vfunc_find_enclosing_mount_finish(res: AsyncResult | null): Mount | null;
     /**
      * Gets the base name (the last component of the path) for a given #GFile.
      *
@@ -14206,7 +14339,7 @@ declare namespace Gio {
      * @param display_name string to a possible child
      * @returns a #GFile to the specified child, or   %NULL if the display name couldn't be converted.   Free the returned object with g_object_unref().
      */
-    vfunc_get_child_for_display_name(display_name: string): File;
+    vfunc_get_child_for_display_name(display_name: string | null): File | null;
     /**
      * Gets the parent directory for the `file`.
      * If the `file` represents the root directory of the
@@ -14235,7 +14368,7 @@ declare namespace Gio {
      * @virtual
      * @returns a string containing the #GFile's parse name.   The returned string should be freed with g_free()   when no longer needed.
      */
-    vfunc_get_parse_name(): string;
+    vfunc_get_parse_name(): string | null;
     /**
      * Gets the local pathname for #GFile, if one exists. If non-%NULL, this is
      * guaranteed to be an absolute, canonical path. It might contain symlinks.
@@ -14253,7 +14386,7 @@ declare namespace Gio {
      * @param descendant input #GFile
      * @returns string with the relative path from   @descendant to @parent, or %NULL if @descendant doesn't have @parent as   prefix. The returned string should be freed with g_free() when   no longer needed.
      */
-    vfunc_get_relative_path(descendant: File): string | null;
+    vfunc_get_relative_path(descendant: File | null): string | null;
     /**
      * Gets the URI for the `file`.
      *
@@ -14261,7 +14394,7 @@ declare namespace Gio {
      * @virtual
      * @returns a string containing the #GFile's URI. If the #GFile was constructed   with an invalid URI, an invalid URI is returned.   The returned string should be freed with g_free()   when no longer needed.
      */
-    vfunc_get_uri(): string;
+    vfunc_get_uri(): string | null;
     /**
      * Gets the URI scheme for a #GFile.
      * RFC 3986 decodes the scheme as:
@@ -14287,7 +14420,7 @@ declare namespace Gio {
      * @param uri_scheme a string containing a URI scheme
      * @returns %TRUE if #GFile's backend supports the   given URI scheme, %FALSE if URI scheme is %NULL,   not supported, or #GFile is invalid.
      */
-    vfunc_has_uri_scheme(uri_scheme: string): boolean;
+    vfunc_has_uri_scheme(uri_scheme: string | null): boolean;
     /**
      * Creates a hash value for a #GFile.
      *
@@ -14351,7 +14484,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful directory creation, %FALSE otherwise.
      */
-    vfunc_make_directory_finish(result: AsyncResult): boolean;
+    vfunc_make_directory_finish(result: AsyncResult | null): boolean;
     /**
      * Creates a symbolic link named `file` which contains the string
      * `symlink_value`.
@@ -14365,7 +14498,7 @@ declare namespace Gio {
      * @returns %TRUE on the creation of a new symlink, %FALSE otherwise.
      */
     vfunc_make_symbolic_link(
-      symlink_value: string,
+      symlink_value: string | null,
       cancellable: Cancellable | null
     ): boolean;
     /**
@@ -14378,7 +14511,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     vfunc_make_symbolic_link_async(
-      symlink_value: string,
+      symlink_value: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -14390,7 +14523,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful directory creation, %FALSE otherwise.
      */
-    vfunc_make_symbolic_link_finish(result: AsyncResult): boolean;
+    vfunc_make_symbolic_link_finish(result: AsyncResult | null): boolean;
     /**
      * Collects the results from an earlier call to
      * g_file_measure_disk_usage_async().  See g_file_measure_disk_usage() for
@@ -14400,12 +14533,12 @@ declare namespace Gio {
      * @returns %TRUE if successful, with the out parameters set.   %FALSE otherwise, with @error set.
      */
     vfunc_measure_disk_usage_finish(
-      result: AsyncResult
+      result: AsyncResult | null
     ): [
       /* returnType */ boolean,
-      /* disk_usage */ number,
-      /* num_dirs */ number,
-      /* num_files */ number
+      /* disk_usage */ number | null,
+      /* num_dirs */ number | null,
+      /* num_files */ number | null
     ];
     /**
      * Obtains a directory monitor for the given file.
@@ -14428,7 +14561,7 @@ declare namespace Gio {
     vfunc_monitor_dir(
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ): FileMonitor;
+    ): FileMonitor | null;
     /**
      * Obtains a file monitor for the given file. If no file notification
      * mechanism exists, then regular polling of the file is used.
@@ -14452,7 +14585,7 @@ declare namespace Gio {
     vfunc_monitor_file(
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ): FileMonitor;
+    ): FileMonitor | null;
     /**
      * Starts a `mount_operation,` mounting the volume that contains
      * the file `location`.
@@ -14482,7 +14615,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if successful. If an error has occurred,   this function will return %FALSE and set @error   appropriately if present.
      */
-    vfunc_mount_enclosing_volume_finish(result: AsyncResult): boolean;
+    vfunc_mount_enclosing_volume_finish(result: AsyncResult | null): boolean;
     /**
      * Mounts a file of type G_FILE_TYPE_MOUNTABLE.
      * Using `mount_operation,` you can request callbacks when, for instance,
@@ -14516,7 +14649,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GFile or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_mount_mountable_finish(result: AsyncResult): File;
+    vfunc_mount_mountable_finish(result: AsyncResult | null): File | null;
     /**
      * Tries to move the file or directory `source` to the location specified
      * by `destination`. If native move operations are supported then this is
@@ -14559,7 +14692,7 @@ declare namespace Gio {
      * @returns %TRUE on successful move, %FALSE otherwise.
      */
     vfunc_move(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null
@@ -14583,7 +14716,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     vfunc_move_async(
-      destination: File,
+      destination: File | null,
       flags: FileCopyFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -14597,7 +14730,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful file move, %FALSE otherwise.
      */
-    vfunc_move_finish(result: AsyncResult): boolean;
+    vfunc_move_finish(result: AsyncResult | null): boolean;
     /**
      * Opens an existing file for reading and writing. The result is
      * a #GFileIOStream that can be used to read and write the contents
@@ -14619,7 +14752,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable
      * @returns #GFileIOStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_open_readwrite(cancellable: Cancellable | null): FileIOStream;
+    vfunc_open_readwrite(cancellable: Cancellable | null): FileIOStream | null;
     /**
      * Asynchronously opens `file` for reading and writing.
      *
@@ -14646,7 +14779,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileIOStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_open_readwrite_finish(res: AsyncResult): FileIOStream;
+    vfunc_open_readwrite_finish(res: AsyncResult | null): FileIOStream | null;
     /**
      * Polls a file of type %G_FILE_TYPE_MOUNTABLE.
      *
@@ -14674,7 +14807,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully. %FALSE otherwise.
      */
-    vfunc_poll_mountable_finish(result: AsyncResult): boolean;
+    vfunc_poll_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Checks whether `file` has the prefix specified by `prefix`.
      *
@@ -14694,7 +14827,7 @@ declare namespace Gio {
      * @param file input #GFile
      * @returns %TRUE if the @file's parent, grandparent, etc is @prefix,   %FALSE otherwise.
      */
-    vfunc_prefix_matches(file: File): boolean;
+    vfunc_prefix_matches(file: File | null): boolean;
     /**
      * Similar to g_file_query_info(), but obtains information
      * about the filesystem the `file` is on, rather than the file itself.
@@ -14727,9 +14860,9 @@ declare namespace Gio {
      * @returns a #GFileInfo or %NULL if there was an error.   Free the returned object with g_object_unref().
      */
     vfunc_query_filesystem_info(
-      attributes: string,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Asynchronously gets the requested information about the filesystem
      * that the specified `file` is on. The result is a #GFileInfo object
@@ -14749,7 +14882,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     vfunc_query_filesystem_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -14761,7 +14894,9 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns #GFileInfo for given @file   or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_query_filesystem_info_finish(res: AsyncResult): FileInfo;
+    vfunc_query_filesystem_info_finish(
+      res: AsyncResult | null
+    ): FileInfo | null;
     /**
      * Gets the requested information about specified `file`.
      * The result is a #GFileInfo object that contains key-value
@@ -14800,10 +14935,10 @@ declare namespace Gio {
      * @returns a #GFileInfo for the given @file, or %NULL   on error. Free the returned object with g_object_unref().
      */
     vfunc_query_info(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Asynchronously gets the requested information about specified `file`.
      * The result is a #GFileInfo object that contains key-value attributes
@@ -14822,7 +14957,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the   request is satisfied
      */
     vfunc_query_info_async(
-      attributes: string,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -14835,7 +14970,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns #GFileInfo for given @file   or %NULL on error. Free the returned object with   g_object_unref().
      */
-    vfunc_query_info_finish(res: AsyncResult): FileInfo;
+    vfunc_query_info_finish(res: AsyncResult | null): FileInfo | null;
     /**
      * Obtain the list of settable attributes for the file.
      *
@@ -14853,7 +14988,7 @@ declare namespace Gio {
      */
     vfunc_query_settable_attributes(
       cancellable: Cancellable | null
-    ): FileAttributeInfoList;
+    ): FileAttributeInfoList | null;
     /**
      * Obtain the list of attribute namespaces where new attributes
      * can be created by a user. An example of this is extended
@@ -14868,7 +15003,7 @@ declare namespace Gio {
      */
     vfunc_query_writable_namespaces(
       cancellable: Cancellable | null
-    ): FileAttributeInfoList;
+    ): FileAttributeInfoList | null;
     /**
      * Asynchronously opens `file` for reading.
      *
@@ -14895,7 +15030,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileInputStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_read_finish(res: AsyncResult): FileInputStream;
+    vfunc_read_finish(res: AsyncResult | null): FileInputStream | null;
     /**
      * Opens a file for reading. The result is a #GFileInputStream that
      * can be used to read the contents of the file.
@@ -14912,7 +15047,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable
      * @returns #GFileInputStream or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_read_fn(cancellable: Cancellable | null): FileInputStream;
+    vfunc_read_fn(cancellable: Cancellable | null): FileInputStream | null;
     /**
      * Returns an output stream for overwriting the file, possibly
      * creating a backup copy of the file first. If the file doesn't exist,
@@ -14967,7 +15102,7 @@ declare namespace Gio {
       make_backup: boolean,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileOutputStream;
+    ): FileOutputStream | null;
     /**
      * Asynchronously overwrites the file, replacing the contents,
      * possibly creating a backup copy of the file first.
@@ -15001,7 +15136,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileOutputStream, or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_replace_finish(res: AsyncResult): FileOutputStream;
+    vfunc_replace_finish(res: AsyncResult | null): FileOutputStream | null;
     /**
      * Returns an output stream for overwriting the file in readwrite mode,
      * possibly creating a backup copy of the file first. If the file doesn't
@@ -15025,7 +15160,7 @@ declare namespace Gio {
       make_backup: boolean,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ): FileIOStream;
+    ): FileIOStream | null;
     /**
      * Asynchronously overwrites the file in read-write mode,
      * replacing the contents, possibly creating a backup copy
@@ -15060,7 +15195,9 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFileIOStream, or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_replace_readwrite_finish(res: AsyncResult): FileIOStream;
+    vfunc_replace_readwrite_finish(
+      res: AsyncResult | null
+    ): FileIOStream | null;
     /**
      * Resolves a relative path for `file` to an absolute path.
      *
@@ -15072,7 +15209,7 @@ declare namespace Gio {
      * @param relative_path a given relative path string
      * @returns a #GFile for the resolved path.
      */
-    vfunc_resolve_relative_path(relative_path: string): File;
+    vfunc_resolve_relative_path(relative_path: string | null): File | null;
     /**
      * Sets an attribute in the file with attribute name `attribute` to `value_p`.
      *
@@ -15091,9 +15228,9 @@ declare namespace Gio {
      * @returns %TRUE if the attribute was set, %FALSE otherwise.
      */
     vfunc_set_attribute(
-      attribute: string,
+      attribute: string | null,
       type: FileAttributeType,
-      value_p: object | null,
+      value_p: any | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -15114,7 +15251,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     vfunc_set_attributes_async(
-      info: FileInfo,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -15127,8 +15264,8 @@ declare namespace Gio {
      * @returns %TRUE if the attributes were set correctly, %FALSE otherwise.
      */
     vfunc_set_attributes_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* info */ FileInfo];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* info */ FileInfo | null];
     /**
      * Tries to set all attributes in the #GFileInfo on the target
      * values, not stopping on the first error.
@@ -15149,7 +15286,7 @@ declare namespace Gio {
      * @returns %FALSE if there was any error, %TRUE otherwise.
      */
     vfunc_set_attributes_from_info(
-      info: FileInfo,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -15175,9 +15312,9 @@ declare namespace Gio {
      * @returns a #GFile specifying what @file was renamed to,   or %NULL if there was an error.   Free the returned object with g_object_unref().
      */
     vfunc_set_display_name(
-      display_name: string,
+      display_name: string | null,
       cancellable: Cancellable | null
-    ): File;
+    ): File | null;
     /**
      * Asynchronously sets the display name for a given #GFile.
      *
@@ -15194,7 +15331,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call   when the request is satisfied
      */
     vfunc_set_display_name_async(
-      display_name: string,
+      display_name: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -15206,7 +15343,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult
      * @returns a #GFile or %NULL on error.   Free the returned object with g_object_unref().
      */
-    vfunc_set_display_name_finish(res: AsyncResult): File;
+    vfunc_set_display_name_finish(res: AsyncResult | null): File | null;
     /**
      * Starts a file of type %G_FILE_TYPE_MOUNTABLE.
      * Using `start_operation,` you can request callbacks when, for instance,
@@ -15240,7 +15377,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully. %FALSE otherwise.
      */
-    vfunc_start_mountable_finish(result: AsyncResult): boolean;
+    vfunc_start_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Stops a file of type %G_FILE_TYPE_MOUNTABLE.
      *
@@ -15272,7 +15409,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully.   %FALSE otherwise.
      */
-    vfunc_stop_mountable_finish(result: AsyncResult): boolean;
+    vfunc_stop_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Sends `file` to the "Trashcan", if possible. This is similar to
      * deleting it, but the user can recover it before emptying the trashcan.
@@ -15308,7 +15445,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE on successful trash, %FALSE otherwise.
      */
-    vfunc_trash_finish(result: AsyncResult): boolean;
+    vfunc_trash_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a file of type G_FILE_TYPE_MOUNTABLE.
      *
@@ -15338,7 +15475,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully.   %FALSE otherwise.
      */
-    vfunc_unmount_mountable_finish(result: AsyncResult): boolean;
+    vfunc_unmount_mountable_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a file of type %G_FILE_TYPE_MOUNTABLE.
      *
@@ -15371,7 +15508,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the operation finished successfully.   %FALSE otherwise.
      */
-    vfunc_unmount_mountable_with_operation_finish(result: AsyncResult): boolean;
+    vfunc_unmount_mountable_with_operation_finish(
+      result: AsyncResult | null
+    ): boolean;
 
     // Class property signals of Gio-2.0.Gio.File
 
@@ -15495,7 +15634,7 @@ declare namespace Gio {
      * @param arg a command line string
      * @returns a new #GFile.   Free the returned object with g_object_unref().
      */
-    static new_for_commandline_arg(arg: string): File;
+    static new_for_commandline_arg(arg: string | null): File | null;
     /**
      * Creates a #GFile with the given argument from the command line.
      *
@@ -15512,7 +15651,10 @@ declare namespace Gio {
      * @param cwd the current working directory of the commandline
      * @returns a new #GFile
      */
-    static new_for_commandline_arg_and_cwd(arg: string, cwd: string): File;
+    static new_for_commandline_arg_and_cwd(
+      arg: string | null,
+      cwd: string | null
+    ): File | null;
     /**
      * Constructs a #GFile for a given path. This operation never
      * fails, but the returned object might not support any I/O
@@ -15520,7 +15662,7 @@ declare namespace Gio {
      * @param path a string containing a relative or absolute path.   The string must be encoded in the glib filename encoding.
      * @returns a new #GFile for the given @path.   Free the returned object with g_object_unref().
      */
-    static new_for_path(path: string): File;
+    static new_for_path(path: string | null): File | null;
     /**
      * Constructs a #GFile for a given URI. This operation never
      * fails, but the returned object might not support any I/O
@@ -15529,7 +15671,7 @@ declare namespace Gio {
      * @param uri a UTF-8 string containing a URI
      * @returns a new #GFile for the given @uri.   Free the returned object with g_object_unref().
      */
-    static new_for_uri(uri: string): File;
+    static new_for_uri(uri: string | null): File | null;
     /**
      * Opens a file in the preferred directory for temporary files (as
      * returned by g_get_tmp_dir()) and returns a #GFile and
@@ -15546,7 +15688,7 @@ declare namespace Gio {
      */
     static new_tmp(
       tmpl: string | null
-    ): [/* returnType */ File, /* iostream */ FileIOStream];
+    ): [/* returnType */ File | null, /* iostream */ FileIOStream | null];
     /**
      * Asynchronously opens a file in the preferred directory for temporary files
      *  (as returned by g_get_tmp_dir()) as g_file_new_tmp().
@@ -15589,15 +15731,15 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a new #GFile.   Free the returned object with g_object_unref().
      */
-    static new_tmp_dir_finish(result: AsyncResult): File;
+    static new_tmp_dir_finish(result: AsyncResult | null): File | null;
     /**
      * Finishes a temporary file creation started by g_file_new_tmp_async().
      * @param result a #GAsyncResult
      * @returns a new #GFile.   Free the returned object with g_object_unref().
      */
     static new_tmp_finish(
-      result: AsyncResult
-    ): [/* returnType */ File, /* iostream */ FileIOStream];
+      result: AsyncResult | null
+    ): [/* returnType */ File | null, /* iostream */ FileIOStream | null];
     /**
      * Constructs a #GFile with the given `parse_name` (i.e. something
      * given by g_file_get_parse_name()). This operation never fails,
@@ -15606,13 +15748,13 @@ declare namespace Gio {
      * @param parse_name a file name or path to be parsed
      * @returns a new #GFile.
      */
-    static parse_name(parse_name: string): File;
+    static parse_name(parse_name: string | null): File | null;
   }
 
-  namespace FileDescriptorBased {
+  module FileDescriptorBased {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface FileDescriptorBased {
@@ -15662,10 +15804,10 @@ declare namespace Gio {
     _init(config?: FileDescriptorBased.ConstructorProperties): void;
   }
 
-  namespace Icon {
+  module Icon {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Icon {
@@ -15792,25 +15934,25 @@ declare namespace Gio {
      * @param str A string obtained via g_icon_to_string().
      * @returns An object implementing the #GIcon          interface or %NULL if @error is set.
      */
-    static new_for_string(str: string): Icon;
+    static new_for_string(str: string | null): Icon | null;
     /**
      * Deserializes a #GIcon previously serialized using g_icon_serialize().
      * @param value a #GVariant created with g_icon_serialize()
      * @returns a #GIcon, or %NULL when deserialization fails.
      */
-    static deserialize(value: GLib.Variant): Icon | null;
+    static deserialize(value: GLib.Variant | null): Icon | null;
     /**
      * Gets a hash for an icon.
      * @param icon #gconstpointer to an icon object.
      * @returns a #guint containing a hash for the @icon, suitable for use in a #GHashTable or similar data structure.
      */
-    static hash(icon: object): number;
+    static hash(icon: any): number;
   }
 
-  namespace Initable {
+  module Initable {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Initable {
@@ -15972,7 +16114,7 @@ declare namespace Gio {
     ): GObject.Object;
   }
 
-  namespace ListModel {
+  module ListModel {
     // Signal callback interfaces
 
     /**
@@ -15984,7 +16126,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface ListModel {
@@ -16197,7 +16339,7 @@ declare namespace Gio {
     _init(config?: ListModel.ConstructorProperties): void;
   }
 
-  namespace LoadableIcon {
+  module LoadableIcon {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -16218,7 +16360,7 @@ declare namespace Gio {
     load(
       size: number,
       cancellable: Cancellable | null
-    ): [/* returnType */ InputStream, /* type */ string];
+    ): [/* returnType */ InputStream | null, /* type */ string | null];
     /**
      * Loads an icon asynchronously. To finish this function, see
      * g_loadable_icon_load_finish(). For the synchronous, blocking
@@ -16238,8 +16380,8 @@ declare namespace Gio {
      * @returns a #GInputStream to read the icon from.
      */
     load_finish(
-      res: AsyncResult
-    ): [/* returnType */ InputStream, /* type */ string];
+      res: AsyncResult | null
+    ): [/* returnType */ InputStream | null, /* type */ string | null];
 
     // Own virtual methods of Gio-2.0.Gio.LoadableIcon
 
@@ -16254,7 +16396,7 @@ declare namespace Gio {
     vfunc_load(
       size: number,
       cancellable: Cancellable | null
-    ): [/* returnType */ InputStream, /* type */ string];
+    ): [/* returnType */ InputStream | null, /* type */ string | null];
     /**
      * Loads an icon asynchronously. To finish this function, see
      * g_loadable_icon_load_finish(). For the synchronous, blocking
@@ -16276,8 +16418,8 @@ declare namespace Gio {
      * @returns a #GInputStream to read the icon from.
      */
     vfunc_load_finish(
-      res: AsyncResult
-    ): [/* returnType */ InputStream, /* type */ string];
+      res: AsyncResult | null
+    ): [/* returnType */ InputStream | null, /* type */ string | null];
 
     // Class property signals of Gio-2.0.Gio.LoadableIcon
 
@@ -16304,7 +16446,7 @@ declare namespace Gio {
     _init(config?: LoadableIcon.ConstructorProperties): void;
   }
 
-  namespace MemoryMonitor {
+  module MemoryMonitor {
     // Signal callback interfaces
 
     /**
@@ -16415,10 +16557,10 @@ declare namespace Gio {
      * Gets a reference to the default #GMemoryMonitor for the system.
      * @returns a new reference to the default #GMemoryMonitor
      */
-    static dup_default(): MemoryMonitor;
+    static dup_default(): MemoryMonitor | null;
   }
 
-  namespace Mount {
+  module Mount {
     // Signal callback interfaces
 
     /**
@@ -16444,7 +16586,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Mount {
@@ -16479,7 +16621,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully ejected. %FALSE otherwise.
      */
-    eject_finish(result: AsyncResult): boolean;
+    eject_finish(result: AsyncResult | null): boolean;
     /**
      * Ejects a mount. This is an asynchronous operation, and is
      * finished by calling g_mount_eject_with_operation_finish() with the `mount`
@@ -16501,14 +16643,14 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully ejected. %FALSE otherwise.
      */
-    eject_with_operation_finish(result: AsyncResult): boolean;
+    eject_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the default location of `mount`. The default location of the given
      * `mount` is a path that reflects the main entry point for the user (e.g.
      * the home directory, or the root of the volume).
      * @returns a #GFile.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    get_default_location(): File;
+    get_default_location(): File | null;
     /**
      * Gets the drive for the `mount`.
      *
@@ -16521,17 +16663,17 @@ declare namespace Gio {
      * Gets the icon for `mount`.
      * @returns a #GIcon.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    get_icon(): Icon;
+    get_icon(): Icon | null;
     /**
      * Gets the name of `mount`.
      * @returns the name for the given @mount.     The returned string should be freed with g_free()     when no longer needed.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the root directory on `mount`.
      * @returns a #GFile.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    get_root(): File;
+    get_root(): File | null;
     /**
      * Gets the sort key for `mount,` if any.
      * @returns Sorting key for @mount or %NULL if no such key is available.
@@ -16541,7 +16683,7 @@ declare namespace Gio {
      * Gets the symbolic icon for `mount`.
      * @returns a #GIcon.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    get_symbolic_icon(): Icon;
+    get_symbolic_icon(): Icon | null;
     /**
      * Gets the UUID for the `mount`. The reference is typically based on
      * the file system UUID for the mount in question and should be
@@ -16585,7 +16727,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a %NULL-terminated array of content types or %NULL on error.     Caller should free this array with g_strfreev() when done with it.
      */
-    guess_content_type_finish(result: AsyncResult): string[];
+    guess_content_type_finish(result: AsyncResult | null): string[];
     /**
      * Tries to guess the type of content stored on `mount`. Returns one or
      * more textual identifiers of well-known content types (typically
@@ -16658,7 +16800,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully remounted. %FALSE otherwise.
      */
-    remount_finish(result: AsyncResult): boolean;
+    remount_finish(result: AsyncResult | null): boolean;
     /**
      * Increments the shadow count on `mount`. Usually used by
      * #GVolumeMonitor implementations when creating a shadow mount for
@@ -16685,7 +16827,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully unmounted. %FALSE otherwise.
      */
-    unmount_finish(result: AsyncResult): boolean;
+    unmount_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a mount. This is an asynchronous operation, and is
      * finished by calling g_mount_unmount_with_operation_finish() with the `mount`
@@ -16707,7 +16849,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully unmounted. %FALSE otherwise.
      */
-    unmount_with_operation_finish(result: AsyncResult): boolean;
+    unmount_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Decrements the shadow count on `mount`. Usually used by
      * #GVolumeMonitor implementations when destroying a shadow mount for
@@ -16752,7 +16894,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully ejected. %FALSE otherwise.
      */
-    vfunc_eject_finish(result: AsyncResult): boolean;
+    vfunc_eject_finish(result: AsyncResult | null): boolean;
     /**
      * Ejects a mount. This is an asynchronous operation, and is
      * finished by calling g_mount_eject_with_operation_finish() with the `mount`
@@ -16776,7 +16918,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully ejected. %FALSE otherwise.
      */
-    vfunc_eject_with_operation_finish(result: AsyncResult): boolean;
+    vfunc_eject_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the default location of `mount`. The default location of the given
      * `mount` is a path that reflects the main entry point for the user (e.g.
@@ -16784,7 +16926,7 @@ declare namespace Gio {
      * @virtual
      * @returns a #GFile.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    vfunc_get_default_location(): File;
+    vfunc_get_default_location(): File | null;
     /**
      * Gets the drive for the `mount`.
      *
@@ -16799,19 +16941,19 @@ declare namespace Gio {
      * @virtual
      * @returns a #GIcon.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    vfunc_get_icon(): Icon;
+    vfunc_get_icon(): Icon | null;
     /**
      * Gets the name of `mount`.
      * @virtual
      * @returns the name for the given @mount.     The returned string should be freed with g_free()     when no longer needed.
      */
-    vfunc_get_name(): string;
+    vfunc_get_name(): string | null;
     /**
      * Gets the root directory on `mount`.
      * @virtual
      * @returns a #GFile.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    vfunc_get_root(): File;
+    vfunc_get_root(): File | null;
     /**
      * Gets the sort key for `mount,` if any.
      * @virtual
@@ -16823,7 +16965,7 @@ declare namespace Gio {
      * @virtual
      * @returns a #GIcon.      The returned object should be unreffed with      g_object_unref() when no longer needed.
      */
-    vfunc_get_symbolic_icon(): Icon;
+    vfunc_get_symbolic_icon(): Icon | null;
     /**
      * Gets the UUID for the `mount`. The reference is typically based on
      * the file system UUID for the mount in question and should be
@@ -16871,7 +17013,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a %NULL-terminated array of content types or %NULL on error.     Caller should free this array with g_strfreev() when done with it.
      */
-    vfunc_guess_content_type_finish(result: AsyncResult): string[];
+    vfunc_guess_content_type_finish(result: AsyncResult | null): string[];
     /**
      * Tries to guess the type of content stored on `mount`. Returns one or
      * more textual identifiers of well-known content types (typically
@@ -16921,7 +17063,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully remounted. %FALSE otherwise.
      */
-    vfunc_remount_finish(result: AsyncResult): boolean;
+    vfunc_remount_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a mount. This is an asynchronous operation, and is
      * finished by calling g_mount_unmount_finish() with the `mount`
@@ -16943,7 +17085,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully unmounted. %FALSE otherwise.
      */
-    vfunc_unmount_finish(result: AsyncResult): boolean;
+    vfunc_unmount_finish(result: AsyncResult | null): boolean;
     /**
      * Unmounts a mount. This is an asynchronous operation, and is
      * finished by calling g_mount_unmount_with_operation_finish() with the `mount`
@@ -16967,7 +17109,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the mount was successfully unmounted. %FALSE otherwise.
      */
-    vfunc_unmount_with_operation_finish(result: AsyncResult): boolean;
+    vfunc_unmount_with_operation_finish(result: AsyncResult | null): boolean;
     vfunc_unmounted(): void;
 
     // Own signals of Gio-2.0.Gio.Mount
@@ -17039,7 +17181,7 @@ declare namespace Gio {
     _init(config?: Mount.ConstructorProperties): void;
   }
 
-  namespace NetworkMonitor {
+  module NetworkMonitor {
     // Signal callback interfaces
 
     /**
@@ -17131,7 +17273,7 @@ declare namespace Gio {
      * @returns %TRUE if @connectable is reachable, %FALSE if not.
      */
     can_reach(
-      connectable: SocketConnectable,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null
     ): boolean;
     /**
@@ -17149,7 +17291,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the     request is satisfied
      */
     can_reach_async(
-      connectable: SocketConnectable,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -17159,7 +17301,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if network is reachable, %FALSE if not.
      */
-    can_reach_finish(result: AsyncResult): boolean;
+    can_reach_finish(result: AsyncResult | null): boolean;
     /**
      * Gets a more detailed networking state than
      * g_network_monitor_get_network_available().
@@ -17224,7 +17366,7 @@ declare namespace Gio {
      * @returns %TRUE if @connectable is reachable, %FALSE if not.
      */
     vfunc_can_reach(
-      connectable: SocketConnectable,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null
     ): boolean;
     /**
@@ -17243,7 +17385,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the     request is satisfied
      */
     vfunc_can_reach_async(
-      connectable: SocketConnectable,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -17254,7 +17396,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if network is reachable, %FALSE if not.
      */
-    vfunc_can_reach_finish(result: AsyncResult): boolean;
+    vfunc_can_reach_finish(result: AsyncResult | null): boolean;
     vfunc_network_changed(network_available: boolean): void;
 
     // Own signals of Gio-2.0.Gio.NetworkMonitor
@@ -17331,10 +17473,10 @@ declare namespace Gio {
      * Gets the default #GNetworkMonitor for the system.
      * @returns a #GNetworkMonitor, which will be     a dummy object if no network monitor is available
      */
-    static get_default(): NetworkMonitor;
+    static get_default(): NetworkMonitor | null;
   }
 
-  namespace PollableInputStream {
+  module PollableInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -17368,7 +17510,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns a new #GSource
      */
-    create_source(cancellable: Cancellable | null): GLib.Source;
+    create_source(cancellable: Cancellable | null): GLib.Source | null;
     /**
      * Checks if `stream` can be read.
      *
@@ -17427,7 +17569,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns a new #GSource
      */
-    vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
+    vfunc_create_source(cancellable: Cancellable | null): GLib.Source | null;
     /**
      * Checks if `stream` can be read.
      *
@@ -17488,7 +17630,7 @@ declare namespace Gio {
     _init(config?: PollableInputStream.ConstructorProperties): void;
   }
 
-  namespace PollableOutputStream {
+  module PollableOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -17522,7 +17664,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns a new #GSource
      */
-    create_source(cancellable: Cancellable | null): GLib.Source;
+    create_source(cancellable: Cancellable | null): GLib.Source | null;
     /**
      * Checks if `stream` can be written.
      *
@@ -17583,7 +17725,7 @@ declare namespace Gio {
     writev_nonblocking(
       vectors: OutputVector[],
       cancellable: Cancellable | null
-    ): [/* returnType */ PollableReturn, /* bytes_written */ number];
+    ): [/* returnType */ PollableReturn, /* bytes_written */ number | null];
 
     // Own virtual methods of Gio-2.0.Gio.PollableOutputStream
 
@@ -17612,7 +17754,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns a new #GSource
      */
-    vfunc_create_source(cancellable: Cancellable | null): GLib.Source;
+    vfunc_create_source(cancellable: Cancellable | null): GLib.Source | null;
     /**
      * Checks if `stream` can be written.
      *
@@ -17670,7 +17812,7 @@ declare namespace Gio {
      */
     vfunc_writev_nonblocking(
       vectors: OutputVector[]
-    ): [/* returnType */ PollableReturn, /* bytes_written */ number];
+    ): [/* returnType */ PollableReturn, /* bytes_written */ number | null];
 
     // Class property signals of Gio-2.0.Gio.PollableOutputStream
 
@@ -17699,7 +17841,7 @@ declare namespace Gio {
     _init(config?: PollableOutputStream.ConstructorProperties): void;
   }
 
-  namespace PowerProfileMonitor {
+  module PowerProfileMonitor {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -17783,13 +17925,13 @@ declare namespace Gio {
      * Gets a reference to the default #GPowerProfileMonitor for the system.
      * @returns a new reference to the default #GPowerProfileMonitor
      */
-    static dup_default(): PowerProfileMonitor;
+    static dup_default(): PowerProfileMonitor | null;
   }
 
-  namespace Proxy {
+  module Proxy {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Proxy {
@@ -17806,10 +17948,10 @@ declare namespace Gio {
      * @returns a #GIOStream that will replace @connection. This might               be the same as @connection, in which case a reference               will be added.
      */
     connect(
-      connection: IOStream,
-      proxy_address: ProxyAddress,
+      connection: IOStream | null,
+      proxy_address: ProxyAddress | null,
       cancellable: Cancellable | null
-    ): IOStream;
+    ): IOStream | null;
     /**
      * Asynchronous version of g_proxy_connect().
      * @param connection a #GIOStream
@@ -17818,8 +17960,8 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     connect_async(
-      connection: IOStream,
-      proxy_address: ProxyAddress,
+      connection: IOStream | null,
+      proxy_address: ProxyAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -17828,7 +17970,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GIOStream.
      */
-    connect_finish(result: AsyncResult): IOStream;
+    connect_finish(result: AsyncResult | null): IOStream | null;
     /**
      * Some proxy protocols expect to be passed a hostname, which they
      * will resolve to an IP address themselves. Others, like SOCKS4, do
@@ -17855,10 +17997,10 @@ declare namespace Gio {
      * @returns a #GIOStream that will replace @connection. This might               be the same as @connection, in which case a reference               will be added.
      */
     vfunc_connect(
-      connection: IOStream,
-      proxy_address: ProxyAddress,
+      connection: IOStream | null,
+      proxy_address: ProxyAddress | null,
       cancellable: Cancellable | null
-    ): IOStream;
+    ): IOStream | null;
     /**
      * Asynchronous version of g_proxy_connect().
      * @virtual
@@ -17868,8 +18010,8 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     vfunc_connect_async(
-      connection: IOStream,
-      proxy_address: ProxyAddress,
+      connection: IOStream | null,
+      proxy_address: ProxyAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -17879,7 +18021,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GIOStream.
      */
-    vfunc_connect_finish(result: AsyncResult): IOStream;
+    vfunc_connect_finish(result: AsyncResult | null): IOStream | null;
     /**
      * Some proxy protocols expect to be passed a hostname, which they
      * will resolve to an IP address themselves. Others, like SOCKS4, do
@@ -17926,13 +18068,13 @@ declare namespace Gio {
      * @param protocol the proxy protocol name (e.g. http, socks, etc)
      * @returns return a #GProxy or NULL if protocol               is not supported.
      */
-    static get_default_for_protocol(protocol: string): Proxy | null;
+    static get_default_for_protocol(protocol: string | null): Proxy | null;
   }
 
-  namespace ProxyResolver {
+  module ProxyResolver {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface ProxyResolver {
@@ -17965,7 +18107,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns A               NULL-terminated array of proxy URIs. Must be freed               with g_strfreev().
      */
-    lookup(uri: string, cancellable: Cancellable | null): string[];
+    lookup(uri: string | null, cancellable: Cancellable | null): string[];
     /**
      * Asynchronous lookup of proxy. See g_proxy_resolver_lookup() for more
      * details.
@@ -17974,7 +18116,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     lookup_async(
-      uri: string,
+      uri: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -17985,7 +18127,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns A               NULL-terminated array of proxy URIs. Must be freed               with g_strfreev().
      */
-    lookup_finish(result: AsyncResult): string[];
+    lookup_finish(result: AsyncResult | null): string[];
 
     // Own virtual methods of Gio-2.0.Gio.ProxyResolver
 
@@ -18018,7 +18160,7 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns A               NULL-terminated array of proxy URIs. Must be freed               with g_strfreev().
      */
-    vfunc_lookup(uri: string, cancellable: Cancellable | null): string[];
+    vfunc_lookup(uri: string | null, cancellable: Cancellable | null): string[];
     /**
      * Asynchronous lookup of proxy. See g_proxy_resolver_lookup() for more
      * details.
@@ -18028,7 +18170,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     vfunc_lookup_async(
-      uri: string,
+      uri: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -18040,7 +18182,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns A               NULL-terminated array of proxy URIs. Must be freed               with g_strfreev().
      */
-    vfunc_lookup_finish(result: AsyncResult): string[];
+    vfunc_lookup_finish(result: AsyncResult | null): string[];
 
     // Class property signals of Gio-2.0.Gio.ProxyResolver
 
@@ -18074,10 +18216,10 @@ declare namespace Gio {
      * Gets the default #GProxyResolver for the system.
      * @returns the default #GProxyResolver, which     will be a dummy object if no proxy resolver is available
      */
-    static get_default(): ProxyResolver;
+    static get_default(): ProxyResolver | null;
   }
 
-  namespace RemoteActionGroup {
+  module RemoteActionGroup {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -18103,9 +18245,9 @@ declare namespace Gio {
      * @param platform_data the platform data to send
      */
     activate_action_full(
-      action_name: string,
+      action_name: string | null,
       parameter: GLib.Variant | null,
-      platform_data: GLib.Variant
+      platform_data: GLib.Variant | null
     ): void;
     /**
      * Changes the state of a remote action.
@@ -18122,9 +18264,9 @@ declare namespace Gio {
      * @param platform_data the platform data to send
      */
     change_action_state_full(
-      action_name: string,
-      value: GLib.Variant,
-      platform_data: GLib.Variant
+      action_name: string | null,
+      value: GLib.Variant | null,
+      platform_data: GLib.Variant | null
     ): void;
 
     // Own virtual methods of Gio-2.0.Gio.RemoteActionGroup
@@ -18145,9 +18287,9 @@ declare namespace Gio {
      * @param platform_data the platform data to send
      */
     vfunc_activate_action_full(
-      action_name: string,
+      action_name: string | null,
       parameter: GLib.Variant | null,
-      platform_data: GLib.Variant
+      platform_data: GLib.Variant | null
     ): void;
     /**
      * Changes the state of a remote action.
@@ -18165,9 +18307,9 @@ declare namespace Gio {
      * @param platform_data the platform data to send
      */
     vfunc_change_action_state_full(
-      action_name: string,
-      value: GLib.Variant,
-      platform_data: GLib.Variant
+      action_name: string | null,
+      value: GLib.Variant | null,
+      platform_data: GLib.Variant | null
     ): void;
 
     // Class property signals of Gio-2.0.Gio.RemoteActionGroup
@@ -18214,10 +18356,10 @@ declare namespace Gio {
     _init(config?: RemoteActionGroup.ConstructorProperties): void;
   }
 
-  namespace Seekable {
+  module Seekable {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Seekable {
@@ -18381,10 +18523,10 @@ declare namespace Gio {
     _init(config?: Seekable.ConstructorProperties): void;
   }
 
-  namespace SocketConnectable {
+  module SocketConnectable {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface SocketConnectable {
@@ -18394,7 +18536,7 @@ declare namespace Gio {
      * Creates a #GSocketAddressEnumerator for `connectable`.
      * @returns a new #GSocketAddressEnumerator.
      */
-    enumerate(): SocketAddressEnumerator;
+    enumerate(): SocketAddressEnumerator | null;
     /**
      * Creates a #GSocketAddressEnumerator for `connectable` that will
      * return a #GProxyAddress for each of its addresses that you must connect
@@ -18405,7 +18547,7 @@ declare namespace Gio {
      * calling g_socket_connectable_enumerate().
      * @returns a new #GSocketAddressEnumerator.
      */
-    proxy_enumerate(): SocketAddressEnumerator;
+    proxy_enumerate(): SocketAddressEnumerator | null;
     /**
      * Format a #GSocketConnectable as a string. This is a human-readable format for
      * use in debugging output, and is not a stable serialization format. It is not
@@ -18416,7 +18558,7 @@ declare namespace Gio {
      * the implementation’s type name will be returned as a fallback.
      * @returns the formatted string
      */
-    to_string(): string;
+    to_string(): string | null;
 
     // Own virtual methods of Gio-2.0.Gio.SocketConnectable
 
@@ -18425,7 +18567,7 @@ declare namespace Gio {
      * @virtual
      * @returns a new #GSocketAddressEnumerator.
      */
-    vfunc_enumerate(): SocketAddressEnumerator;
+    vfunc_enumerate(): SocketAddressEnumerator | null;
     /**
      * Creates a #GSocketAddressEnumerator for `connectable` that will
      * return a #GProxyAddress for each of its addresses that you must connect
@@ -18437,7 +18579,7 @@ declare namespace Gio {
      * @virtual
      * @returns a new #GSocketAddressEnumerator.
      */
-    vfunc_proxy_enumerate(): SocketAddressEnumerator;
+    vfunc_proxy_enumerate(): SocketAddressEnumerator | null;
     /**
      * Format a #GSocketConnectable as a string. This is a human-readable format for
      * use in debugging output, and is not a stable serialization format. It is not
@@ -18449,7 +18591,7 @@ declare namespace Gio {
      * @virtual
      * @returns the formatted string
      */
-    vfunc_to_string(): string;
+    vfunc_to_string(): string | null;
 
     // Class property signals of Gio-2.0.Gio.SocketConnectable
 
@@ -18533,10 +18675,10 @@ declare namespace Gio {
     _init(config?: SocketConnectable.ConstructorProperties): void;
   }
 
-  namespace TlsBackend {
+  module TlsBackend {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface TlsBackend {
@@ -18556,7 +18698,7 @@ declare namespace Gio {
      * Gets the default #GTlsDatabase used to verify TLS connections.
      * @returns the default database, which should be               unreffed when done.
      */
-    get_default_database(): TlsDatabase;
+    get_default_database(): TlsDatabase | null;
     /**
      * Gets the #GType of `backend’`s #GDtlsClientConnection implementation.
      * @returns the #GType of @backend’s #GDtlsClientConnection   implementation, or %G_TYPE_INVALID if this backend doesn’t support DTLS.
@@ -18609,7 +18751,7 @@ declare namespace Gio {
      * @virtual
      * @returns the default database, which should be               unreffed when done.
      */
-    vfunc_get_default_database(): TlsDatabase;
+    vfunc_get_default_database(): TlsDatabase | null;
     /**
      * Checks if DTLS is supported. DTLS support may not be available even if TLS
      * support is available, and vice-versa.
@@ -18651,10 +18793,10 @@ declare namespace Gio {
      * Gets the default #GTlsBackend for the system.
      * @returns a #GTlsBackend, which will be a     dummy object if no TLS backend is available
      */
-    static get_default(): TlsBackend;
+    static get_default(): TlsBackend | null;
   }
 
-  namespace TlsClientConnection {
+  module TlsClientConnection {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -18718,7 +18860,7 @@ declare namespace Gio {
      * Each item in the list is a #GByteArray which contains the complete
      * subject DN of the certificate authority.
      */
-    readonly accepted_cas: object[];
+    readonly accepted_cas: any[];
     /**
      * A #GSocketConnectable describing the identity of the server that
      * is expected on the other end of the connection.
@@ -18798,7 +18940,7 @@ declare namespace Gio {
      * ticket to be copied without regard for privacy considerations.
      * @param source a #GTlsClientConnection
      */
-    copy_session_state(source: TlsClientConnection): void;
+    copy_session_state(source: TlsClientConnection | null): void;
     /**
      * Gets the list of distinguished names of the Certificate Authorities
      * that the server will accept certificates from. This will be set
@@ -18809,7 +18951,7 @@ declare namespace Gio {
      * subject DN of the certificate authority.
      * @returns the list of CA DNs. You should unref each element with g_byte_array_unref() and then the free the list with g_list_free().
      */
-    get_accepted_cas(): GLib.List[];
+    get_accepted_cas(): GLib.List[] | null;
     /**
      * Gets `conn'`s expected server identity
      * @returns a #GSocketConnectable describing the expected server identity, or %NULL if the expected identity is not known.
@@ -18837,7 +18979,7 @@ declare namespace Gio {
      * performing %G_TLS_CERTIFICATE_BAD_IDENTITY validation, if enabled.
      * @param identity a #GSocketConnectable describing the expected server identity
      */
-    set_server_identity(identity: SocketConnectable): void;
+    set_server_identity(identity: SocketConnectable | null): void;
     /**
      * Since GLib 2.42.1, SSL 3.0 is no longer supported.
      *
@@ -18898,7 +19040,7 @@ declare namespace Gio {
      * @virtual
      * @param source a #GTlsClientConnection
      */
-    vfunc_copy_session_state(source: TlsClientConnection): void;
+    vfunc_copy_session_state(source: TlsClientConnection | null): void;
 
     // Class property signals of Gio-2.0.Gio.TlsClientConnection
 
@@ -19089,12 +19231,12 @@ declare namespace Gio {
      * @returns the new #GTlsClientConnection, or %NULL on error
      */
     static new(
-      base_io_stream: IOStream,
+      base_io_stream: IOStream | null,
       server_identity: SocketConnectable | null
-    ): TlsClientConnection;
+    ): TlsClientConnection | null;
   }
 
-  namespace TlsFileDatabase {
+  module TlsFileDatabase {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -19121,7 +19263,7 @@ declare namespace Gio {
      * root authorities for the purpose of verifying other certificates
      * via the g_tls_database_verify_chain() operation.
      */
-    anchors: string;
+    anchors: string | null;
 
     // Class property signals of Gio-2.0.Gio.TlsFileDatabase
 
@@ -19164,10 +19306,10 @@ declare namespace Gio {
      * @param anchors filename of anchor certificate authorities.
      * @returns the new #GTlsFileDatabase, or %NULL on error
      */
-    static new(anchors: string): TlsFileDatabase;
+    static new(anchors: string | null): TlsFileDatabase | null;
   }
 
-  namespace TlsServerConnection {
+  module TlsServerConnection {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -19359,12 +19501,12 @@ declare namespace Gio {
      * @returns the new #GTlsServerConnection, or %NULL on error
      */
     static new(
-      base_io_stream: IOStream,
+      base_io_stream: IOStream | null,
       certificate: TlsCertificate | null
-    ): TlsServerConnection;
+    ): TlsServerConnection | null;
   }
 
-  namespace Volume {
+  module Volume {
     // Signal callback interfaces
 
     /**
@@ -19383,7 +19525,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Volume {
@@ -19418,7 +19560,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE, %FALSE if operation failed
      */
-    eject_finish(result: AsyncResult): boolean;
+    eject_finish(result: AsyncResult | null): boolean;
     /**
      * Ejects a volume. This is an asynchronous operation, and is
      * finished by calling g_volume_eject_with_operation_finish() with the `volume`
@@ -19440,7 +19582,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the volume was successfully ejected. %FALSE otherwise
      */
-    eject_with_operation_finish(result: AsyncResult): boolean;
+    eject_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the kinds of [identifiers][volume-identifier] that `volume` has.
      * Use g_volume_get_identifier() to obtain the identifiers themselves.
@@ -19490,7 +19632,7 @@ declare namespace Gio {
      * Gets the icon for `volume`.
      * @returns a #GIcon.     The returned object should be unreffed with g_object_unref()     when no longer needed.
      */
-    get_icon(): Icon;
+    get_icon(): Icon | null;
     /**
      * Gets the identifier of the given kind for `volume`.
      * See the [introduction][volume-identifier] for more
@@ -19498,7 +19640,7 @@ declare namespace Gio {
      * @param kind the kind of identifier to return
      * @returns a newly allocated string containing the     requested identifier, or %NULL if the #GVolume     doesn't have this kind of identifier
      */
-    get_identifier(kind: string): string | null;
+    get_identifier(kind: string | null): string | null;
     /**
      * Gets the mount for the `volume`.
      * @returns a #GMount or %NULL if @volume isn't mounted.     The returned object should be unreffed with g_object_unref()     when no longer needed.
@@ -19508,7 +19650,7 @@ declare namespace Gio {
      * Gets the name of `volume`.
      * @returns the name for the given @volume. The returned string should     be freed with g_free() when no longer needed.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the sort key for `volume,` if any.
      * @returns Sorting key for @volume or %NULL if no such key is available
@@ -19518,7 +19660,7 @@ declare namespace Gio {
      * Gets the symbolic icon for `volume`.
      * @returns a #GIcon.     The returned object should be unreffed with g_object_unref()     when no longer needed.
      */
-    get_symbolic_icon(): Icon;
+    get_symbolic_icon(): Icon | null;
     /**
      * Gets the UUID for the `volume`. The reference is typically based on
      * the file system UUID for the volume in question and should be
@@ -19553,7 +19695,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE, %FALSE if operation failed
      */
-    mount_finish(result: AsyncResult): boolean;
+    mount_finish(result: AsyncResult | null): boolean;
     /**
      * Returns whether the volume should be automatically mounted.
      * @returns %TRUE if the volume should be automatically mounted
@@ -19596,7 +19738,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE, %FALSE if operation failed
      */
-    vfunc_eject_finish(result: AsyncResult): boolean;
+    vfunc_eject_finish(result: AsyncResult | null): boolean;
     /**
      * Ejects a volume. This is an asynchronous operation, and is
      * finished by calling g_volume_eject_with_operation_finish() with the `volume`
@@ -19620,7 +19762,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if the volume was successfully ejected. %FALSE otherwise
      */
-    vfunc_eject_with_operation_finish(result: AsyncResult): boolean;
+    vfunc_eject_with_operation_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the kinds of [identifiers][volume-identifier] that `volume` has.
      * Use g_volume_get_identifier() to obtain the identifiers themselves.
@@ -19674,7 +19816,7 @@ declare namespace Gio {
      * @virtual
      * @returns a #GIcon.     The returned object should be unreffed with g_object_unref()     when no longer needed.
      */
-    vfunc_get_icon(): Icon;
+    vfunc_get_icon(): Icon | null;
     /**
      * Gets the identifier of the given kind for `volume`.
      * See the [introduction][volume-identifier] for more
@@ -19683,7 +19825,7 @@ declare namespace Gio {
      * @param kind the kind of identifier to return
      * @returns a newly allocated string containing the     requested identifier, or %NULL if the #GVolume     doesn't have this kind of identifier
      */
-    vfunc_get_identifier(kind: string): string | null;
+    vfunc_get_identifier(kind: string | null): string | null;
     /**
      * Gets the mount for the `volume`.
      * @virtual
@@ -19695,7 +19837,7 @@ declare namespace Gio {
      * @virtual
      * @returns the name for the given @volume. The returned string should     be freed with g_free() when no longer needed.
      */
-    vfunc_get_name(): string;
+    vfunc_get_name(): string | null;
     /**
      * Gets the sort key for `volume,` if any.
      * @virtual
@@ -19707,7 +19849,7 @@ declare namespace Gio {
      * @virtual
      * @returns a #GIcon.     The returned object should be unreffed with g_object_unref()     when no longer needed.
      */
-    vfunc_get_symbolic_icon(): Icon;
+    vfunc_get_symbolic_icon(): Icon | null;
     /**
      * Gets the UUID for the `volume`. The reference is typically based on
      * the file system UUID for the volume in question and should be
@@ -19729,7 +19871,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE, %FALSE if operation failed
      */
-    vfunc_mount_finish(result: AsyncResult): boolean;
+    vfunc_mount_finish(result: AsyncResult | null): boolean;
     /**
      * Mounts a volume. This is an asynchronous operation, and is
      * finished by calling g_volume_mount_finish() with the `volume`
@@ -19880,7 +20022,7 @@ declare namespace Gio {
     ): number;
   };
 
-  export namespace DBusExportedObject {
+  export module DBusExportedObject {
     export interface ConstructorProperties {
       [key: string]: any;
     }
@@ -19952,7 +20094,7 @@ declare namespace Gio {
   /** Temporary Gio.File.prototype fix */
   export const _LocalFilePrototype: typeof File.prototype;
 
-  namespace AppInfoMonitor {
+  module AppInfoMonitor {
     // Signal callback interfaces
 
     /**
@@ -19964,7 +20106,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface AppInfoMonitor {
@@ -20030,17 +20172,17 @@ declare namespace Gio {
      * the same main context as you created it.
      * @returns a reference to a #GAppInfoMonitor
      */
-    static get(): AppInfoMonitor;
+    static get(): AppInfoMonitor | null;
   }
 
-  namespace AppLaunchContext {
+  module AppLaunchContext {
     // Signal callback interfaces
 
     /**
      * Signal callback interface for `launch-failed`
      */
     interface LaunchFailedSignalCallback {
-      ($obj: AppLaunchContext, startup_notify_id: string): void;
+      ($obj: AppLaunchContext, startup_notify_id: string | null): void;
     }
 
     /**
@@ -20067,7 +20209,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface AppLaunchContext {
@@ -20085,7 +20227,7 @@ declare namespace Gio {
      * @param files a #GList of #GFile objects
      * @returns a display string for the display.
      */
-    get_display(info: AppInfo, files: File[]): string | null;
+    get_display(info: AppInfo | null, files: File[] | null): string | null;
     /**
      * Gets the complete environment variable list to be passed to
      * the child process when `context` is used to launch an application.
@@ -20104,26 +20246,29 @@ declare namespace Gio {
      * @param files a #GList of of #GFile objects
      * @returns a startup notification ID for the application, or %NULL if     not supported.
      */
-    get_startup_notify_id(info: AppInfo, files: File[]): string | null;
+    get_startup_notify_id(
+      info: AppInfo | null,
+      files: File[] | null
+    ): string | null;
     /**
      * Called when an application has failed to launch, so that it can cancel
      * the application startup notification started in g_app_launch_context_get_startup_notify_id().
      * @param startup_notify_id the startup notification id that was returned by g_app_launch_context_get_startup_notify_id().
      */
-    launch_failed(startup_notify_id: string): void;
+    launch_failed(startup_notify_id: string | null): void;
     /**
      * Arranges for `variable` to be set to `value` in the child's
      * environment when `context` is used to launch an application.
      * @param variable the environment variable to set
      * @param value the value for to set the variable to.
      */
-    setenv(variable: string, value: string): void;
+    setenv(variable: string | null, value: string | null): void;
     /**
      * Arranges for `variable` to be unset in the child's environment
      * when `context` is used to launch an application.
      * @param variable the environment variable to remove
      */
-    unsetenv(variable: string): void;
+    unsetenv(variable: string | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.AppLaunchContext
 
@@ -20136,7 +20281,10 @@ declare namespace Gio {
      * @param files a #GList of #GFile objects
      * @returns a display string for the display.
      */
-    vfunc_get_display(info: AppInfo, files: File[]): string | null;
+    vfunc_get_display(
+      info: AppInfo | null,
+      files: File[] | null
+    ): string | null;
     /**
      * Initiates startup notification for the application and returns the
      * `DESKTOP_STARTUP_ID` for the launched operation, if supported.
@@ -20148,16 +20296,25 @@ declare namespace Gio {
      * @param files a #GList of of #GFile objects
      * @returns a startup notification ID for the application, or %NULL if     not supported.
      */
-    vfunc_get_startup_notify_id(info: AppInfo, files: File[]): string | null;
+    vfunc_get_startup_notify_id(
+      info: AppInfo | null,
+      files: File[] | null
+    ): string | null;
     /**
      * Called when an application has failed to launch, so that it can cancel
      * the application startup notification started in g_app_launch_context_get_startup_notify_id().
      * @virtual
      * @param startup_notify_id the startup notification id that was returned by g_app_launch_context_get_startup_notify_id().
      */
-    vfunc_launch_failed(startup_notify_id: string): void;
-    vfunc_launch_started(info: AppInfo, platform_data: GLib.Variant): void;
-    vfunc_launched(info: AppInfo, platform_data: GLib.Variant): void;
+    vfunc_launch_failed(startup_notify_id: string | null): void;
+    vfunc_launch_started(
+      info: AppInfo | null,
+      platform_data: GLib.Variant | null
+    ): void;
+    vfunc_launched(
+      info: AppInfo | null,
+      platform_data: GLib.Variant | null
+    ): void;
 
     // Own signals of Gio-2.0.Gio.AppLaunchContext
 
@@ -20171,7 +20328,7 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "launch-failed",
-      startup_notify_id: string,
+      startup_notify_id: string | null,
       ...args: any[]
     ): void;
     connect(
@@ -20243,7 +20400,7 @@ declare namespace Gio {
     _init(config?: AppLaunchContext.ConstructorProperties): void;
   }
 
-  namespace Application {
+  module Application {
     // Signal callback interfaces
 
     /**
@@ -20278,7 +20435,7 @@ declare namespace Gio {
      * Signal callback interface for `open`
      */
     interface OpenSignalCallback {
-      ($obj: Application, files: File[], hint: string): void;
+      ($obj: Application, files: File[], hint: string | null): void;
     }
 
     /**
@@ -20315,7 +20472,7 @@ declare namespace Gio {
     // Own properties of Gio-2.0.Gio.Application
 
     action_group: ActionGroup;
-    application_id: string;
+    application_id: string | null;
     flags: ApplicationFlags;
     inactivity_timeout: number;
     /**
@@ -20325,7 +20482,7 @@ declare namespace Gio {
     readonly is_busy: boolean;
     readonly is_registered: boolean;
     readonly is_remote: boolean;
-    resource_base_path: string;
+    resource_base_path: string | null;
 
     // Owm methods of Gio-2.0.Gio.Application
 
@@ -20360,11 +20517,11 @@ declare namespace Gio {
      * @param arg_description the placeholder to use for the extra argument    parsed by the option in `--help` output
      */
     add_main_option(
-      long_name: string,
+      long_name: string | null,
       short_name: number,
       flags: GLib.OptionFlags,
       arg: GLib.OptionArg,
-      description: string,
+      description: string | null,
       arg_description: string | null
     ): void;
     /**
@@ -20453,7 +20610,7 @@ declare namespace Gio {
      * %G_APPLICATION_HANDLES_COMMAND_LINE was given.
      * @param group a #GOptionGroup
      */
-    add_option_group(group: GLib.OptionGroup): void;
+    add_option_group(group: GLib.OptionGroup | null): void;
     /**
      * Marks `application` as busy (see g_application_mark_busy()) while
      * `property` on `object` is %TRUE.
@@ -20464,7 +20621,7 @@ declare namespace Gio {
      * @param object a #GObject
      * @param property the name of a boolean property of `object`
      */
-    bind_busy_property(object: GObject.Object, property: string): void;
+    bind_busy_property(object: GObject.Object, property: string | null): void;
     /**
      * Gets the unique identifier for `application`.
      * @returns the identifier for @application, owned by @application
@@ -20598,7 +20755,7 @@ declare namespace Gio {
      * @param files an array of #GFiles to open
      * @param hint a hint (or ""), but never %NULL
      */
-    open(files: File[], hint: string): void;
+    open(files: File[], hint: string | null): void;
     /**
      * Immediately quits the application.
      *
@@ -20769,7 +20926,10 @@ declare namespace Gio {
      * @param id id of the notification, or %NULL
      * @param notification the #GNotification to send
      */
-    send_notification(id: string | null, notification: Notification): void;
+    send_notification(
+      id: string | null,
+      notification: Notification | null
+    ): void;
     /**
      * This used to be how actions were associated with a #GApplication.
      * Now there is #GActionMap for that.
@@ -20886,7 +21046,7 @@ declare namespace Gio {
      * @param object a #GObject
      * @param property the name of a boolean property of `object`
      */
-    unbind_busy_property(object: GObject.Object, property: string): void;
+    unbind_busy_property(object: GObject.Object, property: string | null): void;
     /**
      * Decreases the busy count of `application`.
      *
@@ -20913,7 +21073,7 @@ declare namespace Gio {
      * there is no need to explicitly withdraw the notification in that case.
      * @param id id of a previously sent notification
      */
-    withdraw_notification(id: string): void;
+    withdraw_notification(id: string | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.Application
 
@@ -20927,19 +21087,19 @@ declare namespace Gio {
      * @virtual
      */
     vfunc_activate(): void;
-    vfunc_add_platform_data(builder: GLib.VariantBuilder): void;
-    vfunc_after_emit(platform_data: GLib.Variant): void;
-    vfunc_before_emit(platform_data: GLib.Variant): void;
-    vfunc_command_line(command_line: ApplicationCommandLine): number;
+    vfunc_add_platform_data(builder: GLib.VariantBuilder | null): void;
+    vfunc_after_emit(platform_data: GLib.Variant | null): void;
+    vfunc_before_emit(platform_data: GLib.Variant | null): void;
+    vfunc_command_line(command_line: ApplicationCommandLine | null): number;
     vfunc_dbus_register(
-      connection: DBusConnection,
-      object_path: string
+      connection: DBusConnection | null,
+      object_path: string | null
     ): boolean;
     vfunc_dbus_unregister(
-      connection: DBusConnection,
-      object_path: string
+      connection: DBusConnection | null,
+      object_path: string | null
     ): void;
-    vfunc_handle_local_options(options: GLib.VariantDict): number;
+    vfunc_handle_local_options(options: GLib.VariantDict | null): number;
     /**
      * This virtual function is always invoked in the local instance. It
      * gets passed a pointer to a %NULL-terminated copy of `argv` and is
@@ -20960,7 +21120,7 @@ declare namespace Gio {
     ): [
       /* returnType */ boolean,
       /* arguments_ */ string[],
-      /* exit_status */ number
+      /* exit_status */ number | null
     ];
     vfunc_name_lost(): boolean;
     /**
@@ -20982,7 +21142,7 @@ declare namespace Gio {
      * @param files an array of #GFiles to open
      * @param hint a hint (or ""), but never %NULL
      */
-    vfunc_open(files: File[], hint: string): void;
+    vfunc_open(files: File[], hint: string | null): void;
     vfunc_quit_mainloop(): void;
     vfunc_run_mainloop(): void;
     vfunc_shutdown(): void;
@@ -21039,7 +21199,12 @@ declare namespace Gio {
       sigName: "open",
       callback: Application.OpenSignalCallback
     ): number;
-    emit(sigName: "open", files: File[], hint: string, ...args: any[]): void;
+    emit(
+      sigName: "open",
+      files: File[],
+      hint: string | null,
+      ...args: any[]
+    ): void;
     connect(
       sigName: "shutdown",
       callback: Application.ShutdownSignalCallback
@@ -21357,10 +21522,10 @@ declare namespace Gio {
      * @param application_id a potential application identifier
      * @returns %TRUE if @application_id is valid
      */
-    static id_is_valid(application_id: string): boolean;
+    static id_is_valid(application_id: string | null): boolean;
   }
 
-  namespace ApplicationCommandLine {
+  module ApplicationCommandLine {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -21393,7 +21558,7 @@ declare namespace Gio {
      * @param arg an argument from `cmdline`
      * @returns a new #GFile
      */
-    create_file_for_arg(arg: string): File;
+    create_file_for_arg(arg: string | null): File | null;
     /**
      * Gets the list of arguments that was passed on the command line.
      *
@@ -21463,7 +21628,7 @@ declare namespace Gio {
      * you don't need to check for %NULL.
      * @returns a #GVariantDict with the options
      */
-    get_options_dict(): GLib.VariantDict;
+    get_options_dict(): GLib.VariantDict | null;
     /**
      * Gets the platform data associated with the invocation of `cmdline`.
      *
@@ -21505,7 +21670,7 @@ declare namespace Gio {
      * @param name the environment variable to get
      * @returns the value of the variable, or %NULL if unset or unsent
      */
-    getenv(name: string): string | null;
+    getenv(name: string | null): string | null;
     /**
      * Sets the exit status that will be used when the invoking process
      * exits.
@@ -21549,8 +21714,8 @@ declare namespace Gio {
      * @returns a #GInputStream for stdin
      */
     vfunc_get_stdin(): InputStream | null;
-    vfunc_print_literal(message: string): void;
-    vfunc_printerr_literal(message: string): void;
+    vfunc_print_literal(message: string | null): void;
+    vfunc_printerr_literal(message: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.ApplicationCommandLine
 
@@ -21777,7 +21942,7 @@ declare namespace Gio {
     _init(config?: ApplicationCommandLine.ConstructorProperties): void;
   }
 
-  namespace BufferedInputStream {
+  module BufferedInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -21856,7 +22021,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #gssize of the read stream, or `-1` on an error.
      */
-    fill_finish(result: AsyncResult): number;
+    fill_finish(result: AsyncResult | null): number;
     /**
      * Gets the size of the available data within the stream.
      * @returns size of the available stream.
@@ -21966,7 +22131,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #gssize of the read stream, or `-1` on an error.
      */
-    vfunc_fill_finish(result: AsyncResult): number;
+    vfunc_fill_finish(result: AsyncResult | null): number;
 
     // Class property signals of Gio-2.0.Gio.BufferedInputStream
 
@@ -22027,7 +22192,7 @@ declare namespace Gio {
      * @param base_stream a #GInputStream
      * @returns a #GInputStream for the given @base_stream.
      */
-    constructor(base_stream: InputStream);
+    constructor(base_stream: InputStream | null);
     /**
      * Creates a new #GInputStream from the given `base_stream,` with
      * a buffer set to the default size (4 kilobytes).
@@ -22035,7 +22200,7 @@ declare namespace Gio {
      * @param base_stream a #GInputStream
      * @returns a #GInputStream for the given @base_stream.
      */
-    static new(base_stream: InputStream): BufferedInputStream;
+    static new(base_stream: InputStream | null): BufferedInputStream;
     /**
      * Creates a new #GBufferedInputStream from the given `base_stream,`
      * with a buffer set to `size`.
@@ -22045,13 +22210,13 @@ declare namespace Gio {
      * @returns a #GInputStream.
      */
     static new_sized(
-      base_stream: InputStream,
+      base_stream: InputStream | null,
       size: number
     ): BufferedInputStream;
     _init(config?: BufferedInputStream.ConstructorProperties): void;
   }
 
-  namespace BufferedOutputStream {
+  module BufferedOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -22076,7 +22241,7 @@ declare namespace Gio {
       OutputStream &
       GObject.Object &
       GObject.Object;
-    priv: BufferedOutputStreamPrivate;
+    priv: BufferedOutputStreamPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.BufferedOutputStream
 
@@ -22171,14 +22336,14 @@ declare namespace Gio {
      * @param base_stream a #GOutputStream.
      * @returns a #GOutputStream for the given @base_stream.
      */
-    constructor(base_stream: OutputStream);
+    constructor(base_stream: OutputStream | null);
     /**
      * Creates a new buffered output stream for a base stream.
      * @constructor
      * @param base_stream a #GOutputStream.
      * @returns a #GOutputStream for the given @base_stream.
      */
-    static new(base_stream: OutputStream): BufferedOutputStream;
+    static new(base_stream: OutputStream | null): BufferedOutputStream;
     /**
      * Creates a new buffered output stream with a given buffer size.
      * @constructor
@@ -22187,13 +22352,13 @@ declare namespace Gio {
      * @returns a #GOutputStream with an internal buffer set to @size.
      */
     static new_sized(
-      base_stream: OutputStream,
+      base_stream: OutputStream | null,
       size: number
     ): BufferedOutputStream;
     _init(config?: BufferedOutputStream.ConstructorProperties): void;
   }
 
-  namespace BytesIcon {
+  module BytesIcon {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -22223,7 +22388,7 @@ declare namespace Gio {
      * Gets the #GBytes associated with the given `icon`.
      * @returns a #GBytes.
      */
-    get_bytes(): GLib.Bytes;
+    get_bytes(): GLib.Bytes | null;
 
     // Class property signals of Gio-2.0.Gio.BytesIcon
 
@@ -22265,7 +22430,7 @@ declare namespace Gio {
      * @param bytes a #GBytes.
      * @returns a #GIcon for the given   @bytes.
      */
-    constructor(bytes: GLib.Bytes);
+    constructor(bytes: GLib.Bytes | null);
     /**
      * Creates a new icon for a bytes.
      *
@@ -22275,11 +22440,11 @@ declare namespace Gio {
      * @param bytes a #GBytes.
      * @returns a #GIcon for the given   @bytes.
      */
-    static new(bytes: GLib.Bytes): BytesIcon;
+    static new(bytes: GLib.Bytes | null): BytesIcon;
     _init(config?: BytesIcon.ConstructorProperties): void;
   }
 
-  namespace Cancellable {
+  module Cancellable {
     // Signal callback interfaces
 
     /**
@@ -22291,7 +22456,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Cancellable {
@@ -22405,7 +22570,7 @@ declare namespace Gio {
      * @param pollfd a pointer to a #GPollFD
      * @returns %TRUE if @pollfd was successfully initialized, %FALSE on          failure to prepare the cancellable.
      */
-    make_pollfd(pollfd: GLib.PollFD): boolean;
+    make_pollfd(pollfd: GLib.PollFD | null): boolean;
     /**
      * Pops `cancellable` off the cancellable stack (verifying that `cancellable`
      * is on the top of the stack).
@@ -22466,7 +22631,7 @@ declare namespace Gio {
      * The new #GSource will hold a reference to the #GCancellable.
      * @returns the new #GSource.
      */
-    source_new(): GLib.Source;
+    source_new(): GLib.Source | null;
 
     // Own virtual methods of Gio-2.0.Gio.Cancellable
 
@@ -22541,7 +22706,7 @@ declare namespace Gio {
     static get_current(): Cancellable | null;
   }
 
-  namespace CharsetConverter {
+  module CharsetConverter {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -22559,8 +22724,8 @@ declare namespace Gio {
   interface CharsetConverter extends Converter, Initable {
     // Own properties of Gio-2.0.Gio.CharsetConverter
 
-    readonly from_charset: string;
-    readonly to_charset: string;
+    readonly from_charset: string | null;
+    readonly to_charset: string | null;
     use_fallback: boolean;
 
     // Owm methods of Gio-2.0.Gio.CharsetConverter
@@ -22637,7 +22802,7 @@ declare namespace Gio {
      * @param from_charset source charset
      * @returns a new #GCharsetConverter or %NULL on error.
      */
-    constructor(to_charset: string, from_charset: string);
+    constructor(to_charset: string | null, from_charset: string | null);
     /**
      * Creates a new #GCharsetConverter.
      * @constructor
@@ -22645,11 +22810,14 @@ declare namespace Gio {
      * @param from_charset source charset
      * @returns a new #GCharsetConverter or %NULL on error.
      */
-    static new(to_charset: string, from_charset: string): CharsetConverter;
+    static new(
+      to_charset: string | null,
+      from_charset: string | null
+    ): CharsetConverter;
     _init(config?: CharsetConverter.ConstructorProperties): void;
   }
 
-  namespace ConverterInputStream {
+  module ConverterInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -22679,7 +22847,7 @@ declare namespace Gio {
      * Gets the #GConverter that is used by `converter_stream`.
      * @returns the converter of the converter input stream
      */
-    get_converter(): Converter;
+    get_converter(): Converter | null;
 
     // Class property signals of Gio-2.0.Gio.ConverterInputStream
 
@@ -22731,7 +22899,7 @@ declare namespace Gio {
      * @param converter a #GConverter
      * @returns a new #GInputStream.
      */
-    constructor(base_stream: InputStream, converter: Converter);
+    constructor(base_stream: InputStream | null, converter: Converter | null);
     /**
      * Creates a new converter input stream for the `base_stream`.
      * @constructor
@@ -22740,13 +22908,13 @@ declare namespace Gio {
      * @returns a new #GInputStream.
      */
     static new(
-      base_stream: InputStream,
-      converter: Converter
+      base_stream: InputStream | null,
+      converter: Converter | null
     ): ConverterInputStream;
     _init(config?: ConverterInputStream.ConstructorProperties): void;
   }
 
-  namespace ConverterOutputStream {
+  module ConverterOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -22776,7 +22944,7 @@ declare namespace Gio {
      * Gets the #GConverter that is used by `converter_stream`.
      * @returns the converter of the converter output stream
      */
-    get_converter(): Converter;
+    get_converter(): Converter | null;
 
     // Class property signals of Gio-2.0.Gio.ConverterOutputStream
 
@@ -22828,7 +22996,7 @@ declare namespace Gio {
      * @param converter a #GConverter
      * @returns a new #GOutputStream.
      */
-    constructor(base_stream: OutputStream, converter: Converter);
+    constructor(base_stream: OutputStream | null, converter: Converter | null);
     /**
      * Creates a new converter output stream for the `base_stream`.
      * @constructor
@@ -22837,16 +23005,16 @@ declare namespace Gio {
      * @returns a new #GOutputStream.
      */
     static new(
-      base_stream: OutputStream,
-      converter: Converter
+      base_stream: OutputStream | null,
+      converter: Converter | null
     ): ConverterOutputStream;
     _init(config?: ConverterOutputStream.ConstructorProperties): void;
   }
 
-  namespace Credentials {
+  module Credentials {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Credentials {
@@ -22880,7 +23048,7 @@ declare namespace Gio {
      * @param other_credentials A #GCredentials.
      * @returns %TRUE if @credentials and @other_credentials has the same user, %FALSE otherwise or if @error is set.
      */
-    is_same_user(other_credentials: Credentials): boolean;
+    is_same_user(other_credentials: Credentials | null): boolean;
     /**
      * Copies the native credentials of type `native_type` from `native`
      * into `credentials`.
@@ -22891,7 +23059,7 @@ declare namespace Gio {
      * @param native_type The type of native credentials to set.
      * @param native A pointer to native credentials.
      */
-    set_native(native_type: CredentialsType, native: object): void;
+    set_native(native_type: CredentialsType, native: any): void;
     /**
      * Tries to set the UNIX user identifier on `credentials`. This method
      * is only available on UNIX platforms.
@@ -22910,7 +23078,7 @@ declare namespace Gio {
      * returned string may change in future GLib release.
      * @returns A string that should be freed with g_free().
      */
-    to_string(): string;
+    to_string(): string | null;
 
     // Class property signals of Gio-2.0.Gio.Credentials
 
@@ -22986,7 +23154,7 @@ declare namespace Gio {
     _init(config?: Credentials.ConstructorProperties): void;
   }
 
-  namespace DBusActionGroup {
+  module DBusActionGroup {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -23040,20 +23208,20 @@ declare namespace Gio {
      * @returns a #GDBusActionGroup
      */
     static get(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       bus_name: string | null,
-      object_path: string
-    ): DBusActionGroup;
+      object_path: string | null
+    ): DBusActionGroup | null;
   }
 
-  namespace DBusAuthObserver {
+  module DBusAuthObserver {
     // Signal callback interfaces
 
     /**
      * Signal callback interface for `allow-mechanism`
      */
     interface AllowMechanismSignalCallback {
-      ($obj: DBusAuthObserver, mechanism: string): boolean;
+      ($obj: DBusAuthObserver, mechanism: string | null): boolean;
     }
 
     /**
@@ -23069,7 +23237,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DBusAuthObserver {
@@ -23080,7 +23248,7 @@ declare namespace Gio {
      * @param mechanism The name of the mechanism, e.g. `DBUS_COOKIE_SHA1`.
      * @returns %TRUE if @mechanism can be used to authenticate the other peer, %FALSE if not.
      */
-    allow_mechanism(mechanism: string): boolean;
+    allow_mechanism(mechanism: string | null): boolean;
     /**
      * Emits the #GDBusAuthObserver::authorize-authenticated-peer signal on `observer`.
      * @param stream A #GIOStream for the #GDBusConnection.
@@ -23088,7 +23256,7 @@ declare namespace Gio {
      * @returns %TRUE if the peer is authorized, %FALSE if not.
      */
     authorize_authenticated_peer(
-      stream: IOStream,
+      stream: IOStream | null,
       credentials: Credentials | null
     ): boolean;
 
@@ -23102,7 +23270,11 @@ declare namespace Gio {
       sigName: "allow-mechanism",
       callback: DBusAuthObserver.AllowMechanismSignalCallback
     ): number;
-    emit(sigName: "allow-mechanism", mechanism: string, ...args: any[]): void;
+    emit(
+      sigName: "allow-mechanism",
+      mechanism: string | null,
+      ...args: any[]
+    ): void;
     connect(
       sigName: "authorize-authenticated-peer",
       callback: DBusAuthObserver.AuthorizeAuthenticatedPeerSignalCallback
@@ -23219,7 +23391,7 @@ declare namespace Gio {
     _init(config?: DBusAuthObserver.ConstructorProperties): void;
   }
 
-  namespace DBusConnection {
+  module DBusConnection {
     // Signal callback interfaces
 
     /**
@@ -23309,7 +23481,7 @@ declare namespace Gio {
      * A D-Bus address specifying potential endpoints that can be used
      * when establishing the connection.
      */
-    readonly address: string;
+    readonly address: string | null;
     /**
      * A #GDBusAuthObserver object to assist in the authentication process or %NULL.
      */
@@ -23360,7 +23532,7 @@ declare namespace Gio {
      * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122) or the Microsoft
      * GUID format.
      */
-    readonly guid: string;
+    readonly guid: string | null;
     /**
      * The underlying #GIOStream used for I/O.
      *
@@ -23376,7 +23548,7 @@ declare namespace Gio {
      * The unique name as assigned by the message bus or %NULL if the
      * connection is not open or not a message bus connection.
      */
-    readonly unique_name: string;
+    readonly unique_name: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusConnection
 
@@ -23473,9 +23645,9 @@ declare namespace Gio {
      */
     call(
       bus_name: string | null,
-      object_path: string,
-      interface_name: string,
-      method_name: string,
+      object_path: string | null,
+      interface_name: string | null,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       reply_type: GLib.VariantType | null,
       flags: DBusCallFlags,
@@ -23488,7 +23660,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback passed to g_dbus_connection_call()
      * @returns %NULL if @error is set. Otherwise a non-floating     #GVariant tuple with return values. Free with g_variant_unref().
      */
-    call_finish(res: AsyncResult): GLib.Variant;
+    call_finish(res: AsyncResult | null): GLib.Variant | null;
     /**
      * Synchronously invokes the `method_name` method on the
      * `interface_name` D-Bus interface on the remote object at
@@ -23541,15 +23713,15 @@ declare namespace Gio {
      */
     call_sync(
       bus_name: string | null,
-      object_path: string,
-      interface_name: string,
-      method_name: string,
+      object_path: string | null,
+      interface_name: string | null,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       reply_type: GLib.VariantType | null,
       flags: DBusCallFlags,
       timeout_msec: number,
       cancellable: Cancellable | null
-    ): GLib.Variant;
+    ): GLib.Variant | null;
     /**
      * Like g_dbus_connection_call() but also takes a #GUnixFDList object.
      *
@@ -23580,9 +23752,9 @@ declare namespace Gio {
      */
     call_with_unix_fd_list(
       bus_name: string | null,
-      object_path: string,
-      interface_name: string,
-      method_name: string,
+      object_path: string | null,
+      interface_name: string | null,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       reply_type: GLib.VariantType | null,
       flags: DBusCallFlags,
@@ -23608,8 +23780,11 @@ declare namespace Gio {
      * @returns %NULL if @error is set. Otherwise a non-floating     #GVariant tuple with return values. Free with g_variant_unref().
      */
     call_with_unix_fd_list_finish(
-      res: AsyncResult
-    ): [/* returnType */ GLib.Variant, /* out_fd_list */ UnixFDList];
+      res: AsyncResult | null
+    ): [
+      /* returnType */ GLib.Variant | null,
+      /* out_fd_list */ UnixFDList | null
+    ];
     /**
      * Like g_dbus_connection_call_sync() but also takes and returns #GUnixFDList objects.
      * See g_dbus_connection_call_with_unix_fd_list() and
@@ -23630,16 +23805,19 @@ declare namespace Gio {
      */
     call_with_unix_fd_list_sync(
       bus_name: string | null,
-      object_path: string,
-      interface_name: string,
-      method_name: string,
+      object_path: string | null,
+      interface_name: string | null,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       reply_type: GLib.VariantType | null,
       flags: DBusCallFlags,
       timeout_msec: number,
       fd_list: UnixFDList | null,
       cancellable: Cancellable | null
-    ): [/* returnType */ GLib.Variant, /* out_fd_list */ UnixFDList];
+    ): [
+      /* returnType */ GLib.Variant | null,
+      /* out_fd_list */ UnixFDList | null
+    ];
     /**
      * Closes `connection`. Note that this never causes the process to
      * exit (this might only happen if the other end of a shared message
@@ -23677,7 +23855,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback passed     to g_dbus_connection_close()
      * @returns %TRUE if the operation succeeded, %FALSE if @error is set
      */
-    close_finish(res: AsyncResult): boolean;
+    close_finish(res: AsyncResult | null): boolean;
     /**
      * Synchronously closes `connection`. The calling thread is blocked
      * until this is done. See g_dbus_connection_close() for the
@@ -23704,9 +23882,9 @@ declare namespace Gio {
      */
     emit_signal(
       destination_bus_name: string | null,
-      object_path: string,
-      interface_name: string,
-      signal_name: string,
+      object_path: string | null,
+      interface_name: string | null,
+      signal_name: string | null,
       parameters: GLib.Variant | null
     ): boolean;
     /**
@@ -23735,7 +23913,10 @@ declare namespace Gio {
      * @param action_group a #GActionGroup
      * @returns the ID of the export (never zero), or 0 in case of failure
      */
-    export_action_group(object_path: string, action_group: ActionGroup): number;
+    export_action_group(
+      object_path: string | null,
+      action_group: ActionGroup | null
+    ): number;
     /**
      * Exports `menu` on `connection` at `object_path`.
      *
@@ -23753,7 +23934,10 @@ declare namespace Gio {
      * @param menu a #GMenuModel
      * @returns the ID of the export (never zero), or 0 in case of failure
      */
-    export_menu_model(object_path: string, menu: MenuModel): number;
+    export_menu_model(
+      object_path: string | null,
+      menu: MenuModel | null
+    ): number;
     /**
      * Asynchronously flushes `connection,` that is, writes all queued
      * outgoing message to the transport and then flushes the transport
@@ -23781,7 +23965,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback passed     to g_dbus_connection_flush()
      * @returns %TRUE if the operation succeeded, %FALSE if @error is set
      */
-    flush_finish(res: AsyncResult): boolean;
+    flush_finish(res: AsyncResult | null): boolean;
     /**
      * Synchronously flushes `connection`. The calling thread is blocked
      * until this is done. See g_dbus_connection_flush() for the
@@ -23813,7 +23997,7 @@ declare namespace Gio {
      * authenticating. See #GDBusConnection:guid for more details.
      * @returns The GUID. Do not free this string, it is owned by     @connection.
      */
-    get_guid(): string;
+    get_guid(): string | null;
     /**
      * Retrieves the last serial number assigned to a #GDBusMessage on
      * the current thread. This includes messages sent via both low-level
@@ -23844,7 +24028,7 @@ declare namespace Gio {
      * the stream directly.
      * @returns the stream used for IO
      */
-    get_stream(): IOStream;
+    get_stream(): IOStream | null;
     /**
      * Gets the unique name of `connection` as assigned by the message
      * bus. This can also be used to figure out if `connection` is a
@@ -23868,8 +24052,8 @@ declare namespace Gio {
      * @returns 0 if @error is set, otherwise a registration ID (never 0) that can be used with g_dbus_connection_unregister_object() .
      */
     register_object(
-      object_path: string,
-      interface_info: DBusInterfaceInfo,
+      object_path: string | null,
+      interface_info: DBusInterfaceInfo | null,
       method_call_closure: GObject.TClosure | null,
       get_property_closure: GObject.TClosure | null,
       set_property_closure: GObject.TClosure | null
@@ -23917,10 +24101,10 @@ declare namespace Gio {
      * @returns 0 if @error is set, otherwise a subtree registration ID (never 0) that can be used with g_dbus_connection_unregister_subtree()
      */
     register_subtree(
-      object_path: string,
-      vtable: DBusSubtreeVTable,
+      object_path: string | null,
+      vtable: DBusSubtreeVTable | null,
       flags: DBusSubtreeFlags,
-      user_data: object | null,
+      user_data: any | null,
       user_data_free_func: GLib.DestroyNotify
     ): number;
     /**
@@ -23962,9 +24146,9 @@ declare namespace Gio {
      * @returns %TRUE if the message was well-formed and queued for     transmission, %FALSE if @error is set
      */
     send_message(
-      message: DBusMessage,
+      message: DBusMessage | null,
       flags: DBusSendMessageFlags
-    ): [/* returnType */ boolean, /* out_serial */ number];
+    ): [/* returnType */ boolean, /* out_serial */ number | null];
     /**
      * Asynchronously sends `message` to the peer represented by `connection`.
      *
@@ -24002,12 +24186,12 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request     is satisfied or %NULL if you don't care about the result
      */
     send_message_with_reply(
-      message: DBusMessage,
+      message: DBusMessage | null,
       flags: DBusSendMessageFlags,
       timeout_msec: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
-    ): /* out_serial */ number;
+    ): /* out_serial */ number | null;
     /**
      * Finishes an operation started with g_dbus_connection_send_message_with_reply().
      *
@@ -24022,7 +24206,7 @@ declare namespace Gio {
      * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback passed to     g_dbus_connection_send_message_with_reply()
      * @returns a locked #GDBusMessage or %NULL if @error is set
      */
-    send_message_with_reply_finish(res: AsyncResult): DBusMessage;
+    send_message_with_reply_finish(res: AsyncResult | null): DBusMessage | null;
     /**
      * Synchronously sends `message` to the peer represented by `connection`
      * and blocks the calling thread until a reply is received or the
@@ -24061,11 +24245,11 @@ declare namespace Gio {
      * @returns a locked #GDBusMessage that is the reply     to @message or %NULL if @error is set
      */
     send_message_with_reply_sync(
-      message: DBusMessage,
+      message: DBusMessage | null,
       flags: DBusSendMessageFlags,
       timeout_msec: number,
       cancellable: Cancellable | null
-    ): [/* returnType */ DBusMessage, /* out_serial */ number];
+    ): [/* returnType */ DBusMessage | null, /* out_serial */ number | null];
     /**
      * Sets whether the process should be terminated when `connection` is
      * closed by the remote peer. See #GDBusConnection:exit-on-close for
@@ -24391,14 +24575,14 @@ declare namespace Gio {
      * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback     passed to g_dbus_connection_new().
      * @returns a #GDBusConnection or %NULL if @error is set. Free     with g_object_unref().
      */
-    static new_finish(res: AsyncResult): DBusConnection;
+    static new_finish(res: AsyncResult | null): DBusConnection;
     /**
      * Finishes an operation started with g_dbus_connection_new_for_address().
      * @constructor
      * @param res a #GAsyncResult obtained from the #GAsyncReadyCallback passed     to g_dbus_connection_new()
      * @returns a #GDBusConnection or %NULL if @error is set.     Free with g_object_unref().
      */
-    static new_for_address_finish(res: AsyncResult): DBusConnection;
+    static new_for_address_finish(res: AsyncResult | null): DBusConnection;
     /**
      * Synchronously connects and sets up a D-Bus client connection for
      * exchanging D-Bus messages with an endpoint specified by `address`
@@ -24425,7 +24609,7 @@ declare namespace Gio {
      * @returns a #GDBusConnection or %NULL if @error is set.     Free with g_object_unref().
      */
     static new_for_address_sync(
-      address: string,
+      address: string | null,
       flags: DBusConnectionFlags,
       observer: DBusAuthObserver | null,
       cancellable: Cancellable | null
@@ -24455,7 +24639,7 @@ declare namespace Gio {
      * @returns a #GDBusConnection or %NULL if @error is set.     Free with g_object_unref().
      */
     static new_sync(
-      stream: IOStream,
+      stream: IOStream | null,
       guid: string | null,
       flags: DBusConnectionFlags,
       observer: DBusAuthObserver | null,
@@ -24491,7 +24675,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request is satisfied
      */
     static new(
-      stream: IOStream,
+      stream: IOStream | null,
       guid: string | null,
       flags: DBusConnectionFlags,
       observer: DBusAuthObserver | null,
@@ -24528,7 +24712,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback to call when the request is satisfied
      */
     static new_for_address(
-      address: string,
+      address: string | null,
       flags: DBusConnectionFlags,
       observer: DBusAuthObserver | null,
       cancellable: Cancellable | null,
@@ -24536,7 +24720,7 @@ declare namespace Gio {
     ): void;
   }
 
-  namespace DBusInterfaceSkeleton {
+  module DBusInterfaceSkeleton {
     // Signal callback interfaces
 
     /**
@@ -24582,7 +24766,10 @@ declare namespace Gio {
      * @param object_path The path to export the interface at.
      * @returns %TRUE if the interface was exported on @connection, otherwise %FALSE with @error set.
      */
-    export(connection: DBusConnection, object_path: string): boolean;
+    export(
+      connection: DBusConnection | null,
+      object_path: string | null
+    ): boolean;
     /**
      * If `interface_` has outstanding changes, request for these changes to be
      * emitted immediately.
@@ -24603,7 +24790,7 @@ declare namespace Gio {
      * Gets a list of the connections that `interface_` is exported on.
      * @returns A list of   all the connections that @interface_ is exported on. The returned   list should be freed with g_list_free() after each element has   been freed with g_object_unref().
      */
-    get_connections(): DBusConnection[];
+    get_connections(): DBusConnection[] | null;
     /**
      * Gets the #GDBusInterfaceSkeletonFlags that describes what the behavior
      * of `interface_`
@@ -24615,7 +24802,7 @@ declare namespace Gio {
      * implemented by `interface_`.
      * @returns A #GDBusInterfaceInfo (never %NULL). Do not free.
      */
-    get_info(): DBusInterfaceInfo;
+    get_info(): DBusInterfaceInfo | null;
     /**
      * Gets the object path that `interface_` is exported on, if any.
      * @returns A string owned by @interface_ or %NULL if @interface_ is not exported anywhere. Do not free, the string belongs to @interface_.
@@ -24625,13 +24812,13 @@ declare namespace Gio {
      * Gets all D-Bus properties for `interface_`.
      * @returns A #GVariant of type ['a{sv}'][G-VARIANT-TYPE-VARDICT:CAPS]. Free with g_variant_unref().
      */
-    get_properties(): GLib.Variant;
+    get_properties(): GLib.Variant | null;
     /**
      * Checks if `interface_` is exported on `connection`.
      * @param connection A #GDBusConnection.
      * @returns %TRUE if @interface_ is exported on @connection, %FALSE otherwise.
      */
-    has_connection(connection: DBusConnection): boolean;
+    has_connection(connection: DBusConnection | null): boolean;
     /**
      * Sets flags describing what the behavior of `skeleton` should be.
      * @param flags Flags from the #GDBusInterfaceSkeletonFlags enumeration.
@@ -24651,7 +24838,7 @@ declare namespace Gio {
      * use g_dbus_interface_skeleton_unexport().
      * @param connection A #GDBusConnection.
      */
-    unexport_from_connection(connection: DBusConnection): void;
+    unexport_from_connection(connection: DBusConnection | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton
 
@@ -24667,20 +24854,20 @@ declare namespace Gio {
      * @virtual
      */
     vfunc_flush(): void;
-    vfunc_g_authorize_method(invocation: DBusMethodInvocation): boolean;
+    vfunc_g_authorize_method(invocation: DBusMethodInvocation | null): boolean;
     /**
      * Gets D-Bus introspection information for the D-Bus interface
      * implemented by `interface_`.
      * @virtual
      * @returns A #GDBusInterfaceInfo (never %NULL). Do not free.
      */
-    vfunc_get_info(): DBusInterfaceInfo;
+    vfunc_get_info(): DBusInterfaceInfo | null;
     /**
      * Gets all D-Bus properties for `interface_`.
      * @virtual
      * @returns A #GVariant of type ['a{sv}'][G-VARIANT-TYPE-VARDICT:CAPS]. Free with g_variant_unref().
      */
-    vfunc_get_properties(): GLib.Variant;
+    vfunc_get_properties(): GLib.Variant | null;
 
     // Own signals of Gio-2.0.Gio.DBusInterfaceSkeleton
 
@@ -24731,10 +24918,10 @@ declare namespace Gio {
     _init(config?: DBusInterfaceSkeleton.ConstructorProperties): void;
   }
 
-  namespace DBusMenuModel {
+  module DBusMenuModel {
     // Constructor properties interface
 
-    type ConstructorProperties = MenuModel.ConstructorProperties;
+    type ConstructorProperties = MenuModel.ConstructorProperties
   }
 
   interface DBusMenuModel {
@@ -24777,16 +24964,16 @@ declare namespace Gio {
      * @returns a #GDBusMenuModel object. Free with     g_object_unref().
      */
     static get(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       bus_name: string | null,
-      object_path: string
-    ): DBusMenuModel;
+      object_path: string | null
+    ): DBusMenuModel | null;
   }
 
-  namespace DBusMessage {
+  module DBusMessage {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DBusMessage {
@@ -24805,7 +24992,7 @@ declare namespace Gio {
      * and the per-process or system-wide open files limit is reached.
      * @returns A new #GDBusMessage or %NULL if @error is set.     Free with g_object_unref().
      */
-    copy(): DBusMessage;
+    copy(): DBusMessage | null;
     /**
      * Convenience to get the first item in the body of `message`.
      * @returns The string item or %NULL if the first item in the body of @message is not a string.
@@ -24903,7 +25090,7 @@ declare namespace Gio {
      * This will always be non-%NULL, but may be an empty string.
      * @returns The value.
      */
-    get_signature(): string;
+    get_signature(): string | null;
     /**
      * Gets the UNIX file descriptors associated with `message,` if any.
      *
@@ -24928,14 +25115,14 @@ declare namespace Gio {
      * @returns A #GDBusMessage. Free with g_object_unref().
      */
     new_method_error_literal(
-      error_name: string,
-      error_message: string
-    ): DBusMessage;
+      error_name: string | null,
+      error_message: string | null
+    ): DBusMessage | null;
     /**
      * Creates a new #GDBusMessage that is a reply to `method_call_message`.
      * @returns #GDBusMessage. Free with g_object_unref().
      */
-    new_method_reply(): DBusMessage;
+    new_method_reply(): DBusMessage | null;
     /**
      * Produces a human-readable multi-line description of `message`.
      *
@@ -24974,7 +25161,7 @@ declare namespace Gio {
      * @param indent Indentation level.
      * @returns A string that should be freed with g_free().
      */
-    print(indent: number): string;
+    print(indent: number): string | null;
     /**
      * Sets the body `message`. As a side-effect the
      * %G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE header field is set to the
@@ -24983,7 +25170,7 @@ declare namespace Gio {
      * If `body` is floating, `message` assumes ownership of `body`.
      * @param body Either %NULL or a #GVariant that is a tuple.
      */
-    set_body(body: GLib.Variant): void;
+    set_body(body: GLib.Variant | null): void;
     /**
      * Sets the byte order of `message`.
      * @param byte_order The byte order.
@@ -24998,7 +25185,7 @@ declare namespace Gio {
      * Convenience setter for the %G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME header field.
      * @param value The value to set.
      */
-    set_error_name(value: string): void;
+    set_error_name(value: string | null): void;
     /**
      * Sets the flags to set on `message`.
      * @param flags Flags for `message` that are set (typically values from the #GDBusMessageFlags enumeration bitwise ORed together).
@@ -25164,9 +25351,9 @@ declare namespace Gio {
      */
     static new_method_call(
       name: string | null,
-      path: string,
+      path: string | null,
       interface_: string | null,
-      method: string
+      method: string | null
     ): DBusMessage;
     /**
      * Creates a new #GDBusMessage for a signal emission.
@@ -25177,9 +25364,9 @@ declare namespace Gio {
      * @returns A #GDBusMessage. Free with g_object_unref().
      */
     static new_signal(
-      path: string,
-      interface_: string,
-      signal: string
+      path: string | null,
+      interface_: string | null,
+      signal: string | null
     ): DBusMessage;
     _init(config?: DBusMessage.ConstructorProperties): void;
     /**
@@ -25191,10 +25378,10 @@ declare namespace Gio {
     static bytes_needed(blob: Uint8Array): number;
   }
 
-  namespace DBusMethodInvocation {
+  module DBusMethodInvocation {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface DBusMethodInvocation {
@@ -25204,7 +25391,7 @@ declare namespace Gio {
      * Gets the #GDBusConnection the method was invoked on.
      * @returns A #GDBusConnection. Do not free, it is owned by @invocation.
      */
-    get_connection(): DBusConnection;
+    get_connection(): DBusConnection | null;
     /**
      * Gets the name of the D-Bus interface the method was invoked on.
      *
@@ -25214,7 +25401,7 @@ declare namespace Gio {
      * #GDBusInterfaceVTable for more information.
      * @returns A string. Do not free, it is owned by @invocation.
      */
-    get_interface_name(): string;
+    get_interface_name(): string | null;
     /**
      * Gets the #GDBusMessage for the method invocation. This is useful if
      * you need to use low-level protocol features, such as UNIX file
@@ -25226,7 +25413,7 @@ declare namespace Gio {
      * UNIX file descriptors.
      * @returns #GDBusMessage. Do not free, it is owned by @invocation.
      */
-    get_message(): DBusMessage;
+    get_message(): DBusMessage | null;
     /**
      * Gets information about the method call, if any.
      *
@@ -25241,18 +25428,18 @@ declare namespace Gio {
      * Gets the name of the method that was invoked.
      * @returns A string. Do not free, it is owned by @invocation.
      */
-    get_method_name(): string;
+    get_method_name(): string | null;
     /**
      * Gets the object path the method was invoked on.
      * @returns A string. Do not free, it is owned by @invocation.
      */
-    get_object_path(): string;
+    get_object_path(): string | null;
     /**
      * Gets the parameters of the method invocation. If there are no input
      * parameters then this will return a GVariant with 0 children rather than NULL.
      * @returns A #GVariant tuple. Do not unref this because it is owned by @invocation.
      */
-    get_parameters(): GLib.Variant;
+    get_parameters(): GLib.Variant | null;
     /**
      * Gets information about the property that this method call is for, if
      * any.
@@ -25272,7 +25459,7 @@ declare namespace Gio {
      * Gets the bus name that invoked the method.
      * @returns A string. Do not free, it is owned by @invocation.
      */
-    get_sender(): string;
+    get_sender(): string | null;
     /**
      * Finishes handling a D-Bus method call by returning an error.
      *
@@ -25282,7 +25469,10 @@ declare namespace Gio {
      * @param error_name A valid D-Bus error name.
      * @param error_message A valid D-Bus error message.
      */
-    return_dbus_error(error_name: string, error_message: string): void;
+    return_dbus_error(
+      error_name: string | null,
+      error_message: string | null
+    ): void;
     /**
      * Like g_dbus_method_invocation_return_error() but without printf()-style formatting.
      *
@@ -25296,7 +25486,7 @@ declare namespace Gio {
     return_error_literal(
       domain: GLib.Quark,
       code: number,
-      message: string
+      message: string | null
     ): void;
     /**
      * Like g_dbus_method_invocation_return_error() but takes a #GError
@@ -25307,7 +25497,7 @@ declare namespace Gio {
      * `invocation`.
      * @param error A #GError.
      */
-    return_gerror(error: GLib.Error): void;
+    return_gerror(error: GLib.Error | null): void;
     /**
      * Finishes handling a D-Bus method call by returning `parameters`.
      * If the `parameters` GVariant is floating, it is consumed.
@@ -25392,7 +25582,7 @@ declare namespace Gio {
     _init(config?: DBusMethodInvocation.ConstructorProperties): void;
   }
 
-  namespace DBusObjectManagerClient {
+  module DBusObjectManagerClient {
     // Signal callback interfaces
 
     /**
@@ -25416,8 +25606,8 @@ declare namespace Gio {
         $obj: DBusObjectManagerClient,
         object_proxy: DBusObjectProxy,
         interface_proxy: DBusProxy,
-        sender_name: string,
-        signal_name: string,
+        sender_name: string | null,
+        signal_name: string | null,
         parameters: GLib.Variant
       ): void;
     }
@@ -25449,16 +25639,16 @@ declare namespace Gio {
       /**
        * A #GDestroyNotify for the #gpointer user_data in #GDBusObjectManagerClient:get-proxy-type-user-data.
        */
-      get_proxy_type_destroy_notify?: object | null;
+      get_proxy_type_destroy_notify?: any | null;
       /**
        * The #GDBusProxyTypeFunc to use when determining what #GType to
        * use for interface proxies or %NULL.
        */
-      get_proxy_type_func?: object | null;
+      get_proxy_type_func?: any | null;
       /**
        * The #gpointer user_data to pass to #GDBusObjectManagerClient:get-proxy-type-func.
        */
-      get_proxy_type_user_data?: object | null;
+      get_proxy_type_user_data?: any | null;
       /**
        * The well-known name or unique name that the manager is for.
        */
@@ -25494,30 +25684,30 @@ declare namespace Gio {
     /**
      * A #GDestroyNotify for the #gpointer user_data in #GDBusObjectManagerClient:get-proxy-type-user-data.
      */
-    readonly get_proxy_type_destroy_notify: object;
+    readonly get_proxy_type_destroy_notify: any;
     /**
      * The #GDBusProxyTypeFunc to use when determining what #GType to
      * use for interface proxies or %NULL.
      */
-    readonly get_proxy_type_func: object;
+    readonly get_proxy_type_func: any;
     /**
      * The #gpointer user_data to pass to #GDBusObjectManagerClient:get-proxy-type-func.
      */
-    readonly get_proxy_type_user_data: object;
+    readonly get_proxy_type_user_data: any;
     /**
      * The well-known name or unique name that the manager is for.
      */
-    readonly name: string;
+    readonly name: string | null;
     /**
      * The unique name that owns #GDBusObjectManagerClient:name or %NULL if
      * no-one is currently owning the name. Connect to the
      * #GObject::notify signal to track changes to this property.
      */
-    readonly name_owner: string;
+    readonly name_owner: string | null;
     /**
      * The object path the manager is for.
      */
-    readonly object_path: string;
+    readonly object_path: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusObjectManagerClient
 
@@ -25525,7 +25715,7 @@ declare namespace Gio {
      * Gets the #GDBusConnection used by `manager`.
      * @returns A #GDBusConnection object. Do not free,   the object belongs to @manager.
      */
-    get_connection(): DBusConnection;
+    get_connection(): DBusConnection | null;
     /**
      * Gets the flags that `manager` was constructed with.
      * @returns Zero of more flags from the #GDBusObjectManagerClientFlags enumeration.
@@ -25536,7 +25726,7 @@ declare namespace Gio {
      * connection.
      * @returns A unique or well-known name. Do not free, the string belongs to @manager.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * The unique name that owns the name that `manager` is for or %NULL if
      * no-one currently owns that name. You can connect to the
@@ -25549,17 +25739,17 @@ declare namespace Gio {
     // Own virtual methods of Gio-2.0.Gio.DBusObjectManagerClient
 
     vfunc_interface_proxy_properties_changed(
-      object_proxy: DBusObjectProxy,
-      interface_proxy: DBusProxy,
-      changed_properties: GLib.Variant,
-      invalidated_properties: string
+      object_proxy: DBusObjectProxy | null,
+      interface_proxy: DBusProxy | null,
+      changed_properties: GLib.Variant | null,
+      invalidated_properties: string | null
     ): void;
     vfunc_interface_proxy_signal(
-      object_proxy: DBusObjectProxy,
-      interface_proxy: DBusProxy,
-      sender_name: string,
-      signal_name: string,
-      parameters: GLib.Variant
+      object_proxy: DBusObjectProxy | null,
+      interface_proxy: DBusProxy | null,
+      sender_name: string | null,
+      signal_name: string | null,
+      parameters: GLib.Variant | null
     ): void;
 
     // Own signals of Gio-2.0.Gio.DBusObjectManagerClient
@@ -25592,8 +25782,8 @@ declare namespace Gio {
       sigName: "interface-proxy-signal",
       object_proxy: DBusObjectProxy,
       interface_proxy: DBusProxy,
-      sender_name: string,
-      signal_name: string,
+      sender_name: string | null,
+      signal_name: string | null,
       parameters: GLib.Variant,
       ...args: any[]
     ): void;
@@ -25837,14 +26027,14 @@ declare namespace Gio {
      * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to g_dbus_object_manager_client_new().
      * @returns A   #GDBusObjectManagerClient object or %NULL if @error is set. Free   with g_object_unref().
      */
-    static new_finish(res: AsyncResult): DBusObjectManagerClient;
+    static new_finish(res: AsyncResult | null): DBusObjectManagerClient;
     /**
      * Finishes an operation started with g_dbus_object_manager_client_new_for_bus().
      * @constructor
      * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to g_dbus_object_manager_client_new_for_bus().
      * @returns A   #GDBusObjectManagerClient object or %NULL if @error is set. Free   with g_object_unref().
      */
-    static new_for_bus_finish(res: AsyncResult): DBusObjectManagerClient;
+    static new_for_bus_finish(res: AsyncResult | null): DBusObjectManagerClient;
     /**
      * Like g_dbus_object_manager_client_new_sync() but takes a #GBusType instead
      * of a #GDBusConnection.
@@ -25864,8 +26054,8 @@ declare namespace Gio {
     static new_for_bus_sync(
       bus_type: BusType,
       flags: DBusObjectManagerClientFlags,
-      name: string,
-      object_path: string,
+      name: string | null,
+      object_path: string | null,
       get_proxy_type_func: DBusProxyTypeFunc | null,
       cancellable: Cancellable | null
     ): DBusObjectManagerClient;
@@ -25885,10 +26075,10 @@ declare namespace Gio {
      * @returns A   #GDBusObjectManagerClient object or %NULL if @error is set. Free   with g_object_unref().
      */
     static new_sync(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       flags: DBusObjectManagerClientFlags,
       name: string | null,
-      object_path: string,
+      object_path: string | null,
       get_proxy_type_func: DBusProxyTypeFunc | null,
       cancellable: Cancellable | null
     ): DBusObjectManagerClient;
@@ -25911,10 +26101,10 @@ declare namespace Gio {
      * @param callback A #GAsyncReadyCallback to call when the request is satisfied.
      */
     static new(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       flags: DBusObjectManagerClientFlags,
-      name: string,
-      object_path: string,
+      name: string | null,
+      object_path: string | null,
       get_proxy_type_func: DBusProxyTypeFunc | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<DBusObjectManagerClient> | null
@@ -25940,15 +26130,15 @@ declare namespace Gio {
     static new_for_bus(
       bus_type: BusType,
       flags: DBusObjectManagerClientFlags,
-      name: string,
-      object_path: string,
+      name: string | null,
+      object_path: string | null,
       get_proxy_type_func: DBusProxyTypeFunc | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<DBusObjectManagerClient> | null
     ): void;
   }
 
-  namespace DBusObjectManagerServer {
+  module DBusObjectManagerServer {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -25977,7 +26167,7 @@ declare namespace Gio {
     /**
      * The object path to register the manager object at.
      */
-    readonly object_path: string;
+    readonly object_path: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusObjectManagerServer
 
@@ -25994,7 +26184,7 @@ declare namespace Gio {
      * it is exported.
      * @param object A #GDBusObjectSkeleton.
      */
-    export(object: DBusObjectSkeleton): void;
+    export(object: DBusObjectSkeleton | null): void;
     /**
      * Like g_dbus_object_manager_server_export() but appends a string of
      * the form _N (with N being a natural number) to `object'`s object path
@@ -26002,7 +26192,7 @@ declare namespace Gio {
      * #GDBusObjectProxy:g-object-path property of `object` may be modified.
      * @param object An object.
      */
-    export_uniquely(object: DBusObjectSkeleton): void;
+    export_uniquely(object: DBusObjectSkeleton | null): void;
     /**
      * Gets the #GDBusConnection used by `manager`.
      * @returns A #GDBusConnection object or %NULL if   @manager isn't exported on a connection. The returned object should   be freed with g_object_unref().
@@ -26013,7 +26203,7 @@ declare namespace Gio {
      * @param object An object.
      * @returns %TRUE if @object is exported
      */
-    is_exported(object: DBusObjectSkeleton): boolean;
+    is_exported(object: DBusObjectSkeleton | null): boolean;
     /**
      * Exports all objects managed by `manager` on `connection`. If
      * `connection` is %NULL, stops exporting objects.
@@ -26029,7 +26219,7 @@ declare namespace Gio {
      * @param object_path An object path.
      * @returns %TRUE if object at @object_path was removed, %FALSE otherwise.
      */
-    unexport(object_path: string): boolean;
+    unexport(object_path: string | null): boolean;
 
     // Class property signals of Gio-2.0.Gio.DBusObjectManagerServer
 
@@ -26115,7 +26305,7 @@ declare namespace Gio {
      * @param object_path The object path to export the manager object at.
      * @returns A #GDBusObjectManagerServer object. Free with g_object_unref().
      */
-    constructor(object_path: string);
+    constructor(object_path: string | null);
     /**
      * Creates a new #GDBusObjectManagerServer object.
      *
@@ -26128,11 +26318,11 @@ declare namespace Gio {
      * @param object_path The object path to export the manager object at.
      * @returns A #GDBusObjectManagerServer object. Free with g_object_unref().
      */
-    static new(object_path: string): DBusObjectManagerServer;
+    static new(object_path: string | null): DBusObjectManagerServer;
     _init(config?: DBusObjectManagerServer.ConstructorProperties): void;
   }
 
-  namespace DBusObjectProxy {
+  module DBusObjectProxy {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -26161,7 +26351,7 @@ declare namespace Gio {
     /**
      * The object path of the proxy.
      */
-    readonly g_object_path: string;
+    readonly g_object_path: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusObjectProxy
 
@@ -26169,7 +26359,7 @@ declare namespace Gio {
      * Gets the connection that `proxy` is for.
      * @returns A #GDBusConnection. Do not free, the   object is owned by @proxy.
      */
-    get_connection(): DBusConnection;
+    get_connection(): DBusConnection | null;
 
     // Class property signals of Gio-2.0.Gio.DBusObjectProxy
 
@@ -26221,7 +26411,7 @@ declare namespace Gio {
      * @param object_path the object path
      * @returns a new #GDBusObjectProxy
      */
-    constructor(connection: DBusConnection, object_path: string);
+    constructor(connection: DBusConnection | null, object_path: string | null);
     /**
      * Creates a new #GDBusObjectProxy for the given connection and
      * object path.
@@ -26231,13 +26421,13 @@ declare namespace Gio {
      * @returns a new #GDBusObjectProxy
      */
     static new(
-      connection: DBusConnection,
-      object_path: string
+      connection: DBusConnection | null,
+      object_path: string | null
     ): DBusObjectProxy;
     _init(config?: DBusObjectProxy.ConstructorProperties): void;
   }
 
-  namespace DBusObjectSkeleton {
+  module DBusObjectSkeleton {
     // Signal callback interfaces
 
     /**
@@ -26271,7 +26461,7 @@ declare namespace Gio {
     /**
      * The object path where the object is exported.
      */
-    g_object_path: string;
+    g_object_path: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusObjectSkeleton
 
@@ -26285,7 +26475,7 @@ declare namespace Gio {
      * it until removed.
      * @param interface_ A #GDBusInterfaceSkeleton.
      */
-    add_interface(interface_: DBusInterfaceSkeleton): void;
+    add_interface(interface_: DBusInterfaceSkeleton | null): void;
     /**
      * This method simply calls g_dbus_interface_skeleton_flush() on all
      * interfaces belonging to `object`. See that method for when flushing
@@ -26296,7 +26486,7 @@ declare namespace Gio {
      * Removes `interface_` from `object`.
      * @param interface_ A #GDBusInterfaceSkeleton.
      */
-    remove_interface(interface_: DBusInterfaceSkeleton): void;
+    remove_interface(interface_: DBusInterfaceSkeleton | null): void;
     /**
      * Removes the #GDBusInterface with `interface_name` from `object`.
      *
@@ -26304,18 +26494,18 @@ declare namespace Gio {
      * does nothing.
      * @param interface_name A D-Bus interface name.
      */
-    remove_interface_by_name(interface_name: string): void;
+    remove_interface_by_name(interface_name: string | null): void;
     /**
      * Sets the object path for `object`.
      * @param object_path A valid D-Bus object path.
      */
-    set_object_path(object_path: string): void;
+    set_object_path(object_path: string | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.DBusObjectSkeleton
 
     vfunc_authorize_method(
-      interface_: DBusInterfaceSkeleton,
-      invocation: DBusMethodInvocation
+      interface_: DBusInterfaceSkeleton | null,
+      invocation: DBusMethodInvocation | null
     ): boolean;
 
     // Own signals of Gio-2.0.Gio.DBusObjectSkeleton
@@ -26375,18 +26565,18 @@ declare namespace Gio {
      * @param object_path An object path.
      * @returns A #GDBusObjectSkeleton. Free with g_object_unref().
      */
-    constructor(object_path: string);
+    constructor(object_path: string | null);
     /**
      * Creates a new #GDBusObjectSkeleton.
      * @constructor
      * @param object_path An object path.
      * @returns A #GDBusObjectSkeleton. Free with g_object_unref().
      */
-    static new(object_path: string): DBusObjectSkeleton;
+    static new(object_path: string | null): DBusObjectSkeleton;
     _init(config?: DBusObjectSkeleton.ConstructorProperties): void;
   }
 
-  namespace DBusProxy {
+  module DBusProxy {
     // Signal callback interfaces
 
     /**
@@ -26407,7 +26597,7 @@ declare namespace Gio {
       (
         $obj: DBusProxy,
         sender_name: string | null,
-        signal_name: string,
+        signal_name: string | null,
         parameters: GLib.Variant
       ): void;
     }
@@ -26548,21 +26738,21 @@ declare namespace Gio {
     /**
      * The D-Bus interface name the proxy is for.
      */
-    readonly g_interface_name: string;
+    readonly g_interface_name: string | null;
     /**
      * The well-known or unique name that the proxy is for.
      */
-    readonly g_name: string;
+    readonly g_name: string | null;
     /**
      * The unique name that owns #GDBusProxy:g-name or %NULL if no-one
      * currently owns that name. You may connect to #GObject::notify signal to
      * track changes to this property.
      */
-    readonly g_name_owner: string;
+    readonly g_name_owner: string | null;
     /**
      * The object path the proxy is for.
      */
-    readonly g_object_path: string;
+    readonly g_object_path: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusProxy
 
@@ -26619,7 +26809,7 @@ declare namespace Gio {
      * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL if you don't care about the result of the method invocation.
      */
     call(
-      method_name: string,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       flags: DBusCallFlags,
       timeout_msec: number,
@@ -26631,7 +26821,7 @@ declare namespace Gio {
      * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback passed to g_dbus_proxy_call().
      * @returns %NULL if @error is set. Otherwise a #GVariant tuple with return values. Free with g_variant_unref().
      */
-    call_finish(res: AsyncResult): GLib.Variant;
+    call_finish(res: AsyncResult | null): GLib.Variant | null;
     /**
      * Synchronously invokes the `method_name` method on `proxy`.
      *
@@ -26677,12 +26867,12 @@ declare namespace Gio {
      * @returns %NULL if @error is set. Otherwise a #GVariant tuple with return values. Free with g_variant_unref().
      */
     call_sync(
-      method_name: string,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       flags: DBusCallFlags,
       timeout_msec: number,
       cancellable: Cancellable | null
-    ): GLib.Variant;
+    ): GLib.Variant | null;
     /**
      * Like g_dbus_proxy_call() but also takes a #GUnixFDList object.
      *
@@ -26696,7 +26886,7 @@ declare namespace Gio {
      * @param callback A #GAsyncReadyCallback to call when the request is satisfied or %NULL if you don't care about the result of the method invocation.
      */
     call_with_unix_fd_list(
-      method_name: string,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       flags: DBusCallFlags,
       timeout_msec: number,
@@ -26710,8 +26900,11 @@ declare namespace Gio {
      * @returns %NULL if @error is set. Otherwise a #GVariant tuple with return values. Free with g_variant_unref().
      */
     call_with_unix_fd_list_finish(
-      res: AsyncResult
-    ): [/* returnType */ GLib.Variant, /* out_fd_list */ UnixFDList];
+      res: AsyncResult | null
+    ): [
+      /* returnType */ GLib.Variant | null,
+      /* out_fd_list */ UnixFDList | null
+    ];
     /**
      * Like g_dbus_proxy_call_sync() but also takes and returns #GUnixFDList objects.
      *
@@ -26725,13 +26918,16 @@ declare namespace Gio {
      * @returns %NULL if @error is set. Otherwise a #GVariant tuple with return values. Free with g_variant_unref().
      */
     call_with_unix_fd_list_sync(
-      method_name: string,
+      method_name: string | null,
       parameters: GLib.Variant | null,
       flags: DBusCallFlags,
       timeout_msec: number,
       fd_list: UnixFDList | null,
       cancellable: Cancellable | null
-    ): [/* returnType */ GLib.Variant, /* out_fd_list */ UnixFDList];
+    ): [
+      /* returnType */ GLib.Variant | null,
+      /* out_fd_list */ UnixFDList | null
+    ];
     /**
      * Looks up the value for a property from the cache. This call does no
      * blocking IO.
@@ -26742,7 +26938,7 @@ declare namespace Gio {
      * @param property_name Property name.
      * @returns A reference to the #GVariant instance    that holds the value for @property_name or %NULL if the value is not in    the cache. The returned reference must be freed with g_variant_unref().
      */
-    get_cached_property(property_name: string): GLib.Variant | null;
+    get_cached_property(property_name: string | null): GLib.Variant | null;
     /**
      * Gets the names of all cached properties on `proxy`.
      * @returns A          %NULL-terminated array of strings or %NULL if          @proxy has no cached properties. Free the returned array with          g_strfreev().
@@ -26752,7 +26948,7 @@ declare namespace Gio {
      * Gets the connection `proxy` is for.
      * @returns A #GDBusConnection owned by @proxy. Do not free.
      */
-    get_connection(): DBusConnection;
+    get_connection(): DBusConnection | null;
     /**
      * Gets the timeout to use if -1 (specifying default timeout) is
      * passed as `timeout_msec` in the g_dbus_proxy_call() and
@@ -26778,7 +26974,7 @@ declare namespace Gio {
      * Gets the D-Bus interface name `proxy` is for.
      * @returns A string owned by @proxy. Do not free.
      */
-    get_interface_name(): string;
+    get_interface_name(): string | null;
     /**
      * Gets the name that `proxy` was constructed for.
      *
@@ -26800,7 +26996,7 @@ declare namespace Gio {
      * Gets the object path `proxy` is for.
      * @returns A string owned by @proxy. Do not free.
      */
-    get_object_path(): string;
+    get_object_path(): string | null;
     /**
      * If `value` is not %NULL, sets the cached value for the property with
      * name `property_name` to the value in `value`.
@@ -26841,7 +27037,7 @@ declare namespace Gio {
      * @param value Value for the property or %NULL to remove it from the cache.
      */
     set_cached_property(
-      property_name: string,
+      property_name: string | null,
       value: GLib.Variant | null
     ): void;
     /**
@@ -26869,13 +27065,13 @@ declare namespace Gio {
     // Own virtual methods of Gio-2.0.Gio.DBusProxy
 
     vfunc_g_properties_changed(
-      changed_properties: GLib.Variant,
-      invalidated_properties: string
+      changed_properties: GLib.Variant | null,
+      invalidated_properties: string | null
     ): void;
     vfunc_g_signal(
-      sender_name: string,
-      signal_name: string,
-      parameters: GLib.Variant
+      sender_name: string | null,
+      signal_name: string | null,
+      parameters: GLib.Variant | null
     ): void;
 
     // Own signals of Gio-2.0.Gio.DBusProxy
@@ -26905,7 +27101,7 @@ declare namespace Gio {
     emit(
       sigName: "g-signal",
       sender_name: string | null,
-      signal_name: string,
+      signal_name: string | null,
       parameters: GLib.Variant,
       ...args: any[]
     ): void;
@@ -27061,14 +27257,14 @@ declare namespace Gio {
      * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback function passed to g_dbus_proxy_new().
      * @returns A #GDBusProxy or %NULL if @error is set.    Free with g_object_unref().
      */
-    static new_finish(res: AsyncResult): DBusProxy;
+    static new_finish(res: AsyncResult | null): DBusProxy;
     /**
      * Finishes creating a #GDBusProxy.
      * @constructor
      * @param res A #GAsyncResult obtained from the #GAsyncReadyCallback function passed to g_dbus_proxy_new_for_bus().
      * @returns A #GDBusProxy or %NULL if @error is set.    Free with g_object_unref().
      */
-    static new_for_bus_finish(res: AsyncResult): DBusProxy;
+    static new_for_bus_finish(res: AsyncResult | null): DBusProxy;
     /**
      * Like g_dbus_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
      *
@@ -27087,9 +27283,9 @@ declare namespace Gio {
       bus_type: BusType,
       flags: DBusProxyFlags,
       info: DBusInterfaceInfo | null,
-      name: string,
-      object_path: string,
-      interface_name: string,
+      name: string | null,
+      object_path: string | null,
+      interface_name: string | null,
       cancellable: Cancellable | null
     ): DBusProxy;
     /**
@@ -27126,12 +27322,12 @@ declare namespace Gio {
      * @returns A #GDBusProxy or %NULL if error is set.    Free with g_object_unref().
      */
     static new_sync(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       flags: DBusProxyFlags,
       info: DBusInterfaceInfo | null,
       name: string | null,
-      object_path: string,
-      interface_name: string,
+      object_path: string | null,
+      interface_name: string | null,
       cancellable: Cancellable | null
     ): DBusProxy;
     _init(config?: DBusProxy.ConstructorProperties): void;
@@ -27173,12 +27369,12 @@ declare namespace Gio {
      * @param callback Callback function to invoke when the proxy is ready.
      */
     static new(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       flags: DBusProxyFlags,
       info: DBusInterfaceInfo | null,
       name: string | null,
-      object_path: string,
-      interface_name: string,
+      object_path: string | null,
+      interface_name: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<DBusProxy> | null
     ): void;
@@ -27199,9 +27395,9 @@ declare namespace Gio {
       bus_type: BusType,
       flags: DBusProxyFlags,
       info: DBusInterfaceInfo | null,
-      name: string,
-      object_path: string,
-      interface_name: string,
+      name: string | null,
+      object_path: string | null,
+      interface_name: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<DBusProxy> | null
     ): void;
@@ -27220,7 +27416,7 @@ declare namespace Gio {
     ) => T & DBusProxy;
   }
 
-  namespace DBusServer {
+  module DBusServer {
     // Signal callback interfaces
 
     /**
@@ -27268,7 +27464,7 @@ declare namespace Gio {
     /**
      * The D-Bus address to listen on.
      */
-    readonly address: string;
+    readonly address: string | null;
     /**
      * A #GDBusAuthObserver object to assist in the authentication process or %NULL.
      */
@@ -27276,7 +27472,7 @@ declare namespace Gio {
     /**
      * The D-Bus address that clients can use.
      */
-    readonly client_address: string;
+    readonly client_address: string | null;
     /**
      * Flags from the #GDBusServerFlags enumeration.
      */
@@ -27286,7 +27482,7 @@ declare namespace Gio {
      *
      * See #GDBusConnection:guid for more details.
      */
-    readonly guid: string;
+    readonly guid: string | null;
 
     // Owm methods of Gio-2.0.Gio.DBusServer
 
@@ -27298,7 +27494,7 @@ declare namespace Gio {
      * This is valid and non-empty if initializing the #GDBusServer succeeded.
      * @returns A D-Bus address string. Do not free, the string is owned by @server.
      */
-    get_client_address(): string;
+    get_client_address(): string | null;
     /**
      * Gets the flags for `server`.
      * @returns A set of flags from the #GDBusServerFlags enumeration.
@@ -27308,7 +27504,7 @@ declare namespace Gio {
      * Gets the GUID for `server,` as provided to g_dbus_server_new_sync().
      * @returns A D-Bus GUID. Do not free this string, it is owned by @server.
      */
-    get_guid(): string;
+    get_guid(): string | null;
     /**
      * Gets whether `server` is active.
      * @returns %TRUE if server is active, %FALSE otherwise.
@@ -27461,16 +27657,16 @@ declare namespace Gio {
      * @returns A #GDBusServer or %NULL if @error is set. Free with g_object_unref().
      */
     static new_sync(
-      address: string,
+      address: string | null,
       flags: DBusServerFlags,
-      guid: string,
+      guid: string | null,
       observer: DBusAuthObserver | null,
       cancellable: Cancellable | null
     ): DBusServer;
     _init(config?: DBusServer.ConstructorProperties): void;
   }
 
-  namespace DataInputStream {
+  module DataInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -27581,7 +27777,7 @@ declare namespace Gio {
      */
     read_line(
       cancellable: Cancellable | null
-    ): [/* returnType */ Uint8Array | null, /* length */ number];
+    ): [/* returnType */ Uint8Array | null, /* length */ number | null];
     /**
      * The asynchronous version of g_data_input_stream_read_line().  It is
      * an error to have two outstanding calls to this function.
@@ -27607,8 +27803,8 @@ declare namespace Gio {
      * @returns   a NUL-terminated byte array with the line that was read in  (without the newlines).  Set @length to a #gsize to get the length  of the read line.  On an error, it will return %NULL and @error  will be set. If there's no content to read, it will still return  %NULL, but @error won't be set.
      */
     read_line_finish(
-      result: AsyncResult
-    ): [/* returnType */ Uint8Array | null, /* length */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ Uint8Array | null, /* length */ number | null];
     /**
      * Finish an asynchronous call started by
      * g_data_input_stream_read_line_async().
@@ -27616,8 +27812,8 @@ declare namespace Gio {
      * @returns a string with the line that  was read in (without the newlines).  Set @length to a #gsize to  get the length of the read line.  On an error, it will return  %NULL and @error will be set. For UTF-8 conversion errors, the set  error domain is %G_CONVERT_ERROR.  If there's no content to read,  it will still return %NULL, but @error won't be set.
      */
     read_line_finish_utf8(
-      result: AsyncResult
-    ): [/* returnType */ string | null, /* length */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ string | null, /* length */ number | null];
     /**
      * Reads a UTF-8 encoded line from the data input stream.
      *
@@ -27629,7 +27825,7 @@ declare namespace Gio {
      */
     read_line_utf8(
       cancellable: Cancellable | null
-    ): [/* returnType */ string | null, /* length */ number];
+    ): [/* returnType */ string | null, /* length */ number | null];
     /**
      * Reads an unsigned 16-bit/2-byte value from `stream`.
      *
@@ -27682,9 +27878,9 @@ declare namespace Gio {
      * @returns a string with the data that was read     before encountering any of the stop characters. Set @length to     a #gsize to get the length of the string. This function will     return %NULL on an error.
      */
     read_until(
-      stop_chars: string,
+      stop_chars: string | null,
       cancellable: Cancellable | null
-    ): [/* returnType */ string, /* length */ number];
+    ): [/* returnType */ string | null, /* length */ number | null];
     /**
      * The asynchronous version of g_data_input_stream_read_until().
      * It is an error to have two outstanding calls to this function.
@@ -27707,7 +27903,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied.
      */
     read_until_async(
-      stop_chars: string,
+      stop_chars: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -27719,8 +27915,8 @@ declare namespace Gio {
      * @returns a string with the data that was read     before encountering any of the stop characters. Set @length to     a #gsize to get the length of the string. This function will     return %NULL on an error.
      */
     read_until_finish(
-      result: AsyncResult
-    ): [/* returnType */ string, /* length */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ string | null, /* length */ number | null];
     /**
      * Reads a string from the data input stream, up to the first
      * occurrence of any of the stop characters.
@@ -27740,10 +27936,10 @@ declare namespace Gio {
      * @returns a string with the data that was read     before encountering any of the stop characters. Set @length to     a #gsize to get the length of the string. This function will     return %NULL on an error
      */
     read_upto(
-      stop_chars: string,
+      stop_chars: string | null,
       stop_chars_len: number,
       cancellable: Cancellable | null
-    ): [/* returnType */ string, /* length */ number];
+    ): [/* returnType */ string | null, /* length */ number | null];
     /**
      * The asynchronous version of g_data_input_stream_read_upto().
      * It is an error to have two outstanding calls to this function.
@@ -27766,7 +27962,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     read_upto_async(
-      stop_chars: string,
+      stop_chars: string | null,
       stop_chars_len: number,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -27785,8 +27981,8 @@ declare namespace Gio {
      * @returns a string with the data that was read     before encountering any of the stop characters. Set @length to     a #gsize to get the length of the string. This function will     return %NULL on an error.
      */
     read_upto_finish(
-      result: AsyncResult
-    ): [/* returnType */ string, /* length */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ string | null, /* length */ number | null];
     /**
      * This function sets the byte order for the given `stream`. All subsequent
      * reads from the `stream` will be read in the given `order`.
@@ -27867,14 +28063,14 @@ declare namespace Gio {
      * @param base_stream a #GInputStream.
      * @returns a new #GDataInputStream.
      */
-    constructor(base_stream: InputStream);
+    constructor(base_stream: InputStream | null);
     /**
      * Creates a new data input stream for the `base_stream`.
      * @constructor
      * @param base_stream a #GInputStream.
      * @returns a new #GDataInputStream.
      */
-    static new(base_stream: InputStream): DataInputStream;
+    static new(base_stream: InputStream | null): DataInputStream;
 
     // Overloads of new
 
@@ -27885,11 +28081,11 @@ declare namespace Gio {
      * @param base_stream a #GInputStream
      * @returns a #GInputStream for the given @base_stream.
      */
-    static new(base_stream: InputStream): BufferedInputStream;
+    static new(base_stream: InputStream | null): BufferedInputStream;
     _init(config?: DataInputStream.ConstructorProperties): void;
   }
 
-  namespace DataOutputStream {
+  module DataOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -27962,7 +28158,7 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object, %NULL to ignore.
      * @returns %TRUE if @string was successfully added to the @stream.
      */
-    put_string(str: string, cancellable: Cancellable | null): boolean;
+    put_string(str: string | null, cancellable: Cancellable | null): boolean;
     /**
      * Puts an unsigned 16-bit integer into the output stream.
      * @param data a #guint16.
@@ -28036,18 +28232,18 @@ declare namespace Gio {
      * @param base_stream a #GOutputStream.
      * @returns #GDataOutputStream.
      */
-    constructor(base_stream: OutputStream);
+    constructor(base_stream: OutputStream | null);
     /**
      * Creates a new data output stream for `base_stream`.
      * @constructor
      * @param base_stream a #GOutputStream.
      * @returns #GDataOutputStream.
      */
-    static new(base_stream: OutputStream): DataOutputStream;
+    static new(base_stream: OutputStream | null): DataOutputStream;
     _init(config?: DataOutputStream.ConstructorProperties): void;
   }
 
-  namespace DebugControllerDBus {
+  module DebugControllerDBus {
     // Signal callback interfaces
 
     /**
@@ -28116,7 +28312,7 @@ declare namespace Gio {
 
     // Own virtual methods of Gio-2.0.Gio.DebugControllerDBus
 
-    vfunc_authorize(invocation: DBusMethodInvocation): boolean;
+    vfunc_authorize(invocation: DBusMethodInvocation | null): boolean;
 
     // Own signals of Gio-2.0.Gio.DebugControllerDBus
 
@@ -28294,7 +28490,10 @@ declare namespace Gio {
      * @param cancellable a #GCancellable, or %NULL
      * @returns a new #GDebugControllerDBus, or %NULL   on failure
      */
-    constructor(connection: DBusConnection, cancellable: Cancellable | null);
+    constructor(
+      connection: DBusConnection | null,
+      cancellable: Cancellable | null
+    );
     /**
      * Create a new #GDebugControllerDBus and synchronously initialize it.
      *
@@ -28309,13 +28508,13 @@ declare namespace Gio {
      * @returns a new #GDebugControllerDBus, or %NULL   on failure
      */
     static new(
-      connection: DBusConnection,
+      connection: DBusConnection | null,
       cancellable: Cancellable | null
     ): DebugControllerDBus;
     _init(config?: DebugControllerDBus.ConstructorProperties): void;
   }
 
-  namespace DesktopAppInfo {
+  module DesktopAppInfo {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -28336,7 +28535,7 @@ declare namespace Gio {
     /**
      * The origin filename of this #GDesktopAppInfo
      */
-    readonly filename: string;
+    readonly filename: string | null;
 
     // Owm methods of Gio-2.0.Gio.DesktopAppInfo
 
@@ -28349,7 +28548,7 @@ declare namespace Gio {
      * @param action_name the name of the action as from   g_desktop_app_info_list_actions()
      * @returns the locale-specific action name
      */
-    get_action_name(action_name: string): string;
+    get_action_name(action_name: string | null): string | null;
     /**
      * Looks up a boolean value in the keyfile backing `info`.
      *
@@ -28357,7 +28556,7 @@ declare namespace Gio {
      * @param key the key to look up
      * @returns the boolean value, or %FALSE if the key     is not found
      */
-    get_boolean(key: string): boolean;
+    get_boolean(key: string | null): boolean;
     /**
      * Gets the categories from the desktop file.
      * @returns The unparsed Categories key from the desktop file;     i.e. no attempt is made to split it by ';' or validate it.
@@ -28394,7 +28593,7 @@ declare namespace Gio {
      * @param key the key to look up
      * @returns a newly allocated string, or %NULL if the key     is not found
      */
-    get_locale_string(key: string): string | null;
+    get_locale_string(key: string | null): string | null;
     /**
      * Gets the value of the NoDisplay key, which helps determine if the
      * application info should be shown in menus. See
@@ -28432,7 +28631,7 @@ declare namespace Gio {
      * @param key the key to look up
      * @returns a newly allocated string, or %NULL if the key     is not found
      */
-    get_string(key: string): string | null;
+    get_string(key: string | null): string | null;
     /**
      * Looks up a string list value in the keyfile backing `info`.
      *
@@ -28440,14 +28639,14 @@ declare namespace Gio {
      * @param key the key to look up
      * @returns   a %NULL-terminated string array or %NULL if the specified  key cannot be found. The array should be freed with g_strfreev().
      */
-    get_string_list(key: string): string[];
+    get_string_list(key: string | null): string[];
     /**
      * Returns whether `key` exists in the "Desktop Entry" group
      * of the keyfile backing `info`.
      * @param key the key to look up
      * @returns %TRUE if the @key exists
      */
-    has_key(key: string): boolean;
+    has_key(key: string | null): boolean;
     /**
      * Activates the named application action.
      *
@@ -28468,7 +28667,7 @@ declare namespace Gio {
      * @param launch_context a #GAppLaunchContext
      */
     launch_action(
-      action_name: string,
+      action_name: string | null,
       launch_context: AppLaunchContext | null
     ): void;
     /**
@@ -28493,7 +28692,7 @@ declare namespace Gio {
      * @returns %TRUE on successful launch, %FALSE otherwise.
      */
     launch_uris_as_manager(
-      uris: string[],
+      uris: string[] | null,
       launch_context: AppLaunchContext | null,
       spawn_flags: GLib.SpawnFlags
     ): boolean;
@@ -28513,7 +28712,7 @@ declare namespace Gio {
      * @returns %TRUE on successful launch, %FALSE otherwise.
      */
     launch_uris_as_manager_with_fds(
-      uris: string[],
+      uris: string[] | null,
       launch_context: AppLaunchContext | null,
       spawn_flags: GLib.SpawnFlags,
       stdin_fd: number,
@@ -28581,7 +28780,7 @@ declare namespace Gio {
      * @param desktop_id the desktop file id
      * @returns a new #GDesktopAppInfo, or %NULL if no desktop     file with that id exists.
      */
-    constructor(desktop_id: string);
+    constructor(desktop_id: string | null);
     /**
      * Creates a new #GDesktopAppInfo based on a desktop file id.
      *
@@ -28598,21 +28797,21 @@ declare namespace Gio {
      * @param desktop_id the desktop file id
      * @returns a new #GDesktopAppInfo, or %NULL if no desktop     file with that id exists.
      */
-    static new(desktop_id: string): DesktopAppInfo;
+    static new(desktop_id: string | null): DesktopAppInfo;
     /**
      * Creates a new #GDesktopAppInfo.
      * @constructor
      * @param filename the path of a desktop file, in the GLib      filename encoding
      * @returns a new #GDesktopAppInfo or %NULL on error.
      */
-    static new_from_filename(filename: string): DesktopAppInfo;
+    static new_from_filename(filename: string | null): DesktopAppInfo;
     /**
      * Creates a new #GDesktopAppInfo.
      * @constructor
      * @param key_file an opened #GKeyFile
      * @returns a new #GDesktopAppInfo or %NULL on error.
      */
-    static new_from_keyfile(key_file: GLib.KeyFile): DesktopAppInfo;
+    static new_from_keyfile(key_file: GLib.KeyFile | null): DesktopAppInfo;
     _init(config?: DesktopAppInfo.ConstructorProperties): void;
     /**
      * Gets all applications that implement `interface`.
@@ -28622,7 +28821,9 @@ declare namespace Gio {
      * @param interface the name of the interface
      * @returns a list of #GDesktopAppInfo objects.
      */
-    static get_implementations(interface: string): DesktopAppInfo[];
+    static get_implementations(
+      interface: string | null
+    ): DesktopAppInfo[] | null;
     /**
      * Searches desktop files for ones that match `search_string`.
      *
@@ -28642,7 +28843,7 @@ declare namespace Gio {
      * @param search_string the search string to use
      * @returns a   list of strvs.  Free each item with g_strfreev() and free the outer   list with g_free().
      */
-    static search(search_string: string): string[];
+    static search(search_string: string | null): string[];
     /**
      * Sets the name of the desktop that the application is running in.
      * This is used by g_app_info_should_show() and
@@ -28653,10 +28854,10 @@ declare namespace Gio {
      * Should be called only once; subsequent calls are ignored.
      * @param desktop_env a string specifying what desktop this is
      */
-    static set_desktop_env(desktop_env: string): void;
+    static set_desktop_env(desktop_env: string | null): void;
   }
 
-  namespace Emblem {
+  module Emblem {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -28681,7 +28882,7 @@ declare namespace Gio {
      * Gives back the icon from `emblem`.
      * @returns a #GIcon. The returned object belongs to          the emblem and should not be modified or freed.
      */
-    get_icon(): Icon;
+    get_icon(): Icon | null;
     /**
      * Gets the origin of the emblem.
      * @returns the origin of the emblem
@@ -28738,14 +28939,14 @@ declare namespace Gio {
      * @param icon a GIcon containing the icon.
      * @returns a new #GEmblem.
      */
-    constructor(icon: Icon);
+    constructor(icon: Icon | null);
     /**
      * Creates a new emblem for `icon`.
      * @constructor
      * @param icon a GIcon containing the icon.
      * @returns a new #GEmblem.
      */
-    static new(icon: Icon): Emblem;
+    static new(icon: Icon | null): Emblem;
     /**
      * Creates a new emblem for `icon`.
      * @constructor
@@ -28753,11 +28954,11 @@ declare namespace Gio {
      * @param origin a GEmblemOrigin enum defining the emblem's origin
      * @returns a new #GEmblem.
      */
-    static new_with_origin(icon: Icon, origin: EmblemOrigin): Emblem;
+    static new_with_origin(icon: Icon | null, origin: EmblemOrigin): Emblem;
     _init(config?: Emblem.ConstructorProperties): void;
   }
 
-  namespace EmblemedIcon {
+  module EmblemedIcon {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -28784,7 +28985,7 @@ declare namespace Gio {
      * Adds `emblem` to the #GList of #GEmblems.
      * @param emblem a #GEmblem
      */
-    add_emblem(emblem: Emblem): void;
+    add_emblem(emblem: Emblem | null): void;
     /**
      * Removes all the emblems from `icon`.
      */
@@ -28793,12 +28994,12 @@ declare namespace Gio {
      * Gets the list of emblems for the `icon`.
      * @returns a #GList of     #GEmblems that is owned by @emblemed
      */
-    get_emblems(): Emblem[];
+    get_emblems(): Emblem[] | null;
     /**
      * Gets the main icon for `emblemed`.
      * @returns a #GIcon that is owned by @emblemed
      */
-    get_icon(): Icon;
+    get_icon(): Icon | null;
 
     // Class property signals of Gio-2.0.Gio.EmblemedIcon
 
@@ -28842,7 +29043,7 @@ declare namespace Gio {
      * @param emblem a #GEmblem, or %NULL
      * @returns a new #GIcon
      */
-    constructor(icon: Icon, emblem: Emblem | null);
+    constructor(icon: Icon | null, emblem: Emblem | null);
     /**
      * Creates a new emblemed icon for `icon` with the emblem `emblem`.
      * @constructor
@@ -28850,11 +29051,11 @@ declare namespace Gio {
      * @param emblem a #GEmblem, or %NULL
      * @returns a new #GIcon
      */
-    static new(icon: Icon, emblem: Emblem | null): EmblemedIcon;
+    static new(icon: Icon | null, emblem: Emblem | null): EmblemedIcon;
     _init(config?: EmblemedIcon.ConstructorProperties): void;
   }
 
-  namespace FileEnumerator {
+  module FileEnumerator {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -28917,7 +29118,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the close operation has finished successfully.
      */
-    close_finish(result: AsyncResult): boolean;
+    close_finish(result: AsyncResult | null): boolean;
     /**
      * Return a new #GFile which refers to the file named by `info` in the source
      * directory of `enumerator`.  This function is primarily intended to be used
@@ -28937,12 +29138,12 @@ declare namespace Gio {
      * @param info a #GFileInfo gotten from g_file_enumerator_next_file()   or the async equivalents.
      * @returns a #GFile for the #GFileInfo passed it.
      */
-    get_child(info: FileInfo): File;
+    get_child(info: FileInfo | null): File | null;
     /**
      * Get the #GFile container which is being enumerated.
      * @returns the #GFile which is being enumerated.
      */
-    get_container(): File;
+    get_container(): File | null;
     /**
      * Checks if the file enumerator has pending operations.
      * @returns %TRUE if the @enumerator has pending operations.
@@ -28999,8 +29200,8 @@ declare namespace Gio {
       cancellable: Cancellable | null
     ): [
       /* returnType */ boolean,
-      /* out_info */ FileInfo,
-      /* out_child */ File
+      /* out_info */ FileInfo | null,
+      /* out_child */ File | null
     ];
     /**
      * Returns information for the next file in the enumerated object.
@@ -29054,7 +29255,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GList of #GFileInfos. You must free the list with     g_list_free() and unref the infos with g_object_unref() when you're     done with them.
      */
-    next_files_finish(result: AsyncResult): FileInfo[];
+    next_files_finish(result: AsyncResult | null): FileInfo[] | null;
     /**
      * Sets the file enumerator as having pending operations.
      * @param pending a boolean value.
@@ -29095,7 +29296,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the close operation has finished successfully.
      */
-    vfunc_close_finish(result: AsyncResult): boolean;
+    vfunc_close_finish(result: AsyncResult | null): boolean;
     vfunc_close_fn(cancellable: Cancellable | null): boolean;
     /**
      * Returns information for the next file in the enumerated object.
@@ -29152,7 +29353,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GList of #GFileInfos. You must free the list with     g_list_free() and unref the infos with g_object_unref() when you're     done with them.
      */
-    vfunc_next_files_finish(result: AsyncResult): FileInfo[];
+    vfunc_next_files_finish(result: AsyncResult | null): FileInfo[] | null;
 
     // Class property signals of Gio-2.0.Gio.FileEnumerator
 
@@ -29212,7 +29413,7 @@ declare namespace Gio {
     _init(config?: FileEnumerator.ConstructorProperties): void;
   }
 
-  namespace FileIOStream {
+  module FileIOStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -29256,7 +29457,10 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object, %NULL to ignore.
      * @returns a #GFileInfo for the @stream, or %NULL on error.
      */
-    query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
+    query_info(
+      attributes: string | null,
+      cancellable: Cancellable | null
+    ): FileInfo | null;
     /**
      * Asynchronously queries the `stream` for a #GFileInfo. When completed,
      * `callback` will be called with a #GAsyncResult which can be used to
@@ -29270,7 +29474,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     query_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -29281,7 +29485,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns A #GFileInfo for the finished query.
      */
-    query_info_finish(result: AsyncResult): FileInfo;
+    query_info_finish(result: AsyncResult | null): FileInfo | null;
 
     // Own virtual methods of Gio-2.0.Gio.FileIOStream
 
@@ -29319,9 +29523,9 @@ declare namespace Gio {
      * @returns a #GFileInfo for the @stream, or %NULL on error.
      */
     vfunc_query_info(
-      attributes: string,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Asynchronously queries the `stream` for a #GFileInfo. When completed,
      * `callback` will be called with a #GAsyncResult which can be used to
@@ -29336,7 +29540,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     vfunc_query_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -29348,7 +29552,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns A #GFileInfo for the finished query.
      */
-    vfunc_query_info_finish(result: AsyncResult): FileInfo;
+    vfunc_query_info_finish(result: AsyncResult | null): FileInfo | null;
     vfunc_seek(
       offset: number,
       type: GLib.SeekType,
@@ -29427,7 +29631,7 @@ declare namespace Gio {
     _init(config?: FileIOStream.ConstructorProperties): void;
   }
 
-  namespace FileIcon {
+  module FileIcon {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -29457,7 +29661,7 @@ declare namespace Gio {
      * Gets the #GFile associated with the given `icon`.
      * @returns a #GFile.
      */
-    get_file(): File;
+    get_file(): File | null;
 
     // Class property signals of Gio-2.0.Gio.FileIcon
 
@@ -29496,21 +29700,21 @@ declare namespace Gio {
      * @param file a #GFile.
      * @returns a #GIcon for the given   @file, or %NULL on error.
      */
-    constructor(file: File);
+    constructor(file: File | null);
     /**
      * Creates a new icon for a file.
      * @constructor
      * @param file a #GFile.
      * @returns a #GIcon for the given   @file, or %NULL on error.
      */
-    static new(file: File): FileIcon;
+    static new(file: File | null): FileIcon;
     _init(config?: FileIcon.ConstructorProperties): void;
   }
 
-  namespace FileInfo {
+  module FileInfo {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface FileInfo {
@@ -29525,12 +29729,12 @@ declare namespace Gio {
      * and then copies all of the file attributes from `src_info` to `dest_info`.
      * @param dest_info destination to copy attributes to.
      */
-    copy_into(dest_info: FileInfo): void;
+    copy_into(dest_info: FileInfo | null): void;
     /**
      * Duplicates a file info structure.
      * @returns a duplicate #GFileInfo of @other.
      */
-    dup(): FileInfo;
+    dup(): FileInfo | null;
     /**
      * Gets the access time of the current `info` and returns it as a
      * #GDateTime.
@@ -29551,33 +29755,33 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns a UTF-8 string associated with the given @attribute, or    %NULL if the attribute wasn’t set.    When you're done with the string it must be freed with g_free().
      */
-    get_attribute_as_string(attribute: string): string | null;
+    get_attribute_as_string(attribute: string | null): string | null;
     /**
      * Gets the value of a boolean attribute. If the attribute does not
      * contain a boolean value, %FALSE will be returned.
      * @param attribute a file attribute key.
      * @returns the boolean value contained within the attribute.
      */
-    get_attribute_boolean(attribute: string): boolean;
+    get_attribute_boolean(attribute: string | null): boolean;
     /**
      * Gets the value of a byte string attribute. If the attribute does
      * not contain a byte string, %NULL will be returned.
      * @param attribute a file attribute key.
      * @returns the contents of the @attribute value as a byte string, or %NULL otherwise.
      */
-    get_attribute_byte_string(attribute: string): string | null;
+    get_attribute_byte_string(attribute: string | null): string | null;
     /**
      * Gets the attribute type, value and status for an attribute key.
      * @param attribute a file attribute key
      * @returns %TRUE if @info has an attribute named @attribute,      %FALSE otherwise.
      */
     get_attribute_data(
-      attribute: string
+      attribute: string | null
     ): [
       /* returnType */ boolean,
-      /* type */ FileAttributeType,
-      /* value_pp */ object,
-      /* status */ FileAttributeStatus
+      /* type */ FileAttributeType | null,
+      /* value_pp */ any | null,
+      /* status */ FileAttributeStatus | null
     ];
     /**
      * Gets a signed 32-bit integer contained within the attribute. If the
@@ -29586,7 +29790,7 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns a signed 32-bit integer from the attribute.
      */
-    get_attribute_int32(attribute: string): number;
+    get_attribute_int32(attribute: string | null): number;
     /**
      * Gets a signed 64-bit integer contained within the attribute. If the
      * attribute does not contain a signed 64-bit integer, or is invalid,
@@ -29594,40 +29798,40 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns a signed 64-bit integer from the attribute.
      */
-    get_attribute_int64(attribute: string): number;
+    get_attribute_int64(attribute: string | null): number;
     /**
      * Gets the value of a #GObject attribute. If the attribute does
      * not contain a #GObject, %NULL will be returned.
      * @param attribute a file attribute key.
      * @returns a #GObject associated with the given @attribute, or %NULL otherwise.
      */
-    get_attribute_object(attribute: string): GObject.Object | null;
+    get_attribute_object(attribute: string | null): GObject.Object | null;
     /**
      * Gets the attribute status for an attribute key.
      * @param attribute a file attribute key
      * @returns a #GFileAttributeStatus for the given @attribute, or    %G_FILE_ATTRIBUTE_STATUS_UNSET if the key is invalid.
      */
-    get_attribute_status(attribute: string): FileAttributeStatus;
+    get_attribute_status(attribute: string | null): FileAttributeStatus;
     /**
      * Gets the value of a string attribute. If the attribute does
      * not contain a string, %NULL will be returned.
      * @param attribute a file attribute key.
      * @returns the contents of the @attribute value as a UTF-8 string, or %NULL otherwise.
      */
-    get_attribute_string(attribute: string): string | null;
+    get_attribute_string(attribute: string | null): string | null;
     /**
      * Gets the value of a stringv attribute. If the attribute does
      * not contain a stringv, %NULL will be returned.
      * @param attribute a file attribute key.
      * @returns the contents of the @attribute value as a stringv, or %NULL otherwise. Do not free. These returned strings are UTF-8.
      */
-    get_attribute_stringv(attribute: string): string[] | null;
+    get_attribute_stringv(attribute: string | null): string[] | null;
     /**
      * Gets the attribute type for an attribute key.
      * @param attribute a file attribute key.
      * @returns a #GFileAttributeType for the given @attribute, or %G_FILE_ATTRIBUTE_TYPE_INVALID if the key is not set.
      */
-    get_attribute_type(attribute: string): FileAttributeType;
+    get_attribute_type(attribute: string | null): FileAttributeType;
     /**
      * Gets an unsigned 32-bit integer contained within the attribute. If the
      * attribute does not contain an unsigned 32-bit integer, or is invalid,
@@ -29635,7 +29839,7 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns an unsigned 32-bit integer from the attribute.
      */
-    get_attribute_uint32(attribute: string): number;
+    get_attribute_uint32(attribute: string | null): number;
     /**
      * Gets a unsigned 64-bit integer contained within the attribute. If the
      * attribute does not contain an unsigned 64-bit integer, or is invalid,
@@ -29643,7 +29847,7 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns a unsigned 64-bit integer from the attribute.
      */
-    get_attribute_uint64(attribute: string): number;
+    get_attribute_uint64(attribute: string | null): number;
     /**
      * Gets the file's content type.
      * @returns a string containing the file's content type, or %NULL if unknown.
@@ -29673,12 +29877,12 @@ declare namespace Gio {
      * Gets a display name for a file. This is guaranteed to always be set.
      * @returns a string containing the display name.
      */
-    get_display_name(): string;
+    get_display_name(): string | null;
     /**
      * Gets the edit name for a file.
      * @returns a string containing the edit name.
      */
-    get_edit_name(): string;
+    get_edit_name(): string | null;
     /**
      * Gets the [entity tag][gfile-etag] for a given
      * #GFileInfo. See %G_FILE_ATTRIBUTE_ETAG_VALUE.
@@ -29728,12 +29932,12 @@ declare namespace Gio {
      * Gets the modification time of the current `info` and sets it
      * in `result`.
      */
-    get_modification_time(): /* result */ GLib.TimeVal;
+    get_modification_time(): /* result */ GLib.TimeVal | null;
     /**
      * Gets the name for a file. This is guaranteed to always be set.
      * @returns a string containing the file name.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the file's size (in bytes). The size is retrieved through the value of
      * the %G_FILE_ATTRIBUTE_STANDARD_SIZE attribute and is converted
@@ -29762,14 +29966,14 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns %TRUE if @info has an attribute named @attribute,     %FALSE otherwise.
      */
-    has_attribute(attribute: string): boolean;
+    has_attribute(attribute: string | null): boolean;
     /**
      * Checks if a file info structure has an attribute in the
      * specified `name_space`.
      * @param name_space a file attribute namespace.
      * @returns %TRUE if @info has an attribute in @name_space,     %FALSE otherwise.
      */
-    has_namespace(name_space: string): boolean;
+    has_namespace(name_space: string | null): boolean;
     /**
      * Lists the file info structure's attributes.
      * @param name_space a file attribute key's namespace, or %NULL to list   all attributes.
@@ -29780,7 +29984,7 @@ declare namespace Gio {
      * Removes all cases of `attribute` from `info` if it exists.
      * @param attribute a file attribute key.
      */
-    remove_attribute(attribute: string): void;
+    remove_attribute(attribute: string | null): void;
     /**
      * Sets the %G_FILE_ATTRIBUTE_TIME_ACCESS and
      * %G_FILE_ATTRIBUTE_TIME_ACCESS_USEC attributes in the file info to the
@@ -29789,7 +29993,7 @@ declare namespace Gio {
      * %G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC will be cleared.
      * @param atime a #GDateTime.
      */
-    set_access_date_time(atime: GLib.DateTime): void;
+    set_access_date_time(atime: GLib.DateTime | null): void;
     /**
      * Sets the `attribute` to contain the given value, if possible. To unset the
      * attribute, use %G_FILE_ATTRIBUTE_TYPE_INVALID for `type`.
@@ -29798,9 +30002,9 @@ declare namespace Gio {
      * @param value_p pointer to the value
      */
     set_attribute(
-      attribute: string,
+      attribute: string | null,
       type: FileAttributeType,
-      value_p: object
+      value_p: any
     ): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
@@ -29808,40 +30012,46 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @param attr_value a boolean value.
      */
-    set_attribute_boolean(attribute: string, attr_value: boolean): void;
+    set_attribute_boolean(attribute: string | null, attr_value: boolean): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
      * @param attribute a file attribute key.
      * @param attr_value a byte string.
      */
-    set_attribute_byte_string(attribute: string, attr_value: string): void;
+    set_attribute_byte_string(
+      attribute: string | null,
+      attr_value: string | null
+    ): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
      * @param attribute a file attribute key.
      * @param attr_value a signed 32-bit integer
      */
-    set_attribute_int32(attribute: string, attr_value: number): void;
+    set_attribute_int32(attribute: string | null, attr_value: number): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
      * @param attribute attribute name to set.
      * @param attr_value int64 value to set attribute to.
      */
-    set_attribute_int64(attribute: string, attr_value: number): void;
+    set_attribute_int64(attribute: string | null, attr_value: number): void;
     /**
      * Sets `mask` on `info` to match specific attribute types.
      * @param mask a #GFileAttributeMatcher.
      */
-    set_attribute_mask(mask: FileAttributeMatcher): void;
+    set_attribute_mask(mask: FileAttributeMatcher | null): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
      * @param attribute a file attribute key.
      * @param attr_value a #GObject.
      */
-    set_attribute_object(attribute: string, attr_value: GObject.Object): void;
+    set_attribute_object(
+      attribute: string | null,
+      attr_value: GObject.Object | null
+    ): void;
     /**
      * Sets the attribute status for an attribute key. This is only
      * needed by external code that implement g_file_set_attributes_from_info()
@@ -29854,7 +30064,7 @@ declare namespace Gio {
      * @returns %TRUE if the status was changed, %FALSE if the key was not set.
      */
     set_attribute_status(
-      attribute: string,
+      attribute: string | null,
       status: FileAttributeStatus
     ): boolean;
     /**
@@ -29863,7 +30073,10 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @param attr_value a UTF-8 string.
      */
-    set_attribute_string(attribute: string, attr_value: string): void;
+    set_attribute_string(
+      attribute: string | null,
+      attr_value: string | null
+    ): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
@@ -29872,27 +30085,27 @@ declare namespace Gio {
      * @param attribute a file attribute key
      * @param attr_value a %NULL   terminated array of UTF-8 strings.
      */
-    set_attribute_stringv(attribute: string, attr_value: string[]): void;
+    set_attribute_stringv(attribute: string | null, attr_value: string[]): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
      * @param attribute a file attribute key.
      * @param attr_value an unsigned 32-bit integer.
      */
-    set_attribute_uint32(attribute: string, attr_value: number): void;
+    set_attribute_uint32(attribute: string | null, attr_value: number): void;
     /**
      * Sets the `attribute` to contain the given `attr_value,`
      * if possible.
      * @param attribute a file attribute key.
      * @param attr_value an unsigned 64-bit integer.
      */
-    set_attribute_uint64(attribute: string, attr_value: number): void;
+    set_attribute_uint64(attribute: string | null, attr_value: number): void;
     /**
      * Sets the content type attribute for a given #GFileInfo.
      * See %G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE.
      * @param content_type a content type. See [GContentType][gio-GContentType]
      */
-    set_content_type(content_type: string): void;
+    set_content_type(content_type: string | null): void;
     /**
      * Sets the %G_FILE_ATTRIBUTE_TIME_CREATED and
      * %G_FILE_ATTRIBUTE_TIME_CREATED_USEC attributes in the file info to the
@@ -29901,19 +30114,19 @@ declare namespace Gio {
      * %G_FILE_ATTRIBUTE_TIME_CREATED_NSEC will be cleared.
      * @param creation_time a #GDateTime.
      */
-    set_creation_date_time(creation_time: GLib.DateTime): void;
+    set_creation_date_time(creation_time: GLib.DateTime | null): void;
     /**
      * Sets the display name for the current #GFileInfo.
      * See %G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME.
      * @param display_name a string containing a display name.
      */
-    set_display_name(display_name: string): void;
+    set_display_name(display_name: string | null): void;
     /**
      * Sets the edit name for the current file.
      * See %G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME.
      * @param edit_name a string containing an edit name.
      */
-    set_edit_name(edit_name: string): void;
+    set_edit_name(edit_name: string | null): void;
     /**
      * Sets the file type in a #GFileInfo to `type`.
      * See %G_FILE_ATTRIBUTE_STANDARD_TYPE.
@@ -29925,7 +30138,7 @@ declare namespace Gio {
      * See %G_FILE_ATTRIBUTE_STANDARD_ICON.
      * @param icon a #GIcon.
      */
-    set_icon(icon: Icon): void;
+    set_icon(icon: Icon | null): void;
     /**
      * Sets the "is_hidden" attribute in a #GFileInfo according to `is_hidden`.
      * See %G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN.
@@ -29946,7 +30159,7 @@ declare namespace Gio {
      * %G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC will be cleared.
      * @param mtime a #GDateTime.
      */
-    set_modification_date_time(mtime: GLib.DateTime): void;
+    set_modification_date_time(mtime: GLib.DateTime | null): void;
     /**
      * Sets the %G_FILE_ATTRIBUTE_TIME_MODIFIED and
      * %G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC attributes in the file info to the
@@ -29955,13 +30168,13 @@ declare namespace Gio {
      * %G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC will be cleared.
      * @param mtime a #GTimeVal.
      */
-    set_modification_time(mtime: GLib.TimeVal): void;
+    set_modification_time(mtime: GLib.TimeVal | null): void;
     /**
      * Sets the name attribute for the current #GFileInfo.
      * See %G_FILE_ATTRIBUTE_STANDARD_NAME.
      * @param name a string containing a name.
      */
-    set_name(name: string): void;
+    set_name(name: string | null): void;
     /**
      * Sets the %G_FILE_ATTRIBUTE_STANDARD_SIZE attribute in the file info
      * to the given size.
@@ -29979,13 +30192,13 @@ declare namespace Gio {
      * See %G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON.
      * @param icon a #GIcon.
      */
-    set_symbolic_icon(icon: Icon): void;
+    set_symbolic_icon(icon: Icon | null): void;
     /**
      * Sets the %G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET attribute in the file info
      * to the given symlink target.
      * @param symlink_target a static string containing a path to a symlink target.
      */
-    set_symlink_target(symlink_target: string): void;
+    set_symlink_target(symlink_target: string | null): void;
     /**
      * Unsets a mask set by g_file_info_set_attribute_mask(), if one
      * is set.
@@ -30056,7 +30269,7 @@ declare namespace Gio {
     _init(config?: FileInfo.ConstructorProperties): void;
   }
 
-  namespace FileInputStream {
+  module FileInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -30081,7 +30294,10 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object, %NULL to ignore.
      * @returns a #GFileInfo, or %NULL on error.
      */
-    query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
+    query_info(
+      attributes: string | null,
+      cancellable: Cancellable | null
+    ): FileInfo | null;
     /**
      * Queries the stream information asynchronously.
      * When the operation is finished `callback` will be called.
@@ -30100,7 +30316,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     query_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -30110,7 +30326,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns #GFileInfo.
      */
-    query_info_finish(result: AsyncResult): FileInfo;
+    query_info_finish(result: AsyncResult | null): FileInfo | null;
 
     // Own virtual methods of Gio-2.0.Gio.FileInputStream
 
@@ -30127,9 +30343,9 @@ declare namespace Gio {
      * @returns a #GFileInfo, or %NULL on error.
      */
     vfunc_query_info(
-      attributes: string,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Queries the stream information asynchronously.
      * When the operation is finished `callback` will be called.
@@ -30149,7 +30365,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     vfunc_query_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -30160,7 +30376,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns #GFileInfo.
      */
-    vfunc_query_info_finish(result: AsyncResult): FileInfo;
+    vfunc_query_info_finish(result: AsyncResult | null): FileInfo | null;
     vfunc_seek(
       offset: number,
       type: GLib.SeekType,
@@ -30200,7 +30416,7 @@ declare namespace Gio {
     _init(config?: FileInputStream.ConstructorProperties): void;
   }
 
-  namespace FileMonitor {
+  module FileMonitor {
     // Signal callback interfaces
 
     /**
@@ -30255,8 +30471,8 @@ declare namespace Gio {
      * @param event_type a set of #GFileMonitorEvent flags.
      */
     emit_event(
-      child: File,
-      other_file: File,
+      child: File | null,
+      other_file: File | null,
       event_type: FileMonitorEvent
     ): void;
     /**
@@ -30280,8 +30496,8 @@ declare namespace Gio {
      */
     vfunc_cancel(): boolean;
     vfunc_changed(
-      file: File,
-      other_file: File,
+      file: File | null,
+      other_file: File | null,
       event_type: FileMonitorEvent
     ): void;
 
@@ -30358,7 +30574,7 @@ declare namespace Gio {
     _init(config?: FileMonitor.ConstructorProperties): void;
   }
 
-  namespace FileOutputStream {
+  module FileOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -30402,7 +30618,10 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object, %NULL to ignore.
      * @returns a #GFileInfo for the @stream, or %NULL on error.
      */
-    query_info(attributes: string, cancellable: Cancellable | null): FileInfo;
+    query_info(
+      attributes: string | null,
+      cancellable: Cancellable | null
+    ): FileInfo | null;
     /**
      * Asynchronously queries the `stream` for a #GFileInfo. When completed,
      * `callback` will be called with a #GAsyncResult which can be used to
@@ -30416,7 +30635,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     query_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -30427,7 +30646,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns A #GFileInfo for the finished query.
      */
-    query_info_finish(result: AsyncResult): FileInfo;
+    query_info_finish(result: AsyncResult | null): FileInfo | null;
 
     // Own virtual methods of Gio-2.0.Gio.FileOutputStream
 
@@ -30465,9 +30684,9 @@ declare namespace Gio {
      * @returns a #GFileInfo for the @stream, or %NULL on error.
      */
     vfunc_query_info(
-      attributes: string,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ): FileInfo;
+    ): FileInfo | null;
     /**
      * Asynchronously queries the `stream` for a #GFileInfo. When completed,
      * `callback` will be called with a #GAsyncResult which can be used to
@@ -30482,7 +30701,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     vfunc_query_info_async(
-      attributes: string,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -30494,7 +30713,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns A #GFileInfo for the finished query.
      */
-    vfunc_query_info_finish(result: AsyncResult): FileInfo;
+    vfunc_query_info_finish(result: AsyncResult | null): FileInfo | null;
     vfunc_seek(
       offset: number,
       type: GLib.SeekType,
@@ -30540,7 +30759,7 @@ declare namespace Gio {
     _init(config?: FileOutputStream.ConstructorProperties): void;
   }
 
-  namespace FilenameCompleter {
+  module FilenameCompleter {
     // Signal callback interfaces
 
     /**
@@ -30552,7 +30771,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface FilenameCompleter {
@@ -30563,13 +30782,13 @@ declare namespace Gio {
      * @param initial_text text to be completed.
      * @returns a completed string, or %NULL if no     completion exists. This string is not owned by GIO, so remember to g_free()     it when finished.
      */
-    get_completion_suffix(initial_text: string): string | null;
+    get_completion_suffix(initial_text: string | null): string | null;
     /**
      * Gets an array of completion strings for a given initial text.
      * @param initial_text text to be completed.
      * @returns array of strings with possible completions for @initial_text. This array must be freed by g_strfreev() when finished.
      */
-    get_completions(initial_text: string): string[];
+    get_completions(initial_text: string | null): string[];
     /**
      * If `dirs_only` is %TRUE, `completer` will only
      * complete directory names, and not file names.
@@ -30631,7 +30850,7 @@ declare namespace Gio {
     _init(config?: FilenameCompleter.ConstructorProperties): void;
   }
 
-  namespace FilterInputStream {
+  module FilterInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties extends InputStream.ConstructorProperties {
@@ -30650,7 +30869,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.FilterInputStream
 
     parent_instance: InputStream & GObject.Object;
-    base_stream: InputStream;
+    base_stream: InputStream | null;
 
     // Owm methods of Gio-2.0.Gio.FilterInputStream
 
@@ -30658,7 +30877,7 @@ declare namespace Gio {
      * Gets the base stream for the filter stream.
      * @returns a #GInputStream.
      */
-    get_base_stream(): InputStream;
+    get_base_stream(): InputStream | null;
     /**
      * Returns whether the base stream will be closed when `stream` is
      * closed.
@@ -30707,7 +30926,7 @@ declare namespace Gio {
     _init(config?: FilterInputStream.ConstructorProperties): void;
   }
 
-  namespace FilterOutputStream {
+  module FilterOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties extends OutputStream.ConstructorProperties {
@@ -30726,7 +30945,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.FilterOutputStream
 
     parent_instance: OutputStream & GObject.Object;
-    base_stream: OutputStream;
+    base_stream: OutputStream | null;
 
     // Owm methods of Gio-2.0.Gio.FilterOutputStream
 
@@ -30734,7 +30953,7 @@ declare namespace Gio {
      * Gets the base stream for the filter stream.
      * @returns a #GOutputStream.
      */
-    get_base_stream(): OutputStream;
+    get_base_stream(): OutputStream | null;
     /**
      * Returns whether the base stream will be closed when `stream` is
      * closed.
@@ -30783,7 +31002,7 @@ declare namespace Gio {
     _init(config?: FilterOutputStream.ConstructorProperties): void;
   }
 
-  namespace IOModule {
+  module IOModule {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -30848,7 +31067,7 @@ declare namespace Gio {
      * @param filename filename of the shared library module.
      * @returns a #GIOModule from given @filename, or %NULL on error.
      */
-    constructor(filename: string);
+    constructor(filename: string | null);
     /**
      * Creates a new GIOModule that will load the specific
      * shared library when in use.
@@ -30856,7 +31075,7 @@ declare namespace Gio {
      * @param filename filename of the shared library module.
      * @returns a #GIOModule from given @filename, or %NULL on error.
      */
-    static new(filename: string): IOModule;
+    static new(filename: string | null): IOModule;
     _init(config?: IOModule.ConstructorProperties): void;
     /**
      * Optional API for GIO modules to implement.
@@ -30895,10 +31114,10 @@ declare namespace Gio {
     static query(): string[];
   }
 
-  namespace IOStream {
+  module IOStream {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface IOStream {
@@ -30981,19 +31200,19 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if stream was successfully closed, %FALSE otherwise.
      */
-    close_finish(result: AsyncResult): boolean;
+    close_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the input stream for this object. This is used
      * for reading.
      * @returns a #GInputStream, owned by the #GIOStream. Do not free.
      */
-    get_input_stream(): InputStream;
+    get_input_stream(): InputStream | null;
     /**
      * Gets the output stream for this object. This is used for
      * writing.
      * @returns a #GOutputStream, owned by the #GIOStream. Do not free.
      */
-    get_output_stream(): OutputStream;
+    get_output_stream(): OutputStream | null;
     /**
      * Checks if a stream has pending actions.
      * @returns %TRUE if @stream has pending actions.
@@ -31026,7 +31245,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback.
      */
     splice_async(
-      stream2: IOStream,
+      stream2: IOStream | null,
       flags: IOStreamSpliceFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -31062,7 +31281,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns %TRUE if stream was successfully closed, %FALSE otherwise.
      */
-    vfunc_close_finish(result: AsyncResult): boolean;
+    vfunc_close_finish(result: AsyncResult | null): boolean;
     vfunc_close_fn(cancellable: Cancellable | null): boolean;
     /**
      * Gets the input stream for this object. This is used
@@ -31070,14 +31289,14 @@ declare namespace Gio {
      * @virtual
      * @returns a #GInputStream, owned by the #GIOStream. Do not free.
      */
-    vfunc_get_input_stream(): InputStream;
+    vfunc_get_input_stream(): InputStream | null;
     /**
      * Gets the output stream for this object. This is used for
      * writing.
      * @virtual
      * @returns a #GOutputStream, owned by the #GIOStream. Do not free.
      */
-    vfunc_get_output_stream(): OutputStream;
+    vfunc_get_output_stream(): OutputStream | null;
 
     // Class property signals of Gio-2.0.Gio.IOStream
 
@@ -31178,17 +31397,17 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE on success, %FALSE otherwise.
      */
-    static splice_finish(result: AsyncResult): boolean;
+    static splice_finish(result: AsyncResult | null): boolean;
   }
 
-  namespace InetAddress {
+  module InetAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
       extends GObject.Object.ConstructorProperties {
       // Own constructor properties of Gio-2.0.Gio.InetAddress
 
-      bytes?: object | null;
+      bytes?: any | null;
       family?: SocketFamily | null;
     }
   }
@@ -31196,7 +31415,7 @@ declare namespace Gio {
   interface InetAddress {
     // Own properties of Gio-2.0.Gio.InetAddress
 
-    readonly bytes: object;
+    readonly bytes: any;
     readonly family: SocketFamily;
     /**
      * Whether this is the "any" address for its family.
@@ -31260,7 +31479,7 @@ declare namespace Gio {
      * @param other_address Another #GInetAddress.
      * @returns %TRUE if @address and @other_address are equal, %FALSE otherwise.
      */
-    equal(other_address: InetAddress): boolean;
+    equal(other_address: InetAddress | null): boolean;
     /**
      * Gets `address'`s family
      * @returns @address's family
@@ -31331,7 +31550,7 @@ declare namespace Gio {
      * Converts `address` to string form.
      * @returns a representation of @address as a string, which should be freed after use.
      */
-    to_string(): string;
+    to_string(): string | null;
 
     // Own virtual methods of Gio-2.0.Gio.InetAddress
 
@@ -31340,7 +31559,7 @@ declare namespace Gio {
      * @virtual
      * @returns a representation of @address as a string, which should be freed after use.
      */
-    vfunc_to_string(): string;
+    vfunc_to_string(): string | null;
 
     // Class property signals of Gio-2.0.Gio.InetAddress
 
@@ -31504,7 +31723,7 @@ declare namespace Gio {
      * @param string a string representation of an IP address
      * @returns a new #GInetAddress corresponding to @string, or %NULL if @string could not be parsed.     Free the returned object with g_object_unref().
      */
-    static new_from_string(string: string): InetAddress;
+    static new_from_string(string: string | null): InetAddress;
     /**
      * Creates a #GInetAddress for the loopback address for `family`.
      * @constructor
@@ -31515,7 +31734,7 @@ declare namespace Gio {
     _init(config?: InetAddress.ConstructorProperties): void;
   }
 
-  namespace InetAddressMask {
+  module InetAddressMask {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -31546,12 +31765,12 @@ declare namespace Gio {
      * @param mask2 another #GInetAddressMask
      * @returns whether @mask and @mask2 are the same mask
      */
-    equal(mask2: InetAddressMask): boolean;
+    equal(mask2: InetAddressMask | null): boolean;
     /**
      * Gets `mask'`s base address
      * @returns @mask's base address
      */
-    get_address(): InetAddress;
+    get_address(): InetAddress | null;
     /**
      * Gets the #GSocketFamily of `mask'`s address
      * @returns the #GSocketFamily of @mask's address
@@ -31567,12 +31786,12 @@ declare namespace Gio {
      * @param address a #GInetAddress
      * @returns whether @address falls within the range described by @mask.
      */
-    matches(address: InetAddress): boolean;
+    matches(address: InetAddress | null): boolean;
     /**
      * Converts `mask` back to its corresponding string form.
      * @returns a string corresponding to @mask.
      */
-    to_string(): string;
+    to_string(): string | null;
 
     // Class property signals of Gio-2.0.Gio.InetAddressMask
 
@@ -31633,7 +31852,7 @@ declare namespace Gio {
      * @param length number of bits of `addr` to use
      * @returns a new #GInetAddressMask, or %NULL on error
      */
-    constructor(addr: InetAddress, length: number);
+    constructor(addr: InetAddress | null, length: number);
     /**
      * Creates a new #GInetAddressMask representing all addresses whose
      * first `length` bits match `addr`.
@@ -31642,7 +31861,7 @@ declare namespace Gio {
      * @param length number of bits of `addr` to use
      * @returns a new #GInetAddressMask, or %NULL on error
      */
-    static new(addr: InetAddress, length: number): InetAddressMask;
+    static new(addr: InetAddress | null, length: number): InetAddressMask;
     /**
      * Parses `mask_string` as an IP address and (optional) length, and
      * creates a new #GInetAddressMask. The length, if present, is
@@ -31652,11 +31871,11 @@ declare namespace Gio {
      * @param mask_string an IP address or address/length string
      * @returns a new #GInetAddressMask corresponding to @string, or %NULL on error.
      */
-    static new_from_string(mask_string: string): InetAddressMask;
+    static new_from_string(mask_string: string | null): InetAddressMask;
     _init(config?: InetAddressMask.ConstructorProperties): void;
   }
 
-  namespace InetSocketAddress {
+  module InetSocketAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -31695,7 +31914,7 @@ declare namespace Gio {
      * Gets `address'`s #GInetAddress.
      * @returns the #GInetAddress for @address, which must be g_object_ref()'d if it will be stored
      */
-    get_address(): InetAddress;
+    get_address(): InetAddress | null;
     /**
      * Gets the `sin6_flowinfo` field from `address,`
      * which must be an IPv6 address.
@@ -31788,7 +32007,7 @@ declare namespace Gio {
      * @param port a port number
      * @returns a new #GInetSocketAddress
      */
-    constructor(address: InetAddress, port: number);
+    constructor(address: InetAddress | null, port: number);
     /**
      * Creates a new #GInetSocketAddress for `address` and `port`.
      * @constructor
@@ -31796,7 +32015,7 @@ declare namespace Gio {
      * @param port a port number
      * @returns a new #GInetSocketAddress
      */
-    static new(address: InetAddress, port: number): InetSocketAddress;
+    static new(address: InetAddress | null, port: number): InetSocketAddress;
     /**
      * Creates a new #GInetSocketAddress for `address` and `port`.
      *
@@ -31807,14 +32026,17 @@ declare namespace Gio {
      * @param port a port number
      * @returns a new #GInetSocketAddress, or %NULL if @address cannot be parsed.
      */
-    static new_from_string(address: string, port: number): InetSocketAddress;
+    static new_from_string(
+      address: string | null,
+      port: number
+    ): InetSocketAddress;
     _init(config?: InetSocketAddress.ConstructorProperties): void;
   }
 
-  namespace InputStream {
+  module InputStream {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface InputStream {
@@ -31881,7 +32103,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the stream was closed successfully.
      */
-    close_finish(result: AsyncResult): boolean;
+    close_finish(result: AsyncResult | null): boolean;
     /**
      * Checks if an input stream has pending actions.
      * @returns %TRUE if @stream has pending actions.
@@ -31948,7 +32170,7 @@ declare namespace Gio {
     ): [
       /* returnType */ boolean,
       /* buffer */ Uint8Array,
-      /* bytes_read */ number
+      /* bytes_read */ number | null
     ];
     /**
      * Request an asynchronous read of `count` bytes from the stream into the
@@ -31984,8 +32206,8 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE if there was an error
      */
     read_all_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* bytes_read */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* bytes_read */ number | null];
     /**
      * Request an asynchronous read of `count` bytes from the stream into the buffer
      * starting at `buffer`. When the operation is finished `callback` will be called.
@@ -32047,7 +32269,10 @@ declare namespace Gio {
      * @param cancellable optional #GCancellable object, %NULL to ignore.
      * @returns a new #GBytes, or %NULL on error
      */
-    read_bytes(count: number, cancellable: Cancellable | null): GLib.Bytes;
+    read_bytes(
+      count: number,
+      cancellable: Cancellable | null
+    ): GLib.Bytes | null;
     /**
      * Request an asynchronous read of `count` bytes from the stream into a
      * new #GBytes. When the operation is finished `callback` will be
@@ -32085,13 +32310,13 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns the newly-allocated #GBytes, or %NULL on error
      */
-    read_bytes_finish(result: AsyncResult): GLib.Bytes;
+    read_bytes_finish(result: AsyncResult | null): GLib.Bytes | null;
     /**
      * Finishes an asynchronous stream read operation.
      * @param result a #GAsyncResult.
      * @returns number of bytes read in, or -1 on error, or 0 on end of file.
      */
-    read_finish(result: AsyncResult): number;
+    read_finish(result: AsyncResult | null): number;
     /**
      * Sets `stream` to have actions pending. If the pending flag is
      * already set or `stream` is closed, it will return %FALSE and set
@@ -32159,7 +32384,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns the size of the bytes skipped, or `-1` on error.
      */
-    skip_finish(result: AsyncResult): number;
+    skip_finish(result: AsyncResult | null): number;
 
     // Own virtual methods of Gio-2.0.Gio.InputStream
 
@@ -32190,7 +32415,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the stream was closed successfully.
      */
-    vfunc_close_finish(result: AsyncResult): boolean;
+    vfunc_close_finish(result: AsyncResult | null): boolean;
     vfunc_close_fn(cancellable: Cancellable | null): boolean;
     /**
      * Request an asynchronous read of `count` bytes from the stream into the buffer
@@ -32232,9 +32457,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns number of bytes read in, or -1 on error, or 0 on end of file.
      */
-    vfunc_read_finish(result: AsyncResult): number;
+    vfunc_read_finish(result: AsyncResult | null): number;
     vfunc_read_fn(
-      buffer: object | null,
+      buffer: any | null,
       count: number,
       cancellable: Cancellable | null
     ): number;
@@ -32301,7 +32526,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns the size of the bytes skipped, or `-1` on error.
      */
-    vfunc_skip_finish(result: AsyncResult): number;
+    vfunc_skip_finish(result: AsyncResult | null): number;
 
     // Class property signals of Gio-2.0.Gio.InputStream
 
@@ -32337,7 +32562,7 @@ declare namespace Gio {
     _init(config?: InputStream.ConstructorProperties): void;
   }
 
-  namespace ListStore {
+  module ListStore {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -32391,7 +32616,7 @@ declare namespace Gio {
      */
     find(
       item: GObject.Object
-    ): [/* returnType */ boolean, /* position */ number];
+    ): [/* returnType */ boolean, /* position */ number | null];
     /**
      * Looks up the given `item` in the list store by looping over the items and
      * comparing them with `equal_func` until the first occurrence of `item` which
@@ -32404,7 +32629,7 @@ declare namespace Gio {
     find_with_equal_func(
       item: GObject.Object,
       equal_func: GLib.EqualFunc
-    ): [/* returnType */ boolean, /* position */ number];
+    ): [/* returnType */ boolean, /* position */ number | null];
     /**
      * Like g_list_store_find_with_equal_func() but with an additional `user_data`
      * that is passed to `equal_func`.
@@ -32415,7 +32640,7 @@ declare namespace Gio {
     find_with_equal_func_full(
       item: GObject.Object,
       equal_func: GLib.EqualFuncFull
-    ): [/* returnType */ boolean, /* position */ number];
+    ): [/* returnType */ boolean, /* position */ number | null];
     /**
      * Inserts `item` into `store` at `position`. `item` must be of type
      * #GListStore:item-type or derived from it. `position` must be smaller
@@ -32551,7 +32776,7 @@ declare namespace Gio {
     _init(config?: ListStore.ConstructorProperties): void;
   }
 
-  namespace MemoryInputStream {
+  module MemoryInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -32571,7 +32796,7 @@ declare namespace Gio {
      * Appends `bytes` to data that can be read from the input stream.
      * @param bytes input data
      */
-    add_bytes(bytes: GLib.Bytes): void;
+    add_bytes(bytes: GLib.Bytes | null): void;
     /**
      * Appends `data` to data that can be read from the input stream
      * @param data input data
@@ -32622,7 +32847,7 @@ declare namespace Gio {
      * @param bytes a #GBytes
      * @returns new #GInputStream read from @bytes
      */
-    static new_from_bytes(bytes: GLib.Bytes): MemoryInputStream;
+    static new_from_bytes(bytes: GLib.Bytes | null): MemoryInputStream;
     /**
      * Creates a new #GMemoryInputStream with data in memory of a given size.
      * @constructor
@@ -32637,7 +32862,7 @@ declare namespace Gio {
     _init(config?: MemoryInputStream.ConstructorProperties): void;
   }
 
-  namespace MemoryOutputStream {
+  module MemoryOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -32649,7 +32874,7 @@ declare namespace Gio {
       /**
        * Pointer to buffer where data will be written.
        */
-      data?: object | null;
+      data?: any | null;
       /**
        * Current size of the data buffer.
        */
@@ -32663,7 +32888,7 @@ declare namespace Gio {
     /**
      * Pointer to buffer where data will be written.
      */
-    readonly data: object;
+    readonly data: any;
     /**
      * Size of data written to the buffer.
      */
@@ -32686,7 +32911,7 @@ declare namespace Gio {
      * write or truncate operation on the stream.
      * @returns pointer to the stream's data, or %NULL if the data    has been stolen
      */
-    get_data(): object | null;
+    get_data(): any | null;
 
     // Overloads of get_data
 
@@ -32695,7 +32920,7 @@ declare namespace Gio {
      * @param key name of the key for that association
      * @returns the data if found,          or %NULL if no such data exists.
      */
-    get_data(key: string): object | null;
+    get_data(key: string | null): any | null;
     /**
      * Returns the number of bytes from the start up to including the last
      * byte written in the stream that has not been truncated away.
@@ -32726,7 +32951,7 @@ declare namespace Gio {
      * closed before calling this function.
      * @returns the stream's data
      */
-    steal_as_bytes(): GLib.Bytes;
+    steal_as_bytes(): GLib.Bytes | null;
     /**
      * Gets any loaded data from the `ostream`. Ownership of the data
      * is transferred to the caller; when no longer needed it must be
@@ -32736,7 +32961,7 @@ declare namespace Gio {
      * `ostream` must be closed before calling this function.
      * @returns the stream's data, or %NULL if it has previously    been stolen
      */
-    steal_data(): object | null;
+    steal_data(): any | null;
 
     // Overloads of steal_data
 
@@ -32746,7 +32971,7 @@ declare namespace Gio {
      * @param key name of the key
      * @returns the data if found, or %NULL          if no such data exists.
      */
-    steal_data(key: string): object | null;
+    steal_data(key: string | null): any | null;
 
     // Class property signals of Gio-2.0.Gio.MemoryOutputStream
 
@@ -32809,10 +33034,10 @@ declare namespace Gio {
     _init(config?: MemoryOutputStream.ConstructorProperties): void;
   }
 
-  namespace Menu {
+  module Menu {
     // Constructor properties interface
 
-    type ConstructorProperties = MenuModel.ConstructorProperties;
+    type ConstructorProperties = MenuModel.ConstructorProperties
   }
 
   interface Menu {
@@ -32832,7 +33057,7 @@ declare namespace Gio {
      * See g_menu_insert_item() for more information.
      * @param item a #GMenuItem to append
      */
-    append_item(item: MenuItem): void;
+    append_item(item: MenuItem | null): void;
     /**
      * Convenience function for appending a section menu item to the end of
      * `menu`.  Combine g_menu_item_new_section() and g_menu_insert_item() for a
@@ -32840,7 +33065,7 @@ declare namespace Gio {
      * @param label the section label, or %NULL
      * @param section a #GMenuModel with the items of the section
      */
-    append_section(label: string | null, section: MenuModel): void;
+    append_section(label: string | null, section: MenuModel | null): void;
     /**
      * Convenience function for appending a submenu menu item to the end of
      * `menu`.  Combine g_menu_item_new_submenu() and g_menu_insert_item() for a
@@ -32848,7 +33073,7 @@ declare namespace Gio {
      * @param label the section label, or %NULL
      * @param submenu a #GMenuModel with the items of the submenu
      */
-    append_submenu(label: string | null, submenu: MenuModel): void;
+    append_submenu(label: string | null, submenu: MenuModel | null): void;
     /**
      * Marks `menu` as frozen.
      *
@@ -32894,7 +33119,7 @@ declare namespace Gio {
      * @param position the position at which to insert the item
      * @param item the #GMenuItem to insert
      */
-    insert_item(position: number, item: MenuItem): void;
+    insert_item(position: number, item: MenuItem | null): void;
     /**
      * Convenience function for inserting a section menu item into `menu`.
      * Combine g_menu_item_new_section() and g_menu_insert_item() for a more
@@ -32906,7 +33131,7 @@ declare namespace Gio {
     insert_section(
       position: number,
       label: string | null,
-      section: MenuModel
+      section: MenuModel | null
     ): void;
     /**
      * Convenience function for inserting a submenu menu item into `menu`.
@@ -32919,7 +33144,7 @@ declare namespace Gio {
     insert_submenu(
       position: number,
       label: string | null,
-      submenu: MenuModel
+      submenu: MenuModel | null
     ): void;
     /**
      * Convenience function for prepending a normal menu item to the start
@@ -32935,7 +33160,7 @@ declare namespace Gio {
      * See g_menu_insert_item() for more information.
      * @param item a #GMenuItem to prepend
      */
-    prepend_item(item: MenuItem): void;
+    prepend_item(item: MenuItem | null): void;
     /**
      * Convenience function for prepending a section menu item to the start
      * of `menu`.  Combine g_menu_item_new_section() and g_menu_insert_item() for
@@ -32943,7 +33168,7 @@ declare namespace Gio {
      * @param label the section label, or %NULL
      * @param section a #GMenuModel with the items of the section
      */
-    prepend_section(label: string | null, section: MenuModel): void;
+    prepend_section(label: string | null, section: MenuModel | null): void;
     /**
      * Convenience function for prepending a submenu menu item to the start
      * of `menu`.  Combine g_menu_item_new_submenu() and g_menu_insert_item() for
@@ -32951,7 +33176,7 @@ declare namespace Gio {
      * @param label the section label, or %NULL
      * @param submenu a #GMenuModel with the items of the submenu
      */
-    prepend_submenu(label: string | null, submenu: MenuModel): void;
+    prepend_submenu(label: string | null, submenu: MenuModel | null): void;
     /**
      * Removes an item from the menu.
      *
@@ -33018,17 +33243,17 @@ declare namespace Gio {
     _init(config?: Menu.ConstructorProperties): void;
   }
 
-  namespace MenuAttributeIter {
+  module MenuAttributeIter {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface MenuAttributeIter {
     // Own fields of Gio-2.0.Gio.MenuAttributeIter
 
     parent_instance: GObject.Object;
-    priv: MenuAttributeIterPrivate;
+    priv: MenuAttributeIterPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.MenuAttributeIter
 
@@ -33039,7 +33264,7 @@ declare namespace Gio {
      * The iterator is not advanced.
      * @returns the name of the attribute
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * This function combines g_menu_attribute_iter_next() with
      * g_menu_attribute_iter_get_name() and g_menu_attribute_iter_get_value().
@@ -33060,8 +33285,8 @@ declare namespace Gio {
      */
     get_next(): [
       /* returnType */ boolean,
-      /* out_name */ string,
-      /* value */ GLib.Variant
+      /* out_name */ string | null,
+      /* value */ GLib.Variant | null
     ];
     /**
      * Gets the value of the attribute at the current iterator position.
@@ -33069,7 +33294,7 @@ declare namespace Gio {
      * The iterator is not advanced.
      * @returns the value of the current attribute
      */
-    get_value(): GLib.Variant;
+    get_value(): GLib.Variant | null;
     /**
      * Attempts to advance the iterator to the next (possibly first)
      * attribute.
@@ -33107,8 +33332,8 @@ declare namespace Gio {
      */
     vfunc_get_next(): [
       /* returnType */ boolean,
-      /* out_name */ string,
-      /* value */ GLib.Variant
+      /* out_name */ string | null,
+      /* value */ GLib.Variant | null
     ];
 
     // Class property signals of Gio-2.0.Gio.MenuAttributeIter
@@ -33136,10 +33361,10 @@ declare namespace Gio {
     _init(config?: MenuAttributeIter.ConstructorProperties): void;
   }
 
-  namespace MenuItem {
+  module MenuItem {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface MenuItem {
@@ -33156,7 +33381,7 @@ declare namespace Gio {
      * @returns the attribute value, or %NULL
      */
     get_attribute_value(
-      attribute: string,
+      attribute: string | null,
       expected_type: GLib.VariantType | null
     ): GLib.Variant | null;
     /**
@@ -33164,7 +33389,7 @@ declare namespace Gio {
      * @param link the link name to query
      * @returns the link, or %NULL
      */
-    get_link(link: string): MenuModel | null;
+    get_link(link: string | null): MenuModel | null;
     /**
      * Sets or unsets the "action" and "target" attributes of `menu_item`.
      *
@@ -33232,7 +33457,10 @@ declare namespace Gio {
      * @param attribute the attribute to set
      * @param value a #GVariant to use as the value, or %NULL
      */
-    set_attribute_value(attribute: string, value: GLib.Variant | null): void;
+    set_attribute_value(
+      attribute: string | null,
+      value: GLib.Variant | null
+    ): void;
     /**
      * Sets the "action" and possibly the "target" attribute of `menu_item`.
      *
@@ -33247,7 +33475,7 @@ declare namespace Gio {
      * the semantics of the action and target attributes.
      * @param detailed_action the "detailed" action string
      */
-    set_detailed_action(detailed_action: string): void;
+    set_detailed_action(detailed_action: string | null): void;
     /**
      * Sets (or unsets) the icon on `menu_item`.
      *
@@ -33263,7 +33491,7 @@ declare namespace Gio {
      * If `icon` is %NULL then the icon is unset.
      * @param icon a #GIcon, or %NULL
      */
-    set_icon(icon: Icon): void;
+    set_icon(icon: Icon | null): void;
     /**
      * Sets or unsets the "label" attribute of `menu_item`.
      *
@@ -33286,7 +33514,7 @@ declare namespace Gio {
      * @param link type of link to establish or unset
      * @param model the #GMenuModel to link to (or %NULL to unset)
      */
-    set_link(link: string, model: MenuModel | null): void;
+    set_link(link: string | null, model: MenuModel | null): void;
     /**
      * Sets or unsets the "section" link of `menu_item` to `section`.
      *
@@ -33373,7 +33601,10 @@ declare namespace Gio {
      * @param item_index the index of an item in `model`
      * @returns a new #GMenuItem.
      */
-    static new_from_model(model: MenuModel, item_index: number): MenuItem;
+    static new_from_model(
+      model: MenuModel | null,
+      item_index: number
+    ): MenuItem;
     /**
      * Creates a new #GMenuItem representing a section.
      *
@@ -33442,7 +33673,10 @@ declare namespace Gio {
      * @param section a #GMenuModel with the items of the section
      * @returns a new #GMenuItem
      */
-    static new_section(label: string | null, section: MenuModel): MenuItem;
+    static new_section(
+      label: string | null,
+      section: MenuModel | null
+    ): MenuItem;
     /**
      * Creates a new #GMenuItem representing a submenu.
      *
@@ -33453,21 +33687,24 @@ declare namespace Gio {
      * @param submenu a #GMenuModel with the items of the submenu
      * @returns a new #GMenuItem
      */
-    static new_submenu(label: string | null, submenu: MenuModel): MenuItem;
+    static new_submenu(
+      label: string | null,
+      submenu: MenuModel | null
+    ): MenuItem;
     _init(config?: MenuItem.ConstructorProperties): void;
   }
 
-  namespace MenuLinkIter {
+  module MenuLinkIter {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface MenuLinkIter {
     // Own fields of Gio-2.0.Gio.MenuLinkIter
 
     parent_instance: GObject.Object;
-    priv: MenuLinkIterPrivate;
+    priv: MenuLinkIterPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.MenuLinkIter
 
@@ -33477,7 +33714,7 @@ declare namespace Gio {
      * The iterator is not advanced.
      * @returns the type of the link
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * This function combines g_menu_link_iter_next() with
      * g_menu_link_iter_get_name() and g_menu_link_iter_get_value().
@@ -33497,8 +33734,8 @@ declare namespace Gio {
      */
     get_next(): [
       /* returnType */ boolean,
-      /* out_link */ string,
-      /* value */ MenuModel
+      /* out_link */ string | null,
+      /* value */ MenuModel | null
     ];
     /**
      * Gets the linked #GMenuModel at the current iterator position.
@@ -33506,7 +33743,7 @@ declare namespace Gio {
      * The iterator is not advanced.
      * @returns the #GMenuModel that is linked to
      */
-    get_value(): MenuModel;
+    get_value(): MenuModel | null;
     /**
      * Attempts to advance the iterator to the next (possibly first)
      * link.
@@ -33542,8 +33779,8 @@ declare namespace Gio {
      */
     vfunc_get_next(): [
       /* returnType */ boolean,
-      /* out_link */ string,
-      /* value */ MenuModel
+      /* out_link */ string | null,
+      /* value */ MenuModel | null
     ];
 
     // Class property signals of Gio-2.0.Gio.MenuLinkIter
@@ -33571,7 +33808,7 @@ declare namespace Gio {
     _init(config?: MenuLinkIter.ConstructorProperties): void;
   }
 
-  namespace MenuModel {
+  module MenuModel {
     // Signal callback interfaces
 
     /**
@@ -33583,14 +33820,14 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface MenuModel {
     // Own fields of Gio-2.0.Gio.MenuModel
 
     parent_instance: GObject.Object;
-    priv: MenuModelPrivate;
+    priv: MenuModelPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.MenuModel
 
@@ -33613,7 +33850,7 @@ declare namespace Gio {
      */
     get_item_attribute_value(
       item_index: number,
-      attribute: string,
+      attribute: string | null,
       expected_type: GLib.VariantType | null
     ): GLib.Variant | null;
     /**
@@ -33626,7 +33863,7 @@ declare namespace Gio {
      * @param link the link to query
      * @returns the linked #GMenuModel, or %NULL
      */
-    get_item_link(item_index: number, link: string): MenuModel | null;
+    get_item_link(item_index: number, link: string | null): MenuModel | null;
     /**
      * Query the number of items in `model`.
      * @returns the number of items
@@ -33669,7 +33906,7 @@ declare namespace Gio {
      * @param item_index the index of the item
      * @returns a new #GMenuAttributeIter
      */
-    iterate_item_attributes(item_index: number): MenuAttributeIter;
+    iterate_item_attributes(item_index: number): MenuAttributeIter | null;
     /**
      * Creates a #GMenuLinkIter to iterate over the links of the item at
      * position `item_index` in `model`.
@@ -33678,7 +33915,7 @@ declare namespace Gio {
      * @param item_index the index of the item
      * @returns a new #GMenuLinkIter
      */
-    iterate_item_links(item_index: number): MenuLinkIter;
+    iterate_item_links(item_index: number): MenuLinkIter | null;
 
     // Own virtual methods of Gio-2.0.Gio.MenuModel
 
@@ -33702,7 +33939,7 @@ declare namespace Gio {
      */
     vfunc_get_item_attribute_value(
       item_index: number,
-      attribute: string,
+      attribute: string | null,
       expected_type: GLib.VariantType | null
     ): GLib.Variant | null;
     /**
@@ -33712,7 +33949,7 @@ declare namespace Gio {
      */
     vfunc_get_item_attributes(
       item_index: number
-    ): /* attributes */ GLib.HashTable;
+    ): /* attributes */ GLib.HashTable | null;
     /**
      * Queries the item at position `item_index` in `model` for the link
      * specified by `link`.
@@ -33724,13 +33961,16 @@ declare namespace Gio {
      * @param link the link to query
      * @returns the linked #GMenuModel, or %NULL
      */
-    vfunc_get_item_link(item_index: number, link: string): MenuModel | null;
+    vfunc_get_item_link(
+      item_index: number,
+      link: string | null
+    ): MenuModel | null;
     /**
      * Gets all the links associated with the item in the menu model.
      * @virtual
      * @param item_index The #GMenuItem to query
      */
-    vfunc_get_item_links(item_index: number): /* links */ GLib.HashTable;
+    vfunc_get_item_links(item_index: number): /* links */ GLib.HashTable | null;
     /**
      * Query the number of items in `model`.
      * @virtual
@@ -33755,7 +33995,7 @@ declare namespace Gio {
      * @param item_index the index of the item
      * @returns a new #GMenuAttributeIter
      */
-    vfunc_iterate_item_attributes(item_index: number): MenuAttributeIter;
+    vfunc_iterate_item_attributes(item_index: number): MenuAttributeIter | null;
     /**
      * Creates a #GMenuLinkIter to iterate over the links of the item at
      * position `item_index` in `model`.
@@ -33765,7 +34005,7 @@ declare namespace Gio {
      * @param item_index the index of the item
      * @returns a new #GMenuLinkIter
      */
-    vfunc_iterate_item_links(item_index: number): MenuLinkIter;
+    vfunc_iterate_item_links(item_index: number): MenuLinkIter | null;
 
     // Own signals of Gio-2.0.Gio.MenuModel
 
@@ -33921,7 +34161,7 @@ declare namespace Gio {
     _init(config?: MenuModel.ConstructorProperties): void;
   }
 
-  namespace MountOperation {
+  module MountOperation {
     // Signal callback interfaces
 
     /**
@@ -33937,9 +34177,9 @@ declare namespace Gio {
     interface AskPasswordSignalCallback {
       (
         $obj: MountOperation,
-        message: string,
-        default_user: string,
-        default_domain: string,
+        message: string | null,
+        default_user: string | null,
+        default_domain: string | null,
         flags: AskPasswordFlags
       ): void;
     }
@@ -33948,7 +34188,7 @@ declare namespace Gio {
      * Signal callback interface for `ask-question`
      */
     interface AskQuestionSignalCallback {
-      ($obj: MountOperation, message: string, choices: string[]): void;
+      ($obj: MountOperation, message: string | null, choices: string[]): void;
     }
 
     /**
@@ -33964,7 +34204,7 @@ declare namespace Gio {
     interface ShowProcessesSignalCallback {
       (
         $obj: MountOperation,
-        message: string,
+        message: string | null,
         processes: GLib.Pid[],
         choices: string[]
       ): void;
@@ -33976,7 +34216,7 @@ declare namespace Gio {
     interface ShowUnmountProgressSignalCallback {
       (
         $obj: MountOperation,
-        message: string,
+        message: string | null,
         time_left: number,
         bytes_left: number
       ): void;
@@ -34051,7 +34291,7 @@ declare namespace Gio {
     /**
      * The domain to use for the mount operation.
      */
-    domain: string;
+    domain: string | null;
     /**
      * Whether the device to be unlocked is a TCRYPT hidden volume.
      * See [the VeraCrypt documentation](https://www.veracrypt.fr/en/Hidden%20Volume.html).
@@ -34069,7 +34309,7 @@ declare namespace Gio {
      * The password that is used for authentication when carrying out
      * the mount operation.
      */
-    password: string;
+    password: string | null;
     /**
      * Determines if and how the password information should be saved.
      */
@@ -34083,12 +34323,12 @@ declare namespace Gio {
      * The user name that is used for authentication when carrying out
      * the mount operation.
      */
-    username: string;
+    username: string | null;
 
     // Own fields of Gio-2.0.Gio.MountOperation
 
     parent_instance: GObject.Object;
-    priv: MountOperationPrivate;
+    priv: MountOperationPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.MountOperation
 
@@ -34195,9 +34435,9 @@ declare namespace Gio {
 
     vfunc_aborted(): void;
     vfunc_ask_password(
-      message: string,
-      default_user: string,
-      default_domain: string,
+      message: string | null,
+      default_user: string | null,
+      default_domain: string | null,
       flags: AskPasswordFlags
     ): void;
     /**
@@ -34206,7 +34446,7 @@ declare namespace Gio {
      * @param message string containing a message to display to the user
      * @param choices an array of    strings for each possible choice
      */
-    vfunc_ask_question(message: string, choices: string[]): void;
+    vfunc_ask_question(message: string | null, choices: string[]): void;
     /**
      * Emits the #GMountOperation::reply signal.
      * @virtual
@@ -34221,12 +34461,12 @@ declare namespace Gio {
      * @param choices an array of    strings for each possible choice
      */
     vfunc_show_processes(
-      message: string,
+      message: string | null,
       processes: GLib.Pid[],
       choices: string[]
     ): void;
     vfunc_show_unmount_progress(
-      message: string,
+      message: string | null,
       time_left: number,
       bytes_left: number
     ): void;
@@ -34252,9 +34492,9 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "ask-password",
-      message: string,
-      default_user: string,
-      default_domain: string,
+      message: string | null,
+      default_user: string | null,
+      default_domain: string | null,
       flags: AskPasswordFlags,
       ...args: any[]
     ): void;
@@ -34268,7 +34508,7 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "ask-question",
-      message: string,
+      message: string | null,
       choices: string[],
       ...args: any[]
     ): void;
@@ -34291,7 +34531,7 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "show-processes",
-      message: string,
+      message: string | null,
       processes: GLib.Pid[],
       choices: string[],
       ...args: any[]
@@ -34306,7 +34546,7 @@ declare namespace Gio {
     ): number;
     emit(
       sigName: "show-unmount-progress",
-      message: string,
+      message: string | null,
       time_left: number,
       bytes_left: number,
       ...args: any[]
@@ -34449,7 +34689,7 @@ declare namespace Gio {
     _init(config?: MountOperation.ConstructorProperties): void;
   }
 
-  namespace NativeSocketAddress {
+  module NativeSocketAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -34499,7 +34739,7 @@ declare namespace Gio {
      * @param len the length of `native,` in bytes
      * @returns a new #GNativeSocketAddress
      */
-    constructor(native: object | null, len: number);
+    constructor(native: any | null, len: number);
     /**
      * Creates a new #GNativeSocketAddress for `native` and `len`.
      * @constructor
@@ -34507,14 +34747,14 @@ declare namespace Gio {
      * @param len the length of `native,` in bytes
      * @returns a new #GNativeSocketAddress
      */
-    static new(native: object | null, len: number): NativeSocketAddress;
+    static new(native: any | null, len: number): NativeSocketAddress;
     _init(config?: NativeSocketAddress.ConstructorProperties): void;
   }
 
-  namespace NativeVolumeMonitor {
+  module NativeVolumeMonitor {
     // Constructor properties interface
 
-    type ConstructorProperties = VolumeMonitor.ConstructorProperties;
+    type ConstructorProperties = VolumeMonitor.ConstructorProperties
   }
 
   interface NativeVolumeMonitor {
@@ -34542,7 +34782,7 @@ declare namespace Gio {
     _init(config?: NativeVolumeMonitor.ConstructorProperties): void;
   }
 
-  namespace NetworkAddress {
+  module NetworkAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -34559,9 +34799,9 @@ declare namespace Gio {
   interface NetworkAddress extends SocketConnectable {
     // Own properties of Gio-2.0.Gio.NetworkAddress
 
-    readonly hostname: string;
+    readonly hostname: string | null;
     readonly port: number;
-    readonly scheme: string;
+    readonly scheme: string | null;
 
     // Own fields of Gio-2.0.Gio.NetworkAddress
 
@@ -34574,7 +34814,7 @@ declare namespace Gio {
      * depending on what `addr` was created with.
      * @returns @addr's hostname
      */
-    get_hostname(): string;
+    get_hostname(): string | null;
     /**
      * Gets `addr'`s port number
      * @returns @addr's port (which may be 0)
@@ -34657,7 +34897,7 @@ declare namespace Gio {
      * @param port the port
      * @returns the new #GNetworkAddress
      */
-    constructor(hostname: string, port: number);
+    constructor(hostname: string | null, port: number);
     /**
      * Creates a new #GSocketConnectable for connecting to the given
      * `hostname` and `port`.
@@ -34672,7 +34912,7 @@ declare namespace Gio {
      * @param port the port
      * @returns the new #GNetworkAddress
      */
-    static new(hostname: string, port: number): NetworkAddress;
+    static new(hostname: string | null, port: number): NetworkAddress;
     /**
      * Creates a new #GSocketConnectable for connecting to the local host
      * over a loopback connection to the given `port`. This is intended for
@@ -34718,7 +34958,10 @@ declare namespace Gio {
      * @param default_port the default port if not in `host_and_port`
      * @returns the new   #GNetworkAddress, or %NULL on error
      */
-    static parse(host_and_port: string, default_port: number): NetworkAddress;
+    static parse(
+      host_and_port: string | null,
+      default_port: number
+    ): NetworkAddress | null;
     /**
      * Creates a new #GSocketConnectable for connecting to the given
      * `uri`. May fail and return %NULL in case parsing `uri` fails.
@@ -34730,10 +34973,13 @@ declare namespace Gio {
      * @param default_port The default port if none is found in the URI
      * @returns the new   #GNetworkAddress, or %NULL on error
      */
-    static parse_uri(uri: string, default_port: number): NetworkAddress;
+    static parse_uri(
+      uri: string | null,
+      default_port: number
+    ): NetworkAddress | null;
   }
 
-  namespace NetworkService {
+  module NetworkService {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -34751,10 +34997,10 @@ declare namespace Gio {
   interface NetworkService extends SocketConnectable {
     // Own properties of Gio-2.0.Gio.NetworkService
 
-    readonly domain: string;
-    readonly protocol: string;
-    scheme: string;
-    readonly service: string;
+    readonly domain: string | null;
+    readonly protocol: string | null;
+    scheme: string | null;
+    readonly service: string | null;
 
     // Own fields of Gio-2.0.Gio.NetworkService
 
@@ -34767,29 +35013,29 @@ declare namespace Gio {
      * ASCII-encoded, depending on what `srv` was created with.
      * @returns @srv's domain name
      */
-    get_domain(): string;
+    get_domain(): string | null;
     /**
      * Gets `srv'`s protocol name (eg, "tcp").
      * @returns @srv's protocol name
      */
-    get_protocol(): string;
+    get_protocol(): string | null;
     /**
      * Gets the URI scheme used to resolve proxies. By default, the service name
      * is used as scheme.
      * @returns @srv's scheme name
      */
-    get_scheme(): string;
+    get_scheme(): string | null;
     /**
      * Gets `srv'`s service name (eg, "ldap").
      * @returns @srv's service name
      */
-    get_service(): string;
+    get_service(): string | null;
     /**
      * Set's the URI scheme used to resolve proxies. By default, the service name
      * is used as scheme.
      * @param scheme a URI scheme
      */
-    set_scheme(scheme: string): void;
+    set_scheme(scheme: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.NetworkService
 
@@ -34866,7 +35112,11 @@ declare namespace Gio {
      * @param domain the DNS domain to look up the service in
      * @returns a new #GNetworkService
      */
-    constructor(service: string, protocol: string, domain: string);
+    constructor(
+      service: string | null,
+      protocol: string | null,
+      domain: string | null
+    );
     /**
      * Creates a new #GNetworkService representing the given `service,`
      * `protocol,` and `domain`. This will initially be unresolved; use the
@@ -34878,17 +35128,17 @@ declare namespace Gio {
      * @returns a new #GNetworkService
      */
     static new(
-      service: string,
-      protocol: string,
-      domain: string
+      service: string | null,
+      protocol: string | null,
+      domain: string | null
     ): NetworkService;
     _init(config?: NetworkService.ConstructorProperties): void;
   }
 
-  namespace Notification {
+  module Notification {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Notification {
@@ -34906,7 +35156,7 @@ declare namespace Gio {
      * @param label label of the button
      * @param detailed_action a detailed action name
      */
-    add_button(label: string, detailed_action: string): void;
+    add_button(label: string | null, detailed_action: string | null): void;
     /**
      * Adds a button to `notification` that activates `action` when clicked.
      * `action` must be an application-wide action (it must start with "app.").
@@ -34918,8 +35168,8 @@ declare namespace Gio {
      * @param target a #GVariant to use as `action'`s parameter, or %NULL
      */
     add_button_with_target(
-      label: string,
-      action: string,
+      label: string | null,
+      action: string | null,
       target: GLib.Variant | null
     ): void;
     /**
@@ -34951,7 +35201,7 @@ declare namespace Gio {
      * was sent on is activated.
      * @param detailed_action a detailed action name
      */
-    set_default_action(detailed_action: string): void;
+    set_default_action(detailed_action: string | null): void;
     /**
      * Sets the default action of `notification` to `action`. This action is
      * activated when the notification is clicked on. It must be an
@@ -34966,14 +35216,14 @@ declare namespace Gio {
      * @param target a #GVariant to use as `action'`s parameter, or %NULL
      */
     set_default_action_and_target(
-      action: string,
+      action: string | null,
       target: GLib.Variant | null
     ): void;
     /**
      * Sets the icon of `notification` to `icon`.
      * @param icon the icon to be shown in `notification,` as a #GIcon
      */
-    set_icon(icon: Icon): void;
+    set_icon(icon: Icon | null): void;
     /**
      * Sets the priority of `notification` to `priority`. See
      * #GNotificationPriority for possible values.
@@ -34984,7 +35234,7 @@ declare namespace Gio {
      * Sets the title of `notification` to `title`.
      * @param title the new title for `notification`
      */
-    set_title(title: string): void;
+    set_title(title: string | null): void;
     /**
      * Deprecated in favor of g_notification_set_priority().
      * @param urgent %TRUE if `notification` is urgent
@@ -35067,7 +35317,7 @@ declare namespace Gio {
      * @param title the title of the notification
      * @returns a new #GNotification instance
      */
-    constructor(title: string);
+    constructor(title: string | null);
     /**
      * Creates a new #GNotification with `title` as its title.
      *
@@ -35079,14 +35329,14 @@ declare namespace Gio {
      * @param title the title of the notification
      * @returns a new #GNotification instance
      */
-    static new(title: string): Notification;
+    static new(title: string | null): Notification;
     _init(config?: Notification.ConstructorProperties): void;
   }
 
-  namespace OutputStream {
+  module OutputStream {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface OutputStream {
@@ -35159,7 +35409,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if stream was successfully closed, %FALSE otherwise.
      */
-    close_finish(result: AsyncResult): boolean;
+    close_finish(result: AsyncResult | null): boolean;
     /**
      * Forces a write of all user-space buffered data for the given
      * `stream`. Will block during the operation. Closing the stream will
@@ -35196,7 +35446,7 @@ declare namespace Gio {
      * @param result a GAsyncResult.
      * @returns %TRUE if flush operation succeeded, %FALSE otherwise.
      */
-    flush_finish(result: AsyncResult): boolean;
+    flush_finish(result: AsyncResult | null): boolean;
     /**
      * Checks if an output stream has pending actions.
      * @returns %TRUE if @stream has pending actions.
@@ -35230,7 +35480,7 @@ declare namespace Gio {
      * @returns a #gssize containing the size of the data spliced, or     -1 if an error occurred. Note that if the number of bytes     spliced is greater than %G_MAXSSIZE, then that will be     returned, and there is no way to determine the actual number     of bytes spliced.
      */
     splice(
-      source: InputStream,
+      source: InputStream | null,
       flags: OutputStreamSpliceFlags,
       cancellable: Cancellable | null
     ): number;
@@ -35249,7 +35499,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback.
      */
     splice_async(
-      source: InputStream,
+      source: InputStream | null,
       flags: OutputStreamSpliceFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -35260,7 +35510,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #gssize of the number of bytes spliced. Note that if the     number of bytes spliced is greater than %G_MAXSSIZE, then that     will be returned, and there is no way to determine the actual     number of bytes spliced.
      */
-    splice_finish(result: AsyncResult): number;
+    splice_finish(result: AsyncResult | null): number;
     /**
      * Tries to write `count` bytes from `buffer` into the stream. Will block
      * during the operation.
@@ -35314,7 +35564,7 @@ declare namespace Gio {
     write_all(
       buffer: Uint8Array,
       cancellable: Cancellable | null
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
     /**
      * Request an asynchronous write of `count` bytes from `buffer` into
      * the stream. When the operation is finished `callback` will be called.
@@ -35357,8 +35607,8 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE if there was an error
      */
     write_all_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
     /**
      * Request an asynchronous write of `count` bytes from `buffer` into
      * the stream. When the operation is finished `callback` will be called.
@@ -35422,7 +35672,10 @@ declare namespace Gio {
      * @param cancellable optional cancellable object
      * @returns Number of bytes written, or -1 on error
      */
-    write_bytes(bytes: GLib.Bytes, cancellable: Cancellable | null): number;
+    write_bytes(
+      bytes: GLib.Bytes | null,
+      cancellable: Cancellable | null
+    ): number;
     /**
      * This function is similar to g_output_stream_write_async(), but
      * takes a #GBytes as input.  Due to the refcounted nature of #GBytes,
@@ -35443,7 +35696,7 @@ declare namespace Gio {
      * @param callback callback to call when the request is satisfied
      */
     write_bytes_async(
-      bytes: GLib.Bytes,
+      bytes: GLib.Bytes | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -35453,13 +35706,13 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #gssize containing the number of bytes written to the stream.
      */
-    write_bytes_finish(result: AsyncResult): number;
+    write_bytes_finish(result: AsyncResult | null): number;
     /**
      * Finishes a stream write operation.
      * @param result a #GAsyncResult.
      * @returns a #gssize containing the number of bytes written to the stream.
      */
-    write_finish(result: AsyncResult): number;
+    write_finish(result: AsyncResult | null): number;
     /**
      * Tries to write the bytes contained in the `n_vectors` `vectors` into the
      * stream. Will block during the operation.
@@ -35491,7 +35744,7 @@ declare namespace Gio {
     writev(
       vectors: OutputVector[],
       cancellable: Cancellable | null
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
     /**
      * Tries to write the bytes contained in the `n_vectors` `vectors` into the
      * stream. Will block during the operation.
@@ -35522,7 +35775,7 @@ declare namespace Gio {
     writev_all(
       vectors: OutputVector[],
       cancellable: Cancellable | null
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
     /**
      * Request an asynchronous write of the bytes contained in the `n_vectors` `vectors` into
      * the stream. When the operation is finished `callback` will be called.
@@ -35566,8 +35819,8 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE if there was an error
      */
     writev_all_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
     /**
      * Request an asynchronous write of the bytes contained in `n_vectors` `vectors` into
      * the stream. When the operation is finished `callback` will be called.
@@ -35616,8 +35869,8 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE if there was an error
      */
     writev_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
 
     // Own virtual methods of Gio-2.0.Gio.OutputStream
 
@@ -35648,7 +35901,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if stream was successfully closed, %FALSE otherwise.
      */
-    vfunc_close_finish(result: AsyncResult): boolean;
+    vfunc_close_finish(result: AsyncResult | null): boolean;
     vfunc_close_fn(cancellable: Cancellable | null): boolean;
     /**
      * Forces a write of all user-space buffered data for the given
@@ -35689,7 +35942,7 @@ declare namespace Gio {
      * @param result a GAsyncResult.
      * @returns %TRUE if flush operation succeeded, %FALSE otherwise.
      */
-    vfunc_flush_finish(result: AsyncResult): boolean;
+    vfunc_flush_finish(result: AsyncResult | null): boolean;
     /**
      * Splices an input stream into an output stream.
      * @virtual
@@ -35699,7 +35952,7 @@ declare namespace Gio {
      * @returns a #gssize containing the size of the data spliced, or     -1 if an error occurred. Note that if the number of bytes     spliced is greater than %G_MAXSSIZE, then that will be     returned, and there is no way to determine the actual number     of bytes spliced.
      */
     vfunc_splice(
-      source: InputStream,
+      source: InputStream | null,
       flags: OutputStreamSpliceFlags,
       cancellable: Cancellable | null
     ): number;
@@ -35719,7 +35972,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback.
      */
     vfunc_splice_async(
-      source: InputStream,
+      source: InputStream | null,
       flags: OutputStreamSpliceFlags,
       io_priority: number,
       cancellable: Cancellable | null,
@@ -35731,7 +35984,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #gssize of the number of bytes spliced. Note that if the     number of bytes spliced is greater than %G_MAXSSIZE, then that     will be returned, and there is no way to determine the actual     number of bytes spliced.
      */
-    vfunc_splice_finish(result: AsyncResult): number;
+    vfunc_splice_finish(result: AsyncResult | null): number;
     /**
      * Request an asynchronous write of `count` bytes from `buffer` into
      * the stream. When the operation is finished `callback` will be called.
@@ -35786,7 +36039,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #gssize containing the number of bytes written to the stream.
      */
-    vfunc_write_finish(result: AsyncResult): number;
+    vfunc_write_finish(result: AsyncResult | null): number;
     /**
      * Tries to write `count` bytes from `buffer` into the stream. Will block
      * during the operation.
@@ -35867,8 +36120,8 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE if there was an error
      */
     vfunc_writev_finish(
-      result: AsyncResult
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+      result: AsyncResult | null
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
     /**
      * Tries to write the bytes contained in the `n_vectors` `vectors` into the
      * stream. Will block during the operation.
@@ -35901,7 +36154,7 @@ declare namespace Gio {
     vfunc_writev_fn(
       vectors: OutputVector[],
       cancellable: Cancellable | null
-    ): [/* returnType */ boolean, /* bytes_written */ number];
+    ): [/* returnType */ boolean, /* bytes_written */ number | null];
 
     // Class property signals of Gio-2.0.Gio.OutputStream
 
@@ -35937,10 +36190,10 @@ declare namespace Gio {
     _init(config?: OutputStream.ConstructorProperties): void;
   }
 
-  namespace Permission {
+  module Permission {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Permission {
@@ -36009,7 +36262,7 @@ declare namespace Gio {
      * @param result the #GAsyncResult given to the #GAsyncReadyCallback
      * @returns %TRUE if the permission was successfully acquired
      */
-    acquire_finish(result: AsyncResult): boolean;
+    acquire_finish(result: AsyncResult | null): boolean;
     /**
      * Gets the value of the 'allowed' property.  This property is %TRUE if
      * the caller currently has permission to perform the action that
@@ -36087,7 +36340,7 @@ declare namespace Gio {
      * @param result the #GAsyncResult given to the #GAsyncReadyCallback
      * @returns %TRUE if the permission was successfully released
      */
-    release_finish(result: AsyncResult): boolean;
+    release_finish(result: AsyncResult | null): boolean;
 
     // Own virtual methods of Gio-2.0.Gio.Permission
 
@@ -36135,7 +36388,7 @@ declare namespace Gio {
      * @param result the #GAsyncResult given to the #GAsyncReadyCallback
      * @returns %TRUE if the permission was successfully acquired
      */
-    vfunc_acquire_finish(result: AsyncResult): boolean;
+    vfunc_acquire_finish(result: AsyncResult | null): boolean;
     /**
      * Attempts to release the permission represented by `permission`.
      *
@@ -36180,7 +36433,7 @@ declare namespace Gio {
      * @param result the #GAsyncResult given to the #GAsyncReadyCallback
      * @returns %TRUE if the permission was successfully released
      */
-    vfunc_release_finish(result: AsyncResult): boolean;
+    vfunc_release_finish(result: AsyncResult | null): boolean;
 
     // Class property signals of Gio-2.0.Gio.Permission
 
@@ -36247,7 +36500,7 @@ declare namespace Gio {
     _init(config?: Permission.ConstructorProperties): void;
   }
 
-  namespace PropertyAction {
+  module PropertyAction {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -36300,7 +36553,7 @@ declare namespace Gio {
      * The name of the action.  This is mostly meaningful for identifying
      * the action once it has been added to a #GActionMap.
      */
-    readonly name: string;
+    readonly name: string | null;
     /**
      * The object to wrap a property on.
      *
@@ -36318,7 +36571,7 @@ declare namespace Gio {
      * The property must exist on the passed-in object and it must be
      * readable and writable (and not construct-only).
      */
-    readonly property_name: string;
+    readonly property_name: string | null;
     /**
      * The state of the action, or %NULL if the action is stateless.
      */
@@ -36487,7 +36740,11 @@ declare namespace Gio {
      * @param property_name the name of the property
      * @returns a new #GPropertyAction
      */
-    constructor(name: string, object: GObject.Object, property_name: string);
+    constructor(
+      name: string | null,
+      object: GObject.Object,
+      property_name: string | null
+    );
     /**
      * Creates a #GAction corresponding to the value of property
      * `property_name` on `object`.
@@ -36504,14 +36761,14 @@ declare namespace Gio {
      * @returns a new #GPropertyAction
      */
     static new(
-      name: string,
+      name: string | null,
       object: GObject.Object,
-      property_name: string
+      property_name: string | null
     ): PropertyAction;
     _init(config?: PropertyAction.ConstructorProperties): void;
   }
 
-  namespace ProxyAddress {
+  module ProxyAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -36540,21 +36797,21 @@ declare namespace Gio {
   interface ProxyAddress extends SocketConnectable {
     // Own properties of Gio-2.0.Gio.ProxyAddress
 
-    readonly destination_hostname: string;
+    readonly destination_hostname: string | null;
     readonly destination_port: number;
     /**
      * The protocol being spoke to the destination host, or %NULL if
      * the #GProxyAddress doesn't know.
      */
-    readonly destination_protocol: string;
-    readonly password: string;
-    readonly protocol: string;
+    readonly destination_protocol: string | null;
+    readonly password: string | null;
+    readonly protocol: string | null;
     /**
      * The URI string that the proxy was constructed from (or %NULL
      * if the creator didn't specify this).
      */
-    readonly uri: string;
-    readonly username: string;
+    readonly uri: string | null;
+    readonly username: string | null;
 
     // Own fields of Gio-2.0.Gio.ProxyAddress
 
@@ -36571,7 +36828,7 @@ declare namespace Gio {
      * itself.
      * @returns the @proxy's destination hostname
      */
-    get_destination_hostname(): string;
+    get_destination_hostname(): string | null;
     /**
      * Gets `proxy'`s destination port; that is, the port on the
      * destination host that will be connected to via the proxy, not the
@@ -36584,7 +36841,7 @@ declare namespace Gio {
      * server; eg, "http" or "ftp".
      * @returns the @proxy's destination protocol
      */
-    get_destination_protocol(): string;
+    get_destination_protocol(): string | null;
     /**
      * Gets `proxy'`s password.
      * @returns the @proxy's password
@@ -36594,7 +36851,7 @@ declare namespace Gio {
      * Gets `proxy'`s protocol. eg, "socks" or "http"
      * @returns the @proxy's protocol
      */
-    get_protocol(): string;
+    get_protocol(): string | null;
     /**
      * Gets the proxy URI that `proxy` was constructed from.
      * @returns the @proxy's URI, or %NULL if unknown
@@ -36753,10 +37010,10 @@ declare namespace Gio {
      * @returns a new #GProxyAddress
      */
     constructor(
-      inetaddr: InetAddress,
+      inetaddr: InetAddress | null,
       port: number,
-      protocol: string,
-      dest_hostname: string,
+      protocol: string | null,
+      dest_hostname: string | null,
       dest_port: number,
       username: string | null,
       password: string | null
@@ -36779,10 +37036,10 @@ declare namespace Gio {
      * @returns a new #GProxyAddress
      */
     static new(
-      inetaddr: InetAddress,
+      inetaddr: InetAddress | null,
       port: number,
-      protocol: string,
-      dest_hostname: string,
+      protocol: string | null,
+      dest_hostname: string | null,
       dest_port: number,
       username: string | null,
       password: string | null
@@ -36797,11 +37054,11 @@ declare namespace Gio {
      * @param port a port number
      * @returns a new #GInetSocketAddress
      */
-    static new(address: InetAddress, port: number): InetSocketAddress;
+    static new(address: InetAddress | null, port: number): InetSocketAddress;
     _init(config?: ProxyAddress.ConstructorProperties): void;
   }
 
-  namespace ProxyAddressEnumerator {
+  module ProxyAddressEnumerator {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -36835,7 +37092,7 @@ declare namespace Gio {
      * The proxy resolver to use.
      */
     proxy_resolver: ProxyResolver;
-    readonly uri: string;
+    readonly uri: string | null;
 
     // Class property signals of Gio-2.0.Gio.ProxyAddressEnumerator
 
@@ -36905,7 +37162,7 @@ declare namespace Gio {
     _init(config?: ProxyAddressEnumerator.ConstructorProperties): void;
   }
 
-  namespace Resolver {
+  module Resolver {
     // Signal callback interfaces
 
     /**
@@ -36917,14 +37174,14 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Resolver {
     // Own fields of Gio-2.0.Gio.Resolver
 
     parent_instance: GObject.Object;
-    priv: ResolverPrivate;
+    priv: ResolverPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.Resolver
 
@@ -36943,9 +37200,9 @@ declare namespace Gio {
      * @returns a hostname (either ASCII-only, or in ASCII-encoded     form), or %NULL on error.
      */
     lookup_by_address(
-      address: InetAddress,
+      address: InetAddress | null,
       cancellable: Cancellable | null
-    ): string;
+    ): string | null;
     /**
      * Begins asynchronously reverse-resolving `address` to determine its
      * associated hostname, and eventually calls `callback,` which must
@@ -36955,7 +37212,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     lookup_by_address_async(
-      address: InetAddress,
+      address: InetAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -36969,7 +37226,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a hostname (either ASCII-only, or in ASCII-encoded form), or %NULL on error.
      */
-    lookup_by_address_finish(result: AsyncResult): string;
+    lookup_by_address_finish(result: AsyncResult | null): string | null;
     /**
      * Synchronously resolves `hostname` to determine its associated IP
      * address(es). `hostname` may be an ASCII-only or UTF-8 hostname, or
@@ -36999,9 +37256,9 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GInetAddress, or %NULL on error. You must unref each of the addresses and free the list when you are done with it. (You can use g_resolver_free_addresses() to do this.)
      */
     lookup_by_name(
-      hostname: string,
+      hostname: string | null,
       cancellable: Cancellable | null
-    ): InetAddress[];
+    ): InetAddress[] | null;
     /**
      * Begins asynchronously resolving `hostname` to determine its
      * associated IP address(es), and eventually calls `callback,` which
@@ -37012,7 +37269,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     lookup_by_name_async(
-      hostname: string,
+      hostname: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -37026,7 +37283,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a #GList of #GInetAddress, or %NULL on error. See g_resolver_lookup_by_name() for more details.
      */
-    lookup_by_name_finish(result: AsyncResult): InetAddress[];
+    lookup_by_name_finish(result: AsyncResult | null): InetAddress[] | null;
     /**
      * This differs from g_resolver_lookup_by_name() in that you can modify
      * the lookup behavior with `flags`. For example this can be used to limit
@@ -37037,10 +37294,10 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GInetAddress, or %NULL on error. You must unref each of the addresses and free the list when you are done with it. (You can use g_resolver_free_addresses() to do this.)
      */
     lookup_by_name_with_flags(
-      hostname: string,
+      hostname: string | null,
       flags: ResolverNameLookupFlags,
       cancellable: Cancellable | null
-    ): InetAddress[];
+    ): InetAddress[] | null;
     /**
      * Begins asynchronously resolving `hostname` to determine its
      * associated IP address(es), and eventually calls `callback,` which
@@ -37052,7 +37309,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     lookup_by_name_with_flags_async(
-      hostname: string,
+      hostname: string | null,
       flags: ResolverNameLookupFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -37067,7 +37324,9 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a #GList of #GInetAddress, or %NULL on error. See g_resolver_lookup_by_name() for more details.
      */
-    lookup_by_name_with_flags_finish(result: AsyncResult): InetAddress[];
+    lookup_by_name_with_flags_finish(
+      result: AsyncResult | null
+    ): InetAddress[] | null;
     /**
      * Synchronously performs a DNS record lookup for the given `rrname` and returns
      * a list of records as #GVariant tuples. See #GResolverRecordType for
@@ -37085,10 +37344,10 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GVariant, or %NULL on error. You must free each of the records and the list when you are done with it. (You can use g_list_free_full() with g_variant_unref() to do this.)
      */
     lookup_records(
-      rrname: string,
+      rrname: string | null,
       record_type: ResolverRecordType,
       cancellable: Cancellable | null
-    ): GLib.Variant[];
+    ): GLib.Variant[] | null;
     /**
      * Begins asynchronously performing a DNS lookup for the given
      * `rrname,` and eventually calls `callback,` which must call
@@ -37100,7 +37359,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     lookup_records_async(
-      rrname: string,
+      rrname: string | null,
       record_type: ResolverRecordType,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -37117,7 +37376,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a non-empty #GList of #GVariant, or %NULL on error. You must free each of the records and the list when you are done with it. (You can use g_list_free_full() with g_variant_unref() to do this.)
      */
-    lookup_records_finish(result: AsyncResult): GLib.Variant[];
+    lookup_records_finish(result: AsyncResult | null): GLib.Variant[] | null;
     /**
      * Synchronously performs a DNS SRV lookup for the given `service` and
      * `protocol` in the given `domain` and returns an array of #GSrvTarget.
@@ -37147,11 +37406,11 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GSrvTarget, or %NULL on error. You must free each of the targets and the list when you are done with it. (You can use g_resolver_free_targets() to do this.)
      */
     lookup_service(
-      service: string,
-      protocol: string,
-      domain: string,
+      service: string | null,
+      protocol: string | null,
+      domain: string | null,
       cancellable: Cancellable | null
-    ): SrvTarget[];
+    ): SrvTarget[] | null;
     /**
      * Begins asynchronously performing a DNS SRV lookup for the given
      * `service` and `protocol` in the given `domain,` and eventually calls
@@ -37165,9 +37424,9 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     lookup_service_async(
-      service: string,
-      protocol: string,
-      domain: string,
+      service: string | null,
+      protocol: string | null,
+      domain: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -37181,7 +37440,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a non-empty #GList of #GSrvTarget, or %NULL on error. See g_resolver_lookup_service() for more details.
      */
-    lookup_service_finish(result: AsyncResult): SrvTarget[];
+    lookup_service_finish(result: AsyncResult | null): SrvTarget[] | null;
     /**
      * Sets `resolver` to be the application's default resolver (reffing
      * `resolver,` and unreffing the previous default resolver, if any).
@@ -37213,9 +37472,9 @@ declare namespace Gio {
      * @returns a hostname (either ASCII-only, or in ASCII-encoded     form), or %NULL on error.
      */
     vfunc_lookup_by_address(
-      address: InetAddress,
+      address: InetAddress | null,
       cancellable: Cancellable | null
-    ): string;
+    ): string | null;
     /**
      * Begins asynchronously reverse-resolving `address` to determine its
      * associated hostname, and eventually calls `callback,` which must
@@ -37226,7 +37485,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     vfunc_lookup_by_address_async(
-      address: InetAddress,
+      address: InetAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -37241,7 +37500,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a hostname (either ASCII-only, or in ASCII-encoded form), or %NULL on error.
      */
-    vfunc_lookup_by_address_finish(result: AsyncResult): string;
+    vfunc_lookup_by_address_finish(result: AsyncResult | null): string | null;
     /**
      * Synchronously resolves `hostname` to determine its associated IP
      * address(es). `hostname` may be an ASCII-only or UTF-8 hostname, or
@@ -37272,9 +37531,9 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GInetAddress, or %NULL on error. You must unref each of the addresses and free the list when you are done with it. (You can use g_resolver_free_addresses() to do this.)
      */
     vfunc_lookup_by_name(
-      hostname: string,
+      hostname: string | null,
       cancellable: Cancellable | null
-    ): InetAddress[];
+    ): InetAddress[] | null;
     /**
      * Begins asynchronously resolving `hostname` to determine its
      * associated IP address(es), and eventually calls `callback,` which
@@ -37286,7 +37545,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     vfunc_lookup_by_name_async(
-      hostname: string,
+      hostname: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -37301,7 +37560,9 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a #GList of #GInetAddress, or %NULL on error. See g_resolver_lookup_by_name() for more details.
      */
-    vfunc_lookup_by_name_finish(result: AsyncResult): InetAddress[];
+    vfunc_lookup_by_name_finish(
+      result: AsyncResult | null
+    ): InetAddress[] | null;
     /**
      * This differs from g_resolver_lookup_by_name() in that you can modify
      * the lookup behavior with `flags`. For example this can be used to limit
@@ -37313,10 +37574,10 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GInetAddress, or %NULL on error. You must unref each of the addresses and free the list when you are done with it. (You can use g_resolver_free_addresses() to do this.)
      */
     vfunc_lookup_by_name_with_flags(
-      hostname: string,
+      hostname: string | null,
       flags: ResolverNameLookupFlags,
       cancellable: Cancellable | null
-    ): InetAddress[];
+    ): InetAddress[] | null;
     /**
      * Begins asynchronously resolving `hostname` to determine its
      * associated IP address(es), and eventually calls `callback,` which
@@ -37329,7 +37590,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     vfunc_lookup_by_name_with_flags_async(
-      hostname: string,
+      hostname: string | null,
       flags: ResolverNameLookupFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -37345,7 +37606,9 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a #GList of #GInetAddress, or %NULL on error. See g_resolver_lookup_by_name() for more details.
      */
-    vfunc_lookup_by_name_with_flags_finish(result: AsyncResult): InetAddress[];
+    vfunc_lookup_by_name_with_flags_finish(
+      result: AsyncResult | null
+    ): InetAddress[] | null;
     /**
      * Synchronously performs a DNS record lookup for the given `rrname` and returns
      * a list of records as #GVariant tuples. See #GResolverRecordType for
@@ -37364,10 +37627,10 @@ declare namespace Gio {
      * @returns a non-empty #GList of #GVariant, or %NULL on error. You must free each of the records and the list when you are done with it. (You can use g_list_free_full() with g_variant_unref() to do this.)
      */
     vfunc_lookup_records(
-      rrname: string,
+      rrname: string | null,
       record_type: ResolverRecordType,
       cancellable: Cancellable | null
-    ): GLib.Variant[];
+    ): GLib.Variant[] | null;
     /**
      * Begins asynchronously performing a DNS lookup for the given
      * `rrname,` and eventually calls `callback,` which must call
@@ -37380,7 +37643,7 @@ declare namespace Gio {
      * @param callback callback to call after resolution completes
      */
     vfunc_lookup_records_async(
-      rrname: string,
+      rrname: string | null,
       record_type: ResolverRecordType,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -37398,9 +37661,11 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a non-empty #GList of #GVariant, or %NULL on error. You must free each of the records and the list when you are done with it. (You can use g_list_free_full() with g_variant_unref() to do this.)
      */
-    vfunc_lookup_records_finish(result: AsyncResult): GLib.Variant[];
+    vfunc_lookup_records_finish(
+      result: AsyncResult | null
+    ): GLib.Variant[] | null;
     vfunc_lookup_service_async(
-      rrname: string,
+      rrname: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -37415,7 +37680,7 @@ declare namespace Gio {
      * @param result the result passed to your #GAsyncReadyCallback
      * @returns a non-empty #GList of #GSrvTarget, or %NULL on error. See g_resolver_lookup_service() for more details.
      */
-    vfunc_lookup_service_finish(result: AsyncResult): SrvTarget[];
+    vfunc_lookup_service_finish(result: AsyncResult | null): SrvTarget[] | null;
     vfunc_reload(): void;
 
     // Own signals of Gio-2.0.Gio.Resolver
@@ -37462,10 +37727,10 @@ declare namespace Gio {
      * many threads it should allocate for concurrent DNS resolutions.
      * @returns the default #GResolver.
      */
-    static get_default(): Resolver;
+    static get_default(): Resolver | null;
   }
 
-  namespace Settings {
+  module Settings {
     // Signal callback interfaces
 
     /**
@@ -37479,7 +37744,7 @@ declare namespace Gio {
      * Signal callback interface for `changed`
      */
     interface ChangedSignalCallback {
-      ($obj: Settings, key: string): void;
+      ($obj: Settings, key: string | null): void;
     }
 
     /**
@@ -37493,7 +37758,7 @@ declare namespace Gio {
      * Signal callback interface for `writable-changed`
      */
     interface WritableChangedSignalCallback {
-      ($obj: Settings, key: string): void;
+      ($obj: Settings, key: string | null): void;
     }
 
     // Constructor properties interface
@@ -37560,7 +37825,7 @@ declare namespace Gio {
     /**
      * The path within the backend where the settings are stored.
      */
-    readonly path: string;
+    readonly path: string | null;
     /**
      * The name of the schema that describes the types of keys
      * for this #GSettings object.
@@ -37572,12 +37837,12 @@ declare namespace Gio {
      * 'settings-schema' property if you wish to pass in a
      * #GSettingsSchema.
      */
-    readonly schema: string;
+    readonly schema: string | null;
     /**
      * The name of the schema that describes the types of keys
      * for this #GSettings object.
      */
-    readonly schema_id: string;
+    readonly schema_id: string | null;
     /**
      * The #GSettingsSchema describing the types of keys for this
      * #GSettings object.
@@ -37592,7 +37857,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.Settings
 
     parent_instance: GObject.Object;
-    priv: SettingsPrivate;
+    priv: SettingsPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.Settings
 
@@ -37630,9 +37895,9 @@ declare namespace Gio {
      * @param flags flags for the binding
      */
     bind(
-      key: string,
+      key: string | null,
       object: GObject.Object,
-      property: string,
+      property: string | null,
       flags: SettingsBindFlags
     ): void;
     /**
@@ -37659,9 +37924,9 @@ declare namespace Gio {
      * @param inverted whether to 'invert' the value
      */
     bind_writable(
-      key: string,
+      key: string | null,
       object: GObject.Object,
-      property: string,
+      property: string | null,
       inverted: boolean
     ): void;
     /**
@@ -37682,7 +37947,7 @@ declare namespace Gio {
      * @param key the name of a key in `settings`
      * @returns a new #GAction
      */
-    create_action(key: string): Action;
+    create_action(key: string | null): Action | null;
     /**
      * Changes the #GSettings object into 'delay-apply' mode. In this
      * mode, changes to `settings` are not immediately propagated to the
@@ -37699,7 +37964,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a boolean
      */
-    get_boolean(key: string): boolean;
+    get_boolean(key: string | null): boolean;
     /**
      * Creates a child settings object which has a base path of
      * `base-path/`name``, where `base-path` is the base path of
@@ -37713,7 +37978,7 @@ declare namespace Gio {
      * @param name the name of the child schema
      * @returns a 'child' settings object
      */
-    get_child(name: string): Settings;
+    get_child(name: string | null): Settings | null;
     /**
      * Gets the "default value" of a key.
      *
@@ -37739,7 +38004,7 @@ declare namespace Gio {
      * @param key the key to get the default value for
      * @returns the default value
      */
-    get_default_value(key: string): GLib.Variant | null;
+    get_default_value(key: string | null): GLib.Variant | null;
     /**
      * Gets the value that is stored at `key` in `settings`.
      *
@@ -37750,7 +38015,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a double
      */
-    get_double(key: string): number;
+    get_double(key: string | null): number;
     /**
      * Gets the value that is stored in `settings` for `key` and converts it
      * to the enum value that it represents.
@@ -37767,7 +38032,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns the enum value
      */
-    get_enum(key: string): number;
+    get_enum(key: string | null): number;
     /**
      * Gets the value that is stored in `settings` for `key` and converts it
      * to the flags value that it represents.
@@ -37784,7 +38049,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns the flags value
      */
-    get_flags(key: string): number;
+    get_flags(key: string | null): number;
     /**
      * Returns whether the #GSettings object has any unapplied
      * changes.  This can only be the case if it is in 'delayed-apply' mode.
@@ -37801,7 +38066,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns an integer
      */
-    get_int(key: string): number;
+    get_int(key: string | null): number;
     /**
      * Gets the value that is stored at `key` in `settings`.
      *
@@ -37812,7 +38077,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a 64-bit integer
      */
-    get_int64(key: string): number;
+    get_int64(key: string | null): number;
     /**
      * Gets the value that is stored at `key` in `settings,` subject to
      * application-level validation/mapping.
@@ -37845,12 +38110,12 @@ declare namespace Gio {
      * @param mapping the function to map the value in the           settings database to the value used by the application
      * @returns the result, which may be %NULL
      */
-    get_mapped(key: string, mapping: SettingsGetMapping): object | null;
+    get_mapped(key: string | null, mapping: SettingsGetMapping): any | null;
     /**
      * Queries the range of a key.
      * @param key the key to query the range of
      */
-    get_range(key: string): GLib.Variant;
+    get_range(key: string | null): GLib.Variant | null;
     /**
      * Gets the value that is stored at `key` in `settings`.
      *
@@ -37861,7 +38126,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a newly-allocated string
      */
-    get_string(key: string): string;
+    get_string(key: string | null): string | null;
     /**
      * A convenience variant of g_settings_get() for string arrays.
      *
@@ -37870,7 +38135,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a newly-allocated, %NULL-terminated array of strings, the value that is stored at @key in @settings.
      */
-    get_strv(key: string): string[];
+    get_strv(key: string | null): string[];
     /**
      * Gets the value that is stored at `key` in `settings`.
      *
@@ -37882,7 +38147,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns an unsigned integer
      */
-    get_uint(key: string): number;
+    get_uint(key: string | null): number;
     /**
      * Gets the value that is stored at `key` in `settings`.
      *
@@ -37894,7 +38159,7 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a 64-bit unsigned integer
      */
-    get_uint64(key: string): number;
+    get_uint64(key: string | null): number;
     /**
      * Checks the "user value" of a key, if there is one.
      *
@@ -37917,7 +38182,7 @@ declare namespace Gio {
      * @param key the key to get the user value for
      * @returns the user's value, if set
      */
-    get_user_value(key: string): GLib.Variant | null;
+    get_user_value(key: string | null): GLib.Variant | null;
     /**
      * Gets the value that is stored in `settings` for `key`.
      *
@@ -37926,13 +38191,13 @@ declare namespace Gio {
      * @param key the key to get the value for
      * @returns a new #GVariant
      */
-    get_value(key: string): GLib.Variant;
+    get_value(key: string | null): GLib.Variant | null;
     /**
      * Finds out if a key can be written or not
      * @param name the name of a key
      * @returns %TRUE if the key @name is writable
      */
-    is_writable(name: string): boolean;
+    is_writable(name: string | null): boolean;
     /**
      * Gets the list of children on `settings`.
      *
@@ -37967,7 +38232,7 @@ declare namespace Gio {
      * @param value the value to check
      * @returns %TRUE if @value is valid for @key
      */
-    range_check(key: string, value: GLib.Variant): boolean;
+    range_check(key: string | null, value: GLib.Variant | null): boolean;
     /**
      * Resets `key` to its default value.
      *
@@ -37976,7 +38241,7 @@ declare namespace Gio {
      * administrator.
      * @param key the name of a key
      */
-    reset(key: string): void;
+    reset(key: string | null): void;
     /**
      * Reverts all non-applied changes to the settings.  This function
      * does nothing unless `settings` is in 'delay-apply' mode; see
@@ -37997,7 +38262,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_boolean(key: string, value: boolean): boolean;
+    set_boolean(key: string | null, value: boolean): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38009,7 +38274,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_double(key: string, value: number): boolean;
+    set_double(key: string | null, value: number): boolean;
     /**
      * Looks up the enumerated type nick for `value` and writes it to `key,`
      * within `settings`.
@@ -38025,7 +38290,7 @@ declare namespace Gio {
      * @param value an enumerated value
      * @returns %TRUE, if the set succeeds
      */
-    set_enum(key: string, value: number): boolean;
+    set_enum(key: string | null, value: number): boolean;
     /**
      * Looks up the flags type nicks for the bits specified by `value,` puts
      * them in an array of strings and writes the array to `key,` within
@@ -38042,7 +38307,7 @@ declare namespace Gio {
      * @param value a flags value
      * @returns %TRUE, if the set succeeds
      */
-    set_flags(key: string, value: number): boolean;
+    set_flags(key: string | null, value: number): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38054,7 +38319,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_int(key: string, value: number): boolean;
+    set_int(key: string | null, value: number): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38066,7 +38331,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_int64(key: string, value: number): boolean;
+    set_int64(key: string | null, value: number): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38078,7 +38343,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_string(key: string, value: string): boolean;
+    set_string(key: string | null, value: string | null): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38091,7 +38356,7 @@ declare namespace Gio {
      * @param value the value to set it to, or %NULL
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_strv(key: string, value: string[] | null): boolean;
+    set_strv(key: string | null, value: string[] | null): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38104,7 +38369,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_uint(key: string, value: number): boolean;
+    set_uint(key: string | null, value: number): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38117,7 +38382,7 @@ declare namespace Gio {
      * @param value the value to set it to
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_uint64(key: string, value: number): boolean;
+    set_uint64(key: string | null, value: number): boolean;
     /**
      * Sets `key` in `settings` to `value`.
      *
@@ -38130,14 +38395,14 @@ declare namespace Gio {
      * @param value a #GVariant of the correct type
      * @returns %TRUE if setting the key succeeded,     %FALSE if the key was not writable
      */
-    set_value(key: string, value: GLib.Variant): boolean;
+    set_value(key: string | null, value: GLib.Variant | null): boolean;
 
     // Own virtual methods of Gio-2.0.Gio.Settings
 
-    vfunc_change_event(keys: GLib.Quark, n_keys: number): boolean;
-    vfunc_changed(key: string): void;
+    vfunc_change_event(keys: GLib.Quark | null, n_keys: number): boolean;
+    vfunc_changed(key: string | null): void;
     vfunc_writable_change_event(key: GLib.Quark): boolean;
-    vfunc_writable_changed(key: string): void;
+    vfunc_writable_changed(key: string | null): void;
 
     // Own signals of Gio-2.0.Gio.Settings
 
@@ -38162,7 +38427,7 @@ declare namespace Gio {
       sigName: "changed",
       callback: Settings.ChangedSignalCallback
     ): number;
-    emit(sigName: "changed", key: string, ...args: any[]): void;
+    emit(sigName: "changed", key: string | null, ...args: any[]): void;
     connect(
       sigName: "writable-change-event",
       callback: Settings.WritableChangeEventSignalCallback
@@ -38180,7 +38445,7 @@ declare namespace Gio {
       sigName: "writable-changed",
       callback: Settings.WritableChangedSignalCallback
     ): number;
-    emit(sigName: "writable-changed", key: string, ...args: any[]): void;
+    emit(sigName: "writable-changed", key: string | null, ...args: any[]): void;
 
     // Class property signals of Gio-2.0.Gio.Settings
 
@@ -38580,7 +38845,7 @@ declare namespace Gio {
      * @param schema_id the id of the schema
      * @returns a new #GSettings object
      */
-    constructor(schema_id: string);
+    constructor(schema_id: string | null);
     /**
      * Creates a new #GSettings object with the schema specified by
      * `schema_id`.
@@ -38599,7 +38864,7 @@ declare namespace Gio {
      * @param schema_id the id of the schema
      * @returns a new #GSettings object
      */
-    static new(schema_id: string): Settings;
+    static new(schema_id: string | null): Settings;
     /**
      * Creates a new #GSettings object with a given schema, backend and
      * path.
@@ -38631,7 +38896,7 @@ declare namespace Gio {
      * @returns a new #GSettings object
      */
     static new_full(
-      schema: SettingsSchema,
+      schema: SettingsSchema | null,
       backend: SettingsBackend | null,
       path: string | null
     ): Settings;
@@ -38650,8 +38915,8 @@ declare namespace Gio {
      * @returns a new #GSettings object
      */
     static new_with_backend(
-      schema_id: string,
-      backend: SettingsBackend
+      schema_id: string | null,
+      backend: SettingsBackend | null
     ): Settings;
     /**
      * Creates a new #GSettings object with the schema specified by
@@ -38666,9 +38931,9 @@ declare namespace Gio {
      * @returns a new #GSettings object
      */
     static new_with_backend_and_path(
-      schema_id: string,
-      backend: SettingsBackend,
-      path: string
+      schema_id: string | null,
+      backend: SettingsBackend | null,
+      path: string | null
     ): Settings;
     /**
      * Creates a new #GSettings object with the relocatable schema specified
@@ -38689,7 +38954,10 @@ declare namespace Gio {
      * @param path the path to use
      * @returns a new #GSettings object
      */
-    static new_with_path(schema_id: string, path: string): Settings;
+    static new_with_path(
+      schema_id: string | null,
+      path: string | null
+    ): Settings;
     _init(config?: Settings.ConstructorProperties): void;
     /**
      * Deprecated.
@@ -38723,13 +38991,13 @@ declare namespace Gio {
      * @param object the object
      * @param property the property whose binding is removed
      */
-    static unbind(object: GObject.Object, property: string): void;
+    static unbind(object: GObject.Object, property: string | null): void;
   }
 
-  namespace SettingsBackend {
+  module SettingsBackend {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface SettingsBackend {
@@ -38765,7 +39033,7 @@ declare namespace Gio {
      * @param key the name of the key
      * @param origin_tag the origin tag
      */
-    changed(key: string, origin_tag: object | null): void;
+    changed(key: string | null, origin_tag: any | null): void;
     /**
      * This call is a convenience wrapper.  It gets the list of changes from
      * `tree,` computes the longest common prefix and calls
@@ -38773,7 +39041,7 @@ declare namespace Gio {
      * @param tree a #GTree containing the changes
      * @param origin_tag the origin tag
      */
-    changed_tree(tree: GLib.Tree, origin_tag: object | null): void;
+    changed_tree(tree: GLib.Tree | null, origin_tag: any | null): void;
     /**
      * Signals that a list of keys have possibly changed.  Backend
      * implementations should call this if keys have possibly changed their
@@ -38801,9 +39069,9 @@ declare namespace Gio {
      * @param origin_tag the origin tag
      */
     keys_changed(
-      path: string,
+      path: string | null,
       items: string[],
-      origin_tag: object | null
+      origin_tag: any | null
     ): void;
     /**
      * Signals that all keys below a given path may have possibly changed.
@@ -38830,7 +39098,7 @@ declare namespace Gio {
      * @param path the path containing the changes
      * @param origin_tag the origin tag
      */
-    path_changed(path: string, origin_tag: object | null): void;
+    path_changed(path: string | null, origin_tag: any | null): void;
     /**
      * Signals that the writability of all keys below a given path may have
      * changed.
@@ -38839,7 +39107,7 @@ declare namespace Gio {
      * will always be made in response to external events.
      * @param path the name of the path
      */
-    path_writable_changed(path: string): void;
+    path_writable_changed(path: string | null): void;
     /**
      * Signals that the writability of a single key has possibly changed.
      *
@@ -38847,30 +39115,30 @@ declare namespace Gio {
      * will always be made in response to external events.
      * @param key the name of the key
      */
-    writable_changed(key: string): void;
+    writable_changed(key: string | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.SettingsBackend
 
-    vfunc_get_writable(key: string): boolean;
+    vfunc_get_writable(key: string | null): boolean;
     vfunc_read(
-      key: string,
-      expected_type: GLib.VariantType,
+      key: string | null,
+      expected_type: GLib.VariantType | null,
       default_value: boolean
-    ): GLib.Variant;
+    ): GLib.Variant | null;
     vfunc_read_user_value(
-      key: string,
-      expected_type: GLib.VariantType
-    ): GLib.Variant;
-    vfunc_reset(key: string, origin_tag: object | null): void;
-    vfunc_subscribe(name: string): void;
+      key: string | null,
+      expected_type: GLib.VariantType | null
+    ): GLib.Variant | null;
+    vfunc_reset(key: string | null, origin_tag: any | null): void;
+    vfunc_subscribe(name: string | null): void;
     vfunc_sync(): void;
-    vfunc_unsubscribe(name: string): void;
+    vfunc_unsubscribe(name: string | null): void;
     vfunc_write(
-      key: string,
-      value: GLib.Variant,
-      origin_tag: object | null
+      key: string | null,
+      value: GLib.Variant | null,
+      origin_tag: any | null
     ): boolean;
-    vfunc_write_tree(tree: GLib.Tree, origin_tag: object | null): boolean;
+    vfunc_write_tree(tree: GLib.Tree | null, origin_tag: any | null): boolean;
 
     // Class property signals of Gio-2.0.Gio.SettingsBackend
 
@@ -38928,8 +39196,12 @@ declare namespace Gio {
      * @param tree a #GTree containing the changes
      */
     static flatten_tree(
-      tree: GLib.Tree
-    ): [/* path */ string, /* keys */ string[], /* values */ GLib.Variant[]];
+      tree: GLib.Tree | null
+    ): [
+      /* path */ string | null,
+      /* keys */ string[],
+      /* values */ GLib.Variant[]
+    ];
     /**
      * Returns the default #GSettingsBackend. It is possible to override
      * the default by setting the `GSETTINGS_BACKEND` environment variable
@@ -38938,10 +39210,10 @@ declare namespace Gio {
      * The user gets a reference to the backend.
      * @returns the default #GSettingsBackend,     which will be a dummy (memory) settings backend if no other settings     backend is available.
      */
-    static get_default(): SettingsBackend;
+    static get_default(): SettingsBackend | null;
   }
 
-  namespace SimpleAction {
+  module SimpleAction {
     // Signal callback interfaces
 
     /**
@@ -39003,7 +39275,7 @@ declare namespace Gio {
      * The name of the action. This is mostly meaningful for identifying
      * the action once it has been added to a #GSimpleActionGroup.
      */
-    readonly name: string;
+    readonly name: string | null;
     /**
      * The type of the parameter that must be given when activating the
      * action.
@@ -39045,7 +39317,7 @@ declare namespace Gio {
      * If the `value` GVariant is floating, it is consumed.
      * @param value the new #GVariant for the state
      */
-    set_state(value: GLib.Variant): void;
+    set_state(value: GLib.Variant | null): void;
     /**
      * Sets the state hint for the action.
      *
@@ -39164,7 +39436,7 @@ declare namespace Gio {
      * @param parameter_type the type of parameter that will be passed to   handlers for the #GSimpleAction::activate signal, or %NULL for no parameter
      * @returns a new #GSimpleAction
      */
-    constructor(name: string, parameter_type: GLib.VariantType | null);
+    constructor(name: string | null, parameter_type: GLib.VariantType | null);
     /**
      * Creates a new action.
      *
@@ -39176,7 +39448,7 @@ declare namespace Gio {
      * @returns a new #GSimpleAction
      */
     static new(
-      name: string,
+      name: string | null,
       parameter_type: GLib.VariantType | null
     ): SimpleAction;
     /**
@@ -39193,14 +39465,14 @@ declare namespace Gio {
      * @returns a new #GSimpleAction
      */
     static new_stateful(
-      name: string,
+      name: string | null,
       parameter_type: GLib.VariantType | null,
-      state: GLib.Variant
+      state: GLib.Variant | null
     ): SimpleAction;
     _init(config?: SimpleAction.ConstructorProperties): void;
   }
 
-  namespace SimpleActionGroup {
+  module SimpleActionGroup {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -39218,7 +39490,7 @@ declare namespace Gio {
      * @param entries a pointer to the first item in           an array of #GActionEntry structs
      * @param user_data the user data for signal connections
      */
-    add_entries(entries: ActionEntry[], user_data: object | null): void;
+    add_entries(entries: ActionEntry[], user_data: any | null): void;
     /**
      * Adds an action to the action group.
      *
@@ -39228,7 +39500,7 @@ declare namespace Gio {
      * The action group takes its own reference on `action`.
      * @param action a #GAction
      */
-    insert(action: Action): void;
+    insert(action: Action | null): void;
     /**
      * Looks up the action with the name `action_name` in the group.
      *
@@ -39236,14 +39508,14 @@ declare namespace Gio {
      * @param action_name the name of an action
      * @returns a #GAction, or %NULL
      */
-    lookup(action_name: string): Action;
+    lookup(action_name: string | null): Action | null;
     /**
      * Removes the named action from the action group.
      *
      * If no action of this name is in the group then nothing happens.
      * @param action_name the name of the action
      */
-    remove(action_name: string): void;
+    remove(action_name: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.SimpleActionGroup
 
@@ -39282,7 +39554,7 @@ declare namespace Gio {
     _init(config?: SimpleActionGroup.ConstructorProperties): void;
   }
 
-  namespace SimpleAsyncResult {
+  module SimpleAsyncResult {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -39356,7 +39628,7 @@ declare namespace Gio {
      * Sets the result from a #GError.
      * @param error #GError.
      */
-    set_from_error(error: GLib.Error): void;
+    set_from_error(error: GLib.Error | null): void;
     /**
      * Sets whether to handle cancellation within the asynchronous operation.
      *
@@ -39585,7 +39857,7 @@ declare namespace Gio {
     constructor(
       source_object: GObject.Object | null,
       callback: AsyncReadyCallback<SimpleAsyncResult> | null,
-      source_tag: object | null
+      source_tag: any | null
     );
     /**
      * Creates a #GSimpleAsyncResult.
@@ -39607,7 +39879,7 @@ declare namespace Gio {
     static new(
       source_object: GObject.Object | null,
       callback: AsyncReadyCallback<SimpleAsyncResult> | null,
-      source_tag: object | null
+      source_tag: any | null
     ): SimpleAsyncResult;
     /**
      * Creates a #GSimpleAsyncResult from an error condition.
@@ -39620,7 +39892,7 @@ declare namespace Gio {
     static new_from_error(
       source_object: GObject.Object | null,
       callback: AsyncReadyCallback<SimpleAsyncResult> | null,
-      error: GLib.Error
+      error: GLib.Error | null
     ): SimpleAsyncResult;
     _init(config?: SimpleAsyncResult.ConstructorProperties): void;
     /**
@@ -39642,13 +39914,13 @@ declare namespace Gio {
      * @returns #TRUE if all checks passed or #FALSE if any failed.
      */
     static is_valid(
-      result: AsyncResult,
+      result: AsyncResult | null,
       source: GObject.Object | null,
-      source_tag: object | null
+      source_tag: any | null
     ): boolean;
   }
 
-  namespace SimpleIOStream {
+  module SimpleIOStream {
     // Constructor properties interface
 
     interface ConstructorProperties extends IOStream.ConstructorProperties {
@@ -39728,7 +40000,10 @@ declare namespace Gio {
      * @param output_stream a #GOutputStream.
      * @returns a new #GSimpleIOStream instance.
      */
-    constructor(input_stream: InputStream, output_stream: OutputStream);
+    constructor(
+      input_stream: InputStream | null,
+      output_stream: OutputStream | null
+    );
     /**
      * Creates a new #GSimpleIOStream wrapping `input_stream` and `output_stream`.
      * See also #GIOStream.
@@ -39738,16 +40013,16 @@ declare namespace Gio {
      * @returns a new #GSimpleIOStream instance.
      */
     static new(
-      input_stream: InputStream,
-      output_stream: OutputStream
+      input_stream: InputStream | null,
+      output_stream: OutputStream | null
     ): SimpleIOStream;
     _init(config?: SimpleIOStream.ConstructorProperties): void;
   }
 
-  namespace SimplePermission {
+  module SimplePermission {
     // Constructor properties interface
 
-    type ConstructorProperties = Permission.ConstructorProperties;
+    type ConstructorProperties = Permission.ConstructorProperties
   }
 
   interface SimplePermission {
@@ -39822,7 +40097,7 @@ declare namespace Gio {
     _init(config?: SimplePermission.ConstructorProperties): void;
   }
 
-  namespace SimpleProxyResolver {
+  module SimpleProxyResolver {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -39892,7 +40167,7 @@ declare namespace Gio {
      * "socks://", #GSimpleProxyResolver will treat it as referring
      * to all three of the socks5, socks4a, and socks4 proxy types.
      */
-    default_proxy: string;
+    default_proxy: string | null;
     /**
      * A list of hostnames and IP addresses that the resolver should
      * allow direct connections to.
@@ -39968,7 +40243,7 @@ declare namespace Gio {
      * @param uri_scheme the URI scheme to add a proxy for
      * @param proxy the proxy to use for `uri_scheme`
      */
-    set_uri_proxy(uri_scheme: string, proxy: string): void;
+    set_uri_proxy(uri_scheme: string | null, proxy: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.SimpleProxyResolver
 
@@ -40029,10 +40304,10 @@ declare namespace Gio {
     static new(
       default_proxy: string | null,
       ignore_hosts: string[] | null
-    ): ProxyResolver;
+    ): ProxyResolver | null;
   }
 
-  namespace Socket {
+  module Socket {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -40107,7 +40382,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.Socket
 
     parent_instance: GObject.Object;
-    priv: SocketPrivate;
+    priv: SocketPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.Socket
 
@@ -40125,7 +40400,7 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns a new #GSocket, or %NULL on error.     Free the returned object with g_object_unref().
      */
-    accept(cancellable: Cancellable | null): Socket;
+    accept(cancellable: Cancellable | null): Socket | null;
     /**
      * When a socket is created it is attached to an address family, but it
      * doesn't have an address in this family. g_socket_bind() assigns the
@@ -40154,7 +40429,7 @@ declare namespace Gio {
      * @param allow_reuse whether to allow reusing this address
      * @returns %TRUE on success, %FALSE on error.
      */
-    bind(address: SocketAddress, allow_reuse: boolean): boolean;
+    bind(address: SocketAddress | null, allow_reuse: boolean): boolean;
     /**
      * Checks and resets the pending connect error for the socket.
      * This is used to check for errors when g_socket_connect() is
@@ -40304,13 +40579,16 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if connected, %FALSE on error.
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     /**
      * Creates a #GSocketConnection subclass of the right type for
      * `socket`.
      * @returns a #GSocketConnection
      */
-    connection_factory_create_connection(): SocketConnection;
+    connection_factory_create_connection(): SocketConnection | null;
     /**
      * Get the amount of data pending in the OS input buffer, without blocking.
      *
@@ -40363,7 +40641,7 @@ declare namespace Gio {
      * g_unix_connection_receive_credentials() functions.
      * @returns %NULL if @error is set, otherwise a #GCredentials object that must be freed with g_object_unref().
      */
-    get_credentials(): Credentials;
+    get_credentials(): Credentials | null;
     /**
      * Gets the socket family of the socket.
      * @returns a #GSocketFamily
@@ -40396,7 +40674,7 @@ declare namespace Gio {
      * either explicitly or implicitly when connecting.
      * @returns a #GSocketAddress or %NULL on error.     Free the returned object with g_object_unref().
      */
-    get_local_address(): SocketAddress;
+    get_local_address(): SocketAddress | null;
     /**
      * Gets the multicast loopback setting on `socket;` if %TRUE (the
      * default), outgoing multicast packets will be looped back to
@@ -40431,7 +40709,7 @@ declare namespace Gio {
     get_option(
       level: number,
       optname: number
-    ): [/* returnType */ boolean, /* value */ number];
+    ): [/* returnType */ boolean, /* value */ number | null];
     /**
      * Gets the socket protocol id the socket was created with.
      * In case the protocol is unknown, -1 is returned.
@@ -40443,7 +40721,7 @@ declare namespace Gio {
      * useful for connection oriented sockets that have been connected.
      * @returns a #GSocketAddress or %NULL on error.     Free the returned object with g_object_unref().
      */
-    get_remote_address(): SocketAddress;
+    get_remote_address(): SocketAddress | null;
     /**
      * Gets the socket type of the socket.
      * @returns a #GSocketType
@@ -40498,7 +40776,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on error.
      */
     join_multicast_group(
-      group: InetAddress,
+      group: InetAddress | null,
       source_specific: boolean,
       iface: string | null
     ): boolean;
@@ -40524,7 +40802,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on error.
      */
     join_multicast_group_ssm(
-      group: InetAddress,
+      group: InetAddress | null,
       source_specific: InetAddress | null,
       iface: string | null
     ): boolean;
@@ -40544,7 +40822,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on error.
      */
     leave_multicast_group(
-      group: InetAddress,
+      group: InetAddress | null,
       source_specific: boolean,
       iface: string | null
     ): boolean;
@@ -40561,7 +40839,7 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on error.
      */
     leave_multicast_group_ssm(
-      group: InetAddress,
+      group: InetAddress | null,
       source_specific: InetAddress | null,
       iface: string | null
     ): boolean;
@@ -40622,7 +40900,7 @@ declare namespace Gio {
       cancellable: Cancellable | null
     ): [
       /* returnType */ number,
-      /* address */ SocketAddress,
+      /* address */ SocketAddress | null,
       /* buffer */ Uint8Array
     ];
     /**
@@ -40692,13 +40970,13 @@ declare namespace Gio {
      */
     receive_message(
       vectors: InputVector[],
-      flags: number,
+      flags: number | null,
       cancellable: Cancellable | null
     ): [
       /* returnType */ number,
-      /* address */ SocketAddress,
+      /* address */ SocketAddress | null,
       /* messages */ SocketControlMessage[] | null,
-      /* flags */ number
+      /* flags */ number | null
     ];
     /**
      * Receive multiple data messages from `socket` in one go.  This is the most
@@ -40937,7 +41215,7 @@ declare namespace Gio {
       flags: number,
       timeout_us: number,
       cancellable: Cancellable | null
-    ): [/* returnType */ PollableReturn, /* bytes_written */ number];
+    ): [/* returnType */ PollableReturn, /* bytes_written */ number | null];
     /**
      * Send multiple data messages from `socket` in one go.  This is the most
      * complicated and fully-featured version of this call. For easier use, see
@@ -41482,7 +41760,7 @@ declare namespace Gio {
     _init(config?: Socket.ConstructorProperties): void;
   }
 
-  namespace SocketAddress {
+  module SocketAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -41524,7 +41802,7 @@ declare namespace Gio {
      * @param destlen the size of `dest`. Must be at least as large as     g_socket_address_get_native_size()
      * @returns %TRUE if @dest was filled in, %FALSE on error
      */
-    to_native(dest: object | null, destlen: number): boolean;
+    to_native(dest: any | null, destlen: number): boolean;
 
     // Own virtual methods of Gio-2.0.Gio.SocketAddress
 
@@ -41554,7 +41832,7 @@ declare namespace Gio {
      * @param destlen the size of `dest`. Must be at least as large as     g_socket_address_get_native_size()
      * @returns %TRUE if @dest was filled in, %FALSE on error
      */
-    vfunc_to_native(dest: object | null, destlen: number): boolean;
+    vfunc_to_native(dest: any | null, destlen: number): boolean;
 
     // Class property signals of Gio-2.0.Gio.SocketAddress
 
@@ -41596,14 +41874,14 @@ declare namespace Gio {
      * @param len the size of the memory location pointed to by `native`
      * @returns a new #GSocketAddress if @native could successfully     be converted, otherwise %NULL
      */
-    static new_from_native(native: object, len: number): SocketAddress;
+    static new_from_native(native: any, len: number): SocketAddress;
     _init(config?: SocketAddress.ConstructorProperties): void;
   }
 
-  namespace SocketAddressEnumerator {
+  module SocketAddressEnumerator {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface SocketAddressEnumerator {
@@ -41648,7 +41926,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GSocketAddress (owned by the caller), or %NULL on     error (in which case *@error will be set) or if there are no     more addresses.
      */
-    next_finish(result: AsyncResult): SocketAddress | null;
+    next_finish(result: AsyncResult | null): SocketAddress | null;
 
     // Own virtual methods of Gio-2.0.Gio.SocketAddressEnumerator
 
@@ -41694,7 +41972,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult
      * @returns a #GSocketAddress (owned by the caller), or %NULL on     error (in which case *@error will be set) or if there are no     more addresses.
      */
-    vfunc_next_finish(result: AsyncResult): SocketAddress | null;
+    vfunc_next_finish(result: AsyncResult | null): SocketAddress | null;
 
     // Class property signals of Gio-2.0.Gio.SocketAddressEnumerator
 
@@ -41733,7 +42011,7 @@ declare namespace Gio {
     _init(config?: SocketAddressEnumerator.ConstructorProperties): void;
   }
 
-  namespace SocketClient {
+  module SocketClient {
     // Signal callback interfaces
 
     /**
@@ -41824,7 +42102,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketClient
 
     parent_instance: GObject.Object;
-    priv: SocketClientPrivate;
+    priv: SocketClientPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.SocketClient
 
@@ -41850,7 +42128,7 @@ declare namespace Gio {
      * specific handshake.
      * @param protocol The proxy protocol
      */
-    add_application_proxy(protocol: string): void;
+    add_application_proxy(protocol: string | null): void;
     /**
      * Tries to resolve the `connectable` and make a network connection to it.
      *
@@ -41875,9 +42153,9 @@ declare namespace Gio {
      * @returns a #GSocketConnection on success, %NULL on error.
      */
     connect(
-      connectable: SocketConnectable,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null
-    ): SocketConnection;
+    ): SocketConnection | null;
     /**
      * This is the asynchronous version of g_socket_client_connect().
      *
@@ -41898,7 +42176,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     connect_async(
-      connectable: SocketConnectable,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -41907,7 +42185,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GSocketConnection on success, %NULL on error.
      */
-    connect_finish(result: AsyncResult): SocketConnection;
+    connect_finish(result: AsyncResult | null): SocketConnection | null;
     /**
      * This is a helper function for g_socket_client_connect().
      *
@@ -41945,10 +42223,10 @@ declare namespace Gio {
      * @returns a #GSocketConnection on success, %NULL on error.
      */
     connect_to_host(
-      host_and_port: string,
+      host_and_port: string | null,
       default_port: number,
       cancellable: Cancellable | null
-    ): SocketConnection;
+    ): SocketConnection | null;
     /**
      * This is the asynchronous version of g_socket_client_connect_to_host().
      *
@@ -41961,7 +42239,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     connect_to_host_async(
-      host_and_port: string,
+      host_and_port: string | null,
       default_port: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -41971,7 +42249,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GSocketConnection on success, %NULL on error.
      */
-    connect_to_host_finish(result: AsyncResult): SocketConnection;
+    connect_to_host_finish(result: AsyncResult | null): SocketConnection | null;
     /**
      * Attempts to create a TCP connection to a service.
      *
@@ -41993,10 +42271,10 @@ declare namespace Gio {
      * @returns a #GSocketConnection if successful, or %NULL on error
      */
     connect_to_service(
-      domain: string,
-      service: string,
+      domain: string | null,
+      service: string | null,
       cancellable: Cancellable | null
-    ): SocketConnection;
+    ): SocketConnection | null;
     /**
      * This is the asynchronous version of
      * g_socket_client_connect_to_service().
@@ -42006,8 +42284,8 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     connect_to_service_async(
-      domain: string,
-      service: string,
+      domain: string | null,
+      service: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -42016,7 +42294,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GSocketConnection on success, %NULL on error.
      */
-    connect_to_service_finish(result: AsyncResult): SocketConnection;
+    connect_to_service_finish(
+      result: AsyncResult | null
+    ): SocketConnection | null;
     /**
      * This is a helper function for g_socket_client_connect().
      *
@@ -42045,10 +42325,10 @@ declare namespace Gio {
      * @returns a #GSocketConnection on success, %NULL on error.
      */
     connect_to_uri(
-      uri: string,
+      uri: string | null,
       default_port: number,
       cancellable: Cancellable | null
-    ): SocketConnection;
+    ): SocketConnection | null;
     /**
      * This is the asynchronous version of g_socket_client_connect_to_uri().
      *
@@ -42061,7 +42341,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     connect_to_uri_async(
-      uri: string,
+      uri: string | null,
       default_port: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -42071,7 +42351,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GSocketConnection on success, %NULL on error.
      */
-    connect_to_uri_finish(result: AsyncResult): SocketConnection;
+    connect_to_uri_finish(result: AsyncResult | null): SocketConnection | null;
     /**
      * Gets the proxy enable state; see g_socket_client_set_enable_proxy()
      * @returns whether proxying is enabled
@@ -42104,7 +42384,7 @@ declare namespace Gio {
      * can override it with g_socket_client_set_proxy_resolver().
      * @returns The #GProxyResolver being used by   @client.
      */
-    get_proxy_resolver(): ProxyResolver;
+    get_proxy_resolver(): ProxyResolver | null;
     /**
      * Gets the socket type of the socket client.
      *
@@ -42246,8 +42526,8 @@ declare namespace Gio {
 
     vfunc_event(
       event: SocketClientEvent,
-      connectable: SocketConnectable,
-      connection: IOStream
+      connectable: SocketConnectable | null,
+      connection: IOStream | null
     ): void;
 
     // Own signals of Gio-2.0.Gio.SocketClient
@@ -42397,7 +42677,7 @@ declare namespace Gio {
     _init(config?: SocketClient.ConstructorProperties): void;
   }
 
-  namespace SocketConnection {
+  module SocketConnection {
     // Constructor properties interface
 
     interface ConstructorProperties extends IOStream.ConstructorProperties {
@@ -42415,7 +42695,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketConnection
 
     parent_instance: IOStream & GObject.Object;
-    priv: SocketConnectionPrivate;
+    priv: SocketConnectionPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.SocketConnection
 
@@ -42425,7 +42705,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     /**
      * Asynchronously connect `connection` to the specified remote address.
      *
@@ -42438,7 +42721,7 @@ declare namespace Gio {
      * @param callback a #GAsyncReadyCallback
      */
     connect_async(
-      address: SocketAddress,
+      address: SocketAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -42447,12 +42730,12 @@ declare namespace Gio {
      * @param result the #GAsyncResult
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect_finish(result: AsyncResult): boolean;
+    connect_finish(result: AsyncResult | null): boolean;
     /**
      * Try to get the local address of a socket connection.
      * @returns a #GSocketAddress or %NULL on error.     Free the returned object with g_object_unref().
      */
-    get_local_address(): SocketAddress;
+    get_local_address(): SocketAddress | null;
     /**
      * Try to get the remote address of a socket connection.
      *
@@ -42464,14 +42747,14 @@ declare namespace Gio {
      * (10.42.77.3)...".
      * @returns a #GSocketAddress or %NULL on error.     Free the returned object with g_object_unref().
      */
-    get_remote_address(): SocketAddress;
+    get_remote_address(): SocketAddress | null;
     /**
      * Gets the underlying #GSocket object of the connection.
      * This can be useful if you want to do something unusual on it
      * not supported by the #GSocketConnection APIs.
      * @returns a #GSocket or %NULL on error.
      */
-    get_socket(): Socket;
+    get_socket(): Socket | null;
     /**
      * Checks if `connection` is connected. This is equivalent to calling
      * g_socket_is_connected() on `connection'`s underlying #GSocket.
@@ -42585,17 +42868,17 @@ declare namespace Gio {
     ): void;
   }
 
-  namespace SocketControlMessage {
+  module SocketControlMessage {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface SocketControlMessage {
     // Own fields of Gio-2.0.Gio.SocketControlMessage
 
     parent_instance: GObject.Object;
-    priv: SocketControlMessagePrivate;
+    priv: SocketControlMessagePrivate | null;
 
     // Owm methods of Gio-2.0.Gio.SocketControlMessage
 
@@ -42626,7 +42909,7 @@ declare namespace Gio {
      * object.
      * @param data A buffer to write data to
      */
-    serialize(data: object): void;
+    serialize(data: any): void;
 
     // Own virtual methods of Gio-2.0.Gio.SocketControlMessage
 
@@ -42655,7 +42938,7 @@ declare namespace Gio {
      * @virtual
      * @param data A buffer to write data to
      */
-    vfunc_serialize(data: object): void;
+    vfunc_serialize(data: any): void;
 
     // Class property signals of Gio-2.0.Gio.SocketControlMessage
 
@@ -42715,10 +42998,10 @@ declare namespace Gio {
       level: number,
       type: number,
       data: Uint8Array
-    ): SocketControlMessage;
+    ): SocketControlMessage | null;
   }
 
-  namespace SocketListener {
+  module SocketListener {
     // Signal callback interfaces
 
     /**
@@ -42746,7 +43029,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketListener
 
     parent_instance: GObject.Object;
-    priv: SocketListenerPrivate;
+    priv: SocketListenerPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.SocketListener
 
@@ -42768,7 +43051,7 @@ declare namespace Gio {
     accept(
       cancellable: Cancellable | null
     ): [
-      /* returnType */ SocketConnection,
+      /* returnType */ SocketConnection | null,
       /* source_object */ GObject.Object | null
     ];
     /**
@@ -42790,9 +43073,9 @@ declare namespace Gio {
      * @returns a #GSocketConnection on success, %NULL on error.
      */
     accept_finish(
-      result: AsyncResult
+      result: AsyncResult | null
     ): [
-      /* returnType */ SocketConnection,
+      /* returnType */ SocketConnection | null,
       /* source_object */ GObject.Object | null
     ];
     /**
@@ -42815,7 +43098,10 @@ declare namespace Gio {
      */
     accept_socket(
       cancellable: Cancellable | null
-    ): [/* returnType */ Socket, /* source_object */ GObject.Object | null];
+    ): [
+      /* returnType */ Socket | null,
+      /* source_object */ GObject.Object | null
+    ];
     /**
      * This is the asynchronous version of g_socket_listener_accept_socket().
      *
@@ -42835,8 +43121,11 @@ declare namespace Gio {
      * @returns a #GSocket on success, %NULL on error.
      */
     accept_socket_finish(
-      result: AsyncResult
-    ): [/* returnType */ Socket, /* source_object */ GObject.Object | null];
+      result: AsyncResult | null
+    ): [
+      /* returnType */ Socket | null,
+      /* source_object */ GObject.Object | null
+    ];
     /**
      * Creates a socket of type `type` and protocol `protocol,` binds
      * it to `address` and adds it to the set of sockets we're accepting
@@ -42868,11 +43157,11 @@ declare namespace Gio {
      * @returns %TRUE on success, %FALSE on error.
      */
     add_address(
-      address: SocketAddress,
+      address: SocketAddress | null,
       type: SocketType,
       protocol: SocketProtocol,
       source_object: GObject.Object | null
-    ): [/* returnType */ boolean, /* effective_address */ SocketAddress];
+    ): [/* returnType */ boolean, /* effective_address */ SocketAddress | null];
     /**
      * Listens for TCP connections on any available port number for both
      * IPv6 and IPv4 (if each is available).
@@ -42924,7 +43213,10 @@ declare namespace Gio {
      * @param source_object Optional #GObject identifying this source
      * @returns %TRUE on success, %FALSE on error.
      */
-    add_socket(socket: Socket, source_object: GObject.Object | null): boolean;
+    add_socket(
+      socket: Socket | null,
+      source_object: GObject.Object | null
+    ): boolean;
     /**
      * Closes all the sockets in the listener.
      */
@@ -42942,7 +43234,7 @@ declare namespace Gio {
     // Own virtual methods of Gio-2.0.Gio.SocketListener
 
     vfunc_changed(): void;
-    vfunc_event(event: SocketListenerEvent, socket: Socket): void;
+    vfunc_event(event: SocketListenerEvent, socket: Socket | null): void;
 
     // Own signals of Gio-2.0.Gio.SocketListener
 
@@ -43023,7 +43315,7 @@ declare namespace Gio {
     _init(config?: SocketListener.ConstructorProperties): void;
   }
 
-  namespace SocketService {
+  module SocketService {
     // Signal callback interfaces
 
     /**
@@ -43105,8 +43397,8 @@ declare namespace Gio {
     // Own virtual methods of Gio-2.0.Gio.SocketService
 
     vfunc_incoming(
-      connection: SocketConnection,
-      source_object: GObject.Object
+      connection: SocketConnection | null,
+      source_object: GObject.Object | null
     ): boolean;
 
     // Own signals of Gio-2.0.Gio.SocketService
@@ -43228,7 +43520,7 @@ declare namespace Gio {
     _init(config?: SocketService.ConstructorProperties): void;
   }
 
-  namespace Subprocess {
+  module Subprocess {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -43320,7 +43612,7 @@ declare namespace Gio {
      * @param result Result
      */
     communicate_finish(
-      result: AsyncResult
+      result: AsyncResult | null
     ): [
       /* returnType */ boolean,
       /* stdout_buf */ GLib.Bytes | null,
@@ -43360,7 +43652,7 @@ declare namespace Gio {
      * @param result Result
      */
     communicate_utf8_finish(
-      result: AsyncResult
+      result: AsyncResult | null
     ): [
       /* returnType */ boolean,
       /* stdout_buf */ string | null,
@@ -43540,14 +43832,14 @@ declare namespace Gio {
      * @param result the #GAsyncResult passed to your #GAsyncReadyCallback
      * @returns %TRUE if successful, or %FALSE with @error set
      */
-    wait_check_finish(result: AsyncResult): boolean;
+    wait_check_finish(result: AsyncResult | null): boolean;
     /**
      * Collects the result of a previous call to
      * g_subprocess_wait_async().
      * @param result the #GAsyncResult passed to your #GAsyncReadyCallback
      * @returns %TRUE if successful, or %FALSE with @error set
      */
-    wait_finish(result: AsyncResult): boolean;
+    wait_finish(result: AsyncResult | null): boolean;
 
     // Class property signals of Gio-2.0.Gio.Subprocess
 
@@ -43667,7 +43959,7 @@ declare namespace Gio {
     _init(config?: Subprocess.ConstructorProperties): void;
   }
 
-  namespace SubprocessLauncher {
+  module SubprocessLauncher {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -43707,7 +43999,7 @@ declare namespace Gio {
      * @param variable the environment variable to get
      * @returns the value of the environment variable,     %NULL if unset
      */
-    getenv(variable: string): string | null;
+    getenv(variable: string | null): string | null;
     /**
      * Sets the current working directory that processes will be launched
      * with.
@@ -43716,7 +44008,7 @@ declare namespace Gio {
      * of the launching process at the time of launch.
      * @param cwd the cwd for launched processes
      */
-    set_cwd(cwd: string): void;
+    set_cwd(cwd: string | null): void;
     /**
      * Replace the entire environment of processes launched from this
      * launcher with the given 'environ' variable.
@@ -43787,7 +44079,7 @@ declare namespace Gio {
      * This feature is only available on UNIX.
      * @param path
      */
-    set_stdin_file_path(path: string): void;
+    set_stdin_file_path(path: string | null): void;
     /**
      * Sets the file path to use as the stdout for spawned processes.
      *
@@ -43814,13 +44106,17 @@ declare namespace Gio {
      * @param value the new value for the variable
      * @param overwrite whether to change the variable if it already exists
      */
-    setenv(variable: string, value: string, overwrite: boolean): void;
+    setenv(
+      variable: string | null,
+      value: string | null,
+      overwrite: boolean
+    ): void;
     /**
      * Creates a #GSubprocess given a provided array of arguments.
      * @param argv Command line arguments
      * @returns A new #GSubprocess, or %NULL on error (and @error will be set)
      */
-    spawnv(argv: string[]): Subprocess;
+    spawnv(argv: string[]): Subprocess | null;
     /**
      * Transfer an arbitrary file descriptor from parent process to the
      * child.  This function takes ownership of the `source_fd;` it will be closed
@@ -43909,7 +44205,7 @@ declare namespace Gio {
      * containing '='. On Windows, it should be in UTF-8.
      * @param variable the environment variable to unset,     must not contain '='
      */
-    unsetenv(variable: string): void;
+    unsetenv(variable: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.SubprocessLauncher
 
@@ -43971,7 +44267,7 @@ declare namespace Gio {
     _init(config?: SubprocessLauncher.ConstructorProperties): void;
   }
 
-  namespace Task {
+  module Task {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -44001,7 +44297,7 @@ declare namespace Gio {
      * Gets `task'`s #GCancellable
      * @returns @task's #GCancellable
      */
-    get_cancellable(): Cancellable;
+    get_cancellable(): Cancellable | null;
     /**
      * Gets `task'`s check-cancellable flag. See
      * g_task_set_check_cancellable() for more details.
@@ -44024,7 +44320,7 @@ declare namespace Gio {
      * context is the default #GMainContext.
      * @returns @task's #GMainContext
      */
-    get_context(): GLib.MainContext;
+    get_context(): GLib.MainContext | null;
     /**
      * Gets `task’`s name. See g_task_set_name().
      * @returns @task’s name, or %NULL
@@ -44050,12 +44346,12 @@ declare namespace Gio {
      * Gets `task'`s source tag. See g_task_set_source_tag().
      * @returns @task's source tag
      */
-    get_source_tag(): object | null;
+    get_source_tag(): any | null;
     /**
      * Gets `task'`s `task_data`.
      * @returns @task's `task_data`.
      */
-    get_task_data(): object | null;
+    get_task_data(): any | null;
     /**
      * Tests if `task` resulted in an error.
      * @returns %TRUE if the task resulted in an error, %FALSE otherwise.
@@ -44094,7 +44390,7 @@ declare namespace Gio {
      * error) to the caller, you may only call it once.
      * @returns the task result, or %NULL on error
      */
-    propagate_pointer(): object | null;
+    propagate_pointer(): any | null;
     /**
      * Gets the result of `task` as a #GValue, and transfers ownership of
      * that value to the caller. As with g_task_return_value(), this is
@@ -44108,7 +44404,7 @@ declare namespace Gio {
      * error) to the caller, you may only call it once.
      * @returns %TRUE if @task succeeded, %FALSE on error.
      */
-    propagate_value(): [/* returnType */ boolean, /* value */ any];
+    propagate_value(): [/* returnType */ boolean, /* value */ any | null];
     /**
      * Sets `task'`s result to `result` and completes the task (see
      * g_task_return_pointer() for more discussion of exactly what this
@@ -44130,7 +44426,7 @@ declare namespace Gio {
      * See also g_task_return_new_error().
      * @param error the #GError result of a task function.
      */
-    return_error(error: GLib.Error): void;
+    return_error(error: GLib.Error | null): void;
     /**
      * Checks if `task'`s #GCancellable has been cancelled, and if so, sets
      * `task'`s error accordingly and completes the task (see
@@ -44169,7 +44465,7 @@ declare namespace Gio {
      * @param result_destroy a #GDestroyNotify function.
      */
     return_pointer(
-      result: object | null,
+      result: any | null,
       result_destroy: GLib.DestroyNotify | null
     ): void;
     /**
@@ -44311,14 +44607,14 @@ declare namespace Gio {
      * set, for convenience.
      * @param source_tag an opaque pointer indicating the source of this task
      */
-    set_source_tag(source_tag: object | null): void;
+    set_source_tag(source_tag: any | null): void;
     /**
      * Sets `task'`s task data (freeing the existing task data, if any).
      * @param task_data task-specific data
      * @param task_data_destroy #GDestroyNotify for `task_data`
      */
     set_task_data(
-      task_data: object | null,
+      task_data: any | null,
       task_data_destroy: GLib.DestroyNotify | null
     ): void;
 
@@ -44944,12 +45240,12 @@ declare namespace Gio {
     static report_error(
       source_object: GObject.Object | null,
       callback: AsyncReadyCallback<Task> | null,
-      source_tag: object | null,
-      error: GLib.Error
+      source_tag: any | null,
+      error: GLib.Error | null
     ): void;
   }
 
-  namespace TcpConnection {
+  module TcpConnection {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -45010,7 +45306,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::graceful-disconnect",
       callback: ($obj: TcpConnection, pspec: GObject.ParamSpec) => void
@@ -45029,7 +45328,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::socket",
       callback: ($obj: TcpConnection, pspec: GObject.ParamSpec) => void
@@ -45048,7 +45350,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::closed",
       callback: ($obj: TcpConnection, pspec: GObject.ParamSpec) => void
@@ -45067,7 +45372,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::input-stream",
       callback: ($obj: TcpConnection, pspec: GObject.ParamSpec) => void
@@ -45086,7 +45394,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::output-stream",
       callback: ($obj: TcpConnection, pspec: GObject.ParamSpec) => void
@@ -45102,7 +45413,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(sigName: string, callback: (...args: any[]) => void): number;
     emit(sigName: string, ...args: any[]): void;
     disconnect(id: number): void;
@@ -45125,7 +45439,7 @@ declare namespace Gio {
     _init(config?: TcpConnection.ConstructorProperties): void;
   }
 
-  namespace TcpWrapperConnection {
+  module TcpWrapperConnection {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -45156,7 +45470,7 @@ declare namespace Gio {
      * Gets `conn'`s base #GIOStream
      * @returns @conn's base #GIOStream
      */
-    get_base_io_stream(): IOStream;
+    get_base_io_stream(): IOStream | null;
 
     // Class property signals of Gio-2.0.Gio.TcpWrapperConnection
 
@@ -45173,7 +45487,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::base-io-stream",
       callback: ($obj: TcpWrapperConnection, pspec: GObject.ParamSpec) => void
@@ -45192,7 +45509,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::graceful-disconnect",
       callback: ($obj: TcpWrapperConnection, pspec: GObject.ParamSpec) => void
@@ -45211,7 +45531,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::socket",
       callback: ($obj: TcpWrapperConnection, pspec: GObject.ParamSpec) => void
@@ -45230,7 +45553,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::closed",
       callback: ($obj: TcpWrapperConnection, pspec: GObject.ParamSpec) => void
@@ -45249,7 +45575,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::input-stream",
       callback: ($obj: TcpWrapperConnection, pspec: GObject.ParamSpec) => void
@@ -45268,7 +45597,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::output-stream",
       callback: ($obj: TcpWrapperConnection, pspec: GObject.ParamSpec) => void
@@ -45284,7 +45616,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(sigName: string, callback: (...args: any[]) => void): number;
     emit(sigName: string, ...args: any[]): void;
     disconnect(id: number): void;
@@ -45314,7 +45649,7 @@ declare namespace Gio {
      * @param socket the #GSocket associated with `base_io_stream`
      * @returns the new #GSocketConnection.
      */
-    constructor(base_io_stream: IOStream, socket: Socket);
+    constructor(base_io_stream: IOStream | null, socket: Socket | null);
     /**
      * Wraps `base_io_stream` and `socket` together as a #GSocketConnection.
      * @constructor
@@ -45322,11 +45657,14 @@ declare namespace Gio {
      * @param socket the #GSocket associated with `base_io_stream`
      * @returns the new #GSocketConnection.
      */
-    static new(base_io_stream: IOStream, socket: Socket): TcpWrapperConnection;
+    static new(
+      base_io_stream: IOStream | null,
+      socket: Socket | null
+    ): TcpWrapperConnection;
     _init(config?: TcpWrapperConnection.ConstructorProperties): void;
   }
 
-  namespace TestDBus {
+  module TestDBus {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -45355,7 +45693,7 @@ declare namespace Gio {
      * called after g_test_dbus_up().
      * @param path path to a directory containing .service files
      */
-    add_service_dir(path: string): void;
+    add_service_dir(path: string | null): void;
     /**
      * Stop the session bus started by g_test_dbus_up().
      *
@@ -45527,7 +45865,7 @@ declare namespace Gio {
     static unset(): void;
   }
 
-  namespace ThemedIcon {
+  module ThemedIcon {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -45572,7 +45910,7 @@ declare namespace Gio {
     /**
      * The icon name.
      */
-    readonly name: string;
+    readonly name: string | null;
     /**
      * A %NULL-terminated array of icon names.
      */
@@ -45607,7 +45945,7 @@ declare namespace Gio {
      * to g_icon_hash().
      * @param iconname name of icon to append to list of icons from within `icon`.
      */
-    append_name(iconname: string): void;
+    append_name(iconname: string | null): void;
     /**
      * Gets the names of icons from within `icon`.
      * @returns a list of icon names.
@@ -45620,7 +45958,7 @@ declare namespace Gio {
      * to g_icon_hash().
      * @param iconname name of icon to prepend to list of icons from within `icon`.
      */
-    prepend_name(iconname: string): void;
+    prepend_name(iconname: string | null): void;
 
     // Class property signals of Gio-2.0.Gio.ThemedIcon
 
@@ -45682,14 +46020,14 @@ declare namespace Gio {
      * @param iconname a string containing an icon name.
      * @returns a new #GThemedIcon.
      */
-    constructor(iconname: string);
+    constructor(iconname: string | null);
     /**
      * Creates a new themed icon for `iconname`.
      * @constructor
      * @param iconname a string containing an icon name.
      * @returns a new #GThemedIcon.
      */
-    static new(iconname: string): ThemedIcon;
+    static new(iconname: string | null): ThemedIcon;
     /**
      * Creates a new themed icon for `iconnames`.
      * @constructor
@@ -45719,11 +46057,11 @@ declare namespace Gio {
      * @param iconname a string containing an icon name
      * @returns a new #GThemedIcon.
      */
-    static new_with_default_fallbacks(iconname: string): ThemedIcon;
+    static new_with_default_fallbacks(iconname: string | null): ThemedIcon;
     _init(config?: ThemedIcon.ConstructorProperties): void;
   }
 
-  namespace ThreadedSocketService {
+  module ThreadedSocketService {
     // Signal callback interfaces
 
     /**
@@ -45763,8 +46101,8 @@ declare namespace Gio {
     // Own virtual methods of Gio-2.0.Gio.ThreadedSocketService
 
     vfunc_run(
-      connection: SocketConnection,
-      source_object: GObject.Object
+      connection: SocketConnection | null,
+      source_object: GObject.Object | null
     ): boolean;
 
     // Own signals of Gio-2.0.Gio.ThreadedSocketService
@@ -45888,7 +46226,7 @@ declare namespace Gio {
     _init(config?: ThreadedSocketService.ConstructorProperties): void;
   }
 
-  namespace TlsCertificate {
+  module TlsCertificate {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -46007,17 +46345,17 @@ declare namespace Gio {
      * This property and the #GTlsCertificate:certificate
      * property represent the same data, just in different forms.
      */
-    readonly certificate_pem: string;
+    readonly certificate_pem: string | null;
     /**
      * The DNS names from the certificate's Subject Alternative Names (SANs),
      * %NULL if unavailable.
      */
-    readonly dns_names: object[];
+    readonly dns_names: any[];
     /**
      * The IP addresses from the certificate's Subject Alternative Names (SANs),
      * %NULL if unavailable.
      */
-    readonly ip_addresses: object[];
+    readonly ip_addresses: any[];
     /**
      * A #GTlsCertificate representing the entity that issued this
      * certificate. If %NULL, this means that the certificate is either
@@ -46041,7 +46379,7 @@ declare namespace Gio {
      * The issuer from the certificate,
      * %NULL if unavailable.
      */
-    readonly issuer_name: string;
+    readonly issuer_name: string | null;
     /**
      * The time at which this cert is no longer valid,
      * %NULL if unavailable.
@@ -46055,7 +46393,7 @@ declare namespace Gio {
     /**
      * An optional password used when constructed with GTlsCertificate:pkcs12-data.
      */
-    readonly password: string;
+    readonly password: string | null;
     /**
      * A URI referencing the [PKCS \#11](https://docs.oasis-open.org/pkcs11/pkcs11-base/v3.0/os/pkcs11-base-v3.0-os.html)
      * objects containing an X.509 certificate and optionally a private key.
@@ -46063,7 +46401,7 @@ declare namespace Gio {
      * If %NULL, the certificate is either not backed by PKCS \#11 or the
      * #GTlsBackend does not support PKCS \#11.
      */
-    readonly pkcs11_uri: string;
+    readonly pkcs11_uri: string | null;
     /**
      * The PKCS #12 formatted data used to construct the object.
      *
@@ -46110,22 +46448,22 @@ declare namespace Gio {
      * When this property is read, the output format will be unencrypted
      * PKCS \#8.
      */
-    readonly private_key_pem: string;
+    readonly private_key_pem: string | null;
     /**
      * A URI referencing a [PKCS \#11](https://docs.oasis-open.org/pkcs11/pkcs11-base/v3.0/os/pkcs11-base-v3.0-os.html)
      * object containing a private key.
      */
-    readonly private_key_pkcs11_uri: string;
+    readonly private_key_pkcs11_uri: string | null;
     /**
      * The subject from the cert,
      * %NULL if unavailable.
      */
-    readonly subject_name: string;
+    readonly subject_name: string | null;
 
     // Own fields of Gio-2.0.Gio.TlsCertificate
 
     parent_instance: GObject.Object;
-    priv: TlsCertificatePrivate;
+    priv: TlsCertificatePrivate | null;
 
     // Owm methods of Gio-2.0.Gio.TlsCertificate
 
@@ -46173,7 +46511,7 @@ declare namespace Gio {
      * @param cert_two second certificate to compare
      * @returns whether the same or not
      */
-    is_same(cert_two: TlsCertificate): boolean;
+    is_same(cert_two: TlsCertificate | null): boolean;
     /**
      * This verifies `cert` and returns a set of #GTlsCertificateFlags
      * indicating any problems found with it. This can be used to verify a
@@ -46437,7 +46775,7 @@ declare namespace Gio {
      * @param file file containing a certificate to import
      * @returns the new certificate, or %NULL on error
      */
-    static new_from_file(file: string): TlsCertificate;
+    static new_from_file(file: string | null): TlsCertificate;
     /**
      * Creates a #GTlsCertificate from the data in `file`.
      *
@@ -46453,8 +46791,8 @@ declare namespace Gio {
      * @returns the new certificate, or %NULL on error
      */
     static new_from_file_with_password(
-      file: string,
-      password: string
+      file: string | null,
+      password: string | null
     ): TlsCertificate;
     /**
      * Creates a #GTlsCertificate from the PEM-encoded data in `cert_file`
@@ -46476,7 +46814,10 @@ declare namespace Gio {
      * @param key_file file containing a PEM-encoded private key     to import
      * @returns the new certificate, or %NULL on error
      */
-    static new_from_files(cert_file: string, key_file: string): TlsCertificate;
+    static new_from_files(
+      cert_file: string | null,
+      key_file: string | null
+    ): TlsCertificate;
     /**
      * Creates a #GTlsCertificate from the PEM-encoded data in `data`. If
      * `data` includes both a certificate and a private key, then the
@@ -46497,7 +46838,7 @@ declare namespace Gio {
      * @param length the length of `data,` or -1 if it's 0-terminated.
      * @returns the new certificate, or %NULL if @data is invalid
      */
-    static new_from_pem(data: string, length: number): TlsCertificate;
+    static new_from_pem(data: string | null, length: number): TlsCertificate;
     /**
      * Creates a #GTlsCertificate from a
      * [PKCS \#11](https://docs.oasis-open.org/pkcs11/pkcs11-base/v3.0/os/pkcs11-base-v3.0-os.html) URI.
@@ -46530,7 +46871,7 @@ declare namespace Gio {
      * @returns the new certificate, or %NULL on error
      */
     static new_from_pkcs11_uris(
-      pkcs11_uri: string,
+      pkcs11_uri: string | null,
       private_key_pkcs11_uri: string | null
     ): TlsCertificate;
     /**
@@ -46570,10 +46911,10 @@ declare namespace Gio {
      * @param file file containing PEM-encoded certificates to import
      * @returns a #GList containing #GTlsCertificate objects. You must free the list and its contents when you are done with it.
      */
-    static list_new_from_file(file: string): TlsCertificate[];
+    static list_new_from_file(file: string | null): TlsCertificate[] | null;
   }
 
-  namespace TlsConnection {
+  module TlsConnection {
     // Signal callback interfaces
 
     /**
@@ -46682,7 +47023,7 @@ declare namespace Gio {
     /**
      * The name of the TLS ciphersuite in use. See g_tls_connection_get_ciphersuite_name().
      */
-    readonly ciphersuite_name: string;
+    readonly ciphersuite_name: string | null;
     /**
      * The certificate database to use when verifying this TLS connection.
      * If no certificate database is set, then the default database will be
@@ -46712,7 +47053,7 @@ declare namespace Gio {
      * The application-layer protocol negotiated during the TLS
      * handshake. See g_tls_connection_get_negotiated_protocol().
      */
-    readonly negotiated_protocol: string;
+    readonly negotiated_protocol: string | null;
     /**
      * The connection's peer's certificate, after the TLS handshake has
      * completed or failed. Note in particular that this is not yet set
@@ -46763,7 +47104,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.TlsConnection
 
     parent_instance: IOStream & GObject.Object;
-    priv: TlsConnectionPrivate;
+    priv: TlsConnectionPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.TlsConnection
 
@@ -46775,7 +47116,7 @@ declare namespace Gio {
      * @returns %TRUE if one of the signal handlers has returned     %TRUE to accept @peer_cert
      */
     emit_accept_certificate(
-      peer_cert: TlsCertificate,
+      peer_cert: TlsCertificate | null,
       errors: TlsCertificateFlags
     ): boolean;
     /**
@@ -46937,7 +47278,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set.
      */
-    handshake_finish(result: AsyncResult): boolean;
+    handshake_finish(result: AsyncResult | null): boolean;
     /**
      * Sets the list of application-layer protocols to advertise that the
      * caller is willing to speak on this connection. The
@@ -46973,7 +47314,7 @@ declare namespace Gio {
      * non-%NULL.)
      * @param certificate the certificate to use for `conn`
      */
-    set_certificate(certificate: TlsCertificate): void;
+    set_certificate(certificate: TlsCertificate | null): void;
     /**
      * Sets the certificate database that is used to verify peer certificates.
      * This is set to the default database by default. See
@@ -47053,7 +47394,7 @@ declare namespace Gio {
     // Own virtual methods of Gio-2.0.Gio.TlsConnection
 
     vfunc_accept_certificate(
-      peer_cert: TlsCertificate,
+      peer_cert: TlsCertificate | null,
       errors: TlsCertificateFlags
     ): boolean;
     vfunc_get_binding_data(
@@ -47129,7 +47470,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE on success, %FALSE on failure, in which case @error will be set.
      */
-    vfunc_handshake_finish(result: AsyncResult): boolean;
+    vfunc_handshake_finish(result: AsyncResult | null): boolean;
 
     // Own signals of Gio-2.0.Gio.TlsConnection
 
@@ -47321,17 +47662,17 @@ declare namespace Gio {
     _init(config?: TlsConnection.ConstructorProperties): void;
   }
 
-  namespace TlsDatabase {
+  module TlsDatabase {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface TlsDatabase {
     // Own fields of Gio-2.0.Gio.TlsDatabase
 
     parent_instance: GObject.Object;
-    priv: TlsDatabasePrivate;
+    priv: TlsDatabasePrivate | null;
 
     // Owm methods of Gio-2.0.Gio.TlsDatabase
 
@@ -47347,7 +47688,9 @@ declare namespace Gio {
      * @param certificate certificate for which to create a handle.
      * @returns a newly allocated string containing the handle.
      */
-    create_certificate_handle(certificate: TlsCertificate): string | null;
+    create_certificate_handle(
+      certificate: TlsCertificate | null
+    ): string | null;
     /**
      * Look up a certificate by its handle.
      *
@@ -47368,7 +47711,7 @@ declare namespace Gio {
      * @returns a newly allocated #GTlsCertificate, or %NULL. Use g_object_unref() to release the certificate.
      */
     lookup_certificate_for_handle(
-      handle: string,
+      handle: string | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
@@ -47383,7 +47726,7 @@ declare namespace Gio {
      * @param callback callback to call when the operation completes
      */
     lookup_certificate_for_handle_async(
-      handle: string,
+      handle: string | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null,
@@ -47398,7 +47741,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a newly allocated #GTlsCertificate object. Use g_object_unref() to release the certificate.
      */
-    lookup_certificate_for_handle_finish(result: AsyncResult): TlsCertificate;
+    lookup_certificate_for_handle_finish(
+      result: AsyncResult | null
+    ): TlsCertificate | null;
     /**
      * Look up the issuer of `certificate` in the database. The
      * #GTlsCertificate:issuer property of `certificate` is not modified, and
@@ -47427,11 +47772,11 @@ declare namespace Gio {
      * @returns a newly allocated issuer #GTlsCertificate, or %NULL. Use g_object_unref() to release the certificate.
      */
     lookup_certificate_issuer(
-      certificate: TlsCertificate,
+      certificate: TlsCertificate | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
-    ): TlsCertificate;
+    ): TlsCertificate | null;
     /**
      * Asynchronously look up the issuer of `certificate` in the database. See
      * g_tls_database_lookup_certificate_issuer() for more information.
@@ -47442,7 +47787,7 @@ declare namespace Gio {
      * @param callback callback to call when the operation completes
      */
     lookup_certificate_issuer_async(
-      certificate: TlsCertificate,
+      certificate: TlsCertificate | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null,
@@ -47454,7 +47799,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a newly allocated issuer #GTlsCertificate, or %NULL. Use g_object_unref() to release the certificate.
      */
-    lookup_certificate_issuer_finish(result: AsyncResult): TlsCertificate;
+    lookup_certificate_issuer_finish(
+      result: AsyncResult | null
+    ): TlsCertificate | null;
     /**
      * Look up certificates issued by this issuer in the database.
      *
@@ -47471,7 +47818,7 @@ declare namespace Gio {
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
-    ): TlsCertificate[];
+    ): TlsCertificate[] | null;
     /**
      * Asynchronously look up certificates issued by this issuer in the database. See
      * g_tls_database_lookup_certificates_issued_by() for more information.
@@ -47498,7 +47845,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a newly allocated list of #GTlsCertificate objects. Use g_object_unref() on each certificate, and g_list_free() on the release the list.
      */
-    lookup_certificates_issued_by_finish(result: AsyncResult): TlsCertificate[];
+    lookup_certificates_issued_by_finish(
+      result: AsyncResult | null
+    ): TlsCertificate[] | null;
     /**
      * Determines the validity of a certificate chain, outside the context
      * of a TLS session.
@@ -47569,8 +47918,8 @@ declare namespace Gio {
      * @returns the appropriate #GTlsCertificateFlags which represents the result of verification.
      */
     verify_chain(
-      chain: TlsCertificate,
-      purpose: string,
+      chain: TlsCertificate | null,
+      purpose: string | null,
       identity: SocketConnectable | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseVerifyFlags,
@@ -47589,8 +47938,8 @@ declare namespace Gio {
      * @param callback callback to call when the operation completes
      */
     verify_chain_async(
-      chain: TlsCertificate,
-      purpose: string,
+      chain: TlsCertificate | null,
+      purpose: string | null,
       identity: SocketConnectable | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseVerifyFlags,
@@ -47612,7 +47961,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns the appropriate #GTlsCertificateFlags which represents the result of verification.
      */
-    verify_chain_finish(result: AsyncResult): TlsCertificateFlags;
+    verify_chain_finish(result: AsyncResult | null): TlsCertificateFlags;
 
     // Own virtual methods of Gio-2.0.Gio.TlsDatabase
 
@@ -47629,7 +47978,9 @@ declare namespace Gio {
      * @param certificate certificate for which to create a handle.
      * @returns a newly allocated string containing the handle.
      */
-    vfunc_create_certificate_handle(certificate: TlsCertificate): string | null;
+    vfunc_create_certificate_handle(
+      certificate: TlsCertificate | null
+    ): string | null;
     /**
      * Look up a certificate by its handle.
      *
@@ -47651,7 +48002,7 @@ declare namespace Gio {
      * @returns a newly allocated #GTlsCertificate, or %NULL. Use g_object_unref() to release the certificate.
      */
     vfunc_lookup_certificate_for_handle(
-      handle: string,
+      handle: string | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
@@ -47667,7 +48018,7 @@ declare namespace Gio {
      * @param callback callback to call when the operation completes
      */
     vfunc_lookup_certificate_for_handle_async(
-      handle: string,
+      handle: string | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null,
@@ -47684,8 +48035,8 @@ declare namespace Gio {
      * @returns a newly allocated #GTlsCertificate object. Use g_object_unref() to release the certificate.
      */
     vfunc_lookup_certificate_for_handle_finish(
-      result: AsyncResult
-    ): TlsCertificate;
+      result: AsyncResult | null
+    ): TlsCertificate | null;
     /**
      * Look up the issuer of `certificate` in the database. The
      * #GTlsCertificate:issuer property of `certificate` is not modified, and
@@ -47715,11 +48066,11 @@ declare namespace Gio {
      * @returns a newly allocated issuer #GTlsCertificate, or %NULL. Use g_object_unref() to release the certificate.
      */
     vfunc_lookup_certificate_issuer(
-      certificate: TlsCertificate,
+      certificate: TlsCertificate | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
-    ): TlsCertificate;
+    ): TlsCertificate | null;
     /**
      * Asynchronously look up the issuer of `certificate` in the database. See
      * g_tls_database_lookup_certificate_issuer() for more information.
@@ -47731,7 +48082,7 @@ declare namespace Gio {
      * @param callback callback to call when the operation completes
      */
     vfunc_lookup_certificate_issuer_async(
-      certificate: TlsCertificate,
+      certificate: TlsCertificate | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null,
@@ -47744,7 +48095,9 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a newly allocated issuer #GTlsCertificate, or %NULL. Use g_object_unref() to release the certificate.
      */
-    vfunc_lookup_certificate_issuer_finish(result: AsyncResult): TlsCertificate;
+    vfunc_lookup_certificate_issuer_finish(
+      result: AsyncResult | null
+    ): TlsCertificate | null;
     /**
      * Look up certificates issued by this issuer in the database.
      *
@@ -47762,7 +48115,7 @@ declare namespace Gio {
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
-    ): TlsCertificate[];
+    ): TlsCertificate[] | null;
     /**
      * Asynchronously look up certificates issued by this issuer in the database. See
      * g_tls_database_lookup_certificates_issued_by() for more information.
@@ -47792,8 +48145,8 @@ declare namespace Gio {
      * @returns a newly allocated list of #GTlsCertificate objects. Use g_object_unref() on each certificate, and g_list_free() on the release the list.
      */
     vfunc_lookup_certificates_issued_by_finish(
-      result: AsyncResult
-    ): TlsCertificate[];
+      result: AsyncResult | null
+    ): TlsCertificate[] | null;
     /**
      * Determines the validity of a certificate chain, outside the context
      * of a TLS session.
@@ -47865,8 +48218,8 @@ declare namespace Gio {
      * @returns the appropriate #GTlsCertificateFlags which represents the result of verification.
      */
     vfunc_verify_chain(
-      chain: TlsCertificate,
-      purpose: string,
+      chain: TlsCertificate | null,
+      purpose: string | null,
       identity: SocketConnectable | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseVerifyFlags,
@@ -47886,8 +48239,8 @@ declare namespace Gio {
      * @param callback callback to call when the operation completes
      */
     vfunc_verify_chain_async(
-      chain: TlsCertificate,
-      purpose: string,
+      chain: TlsCertificate | null,
+      purpose: string | null,
       identity: SocketConnectable | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseVerifyFlags,
@@ -47910,7 +48263,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns the appropriate #GTlsCertificateFlags which represents the result of verification.
      */
-    vfunc_verify_chain_finish(result: AsyncResult): TlsCertificateFlags;
+    vfunc_verify_chain_finish(result: AsyncResult | null): TlsCertificateFlags;
 
     // Class property signals of Gio-2.0.Gio.TlsDatabase
 
@@ -47944,10 +48297,10 @@ declare namespace Gio {
     _init(config?: TlsDatabase.ConstructorProperties): void;
   }
 
-  namespace TlsInteraction {
+  module TlsInteraction {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface TlsInteraction {
@@ -47972,7 +48325,7 @@ declare namespace Gio {
      * @returns The status of the ask password interaction.
      */
     ask_password(
-      password: TlsPassword,
+      password: TlsPassword | null,
       cancellable: Cancellable | null
     ): TlsInteractionResult;
     /**
@@ -47996,7 +48349,7 @@ declare namespace Gio {
      * @param callback will be called when the interaction completes
      */
     ask_password_async(
-      password: TlsPassword,
+      password: TlsPassword | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -48013,7 +48366,7 @@ declare namespace Gio {
      * @param result the result passed to the callback
      * @returns The status of the ask password interaction.
      */
-    ask_password_finish(result: AsyncResult): TlsInteractionResult;
+    ask_password_finish(result: AsyncResult | null): TlsInteractionResult;
     /**
      * Invoke the interaction to ask the user for a password. It invokes this
      * interaction in the main loop, specifically the #GMainContext returned by
@@ -48039,7 +48392,7 @@ declare namespace Gio {
      * @returns The status of the ask password interaction.
      */
     invoke_ask_password(
-      password: TlsPassword,
+      password: TlsPassword | null,
       cancellable: Cancellable | null
     ): TlsInteractionResult;
     /**
@@ -48069,7 +48422,7 @@ declare namespace Gio {
      * @returns The status of the certificate request interaction.
      */
     invoke_request_certificate(
-      connection: TlsConnection,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null
     ): TlsInteractionResult;
@@ -48096,7 +48449,7 @@ declare namespace Gio {
      * @returns The status of the request certificate interaction.
      */
     request_certificate(
-      connection: TlsConnection,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null
     ): TlsInteractionResult;
@@ -48115,7 +48468,7 @@ declare namespace Gio {
      * @param callback will be called when the interaction completes
      */
     request_certificate_async(
-      connection: TlsConnection,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -48134,7 +48487,9 @@ declare namespace Gio {
      * @param result the result passed to the callback
      * @returns The status of the request certificate interaction.
      */
-    request_certificate_finish(result: AsyncResult): TlsInteractionResult;
+    request_certificate_finish(
+      result: AsyncResult | null
+    ): TlsInteractionResult;
 
     // Own virtual methods of Gio-2.0.Gio.TlsInteraction
 
@@ -48158,7 +48513,7 @@ declare namespace Gio {
      * @returns The status of the ask password interaction.
      */
     vfunc_ask_password(
-      password: TlsPassword,
+      password: TlsPassword | null,
       cancellable: Cancellable | null
     ): TlsInteractionResult;
     /**
@@ -48183,7 +48538,7 @@ declare namespace Gio {
      * @param callback will be called when the interaction completes
      */
     vfunc_ask_password_async(
-      password: TlsPassword,
+      password: TlsPassword | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
     ): void;
@@ -48201,7 +48556,7 @@ declare namespace Gio {
      * @param result the result passed to the callback
      * @returns The status of the ask password interaction.
      */
-    vfunc_ask_password_finish(result: AsyncResult): TlsInteractionResult;
+    vfunc_ask_password_finish(result: AsyncResult | null): TlsInteractionResult;
     /**
      * Run synchronous interaction to ask the user to choose a certificate to use
      * with the connection. In general, g_tls_interaction_invoke_request_certificate()
@@ -48226,7 +48581,7 @@ declare namespace Gio {
      * @returns The status of the request certificate interaction.
      */
     vfunc_request_certificate(
-      connection: TlsConnection,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null
     ): TlsInteractionResult;
@@ -48246,7 +48601,7 @@ declare namespace Gio {
      * @param callback will be called when the interaction completes
      */
     vfunc_request_certificate_async(
-      connection: TlsConnection,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback<this> | null
@@ -48266,7 +48621,9 @@ declare namespace Gio {
      * @param result the result passed to the callback
      * @returns The status of the request certificate interaction.
      */
-    vfunc_request_certificate_finish(result: AsyncResult): TlsInteractionResult;
+    vfunc_request_certificate_finish(
+      result: AsyncResult | null
+    ): TlsInteractionResult;
 
     // Class property signals of Gio-2.0.Gio.TlsInteraction
 
@@ -48311,7 +48668,7 @@ declare namespace Gio {
     _init(config?: TlsInteraction.ConstructorProperties): void;
   }
 
-  namespace TlsPassword {
+  module TlsPassword {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -48327,14 +48684,14 @@ declare namespace Gio {
   interface TlsPassword {
     // Own properties of Gio-2.0.Gio.TlsPassword
 
-    description: string;
+    description: string | null;
     flags: TlsPasswordFlags;
-    warning: string;
+    warning: string | null;
 
     // Own fields of Gio-2.0.Gio.TlsPassword
 
     parent_instance: GObject.Object;
-    priv: TlsPasswordPrivate;
+    priv: TlsPasswordPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.TlsPassword
 
@@ -48342,7 +48699,7 @@ declare namespace Gio {
      * Get a description string about what the password will be used for.
      * @returns The description of the password.
      */
-    get_description(): string;
+    get_description(): string | null;
     /**
      * Get flags about the password.
      * @returns The flags about the password.
@@ -48363,12 +48720,12 @@ declare namespace Gio {
      * g_tls_password_get_flags().
      * @returns The warning.
      */
-    get_warning(): string;
+    get_warning(): string | null;
     /**
      * Set a description string about what the password will be used for.
      * @param description The description of the password
      */
-    set_description(description: string): void;
+    set_description(description: string | null): void;
     /**
      * Set flags about the password.
      * @param flags The flags about the password
@@ -48405,11 +48762,11 @@ declare namespace Gio {
      * g_tls_password_get_flags().
      * @param warning The user readable warning
      */
-    set_warning(warning: string): void;
+    set_warning(warning: string | null): void;
 
     // Own virtual methods of Gio-2.0.Gio.TlsPassword
 
-    vfunc_get_default_warning(): string;
+    vfunc_get_default_warning(): string | null;
     /**
      * Get the password value. If `length` is not %NULL then it will be
      * filled in with the length of the password value. (Note that the
@@ -48494,7 +48851,7 @@ declare namespace Gio {
      * @param description description of what the password is for
      * @returns The newly allocated password object
      */
-    constructor(flags: TlsPasswordFlags, description: string);
+    constructor(flags: TlsPasswordFlags, description: string | null);
     /**
      * Create a new #GTlsPassword object.
      * @constructor
@@ -48502,14 +48859,17 @@ declare namespace Gio {
      * @param description description of what the password is for
      * @returns The newly allocated password object
      */
-    static new(flags: TlsPasswordFlags, description: string): TlsPassword;
+    static new(
+      flags: TlsPasswordFlags,
+      description: string | null
+    ): TlsPassword;
     _init(config?: TlsPassword.ConstructorProperties): void;
   }
 
-  namespace UnixConnection {
+  module UnixConnection {
     // Constructor properties interface
 
-    type ConstructorProperties = SocketConnection.ConstructorProperties;
+    type ConstructorProperties = SocketConnection.ConstructorProperties
   }
 
   interface UnixConnection {
@@ -48545,7 +48905,7 @@ declare namespace Gio {
      * @param cancellable A #GCancellable or %NULL.
      * @returns Received credentials on success (free with g_object_unref()), %NULL if @error is set.
      */
-    receive_credentials(cancellable: Cancellable | null): Credentials;
+    receive_credentials(cancellable: Cancellable | null): Credentials | null;
     /**
      * Asynchronously receive credentials.
      *
@@ -48567,7 +48927,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns a #GCredentials, or %NULL on error.     Free the returned object with g_object_unref().
      */
-    receive_credentials_finish(result: AsyncResult): Credentials;
+    receive_credentials_finish(result: AsyncResult | null): Credentials | null;
     /**
      * Receives a file descriptor from the sending end of the connection.
      * The sending end has to call g_unix_connection_send_fd() for this
@@ -48625,7 +48985,7 @@ declare namespace Gio {
      * @param result a #GAsyncResult.
      * @returns %TRUE if the operation was successful, otherwise %FALSE.
      */
-    send_credentials_finish(result: AsyncResult): boolean;
+    send_credentials_finish(result: AsyncResult | null): boolean;
     /**
      * Passes a file descriptor to the receiving side of the
      * connection. The receiving end has to call g_unix_connection_receive_fd()
@@ -48655,7 +49015,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::socket",
       callback: ($obj: UnixConnection, pspec: GObject.ParamSpec) => void
@@ -48674,7 +49037,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::closed",
       callback: ($obj: UnixConnection, pspec: GObject.ParamSpec) => void
@@ -48693,7 +49059,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::input-stream",
       callback: ($obj: UnixConnection, pspec: GObject.ParamSpec) => void
@@ -48712,7 +49081,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(
       sigName: "notify::output-stream",
       callback: ($obj: UnixConnection, pspec: GObject.ParamSpec) => void
@@ -48728,7 +49100,10 @@ declare namespace Gio {
      * @param cancellable a %GCancellable or %NULL
      * @returns %TRUE if the connection succeeded, %FALSE on error
      */
-    connect(address: SocketAddress, cancellable: Cancellable | null): boolean;
+    connect(
+      address: SocketAddress | null,
+      cancellable: Cancellable | null
+    ): boolean;
     connect_after(sigName: string, callback: (...args: any[]) => void): number;
     emit(sigName: string, ...args: any[]): void;
     disconnect(id: number): void;
@@ -48761,7 +49136,7 @@ declare namespace Gio {
     _init(config?: UnixConnection.ConstructorProperties): void;
   }
 
-  namespace UnixCredentialsMessage {
+  module UnixCredentialsMessage {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -48794,7 +49169,7 @@ declare namespace Gio {
      * Gets the credentials stored in `message`.
      * @returns A #GCredentials instance. Do not free, it is owned by @message.
      */
-    get_credentials(): Credentials;
+    get_credentials(): Credentials | null;
 
     // Class property signals of Gio-2.0.Gio.UnixCredentialsMessage
 
@@ -48863,7 +49238,7 @@ declare namespace Gio {
      * @returns a new #GUnixCredentialsMessage
      */
     static new_with_credentials(
-      credentials: Credentials
+      credentials: Credentials | null
     ): UnixCredentialsMessage;
     _init(config?: UnixCredentialsMessage.ConstructorProperties): void;
     /**
@@ -48873,17 +49248,17 @@ declare namespace Gio {
     static is_supported(): boolean;
   }
 
-  namespace UnixFDList {
+  module UnixFDList {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface UnixFDList {
     // Own fields of Gio-2.0.Gio.UnixFDList
 
     parent_instance: GObject.Object;
-    priv: UnixFDListPrivate;
+    priv: UnixFDListPrivate | null;
 
     // Owm methods of Gio-2.0.Gio.UnixFDList
 
@@ -49028,7 +49403,7 @@ declare namespace Gio {
     _init(config?: UnixFDList.ConstructorProperties): void;
   }
 
-  namespace UnixFDMessage {
+  module UnixFDMessage {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -49070,7 +49445,7 @@ declare namespace Gio {
      * the lifetime of `message`.
      * @returns the #GUnixFDList from @message
      */
-    get_fd_list(): UnixFDList;
+    get_fd_list(): UnixFDList | null;
     /**
      * Returns the array of file descriptors that is contained in this
      * object.
@@ -49155,11 +49530,11 @@ declare namespace Gio {
      * @param fd_list a #GUnixFDList
      * @returns a new #GUnixFDMessage
      */
-    static new_with_fd_list(fd_list: UnixFDList): UnixFDMessage;
+    static new_with_fd_list(fd_list: UnixFDList | null): UnixFDMessage;
     _init(config?: UnixFDMessage.ConstructorProperties): void;
   }
 
-  namespace UnixInputStream {
+  module UnixInputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -49287,7 +49662,7 @@ declare namespace Gio {
     _init(config?: UnixInputStream.ConstructorProperties): void;
   }
 
-  namespace UnixMountMonitor {
+  module UnixMountMonitor {
     // Signal callback interfaces
 
     /**
@@ -49306,7 +49681,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface UnixMountMonitor {
@@ -49397,10 +49772,10 @@ declare namespace Gio {
      * the same main context as you called this function.
      * @returns the #GUnixMountMonitor.
      */
-    static get(): UnixMountMonitor;
+    static get(): UnixMountMonitor | null;
   }
 
-  namespace UnixOutputStream {
+  module UnixOutputStream {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -49528,7 +49903,7 @@ declare namespace Gio {
     _init(config?: UnixOutputStream.ConstructorProperties): void;
   }
 
-  namespace UnixSocketAddress {
+  module UnixSocketAddress {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -49554,7 +49929,7 @@ declare namespace Gio {
      */
     readonly abstract: boolean;
     readonly address_type: UnixSocketAddressType;
-    readonly path: string;
+    readonly path: string | null;
     readonly path_as_array: Uint8Array;
 
     // Own fields of Gio-2.0.Gio.UnixSocketAddress
@@ -49582,7 +49957,7 @@ declare namespace Gio {
      * of this string.
      * @returns the path for @address
      */
-    get_path(): string;
+    get_path(): string | null;
     /**
      * Gets the length of `address'`s path.
      *
@@ -49683,7 +50058,7 @@ declare namespace Gio {
      * @param path the socket path
      * @returns a new #GUnixSocketAddress
      */
-    constructor(path: string);
+    constructor(path: string | null);
     /**
      * Creates a new #GUnixSocketAddress for `path`.
      *
@@ -49693,7 +50068,7 @@ declare namespace Gio {
      * @param path the socket path
      * @returns a new #GUnixSocketAddress
      */
-    static new(path: string): UnixSocketAddress;
+    static new(path: string | null): UnixSocketAddress;
     /**
      * Creates a new %G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED
      * #GUnixSocketAddress for `path`.
@@ -49751,10 +50126,10 @@ declare namespace Gio {
     static abstract_names_supported(): boolean;
   }
 
-  namespace Vfs {
+  module Vfs {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface Vfs {
@@ -49769,7 +50144,7 @@ declare namespace Gio {
      * @param path a string containing a VFS path.
      * @returns a #GFile.     Free the returned object with g_object_unref().
      */
-    get_file_for_path(path: string): File;
+    get_file_for_path(path: string | null): File | null;
     /**
      * Gets a #GFile for `uri`.
      *
@@ -49779,7 +50154,7 @@ declare namespace Gio {
      * @param uri a string containing a URI
      * @returns a #GFile.     Free the returned object with g_object_unref().
      */
-    get_file_for_uri(uri: string): File;
+    get_file_for_uri(uri: string | null): File | null;
     /**
      * Gets a list of URI schemes supported by `vfs`.
      * @returns a %NULL-terminated array of strings.     The returned array belongs to GIO and must     not be freed or modified.
@@ -49797,7 +50172,7 @@ declare namespace Gio {
      * @param parse_name a string to be parsed by the VFS module.
      * @returns a #GFile for the given @parse_name.     Free the returned object with g_object_unref().
      */
-    parse_name(parse_name: string): File;
+    parse_name(parse_name: string | null): File | null;
     /**
      * Registers `uri_func` and `parse_name_func` as the #GFile URI and parse name
      * lookup functions for URIs with a scheme matching `scheme`.
@@ -49825,7 +50200,7 @@ declare namespace Gio {
      * @returns %TRUE if @scheme was successfully registered, or %FALSE if a handler     for @scheme already exists.
      */
     register_uri_scheme(
-      scheme: string,
+      scheme: string | null,
       uri_func: VfsFileLookupFunc | null,
       parse_name_func: VfsFileLookupFunc | null
     ): boolean;
@@ -49835,18 +50210,18 @@ declare namespace Gio {
      * @param scheme an URI scheme, e.g. "http"
      * @returns %TRUE if @scheme was successfully unregistered, or %FALSE if a     handler for @scheme does not exist.
      */
-    unregister_uri_scheme(scheme: string): boolean;
+    unregister_uri_scheme(scheme: string | null): boolean;
 
     // Own virtual methods of Gio-2.0.Gio.Vfs
 
-    vfunc_add_writable_namespaces(list: FileAttributeInfoList): void;
+    vfunc_add_writable_namespaces(list: FileAttributeInfoList | null): void;
     /**
      * Gets a #GFile for `path`.
      * @virtual
      * @param path a string containing a VFS path.
      * @returns a #GFile.     Free the returned object with g_object_unref().
      */
-    vfunc_get_file_for_path(path: string): File;
+    vfunc_get_file_for_path(path: string | null): File | null;
     /**
      * Gets a #GFile for `uri`.
      *
@@ -49857,7 +50232,7 @@ declare namespace Gio {
      * @param uri a string containing a URI
      * @returns a #GFile.     Free the returned object with g_object_unref().
      */
-    vfunc_get_file_for_uri(uri: string): File;
+    vfunc_get_file_for_uri(uri: string | null): File | null;
     /**
      * Gets a list of URI schemes supported by `vfs`.
      * @virtual
@@ -49871,19 +50246,19 @@ declare namespace Gio {
      */
     vfunc_is_active(): boolean;
     vfunc_local_file_add_info(
-      filename: string,
+      filename: string | null,
       device: number,
-      attribute_matcher: FileAttributeMatcher,
-      info: FileInfo,
+      attribute_matcher: FileAttributeMatcher | null,
+      info: FileInfo | null,
       cancellable: Cancellable | null,
-      extra_data: object | null,
-      free_extra_data: GLib.DestroyNotify
+      extra_data: any | null,
+      free_extra_data: GLib.DestroyNotify | null
     ): void;
-    vfunc_local_file_moved(source: string, dest: string): void;
-    vfunc_local_file_removed(filename: string): void;
+    vfunc_local_file_moved(source: string | null, dest: string | null): void;
+    vfunc_local_file_removed(filename: string | null): void;
     vfunc_local_file_set_attributes(
-      filename: string,
-      info: FileInfo,
+      filename: string | null,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ): boolean;
@@ -49895,7 +50270,7 @@ declare namespace Gio {
      * @param parse_name a string to be parsed by the VFS module.
      * @returns a #GFile for the given @parse_name.     Free the returned object with g_object_unref().
      */
-    vfunc_parse_name(parse_name: string): File;
+    vfunc_parse_name(parse_name: string | null): File | null;
 
     // Class property signals of Gio-2.0.Gio.Vfs
 
@@ -49923,15 +50298,15 @@ declare namespace Gio {
      * Gets the default #GVfs for the system.
      * @returns a #GVfs, which will be the local     file system #GVfs if no other implementation is available.
      */
-    static get_default(): Vfs;
+    static get_default(): Vfs | null;
     /**
      * Gets the local #GVfs for the system.
      * @returns a #GVfs.
      */
-    static get_local(): Vfs;
+    static get_local(): Vfs | null;
   }
 
-  namespace VolumeMonitor {
+  module VolumeMonitor {
     // Signal callback interfaces
 
     /**
@@ -50020,7 +50395,7 @@ declare namespace Gio {
 
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties;
+    type ConstructorProperties = GObject.Object.ConstructorProperties
   }
 
   interface VolumeMonitor {
@@ -50037,13 +50412,13 @@ declare namespace Gio {
      * its elements have been unreffed with g_object_unref().
      * @returns a #GList of connected #GDrive objects.
      */
-    get_connected_drives(): Drive[];
+    get_connected_drives(): Drive[] | null;
     /**
      * Finds a #GMount object by its UUID (see g_mount_get_uuid())
      * @param uuid the UUID to look for
      * @returns a #GMount or %NULL if no such mount is available.     Free the returned object with g_object_unref().
      */
-    get_mount_for_uuid(uuid: string): Mount | null;
+    get_mount_for_uuid(uuid: string | null): Mount | null;
     /**
      * Gets a list of the mounts on the system.
      *
@@ -50051,13 +50426,13 @@ declare namespace Gio {
      * its elements have been unreffed with g_object_unref().
      * @returns a #GList of #GMount objects.
      */
-    get_mounts(): Mount[];
+    get_mounts(): Mount[] | null;
     /**
      * Finds a #GVolume object by its UUID (see g_volume_get_uuid())
      * @param uuid the UUID to look for
      * @returns a #GVolume or %NULL if no such volume is available.     Free the returned object with g_object_unref().
      */
-    get_volume_for_uuid(uuid: string): Volume | null;
+    get_volume_for_uuid(uuid: string | null): Volume | null;
     /**
      * Gets a list of the volumes on the system.
      *
@@ -50065,15 +50440,15 @@ declare namespace Gio {
      * its elements have been unreffed with g_object_unref().
      * @returns a #GList of #GVolume objects.
      */
-    get_volumes(): Volume[];
+    get_volumes(): Volume[] | null;
 
     // Own virtual methods of Gio-2.0.Gio.VolumeMonitor
 
-    vfunc_drive_changed(drive: Drive): void;
-    vfunc_drive_connected(drive: Drive): void;
-    vfunc_drive_disconnected(drive: Drive): void;
-    vfunc_drive_eject_button(drive: Drive): void;
-    vfunc_drive_stop_button(drive: Drive): void;
+    vfunc_drive_changed(drive: Drive | null): void;
+    vfunc_drive_connected(drive: Drive | null): void;
+    vfunc_drive_disconnected(drive: Drive | null): void;
+    vfunc_drive_eject_button(drive: Drive | null): void;
+    vfunc_drive_stop_button(drive: Drive | null): void;
     /**
      * Gets a list of drives connected to the system.
      *
@@ -50082,14 +50457,14 @@ declare namespace Gio {
      * @virtual
      * @returns a #GList of connected #GDrive objects.
      */
-    vfunc_get_connected_drives(): Drive[];
+    vfunc_get_connected_drives(): Drive[] | null;
     /**
      * Finds a #GMount object by its UUID (see g_mount_get_uuid())
      * @virtual
      * @param uuid the UUID to look for
      * @returns a #GMount or %NULL if no such mount is available.     Free the returned object with g_object_unref().
      */
-    vfunc_get_mount_for_uuid(uuid: string): Mount | null;
+    vfunc_get_mount_for_uuid(uuid: string | null): Mount | null;
     /**
      * Gets a list of the mounts on the system.
      *
@@ -50098,14 +50473,14 @@ declare namespace Gio {
      * @virtual
      * @returns a #GList of #GMount objects.
      */
-    vfunc_get_mounts(): Mount[];
+    vfunc_get_mounts(): Mount[] | null;
     /**
      * Finds a #GVolume object by its UUID (see g_volume_get_uuid())
      * @virtual
      * @param uuid the UUID to look for
      * @returns a #GVolume or %NULL if no such volume is available.     Free the returned object with g_object_unref().
      */
-    vfunc_get_volume_for_uuid(uuid: string): Volume | null;
+    vfunc_get_volume_for_uuid(uuid: string | null): Volume | null;
     /**
      * Gets a list of the volumes on the system.
      *
@@ -50114,14 +50489,14 @@ declare namespace Gio {
      * @virtual
      * @returns a #GList of #GVolume objects.
      */
-    vfunc_get_volumes(): Volume[];
-    vfunc_mount_added(mount: Mount): void;
-    vfunc_mount_changed(mount: Mount): void;
-    vfunc_mount_pre_unmount(mount: Mount): void;
-    vfunc_mount_removed(mount: Mount): void;
-    vfunc_volume_added(volume: Volume): void;
-    vfunc_volume_changed(volume: Volume): void;
-    vfunc_volume_removed(volume: Volume): void;
+    vfunc_get_volumes(): Volume[] | null;
+    vfunc_mount_added(mount: Mount | null): void;
+    vfunc_mount_changed(mount: Mount | null): void;
+    vfunc_mount_pre_unmount(mount: Mount | null): void;
+    vfunc_mount_removed(mount: Mount | null): void;
+    vfunc_volume_added(volume: Volume | null): void;
+    vfunc_volume_changed(volume: Volume | null): void;
+    vfunc_volume_removed(volume: Volume | null): void;
 
     // Own signals of Gio-2.0.Gio.VolumeMonitor
 
@@ -50298,15 +50673,15 @@ declare namespace Gio {
      * @param mount a #GMount object to find a parent for
      * @returns the #GVolume object that is the parent for @mount or %NULL if no wants to adopt the #GMount.
      */
-    static adopt_orphan_mount(mount: Mount): Volume;
+    static adopt_orphan_mount(mount: Mount | null): Volume | null;
     /**
      * Gets the volume monitor used by gio.
      * @returns a reference to the #GVolumeMonitor used by gio. Call    g_object_unref() when done with it.
      */
-    static get(): VolumeMonitor;
+    static get(): VolumeMonitor | null;
   }
 
-  namespace ZlibCompressor {
+  module ZlibCompressor {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -50425,7 +50800,7 @@ declare namespace Gio {
     _init(config?: ZlibCompressor.ConstructorProperties): void;
   }
 
-  namespace ZlibDecompressor {
+  module ZlibDecompressor {
     // Constructor properties interface
 
     interface ConstructorProperties
@@ -50525,15 +50900,18 @@ declare namespace Gio {
      * the name of the action
      * @field
      */
-    name: string;
-    activate: (action: SimpleAction, parameter: GLib.Variant) => void;
+    name: string | null;
+    activate: (
+      action: SimpleAction | null,
+      parameter: GLib.Variant | null
+    ) => void;
     /**
      * the type of the parameter that must be passed to the
      *                  activate function for this action, given as a single
      *                  GVariant type string (or %NULL for no parameter)
      * @field
      */
-    parameter_type: string;
+    parameter_type: string | null;
     /**
      * the initial state for this action, given in
      *         [GVariant text format][gvariant-text].  The state is parsed
@@ -50542,8 +50920,11 @@ declare namespace Gio {
      *         give %NULL here.
      * @field
      */
-    state: string;
-    change_state: (action: SimpleAction, value: GLib.Variant) => void;
+    state: string | null;
+    change_state: (
+      action: SimpleAction | null,
+      value: GLib.Variant | null
+    ) => void;
   }
 
   /**
@@ -50569,60 +50950,69 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.ActionGroupInterface
 
     g_iface: GObject.TypeInterface;
-    has_action: (action_group: ActionGroup, action_name: string) => boolean;
-    list_actions: (action_group: ActionGroup) => string[];
+    has_action: (
+      action_group: ActionGroup | null,
+      action_name: string | null
+    ) => boolean;
+    list_actions: (action_group: ActionGroup | null) => string[];
     get_action_enabled: (
-      action_group: ActionGroup,
-      action_name: string
+      action_group: ActionGroup | null,
+      action_name: string | null
     ) => boolean;
     get_action_parameter_type: (
-      action_group: ActionGroup,
-      action_name: string
+      action_group: ActionGroup | null,
+      action_name: string | null
     ) => GLib.VariantType | null;
     get_action_state_type: (
-      action_group: ActionGroup,
-      action_name: string
+      action_group: ActionGroup | null,
+      action_name: string | null
     ) => GLib.VariantType | null;
     get_action_state_hint: (
-      action_group: ActionGroup,
-      action_name: string
+      action_group: ActionGroup | null,
+      action_name: string | null
     ) => GLib.Variant | null;
     get_action_state: (
-      action_group: ActionGroup,
-      action_name: string
+      action_group: ActionGroup | null,
+      action_name: string | null
     ) => GLib.Variant | null;
     change_action_state: (
-      action_group: ActionGroup,
-      action_name: string,
-      value: GLib.Variant
+      action_group: ActionGroup | null,
+      action_name: string | null,
+      value: GLib.Variant | null
     ) => void;
     activate_action: (
-      action_group: ActionGroup,
-      action_name: string,
+      action_group: ActionGroup | null,
+      action_name: string | null,
       parameter: GLib.Variant | null
     ) => void;
-    action_added: (action_group: ActionGroup, action_name: string) => void;
-    action_removed: (action_group: ActionGroup, action_name: string) => void;
+    action_added: (
+      action_group: ActionGroup | null,
+      action_name: string | null
+    ) => void;
+    action_removed: (
+      action_group: ActionGroup | null,
+      action_name: string | null
+    ) => void;
     action_enabled_changed: (
-      action_group: ActionGroup,
-      action_name: string,
+      action_group: ActionGroup | null,
+      action_name: string | null,
       enabled: boolean
     ) => void;
     action_state_changed: (
-      action_group: ActionGroup,
-      action_name: string,
-      state: GLib.Variant
+      action_group: ActionGroup | null,
+      action_name: string | null,
+      state: GLib.Variant | null
     ) => void;
     query_action: (
-      action_group: ActionGroup,
-      action_name: string
+      action_group: ActionGroup | null,
+      action_name: string | null
     ) => [
       /* returnType */ boolean,
-      /* enabled */ boolean,
-      /* parameter_type */ GLib.VariantType,
-      /* state_type */ GLib.VariantType,
-      /* state_hint */ GLib.Variant,
-      /* state */ GLib.Variant
+      /* enabled */ boolean | null,
+      /* parameter_type */ GLib.VariantType | null,
+      /* state_type */ GLib.VariantType | null,
+      /* state_hint */ GLib.Variant | null,
+      /* state */ GLib.Variant | null
     ];
   }
 
@@ -50640,14 +51030,14 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.ActionInterface
 
     g_iface: GObject.TypeInterface;
-    get_name: (action: Action) => string;
-    get_parameter_type: (action: Action) => GLib.VariantType | null;
-    get_state_type: (action: Action) => GLib.VariantType | null;
-    get_state_hint: (action: Action) => GLib.Variant | null;
-    get_enabled: (action: Action) => boolean;
-    get_state: (action: Action) => GLib.Variant | null;
-    change_state: (action: Action, value: GLib.Variant) => void;
-    activate: (action: Action, parameter: GLib.Variant | null) => void;
+    get_name: (action: Action | null) => string | null;
+    get_parameter_type: (action: Action | null) => GLib.VariantType | null;
+    get_state_type: (action: Action | null) => GLib.VariantType | null;
+    get_state_hint: (action: Action | null) => GLib.Variant | null;
+    get_enabled: (action: Action | null) => boolean;
+    get_state: (action: Action | null) => GLib.Variant | null;
+    change_state: (action: Action | null, value: GLib.Variant | null) => void;
+    activate: (action: Action | null, parameter: GLib.Variant | null) => void;
   }
 
   /**
@@ -50665,11 +51055,14 @@ declare namespace Gio {
 
     g_iface: GObject.TypeInterface;
     lookup_action: (
-      action_map: ActionMap,
-      action_name: string
+      action_map: ActionMap | null,
+      action_name: string | null
     ) => Action | null;
-    add_action: (action_map: ActionMap, action: Action) => void;
-    remove_action: (action_map: ActionMap, action_name: string) => void;
+    add_action: (action_map: ActionMap | null, action: Action | null) => void;
+    remove_action: (
+      action_map: ActionMap | null,
+      action_name: string | null
+    ) => void;
   }
 
   /**
@@ -50690,54 +51083,63 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    dup: (appinfo: AppInfo) => AppInfo;
-    equal: (appinfo1: AppInfo, appinfo2: AppInfo) => boolean;
-    get_id: (appinfo: AppInfo) => string | null;
-    get_name: (appinfo: AppInfo) => string;
-    get_description: (appinfo: AppInfo) => string | null;
-    get_executable: (appinfo: AppInfo) => string;
-    get_icon: (appinfo: AppInfo) => Icon | null;
+    dup: (appinfo: AppInfo | null) => AppInfo | null;
+    equal: (appinfo1: AppInfo | null, appinfo2: AppInfo | null) => boolean;
+    get_id: (appinfo: AppInfo | null) => string | null;
+    get_name: (appinfo: AppInfo | null) => string | null;
+    get_description: (appinfo: AppInfo | null) => string | null;
+    get_executable: (appinfo: AppInfo | null) => string | null;
+    get_icon: (appinfo: AppInfo | null) => Icon | null;
     launch: (
-      appinfo: AppInfo,
+      appinfo: AppInfo | null,
       files: File[] | null,
       context: AppLaunchContext | null
     ) => boolean;
-    supports_uris: (appinfo: AppInfo) => boolean;
-    supports_files: (appinfo: AppInfo) => boolean;
+    supports_uris: (appinfo: AppInfo | null) => boolean;
+    supports_files: (appinfo: AppInfo | null) => boolean;
     launch_uris: (
-      appinfo: AppInfo,
+      appinfo: AppInfo | null,
       uris: string[] | null,
       context: AppLaunchContext | null
     ) => boolean;
-    should_show: (appinfo: AppInfo) => boolean;
+    should_show: (appinfo: AppInfo | null) => boolean;
     set_as_default_for_type: (
-      appinfo: AppInfo,
-      content_type: string
+      appinfo: AppInfo | null,
+      content_type: string | null
     ) => boolean;
     set_as_default_for_extension: (
-      appinfo: AppInfo,
-      extension: string
+      appinfo: AppInfo | null,
+      extension: string | null
     ) => boolean;
-    add_supports_type: (appinfo: AppInfo, content_type: string) => boolean;
-    can_remove_supports_type: (appinfo: AppInfo) => boolean;
-    remove_supports_type: (appinfo: AppInfo, content_type: string) => boolean;
-    can_delete: (appinfo: AppInfo) => boolean;
-    do_delete: (appinfo: AppInfo) => boolean;
-    get_commandline: (appinfo: AppInfo) => string | null;
-    get_display_name: (appinfo: AppInfo) => string;
+    add_supports_type: (
+      appinfo: AppInfo | null,
+      content_type: string | null
+    ) => boolean;
+    can_remove_supports_type: (appinfo: AppInfo | null) => boolean;
+    remove_supports_type: (
+      appinfo: AppInfo | null,
+      content_type: string | null
+    ) => boolean;
+    can_delete: (appinfo: AppInfo | null) => boolean;
+    do_delete: (appinfo: AppInfo | null) => boolean;
+    get_commandline: (appinfo: AppInfo | null) => string | null;
+    get_display_name: (appinfo: AppInfo | null) => string | null;
     set_as_last_used_for_type: (
-      appinfo: AppInfo,
-      content_type: string
+      appinfo: AppInfo | null,
+      content_type: string | null
     ) => boolean;
-    get_supported_types: (appinfo: AppInfo) => string[];
+    get_supported_types: (appinfo: AppInfo | null) => string[];
     launch_uris_async: (
-      appinfo: AppInfo,
+      appinfo: AppInfo | null,
       uris: string[] | null,
       context: AppLaunchContext | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    launch_uris_finish: (appinfo: AppInfo, result: AsyncResult) => boolean;
+    launch_uris_finish: (
+      appinfo: AppInfo | null,
+      result: AsyncResult | null
+    ) => boolean;
   }
 
   /**
@@ -50755,28 +51157,28 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     get_display: (
-      context: AppLaunchContext,
-      info: AppInfo,
-      files: File[]
+      context: AppLaunchContext | null,
+      info: AppInfo | null,
+      files: File[] | null
     ) => string | null;
     get_startup_notify_id: (
-      context: AppLaunchContext,
-      info: AppInfo,
-      files: File[]
+      context: AppLaunchContext | null,
+      info: AppInfo | null,
+      files: File[] | null
     ) => string | null;
     launch_failed: (
-      context: AppLaunchContext,
-      startup_notify_id: string
+      context: AppLaunchContext | null,
+      startup_notify_id: string | null
     ) => void;
     launched: (
-      context: AppLaunchContext,
-      info: AppInfo,
-      platform_data: GLib.Variant
+      context: AppLaunchContext | null,
+      info: AppInfo | null,
+      platform_data: GLib.Variant | null
     ) => void;
     launch_started: (
-      context: AppLaunchContext,
-      info: AppInfo,
-      platform_data: GLib.Variant
+      context: AppLaunchContext | null,
+      info: AppInfo | null,
+      platform_data: GLib.Variant | null
     ) => void;
   }
 
@@ -50797,48 +51199,55 @@ declare namespace Gio {
   interface ApplicationClass {
     // Own fields of Gio-2.0.Gio.ApplicationClass
 
-    startup: (application: Application) => void;
-    activate: (application: Application) => void;
-    open: (application: Application, files: File[], hint: string) => void;
+    startup: (application: Application | null) => void;
+    activate: (application: Application | null) => void;
+    open: (
+      application: Application | null,
+      files: File[],
+      hint: string | null
+    ) => void;
     command_line: (
-      application: Application,
-      command_line: ApplicationCommandLine
+      application: Application | null,
+      command_line: ApplicationCommandLine | null
     ) => number;
     local_command_line: (
-      application: Application,
+      application: Application | null,
       arguments_: string[]
     ) => [
       /* returnType */ boolean,
       /* arguments_ */ string[],
-      /* exit_status */ number
+      /* exit_status */ number | null
     ];
     before_emit: (
-      application: Application,
-      platform_data: GLib.Variant
+      application: Application | null,
+      platform_data: GLib.Variant | null
     ) => void;
-    after_emit: (application: Application, platform_data: GLib.Variant) => void;
+    after_emit: (
+      application: Application | null,
+      platform_data: GLib.Variant | null
+    ) => void;
     add_platform_data: (
-      application: Application,
-      builder: GLib.VariantBuilder
+      application: Application | null,
+      builder: GLib.VariantBuilder | null
     ) => void;
-    quit_mainloop: (application: Application) => void;
-    run_mainloop: (application: Application) => void;
-    shutdown: (application: Application) => void;
+    quit_mainloop: (application: Application | null) => void;
+    run_mainloop: (application: Application | null) => void;
+    shutdown: (application: Application | null) => void;
     dbus_register: (
-      application: Application,
-      connection: DBusConnection,
-      object_path: string
+      application: Application | null,
+      connection: DBusConnection | null,
+      object_path: string | null
     ) => boolean;
     dbus_unregister: (
-      application: Application,
-      connection: DBusConnection,
-      object_path: string
+      application: Application | null,
+      connection: DBusConnection | null,
+      object_path: string | null
     ) => void;
     handle_local_options: (
-      application: Application,
-      options: GLib.VariantDict
+      application: Application | null,
+      options: GLib.VariantDict | null
     ) => number;
-    name_lost: (application: Application) => boolean;
+    name_lost: (application: Application | null) => boolean;
   }
 
   /**
@@ -50854,12 +51263,15 @@ declare namespace Gio {
   interface ApplicationCommandLineClass {
     // Own fields of Gio-2.0.Gio.ApplicationCommandLineClass
 
-    print_literal: (cmdline: ApplicationCommandLine, message: string) => void;
-    printerr_literal: (
-      cmdline: ApplicationCommandLine,
-      message: string
+    print_literal: (
+      cmdline: ApplicationCommandLine | null,
+      message: string | null
     ) => void;
-    get_stdin: (cmdline: ApplicationCommandLine) => InputStream | null;
+    printerr_literal: (
+      cmdline: ApplicationCommandLine | null,
+      message: string | null
+    ) => void;
+    get_stdin: (cmdline: ApplicationCommandLine | null) => InputStream | null;
   }
 
   /**
@@ -50898,12 +51310,15 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     init_async: (
-      initable: AsyncInitable,
+      initable: AsyncInitable | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    init_finish: (initable: AsyncInitable, res: AsyncResult) => boolean;
+    init_finish: (
+      initable: AsyncInitable | null,
+      res: AsyncResult | null
+    ) => boolean;
   }
 
   /**
@@ -50925,9 +51340,9 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    get_user_data: (res: AsyncResult) => object | null;
-    get_source_object: (res: AsyncResult) => GObject.Object | null;
-    is_tagged: (res: AsyncResult, source_tag: object | null) => boolean;
+    get_user_data: (res: AsyncResult | null) => any | null;
+    get_source_object: (res: AsyncResult | null) => GObject.Object | null;
+    is_tagged: (res: AsyncResult | null, source_tag: any | null) => boolean;
   }
 
   /**
@@ -50945,18 +51360,21 @@ declare namespace Gio {
 
     parent_class: FilterInputStreamClass;
     fill: (
-      stream: BufferedInputStream,
+      stream: BufferedInputStream | null,
       count: number,
       cancellable: Cancellable | null
     ) => number;
     fill_async: (
-      stream: BufferedInputStream,
+      stream: BufferedInputStream | null,
       count: number,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    fill_finish: (stream: BufferedInputStream, result: AsyncResult) => number;
+    fill_finish: (
+      stream: BufferedInputStream | null,
+      result: AsyncResult | null
+    ) => number;
   }
 
   abstract class BufferedInputStreamClass {
@@ -51035,16 +51453,16 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     convert: (
-      converter: Converter,
+      converter: Converter | null,
       inbuf: Uint8Array | null,
       outbuf: Uint8Array | null,
       flags: ConverterFlags
     ) => [
       /* returnType */ ConverterResult,
-      /* bytes_read */ number,
-      /* bytes_written */ number
+      /* bytes_read */ number | null,
+      /* bytes_written */ number | null
     ];
-    reset: (converter: Converter) => void;
+    reset: (converter: Converter | null) => void;
   }
 
   /**
@@ -51123,12 +51541,12 @@ declare namespace Gio {
      * The name of the annotation, e.g. "org.freedesktop.DBus.Deprecated".
      * @field
      */
-    key: string;
+    key: string | null;
     /**
      * The value of the annotation.
      * @field
      */
-    value: string;
+    value: string | null;
     /**
      * A pointer to a %NULL-terminated array of pointers to #GDBusAnnotationInfo structures or %NULL if there are no annotations.
      * @field
@@ -51142,7 +51560,7 @@ declare namespace Gio {
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusAnnotationInfo;
+    ref(): DBusAnnotationInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -51172,7 +51590,7 @@ declare namespace Gio {
      */
     static lookup(
       annotations: DBusAnnotationInfo[] | null,
-      name: string
+      name: string | null
     ): string | null;
   }
 
@@ -51188,12 +51606,12 @@ declare namespace Gio {
      * Name of the argument, e.g. `unix_user_id`.
      * @field
      */
-    name: string;
+    name: string | null;
     /**
      * D-Bus signature of the argument (a single complete type).
      * @field
      */
-    signature: string;
+    signature: string | null;
     /**
      * A pointer to a %NULL-terminated array of pointers to #GDBusAnnotationInfo structures or %NULL if there are no annotations.
      * @field
@@ -51207,7 +51625,7 @@ declare namespace Gio {
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusArgInfo;
+    ref(): DBusArgInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -51238,7 +51656,7 @@ declare namespace Gio {
      * The D-Bus error name to associate with `error_code`.
      * @field
      */
-    dbus_error_name: string;
+    dbus_error_name: string | null;
   }
 
   /**
@@ -51259,10 +51677,13 @@ declare namespace Gio {
      * @field
      */
     parent_iface: GObject.TypeInterface;
-    get_info: (interface_: DBusInterface) => DBusInterfaceInfo;
-    get_object: (interface_: DBusInterface) => DBusObject | null;
-    set_object: (interface_: DBusInterface, object: DBusObject | null) => void;
-    dup_object: (interface_: DBusInterface) => DBusObject | null;
+    get_info: (interface_: DBusInterface | null) => DBusInterfaceInfo | null;
+    get_object: (interface_: DBusInterface | null) => DBusObject | null;
+    set_object: (
+      interface_: DBusInterface | null,
+      object: DBusObject | null
+    ) => void;
+    dup_object: (interface_: DBusInterface | null) => DBusObject | null;
   }
 
   /**
@@ -51287,7 +51708,7 @@ declare namespace Gio {
      * The name of the D-Bus interface, e.g. "org.freedesktop.DBus.Properties".
      * @field
      */
-    name: string;
+    name: string | null;
     /**
      * A pointer to a %NULL-terminated array of pointers to #GDBusMethodInfo structures or %NULL if there are no methods.
      * @field
@@ -51340,7 +51761,7 @@ declare namespace Gio {
      * @param indent Indentation level.
      * @param string_builder A #GString to to append XML data to.
      */
-    generate_xml(indent: number, string_builder: GLib.String): void;
+    generate_xml(indent: number, string_builder: GLib.String | null): void;
     /**
      * Looks up information about a method.
      *
@@ -51349,7 +51770,7 @@ declare namespace Gio {
      * @param name A D-Bus method name (typically in CamelCase)
      * @returns A #GDBusMethodInfo or %NULL if not found. Do not free, it is owned by @info.
      */
-    lookup_method(name: string): DBusMethodInfo | null;
+    lookup_method(name: string | null): DBusMethodInfo | null;
     /**
      * Looks up information about a property.
      *
@@ -51358,7 +51779,7 @@ declare namespace Gio {
      * @param name A D-Bus property name (typically in CamelCase).
      * @returns A #GDBusPropertyInfo or %NULL if not found. Do not free, it is owned by @info.
      */
-    lookup_property(name: string): DBusPropertyInfo | null;
+    lookup_property(name: string | null): DBusPropertyInfo | null;
     /**
      * Looks up information about a signal.
      *
@@ -51367,13 +51788,13 @@ declare namespace Gio {
      * @param name A D-Bus signal name (typically in CamelCase)
      * @returns A #GDBusSignalInfo or %NULL if not found. Do not free, it is owned by @info.
      */
-    lookup_signal(name: string): DBusSignalInfo | null;
+    lookup_signal(name: string | null): DBusSignalInfo | null;
     /**
      * If `info` is statically allocated does nothing. Otherwise increases
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusInterfaceInfo;
+    ref(): DBusInterfaceInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -51400,12 +51821,16 @@ declare namespace Gio {
      * @field
      */
     parent_class: GObject.ObjectClass;
-    get_info: (interface_: DBusInterfaceSkeleton) => DBusInterfaceInfo;
-    get_properties: (interface_: DBusInterfaceSkeleton) => GLib.Variant;
-    flush: (interface_: DBusInterfaceSkeleton) => void;
+    get_info: (
+      interface_: DBusInterfaceSkeleton | null
+    ) => DBusInterfaceInfo | null;
+    get_properties: (
+      interface_: DBusInterfaceSkeleton | null
+    ) => GLib.Variant | null;
+    flush: (interface_: DBusInterfaceSkeleton | null) => void;
     g_authorize_method: (
-      interface_: DBusInterfaceSkeleton,
-      invocation: DBusMethodInvocation
+      interface_: DBusInterfaceSkeleton | null,
+      invocation: DBusMethodInvocation | null
     ) => boolean;
   }
 
@@ -51509,7 +51934,7 @@ declare namespace Gio {
      * The name of the D-Bus method, e.g. `RequestName`.
      * @field
      */
-    name: string;
+    name: string | null;
     /**
      * A pointer to a %NULL-terminated array of pointers to #GDBusArgInfo structures or %NULL if there are no in arguments.
      * @field
@@ -51533,7 +51958,7 @@ declare namespace Gio {
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusMethodInfo;
+    ref(): DBusMethodInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -51564,7 +51989,7 @@ declare namespace Gio {
      * The path of the node or %NULL if omitted. Note that this may be a relative path. See the D-Bus specification for more details.
      * @field
      */
-    path: string;
+    path: string | null;
     /**
      * A pointer to a %NULL-terminated array of pointers to #GDBusInterfaceInfo structures or %NULL if there are no interfaces.
      * @field
@@ -51591,7 +52016,7 @@ declare namespace Gio {
      * @param indent Indentation level.
      * @param string_builder A #GString to to append XML data to.
      */
-    generate_xml(indent: number, string_builder: GLib.String): void;
+    generate_xml(indent: number, string_builder: GLib.String | null): void;
     /**
      * Looks up information about an interface.
      *
@@ -51599,13 +52024,13 @@ declare namespace Gio {
      * @param name A D-Bus interface name.
      * @returns A #GDBusInterfaceInfo or %NULL if not found. Do not free, it is owned by @info.
      */
-    lookup_interface(name: string): DBusInterfaceInfo | null;
+    lookup_interface(name: string | null): DBusInterfaceInfo | null;
     /**
      * If `info` is statically allocated does nothing. Otherwise increases
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusNodeInfo;
+    ref(): DBusNodeInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -51638,7 +52063,7 @@ declare namespace Gio {
      * @param xml_data Valid D-Bus introspection XML.
      * @returns A #GDBusNodeInfo structure or %NULL if @error is set. Free with g_dbus_node_info_unref().
      */
-    static new_for_xml(xml_data: string): DBusNodeInfo;
+    static new_for_xml(xml_data: string | null): DBusNodeInfo;
   }
 
   interface DBusObjectIface {
@@ -51649,14 +52074,20 @@ declare namespace Gio {
      * @field
      */
     parent_iface: GObject.TypeInterface;
-    get_object_path: (object: DBusObject) => string;
-    get_interfaces: (object: DBusObject) => DBusInterface[];
+    get_object_path: (object: DBusObject | null) => string | null;
+    get_interfaces: (object: DBusObject | null) => DBusInterface[] | null;
     get_interface: (
-      object: DBusObject,
-      interface_name: string
+      object: DBusObject | null,
+      interface_name: string | null
     ) => DBusInterface | null;
-    interface_added: (object: DBusObject, interface_: DBusInterface) => void;
-    interface_removed: (object: DBusObject, interface_: DBusInterface) => void;
+    interface_added: (
+      object: DBusObject | null,
+      interface_: DBusInterface | null
+    ) => void;
+    interface_removed: (
+      object: DBusObject | null,
+      interface_: DBusInterface | null
+    ) => void;
   }
 
   /**
@@ -51678,19 +52109,19 @@ declare namespace Gio {
      */
     parent_class: GObject.ObjectClass;
     interface_proxy_signal: (
-      manager: DBusObjectManagerClient,
-      object_proxy: DBusObjectProxy,
-      interface_proxy: DBusProxy,
-      sender_name: string,
-      signal_name: string,
-      parameters: GLib.Variant
+      manager: DBusObjectManagerClient | null,
+      object_proxy: DBusObjectProxy | null,
+      interface_proxy: DBusProxy | null,
+      sender_name: string | null,
+      signal_name: string | null,
+      parameters: GLib.Variant | null
     ) => void;
     interface_proxy_properties_changed: (
-      manager: DBusObjectManagerClient,
-      object_proxy: DBusObjectProxy,
-      interface_proxy: DBusProxy,
-      changed_properties: GLib.Variant,
-      invalidated_properties: string
+      manager: DBusObjectManagerClient | null,
+      object_proxy: DBusObjectProxy | null,
+      interface_proxy: DBusProxy | null,
+      changed_properties: GLib.Variant | null,
+      invalidated_properties: string | null
     ) => void;
   }
 
@@ -51720,28 +52151,34 @@ declare namespace Gio {
      * @field
      */
     parent_iface: GObject.TypeInterface;
-    get_object_path: (manager: DBusObjectManager) => string;
-    get_objects: (manager: DBusObjectManager) => DBusObject[];
+    get_object_path: (manager: DBusObjectManager | null) => string | null;
+    get_objects: (manager: DBusObjectManager | null) => DBusObject[] | null;
     get_object: (
-      manager: DBusObjectManager,
-      object_path: string
+      manager: DBusObjectManager | null,
+      object_path: string | null
     ) => DBusObject | null;
     get_interface: (
-      manager: DBusObjectManager,
-      object_path: string,
-      interface_name: string
+      manager: DBusObjectManager | null,
+      object_path: string | null,
+      interface_name: string | null
     ) => DBusInterface | null;
-    object_added: (manager: DBusObjectManager, object: DBusObject) => void;
-    object_removed: (manager: DBusObjectManager, object: DBusObject) => void;
+    object_added: (
+      manager: DBusObjectManager | null,
+      object: DBusObject | null
+    ) => void;
+    object_removed: (
+      manager: DBusObjectManager | null,
+      object: DBusObject | null
+    ) => void;
     interface_added: (
-      manager: DBusObjectManager,
-      object: DBusObject,
-      interface_: DBusInterface
+      manager: DBusObjectManager | null,
+      object: DBusObject | null,
+      interface_: DBusInterface | null
     ) => void;
     interface_removed: (
-      manager: DBusObjectManager,
-      object: DBusObject,
-      interface_: DBusInterface
+      manager: DBusObjectManager | null,
+      object: DBusObject | null,
+      interface_: DBusInterface | null
     ) => void;
   }
 
@@ -51820,9 +52257,9 @@ declare namespace Gio {
      */
     parent_class: GObject.ObjectClass;
     authorize_method: (
-      object: DBusObjectSkeleton,
-      interface_: DBusInterfaceSkeleton,
-      invocation: DBusMethodInvocation
+      object: DBusObjectSkeleton | null,
+      interface_: DBusInterfaceSkeleton | null,
+      invocation: DBusMethodInvocation | null
     ) => boolean;
   }
 
@@ -51856,12 +52293,12 @@ declare namespace Gio {
      * The name of the D-Bus property, e.g. "SupportedFilesystems".
      * @field
      */
-    name: string;
+    name: string | null;
     /**
      * The D-Bus signature of the property (a single complete type).
      * @field
      */
-    signature: string;
+    signature: string | null;
     /**
      * Access control flags for the property.
      * @field
@@ -51880,7 +52317,7 @@ declare namespace Gio {
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusPropertyInfo;
+    ref(): DBusPropertyInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -51903,15 +52340,15 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.DBusProxyClass
 
     g_properties_changed: (
-      proxy: DBusProxy,
-      changed_properties: GLib.Variant,
-      invalidated_properties: string
+      proxy: DBusProxy | null,
+      changed_properties: GLib.Variant | null,
+      invalidated_properties: string | null
     ) => void;
     g_signal: (
-      proxy: DBusProxy,
-      sender_name: string,
-      signal_name: string,
-      parameters: GLib.Variant
+      proxy: DBusProxy | null,
+      sender_name: string | null,
+      signal_name: string | null,
+      parameters: GLib.Variant | null
     ) => void;
   }
 
@@ -51945,7 +52382,7 @@ declare namespace Gio {
      * The name of the D-Bus signal, e.g. "NameOwnerChanged".
      * @field
      */
-    name: string;
+    name: string | null;
     /**
      * A pointer to a %NULL-terminated array of pointers to #GDBusArgInfo structures or %NULL if there are no arguments.
      * @field
@@ -51964,7 +52401,7 @@ declare namespace Gio {
      * the reference count.
      * @returns The same @info.
      */
-    ref(): DBusSignalInfo;
+    ref(): DBusSignalInfo | null;
     /**
      * If `info` is statically allocated, does nothing. Otherwise decreases
      * the reference count of `info`. When its reference count drops to 0,
@@ -52062,30 +52499,30 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     receive_messages: (
-      datagram_based: DatagramBased,
+      datagram_based: DatagramBased | null,
       messages: InputMessage[],
       flags: number,
       timeout: number,
       cancellable: Cancellable | null
     ) => number;
     send_messages: (
-      datagram_based: DatagramBased,
+      datagram_based: DatagramBased | null,
       messages: OutputMessage[],
       flags: number,
       timeout: number,
       cancellable: Cancellable | null
     ) => number;
     create_source: (
-      datagram_based: DatagramBased,
+      datagram_based: DatagramBased | null,
       condition: GLib.IOCondition,
       cancellable: Cancellable | null
-    ) => GLib.Source;
+    ) => GLib.Source | null;
     condition_check: (
-      datagram_based: DatagramBased,
+      datagram_based: DatagramBased | null,
       condition: GLib.IOCondition
     ) => GLib.IOCondition;
     condition_wait: (
-      datagram_based: DatagramBased,
+      datagram_based: DatagramBased | null,
       condition: GLib.IOCondition,
       timeout: number,
       cancellable: Cancellable | null
@@ -52115,10 +52552,10 @@ declare namespace Gio {
      */
     parent_class: GObject.ObjectClass;
     authorize: (
-      controller: DebugControllerDBus,
-      invocation: DBusMethodInvocation
+      controller: DebugControllerDBus | null,
+      invocation: DBusMethodInvocation | null
     ) => boolean;
-    padding: object[];
+    padding: any[];
   }
 
   /**
@@ -52160,8 +52597,8 @@ declare namespace Gio {
 
     g_iface: GObject.TypeInterface;
     get_default_for_uri_scheme: (
-      lookup: DesktopAppInfoLookup,
-      uri_scheme: string
+      lookup: DesktopAppInfoLookup | null,
+      uri_scheme: string | null
     ) => AppInfo | null;
   }
 
@@ -52184,65 +52621,71 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    changed: (drive: Drive) => void;
-    disconnected: (drive: Drive) => void;
-    eject_button: (drive: Drive) => void;
-    get_name: (drive: Drive) => string;
-    get_icon: (drive: Drive) => Icon;
-    has_volumes: (drive: Drive) => boolean;
-    get_volumes: (drive: Drive) => Volume[];
-    is_media_removable: (drive: Drive) => boolean;
-    has_media: (drive: Drive) => boolean;
-    is_media_check_automatic: (drive: Drive) => boolean;
-    can_eject: (drive: Drive) => boolean;
-    can_poll_for_media: (drive: Drive) => boolean;
+    changed: (drive: Drive | null) => void;
+    disconnected: (drive: Drive | null) => void;
+    eject_button: (drive: Drive | null) => void;
+    get_name: (drive: Drive | null) => string | null;
+    get_icon: (drive: Drive | null) => Icon | null;
+    has_volumes: (drive: Drive | null) => boolean;
+    get_volumes: (drive: Drive | null) => Volume[] | null;
+    is_media_removable: (drive: Drive | null) => boolean;
+    has_media: (drive: Drive | null) => boolean;
+    is_media_check_automatic: (drive: Drive | null) => boolean;
+    can_eject: (drive: Drive | null) => boolean;
+    can_poll_for_media: (drive: Drive | null) => boolean;
     eject: (
-      drive: Drive,
+      drive: Drive | null,
       flags: MountUnmountFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    eject_finish: (drive: Drive, result: AsyncResult) => boolean;
+    eject_finish: (drive: Drive | null, result: AsyncResult | null) => boolean;
     poll_for_media: (
-      drive: Drive,
+      drive: Drive | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    poll_for_media_finish: (drive: Drive, result: AsyncResult) => boolean;
-    get_identifier: (drive: Drive, kind: string) => string | null;
-    enumerate_identifiers: (drive: Drive) => string[];
-    get_start_stop_type: (drive: Drive) => DriveStartStopType;
-    can_start: (drive: Drive) => boolean;
-    can_start_degraded: (drive: Drive) => boolean;
+    poll_for_media_finish: (
+      drive: Drive | null,
+      result: AsyncResult | null
+    ) => boolean;
+    get_identifier: (drive: Drive | null, kind: string | null) => string | null;
+    enumerate_identifiers: (drive: Drive | null) => string[];
+    get_start_stop_type: (drive: Drive | null) => DriveStartStopType;
+    can_start: (drive: Drive | null) => boolean;
+    can_start_degraded: (drive: Drive | null) => boolean;
     start: (
-      drive: Drive,
+      drive: Drive | null,
       flags: DriveStartFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    start_finish: (drive: Drive, result: AsyncResult) => boolean;
-    can_stop: (drive: Drive) => boolean;
+    start_finish: (drive: Drive | null, result: AsyncResult | null) => boolean;
+    can_stop: (drive: Drive | null) => boolean;
     stop: (
-      drive: Drive,
+      drive: Drive | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    stop_finish: (drive: Drive, result: AsyncResult) => boolean;
-    stop_button: (drive: Drive) => void;
+    stop_finish: (drive: Drive | null, result: AsyncResult | null) => boolean;
+    stop_button: (drive: Drive | null) => void;
     eject_with_operation: (
-      drive: Drive,
+      drive: Drive | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    eject_with_operation_finish: (drive: Drive, result: AsyncResult) => boolean;
-    get_sort_key: (drive: Drive) => string | null;
-    get_symbolic_icon: (drive: Drive) => Icon;
-    is_removable: (drive: Drive) => boolean;
+    eject_with_operation_finish: (
+      drive: Drive | null,
+      result: AsyncResult | null
+    ) => boolean;
+    get_sort_key: (drive: Drive | null) => string | null;
+    get_symbolic_icon: (drive: Drive | null) => Icon | null;
+    is_removable: (drive: Drive | null) => boolean;
   }
 
   /**
@@ -52284,43 +52727,49 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     accept_certificate: (
-      connection: DtlsConnection,
-      peer_cert: TlsCertificate,
+      connection: DtlsConnection | null,
+      peer_cert: TlsCertificate | null,
       errors: TlsCertificateFlags
     ) => boolean;
     handshake: (
-      conn: DtlsConnection,
+      conn: DtlsConnection | null,
       cancellable: Cancellable | null
     ) => boolean;
     handshake_async: (
-      conn: DtlsConnection,
+      conn: DtlsConnection | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    handshake_finish: (conn: DtlsConnection, result: AsyncResult) => boolean;
+    handshake_finish: (
+      conn: DtlsConnection | null,
+      result: AsyncResult | null
+    ) => boolean;
     shutdown: (
-      conn: DtlsConnection,
+      conn: DtlsConnection | null,
       shutdown_read: boolean,
       shutdown_write: boolean,
       cancellable: Cancellable | null
     ) => boolean;
     shutdown_async: (
-      conn: DtlsConnection,
+      conn: DtlsConnection | null,
       shutdown_read: boolean,
       shutdown_write: boolean,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    shutdown_finish: (conn: DtlsConnection, result: AsyncResult) => boolean;
+    shutdown_finish: (
+      conn: DtlsConnection | null,
+      result: AsyncResult | null
+    ) => boolean;
     set_advertised_protocols: (
-      conn: DtlsConnection,
+      conn: DtlsConnection | null,
       protocols: string[] | null
     ) => void;
-    get_negotiated_protocol: (conn: DtlsConnection) => string | null;
+    get_negotiated_protocol: (conn: DtlsConnection | null) => string | null;
     get_binding_data: (
-      conn: DtlsConnection,
+      conn: DtlsConnection | null,
       type: TlsChannelBindingType,
       data: Uint8Array
     ) => boolean;
@@ -52391,7 +52840,7 @@ declare namespace Gio {
      * the name of the attribute.
      * @field
      */
-    name: string;
+    name: string | null;
     /**
      * the #GFileAttributeType type of the attribute.
      * @field
@@ -52421,7 +52870,7 @@ declare namespace Gio {
      * an array of #GFileAttributeInfos.
      * @field
      */
-    infos: FileAttributeInfo;
+    infos: FileAttributeInfo | null;
     /**
      * the number of values in the array.
      * @field
@@ -52438,7 +52887,7 @@ declare namespace Gio {
      * @param flags #GFileAttributeInfoFlags for the attribute.
      */
     add(
-      name: string,
+      name: string | null,
       type: FileAttributeType,
       flags: FileAttributeInfoFlags
     ): void;
@@ -52446,18 +52895,18 @@ declare namespace Gio {
      * Makes a duplicate of a file attribute info list.
      * @returns a copy of the given @list.
      */
-    dup(): FileAttributeInfoList;
+    dup(): FileAttributeInfoList | null;
     /**
      * Gets the file attribute with the name `name` from `list`.
      * @param name the name of the attribute to look up.
      * @returns a #GFileAttributeInfo for the @name, or %NULL if an attribute isn't found.
      */
-    lookup(name: string): FileAttributeInfo;
+    lookup(name: string | null): FileAttributeInfo | null;
     /**
      * References a file attribute info list.
      * @returns #GFileAttributeInfoList or %NULL on error.
      */
-    ref(): FileAttributeInfoList;
+    ref(): FileAttributeInfoList | null;
     /**
      * Removes a reference from the given `list`. If the reference count
      * falls to zero, the `list` is deleted.
@@ -52504,7 +52953,7 @@ declare namespace Gio {
      * @param ns a string containing a file attribute namespace.
      * @returns %TRUE if the matcher matches all of the entries in the given @ns, %FALSE otherwise.
      */
-    enumerate_namespace(ns: string): boolean;
+    enumerate_namespace(ns: string | null): boolean;
     /**
      * Gets the next matched attribute from a #GFileAttributeMatcher.
      * @returns a string containing the next attribute or, %NULL if no more attribute exist.
@@ -52517,19 +52966,19 @@ declare namespace Gio {
      * @param attribute a file attribute key.
      * @returns %TRUE if @attribute matches @matcher. %FALSE otherwise.
      */
-    matches(attribute: string): boolean;
+    matches(attribute: string | null): boolean;
     /**
      * Checks if a attribute matcher only matches a given attribute. Always
      * returns %FALSE if "*" was used when creating the matcher.
      * @param attribute a file attribute key.
      * @returns %TRUE if the matcher only matches @attribute. %FALSE otherwise.
      */
-    matches_only(attribute: string): boolean;
+    matches_only(attribute: string | null): boolean;
     /**
      * References a file attribute matcher.
      * @returns a #GFileAttributeMatcher.
      */
-    ref(): FileAttributeMatcher;
+    ref(): FileAttributeMatcher | null;
     /**
      * Subtracts all attributes of `subtract` from `matcher` and returns
      * a matcher that supports those attributes.
@@ -52552,7 +53001,7 @@ declare namespace Gio {
      * decide to use a different order or omit needless parts.
      * @returns a string describing the attributes the matcher matches   against or %NULL if @matcher was %NULL.
      */
-    to_string(): string;
+    to_string(): string | null;
     /**
      * Unreferences `matcher`. If the reference count falls below 1,
      * the `matcher` is automatically freed.
@@ -52595,7 +53044,7 @@ declare namespace Gio {
      * @param attributes an attribute string to match.
      * @returns a #GFileAttributeMatcher
      */
-    constructor(attributes: string);
+    constructor(attributes: string | null);
     /**
      * Creates a new file attribute matcher, which matches attributes
      * against a given string. #GFileAttributeMatchers are reference
@@ -52620,7 +53069,7 @@ declare namespace Gio {
      * @param attributes an attribute string to match.
      * @returns a #GFileAttributeMatcher
      */
-    static new(attributes: string): FileAttributeMatcher;
+    static new(attributes: string | null): FileAttributeMatcher;
   }
 
   interface FileDescriptorBasedIface {
@@ -52631,7 +53080,7 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    get_fd: (fd_based: FileDescriptorBased) => number;
+    get_fd: (fd_based: FileDescriptorBased | null) => number;
   }
 
   /**
@@ -52649,31 +53098,34 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     next_file: (
-      enumerator: FileEnumerator,
+      enumerator: FileEnumerator | null,
       cancellable: Cancellable | null
     ) => FileInfo | null;
     close_fn: (
-      enumerator: FileEnumerator,
+      enumerator: FileEnumerator | null,
       cancellable: Cancellable | null
     ) => boolean;
     next_files_async: (
-      enumerator: FileEnumerator,
+      enumerator: FileEnumerator | null,
       num_files: number,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     next_files_finish: (
-      enumerator: FileEnumerator,
-      result: AsyncResult
-    ) => FileInfo[];
+      enumerator: FileEnumerator | null,
+      result: AsyncResult | null
+    ) => FileInfo[] | null;
     close_async: (
-      enumerator: FileEnumerator,
+      enumerator: FileEnumerator | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    close_finish: (enumerator: FileEnumerator, result: AsyncResult) => boolean;
+    close_finish: (
+      enumerator: FileEnumerator | null,
+      result: AsyncResult | null
+    ) => boolean;
   }
 
   abstract class FileEnumeratorClass {
@@ -52694,34 +53146,37 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.FileIOStreamClass
 
     parent_class: IOStreamClass;
-    tell: (stream: FileIOStream) => number;
-    can_seek: (stream: FileIOStream) => boolean;
+    tell: (stream: FileIOStream | null) => number;
+    can_seek: (stream: FileIOStream | null) => boolean;
     seek: (
-      stream: FileIOStream,
+      stream: FileIOStream | null,
       offset: number,
       type: GLib.SeekType,
       cancellable: Cancellable | null
     ) => boolean;
-    can_truncate: (stream: FileIOStream) => boolean;
+    can_truncate: (stream: FileIOStream | null) => boolean;
     truncate_fn: (
-      stream: FileIOStream,
+      stream: FileIOStream | null,
       size: number,
       cancellable: Cancellable | null
     ) => boolean;
     query_info: (
-      stream: FileIOStream,
-      attributes: string,
+      stream: FileIOStream | null,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ) => FileInfo;
+    ) => FileInfo | null;
     query_info_async: (
-      stream: FileIOStream,
-      attributes: string,
+      stream: FileIOStream | null,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    query_info_finish: (stream: FileIOStream, result: AsyncResult) => FileInfo;
-    get_etag: (stream: FileIOStream) => string | null;
+    query_info_finish: (
+      stream: FileIOStream | null,
+      result: AsyncResult | null
+    ) => FileInfo | null;
+    get_etag: (stream: FileIOStream | null) => string | null;
   }
 
   abstract class FileIOStreamClass {
@@ -52754,165 +53209,201 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    dup: (file: File) => File;
-    hash: (file: File) => number;
-    equal: (file1: File, file2: File) => boolean;
-    is_native: (file: File) => boolean;
-    has_uri_scheme: (file: File, uri_scheme: string) => boolean;
-    get_uri_scheme: (file: File) => string | null;
-    get_basename: (file: File) => string | null;
-    get_path: (file: File) => string | null;
-    get_uri: (file: File) => string;
-    get_parse_name: (file: File) => string;
-    get_parent: (file: File) => File | null;
-    prefix_matches: (prefix: File, file: File) => boolean;
-    get_relative_path: (parent: File, descendant: File) => string | null;
-    resolve_relative_path: (file: File, relative_path: string) => File;
-    get_child_for_display_name: (file: File, display_name: string) => File;
+    dup: (file: File | null) => File | null;
+    hash: (file: File | null) => number;
+    equal: (file1: File | null, file2: File | null) => boolean;
+    is_native: (file: File | null) => boolean;
+    has_uri_scheme: (file: File | null, uri_scheme: string | null) => boolean;
+    get_uri_scheme: (file: File | null) => string | null;
+    get_basename: (file: File | null) => string | null;
+    get_path: (file: File | null) => string | null;
+    get_uri: (file: File | null) => string | null;
+    get_parse_name: (file: File | null) => string | null;
+    get_parent: (file: File | null) => File | null;
+    prefix_matches: (prefix: File | null, file: File | null) => boolean;
+    get_relative_path: (
+      parent: File | null,
+      descendant: File | null
+    ) => string | null;
+    resolve_relative_path: (
+      file: File | null,
+      relative_path: string | null
+    ) => File | null;
+    get_child_for_display_name: (
+      file: File | null,
+      display_name: string | null
+    ) => File | null;
     enumerate_children: (
-      file: File,
-      attributes: string,
+      file: File | null,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
-    ) => FileEnumerator;
+    ) => FileEnumerator | null;
     enumerate_children_async: (
-      file: File,
-      attributes: string,
+      file: File | null,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    enumerate_children_finish: (file: File, res: AsyncResult) => FileEnumerator;
+    enumerate_children_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileEnumerator | null;
     query_info: (
-      file: File,
-      attributes: string,
+      file: File | null,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
-    ) => FileInfo;
+    ) => FileInfo | null;
     query_info_async: (
-      file: File,
-      attributes: string,
+      file: File | null,
+      attributes: string | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    query_info_finish: (file: File, res: AsyncResult) => FileInfo;
+    query_info_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileInfo | null;
     query_filesystem_info: (
-      file: File,
-      attributes: string,
+      file: File | null,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ) => FileInfo;
+    ) => FileInfo | null;
     query_filesystem_info_async: (
-      file: File,
-      attributes: string,
+      file: File | null,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    query_filesystem_info_finish: (file: File, res: AsyncResult) => FileInfo;
+    query_filesystem_info_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileInfo | null;
     find_enclosing_mount: (
-      file: File,
+      file: File | null,
       cancellable: Cancellable | null
-    ) => Mount;
+    ) => Mount | null;
     find_enclosing_mount_async: (
-      file: File,
+      file: File | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    find_enclosing_mount_finish: (file: File, res: AsyncResult) => Mount;
+    find_enclosing_mount_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => Mount | null;
     set_display_name: (
-      file: File,
-      display_name: string,
+      file: File | null,
+      display_name: string | null,
       cancellable: Cancellable | null
-    ) => File;
+    ) => File | null;
     set_display_name_async: (
-      file: File,
-      display_name: string,
+      file: File | null,
+      display_name: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    set_display_name_finish: (file: File, res: AsyncResult) => File;
+    set_display_name_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => File | null;
     query_settable_attributes: (
-      file: File,
+      file: File | null,
       cancellable: Cancellable | null
-    ) => FileAttributeInfoList;
+    ) => FileAttributeInfoList | null;
     query_writable_namespaces: (
-      file: File,
+      file: File | null,
       cancellable: Cancellable | null
-    ) => FileAttributeInfoList;
+    ) => FileAttributeInfoList | null;
     set_attribute: (
-      file: File,
-      attribute: string,
+      file: File | null,
+      attribute: string | null,
       type: FileAttributeType,
-      value_p: object | null,
+      value_p: any | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ) => boolean;
     set_attributes_from_info: (
-      file: File,
-      info: FileInfo,
+      file: File | null,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ) => boolean;
     set_attributes_async: (
-      file: File,
-      info: FileInfo,
+      file: File | null,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     set_attributes_finish: (
-      file: File,
-      result: AsyncResult
-    ) => [/* returnType */ boolean, /* info */ FileInfo];
-    read_fn: (file: File, cancellable: Cancellable | null) => FileInputStream;
+      file: File | null,
+      result: AsyncResult | null
+    ) => [/* returnType */ boolean, /* info */ FileInfo | null];
+    read_fn: (
+      file: File | null,
+      cancellable: Cancellable | null
+    ) => FileInputStream | null;
     read_async: (
-      file: File,
+      file: File | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    read_finish: (file: File, res: AsyncResult) => FileInputStream;
+    read_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileInputStream | null;
     append_to: (
-      file: File,
+      file: File | null,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ) => FileOutputStream;
+    ) => FileOutputStream | null;
     append_to_async: (
-      file: File,
+      file: File | null,
       flags: FileCreateFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    append_to_finish: (file: File, res: AsyncResult) => FileOutputStream;
+    append_to_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileOutputStream | null;
     create: (
-      file: File,
+      file: File | null,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ) => FileOutputStream;
+    ) => FileOutputStream | null;
     create_async: (
-      file: File,
+      file: File | null,
       flags: FileCreateFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    create_finish: (file: File, res: AsyncResult) => FileOutputStream;
+    create_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileOutputStream | null;
     replace: (
-      file: File,
+      file: File | null,
       etag: string | null,
       make_backup: boolean,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ) => FileOutputStream;
+    ) => FileOutputStream | null;
     replace_async: (
-      file: File,
+      file: File | null,
       etag: string | null,
       make_backup: boolean,
       flags: FileCreateFlags,
@@ -52920,152 +53411,185 @@ declare namespace Gio {
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    replace_finish: (file: File, res: AsyncResult) => FileOutputStream;
-    delete_file: (file: File, cancellable: Cancellable | null) => boolean;
+    replace_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileOutputStream | null;
+    delete_file: (
+      file: File | null,
+      cancellable: Cancellable | null
+    ) => boolean;
     delete_file_async: (
-      file: File,
+      file: File | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    delete_file_finish: (file: File, result: AsyncResult) => boolean;
-    trash: (file: File, cancellable: Cancellable | null) => boolean;
+    delete_file_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
+    trash: (file: File | null, cancellable: Cancellable | null) => boolean;
     trash_async: (
-      file: File,
+      file: File | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    trash_finish: (file: File, result: AsyncResult) => boolean;
-    make_directory: (file: File, cancellable: Cancellable | null) => boolean;
+    trash_finish: (file: File | null, result: AsyncResult | null) => boolean;
+    make_directory: (
+      file: File | null,
+      cancellable: Cancellable | null
+    ) => boolean;
     make_directory_async: (
-      file: File,
+      file: File | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    make_directory_finish: (file: File, result: AsyncResult) => boolean;
+    make_directory_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     make_symbolic_link: (
-      file: File,
-      symlink_value: string,
+      file: File | null,
+      symlink_value: string | null,
       cancellable: Cancellable | null
     ) => boolean;
     make_symbolic_link_async: (
-      file: File,
-      symlink_value: string,
+      file: File | null,
+      symlink_value: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    make_symbolic_link_finish: (file: File, result: AsyncResult) => boolean;
+    make_symbolic_link_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     copy: (
-      source: File,
-      destination: File,
+      source: File | null,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null
     ) => boolean;
     copy_async: (
-      source: File,
-      destination: File,
+      source: File | null,
+      destination: File | null,
       flags: FileCopyFlags,
       io_priority: number,
       cancellable: Cancellable | null
     ) => void;
-    copy_finish: (file: File, res: AsyncResult) => boolean;
+    copy_finish: (file: File | null, res: AsyncResult | null) => boolean;
     move: (
-      source: File,
-      destination: File,
+      source: File | null,
+      destination: File | null,
       flags: FileCopyFlags,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null
     ) => boolean;
     move_async: (
-      source: File,
-      destination: File,
+      source: File | null,
+      destination: File | null,
       flags: FileCopyFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       progress_callback: FileProgressCallback | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    move_finish: (file: File, result: AsyncResult) => boolean;
+    move_finish: (file: File | null, result: AsyncResult | null) => boolean;
     mount_mountable: (
-      file: File,
+      file: File | null,
       flags: MountMountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    mount_mountable_finish: (file: File, result: AsyncResult) => File;
+    mount_mountable_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => File | null;
     unmount_mountable: (
-      file: File,
+      file: File | null,
       flags: MountUnmountFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    unmount_mountable_finish: (file: File, result: AsyncResult) => boolean;
+    unmount_mountable_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     eject_mountable: (
-      file: File,
+      file: File | null,
       flags: MountUnmountFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    eject_mountable_finish: (file: File, result: AsyncResult) => boolean;
+    eject_mountable_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     mount_enclosing_volume: (
-      location: File,
+      location: File | null,
       flags: MountMountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     mount_enclosing_volume_finish: (
-      location: File,
-      result: AsyncResult
+      location: File | null,
+      result: AsyncResult | null
     ) => boolean;
     monitor_dir: (
-      file: File,
+      file: File | null,
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ) => FileMonitor;
+    ) => FileMonitor | null;
     monitor_file: (
-      file: File,
+      file: File | null,
       flags: FileMonitorFlags,
       cancellable: Cancellable | null
-    ) => FileMonitor;
+    ) => FileMonitor | null;
     open_readwrite: (
-      file: File,
+      file: File | null,
       cancellable: Cancellable | null
-    ) => FileIOStream;
+    ) => FileIOStream | null;
     open_readwrite_async: (
-      file: File,
+      file: File | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    open_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream;
+    open_readwrite_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileIOStream | null;
     create_readwrite: (
-      file: File,
+      file: File | null,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ) => FileIOStream;
+    ) => FileIOStream | null;
     create_readwrite_async: (
-      file: File,
+      file: File | null,
       flags: FileCreateFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    create_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream;
+    create_readwrite_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileIOStream | null;
     replace_readwrite: (
-      file: File,
+      file: File | null,
       etag: string | null,
       make_backup: boolean,
       flags: FileCreateFlags,
       cancellable: Cancellable | null
-    ) => FileIOStream;
+    ) => FileIOStream | null;
     replace_readwrite_async: (
-      file: File,
+      file: File | null,
       etag: string | null,
       make_backup: boolean,
       flags: FileCreateFlags,
@@ -53073,64 +53597,76 @@ declare namespace Gio {
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    replace_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream;
+    replace_readwrite_finish: (
+      file: File | null,
+      res: AsyncResult | null
+    ) => FileIOStream | null;
     start_mountable: (
-      file: File,
+      file: File | null,
       flags: DriveStartFlags,
       start_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    start_mountable_finish: (file: File, result: AsyncResult) => boolean;
+    start_mountable_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     stop_mountable: (
-      file: File,
+      file: File | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    stop_mountable_finish: (file: File, result: AsyncResult) => boolean;
+    stop_mountable_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     /**
      * a boolean that indicates whether the #GFile implementation supports thread-default contexts. Since 2.22.
      * @field
      */
     supports_thread_contexts: boolean;
     unmount_mountable_with_operation: (
-      file: File,
+      file: File | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     unmount_mountable_with_operation_finish: (
-      file: File,
-      result: AsyncResult
+      file: File | null,
+      result: AsyncResult | null
     ) => boolean;
     eject_mountable_with_operation: (
-      file: File,
+      file: File | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     eject_mountable_with_operation_finish: (
-      file: File,
-      result: AsyncResult
+      file: File | null,
+      result: AsyncResult | null
     ) => boolean;
     poll_mountable: (
-      file: File,
+      file: File | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    poll_mountable_finish: (file: File, result: AsyncResult) => boolean;
+    poll_mountable_finish: (
+      file: File | null,
+      result: AsyncResult | null
+    ) => boolean;
     measure_disk_usage_finish: (
-      file: File,
-      result: AsyncResult
+      file: File | null,
+      result: AsyncResult | null
     ) => [
       /* returnType */ boolean,
-      /* disk_usage */ number,
-      /* num_dirs */ number,
-      /* num_files */ number
+      /* disk_usage */ number | null,
+      /* num_dirs */ number | null,
+      /* num_files */ number | null
     ];
   }
 
@@ -53156,30 +53692,30 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.FileInputStreamClass
 
     parent_class: InputStreamClass;
-    tell: (stream: FileInputStream) => number;
-    can_seek: (stream: FileInputStream) => boolean;
+    tell: (stream: FileInputStream | null) => number;
+    can_seek: (stream: FileInputStream | null) => boolean;
     seek: (
-      stream: FileInputStream,
+      stream: FileInputStream | null,
       offset: number,
       type: GLib.SeekType,
       cancellable: Cancellable | null
     ) => boolean;
     query_info: (
-      stream: FileInputStream,
-      attributes: string,
+      stream: FileInputStream | null,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ) => FileInfo;
+    ) => FileInfo | null;
     query_info_async: (
-      stream: FileInputStream,
-      attributes: string,
+      stream: FileInputStream | null,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     query_info_finish: (
-      stream: FileInputStream,
-      result: AsyncResult
-    ) => FileInfo;
+      stream: FileInputStream | null,
+      result: AsyncResult | null
+    ) => FileInfo | null;
   }
 
   abstract class FileInputStreamClass {
@@ -53201,12 +53737,12 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     changed: (
-      monitor: FileMonitor,
-      file: File,
-      other_file: File,
+      monitor: FileMonitor | null,
+      file: File | null,
+      other_file: File | null,
       event_type: FileMonitorEvent
     ) => void;
-    cancel: (monitor: FileMonitor) => boolean;
+    cancel: (monitor: FileMonitor | null) => boolean;
   }
 
   abstract class FileMonitorClass {
@@ -53227,37 +53763,37 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.FileOutputStreamClass
 
     parent_class: OutputStreamClass;
-    tell: (stream: FileOutputStream) => number;
-    can_seek: (stream: FileOutputStream) => boolean;
+    tell: (stream: FileOutputStream | null) => number;
+    can_seek: (stream: FileOutputStream | null) => boolean;
     seek: (
-      stream: FileOutputStream,
+      stream: FileOutputStream | null,
       offset: number,
       type: GLib.SeekType,
       cancellable: Cancellable | null
     ) => boolean;
-    can_truncate: (stream: FileOutputStream) => boolean;
+    can_truncate: (stream: FileOutputStream | null) => boolean;
     truncate_fn: (
-      stream: FileOutputStream,
+      stream: FileOutputStream | null,
       size: number,
       cancellable: Cancellable | null
     ) => boolean;
     query_info: (
-      stream: FileOutputStream,
-      attributes: string,
+      stream: FileOutputStream | null,
+      attributes: string | null,
       cancellable: Cancellable | null
-    ) => FileInfo;
+    ) => FileInfo | null;
     query_info_async: (
-      stream: FileOutputStream,
-      attributes: string,
+      stream: FileOutputStream | null,
+      attributes: string | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     query_info_finish: (
-      stream: FileOutputStream,
-      result: AsyncResult
-    ) => FileInfo;
-    get_etag: (stream: FileOutputStream) => string | null;
+      stream: FileOutputStream | null,
+      result: AsyncResult | null
+    ) => FileInfo | null;
+    get_etag: (stream: FileOutputStream | null) => string | null;
   }
 
   abstract class FileOutputStreamClass {
@@ -53278,7 +53814,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.FilenameCompleterClass
 
     parent_class: GObject.ObjectClass;
-    got_completion_data: (filename_completer: FilenameCompleter) => void;
+    got_completion_data: (filename_completer: FilenameCompleter | null) => void;
   }
 
   abstract class FilenameCompleterClass {
@@ -53321,7 +53857,7 @@ declare namespace Gio {
      * for multiple extension points, under different names.
      * @returns the name of @extension.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Gets the priority with which `extension` was registered.
      * @returns the priority of @extension
@@ -53353,13 +53889,13 @@ declare namespace Gio {
      * @param name the name of the extension to get
      * @returns the #GIOExtension for @extension_point that has the    given name, or %NULL if there is no extension with that name
      */
-    get_extension_by_name(name: string): IOExtension;
+    get_extension_by_name(name: string | null): IOExtension | null;
     /**
      * Gets a list of all extensions that implement this extension point.
      * The list is sorted by priority, beginning with the highest priority.
      * @returns a #GList of     #GIOExtensions. The list is owned by GIO and should not be     modified.
      */
-    get_extensions(): IOExtension[];
+    get_extensions(): IOExtension[] | null;
     /**
      * Gets the required type for `extension_point`.
      * @returns the #GType that all implementations must have,   or %G_TYPE_INVALID if the extension point has no required type
@@ -53398,23 +53934,23 @@ declare namespace Gio {
      * @returns a #GIOExtension object for #GType
      */
     static implement(
-      extension_point_name: string,
+      extension_point_name: string | null,
       type: GObject.GType,
-      extension_name: string,
+      extension_name: string | null,
       priority: number
-    ): IOExtension;
+    ): IOExtension | null;
     /**
      * Looks up an existing extension point.
      * @param name the name of the extension point
      * @returns the #GIOExtensionPoint, or %NULL if there    is no registered extension point with the given name.
      */
-    static lookup(name: string): IOExtensionPoint;
+    static lookup(name: string | null): IOExtensionPoint | null;
     /**
      * Registers an extension point.
      * @param name The name of the extension point
      * @returns the new #GIOExtensionPoint. This object is    owned by GIO and should not be freed.
      */
-    static register(name: string): IOExtensionPoint;
+    static register(name: string | null): IOExtensionPoint | null;
   }
 
   interface IOModuleClass {}
@@ -53434,7 +53970,7 @@ declare namespace Gio {
      * or g_io_modules_load_all_in_directory_with_scope().
      * @param basename the basename to block
      */
-    block(basename: string): void;
+    block(basename: string | null): void;
     /**
      * Free a module scope.
      */
@@ -53503,16 +54039,22 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.IOStreamClass
 
     parent_class: GObject.ObjectClass;
-    get_input_stream: (stream: IOStream) => InputStream;
-    get_output_stream: (stream: IOStream) => OutputStream;
-    close_fn: (stream: IOStream, cancellable: Cancellable | null) => boolean;
+    get_input_stream: (stream: IOStream | null) => InputStream | null;
+    get_output_stream: (stream: IOStream | null) => OutputStream | null;
+    close_fn: (
+      stream: IOStream | null,
+      cancellable: Cancellable | null
+    ) => boolean;
     close_async: (
-      stream: IOStream,
+      stream: IOStream | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    close_finish: (stream: IOStream, result: AsyncResult) => boolean;
+    close_finish: (
+      stream: IOStream | null,
+      result: AsyncResult | null
+    ) => boolean;
   }
 
   abstract class IOStreamClass {
@@ -53537,9 +54079,9 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    hash: (icon: Icon) => number;
+    hash: (icon: Icon | null) => number;
     equal: (icon1: Icon | null, icon2: Icon | null) => boolean;
-    serialize: (icon: Icon) => GLib.Variant | null;
+    serialize: (icon: Icon | null) => GLib.Variant | null;
   }
 
   /**
@@ -53558,8 +54100,8 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.InetAddressClass
 
     parent_class: GObject.ObjectClass;
-    to_string: (address: InetAddress) => string;
-    to_bytes: (address: InetAddress) => number;
+    to_string: (address: InetAddress | null) => string | null;
+    to_bytes: (address: InetAddress | null) => number | null;
   }
 
   abstract class InetAddressClass {
@@ -53624,7 +54166,10 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    init: (initable: Initable, cancellable: Cancellable | null) => boolean;
+    init: (
+      initable: Initable | null,
+      cancellable: Cancellable | null
+    ) => boolean;
   }
 
   /**
@@ -53646,7 +54191,7 @@ declare namespace Gio {
      *   for a #GSocketAddress, or %NULL
      * @field
      */
-    address: SocketAddress;
+    address: SocketAddress | null;
     /**
      * pointer to an
      *   array of input vectors
@@ -53681,7 +54226,7 @@ declare namespace Gio {
      *   elements in `control_messages`
      * @field
      */
-    num_control_messages: number;
+    num_control_messages: number | null;
   }
 
   /**
@@ -53717,39 +54262,51 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     read_fn: (
-      stream: InputStream,
-      buffer: object | null,
+      stream: InputStream | null,
+      buffer: any | null,
       count: number,
       cancellable: Cancellable | null
     ) => number;
     skip: (
-      stream: InputStream,
+      stream: InputStream | null,
       count: number,
       cancellable: Cancellable | null
     ) => number;
-    close_fn: (stream: InputStream, cancellable: Cancellable | null) => boolean;
+    close_fn: (
+      stream: InputStream | null,
+      cancellable: Cancellable | null
+    ) => boolean;
     read_async: (
-      stream: InputStream,
+      stream: InputStream | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => /* buffer */ Uint8Array | null;
-    read_finish: (stream: InputStream, result: AsyncResult) => number;
+    read_finish: (
+      stream: InputStream | null,
+      result: AsyncResult | null
+    ) => number;
     skip_async: (
-      stream: InputStream,
+      stream: InputStream | null,
       count: number,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    skip_finish: (stream: InputStream, result: AsyncResult) => number;
+    skip_finish: (
+      stream: InputStream | null,
+      result: AsyncResult | null
+    ) => number;
     close_async: (
-      stream: InputStream,
+      stream: InputStream | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    close_finish: (stream: InputStream, result: AsyncResult) => boolean;
+    close_finish: (
+      stream: InputStream | null,
+      result: AsyncResult | null
+    ) => boolean;
   }
 
   abstract class InputStreamClass {
@@ -53773,7 +54330,7 @@ declare namespace Gio {
      * Pointer to a buffer where data will be written.
      * @field
      */
-    buffer: object;
+    buffer: any;
     /**
      * the available size in `buffer`.
      * @field
@@ -53802,9 +54359,12 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    get_item_type: (list: ListModel) => GObject.GType;
-    get_n_items: (list: ListModel) => number;
-    get_item: (list: ListModel, position: number) => GObject.Object | null;
+    get_item_type: (list: ListModel | null) => GObject.GType;
+    get_n_items: (list: ListModel | null) => number;
+    get_item: (
+      list: ListModel | null,
+      position: number
+    ) => GObject.Object | null;
   }
 
   /**
@@ -53838,20 +54398,20 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     load: (
-      icon: LoadableIcon,
+      icon: LoadableIcon | null,
       size: number,
       cancellable: Cancellable | null
-    ) => [/* returnType */ InputStream, /* type */ string];
+    ) => [/* returnType */ InputStream | null, /* type */ string | null];
     load_async: (
-      icon: LoadableIcon,
+      icon: LoadableIcon | null,
       size: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     load_finish: (
-      icon: LoadableIcon,
-      res: AsyncResult
-    ) => [/* returnType */ InputStream, /* type */ string];
+      icon: LoadableIcon | null,
+      res: AsyncResult | null
+    ) => [/* returnType */ InputStream | null, /* type */ string | null];
   }
 
   /**
@@ -53888,7 +54448,7 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.MemoryMonitorInterface
 
     low_memory_warning: (
-      monitor: MemoryMonitor,
+      monitor: MemoryMonitor | null,
       level: MemoryMonitorWarningLevel
     ) => void;
   }
@@ -53928,11 +54488,11 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     get_next: (
-      iter: MenuAttributeIter
+      iter: MenuAttributeIter | null
     ) => [
       /* returnType */ boolean,
-      /* out_name */ string,
-      /* value */ GLib.Variant
+      /* out_name */ string | null,
+      /* value */ GLib.Variant | null
     ];
   }
 
@@ -53955,11 +54515,11 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     get_next: (
-      iter: MenuLinkIter
+      iter: MenuLinkIter | null
     ) => [
       /* returnType */ boolean,
-      /* out_link */ string,
-      /* value */ MenuModel
+      /* out_link */ string | null,
+      /* value */ MenuModel | null
     ];
   }
 
@@ -53981,31 +54541,34 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.MenuModelClass
 
     parent_class: GObject.ObjectClass;
-    is_mutable: (model: MenuModel) => boolean;
-    get_n_items: (model: MenuModel) => number;
+    is_mutable: (model: MenuModel | null) => boolean;
+    get_n_items: (model: MenuModel | null) => number;
     get_item_attributes: (
-      model: MenuModel,
+      model: MenuModel | null,
       item_index: number
-    ) => /* attributes */ GLib.HashTable;
+    ) => /* attributes */ GLib.HashTable | null;
     iterate_item_attributes: (
-      model: MenuModel,
+      model: MenuModel | null,
       item_index: number
-    ) => MenuAttributeIter;
+    ) => MenuAttributeIter | null;
     get_item_attribute_value: (
-      model: MenuModel,
+      model: MenuModel | null,
       item_index: number,
-      attribute: string,
+      attribute: string | null,
       expected_type: GLib.VariantType | null
     ) => GLib.Variant | null;
     get_item_links: (
-      model: MenuModel,
+      model: MenuModel | null,
       item_index: number
-    ) => /* links */ GLib.HashTable;
-    iterate_item_links: (model: MenuModel, item_index: number) => MenuLinkIter;
+    ) => /* links */ GLib.HashTable | null;
+    iterate_item_links: (
+      model: MenuModel | null,
+      item_index: number
+    ) => MenuLinkIter | null;
     get_item_link: (
-      model: MenuModel,
+      model: MenuModel | null,
       item_index: number,
-      link: string
+      link: string | null
     ) => MenuModel | null;
   }
 
@@ -54031,73 +54594,85 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    changed: (mount: Mount) => void;
-    unmounted: (mount: Mount) => void;
-    get_root: (mount: Mount) => File;
-    get_name: (mount: Mount) => string;
-    get_icon: (mount: Mount) => Icon;
-    get_uuid: (mount: Mount) => string | null;
-    get_volume: (mount: Mount) => Volume | null;
-    get_drive: (mount: Mount) => Drive | null;
-    can_unmount: (mount: Mount) => boolean;
-    can_eject: (mount: Mount) => boolean;
+    changed: (mount: Mount | null) => void;
+    unmounted: (mount: Mount | null) => void;
+    get_root: (mount: Mount | null) => File | null;
+    get_name: (mount: Mount | null) => string | null;
+    get_icon: (mount: Mount | null) => Icon | null;
+    get_uuid: (mount: Mount | null) => string | null;
+    get_volume: (mount: Mount | null) => Volume | null;
+    get_drive: (mount: Mount | null) => Drive | null;
+    can_unmount: (mount: Mount | null) => boolean;
+    can_eject: (mount: Mount | null) => boolean;
     unmount: (
-      mount: Mount,
+      mount: Mount | null,
       flags: MountUnmountFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    unmount_finish: (mount: Mount, result: AsyncResult) => boolean;
+    unmount_finish: (
+      mount: Mount | null,
+      result: AsyncResult | null
+    ) => boolean;
     eject: (
-      mount: Mount,
+      mount: Mount | null,
       flags: MountUnmountFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    eject_finish: (mount: Mount, result: AsyncResult) => boolean;
+    eject_finish: (mount: Mount | null, result: AsyncResult | null) => boolean;
     remount: (
-      mount: Mount,
+      mount: Mount | null,
       flags: MountMountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    remount_finish: (mount: Mount, result: AsyncResult) => boolean;
+    remount_finish: (
+      mount: Mount | null,
+      result: AsyncResult | null
+    ) => boolean;
     guess_content_type: (
-      mount: Mount,
+      mount: Mount | null,
       force_rescan: boolean,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    guess_content_type_finish: (mount: Mount, result: AsyncResult) => string[];
+    guess_content_type_finish: (
+      mount: Mount | null,
+      result: AsyncResult | null
+    ) => string[];
     guess_content_type_sync: (
-      mount: Mount,
+      mount: Mount | null,
       force_rescan: boolean,
       cancellable: Cancellable | null
     ) => string[];
-    pre_unmount: (mount: Mount) => void;
+    pre_unmount: (mount: Mount | null) => void;
     unmount_with_operation: (
-      mount: Mount,
+      mount: Mount | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     unmount_with_operation_finish: (
-      mount: Mount,
-      result: AsyncResult
+      mount: Mount | null,
+      result: AsyncResult | null
     ) => boolean;
     eject_with_operation: (
-      mount: Mount,
+      mount: Mount | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    eject_with_operation_finish: (mount: Mount, result: AsyncResult) => boolean;
-    get_default_location: (mount: Mount) => File;
-    get_sort_key: (mount: Mount) => string | null;
-    get_symbolic_icon: (mount: Mount) => Icon;
+    eject_with_operation_finish: (
+      mount: Mount | null,
+      result: AsyncResult | null
+    ) => boolean;
+    get_default_location: (mount: Mount | null) => File | null;
+    get_sort_key: (mount: Mount | null) => string | null;
+    get_symbolic_icon: (mount: Mount | null) => Icon | null;
   }
 
   /**
@@ -54115,28 +54690,28 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     ask_password: (
-      op: MountOperation,
-      message: string,
-      default_user: string,
-      default_domain: string,
+      op: MountOperation | null,
+      message: string | null,
+      default_user: string | null,
+      default_domain: string | null,
       flags: AskPasswordFlags
     ) => void;
     ask_question: (
-      op: MountOperation,
-      message: string,
+      op: MountOperation | null,
+      message: string | null,
       choices: string[]
     ) => void;
-    reply: (op: MountOperation, result: MountOperationResult) => void;
-    aborted: (op: MountOperation) => void;
+    reply: (op: MountOperation | null, result: MountOperationResult) => void;
+    aborted: (op: MountOperation | null) => void;
     show_processes: (
-      op: MountOperation,
-      message: string,
+      op: MountOperation | null,
+      message: string | null,
       processes: GLib.Pid[],
       choices: string[]
     ) => void;
     show_unmount_progress: (
-      op: MountOperation,
-      message: string,
+      op: MountOperation | null,
+      message: string | null,
       time_left: number,
       bytes_left: number
     ) => void;
@@ -54217,21 +54792,24 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     network_changed: (
-      monitor: NetworkMonitor,
+      monitor: NetworkMonitor | null,
       network_available: boolean
     ) => void;
     can_reach: (
-      monitor: NetworkMonitor,
-      connectable: SocketConnectable,
+      monitor: NetworkMonitor | null,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null
     ) => boolean;
     can_reach_async: (
-      monitor: NetworkMonitor,
-      connectable: SocketConnectable,
+      monitor: NetworkMonitor | null,
+      connectable: SocketConnectable | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    can_reach_finish: (monitor: NetworkMonitor, result: AsyncResult) => boolean;
+    can_reach_finish: (
+      monitor: NetworkMonitor | null,
+      result: AsyncResult | null
+    ) => boolean;
   }
 
   /**
@@ -54271,12 +54849,12 @@ declare namespace Gio {
      * a #GSocketAddress, or %NULL
      * @field
      */
-    address: SocketAddress;
+    address: SocketAddress | null;
     /**
      * pointer to an array of output vectors
      * @field
      */
-    vectors: OutputVector;
+    vectors: OutputVector | null;
     /**
      * the number of output vectors pointed to by `vectors`.
      * @field
@@ -54322,68 +54900,83 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     write_fn: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       buffer: Uint8Array | null,
       cancellable: Cancellable | null
     ) => number;
     splice: (
-      stream: OutputStream,
-      source: InputStream,
+      stream: OutputStream | null,
+      source: InputStream | null,
       flags: OutputStreamSpliceFlags,
       cancellable: Cancellable | null
     ) => number;
-    flush: (stream: OutputStream, cancellable: Cancellable | null) => boolean;
+    flush: (
+      stream: OutputStream | null,
+      cancellable: Cancellable | null
+    ) => boolean;
     close_fn: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       cancellable: Cancellable | null
     ) => boolean;
     write_async: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       buffer: Uint8Array | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    write_finish: (stream: OutputStream, result: AsyncResult) => number;
+    write_finish: (
+      stream: OutputStream | null,
+      result: AsyncResult | null
+    ) => number;
     splice_async: (
-      stream: OutputStream,
-      source: InputStream,
+      stream: OutputStream | null,
+      source: InputStream | null,
       flags: OutputStreamSpliceFlags,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    splice_finish: (stream: OutputStream, result: AsyncResult) => number;
+    splice_finish: (
+      stream: OutputStream | null,
+      result: AsyncResult | null
+    ) => number;
     flush_async: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    flush_finish: (stream: OutputStream, result: AsyncResult) => boolean;
+    flush_finish: (
+      stream: OutputStream | null,
+      result: AsyncResult | null
+    ) => boolean;
     close_async: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    close_finish: (stream: OutputStream, result: AsyncResult) => boolean;
+    close_finish: (
+      stream: OutputStream | null,
+      result: AsyncResult | null
+    ) => boolean;
     writev_fn: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       vectors: OutputVector[],
       cancellable: Cancellable | null
-    ) => [/* returnType */ boolean, /* bytes_written */ number];
+    ) => [/* returnType */ boolean, /* bytes_written */ number | null];
     writev_async: (
-      stream: OutputStream,
+      stream: OutputStream | null,
       vectors: OutputVector[],
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     writev_finish: (
-      stream: OutputStream,
-      result: AsyncResult
-    ) => [/* returnType */ boolean, /* bytes_written */ number];
+      stream: OutputStream | null,
+      result: AsyncResult | null
+    ) => [/* returnType */ boolean, /* bytes_written */ number | null];
   }
 
   abstract class OutputStreamClass {
@@ -54407,7 +55000,7 @@ declare namespace Gio {
      * Pointer to a buffer of data to read.
      * @field
      */
-    buffer: object;
+    buffer: any;
     /**
      * the size of `buffer`.
      * @field
@@ -54433,26 +55026,32 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     acquire: (
-      permission: Permission,
+      permission: Permission | null,
       cancellable: Cancellable | null
     ) => boolean;
     acquire_async: (
-      permission: Permission,
+      permission: Permission | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    acquire_finish: (permission: Permission, result: AsyncResult) => boolean;
+    acquire_finish: (
+      permission: Permission | null,
+      result: AsyncResult | null
+    ) => boolean;
     release: (
-      permission: Permission,
+      permission: Permission | null,
       cancellable: Cancellable | null
     ) => boolean;
     release_async: (
-      permission: Permission,
+      permission: Permission | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    release_finish: (permission: Permission, result: AsyncResult) => boolean;
-    reserved: object[];
+    release_finish: (
+      permission: Permission | null,
+      result: AsyncResult | null
+    ) => boolean;
+    reserved: any[];
   }
 
   abstract class PermissionClass {
@@ -54477,14 +55076,14 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    can_poll: (stream: PollableInputStream) => boolean;
-    is_readable: (stream: PollableInputStream) => boolean;
+    can_poll: (stream: PollableInputStream | null) => boolean;
+    is_readable: (stream: PollableInputStream | null) => boolean;
     create_source: (
-      stream: PollableInputStream,
+      stream: PollableInputStream | null,
       cancellable: Cancellable | null
-    ) => GLib.Source;
+    ) => GLib.Source | null;
     read_nonblocking: (
-      stream: PollableInputStream
+      stream: PollableInputStream | null
     ) => [/* returnType */ number, /* buffer */ Uint8Array | null];
   }
 
@@ -54515,20 +55114,20 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    can_poll: (stream: PollableOutputStream) => boolean;
-    is_writable: (stream: PollableOutputStream) => boolean;
+    can_poll: (stream: PollableOutputStream | null) => boolean;
+    is_writable: (stream: PollableOutputStream | null) => boolean;
     create_source: (
-      stream: PollableOutputStream,
+      stream: PollableOutputStream | null,
       cancellable: Cancellable | null
-    ) => GLib.Source;
+    ) => GLib.Source | null;
     write_nonblocking: (
-      stream: PollableOutputStream,
+      stream: PollableOutputStream | null,
       buffer: Uint8Array | null
     ) => number;
     writev_nonblocking: (
-      stream: PollableOutputStream,
+      stream: PollableOutputStream | null,
       vectors: OutputVector[]
-    ) => [/* returnType */ PollableReturn, /* bytes_written */ number];
+    ) => [/* returnType */ PollableReturn, /* bytes_written */ number | null];
   }
 
   /**
@@ -54620,16 +55219,19 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    // Has conflict: connect: (proxy: Proxy, connection: IOStream, proxy_address: ProxyAddress, cancellable: Cancellable | null) => IOStream
+    // Has conflict: connect: (proxy: Proxy | null, connection: IOStream | null, proxy_address: ProxyAddress | null, cancellable: Cancellable | null) => IOStream | null
     connect_async: (
-      proxy: Proxy,
-      connection: IOStream,
-      proxy_address: ProxyAddress,
+      proxy: Proxy | null,
+      connection: IOStream | null,
+      proxy_address: ProxyAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    connect_finish: (proxy: Proxy, result: AsyncResult) => IOStream;
-    supports_hostname: (proxy: Proxy) => boolean;
+    connect_finish: (
+      proxy: Proxy | null,
+      result: AsyncResult | null
+    ) => IOStream | null;
+    supports_hostname: (proxy: Proxy | null) => boolean;
   }
 
   /**
@@ -54650,19 +55252,22 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    is_supported: (resolver: ProxyResolver) => boolean;
+    is_supported: (resolver: ProxyResolver | null) => boolean;
     lookup: (
-      resolver: ProxyResolver,
-      uri: string,
+      resolver: ProxyResolver | null,
+      uri: string | null,
       cancellable: Cancellable | null
     ) => string[];
     lookup_async: (
-      resolver: ProxyResolver,
-      uri: string,
+      resolver: ProxyResolver | null,
+      uri: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    lookup_finish: (resolver: ProxyResolver, result: AsyncResult) => string[];
+    lookup_finish: (
+      resolver: ProxyResolver | null,
+      result: AsyncResult | null
+    ) => string[];
   }
 
   /**
@@ -54680,16 +55285,16 @@ declare namespace Gio {
 
     g_iface: GObject.TypeInterface;
     activate_action_full: (
-      remote: RemoteActionGroup,
-      action_name: string,
+      remote: RemoteActionGroup | null,
+      action_name: string | null,
       parameter: GLib.Variant | null,
-      platform_data: GLib.Variant
+      platform_data: GLib.Variant | null
     ) => void;
     change_action_state_full: (
-      remote: RemoteActionGroup,
-      action_name: string,
-      value: GLib.Variant,
-      platform_data: GLib.Variant
+      remote: RemoteActionGroup | null,
+      action_name: string | null,
+      value: GLib.Variant | null,
+      platform_data: GLib.Variant | null
     ) => void;
   }
 
@@ -54707,81 +55312,81 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.ResolverClass
 
     parent_class: GObject.ObjectClass;
-    reload: (resolver: Resolver) => void;
+    reload: (resolver: Resolver | null) => void;
     lookup_by_name: (
-      resolver: Resolver,
-      hostname: string,
+      resolver: Resolver | null,
+      hostname: string | null,
       cancellable: Cancellable | null
-    ) => InetAddress[];
+    ) => InetAddress[] | null;
     lookup_by_name_async: (
-      resolver: Resolver,
-      hostname: string,
+      resolver: Resolver | null,
+      hostname: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_by_name_finish: (
-      resolver: Resolver,
-      result: AsyncResult
-    ) => InetAddress[];
+      resolver: Resolver | null,
+      result: AsyncResult | null
+    ) => InetAddress[] | null;
     lookup_by_address: (
-      resolver: Resolver,
-      address: InetAddress,
+      resolver: Resolver | null,
+      address: InetAddress | null,
       cancellable: Cancellable | null
-    ) => string;
+    ) => string | null;
     lookup_by_address_async: (
-      resolver: Resolver,
-      address: InetAddress,
+      resolver: Resolver | null,
+      address: InetAddress | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_by_address_finish: (
-      resolver: Resolver,
-      result: AsyncResult
-    ) => string;
+      resolver: Resolver | null,
+      result: AsyncResult | null
+    ) => string | null;
     lookup_service_async: (
-      resolver: Resolver,
-      rrname: string,
+      resolver: Resolver | null,
+      rrname: string | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_service_finish: (
-      resolver: Resolver,
-      result: AsyncResult
-    ) => SrvTarget[];
+      resolver: Resolver | null,
+      result: AsyncResult | null
+    ) => SrvTarget[] | null;
     lookup_records: (
-      resolver: Resolver,
-      rrname: string,
+      resolver: Resolver | null,
+      rrname: string | null,
       record_type: ResolverRecordType,
       cancellable: Cancellable | null
-    ) => GLib.Variant[];
+    ) => GLib.Variant[] | null;
     lookup_records_async: (
-      resolver: Resolver,
-      rrname: string,
+      resolver: Resolver | null,
+      rrname: string | null,
       record_type: ResolverRecordType,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_records_finish: (
-      resolver: Resolver,
-      result: AsyncResult
-    ) => GLib.Variant[];
+      resolver: Resolver | null,
+      result: AsyncResult | null
+    ) => GLib.Variant[] | null;
     lookup_by_name_with_flags_async: (
-      resolver: Resolver,
-      hostname: string,
+      resolver: Resolver | null,
+      hostname: string | null,
       flags: ResolverNameLookupFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_by_name_with_flags_finish: (
-      resolver: Resolver,
-      result: AsyncResult
-    ) => InetAddress[];
+      resolver: Resolver | null,
+      result: AsyncResult | null
+    ) => InetAddress[] | null;
     lookup_by_name_with_flags: (
-      resolver: Resolver,
-      hostname: string,
+      resolver: Resolver | null,
+      hostname: string | null,
       flags: ResolverNameLookupFlags,
       cancellable: Cancellable | null
-    ) => InetAddress[];
+    ) => InetAddress[] | null;
   }
 
   abstract class ResolverClass {
@@ -54825,7 +55430,7 @@ declare namespace Gio {
      * @returns an array of constant strings
      */
     enumerate_children(
-      path: string,
+      path: string | null,
       lookup_flags: ResourceLookupFlags
     ): string[];
     /**
@@ -54838,9 +55443,13 @@ declare namespace Gio {
      * @returns %TRUE if the file was found. %FALSE if there were errors
      */
     get_info(
-      path: string,
+      path: string | null,
       lookup_flags: ResourceLookupFlags
-    ): [/* returnType */ boolean, /* size */ number, /* flags */ number];
+    ): [
+      /* returnType */ boolean,
+      /* size */ number | null,
+      /* flags */ number | null
+    ];
     /**
      * Looks for a file at the specified `path` in the resource and
      * returns a #GBytes that lets you directly access the data in
@@ -54860,7 +55469,10 @@ declare namespace Gio {
      * @param lookup_flags A #GResourceLookupFlags
      * @returns #GBytes or %NULL on error.     Free the returned object with g_bytes_unref()
      */
-    lookup_data(path: string, lookup_flags: ResourceLookupFlags): GLib.Bytes;
+    lookup_data(
+      path: string | null,
+      lookup_flags: ResourceLookupFlags
+    ): GLib.Bytes | null;
     /**
      * Looks for a file at the specified `path` in the resource and
      * returns a #GInputStream that lets you read the data.
@@ -54870,13 +55482,16 @@ declare namespace Gio {
      * @param lookup_flags A #GResourceLookupFlags
      * @returns #GInputStream or %NULL on error.     Free the returned object with g_object_unref()
      */
-    open_stream(path: string, lookup_flags: ResourceLookupFlags): InputStream;
+    open_stream(
+      path: string | null,
+      lookup_flags: ResourceLookupFlags
+    ): InputStream | null;
     /**
      * Atomically increments the reference count of `resource` by one. This
      * function is MT-safe and may be called from any thread.
      * @returns The passed in #GResource
      */
-    ref(): Resource;
+    ref(): Resource | null;
     /**
      * Atomically decrements the reference count of `resource` by one. If the
      * reference count drops to 0, all memory allocated by the resource is
@@ -55052,7 +55667,7 @@ declare namespace Gio {
      * @param data A #GBytes
      * @returns a new #GResource, or %NULL on error
      */
-    static new_from_data(data: GLib.Bytes): Resource;
+    static new_from_data(data: GLib.Bytes | null): Resource;
     /**
      * Loads a binary resource bundle and creates a #GResource representation of it, allowing
      * you to query it for data.
@@ -55067,7 +55682,7 @@ declare namespace Gio {
      * @param filename the path of a filename to load, in the GLib filename encoding
      * @returns a new #GResource, or %NULL on error
      */
-    static load(filename: string): Resource;
+    static load(filename: string | null): Resource | null;
   }
 
   interface SeekableIface {
@@ -55078,17 +55693,17 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    tell: (seekable: Seekable) => number;
-    can_seek: (seekable: Seekable) => boolean;
+    tell: (seekable: Seekable | null) => number;
+    can_seek: (seekable: Seekable | null) => boolean;
     seek: (
-      seekable: Seekable,
+      seekable: Seekable | null,
       offset: number,
       type: GLib.SeekType,
       cancellable: Cancellable | null
     ) => boolean;
-    can_truncate: (seekable: Seekable) => boolean;
+    can_truncate: (seekable: Seekable | null) => boolean;
     truncate_fn: (
-      seekable: Seekable,
+      seekable: Seekable | null,
       offset: number,
       cancellable: Cancellable | null
     ) => boolean;
@@ -55109,36 +55724,39 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     read: (
-      backend: SettingsBackend,
-      key: string,
-      expected_type: GLib.VariantType,
+      backend: SettingsBackend | null,
+      key: string | null,
+      expected_type: GLib.VariantType | null,
       default_value: boolean
-    ) => GLib.Variant;
-    get_writable: (backend: SettingsBackend, key: string) => boolean;
+    ) => GLib.Variant | null;
+    get_writable: (
+      backend: SettingsBackend | null,
+      key: string | null
+    ) => boolean;
     write: (
-      backend: SettingsBackend,
-      key: string,
-      value: GLib.Variant,
-      origin_tag: object | null
+      backend: SettingsBackend | null,
+      key: string | null,
+      value: GLib.Variant | null,
+      origin_tag: any | null
     ) => boolean;
     write_tree: (
-      backend: SettingsBackend,
-      tree: GLib.Tree,
-      origin_tag: object | null
+      backend: SettingsBackend | null,
+      tree: GLib.Tree | null,
+      origin_tag: any | null
     ) => boolean;
     reset: (
-      backend: SettingsBackend,
-      key: string,
-      origin_tag: object | null
+      backend: SettingsBackend | null,
+      key: string | null,
+      origin_tag: any | null
     ) => void;
-    subscribe: (backend: SettingsBackend, name: string) => void;
-    unsubscribe: (backend: SettingsBackend, name: string) => void;
-    sync: (backend: SettingsBackend) => void;
+    subscribe: (backend: SettingsBackend | null, name: string | null) => void;
+    unsubscribe: (backend: SettingsBackend | null, name: string | null) => void;
+    sync: (backend: SettingsBackend | null) => void;
     read_user_value: (
-      backend: SettingsBackend,
-      key: string,
-      expected_type: GLib.VariantType
-    ) => GLib.Variant;
+      backend: SettingsBackend | null,
+      key: string | null,
+      expected_type: GLib.VariantType | null
+    ) => GLib.Variant | null;
   }
 
   /**
@@ -55163,15 +55781,18 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SettingsClass
 
     parent_class: GObject.ObjectClass;
-    writable_changed: (settings: Settings, key: string) => void;
-    changed: (settings: Settings, key: string) => void;
-    writable_change_event: (settings: Settings, key: GLib.Quark) => boolean;
+    writable_changed: (settings: Settings | null, key: string | null) => void;
+    changed: (settings: Settings | null, key: string | null) => void;
+    writable_change_event: (
+      settings: Settings | null,
+      key: GLib.Quark
+    ) => boolean;
     change_event: (
-      settings: Settings,
-      keys: GLib.Quark,
+      settings: Settings | null,
+      keys: GLib.Quark | null,
       n_keys: number
     ) => boolean;
-    padding: object[];
+    padding: any[];
   }
 
   abstract class SettingsClass {
@@ -55195,7 +55816,7 @@ declare namespace Gio {
      * Get the ID of `schema`.
      * @returns the ID
      */
-    get_id(): string;
+    get_id(): string | null;
     /**
      * Gets the key named `name` from `schema`.
      *
@@ -55204,7 +55825,7 @@ declare namespace Gio {
      * @param name the name of a key
      * @returns the #GSettingsSchemaKey for @name
      */
-    get_key(name: string): SettingsSchemaKey;
+    get_key(name: string | null): SettingsSchemaKey | null;
     /**
      * Gets the path associated with `schema,` or %NULL.
      *
@@ -55223,7 +55844,7 @@ declare namespace Gio {
      * @param name the name of a key
      * @returns %TRUE if such a key exists
      */
-    has_key(name: string): boolean;
+    has_key(name: string | null): boolean;
     /**
      * Gets the list of children in `schema`.
      *
@@ -55245,7 +55866,7 @@ declare namespace Gio {
      * Increase the reference count of `schema,` returning a new reference.
      * @returns a new reference to @schema
      */
-    ref(): SettingsSchema;
+    ref(): SettingsSchema | null;
     /**
      * Decrease the reference count of `schema,` possibly freeing it.
      */
@@ -55365,7 +55986,7 @@ declare namespace Gio {
      * administrator defaults and lockdown are not visible via this API.
      * @returns the default value for the key
      */
-    get_default_value(): GLib.Variant;
+    get_default_value(): GLib.Variant | null;
     /**
      * Gets the description for `key`.
      *
@@ -55388,7 +56009,7 @@ declare namespace Gio {
      * Gets the name of `key`.
      * @returns the name of @key.
      */
-    get_name(): string;
+    get_name(): string | null;
     /**
      * Queries the range of a key.
      *
@@ -55428,7 +56049,7 @@ declare namespace Gio {
      * no longer needed.
      * @returns a #GVariant describing the range
      */
-    get_range(): GLib.Variant;
+    get_range(): GLib.Variant | null;
     /**
      * Gets the summary for `key`.
      *
@@ -55450,7 +56071,7 @@ declare namespace Gio {
      * Gets the #GVariantType of `key`.
      * @returns the type of @key
      */
-    get_value_type(): GLib.VariantType;
+    get_value_type(): GLib.VariantType | null;
     /**
      * Checks if the given `value` is within the
      * permitted range for `key`.
@@ -55460,12 +56081,12 @@ declare namespace Gio {
      * @param value the value to check
      * @returns %TRUE if @value is valid for @key
      */
-    range_check(value: GLib.Variant): boolean;
+    range_check(value: GLib.Variant | null): boolean;
     /**
      * Increase the reference count of `key,` returning a new reference.
      * @returns a new reference to @key
      */
-    ref(): SettingsSchemaKey;
+    ref(): SettingsSchemaKey | null;
     /**
      * Decrease the reference count of `key,` possibly freeing it.
      */
@@ -55519,12 +56140,12 @@ declare namespace Gio {
      * @param recursive %TRUE if the lookup should be recursive
      * @returns a new #GSettingsSchema
      */
-    lookup(schema_id: string, recursive: boolean): SettingsSchema | null;
+    lookup(schema_id: string | null, recursive: boolean): SettingsSchema | null;
     /**
      * Increase the reference count of `source,` returning a new reference.
      * @returns a new reference to @source
      */
-    ref(): SettingsSchemaSource;
+    ref(): SettingsSchemaSource | null;
     /**
      * Decrease the reference count of `source,` possibly freeing it.
      */
@@ -55580,7 +56201,7 @@ declare namespace Gio {
      * @param trusted %TRUE, if the directory is trusted
      */
     static new_from_directory(
-      directory: string,
+      directory: string | null,
       parent: SettingsSchemaSource | null,
       trusted: boolean
     ): SettingsSchemaSource;
@@ -55651,11 +56272,11 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketAddressClass
 
     parent_class: GObject.ObjectClass;
-    get_family: (address: SocketAddress) => SocketFamily;
-    get_native_size: (address: SocketAddress) => number;
+    get_family: (address: SocketAddress | null) => SocketFamily;
+    get_native_size: (address: SocketAddress | null) => number;
     to_native: (
-      address: SocketAddress,
-      dest: object | null,
+      address: SocketAddress | null,
+      dest: any | null,
       destlen: number
     ) => boolean;
   }
@@ -55670,17 +56291,17 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketAddressEnumeratorClass
 
     next: (
-      enumerator: SocketAddressEnumerator,
+      enumerator: SocketAddressEnumerator | null,
       cancellable: Cancellable | null
     ) => SocketAddress | null;
     next_async: (
-      enumerator: SocketAddressEnumerator,
+      enumerator: SocketAddressEnumerator | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     next_finish: (
-      enumerator: SocketAddressEnumerator,
-      result: AsyncResult
+      enumerator: SocketAddressEnumerator | null,
+      result: AsyncResult | null
     ) => SocketAddress | null;
   }
 
@@ -55711,10 +56332,10 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     event: (
-      client: SocketClient,
+      client: SocketClient | null,
       event: SocketClientEvent,
-      connectable: SocketConnectable,
-      connection: IOStream
+      connectable: SocketConnectable | null,
+      connection: IOStream | null
     ) => void;
   }
 
@@ -55740,11 +56361,13 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    enumerate: (connectable: SocketConnectable) => SocketAddressEnumerator;
+    enumerate: (
+      connectable: SocketConnectable | null
+    ) => SocketAddressEnumerator | null;
     proxy_enumerate: (
-      connectable: SocketConnectable
-    ) => SocketAddressEnumerator;
-    to_string: (connectable: SocketConnectable) => string;
+      connectable: SocketConnectable | null
+    ) => SocketAddressEnumerator | null;
+    to_string: (connectable: SocketConnectable | null) => string | null;
   }
 
   /**
@@ -55782,10 +56405,10 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketControlMessageClass
 
     parent_class: GObject.ObjectClass;
-    get_size: (message: SocketControlMessage) => number;
-    get_level: (message: SocketControlMessage) => number;
-    get_type: (message: SocketControlMessage) => number;
-    serialize: (message: SocketControlMessage, data: object) => void;
+    get_size: (message: SocketControlMessage | null) => number;
+    get_level: (message: SocketControlMessage | null) => number;
+    get_type: (message: SocketControlMessage | null) => number;
+    serialize: (message: SocketControlMessage | null, data: any) => void;
   }
 
   /**
@@ -55810,11 +56433,11 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.SocketListenerClass
 
     parent_class: GObject.ObjectClass;
-    changed: (listener: SocketListener) => void;
+    changed: (listener: SocketListener | null) => void;
     event: (
-      listener: SocketListener,
+      listener: SocketListener | null,
       event: SocketListenerEvent,
-      socket: Socket
+      socket: Socket | null
     ) => void;
   }
 
@@ -55849,9 +56472,9 @@ declare namespace Gio {
 
     parent_class: SocketListenerClass;
     incoming: (
-      service: SocketService,
-      connection: SocketConnection,
-      source_object: GObject.Object
+      service: SocketService | null,
+      connection: SocketConnection | null,
+      source_object: GObject.Object | null
     ) => boolean;
   }
 
@@ -55880,7 +56503,7 @@ declare namespace Gio {
      * Copies `target`
      * @returns a copy of @target
      */
-    copy(): SrvTarget;
+    copy(): SrvTarget | null;
     /**
      * Frees `target`
      */
@@ -55892,7 +56515,7 @@ declare namespace Gio {
      * g_hostname_to_unicode() to convert it if it does.)
      * @returns @target's hostname
      */
-    get_hostname(): string;
+    get_hostname(): string | null;
     /**
      * Gets `target'`s port
      * @returns @target's port
@@ -55951,7 +56574,7 @@ declare namespace Gio {
      * @returns a new #GSrvTarget.
      */
     constructor(
-      hostname: string,
+      hostname: string | null,
       port: number,
       priority: number,
       weight: number
@@ -55969,7 +56592,7 @@ declare namespace Gio {
      * @returns a new #GSrvTarget.
      */
     static new(
-      hostname: string,
+      hostname: string | null,
       port: number,
       priority: number,
       weight: number
@@ -55995,7 +56618,7 @@ declare namespace Gio {
      * and is not typically used by other code.
      * @returns a #GResource
      */
-    get_resource(): Resource;
+    get_resource(): Resource | null;
     /**
      * Initializes a GResource from static data using a
      * GStaticResource.
@@ -56079,9 +56702,9 @@ declare namespace Gio {
 
     parent_class: SocketServiceClass;
     run: (
-      service: ThreadedSocketService,
-      connection: SocketConnection,
-      source_object: GObject.Object
+      service: ThreadedSocketService | null,
+      connection: SocketConnection | null,
+      source_object: GObject.Object | null
     ) => boolean;
   }
 
@@ -56107,13 +56730,13 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    supports_tls: (backend: TlsBackend) => boolean;
+    supports_tls: (backend: TlsBackend | null) => boolean;
     get_certificate_type: () => GObject.GType;
     get_client_connection_type: () => GObject.GType;
     get_server_connection_type: () => GObject.GType;
     get_file_database_type: () => GObject.GType;
-    get_default_database: (backend: TlsBackend) => TlsDatabase;
-    supports_dtls: (backend: TlsBackend) => boolean;
+    get_default_database: (backend: TlsBackend | null) => TlsDatabase | null;
+    supports_dtls: (backend: TlsBackend | null) => boolean;
     get_dtls_client_connection_type: () => GObject.GType;
     get_dtls_server_connection_type: () => GObject.GType;
   }
@@ -56133,7 +56756,7 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     verify: (
-      cert: TlsCertificate,
+      cert: TlsCertificate | null,
       identity: SocketConnectable | null,
       trusted_ca: TlsCertificate | null
     ) => TlsCertificateFlags;
@@ -56162,8 +56785,8 @@ declare namespace Gio {
      */
     g_iface: GObject.TypeInterface;
     copy_session_state: (
-      conn: TlsClientConnection,
-      source: TlsClientConnection
+      conn: TlsClientConnection | null,
+      source: TlsClientConnection | null
     ) => void;
   }
 
@@ -56186,27 +56809,30 @@ declare namespace Gio {
      */
     parent_class: IOStreamClass;
     accept_certificate: (
-      connection: TlsConnection,
-      peer_cert: TlsCertificate,
+      connection: TlsConnection | null,
+      peer_cert: TlsCertificate | null,
       errors: TlsCertificateFlags
     ) => boolean;
     handshake: (
-      conn: TlsConnection,
+      conn: TlsConnection | null,
       cancellable: Cancellable | null
     ) => boolean;
     handshake_async: (
-      conn: TlsConnection,
+      conn: TlsConnection | null,
       io_priority: number,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    handshake_finish: (conn: TlsConnection, result: AsyncResult) => boolean;
+    handshake_finish: (
+      conn: TlsConnection | null,
+      result: AsyncResult | null
+    ) => boolean;
     get_binding_data: (
-      conn: TlsConnection,
+      conn: TlsConnection | null,
       type: TlsChannelBindingType,
       data: Uint8Array
     ) => boolean;
-    get_negotiated_protocol: (conn: TlsConnection) => string | null;
+    get_negotiated_protocol: (conn: TlsConnection | null) => string | null;
   }
 
   /**
@@ -56232,18 +56858,18 @@ declare namespace Gio {
 
     parent_class: GObject.ObjectClass;
     verify_chain: (
-      self: TlsDatabase,
-      chain: TlsCertificate,
-      purpose: string,
+      self: TlsDatabase | null,
+      chain: TlsCertificate | null,
+      purpose: string | null,
       identity: SocketConnectable | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseVerifyFlags,
       cancellable: Cancellable | null
     ) => TlsCertificateFlags;
     verify_chain_async: (
-      self: TlsDatabase,
-      chain: TlsCertificate,
-      purpose: string,
+      self: TlsDatabase | null,
+      chain: TlsCertificate | null,
+      purpose: string | null,
       identity: SocketConnectable | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseVerifyFlags,
@@ -56251,60 +56877,60 @@ declare namespace Gio {
       callback: AsyncReadyCallback | null
     ) => void;
     verify_chain_finish: (
-      self: TlsDatabase,
-      result: AsyncResult
+      self: TlsDatabase | null,
+      result: AsyncResult | null
     ) => TlsCertificateFlags;
     create_certificate_handle: (
-      self: TlsDatabase,
-      certificate: TlsCertificate
+      self: TlsDatabase | null,
+      certificate: TlsCertificate | null
     ) => string | null;
     lookup_certificate_for_handle: (
-      self: TlsDatabase,
-      handle: string,
+      self: TlsDatabase | null,
+      handle: string | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
     ) => TlsCertificate | null;
     lookup_certificate_for_handle_async: (
-      self: TlsDatabase,
-      handle: string,
+      self: TlsDatabase | null,
+      handle: string | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_certificate_for_handle_finish: (
-      self: TlsDatabase,
-      result: AsyncResult
-    ) => TlsCertificate;
+      self: TlsDatabase | null,
+      result: AsyncResult | null
+    ) => TlsCertificate | null;
     lookup_certificate_issuer: (
-      self: TlsDatabase,
-      certificate: TlsCertificate,
+      self: TlsDatabase | null,
+      certificate: TlsCertificate | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
-    ) => TlsCertificate;
+    ) => TlsCertificate | null;
     lookup_certificate_issuer_async: (
-      self: TlsDatabase,
-      certificate: TlsCertificate,
+      self: TlsDatabase | null,
+      certificate: TlsCertificate | null,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_certificate_issuer_finish: (
-      self: TlsDatabase,
-      result: AsyncResult
-    ) => TlsCertificate;
+      self: TlsDatabase | null,
+      result: AsyncResult | null
+    ) => TlsCertificate | null;
     lookup_certificates_issued_by: (
-      self: TlsDatabase,
+      self: TlsDatabase | null,
       issuer_raw_dn: Uint8Array,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
       cancellable: Cancellable | null
-    ) => TlsCertificate[];
+    ) => TlsCertificate[] | null;
     lookup_certificates_issued_by_async: (
-      self: TlsDatabase,
+      self: TlsDatabase | null,
       issuer_raw_dn: Uint8Array,
       interaction: TlsInteraction | null,
       flags: TlsDatabaseLookupFlags,
@@ -56312,9 +56938,9 @@ declare namespace Gio {
       callback: AsyncReadyCallback | null
     ) => void;
     lookup_certificates_issued_by_finish: (
-      self: TlsDatabase,
-      result: AsyncResult
-    ) => TlsCertificate[];
+      self: TlsDatabase | null,
+      result: AsyncResult | null
+    ) => TlsCertificate[] | null;
   }
 
   /**
@@ -56361,36 +56987,36 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.TlsInteractionClass
 
     ask_password: (
-      interaction: TlsInteraction,
-      password: TlsPassword,
+      interaction: TlsInteraction | null,
+      password: TlsPassword | null,
       cancellable: Cancellable | null
     ) => TlsInteractionResult;
     ask_password_async: (
-      interaction: TlsInteraction,
-      password: TlsPassword,
+      interaction: TlsInteraction | null,
+      password: TlsPassword | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     ask_password_finish: (
-      interaction: TlsInteraction,
-      result: AsyncResult
+      interaction: TlsInteraction | null,
+      result: AsyncResult | null
     ) => TlsInteractionResult;
     request_certificate: (
-      interaction: TlsInteraction,
-      connection: TlsConnection,
+      interaction: TlsInteraction | null,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null
     ) => TlsInteractionResult;
     request_certificate_async: (
-      interaction: TlsInteraction,
-      connection: TlsConnection,
+      interaction: TlsInteraction | null,
+      connection: TlsConnection | null,
       flags: TlsCertificateRequestFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     request_certificate_finish: (
-      interaction: TlsInteraction,
-      result: AsyncResult
+      interaction: TlsInteraction | null,
+      result: AsyncResult | null
     ) => TlsInteractionResult;
   }
 
@@ -56429,13 +57055,13 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.TlsPasswordClass
 
     parent_class: GObject.ObjectClass;
-    get_value: (password: TlsPassword) => Uint8Array;
+    get_value: (password: TlsPassword | null) => Uint8Array;
     set_value: (
-      password: TlsPassword,
+      password: TlsPassword | null,
       value: Uint8Array,
       destroy: GLib.DestroyNotify | null
     ) => void;
-    get_default_warning: (password: TlsPassword) => string;
+    get_default_warning: (password: TlsPassword | null) => string | null;
   }
 
   /**
@@ -56609,12 +57235,12 @@ declare namespace Gio {
      * @param mount2 a #GUnixMount.
      * @returns 1, 0 or -1 if @mount1 is greater than, equal to, or less than @mount2, respectively.
      */
-    compare(mount2: UnixMountPoint): number;
+    compare(mount2: UnixMountPoint | null): number;
     /**
      * Makes a copy of `mount_point`.
      * @returns a new #GUnixMountPoint
      */
-    copy(): UnixMountPoint;
+    copy(): UnixMountPoint | null;
     /**
      * Frees a unix mount point.
      */
@@ -56623,17 +57249,17 @@ declare namespace Gio {
      * Gets the device path for a unix mount point.
      * @returns a string containing the device path.
      */
-    get_device_path(): string;
+    get_device_path(): string | null;
     /**
      * Gets the file system type for the mount point.
      * @returns a string containing the file system type.
      */
-    get_fs_type(): string;
+    get_fs_type(): string | null;
     /**
      * Gets the mount path for a unix mount point.
      * @returns a string containing the mount path.
      */
-    get_mount_path(): string;
+    get_mount_path(): string | null;
     /**
      * Gets the options for the mount point.
      * @returns a string containing the options.
@@ -56648,18 +57274,18 @@ declare namespace Gio {
      * Guesses the icon of a Unix mount point.
      * @returns a #GIcon
      */
-    guess_icon(): Icon;
+    guess_icon(): Icon | null;
     /**
      * Guesses the name of a Unix mount point.
      * The result is a translated string.
      * @returns A newly allocated string that must     be freed with g_free()
      */
-    guess_name(): string;
+    guess_name(): string | null;
     /**
      * Guesses the symbolic icon of a Unix mount point.
      * @returns a #GIcon
      */
-    guess_symbolic_icon(): Icon;
+    guess_symbolic_icon(): Icon | null;
     /**
      * Checks if a unix mount point is a loopback device.
      * @returns %TRUE if the mount point is a loopback. %FALSE otherwise.
@@ -56700,8 +57326,8 @@ declare namespace Gio {
      * @returns a #GUnixMountPoint, or %NULL if no match is found.
      */
     static at(
-      mount_path: string
-    ): [/* returnType */ UnixMountPoint | null, /* time_read */ number];
+      mount_path: string | null
+    ): [/* returnType */ UnixMountPoint | null, /* time_read */ number | null];
   }
 
   interface UnixOutputStreamClass {
@@ -56748,31 +57374,38 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.VfsClass
 
     parent_class: GObject.ObjectClass;
-    is_active: (vfs: Vfs) => boolean;
-    get_file_for_path: (vfs: Vfs, path: string) => File;
-    get_file_for_uri: (vfs: Vfs, uri: string) => File;
-    get_supported_uri_schemes: (vfs: Vfs) => string[];
-    parse_name: (vfs: Vfs, parse_name: string) => File;
+    is_active: (vfs: Vfs | null) => boolean;
+    get_file_for_path: (vfs: Vfs | null, path: string | null) => File | null;
+    get_file_for_uri: (vfs: Vfs | null, uri: string | null) => File | null;
+    get_supported_uri_schemes: (vfs: Vfs | null) => string[];
+    parse_name: (vfs: Vfs | null, parse_name: string | null) => File | null;
     local_file_add_info: (
-      vfs: Vfs,
-      filename: string,
+      vfs: Vfs | null,
+      filename: string | null,
       device: number,
-      attribute_matcher: FileAttributeMatcher,
-      info: FileInfo,
+      attribute_matcher: FileAttributeMatcher | null,
+      info: FileInfo | null,
       cancellable: Cancellable | null,
-      extra_data: object | null,
-      free_extra_data: GLib.DestroyNotify
+      extra_data: any | null,
+      free_extra_data: GLib.DestroyNotify | null
     ) => void;
-    add_writable_namespaces: (vfs: Vfs, list: FileAttributeInfoList) => void;
+    add_writable_namespaces: (
+      vfs: Vfs | null,
+      list: FileAttributeInfoList | null
+    ) => void;
     local_file_set_attributes: (
-      vfs: Vfs,
-      filename: string,
-      info: FileInfo,
+      vfs: Vfs | null,
+      filename: string | null,
+      info: FileInfo | null,
       flags: FileQueryInfoFlags,
       cancellable: Cancellable | null
     ) => boolean;
-    local_file_removed: (vfs: Vfs, filename: string) => void;
-    local_file_moved: (vfs: Vfs, source: string, dest: string) => void;
+    local_file_removed: (vfs: Vfs | null, filename: string | null) => void;
+    local_file_moved: (
+      vfs: Vfs | null,
+      source: string | null,
+      dest: string | null
+    ) => void;
   }
 
   abstract class VfsClass {
@@ -56789,47 +57422,56 @@ declare namespace Gio {
      * @field
      */
     g_iface: GObject.TypeInterface;
-    changed: (volume: Volume) => void;
-    removed: (volume: Volume) => void;
-    get_name: (volume: Volume) => string;
-    get_icon: (volume: Volume) => Icon;
-    get_uuid: (volume: Volume) => string | null;
-    get_drive: (volume: Volume) => Drive | null;
-    get_mount: (volume: Volume) => Mount | null;
-    can_mount: (volume: Volume) => boolean;
-    can_eject: (volume: Volume) => boolean;
+    changed: (volume: Volume | null) => void;
+    removed: (volume: Volume | null) => void;
+    get_name: (volume: Volume | null) => string | null;
+    get_icon: (volume: Volume | null) => Icon | null;
+    get_uuid: (volume: Volume | null) => string | null;
+    get_drive: (volume: Volume | null) => Drive | null;
+    get_mount: (volume: Volume | null) => Mount | null;
+    can_mount: (volume: Volume | null) => boolean;
+    can_eject: (volume: Volume | null) => boolean;
     mount_fn: (
-      volume: Volume,
+      volume: Volume | null,
       flags: MountMountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    mount_finish: (volume: Volume, result: AsyncResult) => boolean;
+    mount_finish: (
+      volume: Volume | null,
+      result: AsyncResult | null
+    ) => boolean;
     eject: (
-      volume: Volume,
+      volume: Volume | null,
       flags: MountUnmountFlags,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
-    eject_finish: (volume: Volume, result: AsyncResult) => boolean;
-    get_identifier: (volume: Volume, kind: string) => string | null;
-    enumerate_identifiers: (volume: Volume) => string[];
-    should_automount: (volume: Volume) => boolean;
-    get_activation_root: (volume: Volume) => File | null;
+    eject_finish: (
+      volume: Volume | null,
+      result: AsyncResult | null
+    ) => boolean;
+    get_identifier: (
+      volume: Volume | null,
+      kind: string | null
+    ) => string | null;
+    enumerate_identifiers: (volume: Volume | null) => string[];
+    should_automount: (volume: Volume | null) => boolean;
+    get_activation_root: (volume: Volume | null) => File | null;
     eject_with_operation: (
-      volume: Volume,
+      volume: Volume | null,
       flags: MountUnmountFlags,
       mount_operation: MountOperation | null,
       cancellable: Cancellable | null,
       callback: AsyncReadyCallback | null
     ) => void;
     eject_with_operation_finish: (
-      volume: Volume,
-      result: AsyncResult
+      volume: Volume | null,
+      result: AsyncResult | null
     ) => boolean;
-    get_sort_key: (volume: Volume) => string | null;
-    get_symbolic_icon: (volume: Volume) => Icon;
+    get_sort_key: (volume: Volume | null) => string | null;
+    get_symbolic_icon: (volume: Volume | null) => Icon | null;
   }
 
   /**
@@ -56846,30 +57488,68 @@ declare namespace Gio {
     // Own fields of Gio-2.0.Gio.VolumeMonitorClass
 
     parent_class: GObject.ObjectClass;
-    volume_added: (volume_monitor: VolumeMonitor, volume: Volume) => void;
-    volume_removed: (volume_monitor: VolumeMonitor, volume: Volume) => void;
-    volume_changed: (volume_monitor: VolumeMonitor, volume: Volume) => void;
-    mount_added: (volume_monitor: VolumeMonitor, mount: Mount) => void;
-    mount_removed: (volume_monitor: VolumeMonitor, mount: Mount) => void;
-    mount_pre_unmount: (volume_monitor: VolumeMonitor, mount: Mount) => void;
-    mount_changed: (volume_monitor: VolumeMonitor, mount: Mount) => void;
-    drive_connected: (volume_monitor: VolumeMonitor, drive: Drive) => void;
-    drive_disconnected: (volume_monitor: VolumeMonitor, drive: Drive) => void;
-    drive_changed: (volume_monitor: VolumeMonitor, drive: Drive) => void;
+    volume_added: (
+      volume_monitor: VolumeMonitor | null,
+      volume: Volume | null
+    ) => void;
+    volume_removed: (
+      volume_monitor: VolumeMonitor | null,
+      volume: Volume | null
+    ) => void;
+    volume_changed: (
+      volume_monitor: VolumeMonitor | null,
+      volume: Volume | null
+    ) => void;
+    mount_added: (
+      volume_monitor: VolumeMonitor | null,
+      mount: Mount | null
+    ) => void;
+    mount_removed: (
+      volume_monitor: VolumeMonitor | null,
+      mount: Mount | null
+    ) => void;
+    mount_pre_unmount: (
+      volume_monitor: VolumeMonitor | null,
+      mount: Mount | null
+    ) => void;
+    mount_changed: (
+      volume_monitor: VolumeMonitor | null,
+      mount: Mount | null
+    ) => void;
+    drive_connected: (
+      volume_monitor: VolumeMonitor | null,
+      drive: Drive | null
+    ) => void;
+    drive_disconnected: (
+      volume_monitor: VolumeMonitor | null,
+      drive: Drive | null
+    ) => void;
+    drive_changed: (
+      volume_monitor: VolumeMonitor | null,
+      drive: Drive | null
+    ) => void;
     is_supported: () => boolean;
-    get_connected_drives: (volume_monitor: VolumeMonitor) => Drive[];
-    get_volumes: (volume_monitor: VolumeMonitor) => Volume[];
-    get_mounts: (volume_monitor: VolumeMonitor) => Mount[];
+    get_connected_drives: (
+      volume_monitor: VolumeMonitor | null
+    ) => Drive[] | null;
+    get_volumes: (volume_monitor: VolumeMonitor | null) => Volume[] | null;
+    get_mounts: (volume_monitor: VolumeMonitor | null) => Mount[] | null;
     get_volume_for_uuid: (
-      volume_monitor: VolumeMonitor,
-      uuid: string
+      volume_monitor: VolumeMonitor | null,
+      uuid: string | null
     ) => Volume | null;
     get_mount_for_uuid: (
-      volume_monitor: VolumeMonitor,
-      uuid: string
+      volume_monitor: VolumeMonitor | null,
+      uuid: string | null
     ) => Mount | null;
-    drive_eject_button: (volume_monitor: VolumeMonitor, drive: Drive) => void;
-    drive_stop_button: (volume_monitor: VolumeMonitor, drive: Drive) => void;
+    drive_eject_button: (
+      volume_monitor: VolumeMonitor | null,
+      drive: Drive | null
+    ) => void;
+    drive_stop_button: (
+      volume_monitor: VolumeMonitor | null,
+      drive: Drive | null
+    ) => void;
   }
 
   abstract class VolumeMonitorClass {
