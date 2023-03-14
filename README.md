@@ -1,4 +1,4 @@
-#### This package provides module declarations for some of the most common GJS modules. With it you will get fully typed imports for the following modules:
+#### This package provides module declarations for some of the most common GJS gir modules (see [Gnome JavaScript](https://gjs.guide/about/)). With it you will get fully typed imports for the following modules:
 
 - `gi://Atk?version=1.0`
 - `gi://GLib?version=2.0`
