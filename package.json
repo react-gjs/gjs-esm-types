@@ -45,7 +45,7 @@
     "build": "yarn generate-tmp-types && yarn parse-to-ems-types"
   },
   "devDependencies": {
-    "@ts-for-gir/cli": "^3.0.0-beta.11",
+    "@ts-for-gir/cli": "^3.0.0-beta.12",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "eslint": "^8.35.0",

@@ -83,15 +83,15 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@ts-for-gir/cli@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@ts-for-gir/cli/-/cli-3.0.0-beta.11.tgz#d59868eccccbf0c067ecd346e11e31f9c621c173"
-  integrity sha512-3tkt4x6omRyuNczEHVMuEv3nzMi3oUu6AJ1pFqJy4rvjExD03zD9bVnpDdS9rqw63hnrPPjWmEtO6cW5ImJMIQ==
+"@ts-for-gir/cli@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@ts-for-gir/cli/-/cli-3.0.0-beta.12.tgz#30fe58725d908d9c86762c830288e1e18550cccd"
+  integrity sha512-xZrM+z52NBtKlQB+xm8W/A5AIlej0IFvjg94oR6LCfIaFXmumUOuBUIp5unpfKjNEcB1VT2Tlc9XT5xgqlxMwA==
   dependencies:
-    "@ts-for-gir/generator-base" "^3.0.0-beta.11"
-    "@ts-for-gir/generator-html-doc" "^3.0.0-beta.11"
-    "@ts-for-gir/generator-typescript" "^3.0.0-beta.11"
-    "@ts-for-gir/lib" "^3.0.0-beta.11"
+    "@ts-for-gir/generator-base" "^3.0.0-beta.12"
+    "@ts-for-gir/generator-html-doc" "^3.0.0-beta.12"
+    "@ts-for-gir/generator-typescript" "^3.0.0-beta.12"
+    "@ts-for-gir/lib" "^3.0.0-beta.12"
     colorette "^2.0.19"
     cosmiconfig "^8.0.0"
     get-tsconfig "^4.4.0"
@@ -99,33 +99,33 @@
     tiny-glob "^0.2.9"
     yargs "^17.7.0"
 
-"@ts-for-gir/generator-base@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@ts-for-gir/generator-base/-/generator-base-3.0.0-beta.11.tgz#e4af6fea659cb17264d1e5d36722626db0d25e31"
-  integrity sha512-7k2GonDEClkRB2WQ+NXk2dIKnfCL9loybjr7Hm/tA12z7dvMbsP8Jdg6asQ0OcOtOW6Wa3ow4v7V4FjAUH9Fpg==
+"@ts-for-gir/generator-base@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@ts-for-gir/generator-base/-/generator-base-3.0.0-beta.12.tgz#82a123e84f22cad1edb79c7e6a6f519349246d8b"
+  integrity sha512-7RWuIrzayFUQOdASKQe9LJv+c35x624Z1ONyEFR90MxEM64+WuKPaSJZVrU7R90dE35frf4LxL/hlHHYsOGFvA==
   dependencies:
-    "@ts-for-gir/lib" "^3.0.0-beta.11"
+    "@ts-for-gir/lib" "^3.0.0-beta.12"
 
-"@ts-for-gir/generator-html-doc@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@ts-for-gir/generator-html-doc/-/generator-html-doc-3.0.0-beta.11.tgz#6957d86058e53565462392d5443f29934b5c669a"
-  integrity sha512-c7DL4Llxb6XygGhPtA9qKC2wqNAKPQLUF0KJL1b9Maj3f9C39+gvg9UAx9prtuOxfw1/fnFRwwbibKB+Jv0xRA==
+"@ts-for-gir/generator-html-doc@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@ts-for-gir/generator-html-doc/-/generator-html-doc-3.0.0-beta.12.tgz#f5c57f3f3d6f7377526e822293e6f43fa5e41215"
+  integrity sha512-7ZS/XnANmGY5aizE6YN0dQ3myAFVe/VCN0CYAt2aTxDX+iFoz2JeRaN5pY9IeooJcZO/ONaWZXXs4aZziquhdw==
   dependencies:
-    "@ts-for-gir/generator-base" "^3.0.0-beta.11"
-    "@ts-for-gir/lib" "^3.0.0-beta.11"
+    "@ts-for-gir/generator-base" "^3.0.0-beta.12"
+    "@ts-for-gir/lib" "^3.0.0-beta.12"
 
-"@ts-for-gir/generator-typescript@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@ts-for-gir/generator-typescript/-/generator-typescript-3.0.0-beta.11.tgz#a47e1e532cd221aa26c9bf830ffc2974421f23da"
-  integrity sha512-BZ4HcLKjKR+ksWeZ4MGAW8L37kpoIIT1wXF5qNanJC0F+uJ8pwaNSQroN56EjseQpmK6m/R8cnO0yYK6bW7nig==
+"@ts-for-gir/generator-typescript@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@ts-for-gir/generator-typescript/-/generator-typescript-3.0.0-beta.12.tgz#ce494c35bdbab7e998122f9fc6a8953a8753ff6e"
+  integrity sha512-WtfdbUy621g8/Pi3Zqq/vtWDA2J7GmvH3J6EDg+Zt4pYpTNBPm51kzRsJovVNM/EQsjnvYsr8M7HLp9SZ/IMyg==
   dependencies:
-    "@ts-for-gir/generator-base" "^3.0.0-beta.11"
-    "@ts-for-gir/lib" "^3.0.0-beta.11"
+    "@ts-for-gir/generator-base" "^3.0.0-beta.12"
+    "@ts-for-gir/lib" "^3.0.0-beta.12"
 
-"@ts-for-gir/lib@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@ts-for-gir/lib/-/lib-3.0.0-beta.11.tgz#f381adbc208cd770d91fc6311669ca21f456b2b8"
-  integrity sha512-7meERT/m66O9ywUZjP6FY+7JvaA48bmoF8asIjXS2D5sqcS/yn7LLq+NbmtQ6CoYgGX2A6sDkZo20QHtHBeY+A==
+"@ts-for-gir/lib@^3.0.0-beta.12":
+  version "3.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@ts-for-gir/lib/-/lib-3.0.0-beta.12.tgz#1aa5f1bac7b24d5a62d74b21ae03438e25c86ecd"
+  integrity sha512-XEbfp4n+x8oXMcZlNNiITAQzCrj1b4zv52PEqAwKM1+toWDNUX0tTIogpcAKyzLFX3J11ADZzLhMjLjQ4Y4c/Q==
   dependencies:
     colorette "^2.0.19"
     ejs "^3.1.8"
