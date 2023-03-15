@@ -409,10 +409,10 @@ declare namespace GObject {
    * @param marshal_data Additional data specified when registering the   marshaller, see g_closure_set_marshal() and   g_closure_set_meta_marshal()
    */
   function cclosure_marshal_BOOLEAN__BOXED_BOXED(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -428,10 +428,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_BOOLEAN__FLAGS(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -446,10 +446,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_STRING__OBJECT_POINTER(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -464,10 +464,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__BOOLEAN(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -482,10 +482,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__BOXED(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -500,10 +500,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__CHAR(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -518,10 +518,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__DOUBLE(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -536,10 +536,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__ENUM(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -554,10 +554,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__FLAGS(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -572,10 +572,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__FLOAT(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -590,10 +590,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__INT(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -608,10 +608,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__LONG(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -626,10 +626,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__OBJECT(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -644,10 +644,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__PARAM(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -662,10 +662,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__POINTER(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -680,10 +680,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__STRING(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -698,10 +698,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__UCHAR(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -716,10 +716,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__UINT(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -734,10 +734,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__UINT_POINTER(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -752,10 +752,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__ULONG(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -770,10 +770,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__VARIANT(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -788,10 +788,10 @@ declare namespace GObject {
    * @param marshal_data additional data specified when registering the marshaller
    */
   function cclosure_marshal_VOID__VOID(
-    closure: TClosure | null,
-    return_value: any | null,
+    closure: TClosure,
+    return_value: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -809,10 +809,10 @@ declare namespace GObject {
    * @param marshal_data Additional data specified when registering the   marshaller, see g_closure_set_marshal() and   g_closure_set_meta_marshal()
    */
   function cclosure_marshal_generic(
-    closure: TClosure | null,
-    return_gvalue: any | null,
+    closure: TClosure,
+    return_gvalue: any,
     n_param_values: number,
-    param_values: any | null,
+    param_values: any,
     invocation_hint: any | null,
     marshal_data: any | null
   ): void;
@@ -828,10 +828,7 @@ declare namespace GObject {
    * @param handler_id_ptr A pointer to a handler ID (of type #gulong) of the handler to be disconnected.
    * @param instance The instance to remove the signal handler from.   This pointer may be %NULL or invalid, if the handler ID is zero.
    */
-  function clear_signal_handler(
-    handler_id_ptr: number | null,
-    instance: Object
-  ): void;
+  function clear_signal_handler(handler_id_ptr: number, instance: Object): void;
   /**
    * This function is meant to be called from the `complete_type_info`
    * function of a #GTypePlugin implementation, as in the following
@@ -860,8 +857,8 @@ declare namespace GObject {
    */
   function enum_complete_type_info(
     g_enum_type: GType,
-    const_values: EnumValue | null
-  ): /* info */ TypeInfo | null;
+    const_values: EnumValue
+  ): /* info */ TypeInfo;
   /**
    * Returns the #GEnumValue for a value.
    * @param enum_class a #GEnumClass
@@ -869,7 +866,7 @@ declare namespace GObject {
    * @returns the #GEnumValue for @value, or %NULL          if @value is not a member of the enumeration
    */
   function enum_get_value(
-    enum_class: EnumClass | null,
+    enum_class: EnumClass,
     value: number
   ): EnumValue | null;
   /**
@@ -879,7 +876,7 @@ declare namespace GObject {
    * @returns the #GEnumValue with name @name,          or %NULL if the enumeration doesn't have a member          with that name
    */
   function enum_get_value_by_name(
-    enum_class: EnumClass | null,
+    enum_class: EnumClass,
     name: string | null
   ): EnumValue | null;
   /**
@@ -889,7 +886,7 @@ declare namespace GObject {
    * @returns the #GEnumValue with nickname @nick,          or %NULL if the enumeration doesn't have a member          with that nickname
    */
   function enum_get_value_by_nick(
-    enum_class: EnumClass | null,
+    enum_class: EnumClass,
     nick: string | null
   ): EnumValue | null;
   /**
@@ -904,7 +901,7 @@ declare namespace GObject {
    */
   function enum_register_static(
     name: string | null,
-    const_static_values: EnumValue | null
+    const_static_values: EnumValue
   ): GType;
   /**
    * Pretty-prints `value` in the form of the enum’s name.
@@ -925,8 +922,8 @@ declare namespace GObject {
    */
   function flags_complete_type_info(
     g_flags_type: GType,
-    const_values: FlagsValue | null
-  ): /* info */ TypeInfo | null;
+    const_values: FlagsValue
+  ): /* info */ TypeInfo;
   /**
    * Returns the first #GFlagsValue which is set in `value`.
    * @param flags_class a #GFlagsClass
@@ -934,7 +931,7 @@ declare namespace GObject {
    * @returns the first #GFlagsValue which is set in          @value, or %NULL if none is set
    */
   function flags_get_first_value(
-    flags_class: FlagsClass | null,
+    flags_class: FlagsClass,
     value: number
   ): FlagsValue | null;
   /**
@@ -944,7 +941,7 @@ declare namespace GObject {
    * @returns the #GFlagsValue with name @name,          or %NULL if there is no flag with that name
    */
   function flags_get_value_by_name(
-    flags_class: FlagsClass | null,
+    flags_class: FlagsClass,
     name: string | null
   ): FlagsValue | null;
   /**
@@ -954,7 +951,7 @@ declare namespace GObject {
    * @returns the #GFlagsValue with nickname @nick,          or %NULL if there is no flag with that nickname
    */
   function flags_get_value_by_nick(
-    flags_class: FlagsClass | null,
+    flags_class: FlagsClass,
     nick: string | null
   ): FlagsValue | null;
   /**
@@ -969,7 +966,7 @@ declare namespace GObject {
    */
   function flags_register_static(
     name: string | null,
-    const_static_values: FlagsValue | null
+    const_static_values: FlagsValue
   ): GType;
   /**
    * Pretty-prints `value` in the form of the flag names separated by ` | ` and
@@ -1004,7 +1001,7 @@ declare namespace GObject {
     blurb: string | null,
     default_value: boolean,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecBoxed instance specifying a %G_TYPE_BOXED
    * derived property.
@@ -1023,7 +1020,7 @@ declare namespace GObject {
     blurb: string | null,
     boxed_type: GType,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecChar instance specifying a %G_TYPE_CHAR property.
    * @param name canonical name of the property specified
@@ -1043,7 +1040,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecDouble instance specifying a %G_TYPE_DOUBLE
    * property.
@@ -1066,7 +1063,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecEnum instance specifying a %G_TYPE_ENUM
    * property.
@@ -1087,7 +1084,7 @@ declare namespace GObject {
     enum_type: GType,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecFlags instance specifying a %G_TYPE_FLAGS
    * property.
@@ -1108,7 +1105,7 @@ declare namespace GObject {
     flags_type: GType,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecFloat instance specifying a %G_TYPE_FLOAT property.
    *
@@ -1130,7 +1127,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecGType instance specifying a
    * %G_TYPE_GTYPE property.
@@ -1149,7 +1146,7 @@ declare namespace GObject {
     blurb: string | null,
     is_a_type: GType,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecInt instance specifying a %G_TYPE_INT property.
    *
@@ -1171,7 +1168,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecInt64 instance specifying a %G_TYPE_INT64 property.
    *
@@ -1193,7 +1190,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecLong instance specifying a %G_TYPE_LONG property.
    *
@@ -1215,7 +1212,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecBoxed instance specifying a %G_TYPE_OBJECT
    * derived property.
@@ -1234,7 +1231,7 @@ declare namespace GObject {
     blurb: string | null,
     object_type: GType,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecParam instance specifying a %G_TYPE_PARAM
    * property.
@@ -1253,7 +1250,7 @@ declare namespace GObject {
     blurb: string | null,
     param_type: GType,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecPointer instance specifying a pointer property.
    * Where possible, it is better to use g_param_spec_object() or
@@ -1271,7 +1268,7 @@ declare namespace GObject {
     nick: string | null,
     blurb: string | null,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecString instance.
    *
@@ -1289,7 +1286,7 @@ declare namespace GObject {
     blurb: string | null,
     default_value: string | null,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecUChar instance specifying a %G_TYPE_UCHAR property.
    * @param name canonical name of the property specified
@@ -1309,7 +1306,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecUInt instance specifying a %G_TYPE_UINT property.
    *
@@ -1331,7 +1328,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecUInt64 instance specifying a %G_TYPE_UINT64
    * property.
@@ -1354,7 +1351,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecULong instance specifying a %G_TYPE_ULONG
    * property.
@@ -1377,7 +1374,7 @@ declare namespace GObject {
     maximum: number,
     default_value: number,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecUnichar instance specifying a %G_TYPE_UINT
    * property. #GValue structures for this property can be accessed with
@@ -1397,7 +1394,7 @@ declare namespace GObject {
     blurb: string | null,
     default_value: string,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Creates a new #GParamSpecVariant instance specifying a #GVariant
    * property.
@@ -1417,10 +1414,10 @@ declare namespace GObject {
     name: string | null,
     nick: string | null,
     blurb: string | null,
-    type: GLib.VariantType | null,
+    type: GLib.VariantType,
     default_value: GLib.Variant | null,
     flags: ParamFlags
-  ): ParamSpec | null;
+  ): ParamSpec;
   /**
    * Registers `name` as the name of a new static type derived
    * from %G_TYPE_PARAM.
@@ -1434,7 +1431,7 @@ declare namespace GObject {
    */
   function param_type_register_static(
     name: string | null,
-    pspec_info: ParamSpecTypeInfo | null
+    pspec_info: ParamSpecTypeInfo
   ): GType;
   /**
    * Transforms `src_value` into `dest_value` if possible, and then
@@ -1451,9 +1448,9 @@ declare namespace GObject {
    * @returns %TRUE if transformation and validation were successful,  %FALSE otherwise and @dest_value is left untouched.
    */
   function param_value_convert(
-    pspec: ParamSpec | null,
-    src_value: any | null,
-    dest_value: any | null,
+    pspec: ParamSpec,
+    src_value: any,
+    dest_value: any,
     strict_validation: boolean
   ): boolean;
   /**
@@ -1462,10 +1459,7 @@ declare namespace GObject {
    * @param value a #GValue of correct type for `pspec`
    * @returns whether @value contains the canonical default for this @pspec
    */
-  function param_value_defaults(
-    pspec: ParamSpec | null,
-    value: any | null
-  ): boolean;
+  function param_value_defaults(pspec: ParamSpec, value: any): boolean;
   /**
    * Return whether the contents of `value` comply with the specifications
    * set out by `pspec`.
@@ -1473,19 +1467,13 @@ declare namespace GObject {
    * @param value a #GValue of correct type for `pspec`
    * @returns whether the contents of @value comply with the specifications   set out by @pspec.
    */
-  function param_value_is_valid(
-    pspec: ParamSpec | null,
-    value: any | null
-  ): boolean;
+  function param_value_is_valid(pspec: ParamSpec, value: any): boolean;
   /**
    * Sets `value` to its default value as specified in `pspec`.
    * @param pspec a valid #GParamSpec
    * @param value a #GValue of correct type for `pspec;` since 2.64, you   can also pass an empty #GValue, initialized with %G_VALUE_INIT
    */
-  function param_value_set_default(
-    pspec: ParamSpec | null,
-    value: any | null
-  ): void;
+  function param_value_set_default(pspec: ParamSpec, value: any): void;
   /**
    * Ensures that the contents of `value` comply with the specifications
    * set out by `pspec`. For example, a #GParamSpecInt might require
@@ -1497,10 +1485,7 @@ declare namespace GObject {
    * @param value a #GValue of correct type for `pspec`
    * @returns whether modifying @value was necessary to ensure validity
    */
-  function param_value_validate(
-    pspec: ParamSpec | null,
-    value: any | null
-  ): boolean;
+  function param_value_validate(pspec: ParamSpec, value: any): boolean;
   /**
    * Compares `value1` with `value2` according to `pspec,` and return -1, 0 or +1,
    * if `value1` is found to be less than, equal to or greater than `value2`,
@@ -1510,11 +1495,7 @@ declare namespace GObject {
    * @param value2 a #GValue of correct type for `pspec`
    * @returns -1, 0 or +1, for a less than, equal to or greater than result
    */
-  function param_values_cmp(
-    pspec: ParamSpec | null,
-    value1: any | null,
-    value2: any | null
-  ): number;
+  function param_values_cmp(pspec: ParamSpec, value1: any, value2: any): number;
   /**
    * Creates a new %G_TYPE_POINTER derived type id for a new
    * pointer type with name `name`.
@@ -1540,9 +1521,9 @@ declare namespace GObject {
    * @returns standard #GSignalAccumulator result
    */
   function signal_accumulator_first_wins(
-    ihint: SignalInvocationHint | null,
-    return_accu: any | null,
-    handler_return: any | null,
+    ihint: SignalInvocationHint,
+    return_accu: any,
+    handler_return: any,
     dummy: any | null
   ): boolean;
   /**
@@ -1560,9 +1541,9 @@ declare namespace GObject {
    * @returns standard #GSignalAccumulator result
    */
   function signal_accumulator_true_handled(
-    ihint: SignalInvocationHint | null,
-    return_accu: any | null,
-    handler_return: any | null,
+    ihint: SignalInvocationHint,
+    return_accu: any,
+    handler_return: any,
     dummy: any | null
   ): boolean;
   /**
@@ -1587,7 +1568,7 @@ declare namespace GObject {
    */
   function signal_chain_from_overridden(
     instance_and_params: any[],
-    return_value: any | null
+    return_value: any
   ): void;
   /**
    * Connects a closure to a signal for a particular object.
@@ -1600,7 +1581,7 @@ declare namespace GObject {
   function signal_connect_closure(
     instance: Object,
     detailed_signal: string | null,
-    closure: TClosure | null,
+    closure: TClosure,
     after: boolean
   ): number;
   /**
@@ -1616,7 +1597,7 @@ declare namespace GObject {
     instance: Object,
     signal_id: number,
     detail: GLib.Quark,
-    closure: TClosure | null,
+    closure: TClosure,
     after: boolean
   ): number;
   /**
@@ -1634,8 +1615,8 @@ declare namespace GObject {
     instance_and_params: any[],
     signal_id: number,
     detail: GLib.Quark,
-    return_value?: any | null
-  ): /* return_value */ any | null;
+    return_value?: any
+  ): /* return_value */ any;
   /**
    * Returns the invocation hint of the innermost signal emission of instance.
    * @param instance the instance to query
@@ -1890,7 +1871,7 @@ declare namespace GObject {
   function signal_override_class_closure(
     signal_id: number,
     instance_type: GType,
-    class_closure: TClosure | null
+    class_closure: TClosure
   ): void;
   /**
    * Internal function to parse a signal name into its `signal_id`
@@ -1906,8 +1887,8 @@ declare namespace GObject {
     force_detail_quark: boolean
   ): [
     /* returnType */ boolean,
-    /* signal_id_p */ number | null,
-    /* detail_p */ GLib.Quark | null
+    /* signal_id_p */ number,
+    /* detail_p */ GLib.Quark
   ];
   /**
    * Queries the signal system for in-depth information about a
@@ -1918,7 +1899,7 @@ declare namespace GObject {
    * be considered constant and have to be left untouched.
    * @param signal_id The signal id of the signal to query information for.
    */
-  function signal_query(signal_id: number): /* query */ SignalQuery | null;
+  function signal_query(signal_id: number): /* query */ SignalQuery;
   /**
    * Deletes an emission hook.
    * @param signal_id the id of the signal
@@ -1982,7 +1963,7 @@ declare namespace GObject {
   function signal_type_cclosure_new(
     itype: GType,
     struct_offset: number
-  ): TClosure | null;
+  ): TClosure;
   /**
    * Set the callback for a source as a #GClosure.
    *
@@ -1992,10 +1973,7 @@ declare namespace GObject {
    * @param source the source
    * @param closure a #GClosure
    */
-  function source_set_closure(
-    source: GLib.Source | null,
-    closure: TClosure | null
-  ): void;
+  function source_set_closure(source: GLib.Source, closure: TClosure): void;
   /**
    * Sets a dummy callback for `source`. The callback will do nothing, and
    * if the source expects a #gboolean return value, it will return %TRUE.
@@ -2009,7 +1987,7 @@ declare namespace GObject {
    * functions.
    * @param source the source
    */
-  function source_set_dummy_callback(source: GLib.Source | null): void;
+  function source_set_dummy_callback(source: GLib.Source): void;
   /**
    * Return a newly allocated string, which describes the contents of a
    * #GValue.  The main purpose of this function is to describe #GValue
@@ -2018,7 +1996,7 @@ declare namespace GObject {
    * @param value #GValue which contents are to be described.
    * @returns Newly allocated string.
    */
-  function strdup_value_contents(value: any | null): string | null;
+  function strdup_value_contents(value: any): string | null;
   /**
    * Registers a private class structure for a classed type;
    * when the class is allocated, the private structures for
@@ -2052,7 +2030,7 @@ declare namespace GObject {
   function type_add_interface_dynamic(
     instance_type: GType,
     interface_type: GType,
-    plugin: TypePlugin | null
+    plugin: TypePlugin
   ): void;
   /**
    * Adds `interface_type` to the static `instance_type`.
@@ -2065,30 +2043,27 @@ declare namespace GObject {
   function type_add_interface_static(
     instance_type: GType,
     interface_type: GType,
-    info: InterfaceInfo | null
+    info: InterfaceInfo
   ): void;
-  function type_check_class_is_a(
-    g_class: TypeClass | null,
-    is_a_type: GType
-  ): boolean;
+  function type_check_class_is_a(g_class: TypeClass, is_a_type: GType): boolean;
   /**
    * Private helper function to aid implementation of the
    * G_TYPE_CHECK_INSTANCE() macro.
    * @param instance a valid #GTypeInstance structure
    * @returns %TRUE if @instance is valid, %FALSE otherwise
    */
-  function type_check_instance(instance: TypeInstance | null): boolean;
+  function type_check_instance(instance: TypeInstance): boolean;
   function type_check_instance_is_a(
-    instance: TypeInstance | null,
+    instance: TypeInstance,
     iface_type: GType
   ): boolean;
   function type_check_instance_is_fundamentally_a(
-    instance: TypeInstance | null,
+    instance: TypeInstance,
     fundamental_type: GType
   ): boolean;
   function type_check_is_value_type(type: GType): boolean;
-  function type_check_value(value: any | null): boolean;
-  function type_check_value_holds(value: any | null, type: GType): boolean;
+  function type_check_value(value: any): boolean;
+  function type_check_value_holds(value: any, type: GType): boolean;
   /**
    * Return a newly allocated and 0-terminated array of type IDs, listing
    * the child types of `type`.
@@ -2098,7 +2073,7 @@ declare namespace GObject {
   function type_children(type: GType): GType[];
   function type_class_adjust_private_offset(
     g_class: any | null,
-    private_size_or_offset: number | null
+    private_size_or_offset: number
   ): void;
   /**
    * This function is essentially the same as g_type_class_ref(),
@@ -2187,7 +2162,7 @@ declare namespace GObject {
    * implementors of fundamental types.
    * @param instance an instance of a type
    */
-  function type_free_instance(instance: TypeInstance | null): void;
+  function type_free_instance(instance: TypeInstance): void;
   /**
    * Look up the type ID from a given type name, returning 0 if no type
    * has been registered under this name (this is the preferred method
@@ -2226,7 +2201,7 @@ declare namespace GObject {
    * @param type #GType to retrieve the plugin for
    * @returns the corresponding plugin     if @type is a dynamic type, %NULL otherwise
    */
-  function type_get_plugin(type: GType): TypePlugin | null;
+  function type_get_plugin(type: GType): TypePlugin;
   /**
    * Obtains data which has previously been attached to `type`
    * with g_type_set_qdata().
@@ -2289,7 +2264,7 @@ declare namespace GObject {
   function type_interface_get_plugin(
     instance_type: GType,
     interface_type: GType
-  ): TypePlugin | null;
+  ): TypePlugin;
   /**
    * Returns the most specific instantiatable prerequisite of an
    * interface type. If the interface type has no instantiatable
@@ -2346,10 +2321,8 @@ declare namespace GObject {
    * @returns static type name or %NULL
    */
   function type_name(type: GType): string | null;
-  function type_name_from_class(g_class: TypeClass | null): string | null;
-  function type_name_from_instance(
-    instance: TypeInstance | null
-  ): string | null;
+  function type_name_from_class(g_class: TypeClass): string | null;
+  function type_name_from_instance(instance: TypeInstance): string | null;
   /**
    * Given a `leaf_type` and a `root_type` which is contained in its
    * ancestry, return the type that `root_type` is the immediate parent
@@ -2385,7 +2358,7 @@ declare namespace GObject {
    * left untouched.
    * @param type #GType of a static, classed type
    */
-  function type_query(type: GType): /* query */ TypeQuery | null;
+  function type_query(type: GType): /* query */ TypeQuery;
   /**
    * Registers `type_name` as the name of a new dynamic type derived from
    * `parent_type`.  The type system uses the information contained in the
@@ -2401,7 +2374,7 @@ declare namespace GObject {
   function type_register_dynamic(
     parent_type: GType,
     type_name: string | null,
-    plugin: TypePlugin | null,
+    plugin: TypePlugin,
     flags: TypeFlags
   ): GType;
   /**
@@ -2422,8 +2395,8 @@ declare namespace GObject {
   function type_register_fundamental(
     type_id: GType,
     type_name: string | null,
-    info: TypeInfo | null,
-    finfo: TypeFundamentalInfo | null,
+    info: TypeInfo,
+    finfo: TypeFundamentalInfo,
     flags: TypeFlags
   ): GType;
   /**
@@ -2441,7 +2414,7 @@ declare namespace GObject {
   function type_register_static(
     parent_type: GType,
     type_name: string | null,
-    info: TypeInfo | null,
+    info: TypeInfo,
     flags: TypeFlags
   ): GType;
   /**
@@ -2522,11 +2495,7 @@ declare namespace GObject {
    * @returns %TRUE if the transformation was successful, and %FALSE   otherwise
    */
   interface BindingTransformFunc {
-    (
-      binding: Binding | null,
-      from_value: any | null,
-      to_value: any | null
-    ): boolean;
+    (binding: Binding, from_value: any, to_value: any): boolean;
   }
   /**
    * This function is provided by the user and should produce a copy
@@ -2695,7 +2664,7 @@ declare namespace GObject {
    */
   interface ClosureMarshal {
     (
-      closure: TClosure | null,
+      closure: TClosure,
       return_value: any | null,
       param_values: any[],
       invocation_hint: any | null
@@ -2709,7 +2678,7 @@ declare namespace GObject {
    * @param closure the #GClosure on which the notification is emitted
    */
   interface ClosureNotify {
-    (data: any | null, closure: TClosure | null): void;
+    (data: any | null, closure: TClosure): void;
   }
   /**
    * A callback function used by the type system to initialize a new
@@ -2730,7 +2699,7 @@ declare namespace GObject {
    * @param g_class The class of the type the instance is    created for
    */
   interface InstanceInitFunc {
-    (instance: TypeInstance | null, g_class: TypeClass): void;
+    (instance: TypeInstance, g_class: TypeClass): void;
   }
   /**
    * A callback function used by the type system to finalize an interface.
@@ -2766,7 +2735,7 @@ declare namespace GObject {
    * @param object the #GObject being finalized
    */
   interface ObjectFinalizeFunc {
-    (object: Object | null): void;
+    (object: Object): void;
   }
   /**
    * The type of the `get_property` function of #GObjectClass.
@@ -2777,12 +2746,7 @@ declare namespace GObject {
    * @param pspec the #GParamSpec describing the property
    */
   interface ObjectGetPropertyFunc {
-    (
-      object: Object | null,
-      property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
-    ): void;
+    (object: Object, property_id: number, value: any, pspec: ParamSpec): void;
   }
   /**
    * The type of the `set_property` function of #GObjectClass.
@@ -2793,12 +2757,7 @@ declare namespace GObject {
    * @param pspec the #GParamSpec describing the property
    */
   interface ObjectSetPropertyFunc {
-    (
-      object: Object | null,
-      property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
-    ): void;
+    (object: Object, property_id: number, value: any, pspec: ParamSpec): void;
   }
   /**
    * The signal accumulator is a special callback function that can be used
@@ -2817,9 +2776,9 @@ declare namespace GObject {
    */
   interface SignalAccumulator {
     (
-      ihint: SignalInvocationHint | null,
-      return_accu: any | null,
-      handler_return: any | null
+      ihint: SignalInvocationHint,
+      return_accu: any,
+      handler_return: any
     ): boolean;
   }
   /**
@@ -2835,7 +2794,7 @@ declare namespace GObject {
    * @returns whether it wants to stay connected. If it returns %FALSE, the signal  hook is disconnected (and destroyed).
    */
   interface SignalEmissionHook {
-    (ihint: SignalInvocationHint | null, param_values: any[]): boolean;
+    (ihint: SignalInvocationHint, param_values: any[]): boolean;
   }
   /**
    * A callback function used for notification when the state
@@ -2848,7 +2807,7 @@ declare namespace GObject {
    * @param is_last_ref %TRUE if the toggle reference is now the  last reference to the object. %FALSE if the toggle  reference was the last reference and there are now other  references.
    */
   interface ToggleNotify {
-    (data: any | null, object: Object | null, is_last_ref: boolean): void;
+    (data: any | null, object: Object, is_last_ref: boolean): void;
   }
   /**
    * A callback function which is called when the reference count of a class
@@ -2867,7 +2826,7 @@ declare namespace GObject {
    * @returns %TRUE to stop further #GTypeClassCacheFuncs from being  called, %FALSE to continue
    */
   interface TypeClassCacheFunc {
-    (cache_data: any | null, g_class: TypeClass | null): boolean;
+    (cache_data: any | null, g_class: TypeClass): boolean;
   }
   /**
    * A callback called after an interface vtable is initialized.
@@ -2890,10 +2849,10 @@ declare namespace GObject {
    */
   interface TypePluginCompleteInterfaceInfo {
     (
-      plugin: TypePlugin | null,
+      plugin: TypePlugin,
       instance_type: GType,
       interface_type: GType,
-      info: InterfaceInfo | null
+      info: InterfaceInfo
     ): void;
   }
   /**
@@ -2906,10 +2865,10 @@ declare namespace GObject {
    */
   interface TypePluginCompleteTypeInfo {
     (
-      plugin: TypePlugin | null,
+      plugin: TypePlugin,
       g_type: GType,
-      info: TypeInfo | null,
-      value_table: TypeValueTable | null
+      info: TypeInfo,
+      value_table: TypeValueTable
     ): void;
   }
   /**
@@ -2918,7 +2877,7 @@ declare namespace GObject {
    * @param plugin the #GTypePlugin whose use count should be decreased
    */
   interface TypePluginUnuse {
-    (plugin: TypePlugin | null): void;
+    (plugin: TypePlugin): void;
   }
   /**
    * The type of the `use_plugin` function of #GTypePluginClass, which gets called
@@ -2927,7 +2886,7 @@ declare namespace GObject {
    * @param plugin the #GTypePlugin whose use count should be increased
    */
   interface TypePluginUse {
-    (plugin: TypePlugin | null): void;
+    (plugin: TypePlugin): void;
   }
   /**
    * The type of value transformation functions which can be registered with
@@ -2939,7 +2898,7 @@ declare namespace GObject {
    * @param dest_value Target value.
    */
   interface ValueTransform {
-    (src_value: any | null, dest_value: any | null): void;
+    (src_value: any, dest_value: any): void;
   }
   /**
    * A #GWeakNotify function can be added to an object as a callback that gets
@@ -2958,12 +2917,12 @@ declare namespace GObject {
    * @param where_the_object_was the object being disposed
    */
   interface WeakNotify {
-    (data: any | null, where_the_object_was: Object | null): void;
+    (data: any | null, where_the_object_was: Object): void;
   }
   module TypePlugin {
     // Constructor properties interface
 
-    type ConstructorProperties = Object.ConstructorProperties
+    interface ConstructorProperties extends Object.ConstructorProperties {}
   }
 
   interface TypePlugin {
@@ -2980,7 +2939,7 @@ declare namespace GObject {
     complete_interface_info(
       instance_type: GType,
       interface_type: GType,
-      info: InterfaceInfo | null
+      info: InterfaceInfo
     ): void;
     /**
      * Calls the `complete_type_info` function from the #GTypePluginClass of `plugin`.
@@ -2992,8 +2951,8 @@ declare namespace GObject {
      */
     complete_type_info(
       g_type: GType,
-      info: TypeInfo | null,
-      value_table: TypeValueTable | null
+      info: TypeInfo,
+      value_table: TypeValueTable
     ): void;
     /**
      * Calls the `unuse_plugin` function from the #GTypePluginClass of
@@ -3790,7 +3749,7 @@ declare namespace GObject {
   module InitiallyUnowned {
     // Constructor properties interface
 
-    type ConstructorProperties = Object.ConstructorProperties
+    interface ConstructorProperties extends Object.ConstructorProperties {}
   }
 
   interface InitiallyUnowned {
@@ -3892,7 +3851,7 @@ declare namespace GObject {
       target: Object,
       target_property: string | null,
       flags: BindingFlags
-    ): Binding | null;
+    ): Binding;
     /**
      * Creates a binding between `source_property` on `source` and `target_property`
      * on `target,` allowing you to set the transformation functions to be used by
@@ -3914,9 +3873,9 @@ declare namespace GObject {
       target: Object,
       target_property: string | null,
       flags: BindingFlags,
-      transform_to: TClosure | null,
-      transform_from: TClosure | null
-    ): Binding | null;
+      transform_to: TClosure,
+      transform_from: TClosure
+    ): Binding;
     /**
      * This function is intended for #GObject implementations to re-enforce
      * a [floating][floating-ref] object reference. Doing this is seldom
@@ -3962,7 +3921,7 @@ declare namespace GObject {
      * @param property_name the name of the property to get
      * @param value return location for the property value
      */
-    get_property(property_name: string | null, value: any | null): void;
+    get_property(property_name: string | null, value: any): void;
     /**
      * This function gets back user data pointers stored via
      * g_object_set_qdata().
@@ -4042,7 +4001,7 @@ declare namespace GObject {
      *
      * @param pspec the #GParamSpec of a property installed on the class of `object`.
      */
-    notify_by_pspec(pspec: ParamSpec | null): void;
+    notify_by_pspec(pspec: ParamSpec): void;
     /**
      * Increases the reference count of `object`.
      *
@@ -4095,7 +4054,7 @@ declare namespace GObject {
      * @param property_name the name of the property to set
      * @param value the value
      */
-    set_property(property_name: string | null, value: any | null): void;
+    set_property(property_name: string | null, value: any): void;
     /**
      * Remove a specified datum from the object's data associations,
      * without invoking the association's destroy handler.
@@ -4179,22 +4138,18 @@ declare namespace GObject {
      * use this `object` as closure data.
      * @param closure #GClosure to watch
      */
-    watch_closure(closure: TClosure | null): void;
+    watch_closure(closure: TClosure): void;
 
     // Own virtual methods of GObject-2.0.GObject.Object
 
     vfunc_constructed(): void;
     vfunc_dispatch_properties_changed(
       n_pspecs: number,
-      pspecs: ParamSpec | null
+      pspecs: ParamSpec
     ): void;
     vfunc_dispose(): void;
     vfunc_finalize(): void;
-    vfunc_get_property(
-      property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
-    ): void;
+    vfunc_get_property(property_id: number, value: any, pspec: ParamSpec): void;
     /**
      * Emits a "notify" signal for the property `property_name` on `object`.
      *
@@ -4209,12 +4164,8 @@ declare namespace GObject {
      * @virtual
      * @param pspec
      */
-    vfunc_notify(pspec: ParamSpec | null): void;
-    vfunc_set_property(
-      property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
-    ): void;
+    vfunc_notify(pspec: ParamSpec): void;
+    vfunc_set_property(property_id: number, value: any, pspec: ParamSpec): void;
 
     // Own signals of GObject-2.0.GObject.Object
 
@@ -4283,7 +4234,7 @@ declare namespace GObject {
     static interface_find_property(
       g_iface: TypeInterface,
       property_name: string | null
-    ): ParamSpec | null;
+    ): ParamSpec;
     /**
      * Add a property to an interface; this is only useful for interfaces
      * that are added to GObject-derived types. Adding a property to an
@@ -4306,7 +4257,7 @@ declare namespace GObject {
      */
     static interface_install_property(
       g_iface: TypeInterface,
-      pspec: ParamSpec | null
+      pspec: ParamSpec
     ): void;
     /**
      * Lists the properties of an interface.Generally, the interface
@@ -4361,7 +4312,7 @@ declare namespace GObject {
      * The #GValue will remain valid for the life of `pspec`.
      * @returns a pointer to a #GValue which must not be modified
      */
-    get_default_value(): any | null;
+    get_default_value(): any;
     /**
      * Get the name of a #GParamSpec.
      *
@@ -4431,10 +4382,10 @@ declare namespace GObject {
     // Own virtual methods of GObject-2.0.GObject.ParamSpec
 
     vfunc_finalize(): void;
-    vfunc_value_is_valid(value: any | null): boolean;
-    vfunc_value_set_default(value: any | null): void;
-    vfunc_value_validate(value: any | null): boolean;
-    vfunc_values_cmp(value1: any | null, value2: any | null): number;
+    vfunc_value_is_valid(value: any): boolean;
+    vfunc_value_set_default(value: any): void;
+    vfunc_value_validate(value: any): boolean;
+    vfunc_values_cmp(value1: any, value2: any): number;
   }
 
   /**
@@ -4754,7 +4705,7 @@ declare namespace GObject {
      * the #GEnumClass for the enum
      * @field
      */
-    enum_class: EnumClass | null;
+    enum_class: EnumClass;
     /**
      * default value for the property specified
      * @field
@@ -4785,7 +4736,7 @@ declare namespace GObject {
      * the #GFlagsClass for the flags
      * @field
      */
-    flags_class: FlagsClass | null;
+    flags_class: FlagsClass;
     /**
      * default value for the property specified
      * @field
@@ -5286,7 +5237,7 @@ declare namespace GObject {
      * a #GParamSpec describing the elements contained in arrays of this property, may be %NULL
      * @field
      */
-    element_spec: ParamSpec | null;
+    element_spec: ParamSpec;
     /**
      * if greater than 0, arrays of this property will always have this many elements
      * @field
@@ -5316,12 +5267,12 @@ declare namespace GObject {
      * a #GVariantType, or %NULL
      * @field
      */
-    type: GLib.VariantType | null;
+    type: GLib.VariantType;
     /**
      * a #GVariant, or %NULL
      * @field
      */
-    default_value: GLib.Variant | null;
+    default_value: GLib.Variant;
   }
 
   /**
@@ -5405,7 +5356,7 @@ declare namespace GObject {
      */
     connect_closure(
       detailed_signal: string | null,
-      closure: TClosure | null,
+      closure: TClosure,
       after: boolean
     ): void;
     /**
@@ -5561,8 +5512,8 @@ declare namespace GObject {
 
     parent_instance: Object;
     use_count: number;
-    type_infos: any[] | null;
-    interface_infos: any[] | null;
+    type_infos: any[];
+    interface_infos: any[];
     /**
      * the name of the module
      * @field
@@ -5588,7 +5539,7 @@ declare namespace GObject {
     add_interface(
       instance_type: GType,
       interface_type: GType,
-      interface_info: InterfaceInfo | null
+      interface_info: InterfaceInfo
     ): void;
     /**
      * Looks up or registers an enumeration that is implemented with a particular
@@ -5605,10 +5556,7 @@ declare namespace GObject {
      * @param const_static_values an array of #GEnumValue structs for the                       possible enumeration values. The array is                       terminated by a struct with all members being                       0.
      * @returns the new or existing type ID
      */
-    register_enum(
-      name: string | null,
-      const_static_values: EnumValue | null
-    ): GType;
+    register_enum(name: string | null, const_static_values: EnumValue): GType;
     /**
      * Looks up or registers a flags type that is implemented with a particular
      * type plugin. If a type with name `type_name` was previously registered,
@@ -5624,10 +5572,7 @@ declare namespace GObject {
      * @param const_static_values an array of #GFlagsValue structs for the                       possible flags values. The array is                       terminated by a struct with all members being                       0.
      * @returns the new or existing type ID
      */
-    register_flags(
-      name: string | null,
-      const_static_values: FlagsValue | null
-    ): GType;
+    register_flags(name: string | null, const_static_values: FlagsValue): GType;
     /**
      * Looks up or registers a type that is implemented with a particular
      * type plugin. If a type with name `type_name` was previously registered,
@@ -5652,7 +5597,7 @@ declare namespace GObject {
     register_type(
       parent_type: GType,
       type_name: string | null,
-      type_info: TypeInfo | null,
+      type_info: TypeInfo,
       flags: TypeFlags
     ): GType;
     /**
@@ -5783,10 +5728,10 @@ declare namespace GObject {
      * @param marshal_data Additional data specified when registering the   marshaller, see g_closure_set_marshal() and   g_closure_set_meta_marshal()
      */
     static marshal_BOOLEAN__BOXED_BOXED(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5802,10 +5747,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_BOOLEAN__FLAGS(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5820,10 +5765,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_STRING__OBJECT_POINTER(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5838,10 +5783,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__BOOLEAN(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5856,10 +5801,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__BOXED(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5874,10 +5819,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__CHAR(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5892,10 +5837,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__DOUBLE(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5910,10 +5855,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__ENUM(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5928,10 +5873,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__FLAGS(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5946,10 +5891,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__FLOAT(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5964,10 +5909,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__INT(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -5982,10 +5927,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__LONG(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6000,10 +5945,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__OBJECT(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6018,10 +5963,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__PARAM(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6036,10 +5981,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__POINTER(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6054,10 +5999,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__STRING(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6072,10 +6017,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__UCHAR(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6090,10 +6035,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__UINT(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6108,10 +6053,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__UINT_POINTER(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6126,10 +6071,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__ULONG(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6144,10 +6089,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__VARIANT(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6162,10 +6107,10 @@ declare namespace GObject {
      * @param marshal_data additional data specified when registering the marshaller
      */
     static marshal_VOID__VOID(
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6183,10 +6128,10 @@ declare namespace GObject {
      * @param marshal_data Additional data specified when registering the   marshaller, see g_closure_set_marshal() and   g_closure_set_meta_marshal()
      */
     static marshal_generic(
-      closure: TClosure | null,
-      return_gvalue: any | null,
+      closure: TClosure,
+      return_gvalue: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any | null,
       marshal_data: any | null
     ): void;
@@ -6208,10 +6153,10 @@ declare namespace GObject {
      */
     is_invalid: number;
     marshal: (
-      closure: TClosure | null,
-      return_value: any | null,
+      closure: TClosure,
+      return_value: any,
       n_param_values: number,
-      param_values: any | null,
+      param_values: any,
       invocation_hint: any,
       marshal_data: any
     ) => void;
@@ -6244,13 +6189,13 @@ declare namespace GObject {
     invoke(
       param_values: any[],
       invocation_hint: any | null
-    ): /* return_value */ any | null;
+    ): /* return_value */ any;
     /**
      * Increments the reference count on a closure to force it staying
      * alive while the caller holds a pointer to it.
      * @returns The @closure passed in, for convenience
      */
-    ref(): TClosure | null;
+    ref(): TClosure;
     /**
      * Takes over the initial ownership of a closure.
      *
@@ -6381,7 +6326,7 @@ declare namespace GObject {
      * @param object a #GObject pointer to store in the `data` field of the newly  allocated #GClosure
      * @returns a newly allocated #GClosure
      */
-    static new_object(sizeof_closure: number, object: Object | null): Closure;
+    static new_object(sizeof_closure: number, object: Object): Closure;
     /**
      * Allocates a struct of the given size and initializes the initial
      * part as a #GClosure.
@@ -6471,7 +6416,7 @@ declare namespace GObject {
      *  individual values.
      * @field
      */
-    values: EnumValue | null;
+    values: EnumValue;
   }
 
   /**
@@ -6539,7 +6484,7 @@ declare namespace GObject {
      *  individual values.
      * @field
      */
-    values: FlagsValue | null;
+    values: FlagsValue;
   }
 
   /**
@@ -6593,26 +6538,26 @@ declare namespace GObject {
      */
     g_type_class: TypeClass;
     set_property: (
-      object: Object | null,
+      object: Object,
       property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
+      value: any,
+      pspec: ParamSpec
     ) => void;
     get_property: (
-      object: Object | null,
+      object: Object,
       property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
+      value: any,
+      pspec: ParamSpec
     ) => void;
-    dispose: (object: Object | null) => void;
-    finalize: (object: Object | null) => void;
+    dispose: (object: Object) => void;
+    finalize: (object: Object) => void;
     dispatch_properties_changed: (
-      object: Object | null,
+      object: Object,
       n_pspecs: number,
-      pspecs: ParamSpec | null
+      pspecs: ParamSpec
     ) => void;
-    notify: (object: Object | null, pspec: ParamSpec | null) => void;
-    constructed: (object: Object | null) => void;
+    notify: (object: Object, pspec: ParamSpec) => void;
+    constructed: (object: Object) => void;
   }
 
   /**
@@ -6665,26 +6610,26 @@ declare namespace GObject {
      */
     g_type_class: TypeClass;
     set_property: (
-      object: Object | null,
+      object: Object,
       property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
+      value: any,
+      pspec: ParamSpec
     ) => void;
     get_property: (
-      object: Object | null,
+      object: Object,
       property_id: number,
-      value: any | null,
-      pspec: ParamSpec | null
+      value: any,
+      pspec: ParamSpec
     ) => void;
-    dispose: (object: Object | null) => void;
-    finalize: (object: Object | null) => void;
+    dispose: (object: Object) => void;
+    finalize: (object: Object) => void;
     dispatch_properties_changed: (
-      object: Object | null,
+      object: Object,
       n_pspecs: number,
-      pspecs: ParamSpec | null
+      pspecs: ParamSpec
     ) => void;
-    notify: (object: Object | null, pspec: ParamSpec | null) => void;
-    constructed: (object: Object | null) => void;
+    notify: (object: Object, pspec: ParamSpec) => void;
+    constructed: (object: Object) => void;
 
     // Owm methods of GObject-2.0.GObject.ObjectClass
 
@@ -6696,7 +6641,7 @@ declare namespace GObject {
     find_property(
       oclass: Object | Function | GType,
       property_name: string | null
-    ): ParamSpec | null;
+    ): ParamSpec;
     /**
      * Installs new properties from an array of #GParamSpecs.
      *
@@ -6788,7 +6733,7 @@ declare namespace GObject {
     install_property(
       oclass: Object | Function | GType,
       property_id: number,
-      pspec: ParamSpec | null
+      pspec: ParamSpec
     ): void;
     /**
      * Get an array of #GParamSpec* for all properties of a class.
@@ -6866,12 +6811,12 @@ declare namespace GObject {
      * the #GParamSpec of the construct parameter
      * @field
      */
-    pspec: ParamSpec | null;
+    pspec: ParamSpec;
     /**
      * the value to set the parameter to
      * @field
      */
-    value: any | null;
+    value: any;
   }
 
   /**
@@ -6898,15 +6843,11 @@ declare namespace GObject {
      * @field
      */
     value_type: GType;
-    finalize: (pspec: ParamSpec | null) => void;
-    value_set_default: (pspec: ParamSpec | null, value: any | null) => void;
-    value_validate: (pspec: ParamSpec | null, value: any | null) => boolean;
-    values_cmp: (
-      pspec: ParamSpec | null,
-      value1: any | null,
-      value2: any | null
-    ) => number;
-    value_is_valid: (pspec: ParamSpec | null, value: any | null) => boolean;
+    finalize: (pspec: ParamSpec) => void;
+    value_set_default: (pspec: ParamSpec, value: any) => void;
+    value_validate: (pspec: ParamSpec, value: any) => boolean;
+    values_cmp: (pspec: ParamSpec, value1: any, value2: any) => number;
+    value_is_valid: (pspec: ParamSpec, value: any) => boolean;
   }
 
   /**
@@ -6929,7 +6870,7 @@ declare namespace GObject {
      * @param pspec the #GParamSpec to insert
      * @param owner_type a #GType identifying the owner of `pspec`
      */
-    insert(pspec: ParamSpec | null, owner_type: GType): void;
+    insert(pspec: ParamSpec, owner_type: GType): void;
     /**
      * Gets an array of all #GParamSpecs owned by `owner_type` in
      * the pool.
@@ -6943,7 +6884,7 @@ declare namespace GObject {
      * @param owner_type the owner to look for
      * @returns a          #GList of all #GParamSpecs owned by @owner_type in          the pool#GParamSpecs.
      */
-    list_owned(owner_type: GType): ParamSpec[] | null;
+    list_owned(owner_type: GType): ParamSpec[];
     /**
      * Looks up a #GParamSpec in the pool.
      * @param param_name the name to look for
@@ -6960,7 +6901,7 @@ declare namespace GObject {
      * Removes a #GParamSpec from the pool.
      * @param pspec the #GParamSpec to remove
      */
-    remove(pspec: ParamSpec | null): void;
+    remove(pspec: ParamSpec): void;
   }
 
   /**
@@ -6990,20 +6931,16 @@ declare namespace GObject {
      * @field
      */
     n_preallocs: number;
-    instance_init: (pspec: ParamSpec | null) => void;
+    instance_init: (pspec: ParamSpec) => void;
     /**
      * The #GType of values conforming to this #GParamSpec
      * @field
      */
     value_type: GType;
-    finalize: (pspec: ParamSpec | null) => void;
-    value_set_default: (pspec: ParamSpec | null, value: any | null) => void;
-    value_validate: (pspec: ParamSpec | null, value: any | null) => boolean;
-    values_cmp: (
-      pspec: ParamSpec | null,
-      value1: any | null,
-      value2: any | null
-    ) => number;
+    finalize: (pspec: ParamSpec) => void;
+    value_set_default: (pspec: ParamSpec, value: any) => void;
+    value_validate: (pspec: ParamSpec, value: any) => boolean;
+    values_cmp: (pspec: ParamSpec, value1: any, value2: any) => number;
   }
 
   /**
@@ -7251,7 +7188,7 @@ declare namespace GObject {
 
     static adjust_private_offset(
       g_class: any | null,
-      private_size_or_offset: number | null
+      private_size_or_offset: number
     ): void;
     /**
      * This function is essentially the same as g_type_class_ref(),
@@ -7361,7 +7298,7 @@ declare namespace GObject {
      *  of this type (usually only useful for fundamental types)
      * @field
      */
-    value_table: TypeValueTable | null;
+    value_table: TypeValueTable;
   }
 
   /**
@@ -7444,10 +7381,7 @@ declare namespace GObject {
      * @param interface_type #GType of an interface type
      * @returns the #GTypePlugin for the dynamic     interface @interface_type of @instance_type
      */
-    static get_plugin(
-      instance_type: GType,
-      interface_type: GType
-    ): TypePlugin | null;
+    static get_plugin(instance_type: GType, interface_type: GType): TypePlugin;
     /**
      * Returns the most specific instantiatable prerequisite of an
      * interface type. If the interface type has no instantiatable
@@ -7483,8 +7417,8 @@ declare namespace GObject {
      * @field
      */
     parent_class: ObjectClass;
-    load: (module: TypeModule | null) => boolean;
-    unload: (module: TypeModule | null) => void;
+    load: (module: TypeModule) => boolean;
+    unload: (module: TypeModule) => void;
     reserved1: () => void;
     reserved2: () => void;
     reserved3: () => void;
@@ -7582,10 +7516,10 @@ declare namespace GObject {
   interface TypeValueTable {
     // Own fields of GObject-2.0.GObject.TypeValueTable
 
-    value_init: (value: any | null) => void;
-    value_free: (value: any | null) => void;
-    value_copy: (src_value: any | null, dest_value: any | null) => void;
-    value_peek_pointer: (value: any | null) => any;
+    value_init: (value: any) => void;
+    value_free: (value: any) => void;
+    value_copy: (src_value: any, dest_value: any) => void;
+    value_peek_pointer: (value: any) => any;
     /**
      * A string format describing how to collect the contents of
      *  this value bit-by-bit. Each character in the format represents
@@ -7603,9 +7537,9 @@ declare namespace GObject {
      */
     collect_format: string | null;
     collect_value: (
-      value: any | null,
+      value: any,
       n_collect_values: number,
-      collect_values: TypeCValue | null,
+      collect_values: TypeCValue,
       collect_flags: number
     ) => string | null;
     /**
@@ -7616,9 +7550,9 @@ declare namespace GObject {
      */
     lcopy_format: string | null;
     lcopy_value: (
-      value: any | null,
+      value: any,
       n_collect_values: number,
-      collect_values: TypeCValue | null,
+      collect_values: TypeCValue,
       collect_flags: number
     ) => string | null;
   }
@@ -7645,7 +7579,7 @@ declare namespace GObject {
      * Copies the value of `src_value` into `dest_value`.
      * @param dest_value An initialized #GValue structure of the same type as `src_value`.
      */
-    copy(dest_value: any | null): void;
+    copy(dest_value: any): void;
     /**
      * Get the contents of a %G_TYPE_OBJECT derived #GValue, increasing
      * its reference count. If the contents of the #GValue are %NULL, then
@@ -7737,7 +7671,7 @@ declare namespace GObject {
      * Get the contents of a %G_TYPE_PARAM #GValue.
      * @returns #GParamSpec content of @value
      */
-    get_param(): ParamSpec | null;
+    get_param(): ParamSpec;
     /**
      * Get the contents of a pointer #GValue.
      * @returns pointer contents of @value
@@ -7783,7 +7717,7 @@ declare namespace GObject {
      * @param g_type Type the #GValue should hold values of.
      * @returns the #GValue structure that has been passed in
      */
-    init(g_type: GType): any | null;
+    init(g_type: GType): any;
     /**
      * Initializes and sets `value` from an instantiatable type via the
      * value_table's collect_value() function.
@@ -7807,7 +7741,7 @@ declare namespace GObject {
      * (as if the value had just been initialized).
      * @returns the #GValue structure that has been passed in
      */
-    reset(): any | null;
+    reset(): any;
     /**
      * Set the contents of a %G_TYPE_BOOLEAN #GValue to `v_boolean`.
      * @param v_boolean boolean value to be set
@@ -8004,7 +7938,7 @@ declare namespace GObject {
      * @param dest_value Target value.
      * @returns Whether a transformation rule was found and could be applied.  Upon failing transformations, @dest_value is left untouched.
      */
-    transform(dest_value: any | null): boolean;
+    transform(dest_value: any): boolean;
     /**
      * Clears the current value in `value` (if any) and "unsets" the type,
      * this releases all resources associated with this GValue. An unset
@@ -8066,7 +8000,7 @@ declare namespace GObject {
      * array of values
      * @field
      */
-    values: any | null;
+    values: any;
 
     // Owm methods of GObject-2.0.GObject.ValueArray
 
@@ -8076,19 +8010,19 @@ declare namespace GObject {
      * @param value #GValue to copy into #GValueArray, or %NULL
      * @returns the #GValueArray passed in as @value_array
      */
-    append(value: any | null): ValueArray | null;
+    append(value: any | null): ValueArray;
     /**
      * Construct an exact copy of a #GValueArray by duplicating all its
      * contents.
      * @returns Newly allocated copy of #GValueArray
      */
-    copy(): ValueArray | null;
+    copy(): ValueArray;
     /**
      * Return a pointer to the value at `index_` containd in `value_array`.
      * @param index_ index of the value of interest
      * @returns pointer to a value at @index_ in @value_array
      */
-    get_nth(index_: number): any | null;
+    get_nth(index_: number): any;
     /**
      * Insert a copy of `value` at specified position into `value_array`. If `value`
      * is %NULL, an uninitialized value is inserted.
@@ -8096,20 +8030,20 @@ declare namespace GObject {
      * @param value #GValue to copy into #GValueArray, or %NULL
      * @returns the #GValueArray passed in as @value_array
      */
-    insert(index_: number, value: any | null): ValueArray | null;
+    insert(index_: number, value: any | null): ValueArray;
     /**
      * Insert a copy of `value` as first element of `value_array`. If `value` is
      * %NULL, an uninitialized value is prepended.
      * @param value #GValue to copy into #GValueArray, or %NULL
      * @returns the #GValueArray passed in as @value_array
      */
-    prepend(value: any | null): ValueArray | null;
+    prepend(value: any | null): ValueArray;
     /**
      * Remove the value at position `index_` from `value_array`.
      * @param index_ position of value to remove, which must be less than     `value_array->`n_values
      * @returns the #GValueArray passed in as @value_array
      */
-    remove(index_: number): ValueArray | null;
+    remove(index_: number): ValueArray;
     /**
      * Sort `value_array` using `compare_func` to compare the elements according
      * to the semantics of #GCompareDataFunc.
@@ -8119,7 +8053,7 @@ declare namespace GObject {
      * @param compare_func function to compare elements
      * @returns the #GValueArray passed in as @value_array
      */
-    sort(compare_func: GLib.CompareDataFunc): ValueArray | null;
+    sort(compare_func: GLib.CompareDataFunc): ValueArray;
   }
 
   /**

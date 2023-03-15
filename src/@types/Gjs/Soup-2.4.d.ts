@@ -1582,10 +1582,7 @@ declare namespace Soup {
    * @param origin origin of the cookie, or %NULL
    * @returns a new #SoupCookie, or %NULL if it could not be parsed, or contained an illegal "domain" attribute for a cookie originating from @origin.
    */
-  function cookie_parse(
-    header: string | null,
-    origin: URI | null
-  ): Cookie | null;
+  function cookie_parse(header: string | null, origin: URI): Cookie | null;
   /**
    * Parses `msg'`s Cookie request header and returns a #GSList of
    * #SoupCookie<!-- -->s. As the "Cookie" header, unlike "Set-Cookie",
@@ -1596,7 +1593,7 @@ declare namespace Soup {
    * @param msg a #SoupMessage containing a "Cookie" request header
    * @returns a #GSList of #SoupCookie<!-- -->s, which can be freed with soup_cookies_free().
    */
-  function cookies_from_request(msg: Message | null): Cookie[] | null;
+  function cookies_from_request(msg: Message): Cookie[];
   /**
    * Parses `msg'`s Set-Cookie response headers and returns a #GSList of
    * #SoupCookie<!-- -->s. Cookies that do not specify "path" or
@@ -1604,14 +1601,14 @@ declare namespace Soup {
    * @param msg a #SoupMessage containing a "Set-Cookie" response header
    * @returns a #GSList of #SoupCookie<!-- -->s, which can be freed with soup_cookies_free().
    */
-  function cookies_from_response(msg: Message | null): Cookie[] | null;
+  function cookies_from_response(msg: Message): Cookie[];
   /**
    * Serializes a #GSList of #SoupCookie into a string suitable for
    * setting as the value of the "Cookie" header.
    * @param cookies a #GSList of #SoupCookie
    * @returns the serialization of @cookies
    */
-  function cookies_to_cookie_header(cookies: Cookie[] | null): string | null;
+  function cookies_to_cookie_header(cookies: Cookie[]): string | null;
   /**
    * Adds the name and value of each cookie in `cookies` to `msg'`s
    * "Cookie" request. (If `msg` already has a "Cookie" request header,
@@ -1621,10 +1618,7 @@ declare namespace Soup {
    * @param cookies a #GSList of #SoupCookie
    * @param msg a #SoupMessage
    */
-  function cookies_to_request(
-    cookies: Cookie[] | null,
-    msg: Message | null
-  ): void;
+  function cookies_to_request(cookies: Cookie[], msg: Message): void;
   /**
    * Appends a "Set-Cookie" response header to `msg` for each cookie in
    * `cookies`. (This is in addition to any other "Set-Cookie" headers
@@ -1632,17 +1626,14 @@ declare namespace Soup {
    * @param cookies a #GSList of #SoupCookie
    * @param msg a #SoupMessage
    */
-  function cookies_to_response(
-    cookies: Cookie[] | null,
-    msg: Message | null
-  ): void;
+  function cookies_to_response(cookies: Cookie[], msg: Message): void;
   /**
    * Decodes `form,` which is an urlencoded dataset as defined in the
    * HTML 4.01 spec.
    * @param encoded_form data of type "application/x-www-form-urlencoded"
    * @returns a hash table containing the name/value pairs from @encoded_form, which you can free with g_hash_table_destroy().
    */
-  function form_decode(encoded_form: string | null): GLib.HashTable | null;
+  function form_decode(encoded_form: string | null): GLib.HashTable;
   /**
    * Decodes the "multipart/form-data" request in `msg;` this is a
    * convenience method for the case when you have a single file upload
@@ -1668,13 +1659,13 @@ declare namespace Soup {
    * @returns  a hash table containing the name/value pairs (other than @file_control_name) from @msg, which you can free with g_hash_table_destroy(). On error, it will return %NULL.
    */
   function form_decode_multipart(
-    msg: Message | null,
+    msg: Message,
     file_control_name: string | null
   ): [
     /* returnType */ GLib.HashTable | null,
     /* filename */ string | null,
     /* content_type */ string | null,
-    /* file */ Buffer | null
+    /* file */ Buffer
   ];
   /**
    * Encodes `form_data_set` into a value of type
@@ -1684,7 +1675,7 @@ declare namespace Soup {
    * @param form_data_set a datalist containing name/value pairs
    * @returns the encoded form
    */
-  function form_encode_datalist(form_data_set: GLib.Data | null): string | null;
+  function form_encode_datalist(form_data_set: GLib.Data): string | null;
   /**
    * Encodes `form_data_set` into a value of type
    * "application/x-www-form-urlencoded", as defined in the HTML 4.01
@@ -1697,9 +1688,7 @@ declare namespace Soup {
    * @param form_data_set a hash table containing name/value pairs (as strings)
    * @returns the encoded form
    */
-  function form_encode_hash(
-    form_data_set: GLib.HashTable | null
-  ): string | null;
+  function form_encode_hash(form_data_set: GLib.HashTable): string | null;
   /**
    * Creates a new %SoupMessage and sets it up to send `form_data_set` to
    * `uri` via `method,` as with soup_form_request_new().
@@ -1711,8 +1700,8 @@ declare namespace Soup {
   function form_request_new_from_datalist(
     method: string | null,
     uri: string | null,
-    form_data_set: GLib.Data | null
-  ): Message | null;
+    form_data_set: GLib.Data
+  ): Message;
   /**
    * Creates a new %SoupMessage and sets it up to send `form_data_set` to
    * `uri` via `method,` as with soup_form_request_new().
@@ -1724,8 +1713,8 @@ declare namespace Soup {
   function form_request_new_from_hash(
     method: string | null,
     uri: string | null,
-    form_data_set: GLib.HashTable | null
-  ): Message | null;
+    form_data_set: GLib.HashTable
+  ): Message;
   /**
    * Creates a new %SoupMessage and sets it up to send `multipart` to
    * `uri` via POST.
@@ -1745,8 +1734,8 @@ declare namespace Soup {
    */
   function form_request_new_from_multipart(
     uri: string | null,
-    multipart: Multipart | null
-  ): Message | null;
+    multipart: Multipart
+  ): Message;
   /**
    * Returns the major version number of the libsoup library.
    * (e.g. in libsoup version 2.42.0 this is 2.)
@@ -1780,7 +1769,7 @@ declare namespace Soup {
    * @returns the minor version number of the libsoup library
    */
   function get_minor_version(): number;
-  function get_resource(): Gio.Resource | null;
+  function get_resource(): Gio.Resource;
   /**
    * Parses `header` to see if it contains the token `token` (matched
    * case-insensitively). Note that this can't be used with lists
@@ -1797,7 +1786,7 @@ declare namespace Soup {
    * Frees `param_list`.
    * @param param_list a #GHashTable returned from soup_header_parse_param_list() or soup_header_parse_semi_param_list()
    */
-  function header_free_param_list(param_list: GLib.HashTable | null): void;
+  function header_free_param_list(param_list: GLib.HashTable): void;
   /**
    * Appends something like <literal>`name=``value<`/literal> to `string,`
    * taking care to quote `value` if needed, and if so, to escape any
@@ -1815,7 +1804,7 @@ declare namespace Soup {
    * @param value a parameter value, or %NULL
    */
   function header_g_string_append_param(
-    string: GLib.String | null,
+    string: GLib.String,
     name: string | null,
     value: string | null
   ): void;
@@ -1830,7 +1819,7 @@ declare namespace Soup {
    * @param value a parameter value
    */
   function header_g_string_append_param_quoted(
-    string: GLib.String | null,
+    string: GLib.String,
     name: string | null,
     value: string | null
   ): void;
@@ -1841,7 +1830,7 @@ declare namespace Soup {
    * @param header a header value
    * @returns a #GSList of list elements, as allocated strings
    */
-  function header_parse_list(header: string | null): string[] | null;
+  function header_parse_list(header: string | null): string[];
   /**
    * Parses a header which is a comma-delimited list of something like:
    * <literal>token [ "=" ( token | quoted-string ) ]</literal>.
@@ -1855,9 +1844,7 @@ declare namespace Soup {
    * @param header a header value
    * @returns a #GHashTable of list elements, which can be freed with soup_header_free_param_list().
    */
-  function header_parse_param_list(
-    header: string | null
-  ): GLib.HashTable | null;
+  function header_parse_param_list(header: string | null): GLib.HashTable;
   /**
    * A strict version of soup_header_parse_param_list()
    * that bails out if there are duplicate parameters.
@@ -1885,7 +1872,7 @@ declare namespace Soup {
    */
   function header_parse_quality_list(
     header: string | null
-  ): [/* returnType */ string[] | null, /* unacceptable */ string[] | null];
+  ): [/* returnType */ string[], /* unacceptable */ string[]];
   /**
    * Parses a header which is a semicolon-delimited list of something
    * like: <literal>token [ "=" ( token | quoted-string ) ]</literal>.
@@ -1899,9 +1886,7 @@ declare namespace Soup {
    * @param header a header value
    * @returns a #GHashTable of list elements, which can be freed with soup_header_free_param_list().
    */
-  function header_parse_semi_param_list(
-    header: string | null
-  ): GLib.HashTable | null;
+  function header_parse_semi_param_list(header: string | null): GLib.HashTable;
   /**
    * A strict version of soup_header_parse_semi_param_list()
    * that bails out if there are duplicate parameters.
@@ -1931,7 +1916,7 @@ declare namespace Soup {
   function headers_parse(
     str: string | null,
     len: number,
-    dest: MessageHeaders | null
+    dest: MessageHeaders
   ): boolean;
   /**
    * Parses the headers of an HTTP request in `str` and stores the
@@ -1946,12 +1931,12 @@ declare namespace Soup {
   function headers_parse_request(
     str: string | null,
     len: number,
-    req_headers: MessageHeaders | null
+    req_headers: MessageHeaders
   ): [
     /* returnType */ number,
     /* req_method */ string | null,
     /* req_path */ string | null,
-    /* ver */ HTTPVersion | null
+    /* ver */ HTTPVersion
   ];
   /**
    * Parses the headers of an HTTP response in `str` and stores the
@@ -1966,11 +1951,11 @@ declare namespace Soup {
   function headers_parse_response(
     str: string | null,
     len: number,
-    headers: MessageHeaders | null
+    headers: MessageHeaders
   ): [
     /* returnType */ boolean,
-    /* ver */ HTTPVersion | null,
-    /* status_code */ number | null,
+    /* ver */ HTTPVersion,
+    /* status_code */ number,
     /* reason_phrase */ string | null
   ];
   /**
@@ -1984,8 +1969,8 @@ declare namespace Soup {
     status_line: string | null
   ): [
     /* returnType */ boolean,
-    /* ver */ HTTPVersion | null,
-    /* status_code */ number | null,
+    /* ver */ HTTPVersion,
+    /* status_code */ number,
     /* reason_phrase */ string | null
   ];
   function http_error_quark(): GLib.Quark;
@@ -1994,8 +1979,8 @@ declare namespace Soup {
    * @param hdrs a %SoupMessageHeaders
    */
   function message_headers_iter_init(
-    hdrs: MessageHeaders | null
-  ): /* iter */ MessageHeadersIter | null;
+    hdrs: MessageHeaders
+  ): /* iter */ MessageHeadersIter;
   function request_error_quark(): GLib.Quark;
   function requester_error_quark(): GLib.Quark;
   /**
@@ -2121,7 +2106,7 @@ declare namespace Soup {
    * g_value_array_new(), for naming consistency purposes.)
    * @returns a new %GValueArray
    */
-  function value_array_new(): GObject.ValueArray | null;
+  function value_array_new(): GObject.ValueArray;
   /**
    * Inserts `value` into `hash`. (Unlike with g_hash_table_insert(), both
    * the key and the value are copied).
@@ -2130,16 +2115,16 @@ declare namespace Soup {
    * @param value a value
    */
   function value_hash_insert_value(
-    hash: GLib.HashTable | null,
+    hash: GLib.HashTable,
     key: string | null,
-    value: any | null
+    value: any
   ): void;
   /**
    * Creates a #GHashTable whose keys are strings and whose values
    * are #GValue.
    * @returns a new empty #GHashTable
    */
-  function value_hash_new(): GLib.HashTable | null;
+  function value_hash_new(): GLib.HashTable;
   /**
    * Adds the necessary headers to `msg` to request a WebSocket
    * handshake. The message body and non-WebSocket-related headers are
@@ -2156,7 +2141,7 @@ declare namespace Soup {
    * @param protocols list of   protocols to offer
    */
   function websocket_client_prepare_handshake(
-    msg: Message | null,
+    msg: Message,
     origin: string | null,
     protocols: string[] | null
   ): void;
@@ -2175,7 +2160,7 @@ declare namespace Soup {
    * @param supported_extensions list   of supported extension types
    */
   function websocket_client_prepare_handshake_with_extensions(
-    msg: Message | null,
+    msg: Message,
     origin: string | null,
     protocols: string[] | null,
     supported_extensions: GObject.TypeClass[] | null
@@ -2196,7 +2181,7 @@ declare namespace Soup {
    * @param msg #SoupMessage containing both client and server sides of a   WebSocket handshake
    * @returns %TRUE if @msg contains a completed valid WebSocket   handshake, %FALSE and an error if not.
    */
-  function websocket_client_verify_handshake(msg: Message | null): boolean;
+  function websocket_client_verify_handshake(msg: Message): boolean;
   /**
    * Looks at the response status code and headers in `msg` and
    * determines if they contain a valid WebSocket handshake response
@@ -2214,12 +2199,9 @@ declare namespace Soup {
    * @returns %TRUE if @msg contains a completed valid WebSocket   handshake, %FALSE and an error if not.
    */
   function websocket_client_verify_handshake_with_extensions(
-    msg: Message | null,
+    msg: Message,
     supported_extensions: GObject.TypeClass[] | null
-  ): [
-    /* returnType */ boolean,
-    /* accepted_extensions */ WebsocketExtension[] | null
-  ];
+  ): [/* returnType */ boolean, /* accepted_extensions */ WebsocketExtension[]];
   function websocket_error_get_quark(): GLib.Quark;
   /**
    * Examines the method and request headers in `msg` and determines
@@ -2248,7 +2230,7 @@ declare namespace Soup {
    * @returns %TRUE if @msg contained a valid WebSocket handshake,   %FALSE and an error if not.
    */
   function websocket_server_check_handshake(
-    msg: Message | null,
+    msg: Message,
     origin: string | null,
     protocols: string[] | null
   ): boolean;
@@ -2277,7 +2259,7 @@ declare namespace Soup {
    * @returns %TRUE if @msg contained a valid WebSocket handshake,   %FALSE and an error if not.
    */
   function websocket_server_check_handshake_with_extensions(
-    msg: Message | null,
+    msg: Message,
     origin: string | null,
     protocols: string[] | null,
     supported_extensions: GObject.TypeClass[] | null
@@ -2307,7 +2289,7 @@ declare namespace Soup {
    * @returns %TRUE if @msg contained a valid WebSocket handshake   request and was updated to contain a handshake response. %FALSE if not.
    */
   function websocket_server_process_handshake(
-    msg: Message | null,
+    msg: Message,
     expected_origin: string | null,
     protocols: string[] | null
   ): boolean;
@@ -2334,14 +2316,11 @@ declare namespace Soup {
    * @returns %TRUE if @msg contained a valid WebSocket handshake   request and was updated to contain a handshake response. %FALSE if not.
    */
   function websocket_server_process_handshake_with_extensions(
-    msg: Message | null,
+    msg: Message,
     expected_origin: string | null,
     protocols: string[] | null,
     supported_extensions: GObject.TypeClass[] | null
-  ): [
-    /* returnType */ boolean,
-    /* accepted_extensions */ WebsocketExtension[] | null
-  ];
+  ): [/* returnType */ boolean, /* accepted_extensions */ WebsocketExtension[]];
   /**
    * This creates an XML-RPC methodCall and returns it as a string.
    * This is the low-level method that soup_xmlrpc_request_new() is
@@ -2383,7 +2362,7 @@ declare namespace Soup {
    * @param value the return value
    * @returns the text of the methodResponse, or %NULL on error
    */
-  function xmlrpc_build_method_response(value: any | null): string | null;
+  function xmlrpc_build_method_response(value: any): string | null;
   /**
    * This creates an XML-RPC methodCall and returns it as a string.
    * This is the low-level method that soup_xmlrpc_message_new() is
@@ -2414,7 +2393,7 @@ declare namespace Soup {
    */
   function xmlrpc_build_request(
     method_name: string | null,
-    params: GLib.Variant | null
+    params: GLib.Variant
   ): string | null;
   /**
    * This creates a (successful) XML-RPC methodResponse and returns it
@@ -2429,7 +2408,7 @@ declare namespace Soup {
    * @param value the return value
    * @returns the text of the methodResponse, or %NULL on error.
    */
-  function xmlrpc_build_response(value: GLib.Variant | null): string | null;
+  function xmlrpc_build_response(value: GLib.Variant): string | null;
   function xmlrpc_error_quark(): GLib.Quark;
   function xmlrpc_fault_quark(): GLib.Quark;
   /**
@@ -2447,8 +2426,8 @@ declare namespace Soup {
   function xmlrpc_message_new(
     uri: string | null,
     method_name: string | null,
-    params: GLib.Variant | null
-  ): Message | null;
+    params: GLib.Variant
+  ): Message;
   /**
    * Sets the status code and response body of `msg` to indicate a
    * successful XML-RPC call, with a return value given by `value`. To set a
@@ -2462,8 +2441,8 @@ declare namespace Soup {
    * @returns %TRUE on success, %FALSE otherwise.
    */
   function xmlrpc_message_set_response(
-    msg: Message | null,
-    value: GLib.Variant | null
+    msg: Message,
+    value: GLib.Variant
   ): boolean;
   /**
    * Parses `method_call` to get the name and parameters, and returns the
@@ -2480,7 +2459,7 @@ declare namespace Soup {
   ): [
     /* returnType */ boolean,
     /* method_name */ string | null,
-    /* params */ GObject.ValueArray | null
+    /* params */ GObject.ValueArray
   ];
   /**
    * Parses `method_response` and returns the return value in `value`. If
@@ -2497,7 +2476,7 @@ declare namespace Soup {
   function xmlrpc_parse_method_response(
     method_response: string | null,
     length: number
-  ): [/* returnType */ boolean, /* value */ any | null];
+  ): [/* returnType */ boolean, /* value */ any];
   /**
    * Parses `method_call` and return the method name. Method parameters can be
    * parsed later using soup_xmlrpc_params_parse().
@@ -2508,7 +2487,7 @@ declare namespace Soup {
   function xmlrpc_parse_request(
     method_call: string | null,
     length: number
-  ): [/* returnType */ string | null, /* params */ XMLRPCParams | null];
+  ): [/* returnType */ string | null, /* params */ XMLRPCParams];
   /**
    * Parses `method_response` and returns the return value. If
    * `method_response` is a fault, %NULL is returned, and `error`
@@ -2527,7 +2506,7 @@ declare namespace Soup {
     method_response: string | null,
     length: number,
     signature: string | null
-  ): GLib.Variant | null;
+  ): GLib.Variant;
   /**
    * Get the #SoupDate from special #GVariant created by
    * soup_xmlrpc_variant_new_datetime() or by parsing a &lt;dateTime.iso8601&gt;
@@ -2539,9 +2518,7 @@ declare namespace Soup {
    * @param variant a #GVariant
    * @returns a new #SoupDate, or %NULL on error.
    */
-  function xmlrpc_variant_get_datetime(
-    variant: GLib.Variant | null
-  ): Date | null;
+  function xmlrpc_variant_get_datetime(variant: GLib.Variant): Date;
   /**
    * Construct a special #GVariant used to serialize a &lt;dateTime.iso8601&gt;
    * node. See soup_xmlrpc_build_request().
@@ -2554,7 +2531,7 @@ declare namespace Soup {
    * @param date a #SoupDate
    * @returns a floating #GVariant.
    */
-  function xmlrpc_variant_new_datetime(date: Date | null): GLib.Variant | null;
+  function xmlrpc_variant_new_datetime(date: Date): GLib.Variant;
   /**
    * The callback function passed to soup_address_resolve_async().
    * @callback
@@ -2562,7 +2539,7 @@ declare namespace Soup {
    * @param status %SOUP_STATUS_OK, %SOUP_STATUS_CANT_RESOLVE, or %SOUP_STATUS_CANCELLED
    */
   interface AddressCallback {
-    (addr: Address | null, status: number): void;
+    (addr: Address, status: number): void;
   }
   /**
    * Callback used by #SoupAuthDomainBasic for authentication purposes.
@@ -2588,8 +2565,8 @@ declare namespace Soup {
    */
   interface AuthDomainBasicAuthCallback {
     (
-      domain: AuthDomainBasic | null,
-      msg: Message | null,
+      domain: AuthDomainBasic,
+      msg: Message,
       username: string | null,
       password: string | null
     ): boolean;
@@ -2606,11 +2583,9 @@ declare namespace Soup {
    * @returns the encoded password, or %NULL if @username is not a valid user. @domain will free the password when it is done with it.
    */
   interface AuthDomainDigestAuthCallback {
-    (
-      domain: AuthDomainDigest | null,
-      msg: Message | null,
-      username: string | null
-    ): string | null;
+    (domain: AuthDomainDigest, msg: Message, username: string | null):
+      | string
+      | null;
   }
   /**
    * The prototype for a #SoupAuthDomain filter; see
@@ -2621,7 +2596,7 @@ declare namespace Soup {
    * @returns %TRUE if @msg requires authentication, %FALSE if not.
    */
   interface AuthDomainFilter {
-    (domain: AuthDomain | null, msg: Message | null): boolean;
+    (domain: AuthDomain, msg: Message): boolean;
   }
   /**
    * The prototype for a #SoupAuthDomain generic authentication callback.
@@ -2647,11 +2622,7 @@ declare namespace Soup {
    * @returns %TRUE if @msg is authenticated, %FALSE if not.
    */
   interface AuthDomainGenericAuthCallback {
-    (
-      domain: AuthDomain | null,
-      msg: Message | null,
-      username: string | null
-    ): boolean;
+    (domain: AuthDomain, msg: Message, username: string | null): boolean;
   }
   /**
    * The prototype for a chunk allocation callback. This should allocate
@@ -2675,7 +2646,7 @@ declare namespace Soup {
    * @returns the new buffer (or %NULL)
    */
   interface ChunkAllocator {
-    (msg: Message | null, max_len: number): Buffer | null;
+    (msg: Message, max_len: number): Buffer | null;
   }
   /**
    * The prototype for a logging filter. The filter callback will be
@@ -2689,7 +2660,7 @@ declare namespace Soup {
    * @returns a #SoupLoggerLogLevel value indicating how much of the message to log
    */
   interface LoggerFilter {
-    (logger: Logger | null, msg: Message | null): LoggerLogLevel;
+    (logger: Logger, msg: Message): LoggerLogLevel;
   }
   /**
    * The prototype for a custom printing callback.
@@ -2713,7 +2684,7 @@ declare namespace Soup {
    */
   interface LoggerPrinter {
     (
-      logger: Logger | null,
+      logger: Logger,
       level: LoggerLogLevel,
       direction: number,
       data: string | null
@@ -2730,18 +2701,18 @@ declare namespace Soup {
   }
   interface PasswordManagerCallback {
     (
-      password_manager: PasswordManager | null,
-      msg: Message | null,
-      auth: Auth | null,
+      password_manager: PasswordManager,
+      msg: Message,
+      auth: Auth,
       retrying: boolean
     ): void;
   }
   interface ProxyResolverCallback {
     (
-      proxy_resolver: ProxyResolver | null,
-      msg: Message | null,
+      proxy_resolver: ProxyResolver,
+      msg: Message,
       arg: number,
-      addr: Address | null
+      addr: Address
     ): void;
   }
   /**
@@ -2752,11 +2723,7 @@ declare namespace Soup {
    * @param proxy_uri the resolved proxy URI, or %NULL
    */
   interface ProxyURIResolverCallback {
-    (
-      resolver: ProxyURIResolver | null,
-      status: number,
-      proxy_uri: URI | null
-    ): void;
+    (resolver: ProxyURIResolver, status: number, proxy_uri: URI): void;
   }
   /**
    * A callback used to handle requests to a #SoupServer.
@@ -2791,11 +2758,11 @@ declare namespace Soup {
    */
   interface ServerCallback {
     (
-      server: Server | null,
-      msg: Message | null,
+      server: Server,
+      msg: Message,
       path: string | null,
       query: GLib.HashTable | null,
-      client: ClientContext | null
+      client: ClientContext
     ): void;
   }
   /**
@@ -2814,10 +2781,10 @@ declare namespace Soup {
    */
   interface ServerWebsocketCallback {
     (
-      server: Server | null,
-      connection: WebsocketConnection | null,
+      server: Server,
+      connection: WebsocketConnection,
       path: string | null,
-      client: ClientContext | null
+      client: ClientContext
     ): void;
   }
   /**
@@ -2828,7 +2795,7 @@ declare namespace Soup {
    * @param msg the message that has finished
    */
   interface SessionCallback {
-    (session: Session | null, msg: Message | null): void;
+    (session: Session, msg: Message): void;
   }
   /**
    * Prototype for the progress callback passed to soup_session_connect_async().
@@ -2839,9 +2806,9 @@ declare namespace Soup {
    */
   interface SessionConnectProgressCallback {
     (
-      session: Session | null,
+      session: Session,
       event: Gio.SocketClientEvent,
-      connection: Gio.IOStream | null
+      connection: Gio.IOStream
     ): void;
   }
   /**
@@ -2851,7 +2818,7 @@ declare namespace Soup {
    * @param status an HTTP status code indicating success or failure
    */
   interface SocketCallback {
-    (sock: Socket | null, status: number): void;
+    (sock: Socket, status: number): void;
   }
   module PasswordManager {
     // Constructor properties interface
@@ -2865,32 +2832,32 @@ declare namespace Soup {
     // Owm methods of Soup-2.4.Soup.PasswordManager
 
     get_passwords_async(
-      msg: Message | null,
-      auth: Auth | null,
+      msg: Message,
+      auth: Auth,
       retrying: boolean,
-      async_context: GLib.MainContext | null,
+      async_context: GLib.MainContext,
       cancellable: Gio.Cancellable | null,
       callback: PasswordManagerCallback
     ): void;
     get_passwords_sync(
-      msg: Message | null,
-      auth: Auth | null,
+      msg: Message,
+      auth: Auth,
       cancellable: Gio.Cancellable | null
     ): void;
 
     // Own virtual methods of Soup-2.4.Soup.PasswordManager
 
     vfunc_get_passwords_async(
-      msg: Message | null,
-      auth: Auth | null,
+      msg: Message,
+      auth: Auth,
       retrying: boolean,
-      async_context: GLib.MainContext | null,
+      async_context: GLib.MainContext,
       cancellable: Gio.Cancellable | null,
       callback: PasswordManagerCallback
     ): void;
     vfunc_get_passwords_sync(
-      msg: Message | null,
-      auth: Auth | null,
+      msg: Message,
+      auth: Auth,
       cancellable: Gio.Cancellable | null
     ): void;
 
@@ -2926,28 +2893,28 @@ declare namespace Soup {
     // Owm methods of Soup-2.4.Soup.ProxyResolver
 
     get_proxy_async(
-      msg: Message | null,
-      async_context: GLib.MainContext | null,
+      msg: Message,
+      async_context: GLib.MainContext,
       cancellable: Gio.Cancellable | null,
       callback: ProxyResolverCallback
     ): void;
     get_proxy_sync(
-      msg: Message | null,
+      msg: Message,
       cancellable: Gio.Cancellable | null
-    ): [/* returnType */ number, /* addr */ Address | null];
+    ): [/* returnType */ number, /* addr */ Address];
 
     // Own virtual methods of Soup-2.4.Soup.ProxyResolver
 
     vfunc_get_proxy_async(
-      msg: Message | null,
-      async_context: GLib.MainContext | null,
+      msg: Message,
+      async_context: GLib.MainContext,
       cancellable: Gio.Cancellable | null,
       callback: ProxyResolverCallback
     ): void;
     vfunc_get_proxy_sync(
-      msg: Message | null,
+      msg: Message,
       cancellable: Gio.Cancellable | null
-    ): [/* returnType */ number, /* addr */ Address | null];
+    ): [/* returnType */ number, /* addr */ Address];
 
     // Class property signals of Soup-2.4.Soup.ProxyResolver
 
@@ -2989,7 +2956,7 @@ declare namespace Soup {
      * @param callback callback to invoke with the proxy address
      */
     get_proxy_uri_async(
-      uri: URI | null,
+      uri: URI,
       async_context: GLib.MainContext | null,
       cancellable: Gio.Cancellable | null,
       callback: ProxyURIResolverCallback
@@ -3003,9 +2970,9 @@ declare namespace Soup {
      * @returns %SOUP_STATUS_OK if successful, or a transport-level error.
      */
     get_proxy_uri_sync(
-      uri: URI | null,
+      uri: URI,
       cancellable: Gio.Cancellable | null
-    ): [/* returnType */ number, /* proxy_uri */ URI | null];
+    ): [/* returnType */ number, /* proxy_uri */ URI];
 
     // Own virtual methods of Soup-2.4.Soup.ProxyURIResolver
 
@@ -3019,7 +2986,7 @@ declare namespace Soup {
      * @param callback callback to invoke with the proxy address
      */
     vfunc_get_proxy_uri_async(
-      uri: URI | null,
+      uri: URI,
       async_context: GLib.MainContext | null,
       cancellable: Gio.Cancellable | null,
       callback: ProxyURIResolverCallback
@@ -3034,9 +3001,9 @@ declare namespace Soup {
      * @returns %SOUP_STATUS_OK if successful, or a transport-level error.
      */
     vfunc_get_proxy_uri_sync(
-      uri: URI | null,
+      uri: URI,
       cancellable: Gio.Cancellable | null
-    ): [/* returnType */ number, /* proxy_uri */ URI | null];
+    ): [/* returnType */ number, /* proxy_uri */ URI];
 
     // Class property signals of Soup-2.4.Soup.ProxyURIResolver
 
@@ -3061,7 +3028,8 @@ declare namespace Soup {
   module SessionFeature {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties
+    interface ConstructorProperties
+      extends GObject.Object.ConstructorProperties {}
   }
 
   interface SessionFeature {
@@ -3076,8 +3044,8 @@ declare namespace Soup {
      * @returns %TRUE if @feature accepted @type as a subfeature.
      */
     add_feature(type: GObject.GType): boolean;
-    attach(session: Session | null): void;
-    detach(session: Session | null): void;
+    attach(session: Session): void;
+    detach(session: Session): void;
     /**
      * Tests if `feature` has a "sub-feature" of type `type`. See
      * soup_session_feature_add_feature().
@@ -3105,8 +3073,8 @@ declare namespace Soup {
      * @returns %TRUE if @feature accepted @type as a subfeature.
      */
     vfunc_add_feature(type: GObject.GType): boolean;
-    vfunc_attach(session: Session | null): void;
-    vfunc_detach(session: Session | null): void;
+    vfunc_attach(session: Session): void;
+    vfunc_detach(session: Session): void;
     /**
      * Tests if `feature` has a "sub-feature" of type `type`. See
      * soup_session_feature_add_feature().
@@ -3123,13 +3091,9 @@ declare namespace Soup {
      * @returns %TRUE if @type was removed from @feature
      */
     vfunc_remove_feature(type: GObject.GType): boolean;
-    vfunc_request_queued(session: Session | null, msg: Message | null): void;
-    vfunc_request_started(
-      session: Session | null,
-      msg: Message | null,
-      socket: Socket | null
-    ): void;
-    vfunc_request_unqueued(session: Session | null, msg: Message | null): void;
+    vfunc_request_queued(session: Session, msg: Message): void;
+    vfunc_request_started(session: Session, msg: Message, socket: Socket): void;
+    vfunc_request_unqueued(session: Session, msg: Message): void;
 
     // Class property signals of Soup-2.4.Soup.SessionFeature
 
@@ -3236,7 +3200,7 @@ declare namespace Soup {
      * to only have one socket address associated with it).
      * @returns a new #GSocketAddress
      */
-    get_gsockaddr(): Gio.SocketAddress | null;
+    get_gsockaddr(): Gio.SocketAddress;
     /**
      * Returns the hostname associated with `addr`.
      *
@@ -3273,7 +3237,7 @@ declare namespace Soup {
      * is resolved before fetching its name or address.
      * @returns the sockaddr, or %NULL
      */
-    get_sockaddr(): [/* returnType */ any | null, /* len */ number | null];
+    get_sockaddr(): [/* returnType */ any | null, /* len */ number];
     /**
      * A hash function (for #GHashTable) that corresponds to
      * soup_address_equal_by_ip(), qv
@@ -3497,7 +3461,7 @@ declare namespace Soup {
      * @param msg the #SoupMessage to be authorized
      * @returns the "Authorization" header, which must be freed.
      */
-    get_authorization(msg: Message | null): string | null;
+    get_authorization(msg: Message): string | null;
     /**
      * Returns the host that `auth` is associated with.
      * @returns the hostname
@@ -3519,7 +3483,7 @@ declare namespace Soup {
      * @param source_uri the URI of the request that `auth` was generated in response to.
      * @returns the list of paths, which can be freed with soup_auth_free_protection_space().
      */
-    get_protection_space(source_uri: URI | null): string[] | null;
+    get_protection_space(source_uri: URI): string[];
     /**
      * Returns `auth'`s realm. This is an identifier that distinguishes
      * separate authentication spaces on a given server, and may be some
@@ -3529,7 +3493,7 @@ declare namespace Soup {
      */
     get_realm(): string | null;
     get_saved_password(user: string | null): string | null;
-    get_saved_users(): string[] | null;
+    get_saved_users(): string[];
     /**
      * Returns `auth'`s scheme name. (Eg, "Basic", "Digest", or "NTLM")
      * @returns the scheme name
@@ -3544,7 +3508,7 @@ declare namespace Soup {
      * @param msg a #SoupMessage
      * @returns %TRUE if @auth is ready to make a request with.
      */
-    is_ready(msg: Message | null): boolean;
+    is_ready(msg: Message): boolean;
     save_password(username: string | null, password: string | null): void;
     /**
      * Updates `auth` with the information from `msg` and `auth_header,`
@@ -3554,7 +3518,7 @@ declare namespace Soup {
      * @param auth_header the WWW-Authenticate/Proxy-Authenticate header
      * @returns %TRUE if @auth is still a valid (but potentially unauthenticated) #SoupAuth. %FALSE if something about @auth_params could not be parsed or incorporated into @auth at all.
      */
-    update(msg: Message | null, auth_header: string | null): boolean;
+    update(msg: Message, auth_header: string | null): boolean;
 
     // Own virtual methods of Soup-2.4.Soup.Auth
 
@@ -3581,7 +3545,7 @@ declare namespace Soup {
      * @param msg the #SoupMessage to be authorized
      * @returns the "Authorization" header, which must be freed.
      */
-    vfunc_get_authorization(msg: Message | null): string | null;
+    vfunc_get_authorization(msg: Message): string | null;
     /**
      * Returns a list of paths on the server which `auth` extends over.
      * (All subdirectories of these paths are also assumed to be part
@@ -3591,7 +3555,7 @@ declare namespace Soup {
      * @param source_uri the URI of the request that `auth` was generated in response to.
      * @returns the list of paths, which can be freed with soup_auth_free_protection_space().
      */
-    vfunc_get_protection_space(source_uri: URI | null): string[] | null;
+    vfunc_get_protection_space(source_uri: URI): string[];
     /**
      * Tests if `auth` has been given a username and password
      * @virtual
@@ -3607,7 +3571,7 @@ declare namespace Soup {
      * @param msg a #SoupMessage
      * @returns %TRUE if @auth is ready to make a request with.
      */
-    vfunc_is_ready(msg: Message | null): boolean;
+    vfunc_is_ready(msg: Message): boolean;
     /**
      * Updates `auth` with the information from `msg` and `auth_header,`
      * possibly un-authenticating it. As with soup_auth_new(), this is
@@ -3617,10 +3581,7 @@ declare namespace Soup {
      * @param auth_header the WWW-Authenticate/Proxy-Authenticate header
      * @returns %TRUE if @auth is still a valid (but potentially unauthenticated) #SoupAuth. %FALSE if something about @auth_params could not be parsed or incorporated into @auth at all.
      */
-    vfunc_update(
-      msg: Message | null,
-      auth_header: GLib.HashTable | null
-    ): boolean;
+    vfunc_update(msg: Message, auth_header: GLib.HashTable): boolean;
 
     // Class property signals of Soup-2.4.Soup.Auth
 
@@ -3694,11 +3655,7 @@ declare namespace Soup {
      * @param auth_header the WWW-Authenticate/Proxy-Authenticate header
      * @returns the new #SoupAuth, or %NULL if it could not be created
      */
-    constructor(
-      type: GObject.GType,
-      msg: Message | null,
-      auth_header: string | null
-    );
+    constructor(type: GObject.GType, msg: Message, auth_header: string | null);
     /**
      * Creates a new #SoupAuth of type `type` with the information from
      * `msg` and `auth_header`.
@@ -3713,7 +3670,7 @@ declare namespace Soup {
      */
     static new(
       type: GObject.GType,
-      msg: Message | null,
+      msg: Message,
       auth_header: string | null
     ): Auth;
     _init(config?: Auth.ConstructorProperties): void;
@@ -3722,7 +3679,7 @@ declare namespace Soup {
   module AuthBasic {
     // Constructor properties interface
 
-    type ConstructorProperties = Auth.ConstructorProperties
+    interface ConstructorProperties extends Auth.ConstructorProperties {}
   }
 
   interface AuthBasic {
@@ -3785,7 +3742,7 @@ declare namespace Soup {
   module AuthDigest {
     // Constructor properties interface
 
-    type ConstructorProperties = Auth.ConstructorProperties
+    interface ConstructorProperties extends Auth.ConstructorProperties {}
   }
 
   interface AuthDigest {
@@ -3904,7 +3861,7 @@ declare namespace Soup {
      * @param msg a #SoupMessage
      * @returns the username that @msg has authenticated as, if in fact it has authenticated. %NULL otherwise.
      */
-    accepts(msg: Message | null): string | null;
+    accepts(msg: Message): string | null;
     /**
      * Adds a "WWW-Authenticate" or "Proxy-Authenticate" header to `msg,`
      * requesting that the client authenticate, and sets `msg'`s status
@@ -3914,7 +3871,7 @@ declare namespace Soup {
      * anyone else.
      * @param msg a #SoupMessage
      */
-    challenge(msg: Message | null): void;
+    challenge(msg: Message): void;
     /**
      * Checks if `msg` authenticates to `domain` via `username` and
      * `password`. This would normally be called from a
@@ -3925,7 +3882,7 @@ declare namespace Soup {
      * @returns whether or not the message is authenticated
      */
     check_password(
-      msg: Message | null,
+      msg: Message,
       username: string | null,
       password: string | null
     ): boolean;
@@ -3940,7 +3897,7 @@ declare namespace Soup {
      * @param msg a #SoupMessage
      * @returns %TRUE if @domain requires @msg to be authenticated
      */
-    covers(msg: Message | null): boolean;
+    covers(msg: Message): boolean;
     /**
      * Gets the realm name associated with `domain`
      * @returns @domain's realm
@@ -3986,14 +3943,11 @@ declare namespace Soup {
     set_generic_auth_callback(
       auth_callback: AuthDomainGenericAuthCallback
     ): void;
-    try_generic_auth_callback(
-      msg: Message | null,
-      username: string | null
-    ): boolean;
+    try_generic_auth_callback(msg: Message, username: string | null): boolean;
 
     // Own virtual methods of Soup-2.4.Soup.AuthDomain
 
-    vfunc_accepts(msg: Message | null, header: string | null): string | null;
+    vfunc_accepts(msg: Message, header: string | null): string | null;
     /**
      * Adds a "WWW-Authenticate" or "Proxy-Authenticate" header to `msg,`
      * requesting that the client authenticate, and sets `msg'`s status
@@ -4004,7 +3958,7 @@ declare namespace Soup {
      * @virtual
      * @param msg a #SoupMessage
      */
-    vfunc_challenge(msg: Message | null): string | null;
+    vfunc_challenge(msg: Message): string | null;
     /**
      * Checks if `msg` authenticates to `domain` via `username` and
      * `password`. This would normally be called from a
@@ -4016,7 +3970,7 @@ declare namespace Soup {
      * @returns whether or not the message is authenticated
      */
     vfunc_check_password(
-      msg: Message | null,
+      msg: Message,
       username: string | null,
       password: string | null
     ): boolean;
@@ -4476,7 +4430,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.AuthManager
 
     parent: GObject.Object;
-    priv: AuthManagerPrivate | null;
+    priv: AuthManagerPrivate;
 
     // Owm methods of Soup-2.4.Soup.AuthManager
 
@@ -4497,15 +4451,11 @@ declare namespace Soup {
      * @param uri the #SoupURI under which `auth` is to be used
      * @param auth the #SoupAuth to use
      */
-    use_auth(uri: URI | null, auth: Auth | null): void;
+    use_auth(uri: URI, auth: Auth): void;
 
     // Own virtual methods of Soup-2.4.Soup.AuthManager
 
-    vfunc_authenticate(
-      msg: Message | null,
-      auth: Auth | null,
-      retrying: boolean
-    ): void;
+    vfunc_authenticate(msg: Message, auth: Auth, retrying: boolean): void;
 
     // Own signals of Soup-2.4.Soup.AuthManager
 
@@ -4548,7 +4498,7 @@ declare namespace Soup {
   module AuthNTLM {
     // Constructor properties interface
 
-    type ConstructorProperties = Auth.ConstructorProperties
+    interface ConstructorProperties extends Auth.ConstructorProperties {}
   }
 
   interface AuthNTLM {
@@ -4611,7 +4561,7 @@ declare namespace Soup {
   module AuthNegotiate {
     // Constructor properties interface
 
-    type ConstructorProperties = Auth.ConstructorProperties
+    interface ConstructorProperties extends Auth.ConstructorProperties {}
   }
 
   interface AuthNegotiate {
@@ -4700,7 +4650,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.Cache
 
     parent_instance: GObject.Object;
-    priv: CachePrivate | null;
+    priv: CachePrivate;
 
     // Owm methods of Soup-2.4.Soup.Cache
 
@@ -4743,7 +4693,7 @@ declare namespace Soup {
 
     // Own virtual methods of Soup-2.4.Soup.Cache
 
-    vfunc_get_cacheability(msg: Message | null): Cacheability;
+    vfunc_get_cacheability(msg: Message): Cacheability;
 
     // Class property signals of Soup-2.4.Soup.Cache
 
@@ -4811,7 +4761,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.ContentDecoder
 
     parent: GObject.Object;
-    priv: ContentDecoderPrivate | null;
+    priv: ContentDecoderPrivate;
 
     // Class property signals of Soup-2.4.Soup.ContentDecoder
 
@@ -4845,7 +4795,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.ContentSniffer
 
     parent: GObject.Object;
-    priv: ContentSnifferPrivate | null;
+    priv: ContentSnifferPrivate;
 
     // Owm methods of Soup-2.4.Soup.ContentSniffer
 
@@ -4864,9 +4814,9 @@ declare namespace Soup {
      * @returns the sniffed Content-Type of @buffer; this will never be %NULL,   but may be "application/octet-stream".
      */
     sniff(
-      msg: Message | null,
-      buffer: Buffer | null
-    ): [/* returnType */ string | null, /* params */ GLib.HashTable | null];
+      msg: Message,
+      buffer: Buffer
+    ): [/* returnType */ string | null, /* params */ GLib.HashTable];
 
     // Own virtual methods of Soup-2.4.Soup.ContentSniffer
 
@@ -4887,9 +4837,9 @@ declare namespace Soup {
      * @returns the sniffed Content-Type of @buffer; this will never be %NULL,   but may be "application/octet-stream".
      */
     vfunc_sniff(
-      msg: Message | null,
-      buffer: Buffer | null
-    ): [/* returnType */ string | null, /* params */ GLib.HashTable | null];
+      msg: Message,
+      buffer: Buffer
+    ): [/* returnType */ string | null, /* params */ GLib.HashTable];
 
     // Class property signals of Soup-2.4.Soup.ContentSniffer
 
@@ -4971,7 +4921,7 @@ declare namespace Soup {
      * `cookie` will be 'stolen' by the jar, so don't free it afterwards.
      * @param cookie a #SoupCookie
      */
-    add_cookie(cookie: Cookie | null): void;
+    add_cookie(cookie: Cookie): void;
     /**
      * Adds `cookie` to `jar,` emitting the 'changed' signal if we are modifying
      * an existing cookie or adding a valid new cookie ('valid' means
@@ -4989,7 +4939,7 @@ declare namespace Soup {
      * @param first_party the URI for the main document
      */
     add_cookie_full(
-      cookie: Cookie | null,
+      cookie: Cookie,
       uri: URI | null,
       first_party: URI | null
     ): void;
@@ -5008,22 +4958,19 @@ declare namespace Soup {
      * @param first_party the URI for the main document
      * @param cookie a #SoupCookie
      */
-    add_cookie_with_first_party(
-      first_party: URI | null,
-      cookie: Cookie | null
-    ): void;
+    add_cookie_with_first_party(first_party: URI, cookie: Cookie): void;
     /**
      * Constructs a #GSList with every cookie inside the `jar`.
      * The cookies in the list are a copy of the original, so
      * you have to free them when you are done with them.
      * @returns a #GSList with all the cookies in the @jar.
      */
-    all_cookies(): Cookie[] | null;
+    all_cookies(): Cookie[];
     /**
      * Deletes `cookie` from `jar,` emitting the 'changed' signal.
      * @param cookie a #SoupCookie
      */
-    delete_cookie(cookie: Cookie | null): void;
+    delete_cookie(cookie: Cookie): void;
     /**
      * Gets `jar'`s #SoupCookieJarAcceptPolicy
      * @returns the #SoupCookieJarAcceptPolicy set in the @jar
@@ -5044,7 +4991,7 @@ declare namespace Soup {
      * @param for_http whether or not the return value is being passed directly to an HTTP operation
      * @returns a #GSList with the cookies in the @jar that would be sent with a request to @uri.
      */
-    get_cookie_list(uri: URI | null, for_http: boolean): Cookie[] | null;
+    get_cookie_list(uri: URI, for_http: boolean): Cookie[];
     /**
      * This is an extended version of soup_cookie_jar_get_cookie_list() that
      * provides more information required to use SameSite cookies. See the
@@ -5059,13 +5006,13 @@ declare namespace Soup {
      * @returns a #GSList with the cookies in the @jar that would be sent with a request to @uri.
      */
     get_cookie_list_with_same_site_info(
-      uri: URI | null,
+      uri: URI,
       top_level: URI | null,
       site_for_cookies: URI | null,
       for_http: boolean,
       is_safe_method: boolean,
       is_top_level_navigation: boolean
-    ): Cookie[] | null;
+    ): Cookie[];
     /**
      * Retrieves (in Cookie-header form) the list of cookies that would
      * be sent with a request to `uri`.
@@ -5081,7 +5028,7 @@ declare namespace Soup {
      * @param for_http whether or not the return value is being passed directly to an HTTP operation
      * @returns the cookies, in string form, or %NULL if there are no cookies for @uri.
      */
-    get_cookies(uri: URI | null, for_http: boolean): string | null;
+    get_cookies(uri: URI, for_http: boolean): string | null;
     /**
      * Gets whether `jar` stores cookies persistenly.
      * @returns %TRUE if @jar storage is persistent or %FALSE otherwise.
@@ -5111,7 +5058,7 @@ declare namespace Soup {
      * @param uri the URI setting the cookie
      * @param cookie the stringified cookie to set
      */
-    set_cookie(uri: URI | null, cookie: string | null): void;
+    set_cookie(uri: URI, cookie: string | null): void;
     /**
      * Adds `cookie` to `jar,` exactly as though it had appeared in a
      * Set-Cookie header returned from a request to `uri`. `first_party`
@@ -5122,14 +5069,14 @@ declare namespace Soup {
      * @param cookie the stringified cookie to set
      */
     set_cookie_with_first_party(
-      uri: URI | null,
-      first_party: URI | null,
+      uri: URI,
+      first_party: URI,
       cookie: string | null
     ): void;
 
     // Own virtual methods of Soup-2.4.Soup.CookieJar
 
-    vfunc_changed(old_cookie: Cookie | null, new_cookie: Cookie | null): void;
+    vfunc_changed(old_cookie: Cookie, new_cookie: Cookie): void;
     /**
      * Gets whether `jar` stores cookies persistenly.
      * @virtual
@@ -5461,7 +5408,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.HSTSEnforcer
 
     parent: GObject.Object;
-    priv: HSTSEnforcerPrivate | null;
+    priv: HSTSEnforcerPrivate;
 
     // Owm methods of Soup-2.4.Soup.HSTSEnforcer
 
@@ -5470,13 +5417,13 @@ declare namespace Soup {
      * @param session_policies whether to include session policies
      * @returns a newly allocated list of domains. Use g_list_free_full() and g_free() to free the list.
      */
-    get_domains(session_policies: boolean): string[] | null;
+    get_domains(session_policies: boolean): string[];
     /**
      * Gets a list with the policies in `enforcer`.
      * @param session_policies whether to include session policies
      * @returns a newly allocated list of policies. Use g_list_free_full() and soup_hsts_policy_free() to free the list.
      */
-    get_policies(session_policies: boolean): HSTSPolicy[] | null;
+    get_policies(session_policies: boolean): HSTSPolicy[];
     /**
      * Gets whether `hsts_enforcer` has a currently valid policy for `domain`.
      * @param domain a domain.
@@ -5498,7 +5445,7 @@ declare namespace Soup {
      * `hsts_enforcer'`s #SoupSession.
      * @param policy the policy of the HSTS host
      */
-    set_policy(policy: HSTSPolicy | null): void;
+    set_policy(policy: HSTSPolicy): void;
     /**
      * Sets a session policy for `domain`. A session policy is a policy
      * that is permanent to the lifetime of `hsts_enforcer'`s #SoupSession
@@ -5513,10 +5460,7 @@ declare namespace Soup {
 
     // Own virtual methods of Soup-2.4.Soup.HSTSEnforcer
 
-    vfunc_changed(
-      old_policy: HSTSPolicy | null,
-      new_policy: HSTSPolicy | null
-    ): void;
+    vfunc_changed(old_policy: HSTSPolicy, new_policy: HSTSPolicy): void;
     /**
      * Gets whether `hsts_enforcer` has a currently valid policy for `domain`.
      * @virtual
@@ -5524,7 +5468,7 @@ declare namespace Soup {
      * @returns %TRUE if access to @domain should happen over HTTPS, false otherwise.
      */
     vfunc_has_valid_policy(domain: string | null): boolean;
-    vfunc_hsts_enforced(message: Message | null): void;
+    vfunc_hsts_enforced(message: Message): void;
     /**
      * Gets whether `hsts_enforcer` stores policies persistenly.
      * @virtual
@@ -5740,12 +5684,12 @@ declare namespace Soup {
      * destroyed.)
      * @param session a #SoupSession
      */
-    attach(session: Session | null): void;
+    attach(session: Session): void;
     /**
      * Stops `logger` from watching `session`.
      * @param session a #SoupSession
      */
-    detach(session: Session | null): void;
+    detach(session: Session): void;
     /**
      * Sets up an alternate log printing routine, if you don't want
      * the log to go to <literal>stdout</literal>.
@@ -6034,29 +5978,26 @@ declare namespace Soup {
      * the request body
      * @field
      */
-    request_body: MessageBody | null;
+    request_body: MessageBody;
     /**
      * the request headers
      * @field
      */
-    request_headers: MessageHeaders | null;
+    request_headers: MessageHeaders;
     /**
      * the response body
      * @field
      */
-    response_body: MessageBody | null;
+    response_body: MessageBody;
     /**
      * the response headers
      * @field
      */
-    response_headers: MessageHeaders | null;
+    response_headers: MessageHeaders;
 
     // Owm methods of Soup-2.4.Soup.Message
 
-    content_sniffed(
-      content_type: string | null,
-      params: GLib.HashTable | null
-    ): void;
+    content_sniffed(content_type: string | null, params: GLib.HashTable): void;
     /**
      * This disables the actions of #SoupSessionFeature<!-- -->s with the
      * given `feature_type` (or a subclass of that type) on `msg,` so that
@@ -6078,12 +6019,12 @@ declare namespace Soup {
      * session will resolve it before sending the message.
      * @returns the address @msg's URI points to
      */
-    get_address(): Address | null;
+    get_address(): Address;
     /**
      * Gets `msg'`s first-party #SoupURI
      * @returns the @msg's first party #SoupURI
      */
-    get_first_party(): URI | null;
+    get_first_party(): URI;
     /**
      * Gets the flags on `msg`
      * @returns the flags
@@ -6108,8 +6049,8 @@ declare namespace Soup {
      */
     get_https_status(): [
       /* returnType */ boolean,
-      /* certificate */ Gio.TlsCertificate | null,
-      /* errors */ Gio.TlsCertificateFlags | null
+      /* certificate */ Gio.TlsCertificate,
+      /* errors */ Gio.TlsCertificateFlags
     ];
     get_is_top_level_navigation(): boolean;
     /**
@@ -6122,20 +6063,20 @@ declare namespace Soup {
      * Gets `msg'`s site for cookies #SoupURI
      * @returns the @msg's site for cookies #SoupURI
      */
-    get_site_for_cookies(): URI | null;
+    get_site_for_cookies(): URI;
     /**
      * If `msg` is associated with a #SoupRequest, this returns that
      * request. Otherwise it returns %NULL.
      * @returns @msg's associated #SoupRequest
      */
-    get_soup_request(): Request | null;
+    get_soup_request(): Request;
     /**
      * Gets `msg'`s URI
      * @returns the URI @msg is targeted for.
      */
-    get_uri(): URI | null;
+    get_uri(): URI;
     got_body(): void;
-    got_chunk(chunk: Buffer | null): void;
+    got_chunk(chunk: Buffer): void;
     got_headers(): void;
     got_informational(): void;
     /**
@@ -6192,7 +6133,7 @@ declare namespace Soup {
      * #SoupCookieJarAcceptPolicy.
      * @param first_party the #SoupURI for the `msg'`s first party
      */
-    set_first_party(first_party: URI | null): void;
+    set_first_party(first_party: URI): void;
     /**
      * Sets the specified flags on `msg`.
      * @param flags a set of #SoupMessageFlags values
@@ -6294,10 +6235,10 @@ declare namespace Soup {
      * soup_session_requeue_message().
      * @param uri the new #SoupURI
      */
-    set_uri(uri: URI | null): void;
+    set_uri(uri: URI): void;
     starting(): void;
     wrote_body(): void;
-    wrote_body_data(chunk: Buffer | null): void;
+    wrote_body_data(chunk: Buffer): void;
     wrote_chunk(): void;
     wrote_headers(): void;
     wrote_informational(): void;
@@ -6306,7 +6247,7 @@ declare namespace Soup {
 
     vfunc_finished(): void;
     vfunc_got_body(): void;
-    vfunc_got_chunk(chunk: Buffer | null): void;
+    vfunc_got_chunk(chunk: Buffer): void;
     vfunc_got_headers(): void;
     vfunc_got_informational(): void;
     vfunc_restarted(): void;
@@ -6646,7 +6587,7 @@ declare namespace Soup {
      * @param uri the destination endpoint (as a #SoupURI)
      * @returns the new #SoupMessage
      */
-    static new_from_uri(method: string | null, uri: URI | null): Message;
+    static new_from_uri(method: string | null, uri: URI): Message;
     _init(config?: Message.ConstructorProperties): void;
   }
 
@@ -6723,7 +6664,7 @@ declare namespace Soup {
      * @param result a #GAsyncResult.
      * @returns a newly created #GInputStream for reading the next part or %NULL if there are no more parts.
      */
-    next_part_finish(result: Gio.AsyncResult | null): Gio.InputStream | null;
+    next_part_finish(result: Gio.AsyncResult): Gio.InputStream | null;
 
     // Class property signals of Soup-2.4.Soup.MultipartInputStream
 
@@ -6771,7 +6712,7 @@ declare namespace Soup {
      * @param base_stream the #GInputStream returned by sending the request.
      * @returns a new #SoupMultipartInputStream
      */
-    constructor(msg: Message | null, base_stream: Gio.InputStream | null);
+    constructor(msg: Message, base_stream: Gio.InputStream);
     /**
      * Creates a new #SoupMultipartInputStream that wraps the
      * #GInputStream obtained by sending the #SoupRequest. Reads should
@@ -6784,8 +6725,8 @@ declare namespace Soup {
      * @returns a new #SoupMultipartInputStream
      */
     static new(
-      msg: Message | null,
-      base_stream: Gio.InputStream | null
+      msg: Message,
+      base_stream: Gio.InputStream
     ): MultipartInputStream;
     _init(config?: MultipartInputStream.ConstructorProperties): void;
   }
@@ -6875,7 +6816,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.Request
 
     parent: GObject.Object;
-    priv: RequestPrivate | null;
+    priv: RequestPrivate;
 
     // Owm methods of Soup-2.4.Soup.Request
 
@@ -6900,12 +6841,12 @@ declare namespace Soup {
      * Gets `request'`s #SoupSession
      * @returns @request's #SoupSession
      */
-    get_session(): Session | null;
+    get_session(): Session;
     /**
      * Gets `request'`s URI
      * @returns @request's URI
      */
-    get_uri(): URI | null;
+    get_uri(): URI;
     /**
      * Synchronously requests the URI pointed to by `request,` and returns
      * a #GInputStream that can be used to read its contents.
@@ -6915,7 +6856,7 @@ declare namespace Soup {
      * @param cancellable a #GCancellable or %NULL
      * @returns a #GInputStream that can be used to   read from the URI pointed to by @request.
      */
-    send(cancellable: Gio.Cancellable | null): Gio.InputStream | null;
+    send(cancellable: Gio.Cancellable | null): Gio.InputStream;
     /**
      * Begins an asynchronously request for the URI pointed to by
      * `request`.
@@ -6934,11 +6875,11 @@ declare namespace Soup {
      * @param result the #GAsyncResult
      * @returns a #GInputStream that can be used to   read from the URI pointed to by @request.
      */
-    send_finish(result: Gio.AsyncResult | null): Gio.InputStream | null;
+    send_finish(result: Gio.AsyncResult): Gio.InputStream;
 
     // Own virtual methods of Soup-2.4.Soup.Request
 
-    vfunc_check_uri(uri: URI | null): boolean;
+    vfunc_check_uri(uri: URI): boolean;
     /**
      * Gets the length of the data represented by `request`. For most
      * request types, this will not be known until after you call
@@ -6968,7 +6909,7 @@ declare namespace Soup {
      * @param cancellable a #GCancellable or %NULL
      * @returns a #GInputStream that can be used to   read from the URI pointed to by @request.
      */
-    vfunc_send(cancellable: Gio.Cancellable | null): Gio.InputStream | null;
+    vfunc_send(cancellable: Gio.Cancellable | null): Gio.InputStream;
     /**
      * Begins an asynchronously request for the URI pointed to by
      * `request`.
@@ -6989,7 +6930,7 @@ declare namespace Soup {
      * @param result the #GAsyncResult
      * @returns a #GInputStream that can be used to   read from the URI pointed to by @request.
      */
-    vfunc_send_finish(result: Gio.AsyncResult | null): Gio.InputStream | null;
+    vfunc_send_finish(result: Gio.AsyncResult): Gio.InputStream;
 
     // Class property signals of Soup-2.4.Soup.Request
 
@@ -7105,7 +7046,7 @@ declare namespace Soup {
      * Gets a #GFile corresponding to `file'`s URI
      * @returns a #GFile corresponding to @file
      */
-    get_file(): Gio.File | null;
+    get_file(): Gio.File;
 
     // Class property signals of Soup-2.4.Soup.RequestFile
 
@@ -7165,7 +7106,7 @@ declare namespace Soup {
      * Gets a new reference to the #SoupMessage associated to this SoupRequest
      * @returns a new reference to the #SoupMessage
      */
-    get_message(): Message | null;
+    get_message(): Message;
 
     // Class property signals of Soup-2.4.Soup.RequestHTTP
 
@@ -7217,12 +7158,12 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.Requester
 
     parent: GObject.Object;
-    priv: RequesterPrivate | null;
+    priv: RequesterPrivate;
 
     // Owm methods of Soup-2.4.Soup.Requester
 
-    request(uri_string: string | null): Request | null;
-    request_uri(uri: URI | null): Request | null;
+    request(uri_string: string | null): Request;
+    request_uri(uri: URI): Request;
 
     // Class property signals of Soup-2.4.Soup.Requester
 
@@ -7506,7 +7447,7 @@ declare namespace Soup {
      * @returns %TRUE on success, %FALSE if the stream could not be accepted or any other error occurred (in which case @error will be set).
      */
     accept_iostream(
-      stream: Gio.IOStream | null,
+      stream: Gio.IOStream,
       local_addr: Gio.SocketAddress | null,
       remote_addr: Gio.SocketAddress | null
     ): boolean;
@@ -7524,7 +7465,7 @@ declare namespace Soup {
      * request body is sent.
      * @param auth_domain a #SoupAuthDomain
      */
-    add_auth_domain(auth_domain: AuthDomain | null): void;
+    add_auth_domain(auth_domain: AuthDomain): void;
     /**
      * Adds an "early" handler to `server` for requests under `path`. Note
      * that "normal" and "early" handlers are matched up together, so if
@@ -7672,7 +7613,7 @@ declare namespace Soup {
      * modifiying it may cause `server` to malfunction.
      * @returns the listening socket.
      */
-    get_listener(): Socket | null;
+    get_listener(): Socket;
     /**
      * Gets `server'`s list of listening sockets.
      *
@@ -7683,7 +7624,7 @@ declare namespace Soup {
      * function returns #GSockets, not #SoupSockets.)
      * @returns a list of listening sockets.
      */
-    get_listeners(): Gio.Socket[] | null;
+    get_listeners(): Gio.Socket[];
     /**
      * Gets the TCP port that `server` is listening on, if you are using
      * the old API.
@@ -7701,7 +7642,7 @@ declare namespace Soup {
      * for each interface on the system.
      * @returns a list of #SoupURIs, which you must free when you are done with it.
      */
-    get_uris(): URI[] | null;
+    get_uris(): URI[];
     /**
      * Checks whether `server` is capable of https.
      *
@@ -7743,10 +7684,7 @@ declare namespace Soup {
      * @param options listening options for this server
      * @returns %TRUE on success, %FALSE if @address could not be bound or any other error occurred (in which case @error will be set).
      */
-    listen(
-      address: Gio.SocketAddress | null,
-      options: ServerListenOptions
-    ): boolean;
+    listen(address: Gio.SocketAddress, options: ServerListenOptions): boolean;
     /**
      * This attempts to set up `server` to listen for connections on all
      * interfaces on the system. (That is, it listens on the addresses
@@ -7801,10 +7739,7 @@ declare namespace Soup {
      * @param options listening options for this server
      * @returns %TRUE on success, %FALSE if an error occurred (in which case @error will be set).
      */
-    listen_socket(
-      socket: Gio.Socket | null,
-      options: ServerListenOptions
-    ): boolean;
+    listen_socket(socket: Gio.Socket, options: ServerListenOptions): boolean;
     /**
      * Pauses I/O on `msg`. This can be used when you need to return from
      * the server handler without having the full response ready yet. Use
@@ -7815,7 +7750,7 @@ declare namespace Soup {
      * #SoupServerCallback or emitted in a #SoupServer::request-read signal.
      * @param msg a #SoupMessage associated with `server`.
      */
-    pause_message(msg: Message | null): void;
+    pause_message(msg: Message): void;
     /**
      * Stops processing for `server,` if you are using the old API. Call
      * this to clean up after soup_server_run_async(), or to terminate a
@@ -7833,7 +7768,7 @@ declare namespace Soup {
      * Removes `auth_domain` from `server`.
      * @param auth_domain a #SoupAuthDomain
      */
-    remove_auth_domain(auth_domain: AuthDomain | null): void;
+    remove_auth_domain(auth_domain: AuthDomain): void;
     /**
      * Removes all handlers (early and normal) registered at `path`.
      * @param path the toplevel path for the handler
@@ -7893,23 +7828,14 @@ declare namespace Soup {
      * #SoupServerCallback or emitted in a #SoupServer::request-read signal.
      * @param msg a #SoupMessage associated with `server`.
      */
-    unpause_message(msg: Message | null): void;
+    unpause_message(msg: Message): void;
 
     // Own virtual methods of Soup-2.4.Soup.Server
 
-    vfunc_request_aborted(
-      msg: Message | null,
-      client: ClientContext | null
-    ): void;
-    vfunc_request_finished(
-      msg: Message | null,
-      client: ClientContext | null
-    ): void;
-    vfunc_request_read(msg: Message | null, client: ClientContext | null): void;
-    vfunc_request_started(
-      msg: Message | null,
-      client: ClientContext | null
-    ): void;
+    vfunc_request_aborted(msg: Message, client: ClientContext): void;
+    vfunc_request_finished(msg: Message, client: ClientContext): void;
+    vfunc_request_read(msg: Message, client: ClientContext): void;
+    vfunc_request_started(msg: Message, client: ClientContext): void;
 
     // Own signals of Soup-2.4.Soup.Server
 
@@ -8676,7 +8602,7 @@ declare namespace Soup {
      * features are present in sessions by default.
      * @param feature an object that implements #SoupSessionFeature
      */
-    add_feature(feature: SessionFeature | null): void;
+    add_feature(feature: SessionFeature): void;
     /**
      * If `feature_type` is the type of a class that implements
      * #SoupSessionFeature, this creates a new feature of that type and
@@ -8722,7 +8648,7 @@ declare namespace Soup {
      * @param msg the message to cancel
      * @param status_code status code to set on `msg` (generally %SOUP_STATUS_CANCELLED)
      */
-    cancel_message(msg: Message | null, status_code: number): void;
+    cancel_message(msg: Message, status_code: number): void;
     /**
      * Start a connection to `uri`. The operation can be monitored by providing a `progress_callback`
      * and finishes when the connection is done or an error ocurred.
@@ -8734,7 +8660,7 @@ declare namespace Soup {
      * @param callback the callback to invoke when the operation finishes
      */
     connect_async(
-      uri: URI | null,
+      uri: URI,
       cancellable: Gio.Cancellable | null,
       progress_callback: SessionConnectProgressCallback | null,
       callback: Gio.AsyncReadyCallback<this> | null
@@ -8744,7 +8670,7 @@ declare namespace Soup {
      * @param result the #GAsyncResult passed to your callback
      * @returns a new #GIOStream, or %NULL on error.
      */
-    connect_finish(result: Gio.AsyncResult | null): Gio.IOStream | null;
+    connect_finish(result: Gio.AsyncResult): Gio.IOStream;
     /**
      * Gets `session'`s #SoupSession:async-context. This does not add a ref
      * to the context, so you will need to ref it yourself if you want it
@@ -8777,7 +8703,7 @@ declare namespace Soup {
      */
     get_feature_for_message(
       feature_type: GObject.GType,
-      msg: Message | null
+      msg: Message
     ): SessionFeature | null;
     /**
      * Generates a list of `session'`s features of type `feature_type`. (If
@@ -8786,7 +8712,7 @@ declare namespace Soup {
      * @param feature_type the #GType of the class of features to get
      * @returns  a list of features. You must free the list, but not its contents
      */
-    get_features(feature_type: GObject.GType): SessionFeature[] | null;
+    get_features(feature_type: GObject.GType): SessionFeature[];
     /**
      * Tests if `session` has at a feature of type `feature_type` (which can
      * be the type of either a #SoupSessionFeature, or else a subtype of
@@ -8804,7 +8730,7 @@ declare namespace Soup {
      * #SoupSessionAsync or using soup_session_queue_message()).
      * @param msg a #SoupMessage currently running on `session`
      */
-    pause_message(msg: Message | null): void;
+    pause_message(msg: Message): void;
     /**
      * Tells `session` that an URI from the given `hostname` may be requested
      * shortly, and so the session can try to prepare by resolving the
@@ -8830,7 +8756,7 @@ declare namespace Soup {
      * actually requested.
      * @param uri a #SoupURI which may be required
      */
-    prepare_for_uri(uri: URI | null): void;
+    prepare_for_uri(uri: URI): void;
     /**
      * Queues the message `msg` for asynchronously sending the request and
      * receiving a response in the current thread-default #GMainContext.
@@ -8855,7 +8781,7 @@ declare namespace Soup {
      * @param msg the message to queue
      * @param callback a #SoupSessionCallback which will be called after the message completes or when an unrecoverable error occurs.
      */
-    queue_message(msg: Message | null, callback: SessionCallback | null): void;
+    queue_message(msg: Message, callback: SessionCallback | null): void;
     /**
      * Updates `msg'`s URI according to its status code and "Location"
      * header, and requeues it on `session`. Use this when you have set
@@ -8872,12 +8798,12 @@ declare namespace Soup {
      * @param msg a #SoupMessage that has received a 3xx response
      * @returns %TRUE if a redirection was applied, %FALSE if not (eg, because there was no Location header, or it could not be parsed).
      */
-    redirect_message(msg: Message | null): boolean;
+    redirect_message(msg: Message): boolean;
     /**
      * Removes `feature'`s functionality from `session`.
      * @param feature a feature that has previously been added to `session`
      */
-    remove_feature(feature: SessionFeature | null): void;
+    remove_feature(feature: SessionFeature): void;
     /**
      * Removes all features of type `feature_type` (or any subclass of
      * `feature_type)` from `session`. You can also remove standard features
@@ -8891,7 +8817,7 @@ declare namespace Soup {
      * @param uri_string a URI, in string form
      * @returns a new #SoupRequest, or   %NULL on error.
      */
-    request(uri_string: string | null): Request | null;
+    request(uri_string: string | null): Request;
     /**
      * Creates a #SoupRequest for retrieving `uri_string,` which must be an
      * "http" or "https" URI (or another protocol listed in `session'`s
@@ -8900,10 +8826,7 @@ declare namespace Soup {
      * @param uri_string a URI, in string form
      * @returns a new #SoupRequestHTTP, or   %NULL on error.
      */
-    request_http(
-      method: string | null,
-      uri_string: string | null
-    ): RequestHTTP | null;
+    request_http(method: string | null, uri_string: string | null): RequestHTTP;
     /**
      * Creates a #SoupRequest for retrieving `uri,` which must be an
      * "http" or "https" URI (or another protocol listed in `session'`s
@@ -8912,22 +8835,19 @@ declare namespace Soup {
      * @param uri a #SoupURI representing the URI to retrieve
      * @returns a new #SoupRequestHTTP, or   %NULL on error.
      */
-    request_http_uri(
-      method: string | null,
-      uri: URI | null
-    ): RequestHTTP | null;
+    request_http_uri(method: string | null, uri: URI): RequestHTTP;
     /**
      * Creates a #SoupRequest for retrieving `uri`.
      * @param uri a #SoupURI representing the URI to retrieve
      * @returns a new #SoupRequest, or   %NULL on error.
      */
-    request_uri(uri: URI | null): Request | null;
+    request_uri(uri: URI): Request;
     /**
      * This causes `msg` to be placed back on the queue to be attempted
      * again.
      * @param msg the message to requeue
      */
-    requeue_message(msg: Message | null): void;
+    requeue_message(msg: Message): void;
     /**
      * Synchronously sends `msg` and waits for the beginning of a response.
      * On success, a #GInputStream will be returned which you can use to
@@ -8958,10 +8878,7 @@ declare namespace Soup {
      * @param cancellable a #GCancellable
      * @returns a #GInputStream for reading the   response body, or %NULL on error.
      */
-    send(
-      msg: Message | null,
-      cancellable: Gio.Cancellable | null
-    ): Gio.InputStream | null;
+    send(msg: Message, cancellable: Gio.Cancellable | null): Gio.InputStream;
     /**
      * Asynchronously sends `msg` and waits for the beginning of a
      * response. When `callback` is called, then either `msg` has been sent,
@@ -8984,7 +8901,7 @@ declare namespace Soup {
      * @param callback the callback to invoke
      */
     send_async(
-      msg: Message | null,
+      msg: Message,
       cancellable: Gio.Cancellable | null,
       callback: Gio.AsyncReadyCallback<this> | null
     ): void;
@@ -8995,7 +8912,7 @@ declare namespace Soup {
      * @param result the #GAsyncResult passed to your callback
      * @returns a #GInputStream for reading the   response body, or %NULL on error.
      */
-    send_finish(result: Gio.AsyncResult | null): Gio.InputStream | null;
+    send_finish(result: Gio.AsyncResult): Gio.InputStream;
     /**
      * Synchronously send `msg`. This call will not return until the
      * transfer is finished successfully or there is an unrecoverable
@@ -9016,7 +8933,7 @@ declare namespace Soup {
      * @param msg the message to send
      * @returns the HTTP status code of the response
      */
-    send_message(msg: Message | null): number;
+    send_message(msg: Message): number;
     /**
      * "Steals" the HTTP connection associated with `msg` from `session`.
      * This happens immediately, regardless of the current state of the
@@ -9029,7 +8946,7 @@ declare namespace Soup {
      * @param msg the message whose connection is to be stolen
      * @returns the #GIOStream formerly associated   with @msg (or %NULL if @msg was no longer associated with a   connection). No guarantees are made about what kind of #GIOStream   is returned.
      */
-    steal_connection(msg: Message | null): Gio.IOStream | null;
+    steal_connection(msg: Message): Gio.IOStream;
     /**
      * Resumes HTTP I/O on `msg`. Use this to resume after calling
      * soup_session_pause_message().
@@ -9042,7 +8959,7 @@ declare namespace Soup {
      * #SoupSessionAsync or using soup_session_queue_message()).
      * @param msg a #SoupMessage currently running on `session`
      */
-    unpause_message(msg: Message | null): void;
+    unpause_message(msg: Message): void;
     /**
      * Asynchronously creates a #SoupWebsocketConnection to communicate
      * with a remote server.
@@ -9069,7 +8986,7 @@ declare namespace Soup {
      * @param callback the callback to invoke
      */
     websocket_connect_async(
-      msg: Message | null,
+      msg: Message,
       origin: string | null,
       protocols: string[] | null,
       cancellable: Gio.Cancellable | null,
@@ -9083,9 +9000,7 @@ declare namespace Soup {
      * @param result the #GAsyncResult passed to your callback
      * @returns a new #SoupWebsocketConnection, or   %NULL on error.
      */
-    websocket_connect_finish(
-      result: Gio.AsyncResult | null
-    ): WebsocketConnection | null;
+    websocket_connect_finish(result: Gio.AsyncResult): WebsocketConnection;
     /**
      * Checks if `msg` contains a response that would cause `session` to
      * redirect it to a new URL (ignoring `msg'`s %SOUP_MESSAGE_NO_REDIRECT
@@ -9093,20 +9008,12 @@ declare namespace Soup {
      * @param msg a #SoupMessage that has response headers
      * @returns whether @msg would be redirected
      */
-    would_redirect(msg: Message | null): boolean;
+    would_redirect(msg: Message): boolean;
 
     // Own virtual methods of Soup-2.4.Soup.Session
 
-    vfunc_auth_required(
-      msg: Message | null,
-      auth: Auth | null,
-      retrying: boolean
-    ): void;
-    vfunc_authenticate(
-      msg: Message | null,
-      auth: Auth | null,
-      retrying: boolean
-    ): void;
+    vfunc_auth_required(msg: Message, auth: Auth, retrying: boolean): void;
+    vfunc_authenticate(msg: Message, auth: Auth, retrying: boolean): void;
     /**
      * Causes `session` to immediately finish processing `msg` (regardless
      * of its current state) with a final status_code of `status_code`. You
@@ -9134,7 +9041,7 @@ declare namespace Soup {
      * @param msg the message to cancel
      * @param status_code status code to set on `msg` (generally %SOUP_STATUS_CANCELLED)
      */
-    vfunc_cancel_message(msg: Message | null, status_code: number): void;
+    vfunc_cancel_message(msg: Message, status_code: number): void;
     vfunc_flush_queue(): void;
     vfunc_kick(): void;
     /**
@@ -9162,18 +9069,15 @@ declare namespace Soup {
      * @param msg the message to queue
      * @param callback a #SoupSessionCallback which will be called after the message completes or when an unrecoverable error occurs.
      */
-    vfunc_queue_message(
-      msg: Message | null,
-      callback: SessionCallback | null
-    ): void;
-    vfunc_request_started(msg: Message | null, socket: Socket | null): void;
+    vfunc_queue_message(msg: Message, callback: SessionCallback | null): void;
+    vfunc_request_started(msg: Message, socket: Socket): void;
     /**
      * This causes `msg` to be placed back on the queue to be attempted
      * again.
      * @virtual
      * @param msg the message to requeue
      */
-    vfunc_requeue_message(msg: Message | null): void;
+    vfunc_requeue_message(msg: Message): void;
     /**
      * Synchronously send `msg`. This call will not return until the
      * transfer is finished successfully or there is an unrecoverable
@@ -9195,7 +9099,7 @@ declare namespace Soup {
      * @param msg the message to send
      * @returns the HTTP status code of the response
      */
-    vfunc_send_message(msg: Message | null): number;
+    vfunc_send_message(msg: Message): number;
 
     // Own signals of Soup-2.4.Soup.Session
 
@@ -9488,7 +9392,7 @@ declare namespace Soup {
   module SessionAsync {
     // Constructor properties interface
 
-    type ConstructorProperties = Session.ConstructorProperties
+    interface ConstructorProperties extends Session.ConstructorProperties {}
   }
 
   interface SessionAsync {
@@ -9711,7 +9615,7 @@ declare namespace Soup {
   module SessionSync {
     // Constructor properties interface
 
-    type ConstructorProperties = Session.ConstructorProperties
+    interface ConstructorProperties extends Session.ConstructorProperties {}
   }
 
   interface SessionSync {
@@ -10127,7 +10031,7 @@ declare namespace Soup {
      * an error, and produces undefined results.
      * @returns the #SoupAddress
      */
-    get_local_address(): Address | null;
+    get_local_address(): Address;
     /**
      * Returns the #SoupAddress corresponding to the remote end of `sock`.
      *
@@ -10135,7 +10039,7 @@ declare namespace Soup {
      * an error, and produces undefined results.
      * @returns the #SoupAddress
      */
-    get_remote_address(): Address | null;
+    get_remote_address(): Address;
     /**
      * Tests if `sock` is connected to another host
      * @returns %TRUE or %FALSE.
@@ -10172,7 +10076,7 @@ declare namespace Soup {
     read(
       buffer: Uint8Array,
       cancellable: Gio.Cancellable | null
-    ): [/* returnType */ SocketIOStatus, /* nread */ number | null];
+    ): [/* returnType */ SocketIOStatus, /* nread */ number];
     /**
      * Like soup_socket_read(), but reads no further than the first
      * occurrence of `boundary`. (If the boundary is found, it will be
@@ -10199,8 +10103,8 @@ declare namespace Soup {
       cancellable: Gio.Cancellable | null
     ): [
       /* returnType */ SocketIOStatus,
-      /* nread */ number | null,
-      /* got_boundary */ boolean | null
+      /* nread */ number,
+      /* got_boundary */ boolean
     ];
     /**
      * Starts using SSL on `socket,` expecting to find a host named
@@ -10239,12 +10143,12 @@ declare namespace Soup {
     write(
       buffer: Uint8Array,
       cancellable: Gio.Cancellable | null
-    ): [/* returnType */ SocketIOStatus, /* nwrote */ number | null];
+    ): [/* returnType */ SocketIOStatus, /* nwrote */ number];
 
     // Own virtual methods of Soup-2.4.Soup.Socket
 
     vfunc_disconnected(): void;
-    vfunc_new_connection(new_sock: Socket | null): void;
+    vfunc_new_connection(new_sock: Socket): void;
     vfunc_readable(): void;
     vfunc_writable(): void;
 
@@ -10659,12 +10563,12 @@ declare namespace Soup {
      * Get the extensions chosen via negotiation with the peer.
      * @returns a #GList of #SoupWebsocketExtension objects
      */
-    get_extensions(): WebsocketExtension[] | null;
+    get_extensions(): WebsocketExtension[];
     /**
      * Get the I/O stream the WebSocket is communicating over.
      * @returns the WebSocket's I/O stream.
      */
-    get_io_stream(): Gio.IOStream | null;
+    get_io_stream(): Gio.IOStream;
     /**
      * Gets the keepalive interval in seconds or 0 if disabled.
      * @returns the keepalive interval.
@@ -10697,7 +10601,7 @@ declare namespace Soup {
      * for clients it is the address connected to.
      * @returns the URI
      */
-    get_uri(): URI | null;
+    get_uri(): URI;
     /**
      * Send a binary message to the peer. If `length` is 0, `data` may be %NULL.
      *
@@ -10715,7 +10619,7 @@ declare namespace Soup {
      * @param type the type of message contents
      * @param message the message data as #GBytes
      */
-    send_message(type: WebsocketDataType, message: GLib.Bytes | null): void;
+    send_message(type: WebsocketDataType, message: GLib.Bytes): void;
     /**
      * Send a %NULL-terminated text (UTF-8) message to the peer. If you need
      * to send text messages containing %NULL characters use
@@ -10743,9 +10647,9 @@ declare namespace Soup {
 
     vfunc_closed(): void;
     vfunc_closing(): void;
-    vfunc_error(error: GLib.Error | null): void;
-    vfunc_message(type: WebsocketDataType, message: GLib.Bytes | null): void;
-    vfunc_pong(message: GLib.Bytes | null): void;
+    vfunc_error(error: GLib.Error): void;
+    vfunc_message(type: WebsocketDataType, message: GLib.Bytes): void;
+    vfunc_pong(message: GLib.Bytes): void;
 
     // Own signals of Soup-2.4.Soup.WebsocketConnection
 
@@ -10915,8 +10819,8 @@ declare namespace Soup {
      * @returns a new #SoupWebsocketConnection
      */
     constructor(
-      stream: Gio.IOStream | null,
-      uri: URI | null,
+      stream: Gio.IOStream,
+      uri: URI,
       type: WebsocketConnectionType,
       origin: string | null,
       protocol: string | null
@@ -10934,8 +10838,8 @@ declare namespace Soup {
      * @returns a new #SoupWebsocketConnection
      */
     static new(
-      stream: Gio.IOStream | null,
-      uri: URI | null,
+      stream: Gio.IOStream,
+      uri: URI,
       type: WebsocketConnectionType,
       origin: string | null,
       protocol: string | null
@@ -10954,12 +10858,12 @@ declare namespace Soup {
      * @returns a new #SoupWebsocketConnection
      */
     static new_with_extensions(
-      stream: Gio.IOStream | null,
-      uri: URI | null,
+      stream: Gio.IOStream,
+      uri: URI,
       type: WebsocketConnectionType,
       origin: string | null,
       protocol: string | null,
-      extensions: WebsocketExtension[] | null
+      extensions: WebsocketExtension[]
     ): WebsocketConnection;
     _init(config?: WebsocketConnection.ConstructorProperties): void;
   }
@@ -10967,7 +10871,8 @@ declare namespace Soup {
   module WebsocketExtension {
     // Constructor properties interface
 
-    type ConstructorProperties = GObject.Object.ConstructorProperties
+    interface ConstructorProperties
+      extends GObject.Object.ConstructorProperties {}
   }
 
   interface WebsocketExtension {
@@ -11010,9 +10915,9 @@ declare namespace Soup {
      * @returns the message payload data, or %NULL in case of error
      */
     process_incoming_message(
-      header: number | null,
-      payload: GLib.Bytes | null
-    ): [/* returnType */ GLib.Bytes | null, /* header */ number | null];
+      header: number,
+      payload: GLib.Bytes
+    ): [/* returnType */ GLib.Bytes, /* header */ number];
     /**
      * Process a message before it's sent. If the payload isn't changed the given
      * `payload` is just returned, otherwise g_bytes_unref() is called on the given
@@ -11024,9 +10929,9 @@ declare namespace Soup {
      * @returns the message payload data, or %NULL in case of error
      */
     process_outgoing_message(
-      header: number | null,
-      payload: GLib.Bytes | null
-    ): [/* returnType */ GLib.Bytes | null, /* header */ number | null];
+      header: number,
+      payload: GLib.Bytes
+    ): [/* returnType */ GLib.Bytes, /* header */ number];
 
     // Own virtual methods of Soup-2.4.Soup.WebsocketExtension
 
@@ -11067,9 +10972,9 @@ declare namespace Soup {
      * @returns the message payload data, or %NULL in case of error
      */
     vfunc_process_incoming_message(
-      header: number | null,
-      payload: GLib.Bytes | null
-    ): [/* returnType */ GLib.Bytes | null, /* header */ number | null];
+      header: number,
+      payload: GLib.Bytes
+    ): [/* returnType */ GLib.Bytes, /* header */ number];
     /**
      * Process a message before it's sent. If the payload isn't changed the given
      * `payload` is just returned, otherwise g_bytes_unref() is called on the given
@@ -11082,9 +10987,9 @@ declare namespace Soup {
      * @returns the message payload data, or %NULL in case of error
      */
     vfunc_process_outgoing_message(
-      header: number | null,
-      payload: GLib.Bytes | null
-    ): [/* returnType */ GLib.Bytes | null, /* header */ number | null];
+      header: number,
+      payload: GLib.Bytes
+    ): [/* returnType */ GLib.Bytes, /* header */ number];
 
     // Class property signals of Soup-2.4.Soup.WebsocketExtension
 
@@ -11109,7 +11014,8 @@ declare namespace Soup {
   module WebsocketExtensionDeflate {
     // Constructor properties interface
 
-    type ConstructorProperties = WebsocketExtension.ConstructorProperties
+    interface ConstructorProperties
+      extends WebsocketExtension.ConstructorProperties {}
   }
 
   interface WebsocketExtensionDeflate {
@@ -11188,27 +11094,17 @@ declare namespace Soup {
     parent_class: GObject.ObjectClass;
     scheme_name: string | null;
     strength: number;
-    update: (
-      auth: Auth | null,
-      msg: Message | null,
-      auth_header: GLib.HashTable | null
-    ) => boolean;
-    get_protection_space: (
-      auth: Auth | null,
-      source_uri: URI | null
-    ) => string[] | null;
+    update: (auth: Auth, msg: Message, auth_header: GLib.HashTable) => boolean;
+    get_protection_space: (auth: Auth, source_uri: URI) => string[];
     authenticate: (
-      auth: Auth | null,
+      auth: Auth,
       username: string | null,
       password: string | null
     ) => void;
-    is_authenticated: (auth: Auth | null) => boolean;
-    get_authorization: (
-      auth: Auth | null,
-      msg: Message | null
-    ) => string | null;
-    is_ready: (auth: Auth | null, msg: Message | null) => boolean;
-    can_authenticate: (auth: Auth | null) => boolean;
+    is_authenticated: (auth: Auth) => boolean;
+    get_authorization: (auth: Auth, msg: Message) => string | null;
+    is_ready: (auth: Auth, msg: Message) => boolean;
+    can_authenticate: (auth: Auth) => boolean;
   }
 
   abstract class AuthClass {
@@ -11234,17 +11130,14 @@ declare namespace Soup {
 
     parent_class: GObject.ObjectClass;
     accepts: (
-      domain: AuthDomain | null,
-      msg: Message | null,
+      domain: AuthDomain,
+      msg: Message,
       header: string | null
     ) => string | null;
-    challenge: (
-      domain: AuthDomain | null,
-      msg: Message | null
-    ) => string | null;
+    challenge: (domain: AuthDomain, msg: Message) => string | null;
     check_password: (
-      domain: AuthDomain | null,
-      msg: Message | null,
+      domain: AuthDomain,
+      msg: Message,
       username: string | null,
       password: string | null
     ) => boolean;
@@ -11273,9 +11166,9 @@ declare namespace Soup {
 
     parent_class: GObject.ObjectClass;
     authenticate: (
-      manager: AuthManager | null,
-      msg: Message | null,
-      auth: Auth | null,
+      manager: AuthManager,
+      msg: Message,
+      auth: Auth,
       retrying: boolean
     ) => void;
   }
@@ -11319,7 +11212,7 @@ declare namespace Soup {
      * will remain valid after the temporary buffer is freed.
      * @returns the new (or newly-reffed) buffer
      */
-    copy(): Buffer | null;
+    copy(): Buffer;
     /**
      * Frees `buffer`. (In reality, as described in the documentation for
      * soup_buffer_copy(), this is actually an "unref" operation, and may
@@ -11332,7 +11225,7 @@ declare namespace Soup {
      * freed while the #GBytes is still valid.
      * @returns a new #GBytes which has the same content as the #SoupBuffer.
      */
-    get_as_bytes(): GLib.Bytes | null;
+    get_as_bytes(): GLib.Bytes;
     /**
      * This function exists for use by language bindings, because it's not
      * currently possible to get the right effect by annotating the fields
@@ -11354,7 +11247,7 @@ declare namespace Soup {
      * @param length number of bytes to copy from `parent`
      * @returns the new #SoupBuffer.
      */
-    new_subbuffer(offset: number, length: number): Buffer | null;
+    new_subbuffer(offset: number, length: number): Buffer;
   }
 
   /**
@@ -11429,10 +11322,7 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.CacheClass
 
     parent_class: GObject.ObjectClass;
-    get_cacheability: (
-      cache: Cache | null,
-      msg: Message | null
-    ) => Cacheability;
+    get_cacheability: (cache: Cache, msg: Message) => Cacheability;
   }
 
   abstract class CacheClass {
@@ -11514,7 +11404,7 @@ declare namespace Soup {
      * previously-destroyed socket to represent a new socket.
      * @returns the #SoupSocket that @client is associated with.
      */
-    get_socket(): Socket | null;
+    get_socket(): Socket;
     /**
      * "Steals" the HTTP connection associated with `client` from its
      * #SoupServer. This happens immediately, regardless of the current
@@ -11529,7 +11419,7 @@ declare namespace Soup {
      * likely be freed as a side effect.
      * @returns the #GIOStream formerly associated   with @client (or %NULL if @client was no longer associated with a   connection). No guarantees are made about what kind of #GIOStream   is returned.
      */
-    steal_connection(): Gio.IOStream | null;
+    steal_connection(): Gio.IOStream;
   }
 
   /**
@@ -11585,11 +11475,11 @@ declare namespace Soup {
 
     parent_class: GObject.ObjectClass;
     sniff: (
-      sniffer: ContentSniffer | null,
-      msg: Message | null,
-      buffer: Buffer | null
-    ) => [/* returnType */ string | null, /* params */ GLib.HashTable | null];
-    get_buffer_size: (sniffer: ContentSniffer | null) => number;
+      sniffer: ContentSniffer,
+      msg: Message,
+      buffer: Buffer
+    ) => [/* returnType */ string | null, /* params */ GLib.HashTable];
+    get_buffer_size: (sniffer: ContentSniffer) => number;
   }
 
   abstract class ContentSnifferClass {
@@ -11634,7 +11524,7 @@ declare namespace Soup {
      * the cookie expiration time, or %NULL for a session cookie
      * @field
      */
-    expires: Date | null;
+    expires: Date;
     /**
      * %TRUE if the cookie should only be tranferred over SSL
      * @field
@@ -11657,12 +11547,12 @@ declare namespace Soup {
      * @param uri a #SoupURI
      * @returns %TRUE if @cookie should be sent to @uri, %FALSE if not
      */
-    applies_to_uri(uri: URI | null): boolean;
+    applies_to_uri(uri: URI): boolean;
     /**
      * Copies `cookie`.
      * @returns a copy of @cookie
      */
-    copy(): Cookie | null;
+    copy(): Cookie;
     /**
      * Checks if the `cookie'`s domain and `host` match in the sense that
      * `cookie` should be sent when making a request to `host,` or that
@@ -11679,7 +11569,7 @@ declare namespace Soup {
      * @param cookie2 a #SoupCookie
      * @returns whether the cookies are equal.
      */
-    equal(cookie2: Cookie | null): boolean;
+    equal(cookie2: Cookie): boolean;
     /**
      * Frees `cookie`
      */
@@ -11733,7 +11623,7 @@ declare namespace Soup {
      * (This sets the same property as soup_cookie_set_max_age().)
      * @param expires the new expiration time, or %NULL
      */
-    set_expires(expires: Date | null): void;
+    set_expires(expires: Date): void;
     /**
      * Sets `cookie'`s HttpOnly attribute to `http_only`. If %TRUE, `cookie`
      * will be marked as "http only", meaning it should not be exposed to
@@ -11907,20 +11797,16 @@ declare namespace Soup {
      * @param origin origin of the cookie, or %NULL
      * @returns a new #SoupCookie, or %NULL if it could not be parsed, or contained an illegal "domain" attribute for a cookie originating from @origin.
      */
-    static parse(header: string | null, origin: URI | null): Cookie | null;
+    static parse(header: string | null, origin: URI): Cookie | null;
   }
 
   interface CookieJarClass {
     // Own fields of Soup-2.4.Soup.CookieJarClass
 
     parent_class: GObject.ObjectClass;
-    save: (jar: CookieJar | null) => void;
-    is_persistent: (jar: CookieJar | null) => boolean;
-    changed: (
-      jar: CookieJar | null,
-      old_cookie: Cookie | null,
-      new_cookie: Cookie | null
-    ) => void;
+    save: (jar: CookieJar) => void;
+    is_persistent: (jar: CookieJar) => boolean;
+    changed: (jar: CookieJar, old_cookie: Cookie, new_cookie: Cookie) => void;
   }
 
   abstract class CookieJarClass {
@@ -12002,7 +11888,7 @@ declare namespace Soup {
     /**
      * Copies `date`.
      */
-    copy(): Date | null;
+    copy(): Date;
     /**
      * Frees `date`.
      */
@@ -12071,7 +11957,7 @@ declare namespace Soup {
     /**
      * Converts `date` to a #GTimeVal.
      */
-    to_timeval(): /* time */ GLib.TimeVal | null;
+    to_timeval(): /* time */ GLib.TimeVal;
   }
 
   /**
@@ -12169,20 +12055,17 @@ declare namespace Soup {
      * @field
      */
     parent_class: GObject.ObjectClass;
-    is_persistent: (hsts_enforcer: HSTSEnforcer | null) => boolean;
+    is_persistent: (hsts_enforcer: HSTSEnforcer) => boolean;
     has_valid_policy: (
-      hsts_enforcer: HSTSEnforcer | null,
+      hsts_enforcer: HSTSEnforcer,
       domain: string | null
     ) => boolean;
     changed: (
-      enforcer: HSTSEnforcer | null,
-      old_policy: HSTSPolicy | null,
-      new_policy: HSTSPolicy | null
+      enforcer: HSTSEnforcer,
+      old_policy: HSTSPolicy,
+      new_policy: HSTSPolicy
     ) => void;
-    hsts_enforced: (
-      enforcer: HSTSEnforcer | null,
-      message: Message | null
-    ) => void;
+    hsts_enforced: (enforcer: HSTSEnforcer, message: Message) => void;
   }
 
   abstract class HSTSEnforcerClass {
@@ -12236,7 +12119,7 @@ declare namespace Soup {
      * the policy expiration time, or %NULL for a permanent session policy
      * @field
      */
-    expires: Date | null;
+    expires: Date;
     /**
      * %TRUE if the policy applies on subdomains
      * @field
@@ -12249,13 +12132,13 @@ declare namespace Soup {
      * Copies `policy`.
      * @returns a copy of @policy
      */
-    copy(): HSTSPolicy | null;
+    copy(): HSTSPolicy;
     /**
      * Tests if `policy1` and `policy2` are equal.
      * @param policy2 a #SoupHSTSPolicy
      * @returns whether the policies are equal.
      */
-    equal(policy2: HSTSPolicy | null): boolean;
+    equal(policy2: HSTSPolicy): boolean;
     /**
      * Frees `policy`.
      */
@@ -12363,7 +12246,7 @@ declare namespace Soup {
      * @param msg a #SoupMessage
      * @returns a new #SoupHSTSPolicy, or %NULL if no valid "Strict-Transport-Security" response header was found.
      */
-    static new_from_response(msg: Message | null): HSTSPolicy;
+    static new_from_response(msg: Message): HSTSPolicy;
     /**
      * Full version of #soup_hsts_policy_new(), to use with an existing
      * expiration date. See #soup_hsts_policy_new() for details.
@@ -12377,7 +12260,7 @@ declare namespace Soup {
     static new_full(
       domain: string | null,
       max_age: number,
-      expires: Date | null,
+      expires: Date,
       include_subdomains: boolean
     ): HSTSPolicy;
     /**
@@ -12439,7 +12322,7 @@ declare namespace Soup {
      * `buffer`.)
      * @param buffer a #SoupBuffer
      */
-    append_buffer(buffer: Buffer | null): void;
+    append_buffer(buffer: Buffer): void;
     /**
      * Appends `length` bytes from `data` to `body`.
      *
@@ -12460,7 +12343,7 @@ declare namespace Soup {
      * length field).
      * @returns a #SoupBuffer containing the same data as @body. (You must free this buffer if you do not want it.)
      */
-    flatten(): Buffer | null;
+    flatten(): Buffer;
     /**
      * Frees `body`. You will not normally need to use this, as
      * #SoupMessage frees its associated message bodies automatically.
@@ -12502,7 +12385,7 @@ declare namespace Soup {
      * use.
      * @param chunk a #SoupBuffer received from the network
      */
-    got_chunk(chunk: Buffer | null): void;
+    got_chunk(chunk: Buffer): void;
     /**
      * Sets or clears the accumulate flag on `body`. (The default value is
      * %TRUE.) If set to %FALSE, `body'`s %data field will not be filled in
@@ -12550,7 +12433,7 @@ declare namespace Soup {
      * documented here.
      * @param chunk a #SoupBuffer returned from soup_message_body_get_chunk()
      */
-    wrote_chunk(chunk: Buffer | null): void;
+    wrote_chunk(chunk: Buffer): void;
   }
 
   /**
@@ -12596,17 +12479,17 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.MessageClass
 
     parent_class: GObject.ObjectClass;
-    wrote_informational: (msg: Message | null) => void;
-    wrote_headers: (msg: Message | null) => void;
-    wrote_chunk: (msg: Message | null) => void;
-    wrote_body: (msg: Message | null) => void;
-    got_informational: (msg: Message | null) => void;
-    got_headers: (msg: Message | null) => void;
-    got_chunk: (msg: Message | null, chunk: Buffer | null) => void;
-    got_body: (msg: Message | null) => void;
-    restarted: (msg: Message | null) => void;
-    finished: (msg: Message | null) => void;
-    starting: (msg: Message | null) => void;
+    wrote_informational: (msg: Message) => void;
+    wrote_headers: (msg: Message) => void;
+    wrote_chunk: (msg: Message) => void;
+    wrote_body: (msg: Message) => void;
+    got_informational: (msg: Message) => void;
+    got_headers: (msg: Message) => void;
+    got_chunk: (msg: Message, chunk: Buffer) => void;
+    got_body: (msg: Message) => void;
+    restarted: (msg: Message) => void;
+    finished: (msg: Message) => void;
+    starting: (msg: Message) => void;
   }
 
   abstract class MessageClass {
@@ -12662,7 +12545,7 @@ declare namespace Soup {
      * Frees the array of ranges returned from soup_message_headers_get_ranges().
      * @param ranges an array of #SoupRange
      */
-    free_ranges(ranges: Range | null): void;
+    free_ranges(ranges: Range): void;
     /**
      * Gets the value of header `name` in `hdrs`.
      *
@@ -12699,7 +12582,7 @@ declare namespace Soup {
     get_content_disposition(): [
       /* returnType */ boolean,
       /* disposition */ string | null,
-      /* params */ GLib.HashTable | null
+      /* params */ GLib.HashTable
     ];
     /**
      * Gets the message body length that `hdrs` declare. This will only
@@ -12716,9 +12599,9 @@ declare namespace Soup {
      */
     get_content_range(): [
       /* returnType */ boolean,
-      /* start */ number | null,
-      /* end */ number | null,
-      /* total_length */ number | null
+      /* start */ number,
+      /* end */ number,
+      /* total_length */ number
     ];
     /**
      * Looks up the "Content-Type" header in `hdrs,` parses it, and returns
@@ -12728,7 +12611,7 @@ declare namespace Soup {
      */
     get_content_type(): [
       /* returnType */ string | null,
-      /* params */ GLib.HashTable | null
+      /* params */ GLib.HashTable
     ];
     /**
      * Gets the message body encoding that `hdrs` declare. This may not
@@ -12943,7 +12826,7 @@ declare namespace Soup {
      * @param ranges an array of #SoupRange
      * @param length the length of `range`
      */
-    set_ranges(ranges: Range | null, length: number): void;
+    set_ranges(ranges: Range, length: number): void;
   }
 
   /**
@@ -13016,9 +12899,7 @@ declare namespace Soup {
      * Initializes `iter` for iterating `hdrs`.
      * @param hdrs a %SoupMessageHeaders
      */
-    static init(
-      hdrs: MessageHeaders | null
-    ): /* iter */ MessageHeadersIter | null;
+    static init(hdrs: MessageHeaders): /* iter */ MessageHeadersIter;
   }
 
   interface MessageQueue {}
@@ -13054,7 +12935,7 @@ declare namespace Soup {
       control_name: string | null,
       filename: string | null,
       content_type: string | null,
-      body: Buffer | null
+      body: Buffer
     ): void;
     /**
      * Adds a new MIME part containing `data` to `multipart,` using
@@ -13073,7 +12954,7 @@ declare namespace Soup {
      * @param headers the MIME part headers
      * @param body the MIME part body
      */
-    append_part(headers: MessageHeaders | null, body: Buffer | null): void;
+    append_part(headers: MessageHeaders, body: Buffer): void;
     /**
      * Frees `multipart`
      */
@@ -13092,18 +12973,15 @@ declare namespace Soup {
       part: number
     ): [
       /* returnType */ boolean,
-      /* headers */ MessageHeaders | null,
-      /* body */ Buffer | null
+      /* headers */ MessageHeaders,
+      /* body */ Buffer
     ];
     /**
      * Serializes `multipart` to `dest_headers` and `dest_body`.
      * @param dest_headers the headers of the HTTP message to serialize `multipart` to
      * @param dest_body the body of the HTTP message to serialize `multipart` to
      */
-    to_message(
-      dest_headers: MessageHeaders | null,
-      dest_body: MessageBody | null
-    ): void;
+    to_message(dest_headers: MessageHeaders, dest_body: MessageBody): void;
   }
 
   /**
@@ -13153,8 +13031,8 @@ declare namespace Soup {
      * @returns a new #SoupMultipart (or %NULL if the message couldn't be parsed or wasn't multipart).
      */
     static new_from_message(
-      headers: MessageHeaders | null,
-      body: MessageBody | null
+      headers: MessageHeaders,
+      body: MessageBody
     ): Multipart;
   }
 
@@ -13183,18 +13061,18 @@ declare namespace Soup {
 
     base: GObject.TypeInterface;
     get_passwords_async: (
-      password_manager: PasswordManager | null,
-      msg: Message | null,
-      auth: Auth | null,
+      password_manager: PasswordManager,
+      msg: Message,
+      auth: Auth,
       retrying: boolean,
-      async_context: GLib.MainContext | null,
+      async_context: GLib.MainContext,
       cancellable: Gio.Cancellable | null,
       callback: PasswordManagerCallback
     ) => void;
     get_passwords_sync: (
-      password_manager: PasswordManager | null,
-      msg: Message | null,
-      auth: Auth | null,
+      password_manager: PasswordManager,
+      msg: Message,
+      auth: Auth,
       cancellable: Gio.Cancellable | null
     ) => void;
   }
@@ -13222,17 +13100,17 @@ declare namespace Soup {
 
     base: GObject.TypeInterface;
     get_proxy_async: (
-      proxy_resolver: ProxyResolver | null,
-      msg: Message | null,
-      async_context: GLib.MainContext | null,
+      proxy_resolver: ProxyResolver,
+      msg: Message,
+      async_context: GLib.MainContext,
       cancellable: Gio.Cancellable | null,
       callback: ProxyResolverCallback
     ) => void;
     get_proxy_sync: (
-      proxy_resolver: ProxyResolver | null,
-      msg: Message | null,
+      proxy_resolver: ProxyResolver,
+      msg: Message,
       cancellable: Gio.Cancellable | null
-    ) => [/* returnType */ number, /* addr */ Address | null];
+    ) => [/* returnType */ number, /* addr */ Address];
   }
 
   abstract class ProxyResolverInterface {
@@ -13246,17 +13124,17 @@ declare namespace Soup {
 
     base: GObject.TypeInterface;
     get_proxy_uri_async: (
-      proxy_uri_resolver: ProxyURIResolver | null,
-      uri: URI | null,
+      proxy_uri_resolver: ProxyURIResolver,
+      uri: URI,
       async_context: GLib.MainContext | null,
       cancellable: Gio.Cancellable | null,
       callback: ProxyURIResolverCallback
     ) => void;
     get_proxy_uri_sync: (
-      proxy_uri_resolver: ProxyURIResolver | null,
-      uri: URI | null,
+      proxy_uri_resolver: ProxyURIResolver,
+      uri: URI,
       cancellable: Gio.Cancellable | null
-    ) => [/* returnType */ number, /* proxy_uri */ URI | null];
+    ) => [/* returnType */ number, /* proxy_uri */ URI];
   }
 
   abstract class ProxyURIResolverInterface {
@@ -13308,22 +13186,19 @@ declare namespace Soup {
 
     parent: GObject.ObjectClass;
     schemes: string | null;
-    check_uri: (req_base: Request | null, uri: URI | null) => boolean;
+    check_uri: (req_base: Request, uri: URI) => boolean;
     send: (
-      request: Request | null,
+      request: Request,
       cancellable: Gio.Cancellable | null
-    ) => Gio.InputStream | null;
+    ) => Gio.InputStream;
     send_async: (
-      request: Request | null,
+      request: Request,
       cancellable: Gio.Cancellable | null,
       callback: Gio.AsyncReadyCallback | null
     ) => void;
-    send_finish: (
-      request: Request | null,
-      result: Gio.AsyncResult | null
-    ) => Gio.InputStream | null;
-    get_content_length: (request: Request | null) => number;
-    get_content_type: (request: Request | null) => string | null;
+    send_finish: (request: Request, result: Gio.AsyncResult) => Gio.InputStream;
+    get_content_length: (request: Request) => number;
+    get_content_type: (request: Request) => string | null;
   }
 
   abstract class RequestClass {
@@ -13425,24 +13300,20 @@ declare namespace Soup {
 
     parent_class: GObject.ObjectClass;
     request_started: (
-      server: Server | null,
-      msg: Message | null,
-      client: ClientContext | null
+      server: Server,
+      msg: Message,
+      client: ClientContext
     ) => void;
-    request_read: (
-      server: Server | null,
-      msg: Message | null,
-      client: ClientContext | null
-    ) => void;
+    request_read: (server: Server, msg: Message, client: ClientContext) => void;
     request_finished: (
-      server: Server | null,
-      msg: Message | null,
-      client: ClientContext | null
+      server: Server,
+      msg: Message,
+      client: ClientContext
     ) => void;
     request_aborted: (
-      server: Server | null,
-      msg: Message | null,
-      client: ClientContext | null
+      server: Server,
+      msg: Message,
+      client: ClientContext
     ) => void;
   }
 
@@ -13468,37 +13339,33 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.SessionClass
 
     parent_class: GObject.ObjectClass;
-    request_started: (
-      session: Session | null,
-      msg: Message | null,
-      socket: Socket | null
-    ) => void;
+    request_started: (session: Session, msg: Message, socket: Socket) => void;
     authenticate: (
-      session: Session | null,
-      msg: Message | null,
-      auth: Auth | null,
+      session: Session,
+      msg: Message,
+      auth: Auth,
       retrying: boolean
     ) => void;
     queue_message: (
-      session: Session | null,
-      msg: Message | null,
+      session: Session,
+      msg: Message,
       callback: SessionCallback | null
     ) => void;
-    requeue_message: (session: Session | null, msg: Message | null) => void;
-    send_message: (session: Session | null, msg: Message | null) => number;
+    requeue_message: (session: Session, msg: Message) => void;
+    send_message: (session: Session, msg: Message) => number;
     cancel_message: (
-      session: Session | null,
-      msg: Message | null,
+      session: Session,
+      msg: Message,
       status_code: number
     ) => void;
     auth_required: (
-      session: Session | null,
-      msg: Message | null,
-      auth: Auth | null,
+      session: Session,
+      msg: Message,
+      auth: Auth,
       retrying: boolean
     ) => void;
-    flush_queue: (session: Session | null) => void;
-    kick: (session: Session | null) => void;
+    flush_queue: (session: Session) => void;
+    kick: (session: Session) => void;
   }
 
   abstract class SessionClass {
@@ -13515,36 +13382,27 @@ declare namespace Soup {
      * @field
      */
     parent: GObject.TypeInterface;
-    attach: (feature: SessionFeature | null, session: Session | null) => void;
-    detach: (feature: SessionFeature | null, session: Session | null) => void;
+    attach: (feature: SessionFeature, session: Session) => void;
+    detach: (feature: SessionFeature, session: Session) => void;
     request_queued: (
-      feature: SessionFeature | null,
-      session: Session | null,
-      msg: Message | null
+      feature: SessionFeature,
+      session: Session,
+      msg: Message
     ) => void;
     request_started: (
-      feature: SessionFeature | null,
-      session: Session | null,
-      msg: Message | null,
-      socket: Socket | null
+      feature: SessionFeature,
+      session: Session,
+      msg: Message,
+      socket: Socket
     ) => void;
     request_unqueued: (
-      feature: SessionFeature | null,
-      session: Session | null,
-      msg: Message | null
+      feature: SessionFeature,
+      session: Session,
+      msg: Message
     ) => void;
-    add_feature: (
-      feature: SessionFeature | null,
-      type: GObject.GType
-    ) => boolean;
-    remove_feature: (
-      feature: SessionFeature | null,
-      type: GObject.GType
-    ) => boolean;
-    has_feature: (
-      feature: SessionFeature | null,
-      type: GObject.GType
-    ) => boolean;
+    add_feature: (feature: SessionFeature, type: GObject.GType) => boolean;
+    remove_feature: (feature: SessionFeature, type: GObject.GType) => boolean;
+    has_feature: (feature: SessionFeature, type: GObject.GType) => boolean;
   }
 
   /**
@@ -13573,10 +13431,10 @@ declare namespace Soup {
     // Own fields of Soup-2.4.Soup.SocketClass
 
     parent_class: GObject.ObjectClass;
-    readable: (sock: Socket | null) => void;
-    writable: (sock: Socket | null) => void;
-    disconnected: (sock: Socket | null) => void;
-    new_connection: (listener: Socket | null, new_sock: Socket | null) => void;
+    readable: (sock: Socket) => void;
+    writable: (sock: Socket) => void;
+    disconnected: (sock: Socket) => void;
+    new_connection: (listener: Socket, new_sock: Socket) => void;
   }
 
   abstract class SocketClass {
@@ -13635,18 +13493,18 @@ declare namespace Soup {
      * Copies `uri`
      * @returns a copy of @uri, which must be freed with soup_uri_free()
      */
-    copy(): URI | null;
+    copy(): URI;
     /**
      * Makes a copy of `uri,` considering only the protocol, host, and port
      * @returns the new #SoupURI
      */
-    copy_host(): URI | null;
+    copy_host(): URI;
     /**
      * Tests whether or not `uri1` and `uri2` are equal in all parts
      * @param uri2 another #SoupURI
      * @returns %TRUE or %FALSE
      */
-    equal(uri2: URI | null): boolean;
+    equal(uri2: URI): boolean;
     /**
      * Frees `uri`.
      */
@@ -13744,7 +13602,7 @@ declare namespace Soup {
      * HTML form rules. See soup_form_encode_hash() for more information.
      * @param form a #GHashTable containing HTML form information
      */
-    set_query_from_form(form: GLib.HashTable | null): void;
+    set_query_from_form(form: GLib.HashTable): void;
     /**
      * Sets `uri'`s scheme to `scheme`. This will also set `uri'`s port to
      * the default port for `scheme,` if known.
@@ -13860,7 +13718,7 @@ declare namespace Soup {
      * @param uri_string the URI
      * @returns a parsed #SoupURI.
      */
-    static new_with_base(base: URI | null, uri_string: string | null): URI;
+    static new_with_base(base: URI, uri_string: string | null): URI;
     /**
      * Fully %<!-- -->-decodes `part`.
      *
@@ -13916,17 +13774,14 @@ declare namespace Soup {
 
     parent: GObject.ObjectClass;
     message: (
-      self: WebsocketConnection | null,
+      self: WebsocketConnection,
       type: WebsocketDataType,
-      message: GLib.Bytes | null
+      message: GLib.Bytes
     ) => void;
-    error: (self: WebsocketConnection | null, error: GLib.Error | null) => void;
-    closing: (self: WebsocketConnection | null) => void;
-    closed: (self: WebsocketConnection | null) => void;
-    pong: (
-      self: WebsocketConnection | null,
-      message: GLib.Bytes | null
-    ) => void;
+    error: (self: WebsocketConnection, error: GLib.Error) => void;
+    closing: (self: WebsocketConnection) => void;
+    closed: (self: WebsocketConnection) => void;
+    pong: (self: WebsocketConnection, message: GLib.Bytes) => void;
   }
 
   /**
@@ -13957,24 +13812,22 @@ declare namespace Soup {
     parent_class: GObject.ObjectClass;
     name: string | null;
     configure: (
-      extension: WebsocketExtension | null,
+      extension: WebsocketExtension,
       connection_type: WebsocketConnectionType,
       params: GLib.HashTable | null
     ) => boolean;
-    get_request_params: (extension: WebsocketExtension | null) => string | null;
-    get_response_params: (
-      extension: WebsocketExtension | null
-    ) => string | null;
+    get_request_params: (extension: WebsocketExtension) => string | null;
+    get_response_params: (extension: WebsocketExtension) => string | null;
     process_outgoing_message: (
-      extension: WebsocketExtension | null,
-      header: number | null,
-      payload: GLib.Bytes | null
-    ) => [/* returnType */ GLib.Bytes | null, /* header */ number | null];
+      extension: WebsocketExtension,
+      header: number,
+      payload: GLib.Bytes
+    ) => [/* returnType */ GLib.Bytes, /* header */ number];
     process_incoming_message: (
-      extension: WebsocketExtension | null,
-      header: number | null,
-      payload: GLib.Bytes | null
-    ) => [/* returnType */ GLib.Bytes | null, /* header */ number | null];
+      extension: WebsocketExtension,
+      header: number,
+      payload: GLib.Bytes
+    ) => [/* returnType */ GLib.Bytes, /* header */ number];
   }
 
   /**
@@ -14042,7 +13895,7 @@ declare namespace Soup {
      * @param signature A valid #GVariant type string, or %NULL
      * @returns a new (non-floating) #GVariant, or %NULL
      */
-    parse(signature: string | null): GLib.Variant | null;
+    parse(signature: string | null): GLib.Variant;
   }
 
   /**

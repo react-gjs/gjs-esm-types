@@ -89,7 +89,7 @@ declare namespace GModule {
    * @returns %NULL on success, or a string describing the initialization error
    */
   interface ModuleCheckInit {
-    (module: Module | null): string | null;
+    (module: Module): string | null;
   }
   /**
    * Specifies the type of the module function called when it is unloaded.
@@ -100,7 +100,7 @@ declare namespace GModule {
    * @param module the #GModule about to be unloaded
    */
   interface ModuleUnload {
-    (module: Module | null): void;
+    (module: Module): void;
   }
   interface Module {
     // Owm methods of GModule-2.0.GModule.Module

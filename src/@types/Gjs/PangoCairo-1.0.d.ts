@@ -23,7 +23,7 @@ declare namespace PangoCairo {
    * @returns the font options previously set on the   context, or %NULL if no options have been set. This value is   owned by the context and must not be modified or freed.
    */
   function context_get_font_options(
-    context: Pango.Context | null
+    context: Pango.Context
   ): cairo.FontOptions | null;
   /**
    * Gets the resolution for the context.
@@ -32,7 +32,7 @@ declare namespace PangoCairo {
    * @param context a `PangoContext`, from a pangocairo font map
    * @returns the resolution in "dots per inch". A negative value will   be returned if no resolution has previously been set.
    */
-  function context_get_resolution(context: Pango.Context | null): number;
+  function context_get_resolution(context: Pango.Context): number;
   /**
    * Sets the font options used when rendering text with this context.
    *
@@ -42,7 +42,7 @@ declare namespace PangoCairo {
    * @param options a `cairo_font_options_t`, or %NULL to unset   any previously set options. A copy is made.
    */
   function context_set_font_options(
-    context: Pango.Context | null,
+    context: Pango.Context,
     options: cairo.FontOptions | null
   ): void;
   /**
@@ -54,10 +54,7 @@ declare namespace PangoCairo {
    * @param context a `PangoContext`, from a pangocairo font map
    * @param dpi the resolution in "dots per inch". (Physical inches aren't actually   involved; the terminology is conventional.) A 0 or negative value   means to use the resolution from the font map.
    */
-  function context_set_resolution(
-    context: Pango.Context | null,
-    dpi: number
-  ): void;
+  function context_set_resolution(context: Pango.Context, dpi: number): void;
   /**
    * Sets callback function for context to use for rendering attributes
    * of type %PANGO_ATTR_SHAPE.
@@ -67,7 +64,7 @@ declare namespace PangoCairo {
    * @param func Callback function for rendering attributes of   type %PANGO_ATTR_SHAPE, or %NULL to disable shape rendering.
    */
   function context_set_shape_renderer(
-    context: Pango.Context | null,
+    context: Pango.Context,
     func: ShapeRendererFunc | null
   ): void;
   /**
@@ -84,7 +81,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @returns the newly created `PangoContext`
    */
-  function create_context(cr: cairo.Context | null): Pango.Context | null;
+  function create_context(cr: cairo.Context): Pango.Context;
   /**
    * Creates a layout object set up to match the current transformation
    * and target surface of the Cairo context.
@@ -101,7 +98,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @returns the newly created `PangoLayout`
    */
-  function create_layout(cr: cairo.Context | null): Pango.Layout | null;
+  function create_layout(cr: cairo.Context): Pango.Layout;
   /**
    * Add a squiggly line to the current path in the specified cairo context that
    * approximately covers the given rectangle in the style of an underline used
@@ -116,7 +113,7 @@ declare namespace PangoCairo {
    * @param height Non-negative height of the rectangle
    */
   function error_underline_path(
-    cr: cairo.Context | null,
+    cr: cairo.Context,
     x: number,
     y: number,
     width: number,
@@ -140,7 +137,7 @@ declare namespace PangoCairo {
    * can be used safely from multiple threads.
    * @returns the default PangoCairo fontmap  for the current thread. This object is owned by Pango and must  not be freed.
    */
-  function font_map_get_default(): Pango.FontMap | null;
+  function font_map_get_default(): Pango.FontMap;
   /**
    * Creates a new `PangoCairoFontMap` object.
    *
@@ -162,7 +159,7 @@ declare namespace PangoCairo {
    * are compiled in.
    * @returns the newly allocated `PangoFontMap`,   which should be freed with g_object_unref().
    */
-  function font_map_new(): Pango.FontMap | null;
+  function font_map_new(): Pango.FontMap;
   /**
    * Creates a new `PangoCairoFontMap` object of the type suitable
    * to be used with cairo font backend of type `fonttype`.
@@ -186,9 +183,9 @@ declare namespace PangoCairo {
    * @param glyphs a `PangoGlyphString`
    */
   function glyph_string_path(
-    cr: cairo.Context | null,
-    font: Pango.Font | null,
-    glyphs: Pango.GlyphString | null
+    cr: cairo.Context,
+    font: Pango.Font,
+    glyphs: Pango.GlyphString
   ): void;
   /**
    * Adds the text in `PangoLayoutLine` to the current path in the
@@ -199,10 +196,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @param line a `PangoLayoutLine`
    */
-  function layout_line_path(
-    cr: cairo.Context | null,
-    line: Pango.LayoutLine | null
-  ): void;
+  function layout_line_path(cr: cairo.Context, line: Pango.LayoutLine): void;
   /**
    * Adds the text in a `PangoLayout` to the current path in the
    * specified cairo context.
@@ -212,10 +206,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @param layout a Pango layout
    */
-  function layout_path(
-    cr: cairo.Context | null,
-    layout: Pango.Layout | null
-  ): void;
+  function layout_path(cr: cairo.Context, layout: Pango.Layout): void;
   /**
    * Draw a squiggly line in the specified cairo context that approximately
    * covers the given rectangle in the style of an underline used to indicate a
@@ -231,7 +222,7 @@ declare namespace PangoCairo {
    * @param height Non-negative height of the rectangle
    */
   function show_error_underline(
-    cr: cairo.Context | null,
+    cr: cairo.Context,
     x: number,
     y: number,
     width: number,
@@ -254,9 +245,9 @@ declare namespace PangoCairo {
    * @param glyph_item a `PangoGlyphItem`
    */
   function show_glyph_item(
-    cr: cairo.Context | null,
+    cr: cairo.Context,
     text: string | null,
-    glyph_item: Pango.GlyphItem | null
+    glyph_item: Pango.GlyphItem
   ): void;
   /**
    * Draws the glyphs in `glyphs` in the specified cairo context.
@@ -268,9 +259,9 @@ declare namespace PangoCairo {
    * @param glyphs a `PangoGlyphString`
    */
   function show_glyph_string(
-    cr: cairo.Context | null,
-    font: Pango.Font | null,
-    glyphs: Pango.GlyphString | null
+    cr: cairo.Context,
+    font: Pango.Font,
+    glyphs: Pango.GlyphString
   ): void;
   /**
    * Draws a `PangoLayout` in the specified cairo context.
@@ -280,10 +271,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @param layout a Pango layout
    */
-  function show_layout(
-    cr: cairo.Context | null,
-    layout: Pango.Layout | null
-  ): void;
+  function show_layout(cr: cairo.Context, layout: Pango.Layout): void;
   /**
    * Draws a `PangoLayoutLine` in the specified cairo context.
    *
@@ -292,10 +280,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @param line a `PangoLayoutLine`
    */
-  function show_layout_line(
-    cr: cairo.Context | null,
-    line: Pango.LayoutLine | null
-  ): void;
+  function show_layout_line(cr: cairo.Context, line: Pango.LayoutLine): void;
   /**
    * Updates a `PangoContext` previously created for use with Cairo to
    * match the current transformation and target surface of a Cairo
@@ -306,10 +291,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @param context a `PangoContext`, from a pangocairo font map
    */
-  function update_context(
-    cr: cairo.Context | null,
-    context: Pango.Context | null
-  ): void;
+  function update_context(cr: cairo.Context, context: Pango.Context): void;
   /**
    * Updates the private `PangoContext` of a `PangoLayout` created with
    * [func`create_layout]` to match the current transformation and target
@@ -317,10 +299,7 @@ declare namespace PangoCairo {
    * @param cr a Cairo context
    * @param layout a `PangoLayout`, from [func`create_layout]`
    */
-  function update_layout(
-    cr: cairo.Context | null,
-    layout: Pango.Layout | null
-  ): void;
+  function update_layout(cr: cairo.Context, layout: Pango.Layout): void;
   /**
    * Function type for rendering attributes of type %PANGO_ATTR_SHAPE
    * with Pango's Cairo renderer.
@@ -330,11 +309,7 @@ declare namespace PangoCairo {
    * @param do_path whether only the shape path should be appended to current path of `cr` and no filling/stroking done.  This will be set to %TRUE when called from pango_cairo_layout_path() and pango_cairo_layout_line_path() rendering functions.
    */
   interface ShapeRendererFunc {
-    (
-      cr: cairo.Context | null,
-      attr: Pango.AttrShape | null,
-      do_path: boolean
-    ): void;
+    (cr: cairo.Context, attr: Pango.AttrShape, do_path: boolean): void;
   }
   module Font {
     // Constructor properties interface
@@ -500,7 +475,7 @@ declare namespace PangoCairo {
      * are compiled in.
      * @returns the newly allocated `PangoFontMap`,   which should be freed with g_object_unref().
      */
-    static new(): Pango.FontMap | null;
+    static new(): Pango.FontMap;
     /**
      * Creates a new `PangoCairoFontMap` object of the type suitable
      * to be used with cairo font backend of type `fonttype`.
@@ -529,7 +504,7 @@ declare namespace PangoCairo {
      * can be used safely from multiple threads.
      * @returns the default PangoCairo fontmap  for the current thread. This object is owned by Pango and must  not be freed.
      */
-    static get_default(): Pango.FontMap | null;
+    static get_default(): Pango.FontMap;
   }
 
   /**
