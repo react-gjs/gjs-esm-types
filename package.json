@@ -25,7 +25,7 @@
     "gnome"
   ],
   "repository": {
-    "url": "https://github.com/ncpa0cpl/gjs-esm-types"
+    "url": "https://github.com/react-gjs/gjs-esm-types"
   },
   "description": "TypeScript module declarations for GJS ESM modules.",
   "license": "MIT",
