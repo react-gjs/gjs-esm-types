@@ -1,7 +1,7 @@
 {
   "packageManager": "yarn@1.22.19",
   "name": "gjs-esm-types",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "",
   "types": "src/index.d.ts",
   "keywords": [
