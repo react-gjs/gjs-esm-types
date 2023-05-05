@@ -1,3 +1,6 @@
+/// <reference path="./console.d.ts" />;
+/// <reference path="./gettext.d.ts" />;
+/// <reference path="./gi.d.ts" />;
 /// <reference path="./globals.d.ts" />;
 /// <reference path="./system.d.ts" />;
 /// <reference path="./@types/Gjs/Atk-1.0.d.ts" />;
@@ -21,6 +24,9 @@
 /// <reference path="./@types/Gjs/freetype2-2.0.d.ts" />;
 /// <reference path="./@types/Gjs/xlib-2.0.d.ts" />;
 
+declare module "console" {}
+declare module "gettext" {}
+declare module "gi" {}
 declare module "system" {}
 declare module "gi://Atk?version=1.0" {}
 declare module "gi://GLib?version=2.0" {}
