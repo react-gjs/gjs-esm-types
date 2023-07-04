@@ -6,7 +6,7 @@
  */
 import type GObject from "gi://GObject?version=2.0";
 
-declare namespace xlib {
+declare module "gi://xlib?version=2.0" {
   function open_display(): void;
   interface Display {}
 
@@ -111,8 +111,4 @@ declare namespace xlib {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://xlib?version=2.0" {
-  export default xlib;
 }

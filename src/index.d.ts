@@ -23,6 +23,8 @@
 /// <reference path="./@types/Gjs/cairo-1.0.d.ts" />;
 /// <reference path="./@types/Gjs/freetype2-2.0.d.ts" />;
 /// <reference path="./@types/Gjs/xlib-2.0.d.ts" />;
+/// <reference path="./overrides/GLib.d.ts" />;
+/// <reference path="./overrides/Gio.d.ts" />;
 
 declare module "console" {}
 declare module "gettext" {}

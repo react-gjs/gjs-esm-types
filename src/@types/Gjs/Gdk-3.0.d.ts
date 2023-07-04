@@ -14,7 +14,7 @@ import type Gio from "gi://Gio?version=2.0";
 import type GdkPixbuf from "gi://GdkPixbuf?version=2.0";
 import type GModule from "gi://GModule?version=2.0";
 
-declare namespace Gdk {
+declare module "gi://Gdk?version=3.0" {
   /**
    * An enumeration describing the way in which a device
    * axis (valuator) maps onto the predefined valuator
@@ -70,6 +70,7 @@ declare namespace Gdk {
      */
     LAST,
   }
+
   /**
    * A set of values describing the possible byte-orders
    * for storing pixel values in memory.
@@ -88,6 +89,7 @@ declare namespace Gdk {
      */
     MSB_FIRST,
   }
+
   /**
    * Specifies the crossing mode for #GdkEventCrossing.
    */
@@ -134,6 +136,7 @@ declare namespace Gdk {
      */
     DEVICE_SWITCH,
   }
+
   /**
    * Predefined cursors.
    *
@@ -465,6 +468,7 @@ declare namespace Gdk {
      */
     CURSOR_IS_PIXMAP,
   }
+
   /**
    * A pad feature.
    */
@@ -482,6 +486,7 @@ declare namespace Gdk {
      */
     STRIP,
   }
+
   /**
    * Indicates the specific type of tool being used being a tablet. Such as an
    * airbrush, pencil, etc.
@@ -520,6 +525,7 @@ declare namespace Gdk {
      */
     LENS,
   }
+
   /**
    * Indicates the device type. See [above][GdkDeviceManager.description]
    * for more information about the meaning of these device types.
@@ -540,6 +546,7 @@ declare namespace Gdk {
      */
     FLOATING,
   }
+
   /**
    * Used in #GdkDragContext to the reason of a cancelled DND operation.
    */
@@ -557,6 +564,7 @@ declare namespace Gdk {
      */
     ERROR,
   }
+
   /**
    * Used in #GdkDragContext to indicate the protocol according to
    * which DND is done.
@@ -596,6 +604,7 @@ declare namespace Gdk {
      */
     WAYLAND,
   }
+
   /**
    * Specifies the type of the event.
    *
@@ -842,6 +851,7 @@ declare namespace Gdk {
      */
     EVENT_LAST,
   }
+
   /**
    * Specifies the result of applying a #GdkFilterFunc to a native event.
    */
@@ -860,6 +870,7 @@ declare namespace Gdk {
      */
     REMOVE,
   }
+
   /**
    * Indicates which monitor (in a multi-head setup) a window should span over
    * when in fullscreen mode.
@@ -874,6 +885,7 @@ declare namespace Gdk {
      */
     ALL_MONITORS,
   }
+
   /**
    * Error enumeration for #GdkGLContext.
    */
@@ -891,6 +903,7 @@ declare namespace Gdk {
      */
     UNSUPPORTED_PROFILE,
   }
+
   /**
    * Defines how device grabs interact with other devices.
    */
@@ -908,6 +921,7 @@ declare namespace Gdk {
      */
     APPLICATION,
   }
+
   /**
    * Returned by gdk_device_grab(), gdk_pointer_grab() and gdk_keyboard_grab() to
    * indicate success or the reason for the failure of the grab attempt.
@@ -940,6 +954,7 @@ declare namespace Gdk {
      */
     FAILED,
   }
+
   /**
    * Defines the reference point of a window and the meaning of coordinates
    * passed to gtk_window_move(). See gtk_window_move() and the "implementation
@@ -990,6 +1005,7 @@ declare namespace Gdk {
      */
     STATIC,
   }
+
   /**
    * An enumeration that describes the mode of an input device.
    */
@@ -1011,6 +1027,7 @@ declare namespace Gdk {
      */
     WINDOW,
   }
+
   /**
    * An enumeration describing the type of an input device in general terms.
    */
@@ -1059,6 +1076,7 @@ declare namespace Gdk {
      */
     TABLET_PAD,
   }
+
   /**
    * This enum is used with gdk_keymap_get_modifier_mask()
    * in order to determine what modifiers the
@@ -1110,6 +1128,7 @@ declare namespace Gdk {
      */
     DEFAULT_MOD_MASK,
   }
+
   /**
    * Specifies the kind of crossing for #GdkEventCrossing.
    *
@@ -1149,6 +1168,7 @@ declare namespace Gdk {
      */
     UNKNOWN,
   }
+
   /**
    * Specifies why a selection ownership was changed.
    */
@@ -1166,6 +1186,7 @@ declare namespace Gdk {
      */
     CLOSE,
   }
+
   /**
    * Describes how existing data is combined with new data when
    * using gdk_property_change().
@@ -1184,6 +1205,7 @@ declare namespace Gdk {
      */
     APPEND,
   }
+
   /**
    * Specifies the type of a property change for a #GdkEventProperty.
    */
@@ -1197,6 +1219,7 @@ declare namespace Gdk {
      */
     DELETE,
   }
+
   /**
    * Specifies the direction for #GdkEventScroll.
    */
@@ -1223,6 +1246,7 @@ declare namespace Gdk {
      */
     SMOOTH,
   }
+
   /**
    * Specifies the kind of modification applied to a setting in a
    * #GdkEventSetting.
@@ -1241,6 +1265,7 @@ declare namespace Gdk {
      */
     DELETED,
   }
+
   enum Status {
     OK,
     ERROR,
@@ -1248,6 +1273,7 @@ declare namespace Gdk {
     ERROR_FILE,
     ERROR_MEM,
   }
+
   /**
    * This enumeration describes how the red, green and blue components
    * of physical pixels on an output device are laid out.
@@ -1278,6 +1304,7 @@ declare namespace Gdk {
      */
     VERTICAL_BGR,
   }
+
   /**
    * Specifies the current state of a touchpad gesture. All gestures are
    * guaranteed to begin with an event with phase %GDK_TOUCHPAD_GESTURE_PHASE_BEGIN,
@@ -1318,6 +1345,7 @@ declare namespace Gdk {
      */
     CANCEL,
   }
+
   /**
    * Specifies the visiblity status of a window for a #GdkEventVisibility.
    */
@@ -1335,6 +1363,7 @@ declare namespace Gdk {
      */
     FULLY_OBSCURED,
   }
+
   /**
    * A set of values that describe the manner in which the pixel values
    * for a visual are converted into RGB values for display.
@@ -1377,6 +1406,7 @@ declare namespace Gdk {
      */
     DIRECT_COLOR,
   }
+
   /**
    * Determines a window edge or corner.
    */
@@ -1414,6 +1444,7 @@ declare namespace Gdk {
      */
     SOUTH_EAST,
   }
+
   /**
    * Describes the kind of window.
    */
@@ -1452,6 +1483,7 @@ declare namespace Gdk {
      */
     SUBSURFACE,
   }
+
   /**
    * These are hints for the window manager that indicate what type of function
    * the window has. The window manager can use this when determining decoration
@@ -1524,6 +1556,7 @@ declare namespace Gdk {
      */
     DND,
   }
+
   /**
    * `GDK_INPUT_OUTPUT` windows are the standard kind of window you might expect.
    * Such windows receive events and are also displayed on screen.
@@ -1541,6 +1574,7 @@ declare namespace Gdk {
      */
     INPUT_ONLY,
   }
+
   /**
    * Positioning hints for aligning a window relative to a rectangle.
    *
@@ -1597,6 +1631,7 @@ declare namespace Gdk {
      */
     RESIZE,
   }
+
   /**
    * Flags describing the current capabilities of a device/tool.
    * @bitfield
@@ -1639,6 +1674,7 @@ declare namespace Gdk {
      */
     SLIDER,
   }
+
   /**
    * Used in #GdkDragContext to indicate what the destination
    * should do with the dropped data.
@@ -1673,6 +1709,7 @@ declare namespace Gdk {
      */
     ASK,
   }
+
   /**
    * A set of bit-flags to indicate which events a window is to receive.
    * Most of these masks map onto one or more of the #GdkEventType event types
@@ -1809,6 +1846,7 @@ declare namespace Gdk {
      */
     ALL_EVENTS_MASK,
   }
+
   /**
    * #GdkFrameClockPhase is used to represent the different paint clock
    * phases that can be requested. The elements of the enumeration
@@ -1849,6 +1887,7 @@ declare namespace Gdk {
      */
     AFTER_PAINT,
   }
+
   /**
    * A set of bit-flags to indicate the state of modifier keys and mouse buttons
    * in various event types. Typical modifier keys are Shift, Control, Meta,
@@ -2008,6 +2047,7 @@ declare namespace Gdk {
      */
     MODIFIER_MASK,
   }
+
   /**
    * Flags describing the seat capabilities.
    * @bitfield
@@ -2042,6 +2082,7 @@ declare namespace Gdk {
      */
     ALL,
   }
+
   /**
    * These are hints originally defined by the Motif toolkit.
    * The window manager can use them when determining how to decorate
@@ -2078,6 +2119,7 @@ declare namespace Gdk {
      */
     MAXIMIZE,
   }
+
   /**
    * These are hints originally defined by the Motif toolkit. The window manager
    * can use them when determining the functions to offer for the window. The
@@ -2110,6 +2152,7 @@ declare namespace Gdk {
      */
     CLOSE,
   }
+
   /**
    * Used to indicate which fields in the #GdkWindowAttr struct should be honored.
    * For example, if you filled in the “cursor” and “x” fields of #GdkWindowAttr,
@@ -2153,6 +2196,7 @@ declare namespace Gdk {
      */
     TYPE_HINT,
   }
+
   /**
    * Used to indicate which fields of a #GdkGeometry struct should be paid
    * attention to. Also, the presence/absence of `GDK_HINT_POS,`
@@ -2204,6 +2248,7 @@ declare namespace Gdk {
      */
     USER_SIZE,
   }
+
   /**
    * Specifies the state of a toplevel window.
    * @bitfield
@@ -2280,6 +2325,7 @@ declare namespace Gdk {
      */
     LEFT_RESIZABLE,
   }
+
   /**
    * The middle button.
    */
@@ -6016,6 +6062,7 @@ declare namespace Gdk {
   interface EventFunc {
     (event: Event): void;
   }
+
   /**
    * Specifies the type of function used to filter native events before they are
    * converted to GDK events.
@@ -6033,6 +6080,7 @@ declare namespace Gdk {
   interface FilterFunc {
     (xevent: XEvent, event: Event): FilterReturn;
   }
+
   /**
    * Type of the callback used to set up `window` so it can be
    * grabbed. A typical action would be ensuring the window is
@@ -6045,6 +6093,7 @@ declare namespace Gdk {
   interface SeatGrabPrepareFunc {
     (seat: Seat, window: Window): void;
   }
+
   /**
    * A function of this type is passed to gdk_window_invalidate_maybe_recurse().
    * It gets called for each child of the window to determine whether to
@@ -6056,6 +6105,7 @@ declare namespace Gdk {
   interface WindowChildFunc {
     (window: Window): boolean;
   }
+
   /**
    * Whenever some area of the window is invalidated (directly in the
    * window or in a child window) this gets called with `region` in
@@ -6070,6 +6120,7 @@ declare namespace Gdk {
   interface WindowInvalidateHandlerFunc {
     (window: Window, region: cairo.Region): void;
   }
+
   module DevicePad {
     // Constructor properties interface
 
@@ -15365,8 +15416,4 @@ declare namespace Gdk {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Gdk?version=3.0" {
-  export default Gdk;
 }

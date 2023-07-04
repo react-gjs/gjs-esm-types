@@ -11,7 +11,7 @@ import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 import type Gio from "gi://Gio?version=2.0";
 
-declare namespace Pango {
+declare module "gi://Pango?version=1.0" {
   /**
    * `PangoAlignment` describes how to align the lines of a `PangoLayout`
    * within the available space.
@@ -36,6 +36,7 @@ declare namespace Pango {
      */
     RIGHT,
   }
+
   /**
    * The `PangoAttrType` distinguishes between different types of attributes.
    *
@@ -195,6 +196,7 @@ declare namespace Pango {
      */
     FONT_SCALE,
   }
+
   /**
    * An enumeration that affects baseline shifts between runs.
    */
@@ -214,6 +216,7 @@ declare namespace Pango {
      */
     SUBSCRIPT,
   }
+
   /**
    * `PangoBidiType` represents the bidirectional character
    * type of a Unicode character.
@@ -315,6 +318,7 @@ declare namespace Pango {
      */
     PDI,
   }
+
   /**
    * `PangoCoverageLevel` is used to indicate how well a font can
    * represent a particular Unicode character for a particular script.
@@ -348,6 +352,7 @@ declare namespace Pango {
      */
     EXACT,
   }
+
   /**
    * `PangoDirection` represents a direction in the Unicode bidirectional
    * algorithm.
@@ -400,6 +405,7 @@ declare namespace Pango {
      */
     NEUTRAL,
   }
+
   /**
    * `PangoEllipsizeMode` describes what sort of ellipsization
    * should be applied to text.
@@ -426,6 +432,7 @@ declare namespace Pango {
      */
     END,
   }
+
   /**
    * An enumeration that affects font sizes for superscript
    * and subscript positioning and for (emulated) Small Caps.
@@ -448,6 +455,7 @@ declare namespace Pango {
      */
     SMALL_CAPS,
   }
+
   /**
    * `PangoGravity` represents the orientation of glyphs in a segment
    * of text.
@@ -485,6 +493,7 @@ declare namespace Pango {
      */
     AUTO,
   }
+
   /**
    * `PangoGravityHint` defines how horizontal scripts should behave in a
    * vertical context.
@@ -512,6 +521,7 @@ declare namespace Pango {
      */
     LINE,
   }
+
   /**
    * Errors that can be returned by [func`Pango`.Layout.deserialize].
    */
@@ -531,6 +541,7 @@ declare namespace Pango {
      */
     MISSING_VALUE,
   }
+
   /**
    * The `PangoOverline` enumeration is used to specify whether text
    * should be overlined, and if so, the type of line.
@@ -546,6 +557,7 @@ declare namespace Pango {
      */
     SINGLE,
   }
+
   /**
    * `PangoRenderPart` defines different items to render for such
    * purposes as setting colors.
@@ -572,6 +584,7 @@ declare namespace Pango {
      */
     OVERLINE,
   }
+
   /**
    * The `PangoScript` enumeration identifies different writing
    * systems.
@@ -1059,6 +1072,7 @@ declare namespace Pango {
      */
     SIGNWRITING,
   }
+
   /**
    * An enumeration specifying the width of the font relative to other designs
    * within a family.
@@ -1101,6 +1115,7 @@ declare namespace Pango {
      */
     ULTRA_EXPANDED,
   }
+
   /**
    * An enumeration specifying the various slant styles possible for a font.
    */
@@ -1118,6 +1133,7 @@ declare namespace Pango {
      */
     ITALIC,
   }
+
   /**
    * `PangoTabAlign` specifies where the text appears relative to the tab stop
    * position.
@@ -1144,6 +1160,7 @@ declare namespace Pango {
      */
     DECIMAL,
   }
+
   /**
    * An enumeration that affects how Pango treats characters during shaping.
    */
@@ -1166,6 +1183,7 @@ declare namespace Pango {
      */
     CAPITALIZE,
   }
+
   /**
    * The `PangoUnderline` enumeration is used to specify whether text
    * should be underlined, and if so, the type of underlining.
@@ -1222,6 +1240,7 @@ declare namespace Pango {
      */
     ERROR_LINE,
   }
+
   /**
    * An enumeration specifying capitalization variant of the font.
    */
@@ -1263,6 +1282,7 @@ declare namespace Pango {
      */
     TITLE_CAPS,
   }
+
   /**
    * An enumeration specifying the weight (boldness) of a font.
    *
@@ -1319,6 +1339,7 @@ declare namespace Pango {
      */
     ULTRAHEAVY,
   }
+
   /**
    * `PangoWrapMode` describes how to wrap the lines of a `PangoLayout`
    * to the desired width.
@@ -1343,6 +1364,7 @@ declare namespace Pango {
      */
     WORD_CHAR,
   }
+
   /**
    * The bits in a `PangoFontMask` correspond to the set fields in a
    * `PangoFontDescription`.
@@ -1382,6 +1404,7 @@ declare namespace Pango {
      */
     VARIATIONS,
   }
+
   /**
    * Flags that influence the behavior of [func`Pango`.Layout.deserialize].
    *
@@ -1399,6 +1422,7 @@ declare namespace Pango {
      */
     CONTEXT,
   }
+
   /**
    * Flags that influence the behavior of [method`Pango`.Layout.serialize].
    *
@@ -1419,6 +1443,7 @@ declare namespace Pango {
      */
     OUTPUT,
   }
+
   /**
    * Flags influencing the shaping process.
    *
@@ -1436,6 +1461,7 @@ declare namespace Pango {
      */
     ROUND_POSITIONS,
   }
+
   /**
    * These flags affect how Pango treats characters that are normally
    * not visible in the output.
@@ -1460,6 +1486,7 @@ declare namespace Pango {
      */
     IGNORABLES,
   }
+
   /**
    * Whether the segment should be shifted to center around the baseline.
    *
@@ -2881,6 +2908,7 @@ declare namespace Pango {
   interface AttrDataCopyFunc {
     (): any | null;
   }
+
   /**
    * Type of a function filtering a list of attributes.
    * @callback
@@ -2890,6 +2918,7 @@ declare namespace Pango {
   interface AttrFilterFunc {
     (attribute: Attribute): boolean;
   }
+
   /**
    * Callback used when enumerating fonts in a fontset.
    *
@@ -2902,6 +2931,7 @@ declare namespace Pango {
   interface FontsetForeachFunc {
     (fontset: Fontset, font: Font): boolean;
   }
+
   module Context {
     // Constructor properties interface
 
@@ -8917,8 +8947,4 @@ declare namespace Pango {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Pango?version=1.0" {
-  export default Pango;
 }

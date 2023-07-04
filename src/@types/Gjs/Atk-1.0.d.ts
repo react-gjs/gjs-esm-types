@@ -7,7 +7,7 @@
 import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace Atk {
+declare module "gi://Atk?version=1.0" {
   /**
    * Specifies how xy coordinates are to be interpreted. Used by functions such
    * as atk_component_get_position() and atk_text_get_character_extents()
@@ -28,6 +28,7 @@ declare namespace Atk {
      */
     PARENT,
   }
+
   /**
    * Specifies the type of a keyboard evemt.
    */
@@ -45,6 +46,7 @@ declare namespace Atk {
      */
     LAST_DEFINED,
   }
+
   /**
    * Describes the layer of a component
    *
@@ -86,6 +88,7 @@ declare namespace Atk {
      */
     WINDOW,
   }
+
   /**
    * Describes the type of the relation
    */
@@ -208,6 +211,7 @@ declare namespace Atk {
      */
     LAST_DEFINED,
   }
+
   /**
    * Describes the role of an object
    *
@@ -808,6 +812,7 @@ declare namespace Atk {
      */
     LAST_DEFINED,
   }
+
   /**
    * Specifies where an object should be placed on the screen when using scroll_to.
    */
@@ -849,6 +854,7 @@ declare namespace Atk {
      */
     ANYWHERE,
   }
+
   /**
    * The possible types of states of an object
    */
@@ -1101,6 +1107,7 @@ declare namespace Atk {
      */
     LAST_DEFINED,
   }
+
   /**
    * Describes the text attributes supported
    */
@@ -1226,6 +1233,7 @@ declare namespace Atk {
      */
     LAST_DEFINED,
   }
+
   /**
    * Text boundary types used for specifying boundaries for regions of text.
    * This enumeration is deprecated since 2.9.4 and should not be used. Use
@@ -1268,6 +1276,7 @@ declare namespace Atk {
      */
     LINE_END,
   }
+
   /**
    * Describes the type of clipping required.
    */
@@ -1289,6 +1298,7 @@ declare namespace Atk {
      */
     BOTH,
   }
+
   /**
    * Text granularity types used for specifying the granularity of the region of
    * text we are interested in.
@@ -1324,6 +1334,7 @@ declare namespace Atk {
      */
     PARAGRAPH,
   }
+
   /**
    * Default types for a given value. Those are defined in order to
    * easily get localized strings to describe a given value or a given
@@ -1347,6 +1358,7 @@ declare namespace Atk {
     BEST,
     LAST_DEFINED,
   }
+
   /**
    * Describes the type of link
    * @bitfield
@@ -1357,6 +1369,7 @@ declare namespace Atk {
      */
     INLINE,
   }
+
   /**
    * Like atk_get_binary_age(), but from the headers used at
    * application compile time, rather than from the library linked
@@ -1639,24 +1652,26 @@ declare namespace Atk {
    * supported are events of type "focus:".  Most clients of ATK will prefer to
    * attach signal handlers for the various ATK signals instead.
    *
-   * see atk_add_focus_tracker.
+   * see [id`atk_add_focus_tracker]`
    * @callback
    * @param obj An #AtkObject instance for whom the callback will be called when the specified event (e.g. 'focus:') takes place.
    */
   interface EventListener {
     (obj: Object): void;
   }
+
   /**
    * An #AtkEventListenerInit function is a special function that is
    * called in order to initialize the per-object event registration system
    * used by #AtkEventListener, if any preparation is required.
    *
-   * see atk_focus_tracker_init.
+   * see [id`atk_focus_tracker_init]`
    * @callback
    */
   interface EventListenerInit {
     (): void;
   }
+
   /**
    * The type of callback function used for
    * atk_component_add_focus_handler() and
@@ -1668,6 +1683,7 @@ declare namespace Atk {
   interface FocusHandler {
     (object: Object, focus_in: boolean): void;
   }
+
   /**
    * An AtkFunction is a function definition used for padding which has
    * been added to class and interface structures to allow for expansion
@@ -1678,17 +1694,19 @@ declare namespace Atk {
   interface Function {
     (): boolean;
   }
+
   /**
    * An #AtkKeySnoopFunc is a type of callback which is called whenever a key event occurs,
    * if registered via atk_add_key_event_listener.  It allows for pre-emptive
    * interception of key events via the return code as described below.
    * @callback
    * @param event an AtkKeyEventStruct containing information about the key event for which notification is being given.
-   * @returns TRUE (nonzero) if the event emission should be stopped and the event discarded without being passed to the normal GUI recipient; FALSE (zero) if the event dispatch to the client application should proceed as normal. see atk_add_key_event_listener.
+   * @returns TRUE (nonzero) if the event emission should be stopped and the event discarded without being passed to the normal GUI recipient; FALSE (zero) if the event dispatch to the client application should proceed as normal. see [id@atk_add_key_event_listener]
    */
   interface KeySnoopFunc {
     (event: KeyEventStruct): number;
   }
+
   /**
    * An AtkPropertyChangeHandler is a function which is executed when an
    * AtkObject's property changes value. It is specified in a call to
@@ -1700,6 +1718,7 @@ declare namespace Atk {
   interface PropertyChangeHandler {
     (obj: Object, vals: PropertyValues): void;
   }
+
   module Action {
     // Constructor properties interface
 
@@ -1886,6 +1905,9 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface provided by UI components
+   * which the user can activate/interact with.
+   *
    * #AtkAction should be implemented by instances of #AtkObject classes
    * with which the user can interact directly, i.e. buttons,
    * checkboxes, scrollbars, e.g. components which are not "passive"
@@ -2255,6 +2277,10 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface provided by UI components
+   * which occupy a physical area on the screen.
+   * which the user can activate/interact with.
+   *
    * #AtkComponent should be implemented by most if not all UI elements
    * with an actual on-screen presence, i.e. components which can be
    * said to have a screen-coordinate bounding box.  Virtually all
@@ -2484,6 +2510,9 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface which represents the toplevel
+   *  container for document content.
+   *
    * The AtkDocument interface should be supported by any object whose
    * content is a representation or view of a document.  The AtkDocument
    * interface should appear on the toplevel container for the document
@@ -2643,6 +2672,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface implemented by components containing user-editable text content.
+   *
    * #AtkEditableText should be implemented by UI components which
    * contain text which the user can edit, via the #AtkObject
    * corresponding to that component (see #AtkObject).
@@ -2651,7 +2682,7 @@ declare namespace Atk {
    * which implements #AtkEditableText is by definition an #AtkText
    * implementor as well.
    *
-   * See also: #AtkText
+   * See [iface`AtkText]`
    * @interface
    */
   class EditableText extends GObject.Object {
@@ -2700,34 +2731,11 @@ declare namespace Atk {
   }
 
   /**
-   * AtkHyperlinkImpl allows AtkObjects to refer to their associated
-   * AtkHyperlink instance, if one exists.  AtkHyperlinkImpl differs
-   * from AtkHyperlink in that AtkHyperlinkImpl is an interface, whereas
-   * AtkHyperlink is a object type.  The AtkHyperlinkImpl interface
-   * allows a client to query an AtkObject for the availability of an
-   * associated AtkHyperlink instance, and obtain that instance.  It is
-   * thus particularly useful in cases where embedded content or inline
-   * content within a text object is present, since the embedding text
-   * object implements AtkHypertext and the inline/embedded objects are
-   * exposed as children which implement AtkHyperlinkImpl, in addition
-   * to their being obtainable via AtkHypertext:getLink followed by
-   * AtkHyperlink:getObject.
-   *
-   * The AtkHyperlinkImpl interface should be supported by objects
-   * exposed within the hierarchy as children of an AtkHypertext
-   * container which correspond to "links" or embedded content within
-   * the text.  HTML anchors are not, for instance, normally exposed
-   * this way, but embedded images and components which appear inline in
-   * the content of a text object are. The AtkHyperlinkIface interface
-   * allows a means of determining which children are hyperlinks in this
-   * sense of the word, and for obtaining their corresponding
-   * AtkHyperlink object, from which the embedding range, URI, etc. can
-   * be obtained.
-   *
-   * To some extent this interface exists because, for historical
-   * reasons, AtkHyperlink was defined as an object type, not an
-   * interface.  Thus, in order to interact with AtkObjects via
-   * AtkHyperlink semantics, a new interface was required.
+   * A queryable interface which allows AtkHyperlink instances
+   * associated with an AtkObject to be obtained.  AtkHyperlinkImpl
+   * corresponds to AT-SPI's Hyperlink interface, and differs from
+   * AtkHyperlink in that AtkHyperlink is an object type, rather than an
+   * interface, and thus cannot be directly queried. FTW
    * @interface
    */
   class HyperlinkImpl extends GObject.Object {
@@ -2828,6 +2836,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface which provides standard mechanism for manipulating hyperlinks.
+   *
    * An interface used for objects which implement linking between
    * multiple resource or content locations, or multiple 'markers'
    * within a single document.  A Hypertext instance is associated with
@@ -2948,6 +2958,9 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK Interface implemented by components
+   *  which expose image or pixmap content on-screen.
+   *
    * #AtkImage should be implemented by #AtkObject subtypes on behalf of
    * components which display image/pixmap information onscreen, and
    * which provide information (other than just widget borders, etc.)
@@ -3171,6 +3184,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface implemented by container objects whose #AtkObject children can be selected.
+   *
    * #AtkSelection should be implemented by UI components with children
    * which are exposed by #atk_object_ref_child and
    * #atk_object_get_n_children, if the use of the parent UI component
@@ -3284,6 +3299,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface which provides access to streamable content.
+   *
    * An interface whereby an object allows its backing content to be
    * streamed to clients.  Typical implementors would be images or
    * icons, HTML content, or multimedia display/rendering widgets.
@@ -3877,6 +3894,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface implemented for UI components which contain tabular or row/column information.
+   *
    * #AtkTable should be implemented by components which present
    * elements ordered via rows and columns.  It may also be used to
    * present tree-structured information if the nodes of the trees can
@@ -4189,11 +4208,13 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface implemented for a cell inside a two-dimentional #AtkTable
+   *
    * Being #AtkTable a component which present elements ordered via rows
    * and columns, an #AtkTableCell is the interface which each of those
    * elements, so "cells" should implement.
    *
-   * See also #AtkTable.
+   * See [iface`AtkTable]`
    * @interface
    */
   class TableCell extends GObject.Object {
@@ -4987,6 +5008,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface implemented by components with text content.
+   *
    * #AtkText should be implemented by #AtkObjects on behalf of widgets
    * that have text content which is either attributed or otherwise
    * non-trivial.  #AtkObjects whose text content is simple,
@@ -5220,6 +5243,8 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK interface implemented by valuators and components which display or select a value from a bounded range of values.
+   *
    * #AtkValue should be implemented for components which either display
    * a value from a bounded range, or which allow the user to specify a
    * value from a bounded range, or both. For instance, most sliders and
@@ -5664,9 +5689,13 @@ declare namespace Atk {
   }
 
   /**
+   * The ATK Interface provided by UI components that represent a top-level window.
+   *
    * #AtkWindow should be implemented by the UI elements that represent
    * a top-level window, such as the main window of an application or
    * dialog.
+   *
+   * See [class`AtkObject]`
    * @interface
    */
   class Window extends GObject.Object {
@@ -5850,6 +5879,8 @@ declare namespace Atk {
   }
 
   /**
+   * This object class is derived from AtkObject and can be used as a basis implementing accessible objects.
+   *
    * This object class is derived from AtkObject. It can be used as a
    * basis for implementing accessible objects for GObjects which are
    * not derived from GtkWidget. One example of its use is in providing
@@ -6080,6 +6111,8 @@ declare namespace Atk {
   }
 
   /**
+   * An ATK object which encapsulates a link or set of links in a hypertext document.
+   *
    * An ATK object which encapsulates a link or set of links (for
    * instance in the case of client-side image maps) in a hypertext
    * document.  It may implement the AtkAction interface.  AtkHyperlink
@@ -6167,6 +6200,8 @@ declare namespace Atk {
   }
 
   /**
+   * A set of ATK utility functions for thread locking
+   *
    * A set of utility functions for thread locking. This interface and
    * all his related methods are deprecated since 2.12.
    * @class
@@ -6551,6 +6586,8 @@ declare namespace Atk {
   }
 
   /**
+   * An AtkObject which purports to implement all ATK interfaces.
+   *
    * An AtkNoOpObject is an AtkObject which purports to implement all
    * ATK interfaces. It is the type of AtkObject which is created if an
    * accessible object is requested for an object type for which no
@@ -6606,6 +6643,8 @@ declare namespace Atk {
   }
 
   /**
+   * The AtkObjectFactory which creates an AtkNoOpObject.
+   *
    * The AtkObjectFactory which creates an AtkNoOpObject. An instance of
    * this is created by an AtkRegistry if no factory type has not been
    * specified to create an accessible object of a particular type.
@@ -7318,6 +7357,8 @@ declare namespace Atk {
   }
 
   /**
+   * The base object class for the Accessibility Toolkit API.
+   *
    * This class is the primary class for accessibility support via the
    * Accessibility ToolKit (ATK).  Objects which are instances of
    * #AtkObject (or instances of AtkObject-derived types) are queried
@@ -7336,7 +7377,7 @@ declare namespace Atk {
    * implementation is insufficient, via instances of a new #AtkObject
    * subclass.
    *
-   * See also: #AtkObjectFactory, #AtkRegistry.  (GTK+ users see also
+   * See [class`AtkObjectFactory]`, [class`AtkRegistry]`.  (GTK+ users see also
    * #GtkAccessible).
    * @interface
    */
@@ -7408,6 +7449,9 @@ declare namespace Atk {
   }
 
   /**
+   * The base object class for a factory used to
+   *  create accessible objects for objects of a specific GType.
+   *
    * This class is the base object class for a factory used to create an
    * accessible object for a specific GType. The function
    * atk_registry_set_factory_type() is normally called to store in the
@@ -7622,7 +7666,9 @@ declare namespace Atk {
   }
 
   /**
-   * See #AtkSocket
+   * Toplevel for embedding into other processes
+   *
+   * See [class`AtkSocket]`
    * @class
    */
   class Plug extends Object {
@@ -7698,6 +7744,10 @@ declare namespace Atk {
   }
 
   /**
+   * An object used to store the GType of the
+   * factories used to create an accessible object for an object of a
+   * particular GType.
+   *
    * The AtkRegistry is normally used to create appropriate ATK "peers"
    * for user interface components.  Application developers usually need
    * only interact with the AtkRegistry by associating appropriate ATK
@@ -7784,6 +7834,9 @@ declare namespace Atk {
   }
 
   /**
+   * An object used to describe a relation between a
+   *  object and one or more other objects.
+   *
    * An AtkRelation describes a relation between an object and one or
    * more other objects. The actual relations that an object has with
    * other objects are defined as an AtkRelationSet, which is a set of
@@ -7903,6 +7956,9 @@ declare namespace Atk {
   }
 
   /**
+   * A set of AtkRelations, normally the set of
+   *  AtkRelations which an AtkObject has.
+   *
    * The AtkRelationSet held by an object establishes its relationships
    * with objects beyond the normal "parent/child" hierarchical
    * relationships that all user interface objects have.
@@ -8140,6 +8196,8 @@ declare namespace Atk {
   }
 
   /**
+   * Container for AtkPlug objects from other processes
+   *
    * Together with #AtkPlug, #AtkSocket provides the ability to embed
    * accessibles from one process into another in a fashion that is
    * transparent to assistive technologies. #AtkSocket works as the
@@ -8162,6 +8220,8 @@ declare namespace Atk {
    * atk_object_get_n_accessible_children() and
    * atk_object_ref_accessible_child(). All the logic related to those
    * functions will be implemented by the IPC layer.
+   *
+   * See [class`AtkPlug]`
    * @class
    */
   class Socket extends Object {
@@ -8288,6 +8348,8 @@ declare namespace Atk {
   }
 
   /**
+   * An AtkStateSet contains the states of an object.
+   *
    * An AtkStateSet is a read-only representation of the full set of #AtkStates
    * that apply to an object at a given time. This set is not meant to be
    * modified, but rather created when #atk_object_ref_state_set() is called.
@@ -8338,6 +8400,8 @@ declare namespace Atk {
   }
 
   /**
+   * A set of ATK utility functions for event and toolkit support.
+   *
    * A set of ATK utility functions which are used to support event
    * registration of various types, and obtaining the 'root' accessible
    * of a process and information about the current ATK implementation
@@ -8910,6 +8974,8 @@ declare namespace Atk {
   }
 
   /**
+   * A given range or subrange, to be used with #AtkValue
+   *
    * #AtkRange are used on #AtkValue, in order to represent the full
    * range of a given component (for example an slider or a range
    * control), or to define each individual subrange this full range is
@@ -9456,8 +9522,4 @@ declare namespace Atk {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Atk?version=1.0" {
-  export default Atk;
 }

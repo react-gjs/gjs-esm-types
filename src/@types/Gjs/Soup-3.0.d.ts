@@ -8,7 +8,7 @@ import type Gio from "gi://Gio?version=2.0";
 import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace Soup {
+declare module "gi://Soup?version=3.0" {
   /**
    * The type of cache; this affects what kinds of responses will be
    * saved.
@@ -23,6 +23,7 @@ declare namespace Soup {
      */
     SHARED,
   }
+
   /**
    * The policy for accepting or rejecting cookies returned in
    * responses.
@@ -67,6 +68,7 @@ declare namespace Soup {
      */
     GRANDFATHERED_THIRD_PARTY,
   }
+
   /**
    * Date formats that [func`date_time_to_string]` can use.
    *
@@ -87,6 +89,7 @@ declare namespace Soup {
      */
     COOKIE,
   }
+
   /**
    * How a message body is encoded for transport
    */
@@ -119,6 +122,7 @@ declare namespace Soup {
      */
     BYTERANGES,
   }
+
   /**
    * Indicates the HTTP protocol version being used.
    */
@@ -136,6 +140,7 @@ declare namespace Soup {
      */
     HTTP_2_0,
   }
+
   /**
    * Describes the level of logging output to provide.
    */
@@ -158,6 +163,7 @@ declare namespace Soup {
      */
     BODY,
   }
+
   /**
    * The lifetime of the memory being passed.
    */
@@ -180,6 +186,7 @@ declare namespace Soup {
      */
     COPY,
   }
+
   /**
    * Value passed to [ctor`MessageHeaders`.new] to set certain default
    * behaviors.
@@ -198,6 +205,7 @@ declare namespace Soup {
      */
     MULTIPART,
   }
+
   /**
    * Priorities that can be set on a [class`Message]` to instruct the message queue
    * to process it before any other message with lower priority.
@@ -231,6 +239,7 @@ declare namespace Soup {
      */
     VERY_HIGH,
   }
+
   /**
    * Represents the same-site policies of a cookie.
    */
@@ -248,6 +257,7 @@ declare namespace Soup {
      */
     STRICT,
   }
+
   /**
    * A #SoupSession error.
    */
@@ -288,6 +298,7 @@ declare namespace Soup {
      */
     MESSAGE_ALREADY_IN_QUEUE,
   }
+
   /**
    * These represent the known HTTP status code values, plus various
    * network and internal errors.
@@ -528,6 +539,7 @@ declare namespace Soup {
      */
     NOT_EXTENDED,
   }
+
   /**
    * Error codes for %SOUP_TLD_ERROR.
    */
@@ -560,6 +572,7 @@ declare namespace Soup {
      */
     NO_PSL_DATA,
   }
+
   /**
    * Enum values passed to [func`uri_copy]` to indicate the components of
    * the URI that should be updated with the given values.
@@ -606,6 +619,7 @@ declare namespace Soup {
      */
     FRAGMENT,
   }
+
   /**
    * Pre-defined close codes that can be passed to
    * [method`WebsocketConnection`.close] or received from
@@ -673,6 +687,7 @@ declare namespace Soup {
      */
     TLS_HANDSHAKE,
   }
+
   /**
    * The type of a [class`WebsocketConnection]`.
    */
@@ -690,6 +705,7 @@ declare namespace Soup {
      */
     SERVER,
   }
+
   /**
    * The type of data contained in a [signal`WebsocketConnection:`:message] signal.
    */
@@ -703,6 +719,7 @@ declare namespace Soup {
      */
     BINARY,
   }
+
   /**
    * WebSocket-related errors.
    */
@@ -727,6 +744,7 @@ declare namespace Soup {
      */
     BAD_ORIGIN,
   }
+
   /**
    * The state of the WebSocket connection.
    */
@@ -745,6 +763,7 @@ declare namespace Soup {
      */
     CLOSED,
   }
+
   /**
    * Indicates if a message should or shouldn't be cached.
    * @bitfield
@@ -767,6 +786,7 @@ declare namespace Soup {
      */
     VALIDATES,
   }
+
   /**
    * Represents the parsed value of the "Expect" header.
    * @bitfield
@@ -781,6 +801,7 @@ declare namespace Soup {
      */
     CONTINUE,
   }
+
   /**
    * Various flags that can be set on a #SoupMessage to alter its
    * behavior.
@@ -822,6 +843,7 @@ declare namespace Soup {
      */
     COLLECT_METRICS,
   }
+
   /**
    * Options to pass to [method`Server`.listen], etc.
    *
@@ -847,6 +869,7 @@ declare namespace Soup {
      */
     IPV6_ONLY,
   }
+
   /**
    * A constant corresponding to 1 day.
    *
@@ -948,6 +971,9 @@ declare namespace Soup {
    * valid state for a #SoupCookie, and you will need to fill in some
    * appropriate string for the domain if you want to actually make use
    * of the cookie.
+   *
+   * As of version 3.4.0 the default value of a cookie's same-site-policy
+   * is %SOUP_SAME_SITE_POLICY_LAX.
    * @param header a cookie string (eg, the value of a Set-Cookie header)
    * @param origin origin of the cookie
    * @returns a new #SoupCookie, or %NULL if it could   not be parsed, or contained an illegal "domain" attribute for a   cookie originating from @origin.
@@ -1554,6 +1580,7 @@ declare namespace Soup {
       password: string | null
     ): boolean;
   }
+
   /**
    * Callback used by #SoupAuthDomainDigest for authentication purposes.
    *
@@ -1571,6 +1598,7 @@ declare namespace Soup {
       | string
       | null;
   }
+
   /**
    * The prototype for a #SoupAuthDomain filter.
    *
@@ -1583,6 +1611,7 @@ declare namespace Soup {
   interface AuthDomainFilter {
     (domain: AuthDomain, msg: ServerMessage): boolean;
   }
+
   /**
    * The prototype for a #SoupAuthDomain generic authentication callback.
    *
@@ -1609,6 +1638,7 @@ declare namespace Soup {
   interface AuthDomainGenericAuthCallback {
     (domain: AuthDomain, msg: ServerMessage, username: string | null): boolean;
   }
+
   /**
    * The prototype for a logging filter.
    *
@@ -1623,6 +1653,7 @@ declare namespace Soup {
   interface LoggerFilter {
     (logger: Logger, msg: Message): LoggerLogLevel;
   }
+
   /**
    * The prototype for a custom printing callback.
    *
@@ -1651,6 +1682,7 @@ declare namespace Soup {
       data: string | null
     ): void;
   }
+
   /**
    * The callback passed to [method`MessageHeaders`.foreach].
    * @callback
@@ -1660,6 +1692,7 @@ declare namespace Soup {
   interface MessageHeadersForeachFunc {
     (name: string | null, value: string | null): void;
   }
+
   /**
    * A callback used to handle requests to a [class`Server]`.
    *
@@ -1695,6 +1728,7 @@ declare namespace Soup {
       query: GLib.HashTable | null
     ): void;
   }
+
   /**
    * A callback used to handle WebSocket requests to a #SoupServer.
    *
@@ -1717,6 +1751,7 @@ declare namespace Soup {
       connection: WebsocketConnection
     ): void;
   }
+
   module SessionFeature {
     // Constructor properties interface
 
@@ -4493,6 +4528,13 @@ declare namespace Soup {
     }
 
     /**
+     * Signal callback interface for `got-body-data`
+     */
+    interface GotBodyDataSignalCallback {
+      ($obj: Message, chunk_size: number): void;
+    }
+
+    /**
      * Signal callback interface for `got-headers`
      */
     interface GotHeadersSignalCallback {
@@ -4746,6 +4788,11 @@ declare namespace Soup {
      */
     get_flags(): MessageFlags;
     /**
+     * Returns whether HTTP/1 version is currently demanded for the `msg` send.
+     * @returns %TRUE, when HTTP/1 is demanded, %FALSE otherwise.
+     */
+    get_force_http1(): boolean;
+    /**
      * Gets the HTTP version of `msg`.
      *
      * This is the minimum of the version from the request and the version from the
@@ -4895,6 +4942,14 @@ declare namespace Soup {
      * @param flags a set of #SoupMessageFlags values
      */
     set_flags(flags: MessageFlags): void;
+    /**
+     * Sets whether HTTP/1 version should be used when sending this message.
+     * Some connections can still override it, if needed.
+     *
+     * Note the value is unset after the message send is finished.
+     * @param value value to set
+     */
+    set_force_http1(value: boolean): void;
     /**
      * Set whether `msg` is intended to be used to send `OPTIONS *` to a server.
      *
@@ -5066,6 +5121,15 @@ declare namespace Soup {
       callback: Message.GotBodySignalCallback
     ): number;
     emit(sigName: "got-body", ...args: any[]): void;
+    connect(
+      sigName: "got-body-data",
+      callback: Message.GotBodyDataSignalCallback
+    ): number;
+    connect_after(
+      sigName: "got-body-data",
+      callback: Message.GotBodyDataSignalCallback
+    ): number;
+    emit(sigName: "got-body-data", chunk_size: number, ...args: any[]): void;
     connect(
       sigName: "got-headers",
       callback: Message.GotHeadersSignalCallback
@@ -7260,6 +7324,49 @@ declare namespace Soup {
      */
     send_and_read_finish(result: Gio.AsyncResult): GLib.Bytes;
     /**
+     * Synchronously sends `msg` and splices the response body stream into `out_stream`.
+     *
+     * See [method`Session`.send] for more details on the general semantics.
+     * @param msg a #SoupMessage
+     * @param out_stream a #GOutputStream
+     * @param flags a set of #GOutputStreamSpliceFlags
+     * @param cancellable a #GCancellable
+     * @returns a #gssize containing the size of the data spliced, or -1 if an error occurred.
+     */
+    send_and_splice(
+      msg: Message,
+      out_stream: Gio.OutputStream,
+      flags: Gio.OutputStreamSpliceFlags,
+      cancellable: Gio.Cancellable | null
+    ): number;
+    /**
+     * Asynchronously sends `msg` and splices the response body stream into `out_stream`.
+     * When `callback` is called, then either `msg` has been sent and its response body
+     * spliced, or else an error has occurred.
+     *
+     * See [method`Session`.send] for more details on the general semantics.
+     * @param msg a #SoupMessage
+     * @param out_stream a #GOutputStream
+     * @param flags a set of #GOutputStreamSpliceFlags
+     * @param io_priority the I/O priority of the request
+     * @param cancellable a #GCancellable
+     * @param callback the callback to invoke
+     */
+    send_and_splice_async(
+      msg: Message,
+      out_stream: Gio.OutputStream,
+      flags: Gio.OutputStreamSpliceFlags,
+      io_priority: number,
+      cancellable: Gio.Cancellable | null,
+      callback: Gio.AsyncReadyCallback<this> | null
+    ): void;
+    /**
+     * Gets the response to a [method`Session`.send_and_splice_async].
+     * @param result the #GAsyncResult passed to your callback
+     * @returns a #gssize containing the size of the data spliced, or -1 if an error occurred.
+     */
+    send_and_splice_finish(result: Gio.AsyncResult): number;
+    /**
      * Asynchronously sends `msg` and waits for the beginning of a response.
      *
      * When `callback` is called, then either `msg` has been sent, and its response
@@ -8684,6 +8791,9 @@ declare namespace Soup {
      * multiples thereof) to calculate this value. (If you really care
      * about setting the exact time that the cookie will expire, use
      * [method`Cookie`.set_expires].)
+     *
+     * As of version 3.4.0 the default value of a cookie's same-site-policy
+     * is %SOUP_SAME_SITE_POLICY_LAX.
      * @constructor
      * @param name cookie name
      * @param value cookie value
@@ -8718,6 +8828,9 @@ declare namespace Soup {
      * multiples thereof) to calculate this value. (If you really care
      * about setting the exact time that the cookie will expire, use
      * [method`Cookie`.set_expires].)
+     *
+     * As of version 3.4.0 the default value of a cookie's same-site-policy
+     * is %SOUP_SAME_SITE_POLICY_LAX.
      * @constructor
      * @param name cookie name
      * @param value cookie value
@@ -8744,6 +8857,9 @@ declare namespace Soup {
      * valid state for a #SoupCookie, and you will need to fill in some
      * appropriate string for the domain if you want to actually make use
      * of the cookie.
+     *
+     * As of version 3.4.0 the default value of a cookie's same-site-policy
+     * is %SOUP_SAME_SITE_POLICY_LAX.
      * @param header a cookie string (eg, the value of a Set-Cookie header)
      * @param origin origin of the cookie
      * @returns a new #SoupCookie, or %NULL if it could   not be parsed, or contained an illegal "domain" attribute for a   cookie originating from @origin.
@@ -9788,7 +9904,7 @@ declare namespace Soup {
    * An event can be 0 because it hasn't happened yet, because it's optional or
    * because the load failed before the event reached.
    *
-   * Size metrics are expressed in bytes and aree updated while the [class`Message]` is
+   * Size metrics are expressed in bytes and are updated while the [class`Message]` is
    * being loaded. You can connect to different [class`Message]` signals to get the
    * final result of every value.
    * @record
@@ -10119,8 +10235,4 @@ declare namespace Soup {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Soup?version=3.0" {
-  export default Soup;
 }

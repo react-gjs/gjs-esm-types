@@ -7,7 +7,7 @@
 import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace Gio {
+declare module "gi://Gio?version=2.0" {
   /**
    * An enumeration for well-known message buses.
    */
@@ -29,6 +29,7 @@ declare namespace Gio {
      */
     SESSION,
   }
+
   /**
    * Results returned from g_converter_convert().
    */
@@ -50,6 +51,7 @@ declare namespace Gio {
      */
     FLUSHED,
   }
+
   /**
    * Enumeration describing different kinds of native credential types.
    */
@@ -87,6 +89,7 @@ declare namespace Gio {
      */
     WIN32_PID,
   }
+
   /**
    * Error codes for the %G_DBUS_ERROR error domain.
    */
@@ -282,6 +285,7 @@ declare namespace Gio {
      */
     PROPERTY_READ_ONLY,
   }
+
   /**
    * Enumeration used to describe the byte order of a D-Bus message.
    */
@@ -295,6 +299,7 @@ declare namespace Gio {
      */
     LITTLE_ENDIAN,
   }
+
   /**
    * Header fields used in #GDBusMessage.
    */
@@ -340,6 +345,7 @@ declare namespace Gio {
      */
     NUM_UNIX_FDS,
   }
+
   /**
    * Message types used in #GDBusMessage.
    */
@@ -365,6 +371,7 @@ declare namespace Gio {
      */
     SIGNAL,
   }
+
   /**
    * #GDataStreamByteOrder is used to ensure proper endianness of streaming data sources
    * across various machine architectures.
@@ -383,6 +390,7 @@ declare namespace Gio {
      */
     HOST_ENDIAN,
   }
+
   /**
    * #GDataStreamNewlineType is used when checking for or setting the line endings for a given file.
    */
@@ -404,6 +412,7 @@ declare namespace Gio {
      */
     ANY,
   }
+
   /**
    * Enumeration describing how a drive can be started/stopped.
    */
@@ -437,6 +446,7 @@ declare namespace Gio {
      */
     PASSWORD,
   }
+
   /**
    * GEmblemOrigin is used to add information about the origin of the emblem
    * to #GEmblem.
@@ -459,6 +469,7 @@ declare namespace Gio {
      */
     TAG,
   }
+
   /**
    * Used by g_file_set_attributes_from_info() when setting file attributes.
    */
@@ -476,6 +487,7 @@ declare namespace Gio {
      */
     ERROR_SETTING,
   }
+
   /**
    * The data types for file attributes.
    */
@@ -521,6 +533,7 @@ declare namespace Gio {
      */
     STRINGV,
   }
+
   /**
    * Specifies what type of event a monitor event is.
    */
@@ -577,6 +590,7 @@ declare namespace Gio {
      */
     MOVED_OUT,
   }
+
   /**
    * Indicates the file's on-disk type.
    *
@@ -621,6 +635,7 @@ declare namespace Gio {
      */
     MOUNTABLE,
   }
+
   /**
    * Indicates a hint from the file system whether files should be
    * previewed in a file manager. Returned as the value of the key
@@ -640,6 +655,7 @@ declare namespace Gio {
      */
     NEVER,
   }
+
   /**
    * Error codes returned by GIO functions.
    *
@@ -873,6 +889,7 @@ declare namespace Gio {
      */
     NO_SUCH_DEVICE,
   }
+
   /**
    * Flags for use with g_io_module_scope_new().
    */
@@ -888,6 +905,7 @@ declare namespace Gio {
      */
     BLOCK_DUPLICATES,
   }
+
   /**
    * Memory availability warning levels.
    *
@@ -920,6 +938,7 @@ declare namespace Gio {
      */
     CRITICAL,
   }
+
   /**
    * #GMountOperationResult is returned as a result when a request for
    * information is send by the mounting operation.
@@ -941,6 +960,7 @@ declare namespace Gio {
      */
     UNHANDLED,
   }
+
   /**
    * The host's network connectivity state, as reported by #GNetworkMonitor.
    */
@@ -968,6 +988,7 @@ declare namespace Gio {
      */
     FULL,
   }
+
   /**
    * Priority levels for #GNotifications.
    */
@@ -997,6 +1018,7 @@ declare namespace Gio {
      */
     URGENT,
   }
+
   /**
    * #GPasswordSave is used to indicate the lifespan of a saved password.
    *
@@ -1017,6 +1039,7 @@ declare namespace Gio {
      */
     PERMANENTLY,
   }
+
   /**
    * Return value for various IO operations that signal errors via the
    * return value and not necessarily via a #GError.
@@ -1042,6 +1065,7 @@ declare namespace Gio {
      */
     WOULD_BLOCK,
   }
+
   /**
    * An error code used with %G_RESOLVER_ERROR in a #GError returned
    * from a #GResolver routine.
@@ -1062,6 +1086,7 @@ declare namespace Gio {
      */
     INTERNAL,
   }
+
   /**
    * The type of record that g_resolver_lookup_records() or
    * g_resolver_lookup_records_async() should retrieve. The records are returned
@@ -1116,6 +1141,7 @@ declare namespace Gio {
      */
     NS,
   }
+
   /**
    * An error code used with %G_RESOURCE_ERROR in a #GError returned
    * from a #GResource routine.
@@ -1130,6 +1156,7 @@ declare namespace Gio {
      */
     INTERNAL,
   }
+
   /**
    * Describes an event occurring on a #GSocketClient. See the
    * #GSocketClient::event signal for more details.
@@ -1181,6 +1208,7 @@ declare namespace Gio {
      */
     COMPLETE,
   }
+
   /**
    * The protocol family of a #GSocketAddress. (These values are
    * identical to the system defines %AF_INET, %AF_INET6 and %AF_UNIX,
@@ -1204,6 +1232,7 @@ declare namespace Gio {
      */
     IPV6,
   }
+
   /**
    * Describes an event occurring on a #GSocketListener. See the
    * #GSocketListener::event signal for more details.
@@ -1230,6 +1259,7 @@ declare namespace Gio {
      */
     LISTENED,
   }
+
   /**
    * A protocol identifier is specified when creating a #GSocket, which is a
    * family/type specific identifier, where 0 means the default protocol for
@@ -1261,6 +1291,7 @@ declare namespace Gio {
      */
     SCTP,
   }
+
   /**
    * Flags used when creating a #GSocket. Some protocols may not implement
    * all the socket types.
@@ -1285,6 +1316,7 @@ declare namespace Gio {
      */
     SEQPACKET,
   }
+
   /**
    * The client authentication mode for a #GTlsServerConnection.
    */
@@ -1302,6 +1334,7 @@ declare namespace Gio {
      */
     REQUIRED,
   }
+
   /**
    * Flags for g_tls_interaction_request_certificate(),
    * g_tls_interaction_request_certificate_async(), and
@@ -1313,6 +1346,7 @@ declare namespace Gio {
      */
     NONE,
   }
+
   /**
    * An error code used with %G_TLS_CHANNEL_BINDING_ERROR in a #GError to
    * indicate a TLS channel binding retrieval error.
@@ -1350,6 +1384,7 @@ declare namespace Gio {
      */
     GENERAL_ERROR,
   }
+
   /**
    * The type of TLS channel binding data to retrieve from #GTlsConnection
    * or #GDtlsConnection, as documented by RFC 5929 or RFC 9266. The
@@ -1373,6 +1408,7 @@ declare namespace Gio {
      */
     EXPORTER,
   }
+
   /**
    * Flags for g_tls_database_lookup_certificate_for_handle(),
    * g_tls_database_lookup_certificate_issuer(),
@@ -1389,6 +1425,7 @@ declare namespace Gio {
      */
     KEYPAIR,
   }
+
   /**
    * An error code used with %G_TLS_ERROR in a #GError returned from a
    * TLS-related routine.
@@ -1441,6 +1478,7 @@ declare namespace Gio {
      */
     BAD_CERTIFICATE_PASSWORD,
   }
+
   /**
    * #GTlsInteractionResult is returned by various functions in #GTlsInteraction
    * when finishing an interaction request.
@@ -1462,6 +1500,7 @@ declare namespace Gio {
      */
     FAILED,
   }
+
   /**
    * The TLS or DTLS protocol version used by a #GTlsConnection or
    * #GDtlsConnection. The integer values of these versions are sequential
@@ -1507,6 +1546,7 @@ declare namespace Gio {
      */
     DTLS_1_2,
   }
+
   /**
    * When to allow rehandshaking. See
    * g_tls_connection_set_rehandshake_mode().
@@ -1525,6 +1565,7 @@ declare namespace Gio {
      */
     UNSAFELY,
   }
+
   /**
    * The type of name used by a #GUnixSocketAddress.
    * %G_UNIX_SOCKET_ADDRESS_PATH indicates a traditional unix domain
@@ -1563,6 +1604,7 @@ declare namespace Gio {
      */
     ABSTRACT_PADDED,
   }
+
   /**
    * Used to select the type of data format to use for #GZlibDecompressor
    * and #GZlibCompressor.
@@ -1581,6 +1623,7 @@ declare namespace Gio {
      */
     RAW,
   }
+
   /**
    * Flags used when creating a #GAppInfo.
    * @bitfield
@@ -1603,6 +1646,7 @@ declare namespace Gio {
      */
     SUPPORTS_STARTUP_NOTIFICATION,
   }
+
   /**
    * Flags used to define the behaviour of a #GApplication.
    * @bitfield
@@ -1681,6 +1725,7 @@ declare namespace Gio {
      */
     REPLACE,
   }
+
   /**
    * #GAskPasswordFlags are used to request specific information from the
    * user, or to notify the user of their choices in an authentication
@@ -1713,6 +1758,7 @@ declare namespace Gio {
      */
     TCRYPT,
   }
+
   /**
    * Flags used in g_bus_own_name().
    * @bitfield
@@ -1737,6 +1783,7 @@ declare namespace Gio {
      */
     DO_NOT_QUEUE,
   }
+
   /**
    * Flags used in g_bus_watch_name().
    * @bitfield
@@ -1753,6 +1800,7 @@ declare namespace Gio {
      */
     AUTO_START,
   }
+
   /**
    * Flags used when calling a g_converter_convert().
    * @bitfield
@@ -1771,6 +1819,7 @@ declare namespace Gio {
      */
     FLUSH,
   }
+
   /**
    * Flags used in g_dbus_connection_call() and similar APIs.
    * @bitfield
@@ -1792,6 +1841,7 @@ declare namespace Gio {
      */
     ALLOW_INTERACTIVE_AUTHORIZATION,
   }
+
   /**
    * Capabilities negotiated with the remote peer.
    * @bitfield
@@ -1807,6 +1857,7 @@ declare namespace Gio {
      */
     UNIX_FD_PASSING,
   }
+
   /**
    * Flags used when creating a new #GDBusConnection.
    * @bitfield
@@ -1855,6 +1906,7 @@ declare namespace Gio {
      */
     CROSS_NAMESPACE,
   }
+
   /**
    * Flags describing the behavior of a #GDBusInterfaceSkeleton instance.
    * @bitfield
@@ -1872,6 +1924,7 @@ declare namespace Gio {
      */
     HANDLE_METHOD_INVOCATIONS_IN_THREAD,
   }
+
   /**
    * Message flags used in #GDBusMessage.
    * @bitfield
@@ -1897,6 +1950,7 @@ declare namespace Gio {
      */
     ALLOW_INTERACTIVE_AUTHORIZATION,
   }
+
   /**
    * Flags used when constructing a #GDBusObjectManagerClient.
    * @bitfield
@@ -1914,6 +1968,7 @@ declare namespace Gio {
      */
     DO_NOT_AUTO_START,
   }
+
   /**
    * Flags describing the access control of a D-Bus property.
    * @bitfield
@@ -1932,6 +1987,7 @@ declare namespace Gio {
      */
     WRITABLE,
   }
+
   /**
    * Flags used when constructing an instance of a #GDBusProxy derived class.
    * @bitfield
@@ -1973,6 +2029,7 @@ declare namespace Gio {
      */
     NO_MATCH_RULE,
   }
+
   /**
    * Flags used when sending #GDBusMessages on a #GDBusConnection.
    * @bitfield
@@ -1989,6 +2046,7 @@ declare namespace Gio {
      */
     PRESERVE_SERIAL,
   }
+
   /**
    * Flags used when creating a #GDBusServer.
    * @bitfield
@@ -2015,6 +2073,7 @@ declare namespace Gio {
      */
     AUTHENTICATION_REQUIRE_SAME_USER,
   }
+
   /**
    * Flags used when subscribing to signals via g_dbus_connection_signal_subscribe().
    * @bitfield
@@ -2042,6 +2101,7 @@ declare namespace Gio {
      */
     MATCH_ARG0_PATH,
   }
+
   /**
    * Flags passed to g_dbus_connection_register_subtree().
    * @bitfield
@@ -2058,6 +2118,7 @@ declare namespace Gio {
      */
     DISPATCH_TO_UNENUMERATED_NODES,
   }
+
   /**
    * Flags used when starting a drive.
    * @bitfield
@@ -2068,6 +2129,7 @@ declare namespace Gio {
      */
     NONE,
   }
+
   /**
    * Flags specifying the behaviour of an attribute.
    * @bitfield
@@ -2086,6 +2148,7 @@ declare namespace Gio {
      */
     COPY_WHEN_MOVED,
   }
+
   /**
    * Flags used when copying or moving files.
    * @bitfield
@@ -2120,6 +2183,7 @@ declare namespace Gio {
      */
     TARGET_DEFAULT_PERMS,
   }
+
   /**
    * Flags used when an operation may create a file.
    * @bitfield
@@ -2148,6 +2212,7 @@ declare namespace Gio {
      */
     REPLACE_DESTINATION,
   }
+
   /**
    * Flags that can be used with g_file_measure_disk_usage().
    * @bitfield
@@ -2176,6 +2241,7 @@ declare namespace Gio {
      */
     NO_XDEV,
   }
+
   /**
    * Flags used to set what a #GFileMonitor will watch for.
    * @bitfield
@@ -2211,6 +2277,7 @@ declare namespace Gio {
      */
     WATCH_MOVES,
   }
+
   /**
    * Flags used when querying a #GFileInfo.
    * @bitfield
@@ -2225,6 +2292,7 @@ declare namespace Gio {
      */
     NOFOLLOW_SYMLINKS,
   }
+
   /**
    * GIOStreamSpliceFlags determine how streams should be spliced.
    * @bitfield
@@ -2250,6 +2318,7 @@ declare namespace Gio {
      */
     WAIT_FOR_BOTH,
   }
+
   /**
    * Flags used when mounting a mount.
    * @bitfield
@@ -2260,6 +2329,7 @@ declare namespace Gio {
      */
     NONE,
   }
+
   /**
    * Flags used when an unmounting a mount.
    * @bitfield
@@ -2275,6 +2345,7 @@ declare namespace Gio {
      */
     FORCE,
   }
+
   /**
    * GOutputStreamSpliceFlags determine how streams should be spliced.
    * @bitfield
@@ -2295,6 +2366,7 @@ declare namespace Gio {
      */
     CLOSE_TARGET,
   }
+
   /**
    * Flags to modify lookup behavior.
    * @bitfield
@@ -2313,6 +2385,7 @@ declare namespace Gio {
      */
     IPV6_ONLY,
   }
+
   /**
    * GResourceFlags give information about a particular file inside a resource
    * bundle.
@@ -2328,6 +2401,7 @@ declare namespace Gio {
      */
     COMPRESSED,
   }
+
   /**
    * GResourceLookupFlags determine how resource path lookups are handled.
    * @bitfield
@@ -2338,6 +2412,7 @@ declare namespace Gio {
      */
     NONE,
   }
+
   /**
    * Flags used when creating a binding. These flags determine in which
    * direction the binding works. The default is to synchronize in both
@@ -2375,6 +2450,7 @@ declare namespace Gio {
      */
     INVERT_BOOLEAN,
   }
+
   /**
    * Flags used in g_socket_receive_message() and g_socket_send_message().
    * The flags listed in the enum are some commonly available flags, but the
@@ -2403,6 +2479,7 @@ declare namespace Gio {
      */
     DONTROUTE,
   }
+
   /**
    * Flags to define the behaviour of a #GSubprocess.
    *
@@ -2473,6 +2550,7 @@ declare namespace Gio {
      */
     SEARCH_PATH_FROM_ENVP,
   }
+
   /**
    * Flags to define future #GTestDBus behaviour.
    * @bitfield
@@ -2483,6 +2561,7 @@ declare namespace Gio {
      */
     NONE,
   }
+
   /**
    * A set of flags describing TLS certification validation. This can be
    * used to describe why a particular certificate was rejected (for
@@ -2542,6 +2621,7 @@ declare namespace Gio {
      */
     VALIDATE_ALL,
   }
+
   /**
    * Flags for g_tls_database_verify_chain().
    * @bitfield
@@ -2552,6 +2632,7 @@ declare namespace Gio {
      */
     NONE,
   }
+
   /**
    * Various flags for the password.
    * @bitfield
@@ -2591,6 +2672,7 @@ declare namespace Gio {
      */
     PKCS11_CONTEXT_SPECIFIC,
   }
+
   /**
    * The value returned by handlers of the signals generated by
    * the `gdbus-codegen` tool to indicate that a method call has been
@@ -3126,6 +3208,42 @@ declare namespace Gio {
    */
   const FILE_ATTRIBUTE_THUMBNAILING_FAILED: string | null;
   /**
+   * A key in the "thumbnail" namespace for checking if thumbnailing failed
+   * for the large image.
+   *
+   * This attribute is %TRUE if thumbnailing failed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE: string | null;
+  /**
+   * A key in the "thumbnail" namespace for checking if thumbnailing failed
+   * for the normal image.
+   *
+   * This attribute is %TRUE if thumbnailing failed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL: string | null;
+  /**
+   * A key in the "thumbnail" namespace for checking if thumbnailing failed
+   * for the x-large image.
+   *
+   * This attribute is %TRUE if thumbnailing failed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE: string | null;
+  /**
+   * A key in the "thumbnail" namespace for checking if thumbnailing failed
+   * for the xx-large image.
+   *
+   * This attribute is %TRUE if thumbnailing failed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE: string | null;
+  /**
    * A key in the "thumbnail" namespace for checking whether the thumbnail is outdated.
    *
    * This attribute is %TRUE if the thumbnail is up-to-date with the file it represents,
@@ -3138,12 +3256,100 @@ declare namespace Gio {
    */
   const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID: string | null;
   /**
+   * A key in the "thumbnail" namespace for checking whether the large
+   * thumbnail is outdated.
+   *
+   * This attribute is %TRUE if the large thumbnail is up-to-date with the file
+   * it represents, and %FALSE if the file has been modified since the thumbnail
+   * was generated.
+   *
+   * If %G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE is %TRUE and this attribute
+   * is %FALSE, it indicates that thumbnailing may be attempted again and may
+   * succeed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE: string | null;
+  /**
+   * A key in the "thumbnail" namespace for checking whether the normal
+   * thumbnail is outdated.
+   *
+   * This attribute is %TRUE if the normal thumbnail is up-to-date with the file
+   * it represents, and %FALSE if the file has been modified since the thumbnail
+   * was generated.
+   *
+   * If %G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL is %TRUE and this attribute
+   * is %FALSE, it indicates that thumbnailing may be attempted again and may
+   * succeed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL: string | null;
+  /**
+   * A key in the "thumbnail" namespace for checking whether the x-large
+   * thumbnail is outdated.
+   *
+   * This attribute is %TRUE if the x-large thumbnail is up-to-date with the file
+   * it represents, and %FALSE if the file has been modified since the thumbnail
+   * was generated.
+   *
+   * If %G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE is %TRUE and this attribute
+   * is %FALSE, it indicates that thumbnailing may be attempted again and may
+   * succeed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE: string | null;
+  /**
+   * A key in the "thumbnail" namespace for checking whether the xx-large
+   * thumbnail is outdated.
+   *
+   * This attribute is %TRUE if the x-large thumbnail is up-to-date with the file
+   * it represents, and %FALSE if the file has been modified since the thumbnail
+   * was generated.
+   *
+   * If %G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE is %TRUE and this attribute
+   * is %FALSE, it indicates that thumbnailing may be attempted again and may
+   * succeed.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BOOLEAN.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE: string | null;
+  /**
    * A key in the "thumbnail" namespace for getting the path to the thumbnail
-   * image.
+   * image with the biggest size available.
    *
    * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
    */
   const FILE_ATTRIBUTE_THUMBNAIL_PATH: string | null;
+  /**
+   * A key in the "thumbnail" namespace for getting the path to the large
+   * thumbnail image.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE: string | null;
+  /**
+   * A key in the "thumbnail" namespace for getting the path to the normal
+   * thumbnail image.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL: string | null;
+  /**
+   * A key in the "thumbnail" namespace for getting the path to the x-large
+   * thumbnail image.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE: string | null;
+  /**
+   * A key in the "thumbnail" namespace for getting the path to the xx-large
+   * thumbnail image.
+   *
+   * Corresponding #GFileAttributeType is %G_FILE_ATTRIBUTE_TYPE_BYTE_STRING.
+   */
+  const FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE: string | null;
   /**
    * A key in the "time" namespace for getting the time the file was last
    * accessed.
@@ -3411,6 +3617,13 @@ declare namespace Gio {
    */
   const MENU_ATTRIBUTE_TARGET: string | null;
   /**
+   * The maximum number of entries in a menu section supported by
+   * g_dbus_connection_export_menu_model().
+   *
+   * The exact value of the limit may change in future GLib versions.
+   */
+  const MENU_EXPORTER_MAX_SECTION_SIZE: number;
+  /**
    * The name of the link that associates a menu item with a section.  The linked
    * menu will usually be shown in place of the menu item, using the item's label
    * as a header.
@@ -3526,23 +3739,29 @@ declare namespace Gio {
    *
    * The first format is used to represent an action name with no target
    * value and consists of just an action name containing no whitespace
-   * nor the characters ':', '(' or ')'.  For example: "app.action".
+   * nor the characters `:`, `(` or `)`.  For example: `app.action`.
    *
    * The second format is used to represent an action with a target value
-   * that is a non-empty string consisting only of alphanumerics, plus '-'
-   * and '.'.  In that case, the action name and target value are
-   * separated by a double colon ("::").  For example:
-   * "app.action::target".
+   * that is a non-empty string consisting only of alphanumerics, plus `-`
+   * and `.`.  In that case, the action name and target value are
+   * separated by a double colon (`::`).  For example:
+   * `app.action::target`.
    *
    * The third format is used to represent an action with any type of
    * target value, including strings.  The target value follows the action
-   * name, surrounded in parens.  For example: "app.action(42)".  The
+   * name, surrounded in parens.  For example: `app.action(42)`.  The
    * target value is parsed using g_variant_parse().  If a tuple-typed
    * value is desired, it must be specified in the same way, resulting in
-   * two sets of parens, for example: "app.action((1,2,3))".  A string
-   * target can be specified this way as well: "app.action('target')".
-   * For strings, this third format must be used if * target value is
-   * empty or contains characters other than alphanumerics, '-' and '.'.
+   * two sets of parens, for example: `app.action((1,2,3))`.  A string
+   * target can be specified this way as well: `app.action('target')`.
+   * For strings, this third format must be used if target value is
+   * empty or contains characters other than alphanumerics, `-` and `.`.
+   *
+   * If this function returns %TRUE, a non-%NULL value is guaranteed to be returned
+   * in `action_name` (if a pointer is passed in). A %NULL value may still be
+   * returned in `target_value,` as the `detailed_name` may not contain a target.
+   *
+   * If returned, the #GVariant in `target_value` is guaranteed to not be floating.
    * @param detailed_name a detailed action name
    * @returns %TRUE if successful, else %FALSE with @error set
    */
@@ -3551,7 +3770,7 @@ declare namespace Gio {
   ): [
     /* returnType */ boolean,
     /* action_name */ string | null,
-    /* target_value */ GLib.Variant
+    /* target_value */ GLib.Variant | null
   ];
   /**
    * Formats a detailed action name from `action_name` and `target_value`.
@@ -4635,12 +4854,6 @@ declare namespace Gio {
    */
   function icon_deserialize(value: GLib.Variant): Icon | null;
   /**
-   * Gets a hash for an icon.
-   * @param icon #gconstpointer to an icon object.
-   * @returns a #guint containing a hash for the @icon, suitable for use in a #GHashTable or similar data structure.
-   */
-  function icon_hash(icon: any): number;
-  /**
    * Generate a #GIcon instance from `str`. This function can fail if
    * `str` is not valid - see g_icon_to_string() for discussion.
    *
@@ -5441,10 +5654,12 @@ declare namespace Gio {
    * @callback
    * @param source_object the object the asynchronous operation was started with.
    * @param res a #GAsyncResult.
+   * @param data user data passed to the callback.
    */
   interface AsyncReadyCallback<T = GObject.Object> {
-    (source_object: T, res: AsyncResult): void;
+    (source_object: T, res: AsyncResult, data: any | null): void;
   }
+
   /**
    * Invoked when a connection to a message bus has been obtained.
    * @callback
@@ -5454,6 +5669,7 @@ declare namespace Gio {
   interface BusAcquiredCallback {
     (connection: DBusConnection, name: string | null): void;
   }
+
   /**
    * Invoked when the name is acquired.
    * @callback
@@ -5463,6 +5679,7 @@ declare namespace Gio {
   interface BusNameAcquiredCallback {
     (connection: DBusConnection, name: string | null): void;
   }
+
   /**
    * Invoked when the name being watched is known to have to have an owner.
    * @callback
@@ -5477,6 +5694,7 @@ declare namespace Gio {
       name_owner: string | null
     ): void;
   }
+
   /**
    * Invoked when the name is lost or `connection` has been closed.
    * @callback
@@ -5486,6 +5704,7 @@ declare namespace Gio {
   interface BusNameLostCallback {
     (connection: DBusConnection, name: string | null): void;
   }
+
   /**
    * Invoked when the name being watched is known not to have to have an owner.
    *
@@ -5499,16 +5718,19 @@ declare namespace Gio {
   interface BusNameVanishedCallback {
     (connection: DBusConnection, name: string | null): void;
   }
+
   /**
    * This is the function type of the callback used for the #GSource
    * returned by g_cancellable_source_new().
    * @callback
    * @param cancellable the #GCancellable
+   * @param data data passed in by the user.
    * @returns it should return %FALSE if the source should be removed.
    */
   interface CancellableSourceFunc {
-    (cancellable: Cancellable | null): boolean;
+    (cancellable: Cancellable | null, data: any | null): boolean;
   }
+
   /**
    * The type of the `get_property` function in #GDBusInterfaceVTable.
    * @callback
@@ -5530,6 +5752,7 @@ declare namespace Gio {
       error: GLib.Error
     ): GLib.Variant;
   }
+
   /**
    * The type of the `method_call` function in #GDBusInterfaceVTable.
    * @callback
@@ -5552,6 +5775,7 @@ declare namespace Gio {
       invocation: DBusMethodInvocation
     ): void;
   }
+
   /**
    * The type of the `set_property` function in #GDBusInterfaceVTable.
    * @callback
@@ -5575,6 +5799,7 @@ declare namespace Gio {
       error: GLib.Error
     ): boolean;
   }
+
   /**
    * Signature for function used in g_dbus_connection_add_filter().
    *
@@ -5651,6 +5876,7 @@ declare namespace Gio {
       incoming: boolean
     ): DBusMessage | null;
   }
+
   /**
    * Function signature for a function used to determine the #GType to
    * use for an interface proxy (if `interface_name` is not %NULL) or
@@ -5663,15 +5889,18 @@ declare namespace Gio {
    * @param manager A #GDBusObjectManagerClient.
    * @param object_path The object path of the remote object.
    * @param interface_name The interface name of the remote object or %NULL if a #GDBusObjectProxy #GType is requested.
+   * @param data data passed in by the user.
    * @returns A #GType to use for the remote object. The returned type   must be a #GDBusProxy or #GDBusObjectProxy -derived   type.
    */
   interface DBusProxyTypeFunc {
     (
       manager: DBusObjectManagerClient,
       object_path: string | null,
-      interface_name: string | null
+      interface_name: string | null,
+      data: any | null
     ): GObject.GType;
   }
+
   /**
    * Signature for callback function used in g_dbus_connection_signal_subscribe().
    * @callback
@@ -5692,6 +5921,7 @@ declare namespace Gio {
       parameters: GLib.Variant
     ): void;
   }
+
   /**
    * The type of the `dispatch` function in #GDBusSubtreeVTable.
    *
@@ -5716,6 +5946,7 @@ declare namespace Gio {
       out_user_data: any
     ): DBusInterfaceVTable | null;
   }
+
   /**
    * The type of the `enumerate` function in #GDBusSubtreeVTable.
    *
@@ -5741,6 +5972,7 @@ declare namespace Gio {
       object_path: string | null
     ): string[];
   }
+
   /**
    * The type of the `introspect` function in #GDBusSubtreeVTable.
    *
@@ -5775,17 +6007,24 @@ declare namespace Gio {
       node: string | null
     ): DBusInterfaceInfo[] | null;
   }
+
   /**
    * This is the function type of the callback used for the #GSource
    * returned by g_datagram_based_create_source().
    * @callback
    * @param datagram_based the #GDatagramBased
    * @param condition the current condition at the source fired
+   * @param data data passed in by the user
    * @returns %G_SOURCE_REMOVE if the source should be removed,   %G_SOURCE_CONTINUE otherwise
    */
   interface DatagramBasedSourceFunc {
-    (datagram_based: DatagramBased, condition: GLib.IOCondition): boolean;
+    (
+      datagram_based: DatagramBased,
+      condition: GLib.IOCondition,
+      data: any | null
+    ): boolean;
   }
+
   /**
    * During invocation, g_desktop_app_info_launch_uris_as_manager() may
    * create one or more child processes.  This callback is invoked once
@@ -5797,6 +6036,7 @@ declare namespace Gio {
   interface DesktopAppLaunchCallback {
     (appinfo: DesktopAppInfo, pid: GLib.Pid): void;
   }
+
   /**
    * This callback type is used by g_file_measure_disk_usage() to make
    * periodic progress reports when measuring the amount of disk spaced
@@ -5830,15 +6070,18 @@ declare namespace Gio {
    * @param current_size the current cumulative size measurement
    * @param num_dirs the number of directories visited so far
    * @param num_files the number of non-directory files encountered
+   * @param data the data passed to the original request for this callback
    */
   interface FileMeasureProgressCallback {
     (
       reporting: boolean,
       current_size: number,
       num_dirs: number,
-      num_files: number
+      num_files: number,
+      data: any | null
     ): void;
   }
+
   /**
    * When doing file operations that may take a while, such as moving
    * a file or copying a file, a progress callback is used to pass how
@@ -5846,10 +6089,16 @@ declare namespace Gio {
    * @callback
    * @param current_num_bytes the current number of bytes in the operation.
    * @param total_num_bytes the total number of bytes in the operation.
+   * @param data user data passed to the callback.
    */
   interface FileProgressCallback {
-    (current_num_bytes: number, total_num_bytes: number): void;
+    (
+      current_num_bytes: number,
+      total_num_bytes: number,
+      data: any | null
+    ): void;
   }
+
   /**
    * When loading the partial contents of a file with g_file_load_partial_contents_async(),
    * it may become necessary to determine if any more data from the file should be loaded.
@@ -5858,11 +6107,17 @@ declare namespace Gio {
    * @callback
    * @param file_contents the data as currently read.
    * @param file_size the size of the data currently read.
+   * @param callback_data data passed to the callback.
    * @returns %TRUE if more data should be read back. %FALSE otherwise.
    */
   interface FileReadMoreCallback {
-    (file_contents: string | null, file_size: number): boolean;
+    (
+      file_contents: string | null,
+      file_size: number,
+      callback_data: any | null
+    ): boolean;
   }
+
   /**
    * I/O Job function.
    *
@@ -5871,22 +6126,30 @@ declare namespace Gio {
    * @callback
    * @param job a #GIOSchedulerJob.
    * @param cancellable optional #GCancellable object, %NULL to ignore.
+   * @param data data passed to the callback function
    * @returns %TRUE if this function should be called again to    complete the job, %FALSE if the job is complete (or cancelled)
    */
   interface IOSchedulerJobFunc {
-    (job: IOSchedulerJob, cancellable: Cancellable | null): boolean;
+    (
+      job: IOSchedulerJob,
+      cancellable: Cancellable | null,
+      data: any | null
+    ): boolean;
   }
+
   /**
    * This is the function type of the callback used for the #GSource
    * returned by g_pollable_input_stream_create_source() and
    * g_pollable_output_stream_create_source().
    * @callback
    * @param pollable_stream the #GPollableInputStream or #GPollableOutputStream
+   * @param data data passed in by the user.
    * @returns it should return %FALSE if the source should be removed.
    */
   interface PollableSourceFunc {
-    (pollable_stream: GObject.Object): boolean;
+    (pollable_stream: GObject.Object, data: any | null): boolean;
   }
+
   /**
    * Changes the size of the memory block pointed to by `data` to
    * `size` bytes.
@@ -5900,6 +6163,7 @@ declare namespace Gio {
   interface ReallocFunc {
     (data: any | null, size: number): any | null;
   }
+
   /**
    * The type for the function that is used to convert from #GSettings to
    * an object property. The `value` is already initialized to hold values
@@ -5912,6 +6176,7 @@ declare namespace Gio {
   interface SettingsBindGetMapping {
     (value: any, variant: GLib.Variant): boolean;
   }
+
   /**
    * The type for the function that is used to convert an object property
    * value to a #GVariant for storing it in #GSettings.
@@ -5923,6 +6188,7 @@ declare namespace Gio {
   interface SettingsBindSetMapping {
     (value: any, expected_type: GLib.VariantType): GLib.Variant;
   }
+
   /**
    * The type of the function that is used to convert from a value stored
    * in a #GSettings to a value that is useful to the application.
@@ -5941,6 +6207,7 @@ declare namespace Gio {
   interface SettingsGetMapping {
     (value: GLib.Variant): boolean;
   }
+
   /**
    * Simple thread function that runs an asynchronous operation and
    * checks for cancellation.
@@ -5956,17 +6223,20 @@ declare namespace Gio {
       cancellable: Cancellable | null
     ): void;
   }
+
   /**
    * This is the function type of the callback used for the #GSource
    * returned by g_socket_create_source().
    * @callback
    * @param socket the #GSocket
    * @param condition the current condition at the source fired.
+   * @param data data passed in by the user.
    * @returns it should return %FALSE if the source should be removed.
    */
   interface SocketSourceFunc {
-    (socket: Socket, condition: GLib.IOCondition): boolean;
+    (socket: Socket, condition: GLib.IOCondition, data: any | null): boolean;
   }
+
   /**
    * The prototype for a task function to be run in a thread via
    * g_task_run_in_thread() or g_task_run_in_thread_sync().
@@ -5997,6 +6267,7 @@ declare namespace Gio {
       cancellable: Cancellable | null
     ): void;
   }
+
   /**
    * This function type is used by g_vfs_register_uri_scheme() to make it
    * possible for a client to associate an URI scheme to a different #GFile
@@ -6012,6 +6283,7 @@ declare namespace Gio {
   interface VfsFileLookupFunc {
     (vfs: Vfs, identifier: string | null): File;
   }
+
   module Action {
     // Constructor properties interface
 
@@ -6379,23 +6651,29 @@ declare namespace Gio {
      *
      * The first format is used to represent an action name with no target
      * value and consists of just an action name containing no whitespace
-     * nor the characters ':', '(' or ')'.  For example: "app.action".
+     * nor the characters `:`, `(` or `)`.  For example: `app.action`.
      *
      * The second format is used to represent an action with a target value
-     * that is a non-empty string consisting only of alphanumerics, plus '-'
-     * and '.'.  In that case, the action name and target value are
-     * separated by a double colon ("::").  For example:
-     * "app.action::target".
+     * that is a non-empty string consisting only of alphanumerics, plus `-`
+     * and `.`.  In that case, the action name and target value are
+     * separated by a double colon (`::`).  For example:
+     * `app.action::target`.
      *
      * The third format is used to represent an action with any type of
      * target value, including strings.  The target value follows the action
-     * name, surrounded in parens.  For example: "app.action(42)".  The
+     * name, surrounded in parens.  For example: `app.action(42)`.  The
      * target value is parsed using g_variant_parse().  If a tuple-typed
      * value is desired, it must be specified in the same way, resulting in
-     * two sets of parens, for example: "app.action((1,2,3))".  A string
-     * target can be specified this way as well: "app.action('target')".
-     * For strings, this third format must be used if * target value is
-     * empty or contains characters other than alphanumerics, '-' and '.'.
+     * two sets of parens, for example: `app.action((1,2,3))`.  A string
+     * target can be specified this way as well: `app.action('target')`.
+     * For strings, this third format must be used if target value is
+     * empty or contains characters other than alphanumerics, `-` and `.`.
+     *
+     * If this function returns %TRUE, a non-%NULL value is guaranteed to be returned
+     * in `action_name` (if a pointer is passed in). A %NULL value may still be
+     * returned in `target_value,` as the `detailed_name` may not contain a target.
+     *
+     * If returned, the #GVariant in `target_value` is guaranteed to not be floating.
      * @param detailed_name a detailed action name
      * @returns %TRUE if successful, else %FALSE with @error set
      */
@@ -6404,7 +6682,7 @@ declare namespace Gio {
     ): [
       /* returnType */ boolean,
       /* action_name */ string | null,
-      /* target_value */ GLib.Variant
+      /* target_value */ GLib.Variant | null
     ];
     /**
      * Formats a detailed action name from `action_name` and `target_value`.
@@ -7301,6 +7579,10 @@ declare namespace Gio {
     get_display_name(): string | null;
     /**
      * Gets the executable's name for the installed application.
+     *
+     * This is intended to be used for debugging or labelling what program is going
+     * to be run. To launch the executable, use g_app_info_launch() and related
+     * functions, rather than spawning the return value from this function.
      * @returns a string containing the @appinfo's application binaries name
      */
     get_executable(): string;
@@ -7360,9 +7642,9 @@ declare namespace Gio {
      * environment variable with the path of the launched desktop file and
      * `GIO_LAUNCHED_DESKTOP_FILE_PID` to the process id of the launched
      * process. This can be used to ignore `GIO_LAUNCHED_DESKTOP_FILE`,
-     * should it be inherited by further processes. The `DISPLAY` and
-     * `DESKTOP_STARTUP_ID` environment variables are also set, based
-     * on information provided in `context`.
+     * should it be inherited by further processes. The `DISPLAY`,
+     * `XDG_ACTIVATION_TOKEN` and `DESKTOP_STARTUP_ID` environment
+     * variables are also set, based on information provided in `context`.
      * @param files a #GList of #GFile objects
      * @param context a #GAppLaunchContext or %NULL
      * @returns %TRUE on successful launch, %FALSE otherwise.
@@ -7529,6 +7811,10 @@ declare namespace Gio {
     vfunc_get_display_name(): string | null;
     /**
      * Gets the executable's name for the installed application.
+     *
+     * This is intended to be used for debugging or labelling what program is going
+     * to be run. To launch the executable, use g_app_info_launch() and related
+     * functions, rather than spawning the return value from this function.
      * @virtual
      * @returns a string containing the @appinfo's application binaries name
      */
@@ -7593,9 +7879,9 @@ declare namespace Gio {
      * environment variable with the path of the launched desktop file and
      * `GIO_LAUNCHED_DESKTOP_FILE_PID` to the process id of the launched
      * process. This can be used to ignore `GIO_LAUNCHED_DESKTOP_FILE`,
-     * should it be inherited by further processes. The `DISPLAY` and
-     * `DESKTOP_STARTUP_ID` environment variables are also set, based
-     * on information provided in `context`.
+     * should it be inherited by further processes. The `DISPLAY`,
+     * `XDG_ACTIVATION_TOKEN` and `DESKTOP_STARTUP_ID` environment
+     * variables are also set, based on information provided in `context`.
      * @virtual
      * @param files a #GList of #GFile objects
      * @param context a #GAppLaunchContext or %NULL
@@ -8497,7 +8783,7 @@ declare namespace Gio {
      * to produce as much output as possible and then return an error
      * (typically %G_IO_ERROR_PARTIAL_INPUT).
      * @param inbuf the buffer         containing the data to convert.
-     * @param outbuf a buffer to write    converted data in.
+     * @param outbuf a    buffer to write converted data in.
      * @param flags a #GConverterFlags controlling the conversion details
      * @returns a #GConverterResult, %G_CONVERTER_ERROR on error.
      */
@@ -8604,13 +8890,13 @@ declare namespace Gio {
      * (typically %G_IO_ERROR_PARTIAL_INPUT).
      * @virtual
      * @param inbuf the buffer         containing the data to convert.
-     * @param outbuf a buffer to write    converted data in.
+     * @param outbuf a    buffer to write converted data in.
      * @param flags a #GConverterFlags controlling the conversion details
      * @returns a #GConverterResult, %G_CONVERTER_ERROR on error.
      */
     vfunc_convert(
       inbuf: Uint8Array | null,
-      outbuf: Uint8Array | null,
+      outbuf: Uint8Array,
       flags: ConverterFlags
     ): [
       /* returnType */ ConverterResult,
@@ -15751,6 +16037,11 @@ declare namespace Gio {
      */
     equal(icon2: Icon | null): boolean;
     /**
+     * Gets a hash for an icon.
+     * @returns a #guint containing a hash for the @icon, suitable for use in a #GHashTable or similar data structure.
+     */
+    hash(): number;
+    /**
      * Serializes a #GIcon into a #GVariant. An equivalent #GIcon can be retrieved
      * back by calling g_icon_deserialize() on the returned value.
      * As serialization will avoid using raw icon data when possible, it only
@@ -15805,6 +16096,17 @@ declare namespace Gio {
      * @returns a #GVariant, or %NULL when serialization fails. The #GVariant will not be floating.
      */
     vfunc_serialize(): GLib.Variant | null;
+    /**
+     * Serializes the `icon` into string tokens.
+     * This is can be invoked when g_icon_new_for_string() is called.
+     * @virtual
+     * @returns %TRUE if serialization took place, %FALSE otherwise
+     */
+    vfunc_to_tokens(): [
+      /* returnType */ boolean,
+      /* tokens */ string[],
+      /* out_version */ number
+    ];
 
     // Class property signals of Gio-2.0.Gio.Icon
 
@@ -15872,12 +16174,6 @@ declare namespace Gio {
      * @returns a #GIcon, or %NULL when deserialization fails.
      */
     static deserialize(value: GLib.Variant): Icon | null;
-    /**
-     * Gets a hash for an icon.
-     * @param icon #gconstpointer to an icon object.
-     * @returns a #guint containing a hash for the @icon, suitable for use in a #GHashTable or similar data structure.
-     */
-    static hash(icon: any): number;
   }
 
   module Initable {
@@ -18026,7 +18322,7 @@ declare namespace Gio {
     /**
      * Looks into the system proxy configuration to determine what proxy,
      * if any, to use to connect to `uri`. The returned proxy URIs are of
-     * the form `<protocol>://[user[:password]`]`host:port` or
+     * the form `<protocol>://[user[:password]`]`host[:port]` or
      * `direct://`, where <protocol> could be http, rtsp, socks
      * or other proxying protocol.
      *
@@ -18078,7 +18374,7 @@ declare namespace Gio {
     /**
      * Looks into the system proxy configuration to determine what proxy,
      * if any, to use to connect to `uri`. The returned proxy URIs are of
-     * the form `<protocol>://[user[:password]`]`host:port` or
+     * the form `<protocol>://[user[:password]`]`host[:port]` or
      * `direct://`, where <protocol> could be http, rtsp, socks
      * or other proxying protocol.
      *
@@ -20030,10 +20326,8 @@ declare namespace Gio {
     asyncFunc: string,
     finishFunc?: string
   ): void;
-
   /** Temporary Gio.File.prototype fix */
   export const _LocalFilePrototype: typeof File.prototype;
-
   module AppInfoMonitor {
     // Signal callback interfaces
 
@@ -20180,10 +20474,18 @@ declare namespace Gio {
     get_environment(): string[];
     /**
      * Initiates startup notification for the application and returns the
-     * `DESKTOP_STARTUP_ID` for the launched operation, if supported.
+     * `XDG_ACTIVATION_TOKEN` or `DESKTOP_STARTUP_ID` for the launched operation,
+     * if supported.
      *
-     * Startup notification IDs are defined in the
-     * [FreeDesktop.Org Startup Notifications standard](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
+     * The returned token may be referred to equivalently as an ‘activation token’
+     * (using Wayland terminology) or a ‘startup sequence ID’ (using X11 terminology).
+     * The two [are interoperable](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/xdg-activation/x11-interoperation.rst).
+     *
+     * Activation tokens are defined in the [XDG Activation Protocol](https://wayland.app/protocols/xdg-activation-v1),
+     * and startup notification IDs are defined in the
+     * [freedesktop.org Startup Notification Protocol](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
+     *
+     * Support for the XDG Activation Protocol was added in GLib 2.76.
      * @param info a #GAppInfo
      * @param files a #GList of of #GFile objects
      * @returns a startup notification ID for the application, or %NULL if     not supported.
@@ -20223,10 +20525,18 @@ declare namespace Gio {
     vfunc_get_display(info: AppInfo, files: File[]): string | null;
     /**
      * Initiates startup notification for the application and returns the
-     * `DESKTOP_STARTUP_ID` for the launched operation, if supported.
+     * `XDG_ACTIVATION_TOKEN` or `DESKTOP_STARTUP_ID` for the launched operation,
+     * if supported.
      *
-     * Startup notification IDs are defined in the
-     * [FreeDesktop.Org Startup Notifications standard](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
+     * The returned token may be referred to equivalently as an ‘activation token’
+     * (using Wayland terminology) or a ‘startup sequence ID’ (using X11 terminology).
+     * The two [are interoperable](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/xdg-activation/x11-interoperation.rst).
+     *
+     * Activation tokens are defined in the [XDG Activation Protocol](https://wayland.app/protocols/xdg-activation-v1),
+     * and startup notification IDs are defined in the
+     * [freedesktop.org Startup Notification Protocol](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
+     *
+     * Support for the XDG Activation Protocol was added in GLib 2.76.
      * @virtual
      * @param info a #GAppInfo
      * @param files a #GList of of #GFile objects
@@ -20468,6 +20778,8 @@ declare namespace Gio {
      * inspected and modified.  If %G_APPLICATION_HANDLES_COMMAND_LINE is
      * set, then the resulting dictionary is sent to the primary instance,
      * where g_application_command_line_get_options_dict() will return it.
+     * As it has been passed outside the process at this point, the types of all
+     * values in the options dict must be checked before being used.
      * This "packing" is done according to the type of the argument --
      * booleans for normal flags, strings for strings, bytestrings for
      * filenames, etc.  The packing only occurs if the flag is given (ie: we
@@ -21541,7 +21853,7 @@ declare namespace Gio {
      */
     get_is_remote(): boolean;
     /**
-     * Gets the options there were passed to g_application_command_line().
+     * Gets the options that were passed to g_application_command_line().
      *
      * If you did not override local_command_line() then these are the same
      * options that were parsed according to the #GOptionEntrys added to the
@@ -21550,6 +21862,9 @@ declare namespace Gio {
      *
      * If no options were sent then an empty dictionary is returned so that
      * you don't need to check for %NULL.
+     *
+     * The data has been passed via an untrusted external process, so the types of
+     * all values must be checked before being used.
      * @returns a #GVariantDict with the options
      */
     get_options_dict(): GLib.VariantDict;
@@ -21560,6 +21875,9 @@ declare namespace Gio {
      * context in which the invocation occurred.  It typically contains
      * information like the current working directory and the startup
      * notification ID.
+     *
+     * It comes from an untrusted external process and hence the types of all
+     * values must be validated before being used.
      *
      * For local invocation, it will be %NULL.
      * @returns the platform data, or %NULL
@@ -23848,6 +24166,10 @@ declare namespace Gio {
      * constraint is violated, the export will fail and 0 will be
      * returned (with `error` set accordingly).
      *
+     * Exporting menus with sections containing more than
+     * %G_MENU_EXPORTER_MAX_SECTION_SIZE items is not supported and results in
+     * undefined behavior.
+     *
      * You can unexport the menu model using
      * g_dbus_connection_unexport_menu_model() with the return value of
      * this function.
@@ -24183,7 +24505,7 @@ declare namespace Gio {
      */
     set_exit_on_close(exit_on_close: boolean): void;
     /**
-     * Subscribes to signals on `connection` and invokes `callback` with a whenever
+     * Subscribes to signals on `connection` and invokes `callback` whenever
      * the signal is received. Note that `callback` will be invoked in the
      * [thread-default main context][g-main-context-push-thread-default]
      * of the thread you are calling this method from.
@@ -28614,6 +28936,8 @@ declare namespace Gio {
      * @param uris List of URIs
      * @param launch_context a #GAppLaunchContext
      * @param spawn_flags #GSpawnFlags, used for each process
+     * @param user_setup a #GSpawnChildSetupFunc, used once     for each process.
+     * @param pid_callback Callback for child processes
      * @param stdin_fd file descriptor to use for child's stdin, or -1
      * @param stdout_fd file descriptor to use for child's stdout, or -1
      * @param stderr_fd file descriptor to use for child's stderr, or -1
@@ -28623,6 +28947,8 @@ declare namespace Gio {
       uris: string[],
       launch_context: AppLaunchContext | null,
       spawn_flags: GLib.SpawnFlags,
+      user_setup: GLib.SpawnChildSetupFunc | null,
+      pid_callback: DesktopAppLaunchCallback | null,
       stdin_fd: number,
       stdout_fd: number,
       stderr_fd: number
@@ -29646,9 +29972,10 @@ declare namespace Gio {
      * Gets the access time of the current `info` and returns it as a
      * #GDateTime.
      *
-     * This requires the %G_FILE_ATTRIBUTE_TIME_ACCESS attribute. If
-     * %G_FILE_ATTRIBUTE_TIME_ACCESS_USEC is provided, the resulting #GDateTime
-     * will have microsecond precision.
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_TIME_ACCESS. If %G_FILE_ATTRIBUTE_TIME_ACCESS_USEC is
+     * provided, the resulting #GDateTime will additionally have microsecond
+     * precision.
      *
      * If nanosecond precision is needed, %G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC must
      * be queried separately using g_file_info_get_attribute_uint32().
@@ -29656,7 +29983,7 @@ declare namespace Gio {
      */
     get_access_date_time(): GLib.DateTime | null;
     /**
-     * Gets the value of a attribute, formatted as a string.
+     * Gets the value of an attribute, formatted as a string.
      * This escapes things as needed to make the string valid
      * UTF-8.
      * @param attribute a file attribute key.
@@ -29757,6 +30084,9 @@ declare namespace Gio {
     get_attribute_uint64(attribute: string | null): number;
     /**
      * Gets the file's content type.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE.
      * @returns a string containing the file's content type, or %NULL if unknown.
      */
     get_content_type(): string | null;
@@ -29764,9 +30094,10 @@ declare namespace Gio {
      * Gets the creation time of the current `info` and returns it as a
      * #GDateTime.
      *
-     * This requires the %G_FILE_ATTRIBUTE_TIME_CREATED attribute. If
-     * %G_FILE_ATTRIBUTE_TIME_CREATED_USEC is provided, the resulting #GDateTime
-     * will have microsecond precision.
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_TIME_CREATED. If %G_FILE_ATTRIBUTE_TIME_CREATED_USEC is
+     * provided, the resulting #GDateTime will additionally have microsecond
+     * precision.
      *
      * If nanosecond precision is needed, %G_FILE_ATTRIBUTE_TIME_CREATED_NSEC must
      * be queried separately using g_file_info_get_attribute_uint32().
@@ -29775,50 +30106,74 @@ declare namespace Gio {
     get_creation_date_time(): GLib.DateTime | null;
     /**
      * Returns the #GDateTime representing the deletion date of the file, as
-     * available in G_FILE_ATTRIBUTE_TRASH_DELETION_DATE. If the
-     * G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, %NULL is returned.
+     * available in %G_FILE_ATTRIBUTE_TRASH_DELETION_DATE. If the
+     * %G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, %NULL is returned.
      * @returns a #GDateTime, or %NULL.
      */
     get_deletion_date(): GLib.DateTime | null;
     /**
      * Gets a display name for a file. This is guaranteed to always be set.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME.
      * @returns a string containing the display name.
      */
     get_display_name(): string | null;
     /**
      * Gets the edit name for a file.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME.
      * @returns a string containing the edit name.
      */
     get_edit_name(): string | null;
     /**
      * Gets the [entity tag][gfile-etag] for a given
      * #GFileInfo. See %G_FILE_ATTRIBUTE_ETAG_VALUE.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_ETAG_VALUE.
      * @returns a string containing the value of the "etag:value" attribute.
      */
     get_etag(): string | null;
     /**
      * Gets a file's type (whether it is a regular file, symlink, etc).
      * This is different from the file's content type, see g_file_info_get_content_type().
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_TYPE.
      * @returns a #GFileType for the given file.
      */
     get_file_type(): FileType;
     /**
      * Gets the icon for a file.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_ICON.
      * @returns #GIcon for the given @info.
      */
     get_icon(): Icon | null;
     /**
      * Checks if a file is a backup file.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP.
      * @returns %TRUE if file is a backup file, %FALSE otherwise.
      */
     get_is_backup(): boolean;
     /**
      * Checks if a file is hidden.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN.
      * @returns %TRUE if the file is a hidden file, %FALSE otherwise.
      */
     get_is_hidden(): boolean;
     /**
      * Checks if a file is a symlink.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK.
      * @returns %TRUE if the given @info is a symlink.
      */
     get_is_symlink(): boolean;
@@ -29826,9 +30181,10 @@ declare namespace Gio {
      * Gets the modification time of the current `info` and returns it as a
      * #GDateTime.
      *
-     * This requires the %G_FILE_ATTRIBUTE_TIME_MODIFIED attribute. If
-     * %G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC is provided, the resulting #GDateTime
-     * will have microsecond precision.
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_TIME_MODIFIED. If %G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC is
+     * provided, the resulting #GDateTime will additionally have microsecond
+     * precision.
      *
      * If nanosecond precision is needed, %G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC must
      * be queried separately using g_file_info_get_attribute_uint32().
@@ -29838,10 +30194,17 @@ declare namespace Gio {
     /**
      * Gets the modification time of the current `info` and sets it
      * in `result`.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_TIME_MODIFIED. If %G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC is
+     * provided it will be used too.
      */
     get_modification_time(): /* result */ GLib.TimeVal;
     /**
      * Gets the name for a file. This is guaranteed to always be set.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_NAME.
      * @returns a string containing the file name.
      */
     get_name(): string;
@@ -29849,22 +30212,34 @@ declare namespace Gio {
      * Gets the file's size (in bytes). The size is retrieved through the value of
      * the %G_FILE_ATTRIBUTE_STANDARD_SIZE attribute and is converted
      * from #guint64 to #goffset before returning the result.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_SIZE.
      * @returns a #goffset containing the file's size (in bytes).
      */
     get_size(): number;
     /**
      * Gets the value of the sort_order attribute from the #GFileInfo.
      * See %G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER.
      * @returns a #gint32 containing the value of the "standard::sort_order" attribute.
      */
     get_sort_order(): number;
     /**
      * Gets the symbolic icon for a file.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON.
      * @returns #GIcon for the given @info.
      */
     get_symbolic_icon(): Icon | null;
     /**
      * Gets the symlink target for a given #GFileInfo.
+     *
+     * It is an error to call this if the #GFileInfo does not contain
+     * %G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET.
      * @returns a string containing the symlink target.
      */
     get_symlink_target(): string | null;
@@ -30147,6 +30522,11 @@ declare namespace Gio {
    * optimized than the generic attribute accessors, such as
    * g_file_info_get_attribute_byte_string().This optimization will matter
    * only if calling the API in a tight loop.
+   *
+   * It is an error to call these accessors without specifying their required file
+   * attributes when creating the #GFileInfo. Use g_file_info_has_attribute() or
+   * g_file_info_list_attributes() to check what attributes are specified for a
+   * #GFileInfo.
    *
    * #GFileAttributeMatcher allows for searching through a #GFileInfo for
    * attributes.
@@ -32529,23 +32909,31 @@ declare namespace Gio {
      * comparing them with `equal_func` until the first occurrence of `item` which
      * matches. If `item` was not found, then `position` will not be set, and this
      * method will return %FALSE.
+     *
+     * `item` is always passed as second parameter to `equal_func`.
+     *
+     * Since GLib 2.76 it is possible to pass `NULL` for `item`.
      * @param item an item
      * @param equal_func A custom equality check function
      * @returns Whether @store contains @item. If it was found, @position will be set to the position where @item occurred for the first time.
      */
     find_with_equal_func(
-      item: GObject.Object,
+      item: GObject.Object | null,
       equal_func: GLib.EqualFunc
     ): [/* returnType */ boolean, /* position */ number];
     /**
      * Like g_list_store_find_with_equal_func() but with an additional `user_data`
      * that is passed to `equal_func`.
+     *
+     * `item` is always passed as second parameter to `equal_func`.
+     *
+     * Since GLib 2.76 it is possible to pass `NULL` for `item`.
      * @param item an item
      * @param equal_func A custom equality check function
      * @returns Whether @store contains @item. If it was found, @position will be set to the position where @item occurred for the first time.
      */
     find_with_equal_func_full(
-      item: GObject.Object,
+      item: GObject.Object | null,
       equal_func: GLib.EqualFuncFull
     ): [/* returnType */ boolean, /* position */ number];
     /**
@@ -35109,7 +35497,7 @@ declare namespace Gio {
      * application-wide action (start with "app.").
      *
      * If `target` is non-%NULL, `action` will be activated with `target` as
-     * its parameter.
+     * its parameter. If `target` is floating, it will be consumed.
      *
      * When no default action is set, the application that the notification
      * was sent on is activated.
@@ -42883,7 +43271,7 @@ declare namespace Gio {
       level: number,
       type: number,
       data: Uint8Array
-    ): SocketControlMessage;
+    ): SocketControlMessage | null;
   }
 
   module SocketListener {
@@ -44169,7 +44557,7 @@ declare namespace Gio {
      * Gets `task'`s #GCancellable
      * @returns @task's #GCancellable
      */
-    get_cancellable(): Cancellable;
+    get_cancellable(): Cancellable | null;
     /**
      * Gets `task'`s check-cancellable flag. See
      * g_task_set_check_cancellable() for more details.
@@ -44481,6 +44869,13 @@ declare namespace Gio {
      */
     set_source_tag(source_tag: any | null): void;
     /**
+     * Sets `task’`s name, used in debugging and profiling.
+     *
+     * This is a variant of g_task_set_name() that avoids copying `name`.
+     * @param name a human readable name for the task. Must be a string literal
+     */
+    set_static_name(name: string | null): void;
+    /**
      * Sets `task'`s task data (freeing the existing task data, if any).
      * @param task_data task-specific data
      * @param task_data_destroy #GDestroyNotify for `task_data`
@@ -44532,6 +44927,10 @@ declare namespace Gio {
    * Using #GTask requires the thread-default #GMainContext from when the
    * #GTask was constructed to be running at least until the task has completed
    * and its data has been freed.
+   *
+   * If a #GTask has been constructed and its callback set, it is an error to
+   * not call `g_task_return_*()` on it. GLib will warn at runtime if this happens
+   * (since 2.76).
    *
    * Here is an example for using GTask as a GAsyncResult:
    *
@@ -45015,6 +45414,24 @@ declare namespace Gio {
    *   having come from the `_async()` wrapper
    *   function (for "short-circuit" results, such as when passing
    *   0 to g_input_stream_read_async()).
+   *
+   * ## Thread-safety considerations
+   *
+   * Due to some infelicities in the API design, there is a
+   * thread-safety concern that users of GTask have to be aware of:
+   *
+   * If the `main` thread drops its last reference to the source object
+   * or the task data before the task is finalized, then the finalizers
+   * of these objects may be called on the worker thread.
+   *
+   * This is a problem if the finalizers use non-threadsafe API, and
+   * can lead to hard-to-debug crashes. Possible workarounds include:
+   *
+   * - Clear task data in a signal handler for `notify::completed`
+   *
+   * - Keep iterating a main context in the main thread and defer
+   *   dropping the reference to the source object to that main
+   *   context when the task is finalized
    * @class
    */
   class Task extends GObject.Object {
@@ -51237,7 +51654,7 @@ declare namespace Gio {
     convert: (
       converter: Converter,
       inbuf: Uint8Array | null,
-      outbuf: Uint8Array | null,
+      outbuf: Uint8Array,
       flags: ConverterFlags
     ) => [
       /* returnType */ ConverterResult,
@@ -52719,7 +53136,7 @@ declare namespace Gio {
      */
     matches(attribute: string | null): boolean;
     /**
-     * Checks if a attribute matcher only matches a given attribute. Always
+     * Checks if an attribute matcher only matches a given attribute. Always
      * returns %FALSE if "*" was used when creating the matcher.
      * @param attribute a file attribute key.
      * @returns %TRUE if the matcher only matches @attribute. %FALSE otherwise.
@@ -53742,6 +54159,13 @@ declare namespace Gio {
     g_iface: GObject.TypeInterface;
     hash: (icon: Icon) => number;
     equal: (icon1: Icon | null, icon2: Icon | null) => boolean;
+    to_tokens: (
+      icon: Icon
+    ) => [
+      /* returnType */ boolean,
+      /* tokens */ string[],
+      /* out_version */ number
+    ];
     serialize: (icon: Icon) => GLib.Variant | null;
   }
 
@@ -57125,8 +57549,4 @@ declare namespace Gio {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Gio?version=2.0" {
-  export default Gio;
 }

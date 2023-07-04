@@ -9,7 +9,7 @@ import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 import type GModule from "gi://GModule?version=2.0";
 
-declare namespace GdkPixbuf {
+declare module "gi://GdkPixbuf?version=2.0" {
   /**
    * This enumeration defines the color spaces that are supported by
    * the gdk-pixbuf library.
@@ -22,6 +22,7 @@ declare namespace GdkPixbuf {
      */
     RGB,
   }
+
   /**
    * Interpolation modes for scaling functions.
    *
@@ -68,6 +69,7 @@ declare namespace GdkPixbuf {
      */
     HYPER,
   }
+
   /**
    * Control the alpha channel for drawables.
    *
@@ -96,6 +98,7 @@ declare namespace GdkPixbuf {
      */
     FULL,
   }
+
   /**
    * An error code in the `GDK_PIXBUF_ERROR` domain.
    *
@@ -133,6 +136,7 @@ declare namespace GdkPixbuf {
      */
     INCOMPLETE_ANIMATION,
   }
+
   /**
    * The possible rotations which can be passed to gdk_pixbuf_rotate_simple().
    *
@@ -156,6 +160,7 @@ declare namespace GdkPixbuf {
      */
     CLOCKWISE,
   }
+
   /**
    * Flags which allow a module to specify further details about the supported
    * operations.
@@ -176,6 +181,7 @@ declare namespace GdkPixbuf {
      */
     THREADSAFE,
   }
+
   /**
    * Major version of gdk-pixbuf library, that is the "0" in
    * "0.8.2" for example.
@@ -213,6 +219,7 @@ declare namespace GdkPixbuf {
   interface PixbufDestroyNotify {
     (pixels: Uint8Array): void;
   }
+
   /**
    * Defines the type of the function used to fill a
    * #GdkPixbufFormat structure with information about a module.
@@ -222,6 +229,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleFillInfoFunc {
     (info: PixbufFormat): void;
   }
+
   /**
    * Defines the type of the function used to set the vtable of a
    * #GdkPixbufModule when it is loaded.
@@ -231,6 +239,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleFillVtableFunc {
     (module: PixbufModule): void;
   }
+
   /**
    * Incrementally loads a buffer into the image data.
    * @callback
@@ -241,6 +250,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleIncrementLoadFunc {
     (context: any | null, buf: Uint8Array): boolean;
   }
+
   /**
    * Loads a file from a standard C file stream into a new `GdkPixbufAnimation`.
    *
@@ -252,6 +262,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleLoadAnimationFunc {
     (f: any | null): PixbufAnimation;
   }
+
   /**
    * Loads a file from a standard C file stream into a new `GdkPixbuf`.
    *
@@ -263,6 +274,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleLoadFunc {
     (f: any | null): Pixbuf;
   }
+
   /**
    * Loads XPM data into a new `GdkPixbuf`.
    * @callback
@@ -272,6 +284,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleLoadXpmDataFunc {
     (data: string[]): Pixbuf;
   }
+
   /**
    * Defines the type of the function that gets called once the initial
    * setup of `pixbuf` is done.
@@ -286,6 +299,7 @@ declare namespace GdkPixbuf {
   interface PixbufModulePreparedFunc {
     (pixbuf: Pixbuf, anim: PixbufAnimation): void;
   }
+
   /**
    * Saves a `GdkPixbuf` into a standard C file stream.
    *
@@ -307,6 +321,7 @@ declare namespace GdkPixbuf {
       param_values: string[] | null
     ): boolean;
   }
+
   /**
    * Checks whether the given `option_key` is supported when saving.
    * @callback
@@ -316,6 +331,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleSaveOptionSupportedFunc {
     (option_key: string | null): boolean;
   }
+
   /**
    * Defines the type of the function that gets called once the size
    * of the loaded image is known.
@@ -337,6 +353,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleSizeFunc {
     (width: number, height: number): void;
   }
+
   /**
    * Finalizes the image loading state.
    *
@@ -348,6 +365,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleStopLoadFunc {
     (context: any | null): boolean;
   }
+
   /**
    * Defines the type of the function that gets called every time a region
    * of `pixbuf` is updated.
@@ -365,6 +383,7 @@ declare namespace GdkPixbuf {
   interface PixbufModuleUpdatedFunc {
     (pixbuf: Pixbuf, x: number, y: number, width: number, height: number): void;
   }
+
   /**
    * Save functions used by [method`GdkPixbuf`.Pixbuf.save_to_callback].
    *
@@ -381,6 +400,7 @@ declare namespace GdkPixbuf {
   interface PixbufSaveFunc {
     (buf: Uint8Array): boolean;
   }
+
   module Pixbuf {
     // Constructor properties interface
 
@@ -3094,8 +3114,4 @@ declare namespace GdkPixbuf {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://GdkPixbuf?version=2.0" {
-  export default GdkPixbuf;
 }

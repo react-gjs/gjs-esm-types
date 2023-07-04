@@ -6,8 +6,7 @@
  */
 import type GObject from "gi://GObject?version=2.0";
 
-declare namespace freetype2 {
-  function library_version(): void;
+declare module "gi://freetype2?version=2.0" {
   interface Bitmap {}
 
   class Bitmap {
@@ -43,8 +42,4 @@ declare namespace freetype2 {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://freetype2?version=2.0" {
-  export default freetype2;
 }

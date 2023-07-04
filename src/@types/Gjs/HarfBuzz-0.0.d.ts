@@ -8,7 +8,7 @@ import type freetype2 from "gi://freetype2?version=2.0";
 import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace HarfBuzz {
+declare module "gi://HarfBuzz?version=0.0" {
   /**
    * The selectors defined for specifying AAT feature settings.
    */
@@ -1018,6 +1018,7 @@ declare namespace HarfBuzz {
      */
     FULL_WIDTH_CJK_ROMAN,
   }
+
   /**
    * The possible feature types defined for AAT shaping, from Apple [Font Feature Registry](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM09/AppendixF.html).
    */
@@ -1183,6 +1184,7 @@ declare namespace HarfBuzz {
      */
     CJK_ROMAN_SPACING_TYPE,
   }
+
   /**
    * Data type for holding HarfBuzz's clustering behavior options. The cluster level
    * dictates one aspect of how HarfBuzz will treat non-base characters
@@ -1221,6 +1223,7 @@ declare namespace HarfBuzz {
      */
     DEFAULT,
   }
+
   /**
    * The type of #hb_buffer_t contents.
    */
@@ -1238,6 +1241,7 @@ declare namespace HarfBuzz {
      */
     GLYPHS,
   }
+
   /**
    * The buffer serialization and de-serialization format used in
    * hb_buffer_serialize_glyphs() and hb_buffer_deserialize_glyphs().
@@ -1256,6 +1260,7 @@ declare namespace HarfBuzz {
      */
     INVALID,
   }
+
   /**
    * The direction of a text segment or buffer.
    *
@@ -1285,6 +1290,7 @@ declare namespace HarfBuzz {
      */
     BTT,
   }
+
   /**
    * Data type holding the memory modes available to
    * client programs.
@@ -1327,6 +1333,7 @@ declare namespace HarfBuzz {
      */
     READONLY_MAY_MAKE_WRITABLE,
   }
+
   /**
    * Baseline tags from [Baseline Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/baselinetags) registry.
    */
@@ -1378,6 +1385,7 @@ declare namespace HarfBuzz {
      */
     MATH,
   }
+
   /**
    * The GDEF classes defined for glyphs.
    */
@@ -1403,6 +1411,7 @@ declare namespace HarfBuzz {
      */
     COMPONENT,
   }
+
   /**
    * The 'MATH' table constants, refer to
    * [OpenType documentation](https://docs.microsoft.com/en-us/typography/opentype/spec/math#mathconstants-table)
@@ -1634,6 +1643,7 @@ declare namespace HarfBuzz {
      */
     RADICAL_DEGREE_BOTTOM_RAISE_PERCENT,
   }
+
   /**
    * The math kerning-table types defined for the four corners
    * of a glyph.
@@ -1656,6 +1666,7 @@ declare namespace HarfBuzz {
      */
     BOTTOM_LEFT,
   }
+
   /**
    * Known metadata tags from https://docs.microsoft.com/en-us/typography/opentype/spec/meta
    */
@@ -1673,6 +1684,7 @@ declare namespace HarfBuzz {
      */
     SUPPORTED_LANGUAGES,
   }
+
   /**
    * Metric tags corresponding to [MVAR Value
    * Tags](https://docs.microsoft.com/en-us/typography/opentype/spec/mvar#value-tags)
@@ -1791,6 +1803,7 @@ declare namespace HarfBuzz {
      */
     UNDERLINE_OFFSET,
   }
+
   /**
    * An enum type representing the pre-defined name IDs.
    *
@@ -1905,6 +1918,7 @@ declare namespace HarfBuzz {
      */
     INVALID,
   }
+
   /**
    * The values of this enumeration describe the compositing modes
    * that can be used when combining temporary redirected drawing
@@ -2055,6 +2069,7 @@ declare namespace HarfBuzz {
      */
     HSL_LUMINOSITY,
   }
+
   /**
    * The values of this enumeration determine how color values
    * outside the minimum and maximum defined offset on a #hb_color_line_t
@@ -2082,6 +2097,7 @@ declare namespace HarfBuzz {
      */
     REFLECT,
   }
+
   /**
    * Data type for scripts. Each #hb_script_t's value is an #hb_tag_t corresponding
    * to the four-letter values defined by [ISO 15924](https://unicode.org/iso15924/).
@@ -2754,6 +2770,7 @@ declare namespace HarfBuzz {
      */
     INVALID,
   }
+
   /**
    * Defined by [OpenType Design-Variation Axis Tag Registry](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
    */
@@ -2796,6 +2813,7 @@ declare namespace HarfBuzz {
      */
     WEIGHT,
   }
+
   /**
    * Data type for the Canonical_Combining_Class (ccc) property
    * from the Unicode Character Database.
@@ -2966,9 +2984,9 @@ declare namespace HarfBuzz {
      */
     CCC130,
     /**
-     * [Tibetan]
+     * [Tibetan] Since: 7.2.0
      */
-    CCC133,
+    CCC132,
     /**
      * Marks attached at the bottom left
      */
@@ -3034,6 +3052,7 @@ declare namespace HarfBuzz {
      */
     INVALID,
   }
+
   /**
    * Data type for the "General_Category" (gc) property from
    * the Unicode Character Database.
@@ -3160,6 +3179,7 @@ declare namespace HarfBuzz {
      */
     SPACE_SEPARATOR,
   }
+
   /**
    * Flags from comparing two #hb_buffer_t's.
    *
@@ -3215,6 +3235,7 @@ declare namespace HarfBuzz {
      */
     POSITION_MISMATCH,
   }
+
   /**
    * Flags for #hb_buffer_t.
    * @bitfield
@@ -3288,6 +3309,7 @@ declare namespace HarfBuzz {
      */
     DEFINED,
   }
+
   /**
    * Flags that control what glyph information are serialized in hb_buffer_serialize_glyphs().
    * @bitfield
@@ -3327,6 +3349,7 @@ declare namespace HarfBuzz {
      */
     DEFINED,
   }
+
   /**
    * Flags for #hb_glyph_info_t.
    * @bitfield
@@ -3424,6 +3447,7 @@ declare namespace HarfBuzz {
      */
     DEFINED,
   }
+
   /**
    * Flags that describe the properties of color palette.
    * @bitfield
@@ -3445,6 +3469,7 @@ declare namespace HarfBuzz {
      */
     USABLE_WITH_DARK_BACKGROUND,
   }
+
   /**
    * Flags for math glyph parts.
    * @bitfield
@@ -3456,6 +3481,7 @@ declare namespace HarfBuzz {
      */
     EXTENDER,
   }
+
   /**
    * Flags for #hb_ot_var_axis_info_t.
    * @bitfield
@@ -3466,6 +3492,7 @@ declare namespace HarfBuzz {
      */
     HIDDEN,
   }
+
   /**
    * Used when getting or setting AAT feature selectors. Indicates that
    * there is no selector index corresponding to the selector of interest.
@@ -3527,6 +3554,10 @@ declare namespace HarfBuzz {
    * Unset #hb_set_t value.
    */
   const SET_VALUE_INVALID: codepoint_t;
+  /**
+   * [Tibetan]
+   */
+  const UNICODE_COMBINING_CLASS_CCC133: number;
   /**
    * Maximum valid Unicode code point.
    */
@@ -4646,7 +4677,7 @@ declare namespace HarfBuzz {
    * a face index into that blob.
    *
    * The face index is used for blobs of file formats such as TTC and
-   * and DFont that can contain more than one face.  Face indices within
+   * DFont that can contain more than one face.  Face indices within
    * such collections are zero-based.
    *
    * <note>Note: If the blob font format is not a collection, `index`
@@ -6914,7 +6945,7 @@ declare namespace HarfBuzz {
    *
    * However, if the requested constant is #HB_OT_MATH_CONSTANT_SCRIPT_PERCENT_SCALE_DOWN,
    * #HB_OT_MATH_CONSTANT_SCRIPT_SCRIPT_PERCENT_SCALE_DOWN or
-   * #HB_OT_MATH_CONSTANT_SCRIPT_PERCENT_SCALE_DOWN, then the return value is
+   * #HB_OT_MATH_CONSTANT_RADICAL_DEGREE_BOTTOM_RAISE_PERCENT, then the return value is
    * an integer between 0 and 100 representing that percentage.
    * @param font #hb_font_t to work upon
    * @param constant #hb_ot_math_constant_t the constant to retrieve
@@ -8474,6 +8505,7 @@ declare namespace HarfBuzz {
   interface buffer_message_func_t {
     (buffer: buffer_t, font: font_t, message: string | null): bool_t;
   }
+
   /**
    * A virtual method for the #hb_color_line_t to fetch color stops.
    * @callback
@@ -8489,6 +8521,7 @@ declare namespace HarfBuzz {
       start: number
     ): number;
   }
+
   /**
    * A virtual method for the `hb_color_line_t` to fetches the extend mode.
    * @callback
@@ -8499,6 +8532,7 @@ declare namespace HarfBuzz {
   interface color_line_get_extend_func_t {
     (color_line: color_line_t, color_line_data: any | null): paint_extend_t;
   }
+
   /**
    * A virtual method for destroy user-data callbacks.
    * @callback
@@ -8506,6 +8540,7 @@ declare namespace HarfBuzz {
   interface destroy_func_t {
     (): void;
   }
+
   /**
    * A virtual method for the #hb_draw_funcs_t to perform a "close-path" draw
    * operation.
@@ -8517,6 +8552,7 @@ declare namespace HarfBuzz {
   interface draw_close_path_func_t {
     (dfuncs: draw_funcs_t, draw_data: any | null, st: draw_state_t): void;
   }
+
   /**
    * A virtual method for the #hb_draw_funcs_t to perform a "cubic-to" draw
    * operation.
@@ -8544,6 +8580,7 @@ declare namespace HarfBuzz {
       to_y: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_draw_funcs_t to perform a "line-to" draw
    * operation.
@@ -8563,6 +8600,7 @@ declare namespace HarfBuzz {
       to_y: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_draw_funcs_t to perform a "move-to" draw
    * operation.
@@ -8582,6 +8620,7 @@ declare namespace HarfBuzz {
       to_y: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_draw_funcs_t to perform a "quadratic-to" draw
    * operation.
@@ -8605,6 +8644,7 @@ declare namespace HarfBuzz {
       to_y: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    * @callback
@@ -8623,6 +8663,7 @@ declare namespace HarfBuzz {
       draw_data: any | null
     ): void;
   }
+
   /**
    * This method should retrieve the extents for a font.
    * @callback
@@ -8632,6 +8673,7 @@ declare namespace HarfBuzz {
   interface font_get_font_extents_func_t {
     (font: font_t, font_data: any | null): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8646,6 +8688,7 @@ declare namespace HarfBuzz {
   interface font_get_glyph_advance_func_t {
     (font: font_t, font_data: any | null, glyph: codepoint_t): position_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8668,6 +8711,7 @@ declare namespace HarfBuzz {
       advance_stride: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8689,6 +8733,7 @@ declare namespace HarfBuzz {
       point_index: number
     ): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8703,6 +8748,7 @@ declare namespace HarfBuzz {
   interface font_get_glyph_extents_func_t {
     (font: font_t, font_data: any | null, glyph: codepoint_t): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8717,6 +8763,7 @@ declare namespace HarfBuzz {
   interface font_get_glyph_from_name_func_t {
     (font: font_t, font_data: any | null, name: string[]): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8737,6 +8784,7 @@ declare namespace HarfBuzz {
       variation_selector: codepoint_t
     ): bool_t;
   }
+
   /**
    * This method should retrieve the kerning-adjustment value for a glyph-pair in
    * the specified font, for horizontal text segments.
@@ -8754,6 +8802,7 @@ declare namespace HarfBuzz {
       second_glyph: codepoint_t
     ): position_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8768,6 +8817,7 @@ declare namespace HarfBuzz {
   interface font_get_glyph_name_func_t {
     (font: font_t, font_data: any | null, glyph: codepoint_t): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8783,6 +8833,7 @@ declare namespace HarfBuzz {
   interface font_get_glyph_origin_func_t {
     (font: font_t, font_data: any | null, glyph: codepoint_t): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    * @callback
@@ -8801,6 +8852,7 @@ declare namespace HarfBuzz {
       draw_data: any | null
     ): void;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8815,6 +8867,7 @@ declare namespace HarfBuzz {
   interface font_get_nominal_glyph_func_t {
     (font: font_t, font_data: any | null, unicode: codepoint_t): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8840,6 +8893,7 @@ declare namespace HarfBuzz {
       glyph_stride: number
     ): number;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    *
@@ -8861,6 +8915,7 @@ declare namespace HarfBuzz {
       variation_selector: codepoint_t
     ): bool_t;
   }
+
   /**
    * A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
    * @callback
@@ -8883,6 +8938,7 @@ declare namespace HarfBuzz {
       foreground: color_t
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to paint a
    * color everywhere within the current clip.
@@ -8900,6 +8956,7 @@ declare namespace HarfBuzz {
       color: color_t
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to fetch a color from the custom
    * color palette.
@@ -8919,6 +8976,7 @@ declare namespace HarfBuzz {
   interface paint_custom_palette_color_func_t {
     (funcs: paint_funcs_t, paint_data: any | null, color_index: number): bool_t;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to paint a glyph image.
    *
@@ -8952,6 +9010,7 @@ declare namespace HarfBuzz {
       extents: glyph_extents_t | null
     ): bool_t;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to paint a linear
    * gradient everywhere within the current clip.
@@ -8989,6 +9048,7 @@ declare namespace HarfBuzz {
       y2: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to undo
    * the effect of a prior call to the #hb_paint_funcs_push_clip_glyph_func_t
@@ -9000,6 +9060,7 @@ declare namespace HarfBuzz {
   interface paint_pop_clip_func_t {
     (funcs: paint_funcs_t, paint_data: any | null): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to undo
    * the effect of a prior call to the #hb_paint_funcs_push_group_func_t
@@ -9020,6 +9081,7 @@ declare namespace HarfBuzz {
       mode: paint_composite_mode_t
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to undo
    * the effect of a prior call to the #hb_paint_funcs_push_transform_func_t
@@ -9031,6 +9093,7 @@ declare namespace HarfBuzz {
   interface paint_pop_transform_func_t {
     (funcs: paint_funcs_t, paint_data: any | null): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to clip
    * subsequent paint calls to the outline of a glyph.
@@ -9055,6 +9118,7 @@ declare namespace HarfBuzz {
       font: font_t
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to clip
    * subsequent paint calls to a rectangle.
@@ -9083,6 +9147,7 @@ declare namespace HarfBuzz {
       ymax: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to use
    * an intermediate surface for subsequent paint calls.
@@ -9097,6 +9162,7 @@ declare namespace HarfBuzz {
   interface paint_push_group_func_t {
     (funcs: paint_funcs_t, paint_data: any | null): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to apply
    * a transform to subsequent paint calls.
@@ -9126,6 +9192,7 @@ declare namespace HarfBuzz {
       dy: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to paint a radial
    * gradient everywhere within the current clip.
@@ -9163,6 +9230,7 @@ declare namespace HarfBuzz {
       r1: number
     ): void;
   }
+
   /**
    * A virtual method for the #hb_paint_funcs_t to paint a sweep
    * gradient everywhere within the current clip.
@@ -9196,6 +9264,7 @@ declare namespace HarfBuzz {
       end_angle: number
     ): void;
   }
+
   /**
    * Callback function for hb_face_create_for_tables().
    * @callback
@@ -9206,6 +9275,7 @@ declare namespace HarfBuzz {
   interface reference_table_func_t {
     (face: face_t, tag: tag_t): blob_t;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    *
@@ -9219,6 +9289,7 @@ declare namespace HarfBuzz {
   interface unicode_combining_class_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): unicode_combining_class_t;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    *
@@ -9236,6 +9307,7 @@ declare namespace HarfBuzz {
   interface unicode_compose_func_t {
     (ufuncs: unicode_funcs_t, a: codepoint_t, b: codepoint_t): bool_t;
   }
+
   /**
    * Fully decompose `u` to its Unicode compatibility decomposition. The codepoints of the decomposition will be written to `decomposed`.
    * The complete length of the decomposition will be returned.
@@ -9254,6 +9326,7 @@ declare namespace HarfBuzz {
   interface unicode_decompose_compatibility_func_t {
     (ufuncs: unicode_funcs_t, u: codepoint_t, decomposed: codepoint_t): number;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    *
@@ -9269,6 +9342,7 @@ declare namespace HarfBuzz {
   interface unicode_decompose_func_t {
     (ufuncs: unicode_funcs_t, ab: codepoint_t): bool_t;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    * @callback
@@ -9278,6 +9352,7 @@ declare namespace HarfBuzz {
   interface unicode_eastasian_width_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): number;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    *
@@ -9291,6 +9366,7 @@ declare namespace HarfBuzz {
   interface unicode_general_category_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): unicode_general_category_t;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    *
@@ -9308,6 +9384,7 @@ declare namespace HarfBuzz {
   interface unicode_mirroring_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): codepoint_t;
   }
+
   /**
    * A virtual method for the #hb_unicode_funcs_t structure.
    *
@@ -9321,6 +9398,7 @@ declare namespace HarfBuzz {
   interface unicode_script_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): script_t;
   }
+
   interface aat_layout_feature_selector_info_t {
     // Own fields of HarfBuzz-0.0.HarfBuzz.aat_layout_feature_selector_info_t
 
@@ -10243,8 +10321,4 @@ declare namespace HarfBuzz {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://HarfBuzz?version=0.0" {
-  export default HarfBuzz;
 }

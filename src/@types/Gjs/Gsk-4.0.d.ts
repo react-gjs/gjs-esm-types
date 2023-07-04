@@ -17,7 +17,7 @@ import type Gio from "gi://Gio?version=2.0";
 import type GdkPixbuf from "gi://GdkPixbuf?version=2.0";
 import type GModule from "gi://GModule?version=2.0";
 
-declare namespace Gsk {
+declare module "gi://Gsk?version=4.0" {
   /**
    * The blend modes available for render nodes.
    *
@@ -96,6 +96,7 @@ declare namespace Gsk {
      */
     LUMINOSITY,
   }
+
   /**
    * The corner indices used by `GskRoundedRect`.
    */
@@ -117,6 +118,7 @@ declare namespace Gsk {
      */
     BOTTOM_LEFT,
   }
+
   /**
    * This defines the types of the uniforms that `GskGLShaders`
    * declare.
@@ -158,6 +160,7 @@ declare namespace Gsk {
      */
     VEC4,
   }
+
   /**
    * The mask modes available for mask nodes.
    */
@@ -181,6 +184,7 @@ declare namespace Gsk {
      */
     INVERTED_LUMINANCE,
   }
+
   /**
    * The type of a node determines what the node is rendering.
    */
@@ -298,6 +302,7 @@ declare namespace Gsk {
      */
     MASK_NODE,
   }
+
   /**
    * The filters used when scaling texture data.
    *
@@ -320,6 +325,7 @@ declare namespace Gsk {
      */
     TRILINEAR,
   }
+
   /**
    * Errors that can happen during (de)serialization.
    */
@@ -339,6 +345,7 @@ declare namespace Gsk {
      */
     INVALID_DATA,
   }
+
   /**
    * The categories of matrices relevant for GSK and GTK.
    *
@@ -388,6 +395,7 @@ declare namespace Gsk {
      */
     IDENTITY,
   }
+
   function serialization_error_quark(): GLib.Quark;
   /**
    * Parses the given `string` into a transform and puts it in
@@ -444,6 +452,7 @@ declare namespace Gsk {
   interface ParseErrorFunc {
     (start: ParseLocation, end: ParseLocation, error: GLib.Error): void;
   }
+
   interface BlendNode {
     // Owm methods of Gsk-4.0.Gsk.BlendNode
 
@@ -3688,8 +3697,4 @@ declare namespace Gsk {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Gsk?version=4.0" {
-  export default Gsk;
 }

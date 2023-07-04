@@ -6,7 +6,7 @@
  */
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace GObject {
+declare module "gi://GObject?version=2.0" {
   /**
    * Flags to be passed to g_object_bind_property() or
    * g_object_bind_property_full().
@@ -41,6 +41,7 @@ declare namespace GObject {
      */
     INVERT_BOOLEAN,
   }
+
   /**
    * The connection flags are used to specify the behaviour of a signal's
    * connection.
@@ -63,6 +64,7 @@ declare namespace GObject {
      */
     SWAPPED,
   }
+
   /**
    * Through the #GParamFlags flag values, certain aspects of parameters
    * can be configured.
@@ -136,6 +138,7 @@ declare namespace GObject {
      */
     DEPRECATED,
   }
+
   /**
    * The signal flags are used to specify a signal's behaviour.
    * @bitfield
@@ -195,6 +198,7 @@ declare namespace GObject {
      */
     ACCUMULATOR_FIRST_RUN,
   }
+
   /**
    * The match types specify what g_signal_handlers_block_matched(),
    * g_signal_handlers_unblock_matched() and g_signal_handlers_disconnect_matched()
@@ -227,6 +231,7 @@ declare namespace GObject {
      */
     UNBLOCKED,
   }
+
   /**
    * These flags used to be passed to g_type_init_with_debug_flags() which
    * is now deprecated.
@@ -257,6 +262,7 @@ declare namespace GObject {
      */
     MASK,
   }
+
   /**
    * Bit masks used to check or determine characteristics of a type.
    * @bitfield
@@ -282,7 +288,14 @@ declare namespace GObject {
      *  leaf node in a deep derivable type hierarchy tree. Since: 2.70
      */
     FINAL,
+    /**
+     * The type is deprecated and may be removed in a
+     *  future version. A warning will be emitted if it is instantiated while
+     *  running with `G_ENABLE_DIAGNOSTIC=1`. Since 2.76
+     */
+    DEPRECATED,
   }
+
   /**
    * Bit masks used to check or determine specific characteristics of a
    * fundamental type.
@@ -306,6 +319,7 @@ declare namespace GObject {
      */
     DEEP_DERIVABLE,
   }
+
   /**
    * Mask containing the bits of #GParamSpec.flags which are reserved for GLib.
    */
@@ -1572,6 +1586,9 @@ declare namespace GObject {
   ): void;
   /**
    * Connects a closure to a signal for a particular object.
+   *
+   * If `closure` is a floating reference (see g_closure_sink()), this function
+   * takes ownership of `closure`.
    * @param instance the instance to connect to.
    * @param detailed_signal a string of the form "signal-name::detail".
    * @param closure the closure to connect.
@@ -1586,6 +1603,9 @@ declare namespace GObject {
   ): number;
   /**
    * Connects a closure to a signal for a particular object.
+   *
+   * If `closure` is a floating reference (see g_closure_sink()), this function
+   * takes ownership of `closure`.
    * @param instance the instance to connect to.
    * @param signal_id the id of the signal.
    * @param detail the detail.
@@ -2462,6 +2482,7 @@ declare namespace GObject {
   interface BaseFinalizeFunc {
     (g_class: TypeClass): void;
   }
+
   /**
    * A callback function used by the type system to do base initialization
    * of the class structures of derived types.
@@ -2480,6 +2501,7 @@ declare namespace GObject {
   interface BaseInitFunc {
     (g_class: TypeClass): void;
   }
+
   /**
    * A function to be called to transform `from_value` to `to_value`.
    *
@@ -2497,6 +2519,7 @@ declare namespace GObject {
   interface BindingTransformFunc {
     (binding: Binding, from_value: any, to_value: any): boolean;
   }
+
   /**
    * This function is provided by the user and should produce a copy
    * of the passed in boxed structure.
@@ -2507,6 +2530,7 @@ declare namespace GObject {
   interface BoxedCopyFunc {
     (boxed: any): any;
   }
+
   /**
    * This function is provided by the user and should free the boxed
    * structure passed.
@@ -2516,6 +2540,7 @@ declare namespace GObject {
   interface BoxedFreeFunc {
     (boxed: any): void;
   }
+
   /**
    * The type used for callback functions in structure definitions and function
    * signatures.
@@ -2530,6 +2555,7 @@ declare namespace GObject {
   interface Callback {
     (): void;
   }
+
   /**
    * A callback function used by the type system to finalize a class.
    *
@@ -2547,6 +2573,7 @@ declare namespace GObject {
   interface ClassFinalizeFunc {
     (g_class: TypeClass, class_data: any | null): void;
   }
+
   /**
    * A callback function used by the type system to initialize the class
    * of a specific type.
@@ -2654,6 +2681,7 @@ declare namespace GObject {
   interface ClassInitFunc {
     (g_class: TypeClass, class_data: any | null): void;
   }
+
   /**
    * The type used for marshaller functions.
    * @callback
@@ -2661,15 +2689,18 @@ declare namespace GObject {
    * @param return_value a #GValue to store the return  value. May be %NULL if the callback of `closure` doesn't return a  value.
    * @param param_values an array of  #GValues holding the arguments on which to invoke the  callback of `closure`
    * @param invocation_hint the invocation hint given as the  last argument to g_closure_invoke()
+   * @param marshal_data additional data specified when  registering the marshaller, see g_closure_set_marshal() and  g_closure_set_meta_marshal()
    */
   interface ClosureMarshal {
     (
       closure: TClosure,
       return_value: any | null,
       param_values: any[],
-      invocation_hint: any | null
+      invocation_hint: any | null,
+      marshal_data: any | null
     ): void;
   }
+
   /**
    * The type used for the various notification callbacks which can be registered
    * on closures.
@@ -2680,6 +2711,7 @@ declare namespace GObject {
   interface ClosureNotify {
     (data: any | null, closure: TClosure): void;
   }
+
   /**
    * A callback function used by the type system to initialize a new
    * instance of a type.
@@ -2701,6 +2733,7 @@ declare namespace GObject {
   interface InstanceInitFunc {
     (instance: TypeInstance, g_class: TypeClass): void;
   }
+
   /**
    * A callback function used by the type system to finalize an interface.
    *
@@ -2713,6 +2746,7 @@ declare namespace GObject {
   interface InterfaceFinalizeFunc {
     (g_iface: TypeInterface, iface_data: any | null): void;
   }
+
   /**
    * A callback function used by the type system to initialize a new
    * interface.
@@ -2729,6 +2763,7 @@ declare namespace GObject {
   interface InterfaceInitFunc {
     (g_iface: TypeInterface, iface_data: any | null): void;
   }
+
   /**
    * The type of the `finalize` function of #GObjectClass.
    * @callback
@@ -2737,6 +2772,7 @@ declare namespace GObject {
   interface ObjectFinalizeFunc {
     (object: Object): void;
   }
+
   /**
    * The type of the `get_property` function of #GObjectClass.
    * @callback
@@ -2748,6 +2784,7 @@ declare namespace GObject {
   interface ObjectGetPropertyFunc {
     (object: Object, property_id: number, value: any, pspec: ParamSpec): void;
   }
+
   /**
    * The type of the `set_property` function of #GObjectClass.
    * @callback
@@ -2759,6 +2796,7 @@ declare namespace GObject {
   interface ObjectSetPropertyFunc {
     (object: Object, property_id: number, value: any, pspec: ParamSpec): void;
   }
+
   /**
    * The signal accumulator is a special callback function that can be used
    * to collect return values of the various callbacks that are called
@@ -2772,15 +2810,18 @@ declare namespace GObject {
    * @param ihint Signal invocation hint, see #GSignalInvocationHint.
    * @param return_accu Accumulator to collect callback return values in, this  is the return value of the current signal emission.
    * @param handler_return A #GValue holding the return value of the signal handler.
+   * @param data Callback data that was specified when creating the signal.
    * @returns The accumulator function returns whether the signal emission  should be aborted. Returning %TRUE will continue with  the signal emission. Returning %FALSE will abort the current emission.  Since 2.62, returning %FALSE will skip to the CLEANUP stage. In this case,  emission will occur as normal in the CLEANUP stage and the handler's  return value will be accumulated.
    */
   interface SignalAccumulator {
     (
       ihint: SignalInvocationHint,
       return_accu: any,
-      handler_return: any
+      handler_return: any,
+      data: any | null
     ): boolean;
   }
+
   /**
    * A simple function pointer to get invoked when the signal is emitted.
    *
@@ -2791,11 +2832,17 @@ declare namespace GObject {
    * @callback
    * @param ihint Signal invocation hint, see #GSignalInvocationHint.
    * @param param_values the instance on which  the signal was emitted, followed by the parameters of the emission.
+   * @param data user data associated with the hook.
    * @returns whether it wants to stay connected. If it returns %FALSE, the signal  hook is disconnected (and destroyed).
    */
   interface SignalEmissionHook {
-    (ihint: SignalInvocationHint, param_values: any[]): boolean;
+    (
+      ihint: SignalInvocationHint,
+      param_values: any[],
+      data: any | null
+    ): boolean;
   }
+
   /**
    * A callback function used for notification when the state
    * of a toggle reference changes.
@@ -2809,6 +2856,7 @@ declare namespace GObject {
   interface ToggleNotify {
     (data: any | null, object: Object, is_last_ref: boolean): void;
   }
+
   /**
    * A callback function which is called when the reference count of a class
    * drops to zero.
@@ -2828,6 +2876,7 @@ declare namespace GObject {
   interface TypeClassCacheFunc {
     (cache_data: any | null, g_class: TypeClass): boolean;
   }
+
   /**
    * A callback called after an interface vtable is initialized.
    *
@@ -2839,6 +2888,7 @@ declare namespace GObject {
   interface TypeInterfaceCheckFunc {
     (check_data: any | null, g_iface: TypeInterface): void;
   }
+
   /**
    * The type of the `complete_interface_info` function of #GTypePluginClass.
    * @callback
@@ -2855,6 +2905,7 @@ declare namespace GObject {
       info: InterfaceInfo
     ): void;
   }
+
   /**
    * The type of the `complete_type_info` function of #GTypePluginClass.
    * @callback
@@ -2871,6 +2922,7 @@ declare namespace GObject {
       value_table: TypeValueTable
     ): void;
   }
+
   /**
    * The type of the `unuse_plugin` function of #GTypePluginClass.
    * @callback
@@ -2879,6 +2931,7 @@ declare namespace GObject {
   interface TypePluginUnuse {
     (plugin: TypePlugin): void;
   }
+
   /**
    * The type of the `use_plugin` function of #GTypePluginClass, which gets called
    * to increase the use count of `plugin`.
@@ -2888,6 +2941,7 @@ declare namespace GObject {
   interface TypePluginUse {
     (plugin: TypePlugin): void;
   }
+
   /**
    * The type of value transformation functions which can be registered with
    * g_value_register_transform_func().
@@ -2900,6 +2954,7 @@ declare namespace GObject {
   interface ValueTransform {
     (src_value: any, dest_value: any): void;
   }
+
   /**
    * A #GWeakNotify function can be added to an object as a callback that gets
    * triggered when the object is finalized.
@@ -2919,6 +2974,7 @@ declare namespace GObject {
   interface WeakNotify {
     (data: any | null, where_the_object_was: Object): void;
   }
+
   module TypePlugin {
     // Constructor properties interface
 
@@ -3041,16 +3097,11 @@ declare namespace GObject {
   }
 
   // A few things here are inspired by gi.ts
-  // See https://gitlab.gnome.org/ewlsh/gi.ts/-/blob/master/packages/lib/src/generators/dts/gobject.ts
-  // Copyright Evan Welsh
-
   export type GType<T = unknown> = {
     __type__(arg: never): T;
     name: string;
   };
-
   // Extra interfaces used to help define GObject classes in js; these
-  // aren't part of gi.
   export interface SignalDefinition {
     flags?: SignalFlags;
     accumulator: number;
@@ -3088,27 +3139,20 @@ declare namespace GObject {
   }
 
   // Expose GObject static properties for ES6 classes
-
   export const GTypeName: unique symbol;
   export const requires: unique symbol;
   export const interfaces: unique symbol;
   export const properties: unique symbol;
   export const signals: unique symbol;
-
   export let gtypeNameBasedOnJSPath: boolean;
-
   export let TYPE_BOOLEAN: GType<boolean>;
   export let Boolean: BooleanConstructor;
-
   export let TYPE_ENUM: GType<number>;
   export let TYPE_FLAGS: GType<number>;
-
   export let TYPE_DOUBLE: GType<number>;
   export let Double: NumberConstructor;
-
   export let TYPE_STRING: GType<string>;
   export let String: StringConstructor;
-
   export let TYPE_NONE: GType<undefined>;
   export let TYPE_POINTER: GType<undefined>;
   export let TYPE_BOXED: GType<unknown>;
@@ -3120,7 +3164,6 @@ declare namespace GObject {
   export let TYPE_UINT: GType<number>;
   export let TYPE_INT64: GType<number>;
   export let TYPE_UINT64: GType<number>;
-
   // fake enum for signal accumulators, keep in sync with gi/object.c
   export enum AccumulatorType {
     NONE = 0,
@@ -3129,9 +3172,6 @@ declare namespace GObject {
   }
 
   // A simple workaround if you have a class with .connect, .disconnect or .emit
-  // methods (such as Gio.Socket.connect or NMClient.Device.disconnect)
-  // The original g_signal_* functions are not introspectable anyway, because
-  // we need our own handling of signal argument marshalling
   export function signal_connect(
     object: Object,
     name: string,
@@ -3146,7 +3186,6 @@ declare namespace GObject {
     object: Object,
     ...nameAndArgs: any[]
   ): void;
-
   /**
    * Finds the first signal handler that matches certain selection criteria.
    * The criteria are passed as properties of a match object.
@@ -3164,7 +3203,6 @@ declare namespace GObject {
     instance: Object,
     match: { signalId: string; detail: string; func: (...args: any[]) => any }
   ): number | bigint | object | null;
-
   /**
    * Blocks all handlers on an instance that match certain selection criteria.
    * The criteria are passed as properties of a match object.
@@ -3183,7 +3221,6 @@ declare namespace GObject {
     instance: Object,
     match: { signalId: string; detail: string; func: (...args: any[]) => any }
   ): number;
-
   /**
    * Disconnects all handlers on an instance that match certain selection
    * criteria.
@@ -3204,7 +3241,6 @@ declare namespace GObject {
     instance: Object,
     match: { signalId: string; detail: string; func: (...args: any[]) => any }
   ): number;
-
   /**
    * Disconnects all handlers on an instance that match certain selection
    * criteria.
@@ -3225,21 +3261,11 @@ declare namespace GObject {
     instance: Object,
     match: { signalId: string; detail: string; func: (...args: any[]) => any }
   ): number;
-
   // Also match the macros used in C APIs, even though they're not introspected
-
-  /**
-   * Blocks all handlers on an instance that match `func`.
-   *
-   * @param instance the instance to block handlers from.
-   * @param func the callback function the handler will invoke.
-   * @returns The number of handlers that matched.
-   */
   export function signal_handlers_block_by_func(
     instance: Object,
     func: (...args: any[]) => any
   ): number;
-
   /**
    * Unblocks all handlers on an instance that match `func`.
    *
@@ -3252,7 +3278,6 @@ declare namespace GObject {
     instance: Object,
     func: (...args: any[]) => any
   ): number;
-
   /**
    * Disconnects all handlers on an instance that match `func`.
    *
@@ -3265,7 +3290,6 @@ declare namespace GObject {
     func: (...args: any[]) => any
   ): number;
   export function signal_handlers_disconnect_by_data(): void;
-
   export type Property<K extends ParamSpec> = K extends ParamSpecBoolean
     ? boolean
     : K extends
@@ -3292,10 +3316,8 @@ declare namespace GObject {
     : K extends ParamSpecVariant
     ? GLib.Variant
     : any;
-
   // TODO: What about the generated class Closure
   export type TClosure<R = any, P = any> = (...args: P[]) => R;
-
   // This should be replaces by a class of GObject.Object as soon as once we have implemented inheritance
   export class AnyClass {}
 
@@ -3310,9 +3332,7 @@ declare namespace GObject {
       };
     }
   >(options: MetaInfo<Props, Interfaces, Sigs>, cls: T): T;
-
   export function registerClass<T extends AnyClass>(cls: T): T;
-
   module Binding {
     // Constructor properties interface
 
@@ -7284,7 +7304,7 @@ declare namespace GObject {
      */
     instance_size: number;
     /**
-     * Prior to GLib 2.10, it specified the number of pre-allocated (cached) instances to reserve memory for (0 indicates no caching). Since GLib 2.10, it is ignored, since instances are allocated with the [slice allocator][glib-Memory-Slices] now.
+     * Prior to GLib 2.10, it specified the number of pre-allocated (cached) instances to reserve memory for (0 indicates no caching). Since GLib 2.10 this field is ignored.
      * @field
      */
     n_preallocs: number;
@@ -7586,7 +7606,7 @@ declare namespace GObject {
      * %NULL will be returned.
      * @returns object content of @value,          should be unreferenced when no longer needed.
      */
-    dup_object(): Object;
+    dup_object(): Object | null;
     /**
      * Get a copy the contents of a %G_TYPE_STRING #GValue.
      * @returns a newly allocated copy of the string content of @value
@@ -7666,7 +7686,7 @@ declare namespace GObject {
      * Get the contents of a %G_TYPE_OBJECT derived #GValue.
      * @returns object contents of @value
      */
-    get_object(): Object;
+    get_object(): Object | null;
     /**
      * Get the contents of a %G_TYPE_PARAM #GValue.
      * @returns #GParamSpec content of @value
@@ -8162,8 +8182,4 @@ declare namespace GObject {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://GObject?version=2.0" {
-  export default GObject;
 }

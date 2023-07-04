@@ -8,7 +8,7 @@ import type Gio from "gi://Gio?version=2.0";
 import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace Soup {
+declare module "gi://Soup?version=2.4" {
   /**
    * The supported address families.
    */
@@ -26,11 +26,13 @@ declare namespace Soup {
      */
     IPV6,
   }
+
   enum CacheResponse {
     FRESH,
     NEEDS_VALIDATION,
     STALE,
   }
+
   /**
    * The type of cache; this affects what kinds of responses will be
    * saved.
@@ -45,6 +47,7 @@ declare namespace Soup {
      */
     SHARED,
   }
+
   enum ConnectionState {
     NEW,
     CONNECTING,
@@ -53,6 +56,7 @@ declare namespace Soup {
     REMOTE_DISCONNECTED,
     DISCONNECTED,
   }
+
   /**
    * The policy for accepting or rejecting cookies returned in
    * responses.
@@ -97,6 +101,7 @@ declare namespace Soup {
      */
     GRANDFATHERED_THIRD_PARTY,
   }
+
   /**
    * Date formats that soup_date_to_string() can use.
    *
@@ -143,6 +148,7 @@ declare namespace Soup {
      */
     ISO8601_XMLRPC,
   }
+
   /**
    * How a message body is encoded for transport
    */
@@ -175,6 +181,7 @@ declare namespace Soup {
      */
     BYTERANGES,
   }
+
   /**
    * Indicates the HTTP protocol version being used.
    */
@@ -188,6 +195,7 @@ declare namespace Soup {
      */
     HTTP_1_1,
   }
+
   enum KnownStatusCode {
     NONE,
     CANCELLED,
@@ -253,6 +261,7 @@ declare namespace Soup {
     INSUFFICIENT_STORAGE,
     NOT_EXTENDED,
   }
+
   /**
    * Describes the level of logging output to provide.
    */
@@ -276,6 +285,7 @@ declare namespace Soup {
      */
     BODY,
   }
+
   /**
    * Describes how #SoupBuffer should use the data passed in by the
    * caller.
@@ -311,6 +321,7 @@ declare namespace Soup {
      */
     TEMPORARY,
   }
+
   /**
    * Value passed to soup_message_headers_new() to set certain default
    * behaviors.
@@ -329,6 +340,7 @@ declare namespace Soup {
      */
     MULTIPART,
   }
+
   /**
    * Priorities that can be set on a #SoupMessage to instruct the
    * message queue to process it before any other message with lower
@@ -363,6 +375,7 @@ declare namespace Soup {
      */
     VERY_HIGH,
   }
+
   /**
    * A #SoupRequest error.
    */
@@ -387,10 +400,12 @@ declare namespace Soup {
      */
     ENCODING,
   }
+
   enum RequesterError {
     BAD_URI,
     UNSUPPORTED_URI_SCHEME,
   }
+
   enum SameSitePolicy {
     /**
      * The cookie is exposed with both cross-site and same-site requests
@@ -405,6 +420,7 @@ declare namespace Soup {
      */
     STRICT,
   }
+
   /**
    * Return value from the #SoupSocket IO methods.
    */
@@ -426,6 +442,7 @@ declare namespace Soup {
      */
     ERROR,
   }
+
   /**
    * These represent the known HTTP status code values, plus various
    * network and internal errors.
@@ -708,6 +725,7 @@ declare namespace Soup {
      */
     NOT_EXTENDED,
   }
+
   /**
    * Error codes for %SOUP_TLD_ERROR.
    */
@@ -736,6 +754,7 @@ declare namespace Soup {
     NO_BASE_DOMAIN,
     NO_PSL_DATA,
   }
+
   /**
    * Pre-defined close codes that can be passed to
    * soup_websocket_connection_close() or received from
@@ -802,6 +821,7 @@ declare namespace Soup {
      */
     TLS_HANDSHAKE,
   }
+
   /**
    * The type of a #SoupWebsocketConnection.
    */
@@ -819,6 +839,7 @@ declare namespace Soup {
      */
     SERVER,
   }
+
   /**
    * The type of data contained in a #SoupWebsocketConnection::message
    * signal.
@@ -833,6 +854,7 @@ declare namespace Soup {
      */
     BINARY,
   }
+
   /**
    * WebSocket-related errors.
    */
@@ -857,6 +879,7 @@ declare namespace Soup {
      */
     BAD_ORIGIN,
   }
+
   /**
    * The state of the WebSocket connection.
    */
@@ -875,10 +898,12 @@ declare namespace Soup {
      */
     CLOSED,
   }
+
   enum XMLRPCError {
     ARGUMENTS,
     RETVAL,
   }
+
   /**
    * Pre-defined XML-RPC fault codes from <ulink
    * url="http://xmlrpc-epi.sourceforge.net/specs/rfc.fault_codes.php">http://xmlrpc-epi.sourceforge.net/specs/rfc.fault_codes.php</ulink>.
@@ -936,12 +961,14 @@ declare namespace Soup {
      */
     TRANSPORT_ERROR,
   }
+
   enum Cacheability {
     CACHEABLE,
     UNCACHEABLE,
     INVALIDATES,
     VALIDATES,
   }
+
   /**
    * Represents the parsed value of the "Expect" header.
    * @bitfield
@@ -956,6 +983,7 @@ declare namespace Soup {
      */
     CONTINUE,
   }
+
   /**
    * Various flags that can be set on a #SoupMessage to alter its
    * behavior.
@@ -1028,6 +1056,7 @@ declare namespace Soup {
      */
     DO_NOT_USE_AUTH_CACHE,
   }
+
   /**
    * Options to pass to soup_server_listen(), etc.
    *
@@ -1053,6 +1082,7 @@ declare namespace Soup {
      */
     IPV6_ONLY,
   }
+
   /**
    * This can be passed to any #SoupAddress method that expects a port,
    * to indicate that you don't care what port is used.
@@ -2541,6 +2571,7 @@ declare namespace Soup {
   interface AddressCallback {
     (addr: Address, status: number): void;
   }
+
   /**
    * Callback used by #SoupAuthDomainBasic for authentication purposes.
    * The application should verify that `username` and `password` and valid
@@ -2571,6 +2602,7 @@ declare namespace Soup {
       password: string | null
     ): boolean;
   }
+
   /**
    * Callback used by #SoupAuthDomainDigest for authentication purposes.
    * The application should look up `username` in its password database,
@@ -2587,6 +2619,7 @@ declare namespace Soup {
       | string
       | null;
   }
+
   /**
    * The prototype for a #SoupAuthDomain filter; see
    * soup_auth_domain_set_filter() for details.
@@ -2598,6 +2631,7 @@ declare namespace Soup {
   interface AuthDomainFilter {
     (domain: AuthDomain, msg: Message): boolean;
   }
+
   /**
    * The prototype for a #SoupAuthDomain generic authentication callback.
    *
@@ -2624,6 +2658,7 @@ declare namespace Soup {
   interface AuthDomainGenericAuthCallback {
     (domain: AuthDomain, msg: Message, username: string | null): boolean;
   }
+
   /**
    * The prototype for a chunk allocation callback. This should allocate
    * a new #SoupBuffer and return it for the I/O layer to read message
@@ -2648,6 +2683,7 @@ declare namespace Soup {
   interface ChunkAllocator {
     (msg: Message, max_len: number): Buffer | null;
   }
+
   /**
    * The prototype for a logging filter. The filter callback will be
    * invoked for each request or response, and should analyze it and
@@ -2662,6 +2698,7 @@ declare namespace Soup {
   interface LoggerFilter {
     (logger: Logger, msg: Message): LoggerLogLevel;
   }
+
   /**
    * The prototype for a custom printing callback.
    *
@@ -2690,6 +2727,7 @@ declare namespace Soup {
       data: string | null
     ): void;
   }
+
   /**
    * The callback passed to soup_message_headers_foreach().
    * @callback
@@ -2699,6 +2737,7 @@ declare namespace Soup {
   interface MessageHeadersForeachFunc {
     (name: string | null, value: string | null): void;
   }
+
   interface PasswordManagerCallback {
     (
       password_manager: PasswordManager,
@@ -2707,6 +2746,7 @@ declare namespace Soup {
       retrying: boolean
     ): void;
   }
+
   interface ProxyResolverCallback {
     (
       proxy_resolver: ProxyResolver,
@@ -2715,6 +2755,7 @@ declare namespace Soup {
       addr: Address
     ): void;
   }
+
   /**
    * Callback for soup_proxy_uri_resolver_get_proxy_uri_async()
    * @callback
@@ -2725,6 +2766,7 @@ declare namespace Soup {
   interface ProxyURIResolverCallback {
     (resolver: ProxyURIResolver, status: number, proxy_uri: URI): void;
   }
+
   /**
    * A callback used to handle requests to a #SoupServer.
    *
@@ -2765,6 +2807,7 @@ declare namespace Soup {
       client: ClientContext
     ): void;
   }
+
   /**
    * A callback used to handle WebSocket requests to a #SoupServer. The
    * callback will be invoked after sending the handshake response back
@@ -2787,6 +2830,7 @@ declare namespace Soup {
       client: ClientContext
     ): void;
   }
+
   /**
    * Prototype for the callback passed to soup_session_queue_message(),
    * qv.
@@ -2797,6 +2841,7 @@ declare namespace Soup {
   interface SessionCallback {
     (session: Session, msg: Message): void;
   }
+
   /**
    * Prototype for the progress callback passed to soup_session_connect_async().
    * @callback
@@ -2811,6 +2856,7 @@ declare namespace Soup {
       connection: Gio.IOStream
     ): void;
   }
+
   /**
    * The callback function passed to soup_socket_connect_async().
    * @callback
@@ -2820,6 +2866,7 @@ declare namespace Soup {
   interface SocketCallback {
     (sock: Socket, status: number): void;
   }
+
   module PasswordManager {
     // Constructor properties interface
 
@@ -13920,8 +13967,4 @@ declare namespace Soup {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Soup?version=2.4" {
-  export default Soup;
 }

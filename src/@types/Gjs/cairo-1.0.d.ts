@@ -6,7 +6,7 @@
  */
 import type GObject from "gi://GObject?version=2.0";
 
-declare namespace cairo {
+declare module "gi://cairo?version=1.0" {
   enum Status {
     SUCCESS,
     NO_MEMORY,
@@ -48,11 +48,13 @@ declare namespace cairo {
     DEVICE_FINISHED,
     JBIG2_GLOBAL_MISSING,
   }
+
   enum Content {
     COLOR,
     ALPHA,
     COLOR_ALPHA,
   }
+
   enum Operator {
     CLEAR,
     SOURCE,
@@ -84,6 +86,7 @@ declare namespace cairo {
     HSL_COLOR,
     HSL_LUMINOSITY,
   }
+
   enum Antialias {
     DEFAULT,
     NONE,
@@ -93,32 +96,39 @@ declare namespace cairo {
     GOOD,
     BEST,
   }
+
   enum FillRule {
     WINDING,
     EVEN_ODD,
   }
+
   enum LineCap {
     BUTT,
     ROUND,
     SQUARE,
   }
+
   enum LineJoin {
     MITER,
     ROUND,
     BEVEL,
   }
+
   enum TextClusterFlags {
     BACKWARD,
   }
+
   enum FontSlant {
     NORMAL,
     ITALIC,
     OBLIQUE,
   }
+
   enum FontWeight {
     NORMAL,
     BOLD,
   }
+
   enum SubpixelOrder {
     DEFAULT,
     RGB,
@@ -126,6 +136,7 @@ declare namespace cairo {
     VRGB,
     VBGR,
   }
+
   enum HintStyle {
     DEFAULT,
     NONE,
@@ -133,11 +144,13 @@ declare namespace cairo {
     MEDIUM,
     FULL,
   }
+
   enum HintMetrics {
     DEFAULT,
     OFF,
     ON,
   }
+
   enum FontType {
     TOY,
     FT,
@@ -145,12 +158,14 @@ declare namespace cairo {
     QUARTZ,
     USER,
   }
+
   enum PathDataType {
     MOVE_TO,
     LINE_TO,
     CURVE_TO,
     CLOSE_PATH,
   }
+
   enum DeviceType {
     DRM,
     GL,
@@ -162,6 +177,7 @@ declare namespace cairo {
     WIN32,
     INVALID,
   }
+
   enum SurfaceType {
     IMAGE,
     PDF,
@@ -189,6 +205,7 @@ declare namespace cairo {
     SUBSURFACE,
     COGL,
   }
+
   enum Format {
     INVALID,
     ARGB32,
@@ -198,6 +215,7 @@ declare namespace cairo {
     RGB16_565,
     RGB30,
   }
+
   enum PatternType {
     SOLID,
     SURFACE,
@@ -206,12 +224,14 @@ declare namespace cairo {
     MESH,
     RASTER_SOURCE,
   }
+
   enum Extend {
     NONE,
     REPEAT,
     REFLECT,
     PAD,
   }
+
   enum Filter {
     FAST,
     GOOD,
@@ -220,11 +240,13 @@ declare namespace cairo {
     BILINEAR,
     GAUSSIAN,
   }
+
   enum RegionOverlap {
     IN,
     OUT,
     PART,
   }
+
   function image_surface_create(): void;
   interface Context {}
 
@@ -346,8 +368,4 @@ declare namespace cairo {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://cairo?version=1.0" {
-  export default cairo;
 }

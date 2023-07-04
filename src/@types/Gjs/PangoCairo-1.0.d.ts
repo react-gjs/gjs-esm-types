@@ -12,7 +12,7 @@ import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 import type Gio from "gi://Gio?version=2.0";
 
-declare namespace PangoCairo {
+declare module "gi://PangoCairo?version=1.0" {
   /**
    * Retrieves any font rendering options previously set with
    * [func`PangoCairo`.context_set_font_options].
@@ -311,6 +311,7 @@ declare namespace PangoCairo {
   interface ShapeRendererFunc {
     (cr: cairo.Context, attr: Pango.AttrShape, do_path: boolean): void;
   }
+
   module Font {
     // Constructor properties interface
 
@@ -517,8 +518,4 @@ declare namespace PangoCairo {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://PangoCairo?version=1.0" {
-  export default PangoCairo;
 }

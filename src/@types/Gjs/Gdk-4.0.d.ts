@@ -15,7 +15,7 @@ import type Gio from "gi://Gio?version=2.0";
 import type GdkPixbuf from "gi://GdkPixbuf?version=2.0";
 import type GModule from "gi://GModule?version=2.0";
 
-declare namespace Gdk {
+declare module "gi://Gdk?version=4.0" {
   /**
    * Defines how device axes are interpreted by GTK.
    *
@@ -77,6 +77,7 @@ declare namespace Gdk {
      */
     LAST,
   }
+
   /**
    * Specifies the crossing mode for enter and leave events.
    */
@@ -123,6 +124,7 @@ declare namespace Gdk {
      */
     DEVICE_SWITCH,
   }
+
   /**
    * A pad feature.
    */
@@ -140,6 +142,7 @@ declare namespace Gdk {
      */
     STRIP,
   }
+
   /**
    * Indicates the specific type of tool being used being a tablet. Such as an
    * airbrush, pencil, etc.
@@ -178,6 +181,7 @@ declare namespace Gdk {
      */
     LENS,
   }
+
   /**
    * Used in `GdkDrag` to the reason of a cancelled DND operation.
    */
@@ -195,6 +199,7 @@ declare namespace Gdk {
      */
     ERROR,
   }
+
   /**
    * Specifies the type of the event.
    */
@@ -328,6 +333,7 @@ declare namespace Gdk {
      */
     EVENT_LAST,
   }
+
   /**
    * Indicates which monitor a surface should span over when in fullscreen mode.
    */
@@ -341,6 +347,7 @@ declare namespace Gdk {
      */
     ALL_MONITORS,
   }
+
   /**
    * Error enumeration for `GdkGLContext`.
    */
@@ -366,6 +373,7 @@ declare namespace Gdk {
      */
     LINK_FAILED,
   }
+
   /**
    * Defines the reference point of a surface and is used in `GdkPopupLayout`.
    */
@@ -412,6 +420,7 @@ declare namespace Gdk {
      */
     STATIC,
   }
+
   /**
    * An enumeration describing the type of an input device in general terms.
    */
@@ -449,6 +458,7 @@ declare namespace Gdk {
      */
     TABLET_PAD,
   }
+
   /**
    * Describes how well an event matches a given keyval and modifiers.
    *
@@ -469,6 +479,7 @@ declare namespace Gdk {
      */
     EXACT,
   }
+
   /**
    * `GdkMemoryFormat` describes formats that image data can have in memory.
    *
@@ -571,6 +582,7 @@ declare namespace Gdk {
      */
     N_FORMATS,
   }
+
   /**
    * Specifies the kind of crossing for enter and leave events.
    *
@@ -610,6 +622,7 @@ declare namespace Gdk {
      */
     UNKNOWN,
   }
+
   /**
    * Specifies the direction for scroll events.
    */
@@ -636,6 +649,7 @@ declare namespace Gdk {
      */
     SMOOTH,
   }
+
   /**
    * Specifies the unit of scroll deltas.
    *
@@ -665,6 +679,7 @@ declare namespace Gdk {
      */
     SURFACE,
   }
+
   /**
    * This enumeration describes how the red, green and blue components
    * of physical pixels on an output device are laid out.
@@ -695,6 +710,7 @@ declare namespace Gdk {
      */
     VERTICAL_BGR,
   }
+
   /**
    * Determines a surface edge or corner.
    */
@@ -732,6 +748,7 @@ declare namespace Gdk {
      */
     SOUTH_EAST,
   }
+
   /**
    * Possible errors that can be returned by `GdkTexture` constructors.
    */
@@ -754,11 +771,13 @@ declare namespace Gdk {
      */
     UNSUPPORTED_FORMAT,
   }
+
   enum TitlebarGesture {
     DOUBLE_CLICK,
     RIGHT_CLICK,
     MIDDLE_CLICK,
   }
+
   /**
    * Specifies the current state of a touchpad gesture.
    *
@@ -799,6 +818,7 @@ declare namespace Gdk {
      */
     CANCEL,
   }
+
   /**
    * Error enumeration for `GdkVulkanContext`.
    */
@@ -813,6 +833,7 @@ declare namespace Gdk {
      */
     NOT_AVAILABLE,
   }
+
   /**
    * Positioning hints for aligning a surface relative to a rectangle.
    *
@@ -869,6 +890,7 @@ declare namespace Gdk {
      */
     RESIZE,
   }
+
   /**
    * Flags describing the current capabilities of a device/tool.
    * @bitfield
@@ -919,6 +941,7 @@ declare namespace Gdk {
      */
     SLIDER,
   }
+
   /**
    * Used in `GdkDrop` and `GdkDrag` to indicate the actions that the
    * destination can and should do with the dropped data.
@@ -945,6 +968,7 @@ declare namespace Gdk {
      */
     ASK,
   }
+
   /**
    * Used to represent the different paint clock phases that can be requested.
    *
@@ -985,6 +1009,7 @@ declare namespace Gdk {
      */
     AFTER_PAINT,
   }
+
   /**
    * The list of the different APIs that GdkGLContext can potentially support.
    * @bitfield
@@ -999,6 +1024,7 @@ declare namespace Gdk {
      */
     GLES,
   }
+
   /**
    * Flags to indicate the state of modifier keys and mouse buttons
    * in events.
@@ -1064,6 +1090,7 @@ declare namespace Gdk {
      */
     META_MASK,
   }
+
   /**
    * Flags about a paintable object.
    *
@@ -1073,17 +1100,18 @@ declare namespace Gdk {
   enum PaintableFlags {
     /**
      * The size is immutable.
-     *   The [signal`GdkPaintable:`:invalidate-size] signal will never be
+     *   The [signal`Gdk`.Paintable::invalidate-size] signal will never be
      *   emitted.
      */
     SIZE,
     /**
      * The content is immutable.
-     *   The [signal`GdkPaintable:`:invalidate-contents] signal will never be
+     *   The [signal`Gdk`.Paintable::invalidate-contents] signal will never be
      *   emitted.
      */
     CONTENTS,
   }
+
   /**
    * Flags describing the seat capabilities.
    * @bitfield
@@ -1122,6 +1150,7 @@ declare namespace Gdk {
      */
     ALL,
   }
+
   /**
    * Specifies the state of a toplevel surface.
    *
@@ -1198,6 +1227,7 @@ declare namespace Gdk {
      */
     LEFT_RESIZABLE,
   }
+
   /**
    * Defines all possible DND actions.
    *
@@ -3933,6 +3963,7 @@ declare namespace Gdk {
   interface ContentDeserializeFunc {
     (deserializer: ContentDeserializer): void;
   }
+
   /**
    * The type of a function that can be registered with gdk_content_register_serializer().
    *
@@ -3945,6 +3976,7 @@ declare namespace Gdk {
   interface ContentSerializeFunc {
     (serializer: ContentSerializer): void;
   }
+
   module DevicePad {
     // Constructor properties interface
 
@@ -4566,7 +4598,7 @@ declare namespace Gdk {
    * to do, it is suggested that you scale your paintable ignoring any potential
    * aspect ratio.
    *
-   * The contents that a `GdkPaintable` produces may depend on the [class`GdkSnapshot]`
+   * The contents that a `GdkPaintable` produces may depend on the [class`Gdk`.Snapshot]
    * passed to it. For example, paintables may decide to use more detailed images
    * on higher resolution screens or when OpenGL is available. A `GdkPaintable`
    * will however always produce the same output for the same snapshot.
@@ -4574,7 +4606,7 @@ declare namespace Gdk {
    * A `GdkPaintable` may change its contents, meaning that it will now produce
    * a different output with the same snapshot. Once that happens, it will call
    * [method`Gdk`.Paintable.invalidate_contents] which will emit the
-   * [signal`GdkPaintable:`:invalidate-contents] signal. If a paintable is known
+   * [signal`Gdk`.Paintable::invalidate-contents] signal. If a paintable is known
    * to never change its contents, it will set the %GDK_PAINTABLE_STATIC_CONTENTS
    * flag. If a consumer cannot deal with changing contents, it may call
    * [method`Gdk`.Paintable.get_current_image] which will return a static
@@ -4585,7 +4617,7 @@ declare namespace Gdk {
    * can use this information to layout thepaintable appropriately. Just like the
    * contents, the size of a paintable can change. A paintable will indicate this
    * by calling [method`Gdk`.Paintable.invalidate_size] which will emit the
-   * [signal`GdkPaintable:`:invalidate-size] signal. And just like for contents,
+   * [signal`Gdk`.Paintable::invalidate-size] signal. And just like for contents,
    * if a paintable is known to never change its size, it will set the
    * %GDK_PAINTABLE_STATIC_SIZE flag.
    *
@@ -4699,7 +4731,7 @@ declare namespace Gdk {
      * otherwise it will change position according to `layout`.
      *
      * After calling this function, the result should be handled in response
-     * to the [signal`GdkSurface:`:layout] signal being emitted. The resulting
+     * to the [signal`Gdk`.Surface::layout] signal being emitted. The resulting
      * popup position can be queried using [method`Gdk`.Popup.get_position_x],
      * [method`Gdk`.Popup.get_position_y], and the resulting size will be sent as
      * parameters in the layout signal. Use [method`Gdk`.Popup.get_rect_anchor]
@@ -4810,7 +4842,7 @@ declare namespace Gdk {
    * The `GdkPopup` is positioned relative to its parent surface.
    *
    * `GdkPopup`s are typically used to implement menus and similar popups.
-   * They can be modal, which is indicated by the [property`GdkPopup:`autohide]
+   * They can be modal, which is indicated by the [property`Gdk`.Popup:autohide]
    * property.
    * @interface
    */
@@ -4833,7 +4865,7 @@ declare namespace Gdk {
      * Signal callback interface for `compute-size`
      */
     interface ComputeSizeSignalCallback {
-      ($obj: Toplevel): void;
+      ($obj: Toplevel, size: ToplevelSize): void;
     }
 
     // Constructor properties interface
@@ -5143,7 +5175,7 @@ declare namespace Gdk {
       sigName: "compute-size",
       callback: Toplevel.ComputeSizeSignalCallback
     ): number;
-    emit(sigName: "compute-size", ...args: any[]): void;
+    emit(sigName: "compute-size", size: ToplevelSize, ...args: any[]): void;
 
     // Class property signals of Gdk-4.0.Gdk.Toplevel
 
@@ -9159,7 +9191,7 @@ declare namespace Gdk {
    * for the synchronization being implemented, the clock will process a frame and
    * emit signals for each phase that has been requested. (See the signals of the
    * `GdkFrameClock` class for documentation of the phases.
-   * %GDK_FRAME_CLOCK_PHASE_UPDATE and the [signal`GdkFrameClock:`:update] signal
+   * %GDK_FRAME_CLOCK_PHASE_UPDATE and the [signal`Gdk`.FrameClock::update] signal
    * are most interesting for application writers, and are used to update the
    * animations, using the frame time given by [method`Gdk`.FrameClock.get_frame_time].
    *
@@ -9171,7 +9203,7 @@ declare namespace Gdk {
    * are called at a “similar” time get the same value. This means that
    * if different animations are timed by looking at the difference in
    * time between an initial value from [method`Gdk`.FrameClock.get_frame_time]
-   * and the value inside the [signal`GdkFrameClock:`:update] signal of the clock,
+   * and the value inside the [signal`Gdk`.FrameClock::update] signal of the clock,
    * they will stay exactly synchronized.
    * @class
    */
@@ -12767,8 +12799,4 @@ declare namespace Gdk {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Gdk?version=4.0" {
-  export default Gdk;
 }

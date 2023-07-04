@@ -7,7 +7,7 @@
 import type GObject from "gi://GObject?version=2.0";
 import type GLib from "gi://GLib?version=2.0";
 
-declare namespace Graphene {
+declare module "gi://Graphene?version=1.0" {
   /**
    * Specify the order of the rotations on each axis.
    *
@@ -147,6 +147,7 @@ declare namespace Graphene {
      */
     RZYZ,
   }
+
   /**
    * The type of intersection.
    */
@@ -166,6 +167,7 @@ declare namespace Graphene {
      */
     LEAVE,
   }
+
   const PI: number;
   const PI_2: number;
   /**
@@ -3590,8 +3592,4 @@ declare namespace Graphene {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://Graphene?version=1.0" {
-  export default Graphene;
 }

@@ -7,7 +7,7 @@
 import type GLib from "gi://GLib?version=2.0";
 import type GObject from "gi://GObject?version=2.0";
 
-declare namespace GModule {
+declare module "gi://GModule?version=2.0" {
   /**
    * Errors returned by g_module_open_full().
    */
@@ -21,6 +21,7 @@ declare namespace GModule {
      */
     CHECK_FAILED,
   }
+
   /**
    * Flags passed to g_module_open().
    * Note that these flags are not supported on all platforms.
@@ -45,6 +46,7 @@ declare namespace GModule {
      */
     MASK,
   }
+
   /**
    * A portable way to build the filename of a module. The platform-specific
    * prefix and suffix are added to the filename, if needed, and the result
@@ -91,6 +93,7 @@ declare namespace GModule {
   interface ModuleCheckInit {
     (module: Module): string | null;
   }
+
   /**
    * Specifies the type of the module function called when it is unloaded.
    * If a module contains a function named g_module_unload() it is called
@@ -102,6 +105,7 @@ declare namespace GModule {
   interface ModuleUnload {
     (module: Module): void;
   }
+
   interface Module {
     // Owm methods of GModule-2.0.GModule.Module
 
@@ -191,8 +195,4 @@ declare namespace GModule {
    * @see https://gitlab.gnome.org/GNOME/gjs/-/blob/master/gi/ns.cpp#L189
    */
   const __version__: string;
-}
-
-declare module "gi://GModule?version=2.0" {
-  export default GModule;
 }
